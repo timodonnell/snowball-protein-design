@@ -68,3 +68,21 @@ whether counterbalanced examples reduce copying; it does not establish that
 the example caused the failures. For a clean arithmetic task, supply the actual
 runtime-scaling formula and drain margin explicitly, because the prompt's rough
 runtime guidance does not spell out every downstream feasibility rule.
+
+## A redesign without a structure to redesign
+
+At Snowball tick `v7r014`, the Planner proposed ProteinMPNN with `omit_AAs`
+equal to the entire list of allowed options. The registry expects one string.
+The builder removed that value, but still could not compile the action:
+the only references were `EvidenceSummary` and `recent_ticks_history`, with no
+concrete parent result ID. Its cost check passed, so this failure is distinct
+from the deadline failures of the proposed generators.
+
+Training uses: choose one legal enum value; resolve a parent from observed,
+eligible structures; and verify that a complete action compiles after schema
+validation. Preserve the proposed configuration and the builder's correction
+separately. Giving the model credit for the corrected configuration would hide
+the original mistake.
+
+Source: [hypothesis cards](../artifacts/snowball/campaign/hypothesis_cards.jsonl),
+[candidate feasibility records](../artifacts/snowball/campaign/action_candidates.jsonl).

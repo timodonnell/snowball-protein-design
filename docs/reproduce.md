@@ -138,7 +138,12 @@ Static figures use Matplotlib 3.10.8:
 ```bash
 uv pip install matplotlib==3.10.8
 .venv/bin/python scripts/make_figures.py artifacts artifacts/figures
+.venv/bin/python scripts/verify_artifacts.py artifacts artifacts/integrity-check.json
 ```
+
+The integrity check verifies every collected structure hash, the qualified PDB
+copies and FASTA IDs, complete archive counts, finished HTTP records, and the
+nine shared fixed-prompt hashes. It runs without the original worker paths.
 
 `configs/local-analysis.freeze.txt` records the observed CPU analysis environment;
 the remote molecular/serving locks are separate. `collector-validation-snapshot.json`
