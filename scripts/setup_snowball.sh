@@ -5,13 +5,13 @@ export UV_CACHE_DIR=/work/cache/uv
 export HF_HOME=/work/cache/huggingface
 export UV_LINK_MODE=copy
 uv venv --python 3.12.13 /work/snowball-serving
-uv pip install --python /work/snowball-serving/bin/python \
-  'https://github.com/marin-community/vllm/releases/download/marin-vllm-gpu-20260924-01911be34fac/vllm-0.0.0.dev20260924%2Bmarin.01911be34fac.cu132-cp38-abi3-manylinux_2_28_x86_64.whl' \
+# Copy configs/snowball-serving.lock.txt to /work/configs/ first.
+# This captures the successfully exercised text-serving environment.
+# TorchAudio is deliberately omitted: the published vLLM wheel's incompatible
+# torchaudio==2.11.0 dependency aborts import with torch==2.13.0+cu132 (I005).
+uv pip sync --python /work/snowball-serving/bin/python \
+  /work/configs/snowball-serving.lock.txt \
   --extra-index-url https://download.pytorch.org/whl/cu132 --index-strategy unsafe-best-match
-# The published wheel requires torchaudio==2.11.0 alongside torch==2.13.0.
-# Its CUDA 13.0 audio extension aborts Transformers import with Torch CUDA 13.2.
-# This research server is text-only. Keep this explicit dependency exception.
-uv pip uninstall --python /work/snowball-serving/bin/python torchaudio
 /work/snowball-serving/bin/hf download \
   open-athena/Snowball-67B-A2B-5.7T-Mixed-RLVR-Step38 \
   --revision cfc1d845dae89b067cdc7250d0164abefa5a69cf \

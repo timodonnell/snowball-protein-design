@@ -25,7 +25,7 @@ def main():
     for build in CASES:
         name, evidence = build(model)
         content = planner_system_prompt() + "\n" + build_user_prompt(evidence, [],
-            list(VALID_ACTION_FAMILIES), available_families=list(VALID_ACTION_FAMILIES))
+            sorted(VALID_ACTION_FAMILIES), available_families=sorted(VALID_ACTION_FAMILIES))
         rows.append(dict(role="planner", case=name,
                          content_tokens_without_chat_template=len(tokenizer.encode(content).ids)))
     for name, build_evidence, build_hypotheses, _ in SUPERVISOR_CASES:

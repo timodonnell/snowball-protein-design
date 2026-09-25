@@ -7,6 +7,7 @@ export PATH=/root/.local/bin:$PATH
 export HF_HOME=/work/cache/huggingface
 export UV_CACHE_DIR=/work/cache/uv
 export PYTHONUNBUFFERED=1
+export PYTHONHASHSEED=0
 mkdir -p "/work/results/$arm" /work/logs
 cd /work/T-REX
 set -a

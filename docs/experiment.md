@@ -31,6 +31,15 @@ The US-EAST GPU pool had no free GPUs during initial inspection. Local workstati
 has only 47GiB free, insufficient for the full stack, so large assets stay remote.
 Pod has a 12-hour deadline; delete it after collecting results. PVC retains data.
 
+Snowball serving precheck completed on two H100s at 18:28 UTC. Native BF16
+weights, no quantization or offload; returned the requested JSON and stopped on
+the native end-of-turn token (128009). This is an infrastructure smoke, separate
+from the Qwen-first molecular experiment. Serving uses Marin vLLM commit
+`01911be34fac8715347962a8d791ca34a879e01e`; the resolved text-serving environment
+is captured in `configs/snowball-serving.lock.txt`. See I005 for the explicit
+TorchAudio dependency exception. Weights plus non-Torch overhead used 64.97GiB
+per GPU. Server was stopped after this precheck.
+
 ## Source inspection
 
 T-REX has Planner/Supervisor LLM roles and deterministic job validation,
