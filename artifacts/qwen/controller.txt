@@ -1,0 +1,1348 @@
+Campaign
+  name           pdl1-qwen-s0
+  source         /work/configs/qwen.yaml
+  source SHA256  3c896619c9925c5cb4f1a284c2e8eba2b6dacb482a28cbd0f9ab01731e1f8fdc
+
+Target input
+  name        pdl1
+  target ID   32_PDL1_ALPHA_REPACK
+  constraint  /work/T-REX/config/targets/pdl1.json
+  PDB         /work/T-REX-assets/targets/alpha_proteo_targets/5o45_repacked.pdb
+
+Execution
+  archive                /work/results/qwen/campaign
+  controller time limit  1 h (cumulative)
+  seed                   0
+  worker GPUs            2, 3
+  families               complexa_beam, complexa_best_of_n, complexa_fk_steering, proteinmpnn_redesign, structure_refilter
+
+Decision policy
+  LLM endpoint           http://127.0.0.1:12000/v1
+  LLM model              vllm/Qwen/Qwen3.6-27B-FP8
+  critic                 on
+  evidence skip          off
+  exemplars              on
+  Foldseek SU TM         0.6
+  collapse TM            0.6
+  quota realization      fractional_carry
+  cross-campaign memory  disabled
+
+Backend runtime
+  T-REX repository            /work/T-REX
+  external root               /work/T-REX/external
+  Complexa repository         /work/T-REX/external/Proteina-Complexa
+  Complexa Python             /work/T-REX/external/Proteina-Complexa/.venv/bin/python
+  legacy Complexa repository  /work/T-REX/external/Proteina-Complexa
+  AF2 parameters              /work/T-REX/external/Proteina-Complexa/community_models/ckpts/AF2
+  ProteinMPNN weights         /work/T-REX/external/Proteina-Complexa/community_models/ProteinMPNN/vanilla_model_weights/v_48_020.pt
+  BindCraft repository        /work/T-REX/external/BindCraft
+  BindCraft environment       /work/T-REX/external/BindCraft/.venv
+  BoltzGen repository         /work/T-REX/external/BoltzGen
+  BoltzGen binary             /work/T-REX/external/BoltzGen/.venv/bin/boltzgen
+  BoltzGen cache              /work/T-REX-assets/checkpoints/boltzgen
+  Foldseek binary             /work/T-REX/external/Proteina-Complexa/.venv/bin/foldseek
+  MMseqs binary               /work/T-REX/external/Proteina-Complexa/.venv/bin/mmseqs
+  Qwen model path             /work/T-REX-assets/checkpoints/Qwen3.6-27B-FP8
+  Qwen model manifest         /work/T-REX/config/trex/qwen3_6_27b_fp8_model_manifest.json
+
+Resolution notes
+  1   backends.complexa_repo inherited from TREX_COMPLEXA_REPO
+  2   backends.legacy_complexa_repo inherited from TREX_LEGACY_COMPLEXA_REPO
+  3   backends.bindcraft_repo inherited from TREX_BINDCRAFT_REPO
+  4   backends.boltzgen_repo inherited from TREX_BOLTZGEN_REPO
+  5   backends.complexa_python inherited from TREX_COMPLEXA_PYTHON
+  6   backends.bindcraft_env inherited from TREX_BINDCRAFT_ENV
+  7   backends.boltzgen_binary inherited from TREX_BOLTZGEN_BIN
+  8   backends.boltzgen_cache inherited from TREX_BOLTZGEN_CACHE
+  9   backends.foldseek_binary inherited from TREX_FOLDSEEK_BIN
+  10  backends.mmseqs_binary inherited from TREX_MMSEQS_BIN
+  11  backends.qwen_model_path inherited from TREX_QWEN_MODEL_PATH
+  12  backends.qwen_model_manifest inherited from TREX_MODEL_MANIFEST
+
+Preflight checks
+OK    campaign source SHA256                                           3c896619c9925c5cb4f1a284c2e8eba2b6dacb482a28cbd0f9ab01731e1f8fdc
+OK    executed T-REX source                                            /work/T-REX
+OK    archive output                                                   /work/results/qwen/campaign (will be created; nearest parent: /work/results/qwen)
+OK    worker GPU mapping                                               2,3
+OK    LLM endpoint                                                     http://127.0.0.1:12000/v1
+OK    cross-campaign memory                                            disabled
+OK    target config                                                    /work/T-REX/config/targets/pdl1.json
+OK    target id                                                        expected=32_PDL1_ALPHA_REPACK observed=32_PDL1_ALPHA_REPACK
+OK    target chains                                                    A
+OK    target PDB                                                       /work/T-REX-assets/targets/alpha_proteo_targets/5o45_repacked.pdb
+OK    configured chains in PDB                                         A
+OK    hotspots in PDB                                                  A56,A115,A123
+OK    target PDB SHA256                                                expected=dcd82d0a0258524ad6b036c39a3743cd8e16fb455178531781f81f5735a6a397 observed=dcd82d0a0258524ad6b036c39a3743cd8e16fb455178531781f81f5735a6a397
+OK    enabled family registry                                          complexa_beam,complexa_best_of_n,complexa_fk_steering,proteinmpnn_redesign,structure_refilter
+OK    Foldseek executable                                              /work/T-REX/external/Proteina-Complexa/.venv/bin/foldseek
+OK    MMseqs2 executable                                               /work/T-REX/external/Proteina-Complexa/.venv/bin/mmseqs
+OK    Foldseek version                                                 expected=8dc75c74ad0eddab73cfd905963d13bf74dc012b observed=8dc75c74ad0eddab73cfd905963d13bf74dc012b
+OK    MMseqs2 version                                                  expected=76da68ad7577378410c075049e18666fcc94f8d1 observed=76da68ad7577378410c075049e18666fcc94f8d1
+OK    Proteina-Complexa checkout                                       /work/T-REX/external/Proteina-Complexa
+OK    Proteina-Complexa env.sh                                         /work/T-REX/external/Proteina-Complexa/env.sh
+OK    Complexa/AF2 Python                                              /work/T-REX/external/Proteina-Complexa/.venv/bin/python
+OK    Complexa checkpoint                                              /work/T-REX/external/Proteina-Complexa/ckpts/complexa.ckpt
+OK    Complexa AE checkpoint                                           /work/T-REX/external/Proteina-Complexa/ckpts/complexa_ae.ckpt
+OK    AF2 parameters                                                   /work/T-REX/external/Proteina-Complexa/community_models/ckpts/AF2
+OK    AF2 multimer-v3 model 1                                          /work/T-REX/external/Proteina-Complexa/community_models/ckpts/AF2/params_model_1_multimer_v3.npz
+OK    AF2 multimer-v3 model 2                                          /work/T-REX/external/Proteina-Complexa/community_models/ckpts/AF2/params_model_2_multimer_v3.npz
+OK    AF2 multimer-v3 model 3                                          /work/T-REX/external/Proteina-Complexa/community_models/ckpts/AF2/params_model_3_multimer_v3.npz
+OK    AF2 multimer-v3 model 4                                          /work/T-REX/external/Proteina-Complexa/community_models/ckpts/AF2/params_model_4_multimer_v3.npz
+OK    AF2 multimer-v3 model 5                                          /work/T-REX/external/Proteina-Complexa/community_models/ckpts/AF2/params_model_5_multimer_v3.npz
+OK    ProteinMPNN weight v_48_002                                      /work/T-REX/external/Proteina-Complexa/community_models/ProteinMPNN/vanilla_model_weights/v_48_002.pt
+OK    ProteinMPNN weight v_48_010                                      /work/T-REX/external/Proteina-Complexa/community_models/ProteinMPNN/vanilla_model_weights/v_48_010.pt
+OK    ProteinMPNN weight v_48_020                                      /work/T-REX/external/Proteina-Complexa/community_models/ProteinMPNN/vanilla_model_weights/v_48_020.pt
+OK    ProteinMPNN weight v_48_030                                      /work/T-REX/external/Proteina-Complexa/community_models/ProteinMPNN/vanilla_model_weights/v_48_030.pt
+OK    AF2 parameters manifest                                          /work/T-REX/config/reproducibility/af2_parameters_manifest.json
+OK    AF2 parameters verification                                      2ce0664041f82ce7fdbbaa523696327e0895465210d066c8bdfd4ed19e4732b0 (manifest + sizes)
+OK    ProteinMPNN weights manifest                                     /work/T-REX/config/reproducibility/proteinmpnn_weights_manifest.json
+OK    ProteinMPNN weights verification                                 3022126a2617a96ded10604eba039b6fcd1ad094512291c2eab9429f463dc160 (manifest + sizes)
+OK    BindCraft checkout                                               /work/T-REX/external/BindCraft/bindcraft.py
+OK    BindCraft Python                                                 /work/T-REX/external/BindCraft/.venv/bin/python
+OK    BoltzGen checkout                                                /work/T-REX/external/BoltzGen
+OK    BoltzGen executable                                              /work/T-REX/external/BoltzGen/.venv/bin/boltzgen
+OK    campaign serving/controller Python                               /work/T-REX/.venv-serving/bin/python
+OK    Qwen model directory                                             /work/T-REX-assets/checkpoints/Qwen3.6-27B-FP8
+OK    Qwen model manifest                                              /work/T-REX/config/trex/qwen3_6_27b_fp8_model_manifest.json
+OK    Qwen model manifest verification                                 77409ac00f81e48d29b9f079ab448044a5ec1cdd91dfdb50b3035c197f065722
+OK    proteina_complexa revision                                       expected=5ae24b055d828918296f2aad63616b1f4cc0e491 observed=5ae24b055d828918296f2aad63616b1f4cc0e491
+OK    proteina_complexa_community revision                             expected=d323517efbffe3ea280e4e3d0442b0257a37b5a8 observed=5ae24b055d828918296f2aad63616b1f4cc0e491; identical declared source trees
+OK    proteina_complexa_community source community_models/ProteinMPNN  tree=6825955f4c3dec0ada2dd0f1a969f61515bd24d2 expected=6825955f4c3dec0ada2dd0f1a969f61515bd24d2 tracked_source_unchanged=True
+OK    proteina_complexa_community source community_models/colabdesign  tree=844c76c09355e094a29a34c16fead3f63dea3819 expected=844c76c09355e094a29a34c16fead3f63dea3819 tracked_source_unchanged=True
+
+Preflight passed.
+
+Recorded campaign input
+  input     /work/results/qwen/campaign/campaign_input.yaml
+  resolved  /work/results/qwen/campaign/campaign_resolved.json
+
+Recorded run provenance
+  provenance  /work/results/qwen/campaign/run_provenance.json
+  source SHA  408e8df0708a1c4453bf457663fe92239c233fbe3178814c6b2f0843732d6beb
+  model SHA   77409ac00f81e48d29b9f079ab448044a5ec1cdd91dfdb50b3035c197f065722
+[v7_controller] run_seed=0
+[v7_controller] runtime_paths={"af2_data_dir": "/work/T-REX/external/Proteina-Complexa/community_models/ckpts/AF2", "bindcraft_env": "/work/T-REX/external/BindCraft/.venv", "bindcraft_repo": "/work/T-REX/external/BindCraft", "boltzgen_binary": "/work/T-REX/external/BoltzGen/.venv/bin/boltzgen", "boltzgen_cache": "/work/T-REX-assets/checkpoints/boltzgen", "boltzgen_repo": "/work/T-REX/external/BoltzGen", "community_models_root": "/work/T-REX/external/Proteina-Complexa/community_models", "complexa_python": "/work/T-REX/external/Proteina-Complexa/.venv/bin/python", "complexa_repo": "/work/T-REX/external/Proteina-Complexa", "external_root": "/work/T-REX/external", "foldseek_binary": "/work/T-REX/external/Proteina-Complexa/.venv/bin/foldseek", "legacy_complexa_repo": "/work/T-REX/external/Proteina-Complexa", "mmseqs_binary": "/work/T-REX/external/Proteina-Complexa/.venv/bin/mmseqs", "proteinmpnn_dir": "/work/T-REX/external/Proteina-Complexa/community_models/ProteinMPNN", "proteinmpnn_weights": "/work/T-REX/external/Proteina-Complexa/community_models/ProteinMPNN/vanilla_model_weights/v_48_020.pt", "qwen_model_manifest": "/work/T-REX/config/trex/qwen3_6_27b_fp8_model_manifest.json", "qwen_model_path": "/work/T-REX-assets/checkpoints/Qwen3.6-27B-FP8", "repo_root": "/work/T-REX"}
+[v7_controller] target_res_count=116 target_chains=A (pdb_chains={'A': 116})
+[v7_controller] enabled families: ['complexa_beam', 'complexa_best_of_n', 'complexa_fk_steering', 'proteinmpnn_redesign', 'structure_refilter']
+[v7_controller] disabled by --enabled-families: ['bindcraft', 'boltzgen', 'complexa_mcts']
+[v7_controller] AF2/ProteinMPNN runtime preflight=ok executable=/work/T-REX/external/Proteina-Complexa/.venv/bin/python | prefix=/work/T-REX/external/Proteina-Complexa/.venv | modules=jax,community_models.colabdesign,torch
+[v7_controller] foldseek_binary=/work/T-REX/external/Proteina-Complexa/.venv/bin/foldseek
+[v7_controller] exemplars=on
+[v7_controller] evidence_skip=off
+[v7_controller] selector_quota_realization=fractional_carry mode_window_k=1 adaptive_mode_window_k=0
+[v7_controller] foldseek_su_tm=0.60 foldseek_collapse_tm=0.60 structure_scope=binder_chain alignment_type=1 min_seq_id=0.0 cov_mode=0 threads=1
+[v7_controller] target=32_PDL1_ALPHA_REPACK start=2026-09-25T19:05:23Z
+[v7_controller] archive=/work/results/qwen/campaign
+[v7_controller] vLLM=http://127.0.0.1:12000/v1
+[v7_controller] worker_gpus=['2', '3'] worker_wall_gpu_count=2
+  [controller_checkpoint] elapsed=0.000h SU=0 state=None
+
+[v7_controller] ===== round 1 (elapsed 0.00 h, busy=0/2, queued=0, refill=2) =====
+  state=low_evidence  planned=1  chain_reserved=0  queued_now=1
+  [worker:complexa_beam][gpu=2] launching → v7_r001_warmstart_v7r001_00_complexa_beam_a8df003a7b6d9
+  [chain_refilter_predispatch] left single free slot for fresh LLM-planned action before chain reserve
+
+[v7_controller] ===== round 2 (elapsed 0.01 h, busy=1/2, queued=0, refill=2) =====
+  state=low_evidence  planned=1  chain_reserved=0  queued_now=1
+  [worker:complexa_best_of_n][gpu=3] launching → v7_r002_cand_v7r002_hyp_0002_00_001_a9a82d1587b79
+  [controller_checkpoint] elapsed=0.017h SU=0 state=low_evidence
+  [controller_checkpoint] elapsed=0.034h SU=0 state=low_evidence
+  [controller_checkpoint] elapsed=0.051h SU=0 state=low_evidence
+  [gpu=3] complexa_best_of_n → 16 records (parsed=16; elapsed_gpu_h=0.04; delta_gpu_h=0.04; per-record=0.003)
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=16 n_clusters=5 n_updated=16 struct_scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=2 near_clusters=2 status=ok n_updated=2 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] left single free slot for fresh LLM-planned action before chain reserve
+
+[v7_controller] ===== round 3 (elapsed 0.05 h, busy=1/2, queued=0, refill=2) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=16 n_clusters=5 n_updated=16 struct_scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=2 near_clusters=2 status=ok n_updated=2 coverage=1.00 scope=binder_chain scope_fallback=0
+  state=low_evidence  planned=2  chain_reserved=0  queued_now=2
+  [worker:complexa_beam][gpu=3] launching → v7_r003_cand_v7r003_hyp_0003_01_002_a2b1ae63664a8
+  [controller_checkpoint] elapsed=0.068h SU=0 state=low_evidence
+  [chain_refilter_reserve] left single free slot for fresh LLM-planned action before chain backfill
+
+[v7_controller] ===== round 4 (elapsed 0.07 h, busy=2/2, queued=1, refill=1) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=16 n_clusters=5 n_updated=16 struct_scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=2 near_clusters=2 status=ok n_updated=2 coverage=1.00 scope=binder_chain scope_fallback=0
+  state=low_evidence  planned=1  chain_reserved=0  queued_now=2
+  [controller_checkpoint] elapsed=0.085h SU=0 state=low_evidence
+  [controller_checkpoint] elapsed=0.102h SU=0 state=low_evidence
+  [controller_checkpoint] elapsed=0.118h SU=0 state=low_evidence
+  [controller_checkpoint] elapsed=0.135h SU=0 state=low_evidence
+  [controller_checkpoint] elapsed=0.152h SU=0 state=low_evidence
+  [controller_checkpoint] elapsed=0.168h SU=0 state=low_evidence
+  [gpu=2] complexa_beam → 16 records (parsed=16; elapsed_gpu_h=0.17; delta_gpu_h=0.17; per-record=0.010)
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=32 n_clusters=7 n_updated=28 struct_scope=binder_chain scope_fallback=4
+  [foldseek:near_miss] near_structures=2 near_clusters=2 status=ok n_updated=2 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] left single free slot for fresh LLM-planned action before chain reserve
+  [worker:complexa_fk_steering][gpu=2] launching → v7_r004_cand_v7r004_hyp_0004_02_003_ae5b6dc63e53e
+  [chain_refilter_reserve] left single free slot for fresh LLM-planned action before chain backfill
+
+[v7_controller] ===== round 5 (elapsed 0.17 h, busy=2/2, queued=1, refill=1) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=32 n_clusters=7 n_updated=28 struct_scope=binder_chain scope_fallback=4
+  [foldseek:near_miss] near_structures=2 near_clusters=2 status=ok n_updated=2 coverage=1.00 scope=binder_chain scope_fallback=0
+  state=low_evidence  planned=1  chain_reserved=0  queued_now=2
+  [controller_checkpoint] elapsed=0.189h SU=0 state=low_evidence
+  [controller_checkpoint] elapsed=0.206h SU=0 state=low_evidence
+  [controller_checkpoint] elapsed=0.222h SU=0 state=low_evidence
+  [gpu=3] complexa_beam → 16 records (parsed=16; elapsed_gpu_h=0.17; delta_gpu_h=0.17; per-record=0.011)
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=48 n_clusters=9 n_updated=44 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=4 strict_clusters=1 status=ok n_updated=4 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=6 near_clusters=3 status=ok n_updated=6 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] left single free slot for fresh LLM-planned action before chain reserve
+  [worker:complexa_fk_steering][gpu=3] launching → v7_r005_cand_v7r005_hyp_0005_01_002_a224316cffb43
+  [chain_refilter_reserve] left single free slot for fresh LLM-planned action before chain backfill
+
+[v7_controller] ===== round 6 (elapsed 0.23 h, busy=2/2, queued=1, refill=1) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=48 n_clusters=9 n_updated=44 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=4 strict_clusters=1 status=ok n_updated=4 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=6 near_clusters=3 status=ok n_updated=6 coverage=1.00 scope=binder_chain scope_fallback=0
+  state=low_evidence  planned=1  chain_reserved=0  queued_now=2
+  [controller_checkpoint] elapsed=0.257h SU=1 state=low_evidence
+  [controller_checkpoint] elapsed=0.274h SU=1 state=low_evidence
+  [controller_checkpoint] elapsed=0.291h SU=1 state=low_evidence
+  [controller_checkpoint] elapsed=0.307h SU=1 state=low_evidence
+  [controller_checkpoint] elapsed=0.324h SU=1 state=low_evidence
+  [controller_checkpoint] elapsed=0.341h SU=1 state=low_evidence
+  [gpu=2] complexa_fk_steering → 16 records (parsed=16; elapsed_gpu_h=0.17; delta_gpu_h=0.17; per-record=0.011)
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=64 n_clusters=10 n_updated=60 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=7 strict_clusters=2 status=ok n_updated=7 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=15 near_clusters=4 status=ok n_updated=15 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] left single free slot for fresh LLM-planned action before chain reserve
+  [worker:complexa_beam][gpu=2] launching → v7_r006_cand_v7r006_hyp_0006_00_001_af1b7530d1b98
+  [chain_refilter_reserve] left single free slot for fresh LLM-planned action before chain backfill
+
+[v7_controller] ===== round 7 (elapsed 0.35 h, busy=2/2, queued=1, refill=1) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=64 n_clusters=10 n_updated=60 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=7 strict_clusters=2 status=ok n_updated=7 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=15 near_clusters=4 status=ok n_updated=15 coverage=1.00 scope=binder_chain scope_fallback=0
+  state=low_evidence  planned=1  chain_reserved=0  queued_now=2
+  [controller_checkpoint] elapsed=0.371h SU=2 state=low_evidence
+  [controller_checkpoint] elapsed=0.387h SU=2 state=low_evidence
+  [controller_checkpoint] elapsed=0.404h SU=2 state=low_evidence
+  [gpu=3] complexa_fk_steering → 16 records (parsed=16; elapsed_gpu_h=0.17; delta_gpu_h=0.17; per-record=0.010)
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=80 n_clusters=13 n_updated=76 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=7 strict_clusters=2 status=ok n_updated=7 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=15 near_clusters=4 status=ok n_updated=15 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] left single free slot for fresh LLM-planned action before chain reserve
+  [worker:complexa_beam][gpu=3] launching → v7_r007_cand_v7r007_hyp_0007_00_001_a92db08c2022c
+  [chain_refilter_reserve] left single free slot for fresh LLM-planned action before chain backfill
+
+[v7_controller] ===== round 8 (elapsed 0.41 h, busy=2/2, queued=1, refill=1) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=80 n_clusters=13 n_updated=76 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=7 strict_clusters=2 status=ok n_updated=7 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=15 near_clusters=4 status=ok n_updated=15 coverage=1.00 scope=binder_chain scope_fallback=0
+  [candidate_filter] 2 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  state=low_evidence  planned=1  chain_reserved=0  queued_now=2
+  [controller_checkpoint] elapsed=0.423h SU=2 state=low_evidence
+  [controller_checkpoint] elapsed=0.440h SU=2 state=low_evidence
+  [controller_checkpoint] elapsed=0.457h SU=2 state=low_evidence
+  [controller_checkpoint] elapsed=0.473h SU=2 state=low_evidence
+  [controller_checkpoint] elapsed=0.490h SU=2 state=low_evidence
+  [controller_checkpoint] elapsed=0.507h SU=2 state=low_evidence
+  [gpu=2] complexa_beam → 16 records (parsed=16; elapsed_gpu_h=0.16; delta_gpu_h=0.16; per-record=0.010)
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=96 n_clusters=17 n_updated=92 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=11 strict_clusters=3 status=ok n_updated=11 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=22 near_clusters=6 status=ok n_updated=22 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] left single free slot for fresh LLM-planned action before chain reserve
+  [worker:proteinmpnn][gpu=2] parent=job_0_n_180_id_67_beam_orig3_bm2-s0to100br2-s100to200br0-s200to300br3-s300to400br1.pdb num_seq=16
+  [chain_refilter_reserve] left single free slot for fresh LLM-planned action before chain backfill
+
+[v7_controller] ===== round 9 (elapsed 0.51 h, busy=2/2, queued=1, refill=1) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=96 n_clusters=17 n_updated=92 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=11 strict_clusters=3 status=ok n_updated=11 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=22 near_clusters=6 status=ok n_updated=22 coverage=1.00 scope=binder_chain scope_fallback=0
+  [planner] last-tick critic flags surfaced: ['(c) complexa_fk_steering config matches a joint_fail recipe (recipe_hash=db644452c2ae8656, tick=5)']
+  [candidate_filter] 2 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  state=low_evidence  planned=1  chain_reserved=0  queued_now=2
+  [proteinmpnn] dropped 1 native + 0 threading-failed sequence(s); 16 redesign record(s) kept
+  [gpu=2] proteinmpnn_redesign → 16 records (parsed=16; elapsed_gpu_h=0.01; delta_gpu_h=0.01; per-record=0.001)
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=6b17cf747d379437 candidate=chain_v7r008_proteinmpnn_redesign_to_structure_refilter_001
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=43e412657682caae candidate=chain_v7r008_proteinmpnn_redesign_to_structure_refilter_002
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=81d9e31da44f5e08 candidate=chain_v7r008_proteinmpnn_redesign_to_structure_refilter_003
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=4fc64940883c1ca7 candidate=chain_v7r008_proteinmpnn_redesign_to_structure_refilter_004
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=a527e754ff99791c candidate=chain_v7r008_proteinmpnn_redesign_to_structure_refilter_005
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=69842023d5f223a7 candidate=chain_v7r008_proteinmpnn_redesign_to_structure_refilter_006
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=1f24561c9761dbe0 candidate=chain_v7r008_proteinmpnn_redesign_to_structure_refilter_007
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=22c985cc3018a622 candidate=chain_v7r008_proteinmpnn_redesign_to_structure_refilter_008
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=b551b99e8c4e7e58 candidate=chain_v7r008_proteinmpnn_redesign_to_structure_refilter_009
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=0514e236eb914fff candidate=chain_v7r008_proteinmpnn_redesign_to_structure_refilter_010
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=7e0ca7dacc66c8c5 candidate=chain_v7r008_proteinmpnn_redesign_to_structure_refilter_011
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=21e79595ca26922e candidate=chain_v7r008_proteinmpnn_redesign_to_structure_refilter_012
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=7130cc820abe4df1 candidate=chain_v7r008_proteinmpnn_redesign_to_structure_refilter_013
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=d6b4da0c12c4f770 candidate=chain_v7r008_proteinmpnn_redesign_to_structure_refilter_014
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=c8ac536f376abe05 candidate=chain_v7r008_proteinmpnn_redesign_to_structure_refilter_015
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=763a10854b37550e candidate=chain_v7r008_proteinmpnn_redesign_to_structure_refilter_016
+  [controller_checkpoint] elapsed=0.532h SU=3 state=low_evidence
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=96 n_clusters=17 n_updated=92 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=11 strict_clusters=3 status=ok n_updated=11 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=22 near_clusters=6 status=ok n_updated=22 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] single free slot allowed for pending diagnostic score conversion
+  [chain_refilter_predispatch] prioritized 1 chain refilter(s) ahead of stale pending work
+  [worker:af2_refilter][gpu=2] pdb=job_0_n_180_id_67_beam_orig3_bm2-s0to100br2-s100to200br0-s200to300br3-s300to400br1_seq016.pdb
+  [gpu=2] structure_refilter → 1 records (parsed=1; elapsed_gpu_h=0.01; delta_gpu_h=0.01; per-record=0.007)
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=97 n_clusters=17 n_updated=93 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=12 strict_clusters=4 status=ok n_updated=12 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=22 near_clusters=6 status=ok n_updated=22 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] single free slot allowed for pending diagnostic score conversion
+  [chain_refilter_predispatch] prioritized 1 chain refilter(s) ahead of stale pending work
+  [worker:af2_refilter][gpu=2] pdb=job_0_n_180_id_67_beam_orig3_bm2-s0to100br2-s100to200br0-s200to300br3-s300to400br1_seq011.pdb
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=97 n_clusters=17 n_updated=93 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=12 strict_clusters=4 status=ok n_updated=12 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=22 near_clusters=6 status=ok n_updated=22 coverage=1.00 scope=binder_chain scope_fallback=0
+  [controller_checkpoint] elapsed=0.549h SU=4 state=low_evidence
+  [gpu=2] structure_refilter → 1 records (parsed=1; elapsed_gpu_h=0.01; delta_gpu_h=0.01; per-record=0.007)
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=98 n_clusters=17 n_updated=94 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=13 strict_clusters=4 status=ok n_updated=13 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=22 near_clusters=6 status=ok n_updated=22 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] single free slot allowed for pending diagnostic score conversion
+  [chain_refilter_predispatch] prioritized 1 chain refilter(s) ahead of stale pending work
+  [worker:af2_refilter][gpu=2] pdb=job_0_n_180_id_67_beam_orig3_bm2-s0to100br2-s100to200br0-s200to300br3-s300to400br1_seq007.pdb
+  [gpu=3] complexa_beam → 16 records (parsed=16; elapsed_gpu_h=0.15; delta_gpu_h=0.15; per-record=0.009)
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=114 n_clusters=19 n_updated=110 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=13 strict_clusters=4 status=ok n_updated=13 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=30 near_clusters=7 status=ok n_updated=30 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] single free slot allowed for pending diagnostic score conversion
+  [worker:proteinmpnn][gpu=3] parent=job_0_n_180_id_67_beam_orig3_bm2-s0to100br2-s100to200br0-s200to300br3-s300to400br1.pdb num_seq=16
+  [chain_refilter_reserve] single refill slot allowed for pending diagnostic score conversion
+
+[v7_controller] ===== round 10 (elapsed 0.56 h, busy=2/2, queued=1, refill=1) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=114 n_clusters=19 n_updated=110 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=13 strict_clusters=4 status=ok n_updated=13 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=30 near_clusters=7 status=ok n_updated=30 coverage=1.00 scope=binder_chain scope_fallback=0
+  [planner] last-tick critic flags surfaced: ['(b) complexa_beam expected ~0.5h runtime but only 0.5h remain', '(b) complexa_fk_steering expected ~0.5h runtime but only 0.5h remain']
+  [candidate_filter] 1 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  [auto_chain] 13 pending chain candidate(s) handled by bounded reserve/backfill lane
+  state=productive_duplicate  planned=1  chain_reserved=0  queued_now=2
+  [gpu=2] structure_refilter → 1 records (parsed=1; elapsed_gpu_h=0.02; delta_gpu_h=0.02; per-record=0.018)
+  [proteinmpnn] dropped 1 native + 0 threading-failed sequence(s); 16 redesign record(s) kept
+  [gpu=3] proteinmpnn_redesign → 16 records (parsed=16; elapsed_gpu_h=0.01; delta_gpu_h=0.01; per-record=0.001)
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=ddd39074850f95b4 candidate=chain_v7r009_proteinmpnn_redesign_to_structure_refilter_017
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=9334176d08a3f67c candidate=chain_v7r009_proteinmpnn_redesign_to_structure_refilter_018
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=4bb7db647b10476f candidate=chain_v7r009_proteinmpnn_redesign_to_structure_refilter_019
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=c95fcc360083db20 candidate=chain_v7r009_proteinmpnn_redesign_to_structure_refilter_020
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=b9d3184283505635 candidate=chain_v7r009_proteinmpnn_redesign_to_structure_refilter_021
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=a8c8d2f7a223a3b5 candidate=chain_v7r009_proteinmpnn_redesign_to_structure_refilter_022
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=3c268351aab1a060 candidate=chain_v7r009_proteinmpnn_redesign_to_structure_refilter_023
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=8116ee430b5ab410 candidate=chain_v7r009_proteinmpnn_redesign_to_structure_refilter_024
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=229a37153f8f40a5 candidate=chain_v7r009_proteinmpnn_redesign_to_structure_refilter_025
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=efd57adc5e4e3ef9 candidate=chain_v7r009_proteinmpnn_redesign_to_structure_refilter_026
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=8e495654e75e79de candidate=chain_v7r009_proteinmpnn_redesign_to_structure_refilter_027
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=7beec0f7a328df29 candidate=chain_v7r009_proteinmpnn_redesign_to_structure_refilter_028
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=ddc3dde533627c61 candidate=chain_v7r009_proteinmpnn_redesign_to_structure_refilter_029
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=f38c770834c593b3 candidate=chain_v7r009_proteinmpnn_redesign_to_structure_refilter_030
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=07b032a9fdd5aad1 candidate=chain_v7r009_proteinmpnn_redesign_to_structure_refilter_031
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=0295ff5d12121ba8 candidate=chain_v7r009_proteinmpnn_redesign_to_structure_refilter_032
+  [controller_checkpoint] elapsed=0.574h SU=4 state=productive_duplicate
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=115 n_clusters=19 n_updated=111 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=14 strict_clusters=4 status=ok n_updated=14 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=30 near_clusters=7 status=ok n_updated=30 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] prioritized 1 chain refilter(s) ahead of stale pending work
+  [worker:af2_refilter][gpu=2] pdb=job_0_n_180_id_67_beam_orig3_bm2-s0to100br2-s100to200br0-s200to300br3-s300to400br1_seq003.pdb
+  [worker:proteinmpnn][gpu=3] parent=job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1.pdb num_seq=16
+  [chain_refilter_reserve] single refill slot allowed for pending diagnostic score conversion
+
+[v7_controller] ===== round 11 (elapsed 0.57 h, busy=2/2, queued=1, refill=1) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=115 n_clusters=19 n_updated=111 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=14 strict_clusters=4 status=ok n_updated=14 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=30 near_clusters=7 status=ok n_updated=30 coverage=1.00 scope=binder_chain scope_fallback=0
+  [lifecycle] retired 1 TTL-expired descendant-free hypothesis card(s) before Planner
+  [planner] last-tick critic flags surfaced: ['(b) complexa_beam expected ~0.5h runtime but only 0.4h remain']
+  [candidate_filter] 1 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  [auto_chain] 28 pending chain candidate(s) handled by bounded reserve/backfill lane
+  state=productive_duplicate  planned=1  chain_reserved=0  queued_now=2
+  [gpu=2] structure_refilter → 1 records (parsed=1; elapsed_gpu_h=0.01; delta_gpu_h=0.01; per-record=0.010)
+  [proteinmpnn] dropped 1 native + 0 threading-failed sequence(s); 16 redesign record(s) kept
+  [gpu=3] proteinmpnn_redesign → 16 records (parsed=16; elapsed_gpu_h=0.01; delta_gpu_h=0.01; per-record=0.001)
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=fdd0e1ca005ab7a7 candidate=chain_v7r010_proteinmpnn_redesign_to_structure_refilter_033
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=71075cad2a597364 candidate=chain_v7r010_proteinmpnn_redesign_to_structure_refilter_034
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=39d4392eb87194db candidate=chain_v7r010_proteinmpnn_redesign_to_structure_refilter_035
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=13e6bfdde88b24fa candidate=chain_v7r010_proteinmpnn_redesign_to_structure_refilter_036
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=83c7b3d3a383046e candidate=chain_v7r010_proteinmpnn_redesign_to_structure_refilter_037
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=bc818ef18a736c6a candidate=chain_v7r010_proteinmpnn_redesign_to_structure_refilter_038
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=c386a4f39086a1da candidate=chain_v7r010_proteinmpnn_redesign_to_structure_refilter_039
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=be429b521a435bec candidate=chain_v7r010_proteinmpnn_redesign_to_structure_refilter_040
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=4ac7dbf75ee91184 candidate=chain_v7r010_proteinmpnn_redesign_to_structure_refilter_041
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=c2204f0a7646d6e4 candidate=chain_v7r010_proteinmpnn_redesign_to_structure_refilter_042
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=520c7e9c43c79532 candidate=chain_v7r010_proteinmpnn_redesign_to_structure_refilter_043
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=41f7ee1c2683f0f5 candidate=chain_v7r010_proteinmpnn_redesign_to_structure_refilter_044
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=88c9d0aae236b2e6 candidate=chain_v7r010_proteinmpnn_redesign_to_structure_refilter_045
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=fcfc3b5a0585e1d2 candidate=chain_v7r010_proteinmpnn_redesign_to_structure_refilter_046
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=4ad3156aa94587e1 candidate=chain_v7r010_proteinmpnn_redesign_to_structure_refilter_047
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=247631a5dec04ff5 candidate=chain_v7r010_proteinmpnn_redesign_to_structure_refilter_048
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=116 n_clusters=19 n_updated=112 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=14 strict_clusters=4 status=ok n_updated=14 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=30 near_clusters=7 status=ok n_updated=30 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] prioritized 1 chain refilter(s) ahead of stale pending work
+  [worker:af2_refilter][gpu=2] pdb=job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq002.pdb
+  [worker:proteinmpnn][gpu=3] parent=job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1.pdb num_seq=16
+  [chain_refilter_reserve] single refill slot allowed for pending diagnostic score conversion
+
+[v7_controller] ===== round 12 (elapsed 0.59 h, busy=2/2, queued=1, refill=1) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=116 n_clusters=19 n_updated=112 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=14 strict_clusters=4 status=ok n_updated=14 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=30 near_clusters=7 status=ok n_updated=30 coverage=1.00 scope=binder_chain scope_fallback=0
+  [planner] last-tick critic flags surfaced: ['(b) complexa_beam expected ~0.5h runtime but only 0.4h remain']
+  [candidate_filter] 1 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  [auto_chain] 43 pending chain candidate(s) handled by bounded reserve/backfill lane
+  state=productive_duplicate  planned=1  chain_reserved=0  queued_now=2
+  [gpu=2] structure_refilter → 1 records (parsed=1; elapsed_gpu_h=0.01; delta_gpu_h=0.01; per-record=0.010)
+  [proteinmpnn] dropped 1 native + 0 threading-failed sequence(s); 16 redesign record(s) kept
+  [gpu=3] proteinmpnn_redesign → 16 records (parsed=16; elapsed_gpu_h=0.01; delta_gpu_h=0.01; per-record=0.001)
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=0df7784363fb922e candidate=chain_v7r011_proteinmpnn_redesign_to_structure_refilter_049
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=ebff23b3e9b96d3e candidate=chain_v7r011_proteinmpnn_redesign_to_structure_refilter_050
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=9535c9d6232274fe candidate=chain_v7r011_proteinmpnn_redesign_to_structure_refilter_051
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=71f581c700477722 candidate=chain_v7r011_proteinmpnn_redesign_to_structure_refilter_052
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=67a5ba61d48ff32c candidate=chain_v7r011_proteinmpnn_redesign_to_structure_refilter_053
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=1884df29ac5175bb candidate=chain_v7r011_proteinmpnn_redesign_to_structure_refilter_054
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=9f126a01df27aa0c candidate=chain_v7r011_proteinmpnn_redesign_to_structure_refilter_055
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=f417cc15467c7413 candidate=chain_v7r011_proteinmpnn_redesign_to_structure_refilter_056
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=daef1fd76a129573 candidate=chain_v7r011_proteinmpnn_redesign_to_structure_refilter_057
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=95c19c07938d9dea candidate=chain_v7r011_proteinmpnn_redesign_to_structure_refilter_058
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=da9a3f032a83aab8 candidate=chain_v7r011_proteinmpnn_redesign_to_structure_refilter_059
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=d936942370c74fac candidate=chain_v7r011_proteinmpnn_redesign_to_structure_refilter_060
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=da6beed2c6992be5 candidate=chain_v7r011_proteinmpnn_redesign_to_structure_refilter_061
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=96a98060c03beeb1 candidate=chain_v7r011_proteinmpnn_redesign_to_structure_refilter_062
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=40cc89dd1b767a75 candidate=chain_v7r011_proteinmpnn_redesign_to_structure_refilter_063
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=508990064837da8f candidate=chain_v7r011_proteinmpnn_redesign_to_structure_refilter_064
+  [controller_checkpoint] elapsed=0.601h SU=4 state=productive_duplicate
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=117 n_clusters=19 n_updated=113 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=14 strict_clusters=4 status=ok n_updated=14 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=30 near_clusters=7 status=ok n_updated=30 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] prioritized 1 chain refilter(s) ahead of stale pending work
+  [worker:af2_refilter][gpu=2] pdb=job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq004.pdb
+  [worker:proteinmpnn][gpu=3] parent=job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1.pdb num_seq=16
+  [chain_refilter_reserve] single refill slot allowed for pending diagnostic score conversion
+
+[v7_controller] ===== round 13 (elapsed 0.60 h, busy=2/2, queued=1, refill=1) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=117 n_clusters=19 n_updated=113 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=14 strict_clusters=4 status=ok n_updated=14 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=30 near_clusters=7 status=ok n_updated=30 coverage=1.00 scope=binder_chain scope_fallback=0
+  [lifecycle] retired 1 TTL-expired descendant-free hypothesis card(s) before Planner
+  [planner] last-tick critic flags surfaced: ['(b) complexa_beam expected ~0.5h runtime but only 0.4h remain']
+  [candidate_filter] 4 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  [auto_chain] 58 pending chain candidate(s) handled by bounded reserve/backfill lane
+  state=stalled  planned=1  chain_reserved=0  queued_now=2
+  [gpu=2] structure_refilter → 1 records (parsed=1; elapsed_gpu_h=0.01; delta_gpu_h=0.01; per-record=0.010)
+  [proteinmpnn] dropped 1 native + 0 threading-failed sequence(s); 16 redesign record(s) kept
+  [gpu=3] proteinmpnn_redesign → 16 records (parsed=16; elapsed_gpu_h=0.01; delta_gpu_h=0.01; per-record=0.001)
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=507769679889b996 candidate=chain_v7r012_proteinmpnn_redesign_to_structure_refilter_065
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=0e7d2a313fd92f49 candidate=chain_v7r012_proteinmpnn_redesign_to_structure_refilter_066
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=baf30c25829c1ece candidate=chain_v7r012_proteinmpnn_redesign_to_structure_refilter_067
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=7296cfb5c66d8826 candidate=chain_v7r012_proteinmpnn_redesign_to_structure_refilter_068
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=ee75e549ed9c597c candidate=chain_v7r012_proteinmpnn_redesign_to_structure_refilter_069
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=7561a693ec81e057 candidate=chain_v7r012_proteinmpnn_redesign_to_structure_refilter_070
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=0ff18faecdab197e candidate=chain_v7r012_proteinmpnn_redesign_to_structure_refilter_071
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=a45be9dfd85a6620 candidate=chain_v7r012_proteinmpnn_redesign_to_structure_refilter_072
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=cdc935b235bd8f3c candidate=chain_v7r012_proteinmpnn_redesign_to_structure_refilter_073
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=7e1913a48727b490 candidate=chain_v7r012_proteinmpnn_redesign_to_structure_refilter_074
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=a56b05a613dd002c candidate=chain_v7r012_proteinmpnn_redesign_to_structure_refilter_075
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=00c1046a955c1060 candidate=chain_v7r012_proteinmpnn_redesign_to_structure_refilter_076
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=eb8d8404b911ce5d candidate=chain_v7r012_proteinmpnn_redesign_to_structure_refilter_077
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=604d220fdeaaf6c4 candidate=chain_v7r012_proteinmpnn_redesign_to_structure_refilter_078
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=e8bf96c22170c223 candidate=chain_v7r012_proteinmpnn_redesign_to_structure_refilter_079
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=77458b311001e8ac candidate=chain_v7r012_proteinmpnn_redesign_to_structure_refilter_080
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=118 n_clusters=19 n_updated=114 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=14 strict_clusters=4 status=ok n_updated=14 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=30 near_clusters=7 status=ok n_updated=30 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] prioritized 1 chain refilter(s) ahead of stale pending work
+  [worker:af2_refilter][gpu=2] pdb=job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq010.pdb
+  [worker:proteinmpnn][gpu=3] parent=job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1.pdb num_seq=16
+  [chain_refilter_reserve] single refill slot allowed for pending diagnostic score conversion
+
+[v7_controller] ===== round 14 (elapsed 0.61 h, busy=2/2, queued=1, refill=1) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=118 n_clusters=19 n_updated=114 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=14 strict_clusters=4 status=ok n_updated=14 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=30 near_clusters=7 status=ok n_updated=30 coverage=1.00 scope=binder_chain scope_fallback=0
+  [lifecycle] retired 2 TTL-expired descendant-free hypothesis card(s) before Planner
+  [planner] last-tick critic flags surfaced: ['(b) complexa_beam expected ~0.5h runtime but only 0.4h remain']
+  [candidate_filter] 4 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  [auto_chain] 73 pending chain candidate(s) handled by bounded reserve/backfill lane
+  state=stalled  planned=1  chain_reserved=0  queued_now=2
+  [gpu=2] structure_refilter → 1 records (parsed=1; elapsed_gpu_h=0.01; delta_gpu_h=0.01; per-record=0.011)
+  [proteinmpnn] dropped 1 native + 0 threading-failed sequence(s); 16 redesign record(s) kept
+  [gpu=3] proteinmpnn_redesign → 16 records (parsed=16; elapsed_gpu_h=0.01; delta_gpu_h=0.01; per-record=0.001)
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=b9b84747215e3f9a candidate=chain_v7r013_proteinmpnn_redesign_to_structure_refilter_081
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=57ff4f55e7b53952 candidate=chain_v7r013_proteinmpnn_redesign_to_structure_refilter_082
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=677d59e78c9597a4 candidate=chain_v7r013_proteinmpnn_redesign_to_structure_refilter_083
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=e1be7d9f8517b39f candidate=chain_v7r013_proteinmpnn_redesign_to_structure_refilter_084
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=b25c04878a0f821e candidate=chain_v7r013_proteinmpnn_redesign_to_structure_refilter_085
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=ae9005984c03be6c candidate=chain_v7r013_proteinmpnn_redesign_to_structure_refilter_086
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=9434dcee6ad18251 candidate=chain_v7r013_proteinmpnn_redesign_to_structure_refilter_087
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=820022919c394bb3 candidate=chain_v7r013_proteinmpnn_redesign_to_structure_refilter_088
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=aeee99146a5fefc2 candidate=chain_v7r013_proteinmpnn_redesign_to_structure_refilter_089
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=1d717f4ad4b14661 candidate=chain_v7r013_proteinmpnn_redesign_to_structure_refilter_090
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=ddc9ee1a84fea846 candidate=chain_v7r013_proteinmpnn_redesign_to_structure_refilter_091
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=0ec87cdf28764d30 candidate=chain_v7r013_proteinmpnn_redesign_to_structure_refilter_092
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=047d822196ba623e candidate=chain_v7r013_proteinmpnn_redesign_to_structure_refilter_093
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=4b476f3d391cbaea candidate=chain_v7r013_proteinmpnn_redesign_to_structure_refilter_094
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=d4c2dd1d49718b9c candidate=chain_v7r013_proteinmpnn_redesign_to_structure_refilter_095
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=c4b6b17dc69360f2 candidate=chain_v7r013_proteinmpnn_redesign_to_structure_refilter_096
+  [controller_checkpoint] elapsed=0.627h SU=4 state=stalled
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=119 n_clusters=19 n_updated=115 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=14 strict_clusters=4 status=ok n_updated=14 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=30 near_clusters=7 status=ok n_updated=30 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] prioritized 1 chain refilter(s) ahead of stale pending work
+  [worker:af2_refilter][gpu=2] pdb=job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq014.pdb
+  [worker:proteinmpnn][gpu=3] parent=job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1.pdb num_seq=16
+  [chain_refilter_reserve] single refill slot allowed for pending diagnostic score conversion
+
+[v7_controller] ===== round 15 (elapsed 0.63 h, busy=2/2, queued=1, refill=1) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=119 n_clusters=19 n_updated=115 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=14 strict_clusters=4 status=ok n_updated=14 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=30 near_clusters=7 status=ok n_updated=30 coverage=1.00 scope=binder_chain scope_fallback=0
+  [lifecycle] retired 2 TTL-expired descendant-free hypothesis card(s) before Planner
+  [planner] last-tick critic flags surfaced: ['(b) complexa_beam expected ~0.5h runtime but only 0.4h remain']
+  [candidate_filter] 4 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  [auto_chain] 88 pending chain candidate(s) handled by bounded reserve/backfill lane
+  state=stalled  planned=1  chain_reserved=0  queued_now=2
+  [gpu=2] structure_refilter → 1 records (parsed=1; elapsed_gpu_h=0.01; delta_gpu_h=0.01; per-record=0.010)
+  [proteinmpnn] dropped 1 native + 0 threading-failed sequence(s); 16 redesign record(s) kept
+  [gpu=3] proteinmpnn_redesign → 16 records (parsed=16; elapsed_gpu_h=0.01; delta_gpu_h=0.01; per-record=0.001)
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=83f975ac394a70be candidate=chain_v7r014_proteinmpnn_redesign_to_structure_refilter_097
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=87ea5447bfbc900d candidate=chain_v7r014_proteinmpnn_redesign_to_structure_refilter_098
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=74ad3dcce7c30ea2 candidate=chain_v7r014_proteinmpnn_redesign_to_structure_refilter_099
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=7bf8f5a431bf149c candidate=chain_v7r014_proteinmpnn_redesign_to_structure_refilter_100
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=d6fe8737d146a75d candidate=chain_v7r014_proteinmpnn_redesign_to_structure_refilter_101
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=6203910d30938ee8 candidate=chain_v7r014_proteinmpnn_redesign_to_structure_refilter_102
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=9f70a538e9fe8dd5 candidate=chain_v7r014_proteinmpnn_redesign_to_structure_refilter_103
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=53c96ca530249766 candidate=chain_v7r014_proteinmpnn_redesign_to_structure_refilter_104
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=98b052b4485060d3 candidate=chain_v7r014_proteinmpnn_redesign_to_structure_refilter_105
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=5b383a259215f519 candidate=chain_v7r014_proteinmpnn_redesign_to_structure_refilter_106
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=38215f60c234b746 candidate=chain_v7r014_proteinmpnn_redesign_to_structure_refilter_107
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=1dfda2cb6934de96 candidate=chain_v7r014_proteinmpnn_redesign_to_structure_refilter_108
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=d2d193fab2099ed7 candidate=chain_v7r014_proteinmpnn_redesign_to_structure_refilter_109
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=1c26b44701c3ebef candidate=chain_v7r014_proteinmpnn_redesign_to_structure_refilter_110
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=53e17334e9f3d1b8 candidate=chain_v7r014_proteinmpnn_redesign_to_structure_refilter_111
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=bc463a93204e8959 candidate=chain_v7r014_proteinmpnn_redesign_to_structure_refilter_112
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=120 n_clusters=19 n_updated=116 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=14 strict_clusters=4 status=ok n_updated=14 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=30 near_clusters=7 status=ok n_updated=30 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] prioritized 1 chain refilter(s) ahead of stale pending work
+  [worker:af2_refilter][gpu=2] pdb=job_0_n_180_id_67_beam_orig3_bm2-s0to100br2-s100to200br0-s200to300br3-s300to400br1_seq014.pdb
+  [worker:proteinmpnn][gpu=3] parent=job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1.pdb num_seq=16
+  [chain_refilter_reserve] single refill slot allowed for pending diagnostic score conversion
+
+[v7_controller] ===== round 16 (elapsed 0.64 h, busy=2/2, queued=1, refill=1) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=120 n_clusters=19 n_updated=116 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=14 strict_clusters=4 status=ok n_updated=14 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=30 near_clusters=7 status=ok n_updated=30 coverage=1.00 scope=binder_chain scope_fallback=0
+  [lifecycle] retired 2 TTL-expired descendant-free hypothesis card(s) before Planner
+  [planner] last-tick critic flags surfaced: ['(b) complexa_beam expected ~0.5h runtime but only 0.4h remain']
+  [candidate_filter] 3 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  [auto_chain] 103 pending chain candidate(s) handled by bounded reserve/backfill lane
+  state=stalled  planned=1  chain_reserved=0  queued_now=2
+  [gpu=2] structure_refilter → 1 records (parsed=1; elapsed_gpu_h=0.01; delta_gpu_h=0.01; per-record=0.009)
+  [proteinmpnn] dropped 1 native + 0 threading-failed sequence(s); 16 redesign record(s) kept
+  [gpu=3] proteinmpnn_redesign → 16 records (parsed=16; elapsed_gpu_h=0.01; delta_gpu_h=0.01; per-record=0.001)
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=6fcaf1a828e7766b candidate=chain_v7r015_proteinmpnn_redesign_to_structure_refilter_113
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=76fbb570a22d5406 candidate=chain_v7r015_proteinmpnn_redesign_to_structure_refilter_114
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=e480db01da293872 candidate=chain_v7r015_proteinmpnn_redesign_to_structure_refilter_115
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=cf02b83a703e4d96 candidate=chain_v7r015_proteinmpnn_redesign_to_structure_refilter_116
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=1db997daa109de6b candidate=chain_v7r015_proteinmpnn_redesign_to_structure_refilter_117
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=1f780ac35c871a89 candidate=chain_v7r015_proteinmpnn_redesign_to_structure_refilter_118
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=3f2266ccba1b7ad6 candidate=chain_v7r015_proteinmpnn_redesign_to_structure_refilter_119
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=d77f753b9e56a6f9 candidate=chain_v7r015_proteinmpnn_redesign_to_structure_refilter_120
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=a4b6aad7f882c671 candidate=chain_v7r015_proteinmpnn_redesign_to_structure_refilter_121
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=e6288e4ce782497a candidate=chain_v7r015_proteinmpnn_redesign_to_structure_refilter_122
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=27f84a6d70c6ad92 candidate=chain_v7r015_proteinmpnn_redesign_to_structure_refilter_123
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=70e2ae56eb0f60f1 candidate=chain_v7r015_proteinmpnn_redesign_to_structure_refilter_124
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=aaa6125a621a8a4a candidate=chain_v7r015_proteinmpnn_redesign_to_structure_refilter_125
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=e2621c30cc8ecf6e candidate=chain_v7r015_proteinmpnn_redesign_to_structure_refilter_126
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=0f1de6643c9b4e11 candidate=chain_v7r015_proteinmpnn_redesign_to_structure_refilter_127
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=612718317ffe65d4 candidate=chain_v7r015_proteinmpnn_redesign_to_structure_refilter_128
+  [controller_checkpoint] elapsed=0.651h SU=4 state=stalled
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=121 n_clusters=19 n_updated=117 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=15 strict_clusters=4 status=ok n_updated=15 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=30 near_clusters=7 status=ok n_updated=30 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] prioritized 1 chain refilter(s) ahead of stale pending work
+  [worker:af2_refilter][gpu=2] pdb=job_0_n_180_id_67_beam_orig3_bm2-s0to100br2-s100to200br0-s200to300br3-s300to400br1_seq009.pdb
+  [worker:proteinmpnn][gpu=3] parent=job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1.pdb num_seq=16
+  [chain_refilter_reserve] single refill slot allowed for pending diagnostic score conversion
+
+[v7_controller] ===== round 17 (elapsed 0.65 h, busy=2/2, queued=1, refill=1) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=121 n_clusters=19 n_updated=117 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=15 strict_clusters=4 status=ok n_updated=15 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=30 near_clusters=7 status=ok n_updated=30 coverage=1.00 scope=binder_chain scope_fallback=0
+  [lifecycle] retired 2 TTL-expired descendant-free hypothesis card(s) before Planner
+  [candidate_filter] 4 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  [auto_chain] 118 pending chain candidate(s) handled by bounded reserve/backfill lane
+  state=stalled  planned=1  chain_reserved=0  queued_now=2
+  [gpu=2] structure_refilter → 1 records (parsed=1; elapsed_gpu_h=0.01; delta_gpu_h=0.01; per-record=0.011)
+  [proteinmpnn] dropped 1 native + 0 threading-failed sequence(s); 16 redesign record(s) kept
+  [gpu=3] proteinmpnn_redesign → 16 records (parsed=16; elapsed_gpu_h=0.01; delta_gpu_h=0.01; per-record=0.001)
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=a37cd22693607715 candidate=chain_v7r016_proteinmpnn_redesign_to_structure_refilter_129
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=3a3e9360c1fd1a87 candidate=chain_v7r016_proteinmpnn_redesign_to_structure_refilter_130
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=c84ec7b18f856939 candidate=chain_v7r016_proteinmpnn_redesign_to_structure_refilter_131
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=dd60613499df795a candidate=chain_v7r016_proteinmpnn_redesign_to_structure_refilter_132
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=08bfd64955744596 candidate=chain_v7r016_proteinmpnn_redesign_to_structure_refilter_133
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=724b5380cacf1e5a candidate=chain_v7r016_proteinmpnn_redesign_to_structure_refilter_134
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=12bcb241ca910be7 candidate=chain_v7r016_proteinmpnn_redesign_to_structure_refilter_135
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=3b89faf74c379223 candidate=chain_v7r016_proteinmpnn_redesign_to_structure_refilter_136
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=be93a8bb3cfbb2f1 candidate=chain_v7r016_proteinmpnn_redesign_to_structure_refilter_137
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=66f3fc50f9d41fef candidate=chain_v7r016_proteinmpnn_redesign_to_structure_refilter_138
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=df15dcec36a01b8d candidate=chain_v7r016_proteinmpnn_redesign_to_structure_refilter_139
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=299fa2e1f70dacb7 candidate=chain_v7r016_proteinmpnn_redesign_to_structure_refilter_140
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=002abd2b044e12fa candidate=chain_v7r016_proteinmpnn_redesign_to_structure_refilter_141
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=97fdf028c681752d candidate=chain_v7r016_proteinmpnn_redesign_to_structure_refilter_142
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=f700336495954507 candidate=chain_v7r016_proteinmpnn_redesign_to_structure_refilter_143
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=ab310a0cdb306022 candidate=chain_v7r016_proteinmpnn_redesign_to_structure_refilter_144
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=122 n_clusters=19 n_updated=118 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=16 strict_clusters=4 status=ok n_updated=16 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=30 near_clusters=7 status=ok n_updated=30 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] prioritized 1 chain refilter(s) ahead of stale pending work
+  [worker:af2_refilter][gpu=2] pdb=job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq012.pdb
+  [worker:proteinmpnn][gpu=3] parent=job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1.pdb num_seq=16
+  [chain_refilter_reserve] single refill slot allowed for pending diagnostic score conversion
+
+[v7_controller] ===== round 18 (elapsed 0.67 h, busy=2/2, queued=1, refill=1) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=122 n_clusters=19 n_updated=118 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=16 strict_clusters=4 status=ok n_updated=16 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=30 near_clusters=7 status=ok n_updated=30 coverage=1.00 scope=binder_chain scope_fallback=0
+  [lifecycle] retired 2 TTL-expired descendant-free hypothesis card(s) before Planner
+  [planner] last-tick critic flags surfaced: ['(b) complexa_fk_steering expected ~0.5h runtime but only 0.3h remain', '(c) complexa_fk_steering config matches a joint_fail recipe (recipe_hash=db644452c2ae8656, tick=5)']
+  [candidate_filter] 3 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  [auto_chain] 133 pending chain candidate(s) handled by bounded reserve/backfill lane
+  state=stalled  planned=1  chain_reserved=0  queued_now=2
+  [gpu=2] structure_refilter → 1 records (parsed=1; elapsed_gpu_h=0.01; delta_gpu_h=0.01; per-record=0.014)
+  [proteinmpnn] dropped 1 native + 0 threading-failed sequence(s); 16 redesign record(s) kept
+  [gpu=3] proteinmpnn_redesign → 16 records (parsed=16; elapsed_gpu_h=0.01; delta_gpu_h=0.01; per-record=0.001)
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=7152a831cdaa36a6 candidate=chain_v7r017_proteinmpnn_redesign_to_structure_refilter_145
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=acfefca305f4ef01 candidate=chain_v7r017_proteinmpnn_redesign_to_structure_refilter_146
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=efabd105d61b999c candidate=chain_v7r017_proteinmpnn_redesign_to_structure_refilter_147
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=04f6b13c72ea6d0c candidate=chain_v7r017_proteinmpnn_redesign_to_structure_refilter_148
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=2ae13551a7d9bab2 candidate=chain_v7r017_proteinmpnn_redesign_to_structure_refilter_149
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=ac819e55dd504100 candidate=chain_v7r017_proteinmpnn_redesign_to_structure_refilter_150
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=c665df6674fd6fe2 candidate=chain_v7r017_proteinmpnn_redesign_to_structure_refilter_151
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=34880bb1adaa1ae6 candidate=chain_v7r017_proteinmpnn_redesign_to_structure_refilter_152
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=8f665b88234b1b1d candidate=chain_v7r017_proteinmpnn_redesign_to_structure_refilter_153
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=95e79cea8721d2d0 candidate=chain_v7r017_proteinmpnn_redesign_to_structure_refilter_154
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=b3e13d8a8413852c candidate=chain_v7r017_proteinmpnn_redesign_to_structure_refilter_155
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=e430b73cdbc711b4 candidate=chain_v7r017_proteinmpnn_redesign_to_structure_refilter_156
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=d4e3aeed8acaa58b candidate=chain_v7r017_proteinmpnn_redesign_to_structure_refilter_157
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=611f6b0e7ed622cd candidate=chain_v7r017_proteinmpnn_redesign_to_structure_refilter_158
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=b62133d50c5f329c candidate=chain_v7r017_proteinmpnn_redesign_to_structure_refilter_159
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=ba6f8611333fabd4 candidate=chain_v7r017_proteinmpnn_redesign_to_structure_refilter_160
+  [controller_checkpoint] elapsed=0.685h SU=4 state=stalled
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=123 n_clusters=19 n_updated=119 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=16 strict_clusters=4 status=ok n_updated=16 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=30 near_clusters=7 status=ok n_updated=30 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] prioritized 1 chain refilter(s) ahead of stale pending work
+  [worker:af2_refilter][gpu=2] pdb=job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq003.pdb
+  [worker:proteinmpnn][gpu=3] parent=job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1.pdb num_seq=16
+  [chain_refilter_reserve] single refill slot allowed for pending diagnostic score conversion
+
+[v7_controller] ===== round 19 (elapsed 0.68 h, busy=2/2, queued=1, refill=1) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=123 n_clusters=19 n_updated=119 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=16 strict_clusters=4 status=ok n_updated=16 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=30 near_clusters=7 status=ok n_updated=30 coverage=1.00 scope=binder_chain scope_fallback=0
+  [lifecycle] retired 2 TTL-expired descendant-free hypothesis card(s) before Planner
+  [candidate_filter] 3 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  [auto_chain] 148 pending chain candidate(s) handled by bounded reserve/backfill lane
+  state=stalled  planned=1  chain_reserved=0  queued_now=2
+  [gpu=2] structure_refilter → 1 records (parsed=1; elapsed_gpu_h=0.01; delta_gpu_h=0.01; per-record=0.013)
+  [proteinmpnn] dropped 1 native + 0 threading-failed sequence(s); 16 redesign record(s) kept
+  [gpu=3] proteinmpnn_redesign → 16 records (parsed=16; elapsed_gpu_h=0.01; delta_gpu_h=0.01; per-record=0.001)
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=76aefba503d33605 candidate=chain_v7r018_proteinmpnn_redesign_to_structure_refilter_161
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=51de103cc9b625a3 candidate=chain_v7r018_proteinmpnn_redesign_to_structure_refilter_162
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=21bb4d0f7ec60ae5 candidate=chain_v7r018_proteinmpnn_redesign_to_structure_refilter_163
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=bc1027b62968bfea candidate=chain_v7r018_proteinmpnn_redesign_to_structure_refilter_164
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=fb296c2a2d3924ae candidate=chain_v7r018_proteinmpnn_redesign_to_structure_refilter_165
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=1da163be9ca2cc3f candidate=chain_v7r018_proteinmpnn_redesign_to_structure_refilter_166
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=8a6750954f6aa49d candidate=chain_v7r018_proteinmpnn_redesign_to_structure_refilter_167
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=1116f954f62e7f80 candidate=chain_v7r018_proteinmpnn_redesign_to_structure_refilter_168
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=4c59af7f1c7c62f7 candidate=chain_v7r018_proteinmpnn_redesign_to_structure_refilter_169
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=0992add56744176c candidate=chain_v7r018_proteinmpnn_redesign_to_structure_refilter_170
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=83888ed7ec441c7e candidate=chain_v7r018_proteinmpnn_redesign_to_structure_refilter_171
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=3056a3f4b8310270 candidate=chain_v7r018_proteinmpnn_redesign_to_structure_refilter_172
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=4f766ec35324e1c3 candidate=chain_v7r018_proteinmpnn_redesign_to_structure_refilter_173
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=1f4586af9875aba1 candidate=chain_v7r018_proteinmpnn_redesign_to_structure_refilter_174
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=de48ebed9adab00b candidate=chain_v7r018_proteinmpnn_redesign_to_structure_refilter_175
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=841b2038f019f730 candidate=chain_v7r018_proteinmpnn_redesign_to_structure_refilter_176
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=124 n_clusters=19 n_updated=120 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=16 strict_clusters=4 status=ok n_updated=16 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=30 near_clusters=7 status=ok n_updated=30 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] prioritized 1 chain refilter(s) ahead of stale pending work
+  [worker:af2_refilter][gpu=2] pdb=job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq014.pdb
+  [worker:proteinmpnn][gpu=3] parent=job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1.pdb num_seq=16
+  [chain_refilter_reserve] single refill slot allowed for pending diagnostic score conversion
+
+[v7_controller] ===== round 20 (elapsed 0.70 h, busy=2/2, queued=1, refill=1) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=124 n_clusters=19 n_updated=120 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=16 strict_clusters=4 status=ok n_updated=16 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=30 near_clusters=7 status=ok n_updated=30 coverage=1.00 scope=binder_chain scope_fallback=0
+  [lifecycle] retired 1 TTL-expired descendant-free hypothesis card(s) before Planner
+  [candidate_filter] 4 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  [auto_chain] 163 pending chain candidate(s) handled by bounded reserve/backfill lane
+  state=stalled  planned=1  chain_reserved=0  queued_now=2
+  [gpu=2] structure_refilter → 1 records (parsed=1; elapsed_gpu_h=0.01; delta_gpu_h=0.01; per-record=0.011)
+  [proteinmpnn] dropped 1 native + 0 threading-failed sequence(s); 16 redesign record(s) kept
+  [gpu=3] proteinmpnn_redesign → 16 records (parsed=16; elapsed_gpu_h=0.01; delta_gpu_h=0.01; per-record=0.001)
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=0bef674fdd112bea candidate=chain_v7r019_proteinmpnn_redesign_to_structure_refilter_177
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=f31402339366663f candidate=chain_v7r019_proteinmpnn_redesign_to_structure_refilter_178
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=800ccb71eee3f20d candidate=chain_v7r019_proteinmpnn_redesign_to_structure_refilter_179
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=6807fc4bd16b2065 candidate=chain_v7r019_proteinmpnn_redesign_to_structure_refilter_180
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=850b79a2712f8bed candidate=chain_v7r019_proteinmpnn_redesign_to_structure_refilter_181
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=794cd77c8fa77fca candidate=chain_v7r019_proteinmpnn_redesign_to_structure_refilter_182
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=8978e0c0f293eff8 candidate=chain_v7r019_proteinmpnn_redesign_to_structure_refilter_183
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=af94ff3635d32f59 candidate=chain_v7r019_proteinmpnn_redesign_to_structure_refilter_184
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=0729cd3c5b1c65ed candidate=chain_v7r019_proteinmpnn_redesign_to_structure_refilter_185
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=7b953527e27c80c7 candidate=chain_v7r019_proteinmpnn_redesign_to_structure_refilter_186
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=195d6d8a3a8167ee candidate=chain_v7r019_proteinmpnn_redesign_to_structure_refilter_187
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=75c6eaaa53aa7ed5 candidate=chain_v7r019_proteinmpnn_redesign_to_structure_refilter_188
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=01b2334f30ecbfbb candidate=chain_v7r019_proteinmpnn_redesign_to_structure_refilter_189
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=50d720f273f2ac0e candidate=chain_v7r019_proteinmpnn_redesign_to_structure_refilter_190
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=806ff4a77a7ec491 candidate=chain_v7r019_proteinmpnn_redesign_to_structure_refilter_191
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=18c332ae4b9ec042 candidate=chain_v7r019_proteinmpnn_redesign_to_structure_refilter_192
+  [controller_checkpoint] elapsed=0.714h SU=4 state=stalled
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=125 n_clusters=19 n_updated=121 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=16 strict_clusters=4 status=ok n_updated=16 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=30 near_clusters=7 status=ok n_updated=30 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] prioritized 1 chain refilter(s) ahead of stale pending work
+  [worker:af2_refilter][gpu=2] pdb=job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq005.pdb
+  [worker:proteinmpnn][gpu=3] parent=job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1.pdb num_seq=16
+  [chain_refilter_reserve] single refill slot allowed for pending diagnostic score conversion
+
+[v7_controller] ===== round 21 (elapsed 0.71 h, busy=2/2, queued=1, refill=1) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=125 n_clusters=19 n_updated=121 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=16 strict_clusters=4 status=ok n_updated=16 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=30 near_clusters=7 status=ok n_updated=30 coverage=1.00 scope=binder_chain scope_fallback=0
+  [lifecycle] retired 1 TTL-expired descendant-free hypothesis card(s) before Planner
+  [planner] last-tick critic flags surfaced: ['(b) complexa_fk_steering expected ~0.5h runtime but only 0.3h remain', '(c) complexa_fk_steering config matches a joint_fail recipe (recipe_hash=db644452c2ae8656, tick=5)']
+  [candidate_filter] 3 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  [auto_chain] 178 pending chain candidate(s) handled by bounded reserve/backfill lane
+  state=stalled  planned=1  chain_reserved=0  queued_now=2
+  [gpu=2] structure_refilter → 1 records (parsed=1; elapsed_gpu_h=0.01; delta_gpu_h=0.01; per-record=0.009)
+  [proteinmpnn] dropped 1 native + 0 threading-failed sequence(s); 16 redesign record(s) kept
+  [gpu=3] proteinmpnn_redesign → 16 records (parsed=16; elapsed_gpu_h=0.01; delta_gpu_h=0.01; per-record=0.001)
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=9a7c2ad03586a0a0 candidate=chain_v7r020_proteinmpnn_redesign_to_structure_refilter_193
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=6c9ce68e16f4b943 candidate=chain_v7r020_proteinmpnn_redesign_to_structure_refilter_194
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=cda7505a1b30f632 candidate=chain_v7r020_proteinmpnn_redesign_to_structure_refilter_195
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=934c2566361a8abb candidate=chain_v7r020_proteinmpnn_redesign_to_structure_refilter_196
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=c28875493a3c41f0 candidate=chain_v7r020_proteinmpnn_redesign_to_structure_refilter_197
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=525fe84c304ac699 candidate=chain_v7r020_proteinmpnn_redesign_to_structure_refilter_198
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=212f539d68628a52 candidate=chain_v7r020_proteinmpnn_redesign_to_structure_refilter_199
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=a2dbfb2bf540576e candidate=chain_v7r020_proteinmpnn_redesign_to_structure_refilter_200
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=acf1f8cbe9d16aac candidate=chain_v7r020_proteinmpnn_redesign_to_structure_refilter_201
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=6a798742ee861973 candidate=chain_v7r020_proteinmpnn_redesign_to_structure_refilter_202
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=a4a774637e780426 candidate=chain_v7r020_proteinmpnn_redesign_to_structure_refilter_203
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=00b9bd3c2ab3a2b3 candidate=chain_v7r020_proteinmpnn_redesign_to_structure_refilter_204
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=065208abe007b101 candidate=chain_v7r020_proteinmpnn_redesign_to_structure_refilter_205
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=655b92bb1f406d27 candidate=chain_v7r020_proteinmpnn_redesign_to_structure_refilter_206
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=25754754bbbf655c candidate=chain_v7r020_proteinmpnn_redesign_to_structure_refilter_207
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=73c2ee35ef34ba5a candidate=chain_v7r020_proteinmpnn_redesign_to_structure_refilter_208
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=126 n_clusters=19 n_updated=122 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=16 strict_clusters=4 status=ok n_updated=16 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=30 near_clusters=7 status=ok n_updated=30 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] prioritized 1 chain refilter(s) ahead of stale pending work
+  [worker:af2_refilter][gpu=2] pdb=job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq004.pdb
+  [worker:proteinmpnn][gpu=3] parent=job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1.pdb num_seq=16
+  [chain_refilter_reserve] single refill slot allowed for pending diagnostic score conversion
+
+[v7_controller] ===== round 22 (elapsed 0.73 h, busy=2/2, queued=1, refill=1) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=126 n_clusters=19 n_updated=122 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=16 strict_clusters=4 status=ok n_updated=16 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=30 near_clusters=7 status=ok n_updated=30 coverage=1.00 scope=binder_chain scope_fallback=0
+  [lifecycle] retired 1 TTL-expired descendant-free hypothesis card(s) before Planner
+  [candidate_filter] 3 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  [auto_chain] 193 pending chain candidate(s) handled by bounded reserve/backfill lane
+  state=stalled  planned=1  chain_reserved=0  queued_now=2
+  [gpu=2] structure_refilter → 1 records (parsed=1; elapsed_gpu_h=0.01; delta_gpu_h=0.01; per-record=0.009)
+  [proteinmpnn] dropped 1 native + 0 threading-failed sequence(s); 16 redesign record(s) kept
+  [gpu=3] proteinmpnn_redesign → 16 records (parsed=16; elapsed_gpu_h=0.01; delta_gpu_h=0.01; per-record=0.001)
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=afb3eb5ccae10bd9 candidate=chain_v7r021_proteinmpnn_redesign_to_structure_refilter_209
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=8a42ae77fdc551f6 candidate=chain_v7r021_proteinmpnn_redesign_to_structure_refilter_210
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=4ac5b346a1200cda candidate=chain_v7r021_proteinmpnn_redesign_to_structure_refilter_211
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=e7a8d914ebb62703 candidate=chain_v7r021_proteinmpnn_redesign_to_structure_refilter_212
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=4aa60e8a32ed2826 candidate=chain_v7r021_proteinmpnn_redesign_to_structure_refilter_213
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=ae28d6bfb956b151 candidate=chain_v7r021_proteinmpnn_redesign_to_structure_refilter_214
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=63a1f49922278840 candidate=chain_v7r021_proteinmpnn_redesign_to_structure_refilter_215
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=c4dc73f7970e9072 candidate=chain_v7r021_proteinmpnn_redesign_to_structure_refilter_216
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=310eaf5fe07afa07 candidate=chain_v7r021_proteinmpnn_redesign_to_structure_refilter_217
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=4dc5067a14632810 candidate=chain_v7r021_proteinmpnn_redesign_to_structure_refilter_218
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=7c1ae0d894be804e candidate=chain_v7r021_proteinmpnn_redesign_to_structure_refilter_219
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=1dd036441afd6d73 candidate=chain_v7r021_proteinmpnn_redesign_to_structure_refilter_220
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=016427b606fc5049 candidate=chain_v7r021_proteinmpnn_redesign_to_structure_refilter_221
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=92229c6ce8c42d90 candidate=chain_v7r021_proteinmpnn_redesign_to_structure_refilter_222
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=8a43e41dd3d46093 candidate=chain_v7r021_proteinmpnn_redesign_to_structure_refilter_223
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=86655b0389728a60 candidate=chain_v7r021_proteinmpnn_redesign_to_structure_refilter_224
+  [controller_checkpoint] elapsed=0.738h SU=4 state=stalled
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=127 n_clusters=19 n_updated=123 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=16 strict_clusters=4 status=ok n_updated=16 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=30 near_clusters=7 status=ok n_updated=30 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] prioritized 1 chain refilter(s) ahead of stale pending work
+  [worker:af2_refilter][gpu=2] pdb=job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq009.pdb
+  [worker:proteinmpnn][gpu=3] parent=job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1.pdb num_seq=16
+  [chain_refilter_reserve] single refill slot allowed for pending diagnostic score conversion
+
+[v7_controller] ===== round 23 (elapsed 0.74 h, busy=2/2, queued=1, refill=1) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=127 n_clusters=19 n_updated=123 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=16 strict_clusters=4 status=ok n_updated=16 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=30 near_clusters=7 status=ok n_updated=30 coverage=1.00 scope=binder_chain scope_fallback=0
+  [lifecycle] retired 1 TTL-expired descendant-free hypothesis card(s) before Planner
+  [candidate_filter] 7 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  [auto_chain] 208 pending chain candidate(s) handled by bounded reserve/backfill lane
+  state=stalled  planned=0  chain_reserved=0  queued_now=1
+  [proteinmpnn] dropped 1 native + 0 threading-failed sequence(s); 16 redesign record(s) kept
+  [gpu=3] proteinmpnn_redesign → 16 records (parsed=16; elapsed_gpu_h=0.01; delta_gpu_h=0.01; per-record=0.000)
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=9a1bf88046e08eee candidate=chain_v7r022_proteinmpnn_redesign_to_structure_refilter_225
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=c951221898b24235 candidate=chain_v7r022_proteinmpnn_redesign_to_structure_refilter_226
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=dc3bccb42b06f925 candidate=chain_v7r022_proteinmpnn_redesign_to_structure_refilter_227
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=e232df73aa5a3271 candidate=chain_v7r022_proteinmpnn_redesign_to_structure_refilter_228
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=086ec90f5e1a0d90 candidate=chain_v7r022_proteinmpnn_redesign_to_structure_refilter_229
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=e439a3fb3a24515b candidate=chain_v7r022_proteinmpnn_redesign_to_structure_refilter_230
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=d7de88a15d38efc0 candidate=chain_v7r022_proteinmpnn_redesign_to_structure_refilter_231
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=8299929b6bd9859c candidate=chain_v7r022_proteinmpnn_redesign_to_structure_refilter_232
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=118f724da8e4d8ac candidate=chain_v7r022_proteinmpnn_redesign_to_structure_refilter_233
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=a1d5e39500fda27f candidate=chain_v7r022_proteinmpnn_redesign_to_structure_refilter_234
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=c2ca813422b636bb candidate=chain_v7r022_proteinmpnn_redesign_to_structure_refilter_235
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=9cfdb611eb330730 candidate=chain_v7r022_proteinmpnn_redesign_to_structure_refilter_236
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=6e02a45062470811 candidate=chain_v7r022_proteinmpnn_redesign_to_structure_refilter_237
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=69eabdec5ac92b9e candidate=chain_v7r022_proteinmpnn_redesign_to_structure_refilter_238
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=e4e994e7c2a2cd64 candidate=chain_v7r022_proteinmpnn_redesign_to_structure_refilter_239
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=a4a541c8671a2b93 candidate=chain_v7r022_proteinmpnn_redesign_to_structure_refilter_240
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=127 n_clusters=19 n_updated=123 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=16 strict_clusters=4 status=ok n_updated=16 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=30 near_clusters=7 status=ok n_updated=30 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] single free slot allowed for pending diagnostic score conversion
+  [worker:proteinmpnn][gpu=3] parent=job_0_n_184_id_2_bon_orig0_r2.pdb num_seq=16
+
+[v7_controller] ===== round 24 (elapsed 0.75 h, busy=2/2, queued=0, refill=2) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=127 n_clusters=19 n_updated=123 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=16 strict_clusters=4 status=ok n_updated=16 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=30 near_clusters=7 status=ok n_updated=30 coverage=1.00 scope=binder_chain scope_fallback=0
+  [lifecycle] retired 1 TTL-expired descendant-free hypothesis card(s) before Planner
+  [candidate_filter] 8 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  [auto_chain] 224 pending chain candidate(s) handled by bounded reserve/backfill lane
+  state=stalled  planned=0  chain_reserved=0  queued_now=0
+  [gpu=2] structure_refilter → 1 records (parsed=1; elapsed_gpu_h=0.01; delta_gpu_h=0.01; per-record=0.014)
+  [proteinmpnn] dropped 1 native + 0 threading-failed sequence(s); 16 redesign record(s) kept
+  [gpu=3] proteinmpnn_redesign → 16 records (parsed=16; elapsed_gpu_h=0.01; delta_gpu_h=0.01; per-record=0.001)
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=bc9ee3f8301fb267 candidate=chain_v7r023_proteinmpnn_redesign_to_structure_refilter_241
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=4b43e092f0948470 candidate=chain_v7r023_proteinmpnn_redesign_to_structure_refilter_242
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=a95dcd1250e5f8fb candidate=chain_v7r023_proteinmpnn_redesign_to_structure_refilter_243
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=6987f8ffd931d2b2 candidate=chain_v7r023_proteinmpnn_redesign_to_structure_refilter_244
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=db171d0f1dfe2914 candidate=chain_v7r023_proteinmpnn_redesign_to_structure_refilter_245
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=fbcbf24899c73bcd candidate=chain_v7r023_proteinmpnn_redesign_to_structure_refilter_246
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=c239603473533cb5 candidate=chain_v7r023_proteinmpnn_redesign_to_structure_refilter_247
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=7ac5755187c792e1 candidate=chain_v7r023_proteinmpnn_redesign_to_structure_refilter_248
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=aa6bc80dc69361e5 candidate=chain_v7r023_proteinmpnn_redesign_to_structure_refilter_249
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=9626361f93bc4983 candidate=chain_v7r023_proteinmpnn_redesign_to_structure_refilter_250
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=c1e4f50eb6b2217f candidate=chain_v7r023_proteinmpnn_redesign_to_structure_refilter_251
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=d4c57760216e2f58 candidate=chain_v7r023_proteinmpnn_redesign_to_structure_refilter_252
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=5817ef88fa384c33 candidate=chain_v7r023_proteinmpnn_redesign_to_structure_refilter_253
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=62153036ce3f483b candidate=chain_v7r023_proteinmpnn_redesign_to_structure_refilter_254
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=c74c2821ad0bd147 candidate=chain_v7r023_proteinmpnn_redesign_to_structure_refilter_255
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=4f8d0615830fd3b9 candidate=chain_v7r023_proteinmpnn_redesign_to_structure_refilter_256
+  [controller_checkpoint] elapsed=0.754h SU=4 state=stalled
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=128 n_clusters=19 n_updated=124 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=16 strict_clusters=4 status=ok n_updated=16 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=30 near_clusters=7 status=ok n_updated=30 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] prioritized 1 chain refilter(s) ahead of stale pending work
+  [worker:af2_refilter][gpu=2] pdb=job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq001.pdb
+
+[v7_controller] ===== round 25 (elapsed 0.75 h, busy=1/2, queued=0, refill=2) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=128 n_clusters=19 n_updated=124 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=16 strict_clusters=4 status=ok n_updated=16 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=30 near_clusters=7 status=ok n_updated=30 coverage=1.00 scope=binder_chain scope_fallback=0
+  [lifecycle] retired 1 TTL-expired descendant-free hypothesis card(s) before Planner
+  [planner] last-tick critic flags surfaced: ['(b) complexa_fk_steering expected ~0.5h runtime but only 0.3h remain', '(c) complexa_fk_steering config matches a joint_fail recipe (recipe_hash=db644452c2ae8656, tick=5)']
+  [candidate_filter] 8 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  [auto_chain] 239 pending chain candidate(s) handled by bounded reserve/backfill lane
+  state=stalled  planned=0  chain_reserved=0  queued_now=0
+  [gpu=2] structure_refilter → 1 records (parsed=1; elapsed_gpu_h=0.01; delta_gpu_h=0.01; per-record=0.009)
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=129 n_clusters=19 n_updated=125 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=16 strict_clusters=4 status=ok n_updated=16 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=30 near_clusters=7 status=ok n_updated=30 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] prioritized 1 chain refilter(s) ahead of stale pending work
+  [worker:af2_refilter][gpu=2] pdb=job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq013.pdb
+
+[v7_controller] ===== round 26 (elapsed 0.77 h, busy=1/2, queued=0, refill=2) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=129 n_clusters=19 n_updated=125 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=16 strict_clusters=4 status=ok n_updated=16 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=30 near_clusters=7 status=ok n_updated=30 coverage=1.00 scope=binder_chain scope_fallback=0
+  [planner] last-tick critic flags surfaced: ['(b) complexa_beam expected ~0.5h runtime but only 0.2h remain']
+  [candidate_filter] 7 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  [auto_chain] 238 pending chain candidate(s) handled by bounded reserve/backfill lane
+  state=stalled  planned=0  chain_reserved=0  queued_now=0
+  [gpu=2] structure_refilter → 1 records (parsed=1; elapsed_gpu_h=0.01; delta_gpu_h=0.01; per-record=0.006)
+  [controller_checkpoint] elapsed=0.774h SU=4 state=stalled
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=130 n_clusters=19 n_updated=126 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=16 strict_clusters=4 status=ok n_updated=16 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=30 near_clusters=7 status=ok n_updated=30 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] prioritized 1 chain refilter(s) ahead of stale pending work
+  [worker:af2_refilter][gpu=2] pdb=job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq008.pdb
+
+[v7_controller] ===== round 27 (elapsed 0.77 h, busy=1/2, queued=0, refill=2) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=130 n_clusters=19 n_updated=126 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=16 strict_clusters=4 status=ok n_updated=16 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=30 near_clusters=7 status=ok n_updated=30 coverage=1.00 scope=binder_chain scope_fallback=0
+  [lifecycle] retired 1 TTL-expired descendant-free hypothesis card(s) before Planner
+  [candidate_filter] 8 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  [auto_chain] 237 pending chain candidate(s) handled by bounded reserve/backfill lane
+  state=stalled  planned=0  chain_reserved=0  queued_now=0
+  [gpu=2] structure_refilter → 1 records (parsed=1; elapsed_gpu_h=0.01; delta_gpu_h=0.01; per-record=0.008)
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=131 n_clusters=19 n_updated=127 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=16 strict_clusters=4 status=ok n_updated=16 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=30 near_clusters=7 status=ok n_updated=30 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] prioritized 1 chain refilter(s) ahead of stale pending work
+  [worker:af2_refilter][gpu=2] pdb=job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq004.pdb
+
+[v7_controller] ===== round 28 (elapsed 0.78 h, busy=1/2, queued=0, refill=2) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=131 n_clusters=19 n_updated=127 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=16 strict_clusters=4 status=ok n_updated=16 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=30 near_clusters=7 status=ok n_updated=30 coverage=1.00 scope=binder_chain scope_fallback=0
+  [lifecycle] retired 1 TTL-expired descendant-free hypothesis card(s) before Planner
+  [planner] last-tick critic flags surfaced: ['(b) complexa_beam expected ~0.5h runtime but only 0.2h remain']
+  [candidate_filter] 7 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  [auto_chain] 236 pending chain candidate(s) handled by bounded reserve/backfill lane
+  state=stalled  planned=0  chain_reserved=0  queued_now=0
+  [gpu=2] structure_refilter → 1 records (parsed=1; elapsed_gpu_h=0.01; delta_gpu_h=0.01; per-record=0.006)
+  [controller_checkpoint] elapsed=0.793h SU=4 state=stalled
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=132 n_clusters=19 n_updated=128 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=16 strict_clusters=4 status=ok n_updated=16 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=30 near_clusters=7 status=ok n_updated=30 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] prioritized 1 chain refilter(s) ahead of stale pending work
+  [worker:af2_refilter][gpu=2] pdb=job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq003.pdb
+
+[v7_controller] ===== round 29 (elapsed 0.79 h, busy=1/2, queued=0, refill=2) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=132 n_clusters=19 n_updated=128 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=16 strict_clusters=4 status=ok n_updated=16 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=30 near_clusters=7 status=ok n_updated=30 coverage=1.00 scope=binder_chain scope_fallback=0
+  [lifecycle] retired 1 TTL-expired descendant-free hypothesis card(s) before Planner
+  [candidate_filter] 8 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  [auto_chain] 235 pending chain candidate(s) handled by bounded reserve/backfill lane
+  state=stalled  planned=0  chain_reserved=0  queued_now=0
+  [gpu=2] structure_refilter → 1 records (parsed=1; elapsed_gpu_h=0.01; delta_gpu_h=0.01; per-record=0.008)
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=133 n_clusters=19 n_updated=129 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=16 strict_clusters=4 status=ok n_updated=16 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=30 near_clusters=7 status=ok n_updated=30 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] prioritized 1 chain refilter(s) ahead of stale pending work
+  [worker:af2_refilter][gpu=2] pdb=job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq012.pdb
+
+[v7_controller] ===== round 30 (elapsed 0.80 h, busy=1/2, queued=0, refill=2) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=133 n_clusters=19 n_updated=129 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=16 strict_clusters=4 status=ok n_updated=16 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=30 near_clusters=7 status=ok n_updated=30 coverage=1.00 scope=binder_chain scope_fallback=0
+  [lifecycle] retired 1 TTL-expired descendant-free hypothesis card(s) before Planner
+  [planner] last-tick critic flags surfaced: ['(b) complexa_beam expected ~0.5h runtime but only 0.2h remain']
+  [candidate_filter] 8 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  [auto_chain] 234 pending chain candidate(s) handled by bounded reserve/backfill lane
+  state=stalled  planned=0  chain_reserved=0  queued_now=0
+  [gpu=2] structure_refilter → 1 records (parsed=1; elapsed_gpu_h=0.01; delta_gpu_h=0.01; per-record=0.009)
+  [controller_checkpoint] elapsed=0.815h SU=4 state=stalled
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=134 n_clusters=19 n_updated=130 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=16 strict_clusters=4 status=ok n_updated=16 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=30 near_clusters=7 status=ok n_updated=30 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] prioritized 1 chain refilter(s) ahead of stale pending work
+  [worker:af2_refilter][gpu=2] pdb=job_0_n_180_id_67_beam_orig3_bm2-s0to100br2-s100to200br0-s200to300br3-s300to400br1_seq016.pdb
+
+[v7_controller] ===== round 31 (elapsed 0.81 h, busy=1/2, queued=0, refill=2) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=134 n_clusters=19 n_updated=130 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=16 strict_clusters=4 status=ok n_updated=16 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=30 near_clusters=7 status=ok n_updated=30 coverage=1.00 scope=binder_chain scope_fallback=0
+  [candidate_filter] 7 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  [auto_chain] 233 pending chain candidate(s) handled by bounded reserve/backfill lane
+  state=stalled  planned=0  chain_reserved=0  queued_now=0
+  [gpu=2] structure_refilter → 1 records (parsed=1; elapsed_gpu_h=0.01; delta_gpu_h=0.01; per-record=0.006)
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=135 n_clusters=19 n_updated=131 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=17 strict_clusters=4 status=ok n_updated=17 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=30 near_clusters=7 status=ok n_updated=30 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] prioritized 1 chain refilter(s) ahead of stale pending work
+  [worker:af2_refilter][gpu=2] pdb=job_0_n_180_id_67_beam_orig3_bm2-s0to100br2-s100to200br0-s200to300br3-s300to400br1_seq005.pdb
+
+[v7_controller] ===== round 32 (elapsed 0.82 h, busy=1/2, queued=0, refill=2) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=135 n_clusters=19 n_updated=131 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=17 strict_clusters=4 status=ok n_updated=17 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=30 near_clusters=7 status=ok n_updated=30 coverage=1.00 scope=binder_chain scope_fallback=0
+  [candidate_filter] 7 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  [auto_chain] 232 pending chain candidate(s) handled by bounded reserve/backfill lane
+  state=stalled  planned=0  chain_reserved=0  queued_now=0
+  [gpu=2] structure_refilter → 1 records (parsed=1; elapsed_gpu_h=0.01; delta_gpu_h=0.01; per-record=0.006)
+  [controller_checkpoint] elapsed=0.834h SU=4 state=stalled
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=136 n_clusters=19 n_updated=132 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=18 strict_clusters=4 status=ok n_updated=18 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=30 near_clusters=7 status=ok n_updated=30 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] prioritized 1 chain refilter(s) ahead of stale pending work
+  [worker:af2_refilter][gpu=2] pdb=job_0_n_184_id_2_bon_orig0_r2_seq002.pdb
+
+[v7_controller] ===== round 33 (elapsed 0.83 h, busy=1/2, queued=0, refill=2) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=136 n_clusters=19 n_updated=132 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=18 strict_clusters=4 status=ok n_updated=18 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=30 near_clusters=7 status=ok n_updated=30 coverage=1.00 scope=binder_chain scope_fallback=0
+  [lifecycle] retired 1 TTL-expired descendant-free hypothesis card(s) before Planner
+  [candidate_filter] 7 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  [auto_chain] 231 pending chain candidate(s) handled by bounded reserve/backfill lane
+  state=stalled  planned=0  chain_reserved=0  queued_now=0
+  [gpu=2] structure_refilter → 1 records (parsed=1; elapsed_gpu_h=0.01; delta_gpu_h=0.01; per-record=0.006)
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=137 n_clusters=19 n_updated=133 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=18 strict_clusters=4 status=ok n_updated=18 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=31 near_clusters=7 status=ok n_updated=31 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] prioritized 1 chain refilter(s) ahead of stale pending work
+  [worker:af2_refilter][gpu=2] pdb=job_0_n_180_id_67_beam_orig3_bm2-s0to100br2-s100to200br0-s200to300br3-s300to400br1_seq015.pdb
+
+[v7_controller] ===== round 34 (elapsed 0.84 h, busy=1/2, queued=0, refill=2) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=137 n_clusters=19 n_updated=133 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=18 strict_clusters=4 status=ok n_updated=18 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=31 near_clusters=7 status=ok n_updated=31 coverage=1.00 scope=binder_chain scope_fallback=0
+  [lifecycle] retired 2 TTL-expired descendant-free hypothesis card(s) before Planner
+  [candidate_filter] 7 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  [auto_chain] 230 pending chain candidate(s) handled by bounded reserve/backfill lane
+  state=stalled  planned=0  chain_reserved=0  queued_now=0
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=137 n_clusters=19 n_updated=133 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=18 strict_clusters=4 status=ok n_updated=18 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=31 near_clusters=7 status=ok n_updated=31 coverage=1.00 scope=binder_chain scope_fallback=0
+  [controller_checkpoint] elapsed=0.855h SU=4 state=stalled
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=137 n_clusters=19 n_updated=133 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=18 strict_clusters=4 status=ok n_updated=18 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=31 near_clusters=7 status=ok n_updated=31 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] single free slot allowed for pending diagnostic score conversion
+
+[v7_controller] ===== round 35 (elapsed 0.85 h, busy=1/2, queued=0, refill=2) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=137 n_clusters=19 n_updated=133 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=18 strict_clusters=4 status=ok n_updated=18 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=31 near_clusters=7 status=ok n_updated=31 coverage=1.00 scope=binder_chain scope_fallback=0
+  [lifecycle] retired 2 TTL-expired descendant-free hypothesis card(s) before Planner
+  [candidate_filter] 7 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  [auto_chain] 230 pending chain candidate(s) handled by bounded reserve/backfill lane
+  state=stalled  planned=0  chain_reserved=0  queued_now=0
+  [gpu=2] structure_refilter → 1 records (parsed=1; elapsed_gpu_h=0.01; delta_gpu_h=0.01; per-record=0.012)
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=138 n_clusters=19 n_updated=134 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=19 strict_clusters=4 status=ok n_updated=19 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=31 near_clusters=7 status=ok n_updated=31 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] prioritized 1 chain refilter(s) ahead of stale pending work
+  [worker:af2_refilter][gpu=2] pdb=job_0_n_180_id_67_beam_orig3_bm2-s0to100br2-s100to200br0-s200to300br3-s300to400br1_seq001.pdb
+
+[v7_controller] ===== round 36 (elapsed 0.86 h, busy=1/2, queued=0, refill=2) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=138 n_clusters=19 n_updated=134 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=19 strict_clusters=4 status=ok n_updated=19 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=31 near_clusters=7 status=ok n_updated=31 coverage=1.00 scope=binder_chain scope_fallback=0
+  [lifecycle] retired 1 TTL-expired descendant-free hypothesis card(s) before Planner
+  [candidate_filter] 7 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  [auto_chain] 229 pending chain candidate(s) handled by bounded reserve/backfill lane
+  state=stalled  planned=0  chain_reserved=0  queued_now=0
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=138 n_clusters=19 n_updated=134 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=19 strict_clusters=4 status=ok n_updated=19 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=31 near_clusters=7 status=ok n_updated=31 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] single free slot allowed for pending diagnostic score conversion
+
+[v7_controller] ===== round 37 (elapsed 0.87 h, busy=1/2, queued=0, refill=2) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=138 n_clusters=19 n_updated=134 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=19 strict_clusters=4 status=ok n_updated=19 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=31 near_clusters=7 status=ok n_updated=31 coverage=1.00 scope=binder_chain scope_fallback=0
+  [lifecycle] retired 2 TTL-expired descendant-free hypothesis card(s) before Planner
+  [candidate_filter] 14 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  [auto_chain] 229 pending chain candidate(s) handled by bounded reserve/backfill lane
+  state=stalled  planned=0  chain_reserved=0  queued_now=0
+  [gpu=2] structure_refilter → 1 records (parsed=1; elapsed_gpu_h=0.01; delta_gpu_h=0.01; per-record=0.009)
+  [controller_checkpoint] elapsed=0.875h SU=4 state=stalled
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=139 n_clusters=19 n_updated=135 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=20 strict_clusters=4 status=ok n_updated=20 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=31 near_clusters=7 status=ok n_updated=31 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] prioritized 1 chain refilter(s) ahead of stale pending work
+  [worker:af2_refilter][gpu=2] pdb=job_0_n_180_id_67_beam_orig3_bm2-s0to100br2-s100to200br0-s200to300br3-s300to400br1_seq015.pdb
+
+[v7_controller] ===== round 38 (elapsed 0.87 h, busy=1/2, queued=0, refill=2) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=139 n_clusters=19 n_updated=135 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=20 strict_clusters=4 status=ok n_updated=20 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=31 near_clusters=7 status=ok n_updated=31 coverage=1.00 scope=binder_chain scope_fallback=0
+  [lifecycle] retired 1 TTL-expired descendant-free hypothesis card(s) before Planner
+  [candidate_filter] 14 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  [auto_chain] 228 pending chain candidate(s) handled by bounded reserve/backfill lane
+  state=stalled  planned=0  chain_reserved=0  queued_now=0
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=139 n_clusters=19 n_updated=135 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=20 strict_clusters=4 status=ok n_updated=20 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=31 near_clusters=7 status=ok n_updated=31 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] single free slot allowed for pending diagnostic score conversion
+
+[v7_controller] ===== round 39 (elapsed 0.88 h, busy=1/2, queued=0, refill=2) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=139 n_clusters=19 n_updated=135 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=20 strict_clusters=4 status=ok n_updated=20 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=31 near_clusters=7 status=ok n_updated=31 coverage=1.00 scope=binder_chain scope_fallback=0
+  [lifecycle] retired 2 TTL-expired descendant-free hypothesis card(s) before Planner
+  [candidate_filter] 14 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  [auto_chain] 228 pending chain candidate(s) handled by bounded reserve/backfill lane
+  state=stalled  planned=0  chain_reserved=0  queued_now=0
+  [gpu=2] structure_refilter → 1 records (parsed=1; elapsed_gpu_h=0.01; delta_gpu_h=0.01; per-record=0.007)
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=140 n_clusters=19 n_updated=136 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=21 strict_clusters=4 status=ok n_updated=21 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=31 near_clusters=7 status=ok n_updated=31 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] prioritized 1 chain refilter(s) ahead of stale pending work
+  [worker:af2_refilter][gpu=2] pdb=job_0_n_180_id_67_beam_orig3_bm2-s0to100br2-s100to200br0-s200to300br3-s300to400br1_seq009.pdb
+
+[v7_controller] ===== round 40 (elapsed 0.89 h, busy=1/2, queued=0, refill=2) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=140 n_clusters=19 n_updated=136 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=21 strict_clusters=4 status=ok n_updated=21 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=31 near_clusters=7 status=ok n_updated=31 coverage=1.00 scope=binder_chain scope_fallback=0
+  [lifecycle] retired 2 TTL-expired descendant-free hypothesis card(s) before Planner
+  [candidate_filter] 14 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  [auto_chain] 227 pending chain candidate(s) handled by bounded reserve/backfill lane
+  state=stalled  planned=0  chain_reserved=0  queued_now=0
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=140 n_clusters=19 n_updated=136 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=21 strict_clusters=4 status=ok n_updated=21 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=31 near_clusters=7 status=ok n_updated=31 coverage=1.00 scope=binder_chain scope_fallback=0
+  [controller_checkpoint] elapsed=0.894h SU=4 state=stalled
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=140 n_clusters=19 n_updated=136 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=21 strict_clusters=4 status=ok n_updated=21 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=31 near_clusters=7 status=ok n_updated=31 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] single free slot allowed for pending diagnostic score conversion
+
+[v7_controller] ===== round 41 (elapsed 0.89 h, busy=1/2, queued=0, refill=2) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=140 n_clusters=19 n_updated=136 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=21 strict_clusters=4 status=ok n_updated=21 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=31 near_clusters=7 status=ok n_updated=31 coverage=1.00 scope=binder_chain scope_fallback=0
+  [lifecycle] retired 1 TTL-expired descendant-free hypothesis card(s) before Planner
+  [candidate_filter] 7 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  [auto_chain] 227 pending chain candidate(s) handled by bounded reserve/backfill lane
+  state=stalled  planned=0  chain_reserved=0  queued_now=0
+  [gpu=2] structure_refilter → 1 records (parsed=1; elapsed_gpu_h=0.01; delta_gpu_h=0.01; per-record=0.009)
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=141 n_clusters=19 n_updated=137 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=22 strict_clusters=4 status=ok n_updated=22 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=31 near_clusters=7 status=ok n_updated=31 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] prioritized 1 chain refilter(s) ahead of stale pending work
+  [worker:af2_refilter][gpu=2] pdb=job_0_n_180_id_67_beam_orig3_bm2-s0to100br2-s100to200br0-s200to300br3-s300to400br1_seq013.pdb
+
+[v7_controller] ===== round 42 (elapsed 0.90 h, busy=1/2, queued=0, refill=2) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=141 n_clusters=19 n_updated=137 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=22 strict_clusters=4 status=ok n_updated=22 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=31 near_clusters=7 status=ok n_updated=31 coverage=1.00 scope=binder_chain scope_fallback=0
+  [lifecycle] retired 1 TTL-expired descendant-free hypothesis card(s) before Planner
+  [candidate_filter] 7 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  [auto_chain] 226 pending chain candidate(s) handled by bounded reserve/backfill lane
+  state=stalled  planned=0  chain_reserved=0  queued_now=0
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=141 n_clusters=19 n_updated=137 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=22 strict_clusters=4 status=ok n_updated=22 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=31 near_clusters=7 status=ok n_updated=31 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] single free slot allowed for pending diagnostic score conversion
+
+[v7_controller] ===== round 43 (elapsed 0.91 h, busy=1/2, queued=0, refill=2) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=141 n_clusters=19 n_updated=137 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=22 strict_clusters=4 status=ok n_updated=22 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=31 near_clusters=7 status=ok n_updated=31 coverage=1.00 scope=binder_chain scope_fallback=0
+  [lifecycle] retired 1 TTL-expired descendant-free hypothesis card(s) before Planner
+  [candidate_filter] 7 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  [auto_chain] 226 pending chain candidate(s) handled by bounded reserve/backfill lane
+  state=stalled  planned=0  chain_reserved=0  queued_now=0
+  [gpu=2] structure_refilter → 1 records (parsed=1; elapsed_gpu_h=0.01; delta_gpu_h=0.01; per-record=0.012)
+  [controller_checkpoint] elapsed=0.916h SU=4 state=stalled
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=142 n_clusters=19 n_updated=138 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=22 strict_clusters=4 status=ok n_updated=22 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=31 near_clusters=7 status=ok n_updated=31 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] prioritized 1 chain refilter(s) ahead of stale pending work
+  [worker:af2_refilter][gpu=2] pdb=job_0_n_180_id_67_beam_orig3_bm2-s0to100br2-s100to200br0-s200to300br3-s300to400br1_seq002.pdb
+
+[v7_controller] ===== round 44 (elapsed 0.92 h, busy=1/2, queued=0, refill=2) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=142 n_clusters=19 n_updated=138 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=22 strict_clusters=4 status=ok n_updated=22 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=31 near_clusters=7 status=ok n_updated=31 coverage=1.00 scope=binder_chain scope_fallback=0
+  [lifecycle] retired 1 TTL-expired descendant-free hypothesis card(s) before Planner
+  [candidate_filter] 13 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  [auto_chain] 225 pending chain candidate(s) handled by bounded reserve/backfill lane
+  state=stalled  planned=0  chain_reserved=0  queued_now=0
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=142 n_clusters=19 n_updated=138 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=22 strict_clusters=4 status=ok n_updated=22 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=31 near_clusters=7 status=ok n_updated=31 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] single free slot allowed for pending diagnostic score conversion
+
+[v7_controller] ===== round 45 (elapsed 0.92 h, busy=1/2, queued=0, refill=2) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=142 n_clusters=19 n_updated=138 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=22 strict_clusters=4 status=ok n_updated=22 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=31 near_clusters=7 status=ok n_updated=31 coverage=1.00 scope=binder_chain scope_fallback=0
+  [lifecycle] retired 1 TTL-expired descendant-free hypothesis card(s) before Planner
+  [candidate_filter] 12 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  [auto_chain] 225 pending chain candidate(s) handled by bounded reserve/backfill lane
+  state=stalled  planned=0  chain_reserved=0  queued_now=0
+  [gpu=2] structure_refilter → 1 records (parsed=1; elapsed_gpu_h=0.01; delta_gpu_h=0.01; per-record=0.007)
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=143 n_clusters=19 n_updated=139 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=23 strict_clusters=4 status=ok n_updated=23 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=31 near_clusters=7 status=ok n_updated=31 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] prioritized 1 chain refilter(s) ahead of stale pending work
+  [worker:af2_refilter][gpu=2] pdb=job_0_n_180_id_67_beam_orig3_bm2-s0to100br2-s100to200br0-s200to300br3-s300to400br1_seq008.pdb
+
+[v7_controller] ===== round 46 (elapsed 0.93 h, busy=1/2, queued=0, refill=2) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=143 n_clusters=19 n_updated=139 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=23 strict_clusters=4 status=ok n_updated=23 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=31 near_clusters=7 status=ok n_updated=31 coverage=1.00 scope=binder_chain scope_fallback=0
+  [lifecycle] retired 1 TTL-expired descendant-free hypothesis card(s) before Planner
+  [candidate_filter] 11 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  [auto_chain] 224 pending chain candidate(s) handled by bounded reserve/backfill lane
+  state=stalled  planned=0  chain_reserved=0  queued_now=0
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=143 n_clusters=19 n_updated=139 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=23 strict_clusters=4 status=ok n_updated=23 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=31 near_clusters=7 status=ok n_updated=31 coverage=1.00 scope=binder_chain scope_fallback=0
+  [controller_checkpoint] elapsed=0.934h SU=4 state=stalled
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=143 n_clusters=19 n_updated=139 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=23 strict_clusters=4 status=ok n_updated=23 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=31 near_clusters=7 status=ok n_updated=31 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] single free slot allowed for pending diagnostic score conversion
+
+[v7_controller] ===== round 47 (elapsed 0.93 h, busy=1/2, queued=0, refill=2) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=143 n_clusters=19 n_updated=139 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=23 strict_clusters=4 status=ok n_updated=23 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=31 near_clusters=7 status=ok n_updated=31 coverage=1.00 scope=binder_chain scope_fallback=0
+  [candidate_filter] 11 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  [auto_chain] 224 pending chain candidate(s) handled by bounded reserve/backfill lane
+  state=stalled  planned=0  chain_reserved=0  queued_now=0
+  [gpu=2] structure_refilter → 1 records (parsed=1; elapsed_gpu_h=0.01; delta_gpu_h=0.01; per-record=0.006)
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=144 n_clusters=19 n_updated=140 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=24 strict_clusters=4 status=ok n_updated=24 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=31 near_clusters=7 status=ok n_updated=31 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] prioritized 1 chain refilter(s) ahead of stale pending work
+  [worker:af2_refilter][gpu=2] pdb=job_0_n_180_id_67_beam_orig3_bm2-s0to100br2-s100to200br0-s200to300br3-s300to400br1_seq012.pdb
+
+[v7_controller] ===== round 48 (elapsed 0.94 h, busy=1/2, queued=0, refill=2) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=144 n_clusters=19 n_updated=140 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=24 strict_clusters=4 status=ok n_updated=24 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=31 near_clusters=7 status=ok n_updated=31 coverage=1.00 scope=binder_chain scope_fallback=0
+  [candidate_filter] 11 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  [auto_chain] 223 pending chain candidate(s) handled by bounded reserve/backfill lane
+  state=stalled  planned=0  chain_reserved=0  queued_now=0
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=144 n_clusters=19 n_updated=140 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=24 strict_clusters=4 status=ok n_updated=24 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=31 near_clusters=7 status=ok n_updated=31 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] single free slot allowed for pending diagnostic score conversion
+
+[v7_controller] ===== round 49 (elapsed 0.94 h, busy=1/2, queued=0, refill=2) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=144 n_clusters=19 n_updated=140 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=24 strict_clusters=4 status=ok n_updated=24 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=31 near_clusters=7 status=ok n_updated=31 coverage=1.00 scope=binder_chain scope_fallback=0
+  [candidate_filter] 11 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  [auto_chain] 223 pending chain candidate(s) handled by bounded reserve/backfill lane
+  state=stalled  planned=0  chain_reserved=0  queued_now=0
+  [gpu=2] structure_refilter → 1 records (parsed=1; elapsed_gpu_h=0.01; delta_gpu_h=0.01; per-record=0.006)
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=145 n_clusters=19 n_updated=141 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=25 strict_clusters=4 status=ok n_updated=25 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=31 near_clusters=7 status=ok n_updated=31 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] prioritized 1 chain refilter(s) ahead of stale pending work
+  [worker:af2_refilter][gpu=2] pdb=job_0_n_184_id_2_bon_orig0_r2_seq006.pdb
+
+[v7_controller] ===== round 50 (elapsed 0.95 h, busy=1/2, queued=0, refill=2) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=145 n_clusters=19 n_updated=141 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=25 strict_clusters=4 status=ok n_updated=25 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=31 near_clusters=7 status=ok n_updated=31 coverage=1.00 scope=binder_chain scope_fallback=0
+  [candidate_filter] 11 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  [auto_chain] 222 pending chain candidate(s) handled by bounded reserve/backfill lane
+  state=stalled  planned=0  chain_reserved=0  queued_now=0
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=145 n_clusters=19 n_updated=141 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=25 strict_clusters=4 status=ok n_updated=25 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=31 near_clusters=7 status=ok n_updated=31 coverage=1.00 scope=binder_chain scope_fallback=0
+  [controller_checkpoint] elapsed=0.956h SU=4 state=stalled
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=145 n_clusters=19 n_updated=141 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=25 strict_clusters=4 status=ok n_updated=25 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=31 near_clusters=7 status=ok n_updated=31 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] single free slot allowed for pending diagnostic score conversion
+
+[v7_controller] ===== round 51 (elapsed 0.96 h, busy=1/2, queued=0, refill=2) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=145 n_clusters=19 n_updated=141 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=25 strict_clusters=4 status=ok n_updated=25 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=31 near_clusters=7 status=ok n_updated=31 coverage=1.00 scope=binder_chain scope_fallback=0
+  [lifecycle] retired 1 TTL-expired descendant-free hypothesis card(s) before Planner
+  [candidate_filter] 10 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  [auto_chain] 222 pending chain candidate(s) handled by bounded reserve/backfill lane
+  state=stalled  planned=0  chain_reserved=0  queued_now=0
+  [gpu=2] structure_refilter → 1 records (parsed=1; elapsed_gpu_h=0.01; delta_gpu_h=0.01; per-record=0.007)
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=146 n_clusters=19 n_updated=142 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=25 strict_clusters=4 status=ok n_updated=25 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=32 near_clusters=7 status=ok n_updated=32 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] prioritized 1 chain refilter(s) ahead of stale pending work
+  [worker:af2_refilter][gpu=2] pdb=job_0_n_180_id_67_beam_orig3_bm2-s0to100br2-s100to200br0-s200to300br3-s300to400br1_seq006.pdb
+
+[v7_controller] ===== round 52 (elapsed 0.96 h, busy=1/2, queued=0, refill=2) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=146 n_clusters=19 n_updated=142 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=25 strict_clusters=4 status=ok n_updated=25 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=32 near_clusters=7 status=ok n_updated=32 coverage=1.00 scope=binder_chain scope_fallback=0
+  [lifecycle] retired 1 TTL-expired descendant-free hypothesis card(s) before Planner
+  [candidate_filter] 9 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  [auto_chain] 221 pending chain candidate(s) handled by bounded reserve/backfill lane
+  state=stalled  planned=0  chain_reserved=0  queued_now=0
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=146 n_clusters=19 n_updated=142 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=25 strict_clusters=4 status=ok n_updated=25 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=32 near_clusters=7 status=ok n_updated=32 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] single free slot allowed for pending diagnostic score conversion
+
+[v7_controller] ===== round 53 (elapsed 0.97 h, busy=1/2, queued=0, refill=2) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=146 n_clusters=19 n_updated=142 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=25 strict_clusters=4 status=ok n_updated=25 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=32 near_clusters=7 status=ok n_updated=32 coverage=1.00 scope=binder_chain scope_fallback=0
+  [lifecycle] retired 1 TTL-expired descendant-free hypothesis card(s) before Planner
+  [candidate_filter] 8 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  [auto_chain] 221 pending chain candidate(s) handled by bounded reserve/backfill lane
+  state=stalled  planned=0  chain_reserved=0  queued_now=0
+  [gpu=2] structure_refilter → 1 records (parsed=1; elapsed_gpu_h=0.01; delta_gpu_h=0.01; per-record=0.006)
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=147 n_clusters=19 n_updated=143 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=26 strict_clusters=4 status=ok n_updated=26 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=32 near_clusters=7 status=ok n_updated=32 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] prioritized 1 chain refilter(s) ahead of stale pending work
+  [worker:af2_refilter][gpu=2] pdb=job_0_n_180_id_67_beam_orig3_bm2-s0to100br2-s100to200br0-s200to300br3-s300to400br1_seq004.pdb
+
+[v7_controller] ===== round 54 (elapsed 0.97 h, busy=1/2, queued=0, refill=2) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=147 n_clusters=19 n_updated=143 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=26 strict_clusters=4 status=ok n_updated=26 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=32 near_clusters=7 status=ok n_updated=32 coverage=1.00 scope=binder_chain scope_fallback=0
+  [candidate_filter] 8 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  [auto_chain] 220 pending chain candidate(s) handled by bounded reserve/backfill lane
+  state=stalled  planned=0  chain_reserved=0  queued_now=0
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=147 n_clusters=19 n_updated=143 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=26 strict_clusters=4 status=ok n_updated=26 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=32 near_clusters=7 status=ok n_updated=32 coverage=1.00 scope=binder_chain scope_fallback=0
+  [controller_checkpoint] elapsed=0.978h SU=4 state=stalled
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=147 n_clusters=19 n_updated=143 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=26 strict_clusters=4 status=ok n_updated=26 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=32 near_clusters=7 status=ok n_updated=32 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] single free slot allowed for pending diagnostic score conversion
+
+[v7_controller] ===== round 55 (elapsed 0.98 h, busy=1/2, queued=0, refill=2) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=147 n_clusters=19 n_updated=143 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=26 strict_clusters=4 status=ok n_updated=26 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=32 near_clusters=7 status=ok n_updated=32 coverage=1.00 scope=binder_chain scope_fallback=0
+  [candidate_filter] 8 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  [auto_chain] 220 pending chain candidate(s) handled by bounded reserve/backfill lane
+  state=stalled  planned=0  chain_reserved=0  queued_now=0
+  [gpu=2] structure_refilter → 1 records (parsed=1; elapsed_gpu_h=0.01; delta_gpu_h=0.01; per-record=0.011)
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=148 n_clusters=19 n_updated=144 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=27 strict_clusters=4 status=ok n_updated=27 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=32 near_clusters=7 status=ok n_updated=32 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] prioritized 1 chain refilter(s) ahead of stale pending work
+  [worker:af2_refilter][gpu=2] pdb=job_0_n_180_id_67_beam_orig3_bm2-s0to100br2-s100to200br0-s200to300br3-s300to400br1_seq013.pdb
+
+[v7_controller] ===== round 56 (elapsed 0.99 h, busy=1/2, queued=0, refill=2) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=148 n_clusters=19 n_updated=144 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=27 strict_clusters=4 status=ok n_updated=27 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=32 near_clusters=7 status=ok n_updated=32 coverage=1.00 scope=binder_chain scope_fallback=0
+  [planner] last-tick critic flags surfaced: ['(b) proteinmpnn_redesign expected ~0.1h runtime but only 0.0h remain', '(b) complexa_beam expected ~0.5h runtime but only 0.0h remain']
+  [candidate_filter] 10 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  [auto_chain] 219 pending chain candidate(s) handled by bounded reserve/backfill lane
+  state=stalled  planned=0  chain_reserved=0  queued_now=0
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=148 n_clusters=19 n_updated=144 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=27 strict_clusters=4 status=ok n_updated=27 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=32 near_clusters=7 status=ok n_updated=32 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] single free slot allowed for pending diagnostic score conversion
+
+[v7_controller] ===== round 57 (elapsed 0.99 h, busy=1/2, queued=0, refill=2) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=148 n_clusters=19 n_updated=144 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=27 strict_clusters=4 status=ok n_updated=27 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=32 near_clusters=7 status=ok n_updated=32 coverage=1.00 scope=binder_chain scope_fallback=0
+  [planner] last-tick critic flags surfaced: ['(b) proteinmpnn_redesign expected ~0.1h runtime but only 0.0h remain', '(b) complexa_beam expected ~0.5h runtime but only 0.0h remain']
+  [candidate_filter] 10 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  [auto_chain] 219 pending chain candidate(s) handled by bounded reserve/backfill lane
+  state=stalled  planned=0  chain_reserved=0  queued_now=0
+  [gpu=2] structure_refilter → 1 records (parsed=1; elapsed_gpu_h=0.01; delta_gpu_h=0.01; per-record=0.006)
+  [controller_checkpoint] elapsed=0.997h SU=4 state=stalled
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=149 n_clusters=19 n_updated=145 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=28 strict_clusters=4 status=ok n_updated=28 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=32 near_clusters=7 status=ok n_updated=32 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] prioritized 1 chain refilter(s) ahead of stale pending work
+  [worker:af2_refilter][gpu=2] pdb=job_0_n_180_id_67_beam_orig3_bm2-s0to100br2-s100to200br0-s200to300br3-s300to400br1_seq007.pdb
+
+[v7_controller] ===== round 58 (elapsed 1.00 h, busy=1/2, queued=0, refill=2) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=149 n_clusters=19 n_updated=145 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=28 strict_clusters=4 status=ok n_updated=28 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=32 near_clusters=7 status=ok n_updated=32 coverage=1.00 scope=binder_chain scope_fallback=0
+  [planner] last-tick critic flags surfaced: ['(b) proteinmpnn_redesign expected ~0.1h runtime but only 0.0h remain', '(b) complexa_beam expected ~0.5h runtime but only 0.0h remain']
+  [candidate_filter] 10 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  [auto_chain] 218 pending chain candidate(s) handled by bounded reserve/backfill lane
+  state=stalled  planned=0  chain_reserved=0  queued_now=0
+[v7_controller] max wall reached (1.00 h); draining remaining workers and exit
+  [drain][gpu=2] waiting up to 600s for structure_refilter to finish
+  [gpu=2] structure_refilter → 1 records (parsed=1; elapsed_gpu_h=0.01; delta_gpu_h=0.01; per-record=0.006)
+[v7_controller] done at 2026-09-25T20:05:49Z

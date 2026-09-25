@@ -97,6 +97,8 @@ for arm in qwen snowball; do
     "artifacts/$arm/wire-summary.json"
   .venv/bin/python scripts/summarize_campaign.py "artifacts/$arm/campaign" \
     "artifacts/$arm/controller.txt" "artifacts/$arm/accounting.json"
+  .venv/bin/python scripts/index_decisions.py "artifacts/$arm" \
+    "artifacts/$arm/decision-index.jsonl"
 done
 ```
 

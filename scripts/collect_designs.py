@@ -110,6 +110,11 @@ def main():
     (args.output / "prepared-results.jsonl").write_text("".join(json.dumps(r) + "\n" for r in prepared))
     (args.output / "structure-sources.json").write_text(json.dumps(sources, indent=2) + "\n")
     (args.output / "binders.fasta").write_text("".join(fasta))
+    with (args.output / "strict-export/manifest.csv").open() as handle:
+        qualified_ids = {row["result_id"] for row in csv.DictReader(handle)}
+    (args.output / "strict-binders.fasta").write_text("".join(
+        f">{row['result_id']} family={row['family']} chain={row['binder_chain']}\n{row['binder_sequence']}\n"
+        for row in rows if row["result_id"] in qualified_ids and row["binder_sequence"]))
     # Raw final/lookahead scores and timings are small but live outside the
     # campaign archive. Preserve these separately from parsed final designs.
     dispatch_path = args.archive / "dispatch_records.jsonl"

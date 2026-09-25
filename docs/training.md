@@ -31,7 +31,10 @@ being dropped or changed by candidate construction.
 ## SFT candidates
 
 The retained `wire/` records contain exact prompts and responses; `fixed-audit/`
-adds first-response labels and deterministic corrections. Qwen is a useful
+adds first-response labels and deterministic corrections. `decision-index.jsonl`
+links actual campaign calls to validated candidates, launches and measured
+descendants. These lineage associations overlap across calls and are not causal
+rewards or independent examples. Qwen is a useful
 teacher candidate, not an oracle: in the initial fixed checks, two of its 15
 Planner responses required repair. Preserve the distinction between raw teacher
 output, a validated correction, and a choice with measured downstream benefit.

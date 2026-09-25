@@ -108,6 +108,7 @@ def main():
     args = parser.parse_args()
     ctx = contexts()
     rows, excluded, seen = [], [], Counter()
+    previous_prompt, request_shapes, attempt = None, set(), 0
     for path in sorted(args.wire.glob("*.json")):
         call = json.loads(path.read_text())
         request = call["request"].get("json") or {}
@@ -124,10 +125,23 @@ def main():
         labels, corrected = score(raw, context)
         retry = any(m["role"] == "assistant" for m in messages)
         key = (context["role"], context["case"])
-        if not retry:
+        # The pinned suite interleaves cases within each repeat. Consecutive
+        # requests for the same original prompt are HTTP/model repair attempts,
+        # not additional benchmark repetitions.
+        if digest != previous_prompt:
             seen[key] += 1
+            previous_prompt, request_shapes, attempt = digest, set(), 0
+        else:
+            attempt += 1
+        shape = json.dumps(request, sort_keys=True)
+        sdk_retry = shape in request_shapes
+        request_shapes.add(shape)
         rows.append(dict(id=call["call_id"], arm=args.arm, role=context["role"],
             case=context["case"], repeat=seen[key]-1, is_model_repair_retry=retry,
+            is_sdk_retry=sdk_retry, http_attempt=attempt, http_latency_s=call.get("latency_s"),
+            http_status=call.get("status"),
+            within_controller_timeout=(call.get("status") == 200
+                and call.get("latency_s") is not None and call["latency_s"] < 90),
             split="public_fixed_evaluation_do_not_train", prompt_sha256=digest,
             wire_file=path.name, messages=messages, response=raw,
             finish_reason=choice.get("finish_reason"), labels=labels,
@@ -139,9 +153,11 @@ def main():
     (args.output / "responses.jsonl").write_text("".join(json.dumps(r) + "\n" for r in rows))
     summaries = {}
     for role in ["planner", "supervisor"]:
-        primary = [r for r in rows if r["role"] == role and not r["is_model_repair_retry"]]
+        primary = [r for r in rows if r["role"] == role and r["http_attempt"] == 0]
         summaries[role] = dict(n=len(primary), json_only=sum(r["labels"]["json_only"] for r in primary),
             schema_valid_before_repair=sum(r["labels"]["schema_valid"] for r in primary),
+            timely_schema_valid=sum(r["labels"]["schema_valid"] and r["within_controller_timeout"] for r in primary),
+            late_http_responses=sum(r["http_latency_s"] is not None and r["http_latency_s"] >= 90 for r in primary),
             schema_failure_reasons=dict(Counter(r["labels"]["schema_reason"] for r in primary if not r["labels"]["schema_valid"])),
             length_terminated=sum(r["finish_reason"] == "length" for r in primary))
         if role == "planner":
@@ -149,6 +165,7 @@ def main():
             summaries[role]["schema_and_configs_valid"] = sum(r["labels"]["schema_valid"] and r["labels"].get("all_configs_valid", False) for r in primary)
     report = dict(arm=args.arm, roles=summaries, n_http_calls=len(rows),
         n_model_repair_retries=sum(r["is_model_repair_retry"] for r in rows),
+        n_sdk_retries=sum(r["is_sdk_retry"] for r in rows),
         matched_prompt_sha256=sorted(ctx), excluded_nonfixture_calls=len(excluded))
     (args.output / "summary.json").write_text(json.dumps(report, indent=2) + "\n")
     print(json.dumps(report, indent=2))

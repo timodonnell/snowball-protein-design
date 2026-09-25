@@ -1,0 +1,45 @@
+{
+  "binder_chain": "B",
+  "input_pdb": "/work/results/qwen/campaign/worker_outputs/r023_proteinmpnn_redesign_cand_v7r003_hyp_0003_00_001/threaded_pdbs/job_0_n_184_id_2_bon_orig0_r2_seq006.pdb",
+  "metrics": {
+    "binder_scrmsd_ca": 1.6260110139846802,
+    "i_pae": 0.29689016938209534,
+    "iptm": null,
+    "model_names": [
+      "model_1_multimer_v3"
+    ],
+    "plddt": 0.8704681396484375,
+    "predicted_pdb": "/work/results/qwen/campaign/worker_outputs/r049_structure_refilter_chain_v7r023_proteinmpnn_redesign_to_structure_refilter_242/af2_refilter_prediction.pdb",
+    "raw_losses": {
+      "avg_ipsae": 0.1805853545665741,
+      "avg_ipsae_10": 0.17495550215244293,
+      "con": 1.4091280698776245,
+      "dgram_cce": 171.302978515625,
+      "exp_res": 0.001170012867078185,
+      "fape": 26.02245330810547,
+      "i_con": 2.861191511154175,
+      "i_pae": 0.29689016938209534,
+      "max_ipsae": 0.21659618616104126,
+      "max_ipsae_10": 0.209199920296669,
+      "min_ipae": 0.13564054667949677,
+      "min_ipsae": 0.14457450807094574,
+      "min_ipsae_10": 0.14071108400821686,
+      "pae": 0.21348817646503448,
+      "plddt": 0.1295318603515625,
+      "rmsd": 1.6260110139846802,
+      "seq_ent": 2.712940216064453
+    }
+  },
+  "prediction_chains": {
+    "binder_chain": "B",
+    "sequence_sha256": {
+      "A": "724daac675f1800706ad01ee6494b9cf91a87f2ef6de7911b26ecf2758dd1ae9",
+      "B": "17fbc84527e91fc57e4dbe25c45de741113bb07f463170b97c6aa3ea07e45b8f"
+    },
+    "target_chains": [
+      "A"
+    ]
+  },
+  "schema_version": "v5_af2_refilter_result.v1",
+  "target_chain": "A"
+}

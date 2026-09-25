@@ -1,0 +1,2438 @@
+[
+  {
+    "result_id": "71a04c6042467185",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r002_cand_v7r002_hyp_0002_00_001_a9a82d1587b79/job_0_n_184_id_0_bon_orig0_r0/job_0_n_184_id_0_bon_orig0_r0.pdb",
+    "file": "all-structures/71a04c6042467185.pdb",
+    "sha256": "1c455c41d8b59f17eff0579adfb73152a445d0bdc7c2c57642dbae378c475c33"
+  },
+  {
+    "result_id": "e43a3be4e06975c4",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r002_cand_v7r002_hyp_0002_00_001_a9a82d1587b79/job_0_n_184_id_1_bon_orig0_r1/job_0_n_184_id_1_bon_orig0_r1.pdb",
+    "file": "all-structures/e43a3be4e06975c4.pdb",
+    "sha256": "81778271237f544fd90647713a071d8b161988fe9ec1ebba1cbac0b0b69b56d5"
+  },
+  {
+    "result_id": "2ed2cfe55eaf8220",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r002_cand_v7r002_hyp_0002_00_001_a9a82d1587b79/job_0_n_184_id_2_bon_orig0_r2/job_0_n_184_id_2_bon_orig0_r2.pdb",
+    "file": "all-structures/2ed2cfe55eaf8220.pdb",
+    "sha256": "510da0c9e40694546592b16ccb21afffc5a71c260bf28281c9e99d0a986b59d9"
+  },
+  {
+    "result_id": "3eace9cef3f6e10b",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r002_cand_v7r002_hyp_0002_00_001_a9a82d1587b79/job_0_n_184_id_3_bon_orig0_r3/job_0_n_184_id_3_bon_orig0_r3.pdb",
+    "file": "all-structures/3eace9cef3f6e10b.pdb",
+    "sha256": "6d789b732265d19788d9d68b1fcd150523ccd406c7220c92166009bde5e4abe4"
+  },
+  {
+    "result_id": "19016ec3fa23f8b8",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r002_cand_v7r002_hyp_0002_00_001_a9a82d1587b79/job_0_n_236_id_0_bon_orig1_r0/job_0_n_236_id_0_bon_orig1_r0.pdb",
+    "file": "all-structures/19016ec3fa23f8b8.pdb",
+    "sha256": "83e1d27af1fb251c91202388fb60bdc2898ef9ded2f81166948814bd5d09793a"
+  },
+  {
+    "result_id": "27ae86a0a88bc53b",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r002_cand_v7r002_hyp_0002_00_001_a9a82d1587b79/job_0_n_236_id_1_bon_orig1_r1/job_0_n_236_id_1_bon_orig1_r1.pdb",
+    "file": "all-structures/27ae86a0a88bc53b.pdb",
+    "sha256": "79c486c376bf49caacc393c40b7165308e80ef92ec526c437a2b31e885eb0e75"
+  },
+  {
+    "result_id": "a6caa320f151f7f2",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r002_cand_v7r002_hyp_0002_00_001_a9a82d1587b79/job_0_n_236_id_2_bon_orig1_r2/job_0_n_236_id_2_bon_orig1_r2.pdb",
+    "file": "all-structures/a6caa320f151f7f2.pdb",
+    "sha256": "74568f0fe32404213b669598223df89e08d41307d969ac600989b8bf054ca078"
+  },
+  {
+    "result_id": "0f50112e1e3d6b72",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r002_cand_v7r002_hyp_0002_00_001_a9a82d1587b79/job_0_n_236_id_3_bon_orig1_r3/job_0_n_236_id_3_bon_orig1_r3.pdb",
+    "file": "all-structures/0f50112e1e3d6b72.pdb",
+    "sha256": "3afb69f0a8ffcdfda489660cd204f923e99d2b4e95c1f74fbf345d6b30f85685"
+  },
+  {
+    "result_id": "23fc066b820f7633",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r002_cand_v7r002_hyp_0002_00_001_a9a82d1587b79/job_0_n_230_id_0_bon_orig2_r0/job_0_n_230_id_0_bon_orig2_r0.pdb",
+    "file": "all-structures/23fc066b820f7633.pdb",
+    "sha256": "6b26ffab486ac6d1034ce839c846d98f3a18544ab74a547b55015e92300b851f"
+  },
+  {
+    "result_id": "12cc7947e6a6c473",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r002_cand_v7r002_hyp_0002_00_001_a9a82d1587b79/job_0_n_230_id_1_bon_orig2_r1/job_0_n_230_id_1_bon_orig2_r1.pdb",
+    "file": "all-structures/12cc7947e6a6c473.pdb",
+    "sha256": "22c43e6f476fad0cec5a044bb28c68c5fa3b1dbe6bbb07d1d5733cae216165c5"
+  },
+  {
+    "result_id": "acf530a6a684ae59",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r002_cand_v7r002_hyp_0002_00_001_a9a82d1587b79/job_0_n_230_id_2_bon_orig2_r2/job_0_n_230_id_2_bon_orig2_r2.pdb",
+    "file": "all-structures/acf530a6a684ae59.pdb",
+    "sha256": "20a5bfe8f053a077a35f240288b3b6ac2314d50fcd9c899e1f2e457bba66520c"
+  },
+  {
+    "result_id": "9004c35fcc7290ed",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r002_cand_v7r002_hyp_0002_00_001_a9a82d1587b79/job_0_n_230_id_3_bon_orig2_r3/job_0_n_230_id_3_bon_orig2_r3.pdb",
+    "file": "all-structures/9004c35fcc7290ed.pdb",
+    "sha256": "f13566306b7fdb0640b4cb6624577b958dce194865f3240bb03ed6c75a158172"
+  },
+  {
+    "result_id": "95fe5d00950d88c7",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r002_cand_v7r002_hyp_0002_00_001_a9a82d1587b79/job_0_n_214_id_0_bon_orig3_r0/job_0_n_214_id_0_bon_orig3_r0.pdb",
+    "file": "all-structures/95fe5d00950d88c7.pdb",
+    "sha256": "37a24800c2c3d32847bf2403eb8d49ec3473a547ec13fce836b35c4c1ae6d99a"
+  },
+  {
+    "result_id": "54f3805583c5d4bc",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r002_cand_v7r002_hyp_0002_00_001_a9a82d1587b79/job_0_n_214_id_1_bon_orig3_r1/job_0_n_214_id_1_bon_orig3_r1.pdb",
+    "file": "all-structures/54f3805583c5d4bc.pdb",
+    "sha256": "83ed0e608b806f17928640f244953de8236e41b587e5cdcfa1e62b5e59688b7d"
+  },
+  {
+    "result_id": "78650774111832f9",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r002_cand_v7r002_hyp_0002_00_001_a9a82d1587b79/job_0_n_214_id_2_bon_orig3_r2/job_0_n_214_id_2_bon_orig3_r2.pdb",
+    "file": "all-structures/78650774111832f9.pdb",
+    "sha256": "a491d52114c90583761be737a000286be171da946e125675b23c6c64d6268b7d"
+  },
+  {
+    "result_id": "3e3d5d7ff48d8698",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r002_cand_v7r002_hyp_0002_00_001_a9a82d1587b79/job_0_n_214_id_3_bon_orig3_r3/job_0_n_214_id_3_bon_orig3_r3.pdb",
+    "file": "all-structures/3e3d5d7ff48d8698.pdb",
+    "sha256": "ab3fb14576237fa2f7eb3d3cb687ed2820526f7c686986d709e0aa1e83a8372f"
+  },
+  {
+    "result_id": "24e7ed040592ef5c",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r001_warmstart_v7r001_00_complexa_beam_a8df003a7b6d9/job_0_n_232_id_64_beam_orig0_bm0-s0to100br1-s100to200br3-s200to300br0-s300to400br3/job_0_n_232_id_64_beam_orig0_bm0-s0to100br1-s100to200br3-s200to300br0-s300to400br3.pdb",
+    "file": "all-structures/24e7ed040592ef5c.pdb",
+    "sha256": "ef2d844c5352257e71315f4c0270bc06ea7464ce2dd4ae2f72bb3ce8a2635565"
+  },
+  {
+    "result_id": "14afbd2c89208b9d",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r001_warmstart_v7r001_00_complexa_beam_a8df003a7b6d9/job_0_n_232_id_65_beam_orig0_bm0-s0to100br1-s100to200br3-s200to300br0-s300to400br0/job_0_n_232_id_65_beam_orig0_bm0-s0to100br1-s100to200br3-s200to300br0-s300to400br0.pdb",
+    "file": "all-structures/14afbd2c89208b9d.pdb",
+    "sha256": "98e552984d68626013b988bd6d58311dfcf007d51836c72ba89e854a93734c48"
+  },
+  {
+    "result_id": "6c949c3f042dcb2c",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r001_warmstart_v7r001_00_complexa_beam_a8df003a7b6d9/job_0_n_232_id_66_beam_orig0_bm0-s0to100br1-s100to200br3-s200to300br1-s300to400br2/job_0_n_232_id_66_beam_orig0_bm0-s0to100br1-s100to200br3-s200to300br1-s300to400br2.pdb",
+    "file": "all-structures/6c949c3f042dcb2c.pdb",
+    "sha256": "65a3768404ea1c35130e71e6b1e2b0f1cc82b612ca3fccf88d4046890b07b912"
+  },
+  {
+    "result_id": "aa0f3620d0f33da6",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r001_warmstart_v7r001_00_complexa_beam_a8df003a7b6d9/job_0_n_232_id_67_beam_orig0_bm0-s0to100br1-s100to200br3-s200to300br0-s300to400br1/job_0_n_232_id_67_beam_orig0_bm0-s0to100br1-s100to200br3-s200to300br0-s300to400br1.pdb",
+    "file": "all-structures/aa0f3620d0f33da6.pdb",
+    "sha256": "b08ff2e62809de32f3fb88554a2ff9ec9e417c2cc8551b9746a21dabad39f4fa"
+  },
+  {
+    "result_id": "52b6f1af3717d672",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r001_warmstart_v7r001_00_complexa_beam_a8df003a7b6d9/job_0_n_229_id_64_beam_orig1_bm2-s0to100br3-s100to200br2-s200to300br3-s300to400br1/job_0_n_229_id_64_beam_orig1_bm2-s0to100br3-s100to200br2-s200to300br3-s300to400br1.pdb",
+    "file": "all-structures/52b6f1af3717d672.pdb",
+    "sha256": "068d94045398db9bedd2eda10da134d3cb70e60918f2e4f6acca539a8a509003"
+  },
+  {
+    "result_id": "d05b3300b923cad1",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r001_warmstart_v7r001_00_complexa_beam_a8df003a7b6d9/job_0_n_229_id_65_beam_orig1_bm2-s0to100br3-s100to200br2-s200to300br3-s300to400br3/job_0_n_229_id_65_beam_orig1_bm2-s0to100br3-s100to200br2-s200to300br3-s300to400br3.pdb",
+    "file": "all-structures/d05b3300b923cad1.pdb",
+    "sha256": "e84ed5192c2ba0fae97334da501cb8929ab2eb8632cd8d65091e3da43c9df799"
+  },
+  {
+    "result_id": "cb5b3062f21a02bd",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r001_warmstart_v7r001_00_complexa_beam_a8df003a7b6d9/job_0_n_229_id_66_beam_orig1_bm2-s0to100br1-s100to200br0-s200to300br1-s300to400br3/job_0_n_229_id_66_beam_orig1_bm2-s0to100br1-s100to200br0-s200to300br1-s300to400br3.pdb",
+    "file": "all-structures/cb5b3062f21a02bd.pdb",
+    "sha256": "44a3ac9abb32f828ba7ee2df7fe8bfd2f2738f0a4ea40a8d3c2964b1b23bec35"
+  },
+  {
+    "result_id": "575f370dcb2435f5",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r001_warmstart_v7r001_00_complexa_beam_a8df003a7b6d9/job_0_n_229_id_67_beam_orig1_bm2-s0to100br1-s100to200br3-s200to300br2-s300to400br3/job_0_n_229_id_67_beam_orig1_bm2-s0to100br1-s100to200br3-s200to300br2-s300to400br3.pdb",
+    "file": "all-structures/575f370dcb2435f5.pdb",
+    "sha256": "28625743c533633053eaecf62cfc73a4190f57f99a83e4f66db08248162011e2"
+  },
+  {
+    "result_id": "708d43334681ee9d",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r001_warmstart_v7r001_00_complexa_beam_a8df003a7b6d9/job_0_n_167_id_64_beam_orig2_bm3-s0to100br1-s100to200br0-s200to300br0-s300to400br3/job_0_n_167_id_64_beam_orig2_bm3-s0to100br1-s100to200br0-s200to300br0-s300to400br3.pdb",
+    "file": "all-structures/708d43334681ee9d.pdb",
+    "sha256": "8f41a776e606e97701a127ae373e6c9d8ba1885d52306a5a66fb845e6f68d06b"
+  },
+  {
+    "result_id": "72ea895be224d420",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r001_warmstart_v7r001_00_complexa_beam_a8df003a7b6d9/job_0_n_167_id_65_beam_orig2_bm3-s0to100br1-s100to200br0-s200to300br0-s300to400br0/job_0_n_167_id_65_beam_orig2_bm3-s0to100br1-s100to200br0-s200to300br0-s300to400br0.pdb",
+    "file": "all-structures/72ea895be224d420.pdb",
+    "sha256": "65eddbe1ba0be11f8ebb31e7f3b57e4bb8c40bdb148432947122effb182ead91"
+  },
+  {
+    "result_id": "20e3dbe7968b11e5",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r001_warmstart_v7r001_00_complexa_beam_a8df003a7b6d9/job_0_n_167_id_66_beam_orig2_bm3-s0to100br1-s100to200br0-s200to300br0-s300to400br2/job_0_n_167_id_66_beam_orig2_bm3-s0to100br1-s100to200br0-s200to300br0-s300to400br2.pdb",
+    "file": "all-structures/20e3dbe7968b11e5.pdb",
+    "sha256": "b319721b0272baae5a8ab7f6f7e2f46e7b27044d8fc7820559f8bc6bf509c178"
+  },
+  {
+    "result_id": "747d01809e392791",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r001_warmstart_v7r001_00_complexa_beam_a8df003a7b6d9/job_0_n_167_id_67_beam_orig2_bm3-s0to100br1-s100to200br0-s200to300br0-s300to400br1/job_0_n_167_id_67_beam_orig2_bm3-s0to100br1-s100to200br0-s200to300br0-s300to400br1.pdb",
+    "file": "all-structures/747d01809e392791.pdb",
+    "sha256": "aea344b75e2b54bea3d07e110b21bb85936c0ae56ec83ff3da6cdf4036cf4ef9"
+  },
+  {
+    "result_id": "3891cf510a4444fc",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r001_warmstart_v7r001_00_complexa_beam_a8df003a7b6d9/job_0_n_175_id_64_beam_orig3_bm2-s0to100br1-s100to200br2-s200to300br1-s300to400br1/job_0_n_175_id_64_beam_orig3_bm2-s0to100br1-s100to200br2-s200to300br1-s300to400br1.pdb",
+    "file": "all-structures/3891cf510a4444fc.pdb",
+    "sha256": "1ad86215f3c11f68c12a8eaadced15e4fcabd52f1e52925a6d7912ae80d1b1e8"
+  },
+  {
+    "result_id": "e3deb38f98c57ae4",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r001_warmstart_v7r001_00_complexa_beam_a8df003a7b6d9/job_0_n_175_id_65_beam_orig3_bm2-s0to100br1-s100to200br2-s200to300br1-s300to400br3/job_0_n_175_id_65_beam_orig3_bm2-s0to100br1-s100to200br2-s200to300br1-s300to400br3.pdb",
+    "file": "all-structures/e3deb38f98c57ae4.pdb",
+    "sha256": "b9a473f5641157cae5ab45daa78caf673d2f88e37d1438d0cadd0234e377a64a"
+  },
+  {
+    "result_id": "d18cc5845f1c8ad0",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r001_warmstart_v7r001_00_complexa_beam_a8df003a7b6d9/job_0_n_175_id_66_beam_orig3_bm2-s0to100br1-s100to200br2-s200to300br1-s300to400br0/job_0_n_175_id_66_beam_orig3_bm2-s0to100br1-s100to200br2-s200to300br1-s300to400br0.pdb",
+    "file": "all-structures/d18cc5845f1c8ad0.pdb",
+    "sha256": "00f505057f3692c7e0b1dd1f2af7a97a0bbc92020454256e4a5af6f4d6a9c2ee"
+  },
+  {
+    "result_id": "5e5eb87c3a6df8d4",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r001_warmstart_v7r001_00_complexa_beam_a8df003a7b6d9/job_0_n_175_id_67_beam_orig3_bm2-s0to100br1-s100to200br2-s200to300br1-s300to400br2/job_0_n_175_id_67_beam_orig3_bm2-s0to100br1-s100to200br2-s200to300br1-s300to400br2.pdb",
+    "file": "all-structures/5e5eb87c3a6df8d4.pdb",
+    "sha256": "c5e06a8930eee1aabeab25ddf0a02043cd1531abd1335f8526a35e4e23df649e"
+  },
+  {
+    "result_id": "449058032b70e1b2",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r003_cand_v7r003_hyp_0003_01_002_a2b1ae63664a8/job_0_n_176_id_64_beam_orig0_bm1-s0to100br3-s100to200br3-s200to300br3-s300to400br3/job_0_n_176_id_64_beam_orig0_bm1-s0to100br3-s100to200br3-s200to300br3-s300to400br3.pdb",
+    "file": "all-structures/449058032b70e1b2.pdb",
+    "sha256": "7ade71cce0645cd477afbf9ff7e8aea98aeeeef8368c11dfc27be913455bdcb5"
+  },
+  {
+    "result_id": "d75c99c2a1930d36",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r003_cand_v7r003_hyp_0003_01_002_a2b1ae63664a8/job_0_n_176_id_65_beam_orig0_bm1-s0to100br3-s100to200br3-s200to300br3-s300to400br2/job_0_n_176_id_65_beam_orig0_bm1-s0to100br3-s100to200br3-s200to300br3-s300to400br2.pdb",
+    "file": "all-structures/d75c99c2a1930d36.pdb",
+    "sha256": "b7f19ebaea20c9021f56ea08baa470917e4b992d7178d9f3237f3fefcb323296"
+  },
+  {
+    "result_id": "5e1ea28bba7e50f9",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r003_cand_v7r003_hyp_0003_01_002_a2b1ae63664a8/job_0_n_176_id_66_beam_orig0_bm1-s0to100br3-s100to200br3-s200to300br3-s300to400br1/job_0_n_176_id_66_beam_orig0_bm1-s0to100br3-s100to200br3-s200to300br3-s300to400br1.pdb",
+    "file": "all-structures/5e1ea28bba7e50f9.pdb",
+    "sha256": "e69993104931acfe278a3646f8ca8c824770e80bc0ed7688376de5e0018e2a8f"
+  },
+  {
+    "result_id": "a02a9e59990ca80b",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r003_cand_v7r003_hyp_0003_01_002_a2b1ae63664a8/job_0_n_176_id_67_beam_orig0_bm1-s0to100br3-s100to200br3-s200to300br3-s300to400br0/job_0_n_176_id_67_beam_orig0_bm1-s0to100br3-s100to200br3-s200to300br3-s300to400br0.pdb",
+    "file": "all-structures/a02a9e59990ca80b.pdb",
+    "sha256": "be49ad911d360f69f4dfb8d28fdbe5b183f805f3b1245a47626d8baf258b365d"
+  },
+  {
+    "result_id": "a593538e6d0ee4d2",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r003_cand_v7r003_hyp_0003_01_002_a2b1ae63664a8/job_0_n_229_id_64_beam_orig1_bm2-s0to100br1-s100to200br0-s200to300br2-s300to400br1/job_0_n_229_id_64_beam_orig1_bm2-s0to100br1-s100to200br0-s200to300br2-s300to400br1.pdb",
+    "file": "all-structures/a593538e6d0ee4d2.pdb",
+    "sha256": "e736cbf8a441058c7a309d5db237a1570fd92b3da9442e01b207ffb15abebe3f"
+  },
+  {
+    "result_id": "273cc49ef70bb270",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r003_cand_v7r003_hyp_0003_01_002_a2b1ae63664a8/job_0_n_229_id_65_beam_orig1_bm2-s0to100br1-s100to200br0-s200to300br0-s300to400br2/job_0_n_229_id_65_beam_orig1_bm2-s0to100br1-s100to200br0-s200to300br0-s300to400br2.pdb",
+    "file": "all-structures/273cc49ef70bb270.pdb",
+    "sha256": "0a3d15d2a557bf05d88b4c2e7c9da2c1797f4ba846d404dac9b569c2aa96438d"
+  },
+  {
+    "result_id": "a9c6f3f6641aa11e",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r003_cand_v7r003_hyp_0003_01_002_a2b1ae63664a8/job_0_n_229_id_66_beam_orig1_bm2-s0to100br1-s100to200br1-s200to300br1-s300to400br3/job_0_n_229_id_66_beam_orig1_bm2-s0to100br1-s100to200br1-s200to300br1-s300to400br3.pdb",
+    "file": "all-structures/a9c6f3f6641aa11e.pdb",
+    "sha256": "2cb47664221a2545777a097802928962f7dfa9f357586f43c0f365845efed315"
+  },
+  {
+    "result_id": "45976d78786b6577",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r003_cand_v7r003_hyp_0003_01_002_a2b1ae63664a8/job_0_n_229_id_67_beam_orig1_bm2-s0to100br1-s100to200br0-s200to300br2-s300to400br0/job_0_n_229_id_67_beam_orig1_bm2-s0to100br1-s100to200br0-s200to300br2-s300to400br0.pdb",
+    "file": "all-structures/45976d78786b6577.pdb",
+    "sha256": "e7e4978424840c0fea339630891b8c4fee91173fe212b3ab0e0cd8e94245764e"
+  },
+  {
+    "result_id": "1a60ca36e6ea86f7",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r003_cand_v7r003_hyp_0003_01_002_a2b1ae63664a8/job_0_n_233_id_64_beam_orig2_bm2-s0to100br1-s100to200br3-s200to300br1-s300to400br1/job_0_n_233_id_64_beam_orig2_bm2-s0to100br1-s100to200br3-s200to300br1-s300to400br1.pdb",
+    "file": "all-structures/1a60ca36e6ea86f7.pdb",
+    "sha256": "cafea3bb6306f19884dbefc6672d33ebdea889857f359b300aeecc6046ef4673"
+  },
+  {
+    "result_id": "c2b56618c372908e",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r003_cand_v7r003_hyp_0003_01_002_a2b1ae63664a8/job_0_n_233_id_65_beam_orig2_bm2-s0to100br1-s100to200br3-s200to300br3-s300to400br3/job_0_n_233_id_65_beam_orig2_bm2-s0to100br1-s100to200br3-s200to300br3-s300to400br3.pdb",
+    "file": "all-structures/c2b56618c372908e.pdb",
+    "sha256": "cb9b0d5f9dc0f05f54f268406b1fde773d67db0dde3a74d9a0cff3a3733520e8"
+  },
+  {
+    "result_id": "c3dd0163c2d65426",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r003_cand_v7r003_hyp_0003_01_002_a2b1ae63664a8/job_0_n_233_id_66_beam_orig2_bm2-s0to100br1-s100to200br3-s200to300br1-s300to400br0/job_0_n_233_id_66_beam_orig2_bm2-s0to100br1-s100to200br3-s200to300br1-s300to400br0.pdb",
+    "file": "all-structures/c3dd0163c2d65426.pdb",
+    "sha256": "e9ef8da9f8c71aebdeb52315e7ba082239f2ec9e04b960d1010e54a1596b5ceb"
+  },
+  {
+    "result_id": "c2b8d4129e4c4d98",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r003_cand_v7r003_hyp_0003_01_002_a2b1ae63664a8/job_0_n_233_id_67_beam_orig2_bm0-s0to100br2-s100to200br3-s200to300br1-s300to400br3/job_0_n_233_id_67_beam_orig2_bm0-s0to100br2-s100to200br3-s200to300br1-s300to400br3.pdb",
+    "file": "all-structures/c2b8d4129e4c4d98.pdb",
+    "sha256": "3a0c20b55dd564dd603df806bad48d526962191ec2fc785cff7dc5d3ed5f2e7d"
+  },
+  {
+    "result_id": "3ea8959f549a4108",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r003_cand_v7r003_hyp_0003_01_002_a2b1ae63664a8/job_0_n_180_id_64_beam_orig3_bm2-s0to100br2-s100to200br0-s200to300br1-s300to400br1/job_0_n_180_id_64_beam_orig3_bm2-s0to100br2-s100to200br0-s200to300br1-s300to400br1.pdb",
+    "file": "all-structures/3ea8959f549a4108.pdb",
+    "sha256": "ac8f5a731f690f33963c2764f9d21b9fdafe896aef60a250eca6b7da3356d86a"
+  },
+  {
+    "result_id": "5c5dff8e61102eae",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r003_cand_v7r003_hyp_0003_01_002_a2b1ae63664a8/job_0_n_180_id_65_beam_orig3_bm2-s0to100br2-s100to200br0-s200to300br3-s300to400br2/job_0_n_180_id_65_beam_orig3_bm2-s0to100br2-s100to200br0-s200to300br3-s300to400br2.pdb",
+    "file": "all-structures/5c5dff8e61102eae.pdb",
+    "sha256": "f060b51848d6743b5f71825ab09831a2d52898d5e1f7414d5a11b6143d0ba228"
+  },
+  {
+    "result_id": "71151ec0027f80b7",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r003_cand_v7r003_hyp_0003_01_002_a2b1ae63664a8/job_0_n_180_id_66_beam_orig3_bm2-s0to100br2-s100to200br0-s200to300br1-s300to400br3/job_0_n_180_id_66_beam_orig3_bm2-s0to100br2-s100to200br0-s200to300br1-s300to400br3.pdb",
+    "file": "all-structures/71151ec0027f80b7.pdb",
+    "sha256": "30da79c394905d2942b9a434e23ba32d117062217f91cadf197760b436a306c1"
+  },
+  {
+    "result_id": "92988d30a69a7c45",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r003_cand_v7r003_hyp_0003_01_002_a2b1ae63664a8/job_0_n_180_id_67_beam_orig3_bm2-s0to100br2-s100to200br0-s200to300br3-s300to400br1/job_0_n_180_id_67_beam_orig3_bm2-s0to100br2-s100to200br0-s200to300br3-s300to400br1.pdb",
+    "file": "all-structures/92988d30a69a7c45.pdb",
+    "sha256": "32054f0bdcc8dc31bcf854e71b91b4333dd40410138f5a1a4b0b1bbfced5211d"
+  },
+  {
+    "result_id": "fe34454ce3389afc",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r004_cand_v7r004_hyp_0004_02_003_ae5b6dc63e53e/job_0_n_233_id_64_fk_orig0_bm0-s0to100br2-s100to200br2-s200to300br2-s300to400br3/job_0_n_233_id_64_fk_orig0_bm0-s0to100br2-s100to200br2-s200to300br2-s300to400br3.pdb",
+    "file": "all-structures/fe34454ce3389afc.pdb",
+    "sha256": "7cede9ea063ef4ce5e939b574fe3512b40956b660ccaee622da6b8a3811a2700"
+  },
+  {
+    "result_id": "b4883255cfb764a5",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r004_cand_v7r004_hyp_0004_02_003_ae5b6dc63e53e/job_0_n_233_id_65_fk_orig0_bm0-s0to100br2-s100to200br2-s200to300br2-s300to400br2/job_0_n_233_id_65_fk_orig0_bm0-s0to100br2-s100to200br2-s200to300br2-s300to400br2.pdb",
+    "file": "all-structures/b4883255cfb764a5.pdb",
+    "sha256": "630d139f6970932b414ae6cad6563b75a71141296c427a3743a9c530cfa63298"
+  },
+  {
+    "result_id": "21e73ac7e4e01595",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r004_cand_v7r004_hyp_0004_02_003_ae5b6dc63e53e/job_0_n_233_id_66_fk_orig0_bm0-s0to100br2-s100to200br2-s200to300br2-s300to400br0/job_0_n_233_id_66_fk_orig0_bm0-s0to100br2-s100to200br2-s200to300br2-s300to400br0.pdb",
+    "file": "all-structures/21e73ac7e4e01595.pdb",
+    "sha256": "68286afe999e1789c4c5d140a96f6b823bc51b1ede8a052fdf3ae1cf76cb8959"
+  },
+  {
+    "result_id": "38d886046817655b",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r004_cand_v7r004_hyp_0004_02_003_ae5b6dc63e53e/job_0_n_233_id_67_fk_orig0_bm0-s0to100br2-s100to200br1-s200to300br1-s300to400br0/job_0_n_233_id_67_fk_orig0_bm0-s0to100br2-s100to200br1-s200to300br1-s300to400br0.pdb",
+    "file": "all-structures/38d886046817655b.pdb",
+    "sha256": "0c84037aecd055a8ee24eafba14659998e2315167fc70810adb953abd3e31a28"
+  },
+  {
+    "result_id": "74d22a045020e1b3",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r004_cand_v7r004_hyp_0004_02_003_ae5b6dc63e53e/job_0_n_211_id_64_fk_orig1_bm0-s0to100br0-s100to200br1-s200to300br0-s300to400br2/job_0_n_211_id_64_fk_orig1_bm0-s0to100br0-s100to200br1-s200to300br0-s300to400br2.pdb",
+    "file": "all-structures/74d22a045020e1b3.pdb",
+    "sha256": "54b0e5ed3e5770ee10def709a1c23961498e5cb562ae12cbbdd24498453283fb"
+  },
+  {
+    "result_id": "718f8190311858d0",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r004_cand_v7r004_hyp_0004_02_003_ae5b6dc63e53e/job_0_n_211_id_65_fk_orig1_bm0-s0to100br0-s100to200br1-s200to300br0-s300to400br3/job_0_n_211_id_65_fk_orig1_bm0-s0to100br0-s100to200br1-s200to300br0-s300to400br3.pdb",
+    "file": "all-structures/718f8190311858d0.pdb",
+    "sha256": "a7dfd74c539bc39e1f6b01b3e1adf81903d6ce2405111b1b63bc8817747557be"
+  },
+  {
+    "result_id": "6d5eb2e5193c2b6e",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r004_cand_v7r004_hyp_0004_02_003_ae5b6dc63e53e/job_0_n_211_id_66_fk_orig1_bm0-s0to100br0-s100to200br1-s200to300br0-s300to400br3/job_0_n_211_id_66_fk_orig1_bm0-s0to100br0-s100to200br1-s200to300br0-s300to400br3.pdb",
+    "file": "all-structures/6d5eb2e5193c2b6e.pdb",
+    "sha256": "a7dfd74c539bc39e1f6b01b3e1adf81903d6ce2405111b1b63bc8817747557be"
+  },
+  {
+    "result_id": "033e6f491ca1e9c5",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r004_cand_v7r004_hyp_0004_02_003_ae5b6dc63e53e/job_0_n_211_id_67_fk_orig1_bm0-s0to100br0-s100to200br1-s200to300br0-s300to400br2/job_0_n_211_id_67_fk_orig1_bm0-s0to100br0-s100to200br1-s200to300br0-s300to400br2.pdb",
+    "file": "all-structures/033e6f491ca1e9c5.pdb",
+    "sha256": "54b0e5ed3e5770ee10def709a1c23961498e5cb562ae12cbbdd24498453283fb"
+  },
+  {
+    "result_id": "3499a68d84ab0c08",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r004_cand_v7r004_hyp_0004_02_003_ae5b6dc63e53e/job_0_n_198_id_64_fk_orig2_bm0-s0to100br1-s100to200br1-s200to300br2-s300to400br2/job_0_n_198_id_64_fk_orig2_bm0-s0to100br1-s100to200br1-s200to300br2-s300to400br2.pdb",
+    "file": "all-structures/3499a68d84ab0c08.pdb",
+    "sha256": "4d42646fd56256f4a3af78f6d732ee0f388cef321aabe0d34d4a60afe9350174"
+  },
+  {
+    "result_id": "86fde2502030906b",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r004_cand_v7r004_hyp_0004_02_003_ae5b6dc63e53e/job_0_n_198_id_65_fk_orig2_bm0-s0to100br1-s100to200br0-s200to300br2-s300to400br3/job_0_n_198_id_65_fk_orig2_bm0-s0to100br1-s100to200br0-s200to300br2-s300to400br3.pdb",
+    "file": "all-structures/86fde2502030906b.pdb",
+    "sha256": "bf098d4643729bbc4d9ab4fa8840f13ff8ff7a9074e79553439ddc9e0e5adbb8"
+  },
+  {
+    "result_id": "d2acfb4b1726b973",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r004_cand_v7r004_hyp_0004_02_003_ae5b6dc63e53e/job_0_n_198_id_66_fk_orig2_bm0-s0to100br1-s100to200br1-s200to300br2-s300to400br2/job_0_n_198_id_66_fk_orig2_bm0-s0to100br1-s100to200br1-s200to300br2-s300to400br2.pdb",
+    "file": "all-structures/d2acfb4b1726b973.pdb",
+    "sha256": "4d42646fd56256f4a3af78f6d732ee0f388cef321aabe0d34d4a60afe9350174"
+  },
+  {
+    "result_id": "8a5698fd14f186ce",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r004_cand_v7r004_hyp_0004_02_003_ae5b6dc63e53e/job_0_n_198_id_67_fk_orig2_bm0-s0to100br1-s100to200br1-s200to300br2-s300to400br1/job_0_n_198_id_67_fk_orig2_bm0-s0to100br1-s100to200br1-s200to300br2-s300to400br1.pdb",
+    "file": "all-structures/8a5698fd14f186ce.pdb",
+    "sha256": "b752886170fc70c5736b04b2bd3424f456d92a4249abc669bf57d79d43aaba0a"
+  },
+  {
+    "result_id": "fb136164a16fcf3b",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r004_cand_v7r004_hyp_0004_02_003_ae5b6dc63e53e/job_0_n_220_id_64_fk_orig3_bm0-s0to100br2-s100to200br3-s200to300br2-s300to400br3/job_0_n_220_id_64_fk_orig3_bm0-s0to100br2-s100to200br3-s200to300br2-s300to400br3.pdb",
+    "file": "all-structures/fb136164a16fcf3b.pdb",
+    "sha256": "41672faf02baa85ddc0f40dae0a27f0cc96b2fa29169993a067cda0b4961bf82"
+  },
+  {
+    "result_id": "a68d95b2ecf42b52",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r004_cand_v7r004_hyp_0004_02_003_ae5b6dc63e53e/job_0_n_220_id_65_fk_orig3_bm0-s0to100br2-s100to200br3-s200to300br2-s300to400br2/job_0_n_220_id_65_fk_orig3_bm0-s0to100br2-s100to200br3-s200to300br2-s300to400br2.pdb",
+    "file": "all-structures/a68d95b2ecf42b52.pdb",
+    "sha256": "a2a204cd4b3e33d85c7cc866167b3ce36941215a26a9411fc6ba0ef9c0f0b8ba"
+  },
+  {
+    "result_id": "8e933f7dee9f7cab",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r004_cand_v7r004_hyp_0004_02_003_ae5b6dc63e53e/job_0_n_220_id_66_fk_orig3_bm0-s0to100br2-s100to200br3-s200to300br2-s300to400br0/job_0_n_220_id_66_fk_orig3_bm0-s0to100br2-s100to200br3-s200to300br2-s300to400br0.pdb",
+    "file": "all-structures/8e933f7dee9f7cab.pdb",
+    "sha256": "20c1f02a9363e932ff1a63a1ed545f2757aa586bfa6abf81b72d8c890cae29a4"
+  },
+  {
+    "result_id": "737272818f160148",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r004_cand_v7r004_hyp_0004_02_003_ae5b6dc63e53e/job_0_n_220_id_67_fk_orig3_bm0-s0to100br2-s100to200br3-s200to300br2-s300to400br1/job_0_n_220_id_67_fk_orig3_bm0-s0to100br2-s100to200br3-s200to300br2-s300to400br1.pdb",
+    "file": "all-structures/737272818f160148.pdb",
+    "sha256": "70d55da304c0c839664219d4834e0432b53d30f5032208c40ce333792f9d3384"
+  },
+  {
+    "result_id": "a7d3f22aedf0118c",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r005_cand_v7r005_hyp_0005_01_002_a224316cffb43/job_0_n_194_id_64_fk_orig0_bm2-s0to100br3-s100to200br2-s200to300br2-s300to400br2/job_0_n_194_id_64_fk_orig0_bm2-s0to100br3-s100to200br2-s200to300br2-s300to400br2.pdb",
+    "file": "all-structures/a7d3f22aedf0118c.pdb",
+    "sha256": "fd41ed3afd635676f3eacb33454df707841b3b6acad3f9cfcc0f3cba1d34e3a5"
+  },
+  {
+    "result_id": "9c1e1dd3b61ec08e",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r005_cand_v7r005_hyp_0005_01_002_a224316cffb43/job_0_n_194_id_65_fk_orig0_bm3-s0to100br3-s100to200br3-s200to300br1-s300to400br2/job_0_n_194_id_65_fk_orig0_bm3-s0to100br3-s100to200br3-s200to300br1-s300to400br2.pdb",
+    "file": "all-structures/9c1e1dd3b61ec08e.pdb",
+    "sha256": "7b9e543e3e2f819b7361548242049969eba86271904af8410f69f384b8ee4e65"
+  },
+  {
+    "result_id": "dcd53f1b0ddb2d41",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r005_cand_v7r005_hyp_0005_01_002_a224316cffb43/job_0_n_194_id_66_fk_orig0_bm3-s0to100br3-s100to200br0-s200to300br0-s300to400br0/job_0_n_194_id_66_fk_orig0_bm3-s0to100br3-s100to200br0-s200to300br0-s300to400br0.pdb",
+    "file": "all-structures/dcd53f1b0ddb2d41.pdb",
+    "sha256": "f11ac19ea2de2f4c72c306197d18d2a6298ff85c7f90785494e9f9e5acdc07bf"
+  },
+  {
+    "result_id": "078617a1c77f5764",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r005_cand_v7r005_hyp_0005_01_002_a224316cffb43/job_0_n_194_id_67_fk_orig0_bm2-s0to100br3-s100to200br2-s200to300br2-s300to400br2/job_0_n_194_id_67_fk_orig0_bm2-s0to100br3-s100to200br2-s200to300br2-s300to400br2.pdb",
+    "file": "all-structures/078617a1c77f5764.pdb",
+    "sha256": "fd41ed3afd635676f3eacb33454df707841b3b6acad3f9cfcc0f3cba1d34e3a5"
+  },
+  {
+    "result_id": "63bfd2e5e2682faf",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r005_cand_v7r005_hyp_0005_01_002_a224316cffb43/job_0_n_224_id_64_fk_orig1_bm1-s0to100br1-s100to200br1-s200to300br3-s300to400br1/job_0_n_224_id_64_fk_orig1_bm1-s0to100br1-s100to200br1-s200to300br3-s300to400br1.pdb",
+    "file": "all-structures/63bfd2e5e2682faf.pdb",
+    "sha256": "b07bf87a54338c2178cc1ca8488feab634f7c47e5783a60729976fd0efa67a14"
+  },
+  {
+    "result_id": "b7065b21a1f6fdfb",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r005_cand_v7r005_hyp_0005_01_002_a224316cffb43/job_0_n_224_id_65_fk_orig1_bm2-s0to100br2-s100to200br0-s200to300br3-s300to400br3/job_0_n_224_id_65_fk_orig1_bm2-s0to100br2-s100to200br0-s200to300br3-s300to400br3.pdb",
+    "file": "all-structures/b7065b21a1f6fdfb.pdb",
+    "sha256": "683d78441da78e0dcf115d266ed81db31d3b3f774dd4c54e1d84f766ad3530f1"
+  },
+  {
+    "result_id": "3835b6a788ec0078",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r005_cand_v7r005_hyp_0005_01_002_a224316cffb43/job_0_n_224_id_66_fk_orig1_bm2-s0to100br2-s100to200br0-s200to300br3-s300to400br1/job_0_n_224_id_66_fk_orig1_bm2-s0to100br2-s100to200br0-s200to300br3-s300to400br1.pdb",
+    "file": "all-structures/3835b6a788ec0078.pdb",
+    "sha256": "71e1360e3846219a9d128b302981dfe966e52c763aec658a9bf221d1c06d83b4"
+  },
+  {
+    "result_id": "e03c43bbdfb0c3f0",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r005_cand_v7r005_hyp_0005_01_002_a224316cffb43/job_0_n_224_id_67_fk_orig1_bm2-s0to100br2-s100to200br0-s200to300br3-s300to400br1/job_0_n_224_id_67_fk_orig1_bm2-s0to100br2-s100to200br0-s200to300br3-s300to400br1.pdb",
+    "file": "all-structures/e03c43bbdfb0c3f0.pdb",
+    "sha256": "71e1360e3846219a9d128b302981dfe966e52c763aec658a9bf221d1c06d83b4"
+  },
+  {
+    "result_id": "7a54d8598ee00dc7",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r005_cand_v7r005_hyp_0005_01_002_a224316cffb43/job_0_n_180_id_64_fk_orig2_bm1-s0to100br0-s100to200br3-s200to300br2-s300to400br2/job_0_n_180_id_64_fk_orig2_bm1-s0to100br0-s100to200br3-s200to300br2-s300to400br2.pdb",
+    "file": "all-structures/7a54d8598ee00dc7.pdb",
+    "sha256": "7c0169b0f38a6d3011301868d0a894585f9a4c2bcbd6601d1e02c856292cd465"
+  },
+  {
+    "result_id": "92e2ed5fab939d84",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r005_cand_v7r005_hyp_0005_01_002_a224316cffb43/job_0_n_180_id_65_fk_orig2_bm1-s0to100br0-s100to200br3-s200to300br2-s300to400br3/job_0_n_180_id_65_fk_orig2_bm1-s0to100br0-s100to200br3-s200to300br2-s300to400br3.pdb",
+    "file": "all-structures/92e2ed5fab939d84.pdb",
+    "sha256": "567d5dc5e885f19ad65c12c799084e9d5f2e9a373d2e8916359015488fc13417"
+  },
+  {
+    "result_id": "ca0a8be142188322",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r005_cand_v7r005_hyp_0005_01_002_a224316cffb43/job_0_n_180_id_66_fk_orig2_bm0-s0to100br1-s100to200br3-s200to300br0-s300to400br2/job_0_n_180_id_66_fk_orig2_bm0-s0to100br1-s100to200br3-s200to300br0-s300to400br2.pdb",
+    "file": "all-structures/ca0a8be142188322.pdb",
+    "sha256": "9e3d1fbcd1e1d612a178e6089ddab35d14ee96ba54510bd6e3645d9decce710c"
+  },
+  {
+    "result_id": "d6c9c9990040e4d3",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r005_cand_v7r005_hyp_0005_01_002_a224316cffb43/job_0_n_180_id_67_fk_orig2_bm0-s0to100br1-s100to200br3-s200to300br0-s300to400br3/job_0_n_180_id_67_fk_orig2_bm0-s0to100br1-s100to200br3-s200to300br0-s300to400br3.pdb",
+    "file": "all-structures/d6c9c9990040e4d3.pdb",
+    "sha256": "550e4aa5bd63701d80da81f7fca6cc645085e124753c9c913cb54ead7e622545"
+  },
+  {
+    "result_id": "271b7e9f8b623e08",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r005_cand_v7r005_hyp_0005_01_002_a224316cffb43/job_0_n_229_id_64_fk_orig3_bm3-s0to100br1-s100to200br2-s200to300br3-s300to400br2/job_0_n_229_id_64_fk_orig3_bm3-s0to100br1-s100to200br2-s200to300br3-s300to400br2.pdb",
+    "file": "all-structures/271b7e9f8b623e08.pdb",
+    "sha256": "a2a6c4c731bfb9eb0961738caeb3ab342140a53a4aed21e97da7d201276dd89e"
+  },
+  {
+    "result_id": "b2735dce58e09e6f",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r005_cand_v7r005_hyp_0005_01_002_a224316cffb43/job_0_n_229_id_65_fk_orig3_bm3-s0to100br2-s100to200br0-s200to300br1-s300to400br0/job_0_n_229_id_65_fk_orig3_bm3-s0to100br2-s100to200br0-s200to300br1-s300to400br0.pdb",
+    "file": "all-structures/b2735dce58e09e6f.pdb",
+    "sha256": "ec2a19876d4cad33f7440b31cc52f0dcb6d3998a8d32c8654a0198c30f5b60e7"
+  },
+  {
+    "result_id": "1d04fa8de63a393d",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r005_cand_v7r005_hyp_0005_01_002_a224316cffb43/job_0_n_229_id_66_fk_orig3_bm3-s0to100br2-s100to200br0-s200to300br1-s300to400br1/job_0_n_229_id_66_fk_orig3_bm3-s0to100br2-s100to200br0-s200to300br1-s300to400br1.pdb",
+    "file": "all-structures/1d04fa8de63a393d.pdb",
+    "sha256": "4331ad37fdcfdd996794cd2f36b55987816080ef16f28a4c732e9132293a1606"
+  },
+  {
+    "result_id": "7efcfb56f12a4b74",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r005_cand_v7r005_hyp_0005_01_002_a224316cffb43/job_0_n_229_id_67_fk_orig3_bm3-s0to100br1-s100to200br0-s200to300br3-s300to400br1/job_0_n_229_id_67_fk_orig3_bm3-s0to100br1-s100to200br0-s200to300br3-s300to400br1.pdb",
+    "file": "all-structures/7efcfb56f12a4b74.pdb",
+    "sha256": "515bd1959ab71cb570a0272dac1c638f2b325fab53df1f6395d64593ea7f09a2"
+  },
+  {
+    "result_id": "cb88a5a83794feac",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r006_cand_v7r006_hyp_0006_00_001_af1b7530d1b98/job_0_n_190_id_64_beam_orig0_bm0-s0to100br3-s100to200br2-s200to300br3-s300to400br2/job_0_n_190_id_64_beam_orig0_bm0-s0to100br3-s100to200br2-s200to300br3-s300to400br2.pdb",
+    "file": "all-structures/cb88a5a83794feac.pdb",
+    "sha256": "f8b7c240f7465fc2923c6837ec8f715df91e04f242d2de1324ed06c5b9b239a6"
+  },
+  {
+    "result_id": "00496106d30b831b",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r006_cand_v7r006_hyp_0006_00_001_af1b7530d1b98/job_0_n_190_id_65_beam_orig0_bm0-s0to100br3-s100to200br1-s200to300br3-s300to400br0/job_0_n_190_id_65_beam_orig0_bm0-s0to100br3-s100to200br1-s200to300br3-s300to400br0.pdb",
+    "file": "all-structures/00496106d30b831b.pdb",
+    "sha256": "63daf74fa497a50ad25969d979a31e3ac7cda00e20ceeeea2309ac6a979c0343"
+  },
+  {
+    "result_id": "76b48592105c70a3",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r006_cand_v7r006_hyp_0006_00_001_af1b7530d1b98/job_0_n_190_id_66_beam_orig0_bm0-s0to100br3-s100to200br1-s200to300br3-s300to400br3/job_0_n_190_id_66_beam_orig0_bm0-s0to100br3-s100to200br1-s200to300br3-s300to400br3.pdb",
+    "file": "all-structures/76b48592105c70a3.pdb",
+    "sha256": "01d7872a865d5f2b1ce0c80672f68132423ae091d6df7f537891069b5b4d38e6"
+  },
+  {
+    "result_id": "16e267f357fc9e9b",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r006_cand_v7r006_hyp_0006_00_001_af1b7530d1b98/job_0_n_190_id_67_beam_orig0_bm0-s0to100br3-s100to200br1-s200to300br3-s300to400br2/job_0_n_190_id_67_beam_orig0_bm0-s0to100br3-s100to200br1-s200to300br3-s300to400br2.pdb",
+    "file": "all-structures/16e267f357fc9e9b.pdb",
+    "sha256": "6d27e989eb97a8267b8196b98a6cbc97281c7937af0e745094a604daa7a13072"
+  },
+  {
+    "result_id": "1c68daa936d17a86",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r006_cand_v7r006_hyp_0006_00_001_af1b7530d1b98/job_0_n_201_id_64_beam_orig1_bm3-s0to100br0-s100to200br3-s200to300br1-s300to400br0/job_0_n_201_id_64_beam_orig1_bm3-s0to100br0-s100to200br3-s200to300br1-s300to400br0.pdb",
+    "file": "all-structures/1c68daa936d17a86.pdb",
+    "sha256": "58ed372087d014107bb3ed6634dbe2ee98fd85cb0db8f6aa898657c627db5abd"
+  },
+  {
+    "result_id": "83d484ef71670e3b",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r006_cand_v7r006_hyp_0006_00_001_af1b7530d1b98/job_0_n_201_id_65_beam_orig1_bm3-s0to100br0-s100to200br3-s200to300br1-s300to400br3/job_0_n_201_id_65_beam_orig1_bm3-s0to100br0-s100to200br3-s200to300br1-s300to400br3.pdb",
+    "file": "all-structures/83d484ef71670e3b.pdb",
+    "sha256": "cc1212a9713babecbcefc303d6498e2ce34f429e60ef41e62c9ba26ce11ac28a"
+  },
+  {
+    "result_id": "dd0c730390b4db40",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r006_cand_v7r006_hyp_0006_00_001_af1b7530d1b98/job_0_n_201_id_66_beam_orig1_bm3-s0to100br0-s100to200br3-s200to300br1-s300to400br1/job_0_n_201_id_66_beam_orig1_bm3-s0to100br0-s100to200br3-s200to300br1-s300to400br1.pdb",
+    "file": "all-structures/dd0c730390b4db40.pdb",
+    "sha256": "3888349e85d71497d51a1a60ce7dba9426be2cdc492ebe968e124d586bd4fd23"
+  },
+  {
+    "result_id": "887a97f2b5f4f209",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r006_cand_v7r006_hyp_0006_00_001_af1b7530d1b98/job_0_n_201_id_67_beam_orig1_bm3-s0to100br3-s100to200br1-s200to300br3-s300to400br3/job_0_n_201_id_67_beam_orig1_bm3-s0to100br3-s100to200br1-s200to300br3-s300to400br3.pdb",
+    "file": "all-structures/887a97f2b5f4f209.pdb",
+    "sha256": "982f9ace68f1e39e85083f56534c448ad8b898229913e4d661d9a60b47824db9"
+  },
+  {
+    "result_id": "944626521558980c",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r006_cand_v7r006_hyp_0006_00_001_af1b7530d1b98/job_0_n_218_id_64_beam_orig2_bm3-s0to100br2-s100to200br0-s200to300br1-s300to400br2/job_0_n_218_id_64_beam_orig2_bm3-s0to100br2-s100to200br0-s200to300br1-s300to400br2.pdb",
+    "file": "all-structures/944626521558980c.pdb",
+    "sha256": "627a8ba153a348e648a32ade06481a745cc256b052f5ee9b6f4553ec62ae3d8c"
+  },
+  {
+    "result_id": "3779fe253d6457ae",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r006_cand_v7r006_hyp_0006_00_001_af1b7530d1b98/job_0_n_218_id_65_beam_orig2_bm3-s0to100br2-s100to200br3-s200to300br2-s300to400br3/job_0_n_218_id_65_beam_orig2_bm3-s0to100br2-s100to200br3-s200to300br2-s300to400br3.pdb",
+    "file": "all-structures/3779fe253d6457ae.pdb",
+    "sha256": "0afe8a58477e0cd725e57a299fcbd0b75030cc08dae692cba38071fddcca909d"
+  },
+  {
+    "result_id": "6d84d049b4db767b",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r006_cand_v7r006_hyp_0006_00_001_af1b7530d1b98/job_0_n_218_id_66_beam_orig2_bm3-s0to100br2-s100to200br0-s200to300br2-s300to400br3/job_0_n_218_id_66_beam_orig2_bm3-s0to100br2-s100to200br0-s200to300br2-s300to400br3.pdb",
+    "file": "all-structures/6d84d049b4db767b.pdb",
+    "sha256": "bf1458fd6dea6c2affbccd7b6f0f3993d67880882b99d3c90616b1216693ccd0"
+  },
+  {
+    "result_id": "31071e3bef06f2f5",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r006_cand_v7r006_hyp_0006_00_001_af1b7530d1b98/job_0_n_218_id_67_beam_orig2_bm3-s0to100br2-s100to200br0-s200to300br2-s300to400br1/job_0_n_218_id_67_beam_orig2_bm3-s0to100br2-s100to200br0-s200to300br2-s300to400br1.pdb",
+    "file": "all-structures/31071e3bef06f2f5.pdb",
+    "sha256": "edd99afed28b670d7f676d93651355d6c6ea9665f33c1e8690a959868298d928"
+  },
+  {
+    "result_id": "6ce700e4162c9a9d",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r006_cand_v7r006_hyp_0006_00_001_af1b7530d1b98/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1.pdb",
+    "file": "all-structures/6ce700e4162c9a9d.pdb",
+    "sha256": "f42666612658e5ce1de5b00b54b3372b221c800ba23fff5c7305dffcc225a53f"
+  },
+  {
+    "result_id": "84a89a4b46ade295",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r006_cand_v7r006_hyp_0006_00_001_af1b7530d1b98/job_0_n_186_id_65_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br0-s300to400br0/job_0_n_186_id_65_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br0-s300to400br0.pdb",
+    "file": "all-structures/84a89a4b46ade295.pdb",
+    "sha256": "e5b1cb757e2cd4755560bddd0fec51bf88f7d9d7984f460cd93e59b9ed5b1d68"
+  },
+  {
+    "result_id": "e6474dea3ebf6a65",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r006_cand_v7r006_hyp_0006_00_001_af1b7530d1b98/job_0_n_186_id_66_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br2/job_0_n_186_id_66_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br2.pdb",
+    "file": "all-structures/e6474dea3ebf6a65.pdb",
+    "sha256": "3cb9bb0e1ded1acb0047b99ba654aab8a995e11dc82e16d7461e6f373b4f3ec6"
+  },
+  {
+    "result_id": "c2c3638f3f7ac82f",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r006_cand_v7r006_hyp_0006_00_001_af1b7530d1b98/job_0_n_186_id_67_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br3/job_0_n_186_id_67_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br3.pdb",
+    "file": "all-structures/c2c3638f3f7ac82f.pdb",
+    "sha256": "752a911703b65ad223555b35826e4f10e1d9318feaa8bb22a645b3d89dc47f7f"
+  },
+  {
+    "result_id": "d6b4da0c12c4f770",
+    "source": "/work/results/qwen/campaign/worker_outputs/r008_proteinmpnn_redesign_cand_v7r008_hyp_0008_00_001/threaded_pdbs/job_0_n_180_id_67_beam_orig3_bm2-s0to100br2-s100to200br0-s200to300br3-s300to400br1_seq001.pdb",
+    "file": "all-structures/d6b4da0c12c4f770.pdb",
+    "sha256": "a056a58dbab0b6404deb14e13d15a7e00067e00374f05b7b02bd3ecfd8df0d84"
+  },
+  {
+    "result_id": "1f24561c9761dbe0",
+    "source": "/work/results/qwen/campaign/worker_outputs/r008_proteinmpnn_redesign_cand_v7r008_hyp_0008_00_001/threaded_pdbs/job_0_n_180_id_67_beam_orig3_bm2-s0to100br2-s100to200br0-s200to300br3-s300to400br1_seq002.pdb",
+    "file": "all-structures/1f24561c9761dbe0.pdb",
+    "sha256": "87f90873d308a2a2453d1e9092e902599fc988457c7e5248f63154d472608d1f"
+  },
+  {
+    "result_id": "22c985cc3018a622",
+    "source": "/work/results/qwen/campaign/worker_outputs/r008_proteinmpnn_redesign_cand_v7r008_hyp_0008_00_001/threaded_pdbs/job_0_n_180_id_67_beam_orig3_bm2-s0to100br2-s100to200br0-s200to300br3-s300to400br1_seq003.pdb",
+    "file": "all-structures/22c985cc3018a622.pdb",
+    "sha256": "a1a3404886c9566c2b45c689e4e5256b48d02fbcb372cb7f3c0cd87e8189b4fd"
+  },
+  {
+    "result_id": "21e79595ca26922e",
+    "source": "/work/results/qwen/campaign/worker_outputs/r008_proteinmpnn_redesign_cand_v7r008_hyp_0008_00_001/threaded_pdbs/job_0_n_180_id_67_beam_orig3_bm2-s0to100br2-s100to200br0-s200to300br3-s300to400br1_seq004.pdb",
+    "file": "all-structures/21e79595ca26922e.pdb",
+    "sha256": "80e7581bf35f32aee7ead9ecbd57f73826bf63d539724dc3ae108b04b3dbd937"
+  },
+  {
+    "result_id": "b551b99e8c4e7e58",
+    "source": "/work/results/qwen/campaign/worker_outputs/r008_proteinmpnn_redesign_cand_v7r008_hyp_0008_00_001/threaded_pdbs/job_0_n_180_id_67_beam_orig3_bm2-s0to100br2-s100to200br0-s200to300br3-s300to400br1_seq005.pdb",
+    "file": "all-structures/b551b99e8c4e7e58.pdb",
+    "sha256": "51f3d7aa6f9b0b3fc7d9f7312a8444d731a74a0149f4f9ed4806b628303835f1"
+  },
+  {
+    "result_id": "0514e236eb914fff",
+    "source": "/work/results/qwen/campaign/worker_outputs/r008_proteinmpnn_redesign_cand_v7r008_hyp_0008_00_001/threaded_pdbs/job_0_n_180_id_67_beam_orig3_bm2-s0to100br2-s100to200br0-s200to300br3-s300to400br1_seq006.pdb",
+    "file": "all-structures/0514e236eb914fff.pdb",
+    "sha256": "92568d366d07bba191043c9747a2523b018442f35a69b88fd467459107fc3dde"
+  },
+  {
+    "result_id": "81d9e31da44f5e08",
+    "source": "/work/results/qwen/campaign/worker_outputs/r008_proteinmpnn_redesign_cand_v7r008_hyp_0008_00_001/threaded_pdbs/job_0_n_180_id_67_beam_orig3_bm2-s0to100br2-s100to200br0-s200to300br3-s300to400br1_seq007.pdb",
+    "file": "all-structures/81d9e31da44f5e08.pdb",
+    "sha256": "9c115c3a5ac8a0a7dfbc1e65b83631c470bbb98c091bff8077f9b5fab34560cc"
+  },
+  {
+    "result_id": "7e0ca7dacc66c8c5",
+    "source": "/work/results/qwen/campaign/worker_outputs/r008_proteinmpnn_redesign_cand_v7r008_hyp_0008_00_001/threaded_pdbs/job_0_n_180_id_67_beam_orig3_bm2-s0to100br2-s100to200br0-s200to300br3-s300to400br1_seq008.pdb",
+    "file": "all-structures/7e0ca7dacc66c8c5.pdb",
+    "sha256": "6c8534188c48cf8f9c15955d44f29839450ef5b37cc4601dad6284fd95096a9f"
+  },
+  {
+    "result_id": "a527e754ff99791c",
+    "source": "/work/results/qwen/campaign/worker_outputs/r008_proteinmpnn_redesign_cand_v7r008_hyp_0008_00_001/threaded_pdbs/job_0_n_180_id_67_beam_orig3_bm2-s0to100br2-s100to200br0-s200to300br3-s300to400br1_seq009.pdb",
+    "file": "all-structures/a527e754ff99791c.pdb",
+    "sha256": "2b8d2c2c323bd2ddd65d95ee332146650a6bc13ad8f6b0978ff3bcdc1cdc3236"
+  },
+  {
+    "result_id": "c8ac536f376abe05",
+    "source": "/work/results/qwen/campaign/worker_outputs/r008_proteinmpnn_redesign_cand_v7r008_hyp_0008_00_001/threaded_pdbs/job_0_n_180_id_67_beam_orig3_bm2-s0to100br2-s100to200br0-s200to300br3-s300to400br1_seq010.pdb",
+    "file": "all-structures/c8ac536f376abe05.pdb",
+    "sha256": "8b1f208bdf9cdddc32ad988c00273d77720db899c50e7ab7b1ba53c697811bdb"
+  },
+  {
+    "result_id": "43e412657682caae",
+    "source": "/work/results/qwen/campaign/worker_outputs/r008_proteinmpnn_redesign_cand_v7r008_hyp_0008_00_001/threaded_pdbs/job_0_n_180_id_67_beam_orig3_bm2-s0to100br2-s100to200br0-s200to300br3-s300to400br1_seq011.pdb",
+    "file": "all-structures/43e412657682caae.pdb",
+    "sha256": "5566eadae36bb098689528c5df5b26217d966bf42a399d5f96eaa6c167b60c20"
+  },
+  {
+    "result_id": "763a10854b37550e",
+    "source": "/work/results/qwen/campaign/worker_outputs/r008_proteinmpnn_redesign_cand_v7r008_hyp_0008_00_001/threaded_pdbs/job_0_n_180_id_67_beam_orig3_bm2-s0to100br2-s100to200br0-s200to300br3-s300to400br1_seq012.pdb",
+    "file": "all-structures/763a10854b37550e.pdb",
+    "sha256": "ef28c33f9901a6b2c6810b565a3cb024d439d05a9c2bd8ec01422b94fc5083ca"
+  },
+  {
+    "result_id": "69842023d5f223a7",
+    "source": "/work/results/qwen/campaign/worker_outputs/r008_proteinmpnn_redesign_cand_v7r008_hyp_0008_00_001/threaded_pdbs/job_0_n_180_id_67_beam_orig3_bm2-s0to100br2-s100to200br0-s200to300br3-s300to400br1_seq013.pdb",
+    "file": "all-structures/69842023d5f223a7.pdb",
+    "sha256": "c7ecaddf5e7938ecc5b543f58940dbc4dfee8fbc33da0f6ff2b3ca43e7aa9f9c"
+  },
+  {
+    "result_id": "7130cc820abe4df1",
+    "source": "/work/results/qwen/campaign/worker_outputs/r008_proteinmpnn_redesign_cand_v7r008_hyp_0008_00_001/threaded_pdbs/job_0_n_180_id_67_beam_orig3_bm2-s0to100br2-s100to200br0-s200to300br3-s300to400br1_seq014.pdb",
+    "file": "all-structures/7130cc820abe4df1.pdb",
+    "sha256": "091d36e4c4f87cfd32f25d11928cdd878a831e4926891270787225d03ab9b828"
+  },
+  {
+    "result_id": "4fc64940883c1ca7",
+    "source": "/work/results/qwen/campaign/worker_outputs/r008_proteinmpnn_redesign_cand_v7r008_hyp_0008_00_001/threaded_pdbs/job_0_n_180_id_67_beam_orig3_bm2-s0to100br2-s100to200br0-s200to300br3-s300to400br1_seq015.pdb",
+    "file": "all-structures/4fc64940883c1ca7.pdb",
+    "sha256": "c2ec25457240261600b23c3e918b52a3401e2e9dd19ba95fb3b22095f7331ec5"
+  },
+  {
+    "result_id": "6b17cf747d379437",
+    "source": "/work/results/qwen/campaign/worker_outputs/r008_proteinmpnn_redesign_cand_v7r008_hyp_0008_00_001/threaded_pdbs/job_0_n_180_id_67_beam_orig3_bm2-s0to100br2-s100to200br0-s200to300br3-s300to400br1_seq016.pdb",
+    "file": "all-structures/6b17cf747d379437.pdb",
+    "sha256": "a574d38bcb18d37dd7f92cd60de970e5c0f78a334dc7f80bf2443f16576ef12b"
+  },
+  {
+    "result_id": "b365f28499eb5425",
+    "source": "/work/results/qwen/campaign/worker_outputs/r009_structure_refilter_chain_v7r008_proteinmpnn_redesign_to_structure_refilter_001/af2_refilter_prediction.pdb",
+    "file": "all-structures/b365f28499eb5425.pdb",
+    "sha256": "f498d230af46a2a79a8b80922d649c4b13a6570ff79946345c717984b4667d06"
+  },
+  {
+    "result_id": "272645fe1c90cd64",
+    "source": "/work/results/qwen/campaign/worker_outputs/r009_structure_refilter_chain_v7r008_proteinmpnn_redesign_to_structure_refilter_002/af2_refilter_prediction.pdb",
+    "file": "all-structures/272645fe1c90cd64.pdb",
+    "sha256": "c3b452f7f7583dec0b622511188a9d0357575f3359ea37e4110c3fb08245fa13"
+  },
+  {
+    "result_id": "92d1cc7f88b391c8",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r007_cand_v7r007_hyp_0007_00_001_a92db08c2022c/job_0_n_207_id_64_beam_orig0_bm0-s0to100br0-s100to200br2-s200to300br3-s300to400br0/job_0_n_207_id_64_beam_orig0_bm0-s0to100br0-s100to200br2-s200to300br3-s300to400br0.pdb",
+    "file": "all-structures/92d1cc7f88b391c8.pdb",
+    "sha256": "f8aecc608736e849a37335bc009dc8f435519424a4fee39ec888864ef550ac43"
+  },
+  {
+    "result_id": "78ee9c4afd808cb7",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r007_cand_v7r007_hyp_0007_00_001_a92db08c2022c/job_0_n_207_id_65_beam_orig0_bm0-s0to100br0-s100to200br2-s200to300br3-s300to400br1/job_0_n_207_id_65_beam_orig0_bm0-s0to100br0-s100to200br2-s200to300br3-s300to400br1.pdb",
+    "file": "all-structures/78ee9c4afd808cb7.pdb",
+    "sha256": "5a23e88345106409bea5ed7c96db3e27c266dd8aa72ab4cbfc731560271d003d"
+  },
+  {
+    "result_id": "df1270b75a21572e",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r007_cand_v7r007_hyp_0007_00_001_a92db08c2022c/job_0_n_207_id_66_beam_orig0_bm0-s0to100br0-s100to200br2-s200to300br3-s300to400br2/job_0_n_207_id_66_beam_orig0_bm0-s0to100br0-s100to200br2-s200to300br3-s300to400br2.pdb",
+    "file": "all-structures/df1270b75a21572e.pdb",
+    "sha256": "7e5178629ab9bb6418fcab01a4f87dcea3fe0e51bf7699b7ae1aeeae2af11bb6"
+  },
+  {
+    "result_id": "d00bc52105dc08cb",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r007_cand_v7r007_hyp_0007_00_001_a92db08c2022c/job_0_n_207_id_67_beam_orig0_bm0-s0to100br0-s100to200br2-s200to300br3-s300to400br3/job_0_n_207_id_67_beam_orig0_bm0-s0to100br0-s100to200br2-s200to300br3-s300to400br3.pdb",
+    "file": "all-structures/d00bc52105dc08cb.pdb",
+    "sha256": "0606c74ef73eadafb0f9a30d11de4de2b603898f79f39c362b9486910b9bd1c4"
+  },
+  {
+    "result_id": "2353e0f000f3e4db",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r007_cand_v7r007_hyp_0007_00_001_a92db08c2022c/job_0_n_196_id_64_beam_orig1_bm3-s0to100br3-s100to200br2-s200to300br2-s300to400br2/job_0_n_196_id_64_beam_orig1_bm3-s0to100br3-s100to200br2-s200to300br2-s300to400br2.pdb",
+    "file": "all-structures/2353e0f000f3e4db.pdb",
+    "sha256": "2b9b0bcbe72d9769e363f29351ac0235abd88fcfe02d4d515c4d58573950ddd8"
+  },
+  {
+    "result_id": "40fbebbd828dab1e",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r007_cand_v7r007_hyp_0007_00_001_a92db08c2022c/job_0_n_196_id_65_beam_orig1_bm3-s0to100br3-s100to200br1-s200to300br2-s300to400br2/job_0_n_196_id_65_beam_orig1_bm3-s0to100br3-s100to200br1-s200to300br2-s300to400br2.pdb",
+    "file": "all-structures/40fbebbd828dab1e.pdb",
+    "sha256": "ca03524054dd4269b458386ffff1088d1d2a20d76c65f0c7547c41f702d63d72"
+  },
+  {
+    "result_id": "dde17b6a9a359a1d",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r007_cand_v7r007_hyp_0007_00_001_a92db08c2022c/job_0_n_196_id_66_beam_orig1_bm3-s0to100br3-s100to200br1-s200to300br2-s300to400br3/job_0_n_196_id_66_beam_orig1_bm3-s0to100br3-s100to200br1-s200to300br2-s300to400br3.pdb",
+    "file": "all-structures/dde17b6a9a359a1d.pdb",
+    "sha256": "d868304f585c3b4b99e76bb9535a6f749ada9a929b4f6ac304d6d73561ebd258"
+  },
+  {
+    "result_id": "2e02fd0c065133f3",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r007_cand_v7r007_hyp_0007_00_001_a92db08c2022c/job_0_n_196_id_67_beam_orig1_bm3-s0to100br3-s100to200br1-s200to300br2-s300to400br1/job_0_n_196_id_67_beam_orig1_bm3-s0to100br3-s100to200br1-s200to300br2-s300to400br1.pdb",
+    "file": "all-structures/2e02fd0c065133f3.pdb",
+    "sha256": "899b9ddfbfdb9223794de381c34f131433441d4a6a651ebc54cdc755e2a245ad"
+  },
+  {
+    "result_id": "b2fcacecb179de02",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r007_cand_v7r007_hyp_0007_00_001_a92db08c2022c/job_0_n_170_id_64_beam_orig2_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br0/job_0_n_170_id_64_beam_orig2_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br0.pdb",
+    "file": "all-structures/b2fcacecb179de02.pdb",
+    "sha256": "48716c9837d387d82ead83f16dd2545d86ed2c2dfffdea952f405207484d1656"
+  },
+  {
+    "result_id": "0a50dc2117367c5d",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r007_cand_v7r007_hyp_0007_00_001_a92db08c2022c/job_0_n_170_id_65_beam_orig2_bm0-s0to100br1-s100to200br2-s200to300br1-s300to400br2/job_0_n_170_id_65_beam_orig2_bm0-s0to100br1-s100to200br2-s200to300br1-s300to400br2.pdb",
+    "file": "all-structures/0a50dc2117367c5d.pdb",
+    "sha256": "a7e738d2ba2098e30ab9a6e6c10ad378300b73382873c525d330858ee6d5561c"
+  },
+  {
+    "result_id": "c2fa2f81852d9219",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r007_cand_v7r007_hyp_0007_00_001_a92db08c2022c/job_0_n_170_id_66_beam_orig2_bm0-s0to100br1-s100to200br2-s200to300br1-s300to400br1/job_0_n_170_id_66_beam_orig2_bm0-s0to100br1-s100to200br2-s200to300br1-s300to400br1.pdb",
+    "file": "all-structures/c2fa2f81852d9219.pdb",
+    "sha256": "062c6750bce704b65466a7c49225de6edf9c1a1d0222ff4da6fb0c496ba90416"
+  },
+  {
+    "result_id": "1b274ccb8fdd0c2e",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r007_cand_v7r007_hyp_0007_00_001_a92db08c2022c/job_0_n_170_id_67_beam_orig2_bm0-s0to100br1-s100to200br3-s200to300br1-s300to400br1/job_0_n_170_id_67_beam_orig2_bm0-s0to100br1-s100to200br3-s200to300br1-s300to400br1.pdb",
+    "file": "all-structures/1b274ccb8fdd0c2e.pdb",
+    "sha256": "fd088e0bf4099d3a280cf0f553c85f0c3165bdff41a9fed8d9c3071a17345f6d"
+  },
+  {
+    "result_id": "eb60915c217664f1",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r007_cand_v7r007_hyp_0007_00_001_a92db08c2022c/job_0_n_191_id_64_beam_orig3_bm1-s0to100br0-s100to200br2-s200to300br0-s300to400br1/job_0_n_191_id_64_beam_orig3_bm1-s0to100br0-s100to200br2-s200to300br0-s300to400br1.pdb",
+    "file": "all-structures/eb60915c217664f1.pdb",
+    "sha256": "89d5d95e3b0e5bb84001f25006c37926e827767bf086a269ee70c9dcb0a4ff62"
+  },
+  {
+    "result_id": "98ea118025e2d831",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r007_cand_v7r007_hyp_0007_00_001_a92db08c2022c/job_0_n_191_id_65_beam_orig3_bm1-s0to100br0-s100to200br2-s200to300br0-s300to400br0/job_0_n_191_id_65_beam_orig3_bm1-s0to100br0-s100to200br2-s200to300br0-s300to400br0.pdb",
+    "file": "all-structures/98ea118025e2d831.pdb",
+    "sha256": "5ac490f09ad548dced848618d420c17fe2eb7e70a9e30e26f669c0f2fcba5d3b"
+  },
+  {
+    "result_id": "a825858976f567ab",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r007_cand_v7r007_hyp_0007_00_001_a92db08c2022c/job_0_n_191_id_66_beam_orig3_bm1-s0to100br0-s100to200br2-s200to300br0-s300to400br2/job_0_n_191_id_66_beam_orig3_bm1-s0to100br0-s100to200br2-s200to300br0-s300to400br2.pdb",
+    "file": "all-structures/a825858976f567ab.pdb",
+    "sha256": "72aacb98bad938ec71cb7579cc07c6816f2d6c124bf1b4a0e1ec9785b76db313"
+  },
+  {
+    "result_id": "4e6e7b80b4ef5d60",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r007_cand_v7r007_hyp_0007_00_001_a92db08c2022c/job_0_n_191_id_67_beam_orig3_bm1-s0to100br0-s100to200br2-s200to300br0-s300to400br3/job_0_n_191_id_67_beam_orig3_bm1-s0to100br0-s100to200br2-s200to300br0-s300to400br3.pdb",
+    "file": "all-structures/4e6e7b80b4ef5d60.pdb",
+    "sha256": "e7bca4bb8e4a8508cfd25bcf355a577c445006e20faa3518b15c143fc5949117"
+  },
+  {
+    "result_id": "00012452e7bf3c2c",
+    "source": "/work/results/qwen/campaign/worker_outputs/r009_structure_refilter_chain_v7r008_proteinmpnn_redesign_to_structure_refilter_003/af2_refilter_prediction.pdb",
+    "file": "all-structures/00012452e7bf3c2c.pdb",
+    "sha256": "121ba66303b54e07cbb3e15baf66fb7a86ff42d7f01d0f513e5b40fe670a78c0"
+  },
+  {
+    "result_id": "3c268351aab1a060",
+    "source": "/work/results/qwen/campaign/worker_outputs/r009_proteinmpnn_redesign_cand_v7r009_hyp_0009_01_002/threaded_pdbs/job_0_n_180_id_67_beam_orig3_bm2-s0to100br2-s100to200br0-s200to300br3-s300to400br1_seq001.pdb",
+    "file": "all-structures/3c268351aab1a060.pdb",
+    "sha256": "b1e5d031cc87f6cb0db4386fe6f7bdc674cb278739d97f0e54a8c8ec0d40de4d"
+  },
+  {
+    "result_id": "0295ff5d12121ba8",
+    "source": "/work/results/qwen/campaign/worker_outputs/r009_proteinmpnn_redesign_cand_v7r009_hyp_0009_01_002/threaded_pdbs/job_0_n_180_id_67_beam_orig3_bm2-s0to100br2-s100to200br0-s200to300br3-s300to400br1_seq002.pdb",
+    "file": "all-structures/0295ff5d12121ba8.pdb",
+    "sha256": "17ee2c1b5f59ad6a70689495f4c7108db6a0d11b847ba287ca3e9219fd75eed0"
+  },
+  {
+    "result_id": "ddd39074850f95b4",
+    "source": "/work/results/qwen/campaign/worker_outputs/r009_proteinmpnn_redesign_cand_v7r009_hyp_0009_01_002/threaded_pdbs/job_0_n_180_id_67_beam_orig3_bm2-s0to100br2-s100to200br0-s200to300br3-s300to400br1_seq003.pdb",
+    "file": "all-structures/ddd39074850f95b4.pdb",
+    "sha256": "3013a1213dee5a9a3214e5b5aa0bde5e1dc3b4a1f2719b5248edd6875c245e68"
+  },
+  {
+    "result_id": "8e495654e75e79de",
+    "source": "/work/results/qwen/campaign/worker_outputs/r009_proteinmpnn_redesign_cand_v7r009_hyp_0009_01_002/threaded_pdbs/job_0_n_180_id_67_beam_orig3_bm2-s0to100br2-s100to200br0-s200to300br3-s300to400br1_seq004.pdb",
+    "file": "all-structures/8e495654e75e79de.pdb",
+    "sha256": "b73730c3be4381591a0928418dce4f83019148f2008d8d0a63043ac52feaf601"
+  },
+  {
+    "result_id": "b9d3184283505635",
+    "source": "/work/results/qwen/campaign/worker_outputs/r009_proteinmpnn_redesign_cand_v7r009_hyp_0009_01_002/threaded_pdbs/job_0_n_180_id_67_beam_orig3_bm2-s0to100br2-s100to200br0-s200to300br3-s300to400br1_seq005.pdb",
+    "file": "all-structures/b9d3184283505635.pdb",
+    "sha256": "af1c4fe9fb3dfaa8d229461b4c0f465d1ef2c613ab8047de2e50ae4153094488"
+  },
+  {
+    "result_id": "efd57adc5e4e3ef9",
+    "source": "/work/results/qwen/campaign/worker_outputs/r009_proteinmpnn_redesign_cand_v7r009_hyp_0009_01_002/threaded_pdbs/job_0_n_180_id_67_beam_orig3_bm2-s0to100br2-s100to200br0-s200to300br3-s300to400br1_seq006.pdb",
+    "file": "all-structures/efd57adc5e4e3ef9.pdb",
+    "sha256": "65c2bdb27f598bd565dfe8fd6723ed4d1c963bb7fc1f636b163f604fce1a3966"
+  },
+  {
+    "result_id": "ddc3dde533627c61",
+    "source": "/work/results/qwen/campaign/worker_outputs/r009_proteinmpnn_redesign_cand_v7r009_hyp_0009_01_002/threaded_pdbs/job_0_n_180_id_67_beam_orig3_bm2-s0to100br2-s100to200br0-s200to300br3-s300to400br1_seq007.pdb",
+    "file": "all-structures/ddc3dde533627c61.pdb",
+    "sha256": "ec44b5f667ff6c1f26a46834ec9ee29340c51145e18c9ed9b638b81b07ab0357"
+  },
+  {
+    "result_id": "8116ee430b5ab410",
+    "source": "/work/results/qwen/campaign/worker_outputs/r009_proteinmpnn_redesign_cand_v7r009_hyp_0009_01_002/threaded_pdbs/job_0_n_180_id_67_beam_orig3_bm2-s0to100br2-s100to200br0-s200to300br3-s300to400br1_seq008.pdb",
+    "file": "all-structures/8116ee430b5ab410.pdb",
+    "sha256": "d96fa6614b81b09fc9761934dfc6b7e15d818a86fa531b62807c2456ded21d1b"
+  },
+  {
+    "result_id": "4bb7db647b10476f",
+    "source": "/work/results/qwen/campaign/worker_outputs/r009_proteinmpnn_redesign_cand_v7r009_hyp_0009_01_002/threaded_pdbs/job_0_n_180_id_67_beam_orig3_bm2-s0to100br2-s100to200br0-s200to300br3-s300to400br1_seq009.pdb",
+    "file": "all-structures/4bb7db647b10476f.pdb",
+    "sha256": "5335c3b09e2d93a9089517fe87712fdce5ab14646b55a16ac98553662a73676e"
+  },
+  {
+    "result_id": "f38c770834c593b3",
+    "source": "/work/results/qwen/campaign/worker_outputs/r009_proteinmpnn_redesign_cand_v7r009_hyp_0009_01_002/threaded_pdbs/job_0_n_180_id_67_beam_orig3_bm2-s0to100br2-s100to200br0-s200to300br3-s300to400br1_seq010.pdb",
+    "file": "all-structures/f38c770834c593b3.pdb",
+    "sha256": "5535b0784c5181ca7228745f47ff92f626c015ec455641447ba7b810dbb42fa9"
+  },
+  {
+    "result_id": "07b032a9fdd5aad1",
+    "source": "/work/results/qwen/campaign/worker_outputs/r009_proteinmpnn_redesign_cand_v7r009_hyp_0009_01_002/threaded_pdbs/job_0_n_180_id_67_beam_orig3_bm2-s0to100br2-s100to200br0-s200to300br3-s300to400br1_seq011.pdb",
+    "file": "all-structures/07b032a9fdd5aad1.pdb",
+    "sha256": "f1e0056521ae5168a56b95021332e4b3aa8350173a7cf207f3c29550480b7ed3"
+  },
+  {
+    "result_id": "229a37153f8f40a5",
+    "source": "/work/results/qwen/campaign/worker_outputs/r009_proteinmpnn_redesign_cand_v7r009_hyp_0009_01_002/threaded_pdbs/job_0_n_180_id_67_beam_orig3_bm2-s0to100br2-s100to200br0-s200to300br3-s300to400br1_seq012.pdb",
+    "file": "all-structures/229a37153f8f40a5.pdb",
+    "sha256": "26da29a18dc53ea725048c257acc62ecc6c9a3b79b2761c5fe5a981abb2078fd"
+  },
+  {
+    "result_id": "7beec0f7a328df29",
+    "source": "/work/results/qwen/campaign/worker_outputs/r009_proteinmpnn_redesign_cand_v7r009_hyp_0009_01_002/threaded_pdbs/job_0_n_180_id_67_beam_orig3_bm2-s0to100br2-s100to200br0-s200to300br3-s300to400br1_seq013.pdb",
+    "file": "all-structures/7beec0f7a328df29.pdb",
+    "sha256": "120cae8564ab3391500905c1603720b4441f37c313d45a70383d3ac3eafb940b"
+  },
+  {
+    "result_id": "9334176d08a3f67c",
+    "source": "/work/results/qwen/campaign/worker_outputs/r009_proteinmpnn_redesign_cand_v7r009_hyp_0009_01_002/threaded_pdbs/job_0_n_180_id_67_beam_orig3_bm2-s0to100br2-s100to200br0-s200to300br3-s300to400br1_seq014.pdb",
+    "file": "all-structures/9334176d08a3f67c.pdb",
+    "sha256": "a414ef519735cbea15fbf1294ca4f8fc6c40ff2425982d235c46eedae1990b5a"
+  },
+  {
+    "result_id": "a8c8d2f7a223a3b5",
+    "source": "/work/results/qwen/campaign/worker_outputs/r009_proteinmpnn_redesign_cand_v7r009_hyp_0009_01_002/threaded_pdbs/job_0_n_180_id_67_beam_orig3_bm2-s0to100br2-s100to200br0-s200to300br3-s300to400br1_seq015.pdb",
+    "file": "all-structures/a8c8d2f7a223a3b5.pdb",
+    "sha256": "0229ce2dadb4950bccc8b3b6fc1817454706e54398adb8a59fdacbf5f998182a"
+  },
+  {
+    "result_id": "c95fcc360083db20",
+    "source": "/work/results/qwen/campaign/worker_outputs/r009_proteinmpnn_redesign_cand_v7r009_hyp_0009_01_002/threaded_pdbs/job_0_n_180_id_67_beam_orig3_bm2-s0to100br2-s100to200br0-s200to300br3-s300to400br1_seq016.pdb",
+    "file": "all-structures/c95fcc360083db20.pdb",
+    "sha256": "38ecc7c51f2d59e4153cb60346e91c0dce9af3c6f8bf0c5810ad80075498a2d7"
+  },
+  {
+    "result_id": "1ff0cc0ba1763419",
+    "source": "/work/results/qwen/campaign/worker_outputs/r010_structure_refilter_chain_v7r009_proteinmpnn_redesign_to_structure_refilter_017/af2_refilter_prediction.pdb",
+    "file": "all-structures/1ff0cc0ba1763419.pdb",
+    "sha256": "a4430a9078aa5dc36b40c0a14a0c78f88c5a4494793ff069dc90c85effc9f519"
+  },
+  {
+    "result_id": "247631a5dec04ff5",
+    "source": "/work/results/qwen/campaign/worker_outputs/r010_proteinmpnn_redesign_cand_v7r010_hyp_0010_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq001.pdb",
+    "file": "all-structures/247631a5dec04ff5.pdb",
+    "sha256": "08de9515825105120f3567c2127403118dfb5d3743e9060a757a6512c740907d"
+  },
+  {
+    "result_id": "fdd0e1ca005ab7a7",
+    "source": "/work/results/qwen/campaign/worker_outputs/r010_proteinmpnn_redesign_cand_v7r010_hyp_0010_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq002.pdb",
+    "file": "all-structures/fdd0e1ca005ab7a7.pdb",
+    "sha256": "6752b641df3b94ae66016c280015fe5da33775ab8cd04c8ad6719919e92fc55d"
+  },
+  {
+    "result_id": "be429b521a435bec",
+    "source": "/work/results/qwen/campaign/worker_outputs/r010_proteinmpnn_redesign_cand_v7r010_hyp_0010_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq003.pdb",
+    "file": "all-structures/be429b521a435bec.pdb",
+    "sha256": "79ef37d61739c7c9152144b7a9eee5b952c3b8be9fb3d2aeaa3b6ee12eb389a3"
+  },
+  {
+    "result_id": "71075cad2a597364",
+    "source": "/work/results/qwen/campaign/worker_outputs/r010_proteinmpnn_redesign_cand_v7r010_hyp_0010_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq004.pdb",
+    "file": "all-structures/71075cad2a597364.pdb",
+    "sha256": "d3451b4e746388af9a9b0bd2bb5219f21d0929a31ff8810b161835c5d8d0aa93"
+  },
+  {
+    "result_id": "41f7ee1c2683f0f5",
+    "source": "/work/results/qwen/campaign/worker_outputs/r010_proteinmpnn_redesign_cand_v7r010_hyp_0010_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq005.pdb",
+    "file": "all-structures/41f7ee1c2683f0f5.pdb",
+    "sha256": "4349064a37a553718a768a86e3ad0f48ed6ed3cda81d1ae539d6a33d48e7ba82"
+  },
+  {
+    "result_id": "520c7e9c43c79532",
+    "source": "/work/results/qwen/campaign/worker_outputs/r010_proteinmpnn_redesign_cand_v7r010_hyp_0010_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq006.pdb",
+    "file": "all-structures/520c7e9c43c79532.pdb",
+    "sha256": "c17d294d5727e5763a6ad884c5cd731b9236d79b49e893a0e027985948362553"
+  },
+  {
+    "result_id": "fcfc3b5a0585e1d2",
+    "source": "/work/results/qwen/campaign/worker_outputs/r010_proteinmpnn_redesign_cand_v7r010_hyp_0010_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq007.pdb",
+    "file": "all-structures/fcfc3b5a0585e1d2.pdb",
+    "sha256": "693b9aceec20a973b91d7d064b61210153c06f22d96fae80d619af1d19ddb6d2"
+  },
+  {
+    "result_id": "4ac7dbf75ee91184",
+    "source": "/work/results/qwen/campaign/worker_outputs/r010_proteinmpnn_redesign_cand_v7r010_hyp_0010_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq008.pdb",
+    "file": "all-structures/4ac7dbf75ee91184.pdb",
+    "sha256": "05514715adaf2511dedc3780a9c65e36c6f6fb0452d6570c00a9062aa9ca944c"
+  },
+  {
+    "result_id": "c386a4f39086a1da",
+    "source": "/work/results/qwen/campaign/worker_outputs/r010_proteinmpnn_redesign_cand_v7r010_hyp_0010_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq009.pdb",
+    "file": "all-structures/c386a4f39086a1da.pdb",
+    "sha256": "2065bd34e92dad764372494d4addcaf03d388754d88d6501c9441ccd4c03a3d1"
+  },
+  {
+    "result_id": "bc818ef18a736c6a",
+    "source": "/work/results/qwen/campaign/worker_outputs/r010_proteinmpnn_redesign_cand_v7r010_hyp_0010_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq010.pdb",
+    "file": "all-structures/bc818ef18a736c6a.pdb",
+    "sha256": "97930910d800c399f3e5a6e826c2d525a6d174a75001bad141aae6f82de7a92e"
+  },
+  {
+    "result_id": "c2204f0a7646d6e4",
+    "source": "/work/results/qwen/campaign/worker_outputs/r010_proteinmpnn_redesign_cand_v7r010_hyp_0010_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq011.pdb",
+    "file": "all-structures/c2204f0a7646d6e4.pdb",
+    "sha256": "3104840812230d2b6f187d864c53dbf943a59b823ec0af6f775c8c1d5c010557"
+  },
+  {
+    "result_id": "83c7b3d3a383046e",
+    "source": "/work/results/qwen/campaign/worker_outputs/r010_proteinmpnn_redesign_cand_v7r010_hyp_0010_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq012.pdb",
+    "file": "all-structures/83c7b3d3a383046e.pdb",
+    "sha256": "88c8588fed15621754fbceb7f7d553e83906cdf8e1d6b25947ee176c51cf057b"
+  },
+  {
+    "result_id": "39d4392eb87194db",
+    "source": "/work/results/qwen/campaign/worker_outputs/r010_proteinmpnn_redesign_cand_v7r010_hyp_0010_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq013.pdb",
+    "file": "all-structures/39d4392eb87194db.pdb",
+    "sha256": "f34e39d19732f552585006af8bc22b353cd639fec83d951ca3865ec2530edaf0"
+  },
+  {
+    "result_id": "13e6bfdde88b24fa",
+    "source": "/work/results/qwen/campaign/worker_outputs/r010_proteinmpnn_redesign_cand_v7r010_hyp_0010_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq014.pdb",
+    "file": "all-structures/13e6bfdde88b24fa.pdb",
+    "sha256": "f91c9352c5cb67bc973f02462a0d38c175e67bcbc8ab8ce01957ecf781af3b5f"
+  },
+  {
+    "result_id": "88c9d0aae236b2e6",
+    "source": "/work/results/qwen/campaign/worker_outputs/r010_proteinmpnn_redesign_cand_v7r010_hyp_0010_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq015.pdb",
+    "file": "all-structures/88c9d0aae236b2e6.pdb",
+    "sha256": "499edf701b593da3c230cbdfe01ff606babc3c76ab41758a439f2764519a531f"
+  },
+  {
+    "result_id": "4ad3156aa94587e1",
+    "source": "/work/results/qwen/campaign/worker_outputs/r010_proteinmpnn_redesign_cand_v7r010_hyp_0010_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq016.pdb",
+    "file": "all-structures/4ad3156aa94587e1.pdb",
+    "sha256": "68a6b5c0235a198131377129160672e360c262204e29403531fed6279772d6dc"
+  },
+  {
+    "result_id": "eb1b4f0156261f33",
+    "source": "/work/results/qwen/campaign/worker_outputs/r011_structure_refilter_chain_v7r010_proteinmpnn_redesign_to_structure_refilter_033/af2_refilter_prediction.pdb",
+    "file": "all-structures/eb1b4f0156261f33.pdb",
+    "sha256": "ff91be8718bbde61cd7d0f1f6cec65d17da3014eb5078226a7de13cae8c31f8e"
+  },
+  {
+    "result_id": "9535c9d6232274fe",
+    "source": "/work/results/qwen/campaign/worker_outputs/r011_proteinmpnn_redesign_cand_v7r011_hyp_0011_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq001.pdb",
+    "file": "all-structures/9535c9d6232274fe.pdb",
+    "sha256": "bfaa1bf625f85f59f3c5af8a114790340ad69d434eea7331a4275ea63e007bdd"
+  },
+  {
+    "result_id": "ebff23b3e9b96d3e",
+    "source": "/work/results/qwen/campaign/worker_outputs/r011_proteinmpnn_redesign_cand_v7r011_hyp_0011_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq002.pdb",
+    "file": "all-structures/ebff23b3e9b96d3e.pdb",
+    "sha256": "12177f1989902098736c5e7934a5a159de5d5cbeb60ec697cd801c27af8768ec"
+  },
+  {
+    "result_id": "f417cc15467c7413",
+    "source": "/work/results/qwen/campaign/worker_outputs/r011_proteinmpnn_redesign_cand_v7r011_hyp_0011_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq003.pdb",
+    "file": "all-structures/f417cc15467c7413.pdb",
+    "sha256": "4e7faadeee3b5cc233f732c341bd95ca6e9e1ec05a965a1339cc31189764ad88"
+  },
+  {
+    "result_id": "95c19c07938d9dea",
+    "source": "/work/results/qwen/campaign/worker_outputs/r011_proteinmpnn_redesign_cand_v7r011_hyp_0011_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq004.pdb",
+    "file": "all-structures/95c19c07938d9dea.pdb",
+    "sha256": "295792e69339685967d5d2386465895b69b444289ddcc8b719be79ff761f8ac6"
+  },
+  {
+    "result_id": "67a5ba61d48ff32c",
+    "source": "/work/results/qwen/campaign/worker_outputs/r011_proteinmpnn_redesign_cand_v7r011_hyp_0011_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq005.pdb",
+    "file": "all-structures/67a5ba61d48ff32c.pdb",
+    "sha256": "549c0c444481d9bc6b09e8e828545e3f5cc409330ae1a65426ee287476c76ca3"
+  },
+  {
+    "result_id": "96a98060c03beeb1",
+    "source": "/work/results/qwen/campaign/worker_outputs/r011_proteinmpnn_redesign_cand_v7r011_hyp_0011_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq006.pdb",
+    "file": "all-structures/96a98060c03beeb1.pdb",
+    "sha256": "70f0f7ccb2bc9a59c50b5d683687478ee59629510100e34a8e7de94b3602899c"
+  },
+  {
+    "result_id": "0df7784363fb922e",
+    "source": "/work/results/qwen/campaign/worker_outputs/r011_proteinmpnn_redesign_cand_v7r011_hyp_0011_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq007.pdb",
+    "file": "all-structures/0df7784363fb922e.pdb",
+    "sha256": "a148d7614abb358c0b1fef467e5d94e5a78755cf98befac8407bd5dc7f8f781c"
+  },
+  {
+    "result_id": "d936942370c74fac",
+    "source": "/work/results/qwen/campaign/worker_outputs/r011_proteinmpnn_redesign_cand_v7r011_hyp_0011_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq008.pdb",
+    "file": "all-structures/d936942370c74fac.pdb",
+    "sha256": "f50122172fad87462066cdc7affb309d7c1e99166e064e8d765407b45b01add8"
+  },
+  {
+    "result_id": "da9a3f032a83aab8",
+    "source": "/work/results/qwen/campaign/worker_outputs/r011_proteinmpnn_redesign_cand_v7r011_hyp_0011_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq009.pdb",
+    "file": "all-structures/da9a3f032a83aab8.pdb",
+    "sha256": "89f166a3bceb713699ce0f682703a27daa511845d3181611671ef9a82b5e8392"
+  },
+  {
+    "result_id": "daef1fd76a129573",
+    "source": "/work/results/qwen/campaign/worker_outputs/r011_proteinmpnn_redesign_cand_v7r011_hyp_0011_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq010.pdb",
+    "file": "all-structures/daef1fd76a129573.pdb",
+    "sha256": "70d8af276a66c3640bf54da7f10973a5ce27cebb28a733fa8167d3373e3d21ca"
+  },
+  {
+    "result_id": "40cc89dd1b767a75",
+    "source": "/work/results/qwen/campaign/worker_outputs/r011_proteinmpnn_redesign_cand_v7r011_hyp_0011_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq011.pdb",
+    "file": "all-structures/40cc89dd1b767a75.pdb",
+    "sha256": "fb48e8e0a498d9b79e52af1e467e6e62b0aaac680d6e5a948defb85691764208"
+  },
+  {
+    "result_id": "71f581c700477722",
+    "source": "/work/results/qwen/campaign/worker_outputs/r011_proteinmpnn_redesign_cand_v7r011_hyp_0011_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq012.pdb",
+    "file": "all-structures/71f581c700477722.pdb",
+    "sha256": "94c28361235f964bf31e53de3c3d2e56e70ee62b2c3a1abed9f79be8ec0ff56d"
+  },
+  {
+    "result_id": "1884df29ac5175bb",
+    "source": "/work/results/qwen/campaign/worker_outputs/r011_proteinmpnn_redesign_cand_v7r011_hyp_0011_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq013.pdb",
+    "file": "all-structures/1884df29ac5175bb.pdb",
+    "sha256": "5ff4f718b8ecf0d9aad956a2ea0676e2d758ddcd7dcf0af92938354a65a4558f"
+  },
+  {
+    "result_id": "da6beed2c6992be5",
+    "source": "/work/results/qwen/campaign/worker_outputs/r011_proteinmpnn_redesign_cand_v7r011_hyp_0011_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq014.pdb",
+    "file": "all-structures/da6beed2c6992be5.pdb",
+    "sha256": "0ae7a11a895378973400db86d9dc7a204d7158c2ceb2ad9836ba2481f5f97759"
+  },
+  {
+    "result_id": "9f126a01df27aa0c",
+    "source": "/work/results/qwen/campaign/worker_outputs/r011_proteinmpnn_redesign_cand_v7r011_hyp_0011_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq015.pdb",
+    "file": "all-structures/9f126a01df27aa0c.pdb",
+    "sha256": "b57c1961f37a583b5ad7278596293f842a16d90dc3fad9808b3e4f1728126f41"
+  },
+  {
+    "result_id": "508990064837da8f",
+    "source": "/work/results/qwen/campaign/worker_outputs/r011_proteinmpnn_redesign_cand_v7r011_hyp_0011_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq016.pdb",
+    "file": "all-structures/508990064837da8f.pdb",
+    "sha256": "54f8274d83449994fa5cd2c5333c67f8aa4ec6a48fa186a6ea43aee11bdd3a32"
+  },
+  {
+    "result_id": "ebed5e41f01cdece",
+    "source": "/work/results/qwen/campaign/worker_outputs/r012_structure_refilter_chain_v7r010_proteinmpnn_redesign_to_structure_refilter_034/af2_refilter_prediction.pdb",
+    "file": "all-structures/ebed5e41f01cdece.pdb",
+    "sha256": "919939d4c2aeffd10cf70dadd13740c31df2101f0d7bb3c20679f1cea52f595e"
+  },
+  {
+    "result_id": "ee75e549ed9c597c",
+    "source": "/work/results/qwen/campaign/worker_outputs/r012_proteinmpnn_redesign_cand_v7r012_hyp_0012_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq001.pdb",
+    "file": "all-structures/ee75e549ed9c597c.pdb",
+    "sha256": "9f6851245f4ef89e8566d3ac8cb0612bbbdce361c3c6d86449608b93c546bfc9"
+  },
+  {
+    "result_id": "baf30c25829c1ece",
+    "source": "/work/results/qwen/campaign/worker_outputs/r012_proteinmpnn_redesign_cand_v7r012_hyp_0012_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq002.pdb",
+    "file": "all-structures/baf30c25829c1ece.pdb",
+    "sha256": "477d6c9829b19d72efb575ac204962f12c27faf58104935797b59b80bdf8f229"
+  },
+  {
+    "result_id": "7296cfb5c66d8826",
+    "source": "/work/results/qwen/campaign/worker_outputs/r012_proteinmpnn_redesign_cand_v7r012_hyp_0012_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq003.pdb",
+    "file": "all-structures/7296cfb5c66d8826.pdb",
+    "sha256": "ee2e7ef90f3ec09cfd1d9ad8186f2bc9ad51e9e0421087fcf1fc5eddedff0eb4"
+  },
+  {
+    "result_id": "cdc935b235bd8f3c",
+    "source": "/work/results/qwen/campaign/worker_outputs/r012_proteinmpnn_redesign_cand_v7r012_hyp_0012_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq004.pdb",
+    "file": "all-structures/cdc935b235bd8f3c.pdb",
+    "sha256": "51d916d62cfe1ba268052255dcdab760858ed33f1571fff3d9dcd5c1ad505a10"
+  },
+  {
+    "result_id": "a45be9dfd85a6620",
+    "source": "/work/results/qwen/campaign/worker_outputs/r012_proteinmpnn_redesign_cand_v7r012_hyp_0012_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq005.pdb",
+    "file": "all-structures/a45be9dfd85a6620.pdb",
+    "sha256": "e0908e0f3c5f0eca39d24724da562112bb509653a00584d640261992b65a525c"
+  },
+  {
+    "result_id": "604d220fdeaaf6c4",
+    "source": "/work/results/qwen/campaign/worker_outputs/r012_proteinmpnn_redesign_cand_v7r012_hyp_0012_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq006.pdb",
+    "file": "all-structures/604d220fdeaaf6c4.pdb",
+    "sha256": "ed2133e52527332ffd129b82a3601d5b692eff3752fd9956eea26e7ab9ee7258"
+  },
+  {
+    "result_id": "e8bf96c22170c223",
+    "source": "/work/results/qwen/campaign/worker_outputs/r012_proteinmpnn_redesign_cand_v7r012_hyp_0012_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq007.pdb",
+    "file": "all-structures/e8bf96c22170c223.pdb",
+    "sha256": "15c1a247c69270fcf291db35d978c1eb58400e361ce145b558020f03cd6b57ec"
+  },
+  {
+    "result_id": "00c1046a955c1060",
+    "source": "/work/results/qwen/campaign/worker_outputs/r012_proteinmpnn_redesign_cand_v7r012_hyp_0012_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq008.pdb",
+    "file": "all-structures/00c1046a955c1060.pdb",
+    "sha256": "6a1f52b11c6d8c12c1f26af015d39966e45b02e9daedbebadee83a5d0cb4caf0"
+  },
+  {
+    "result_id": "7e1913a48727b490",
+    "source": "/work/results/qwen/campaign/worker_outputs/r012_proteinmpnn_redesign_cand_v7r012_hyp_0012_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq009.pdb",
+    "file": "all-structures/7e1913a48727b490.pdb",
+    "sha256": "dd41801be8bc113b933bb6121349347dc38434f4ff98851883fa26b5af7ff208"
+  },
+  {
+    "result_id": "507769679889b996",
+    "source": "/work/results/qwen/campaign/worker_outputs/r012_proteinmpnn_redesign_cand_v7r012_hyp_0012_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq010.pdb",
+    "file": "all-structures/507769679889b996.pdb",
+    "sha256": "8c227d99c54f42703b706ee53e5a525d5bb2b0322428044b45bc98fd2f2ccb19"
+  },
+  {
+    "result_id": "a56b05a613dd002c",
+    "source": "/work/results/qwen/campaign/worker_outputs/r012_proteinmpnn_redesign_cand_v7r012_hyp_0012_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq011.pdb",
+    "file": "all-structures/a56b05a613dd002c.pdb",
+    "sha256": "b97a7069e8ab9889b2d549ea3c095238fe959c32444442cec77b349956782a5a"
+  },
+  {
+    "result_id": "7561a693ec81e057",
+    "source": "/work/results/qwen/campaign/worker_outputs/r012_proteinmpnn_redesign_cand_v7r012_hyp_0012_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq012.pdb",
+    "file": "all-structures/7561a693ec81e057.pdb",
+    "sha256": "d3ff8b97bd05579f0ea099d587d17c7ab197fa7e895dc68f4ef827cad5a48f0e"
+  },
+  {
+    "result_id": "77458b311001e8ac",
+    "source": "/work/results/qwen/campaign/worker_outputs/r012_proteinmpnn_redesign_cand_v7r012_hyp_0012_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq013.pdb",
+    "file": "all-structures/77458b311001e8ac.pdb",
+    "sha256": "b8f96b982232ae510fa0a3ff7a5c24c6f2796e37b1e09540f4fa2db7aba5d2fd"
+  },
+  {
+    "result_id": "0ff18faecdab197e",
+    "source": "/work/results/qwen/campaign/worker_outputs/r012_proteinmpnn_redesign_cand_v7r012_hyp_0012_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq014.pdb",
+    "file": "all-structures/0ff18faecdab197e.pdb",
+    "sha256": "0deff2f5efab527490f7cbf7ec2a8801b9cc07c8414d1220e391386af5f40fac"
+  },
+  {
+    "result_id": "0e7d2a313fd92f49",
+    "source": "/work/results/qwen/campaign/worker_outputs/r012_proteinmpnn_redesign_cand_v7r012_hyp_0012_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq015.pdb",
+    "file": "all-structures/0e7d2a313fd92f49.pdb",
+    "sha256": "18ddc44fda813663bd4fcfb47ada63d9404de92d66607e15f18b582f44d16cbc"
+  },
+  {
+    "result_id": "eb8d8404b911ce5d",
+    "source": "/work/results/qwen/campaign/worker_outputs/r012_proteinmpnn_redesign_cand_v7r012_hyp_0012_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq016.pdb",
+    "file": "all-structures/eb8d8404b911ce5d.pdb",
+    "sha256": "2bbd7de242eb0eb4be07a0d0a73561c8de91a4bd7a5ee78700ad55c6d058acf9"
+  },
+  {
+    "result_id": "6feddb60b397ce3a",
+    "source": "/work/results/qwen/campaign/worker_outputs/r013_structure_refilter_chain_v7r012_proteinmpnn_redesign_to_structure_refilter_065/af2_refilter_prediction.pdb",
+    "file": "all-structures/6feddb60b397ce3a.pdb",
+    "sha256": "94e02e5e0079addeba3b82244b6b4e55bcab7923b5c0568f1d2dafa41cb0a0a0"
+  },
+  {
+    "result_id": "4b476f3d391cbaea",
+    "source": "/work/results/qwen/campaign/worker_outputs/r013_proteinmpnn_redesign_cand_v7r013_hyp_0013_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq001.pdb",
+    "file": "all-structures/4b476f3d391cbaea.pdb",
+    "sha256": "99c31eca5254abdaef36a0927bd2c529af6ee531cf29bd433dfd55690f7f91e5"
+  },
+  {
+    "result_id": "ae9005984c03be6c",
+    "source": "/work/results/qwen/campaign/worker_outputs/r013_proteinmpnn_redesign_cand_v7r013_hyp_0013_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq002.pdb",
+    "file": "all-structures/ae9005984c03be6c.pdb",
+    "sha256": "ad63dee897991e6ccb45a5e9ffc15f3ea2f34b01e738b2d8f7c66b8a363bd7d1"
+  },
+  {
+    "result_id": "d4c2dd1d49718b9c",
+    "source": "/work/results/qwen/campaign/worker_outputs/r013_proteinmpnn_redesign_cand_v7r013_hyp_0013_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq003.pdb",
+    "file": "all-structures/d4c2dd1d49718b9c.pdb",
+    "sha256": "f0305473fdd780d72ad7f34a6eee1d488d5d513ac053f2823c47f019a8695362"
+  },
+  {
+    "result_id": "9434dcee6ad18251",
+    "source": "/work/results/qwen/campaign/worker_outputs/r013_proteinmpnn_redesign_cand_v7r013_hyp_0013_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq004.pdb",
+    "file": "all-structures/9434dcee6ad18251.pdb",
+    "sha256": "12be6724210147f4accf5b0032bc61a57469ab7dfadc39246ea981d522db9cce"
+  },
+  {
+    "result_id": "e1be7d9f8517b39f",
+    "source": "/work/results/qwen/campaign/worker_outputs/r013_proteinmpnn_redesign_cand_v7r013_hyp_0013_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq005.pdb",
+    "file": "all-structures/e1be7d9f8517b39f.pdb",
+    "sha256": "7022e6f4617744b002873f9e03b12a3328b622896d933608b96d031a3e40f51a"
+  },
+  {
+    "result_id": "aeee99146a5fefc2",
+    "source": "/work/results/qwen/campaign/worker_outputs/r013_proteinmpnn_redesign_cand_v7r013_hyp_0013_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq006.pdb",
+    "file": "all-structures/aeee99146a5fefc2.pdb",
+    "sha256": "566ab255b367564eaa7a855f535861d9bc46d4a91593c1624383dccd26bca477"
+  },
+  {
+    "result_id": "57ff4f55e7b53952",
+    "source": "/work/results/qwen/campaign/worker_outputs/r013_proteinmpnn_redesign_cand_v7r013_hyp_0013_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq007.pdb",
+    "file": "all-structures/57ff4f55e7b53952.pdb",
+    "sha256": "5b9faeadac4044210f5dd9f0b3b4db2930fbf7c5a1dd2b1ee4a6630fe363c238"
+  },
+  {
+    "result_id": "c4b6b17dc69360f2",
+    "source": "/work/results/qwen/campaign/worker_outputs/r013_proteinmpnn_redesign_cand_v7r013_hyp_0013_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq008.pdb",
+    "file": "all-structures/c4b6b17dc69360f2.pdb",
+    "sha256": "9754778bc84fb5afa01af5025ab2eb08a6ab42778eb939c9162445ac78e544a2"
+  },
+  {
+    "result_id": "ddc9ee1a84fea846",
+    "source": "/work/results/qwen/campaign/worker_outputs/r013_proteinmpnn_redesign_cand_v7r013_hyp_0013_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq009.pdb",
+    "file": "all-structures/ddc9ee1a84fea846.pdb",
+    "sha256": "958d90e40540b5d094c38a91282502c446478125ddc18321c63053ca697476ac"
+  },
+  {
+    "result_id": "047d822196ba623e",
+    "source": "/work/results/qwen/campaign/worker_outputs/r013_proteinmpnn_redesign_cand_v7r013_hyp_0013_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq010.pdb",
+    "file": "all-structures/047d822196ba623e.pdb",
+    "sha256": "0910f5f9cf8916d9a17fa3f9e747d1c3a02ea83d67baa5e6ccb82b652f16dbac"
+  },
+  {
+    "result_id": "1d717f4ad4b14661",
+    "source": "/work/results/qwen/campaign/worker_outputs/r013_proteinmpnn_redesign_cand_v7r013_hyp_0013_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq011.pdb",
+    "file": "all-structures/1d717f4ad4b14661.pdb",
+    "sha256": "55e4cbf253b8bc76cd4bc6a5d7028a53c9ed095def35a3aaea2a0e5321bfd4d7"
+  },
+  {
+    "result_id": "820022919c394bb3",
+    "source": "/work/results/qwen/campaign/worker_outputs/r013_proteinmpnn_redesign_cand_v7r013_hyp_0013_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq012.pdb",
+    "file": "all-structures/820022919c394bb3.pdb",
+    "sha256": "b1e952fe88b9e563aaadf711fe394e1a1ebfefdeef092cae696f7291614ae649"
+  },
+  {
+    "result_id": "677d59e78c9597a4",
+    "source": "/work/results/qwen/campaign/worker_outputs/r013_proteinmpnn_redesign_cand_v7r013_hyp_0013_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq013.pdb",
+    "file": "all-structures/677d59e78c9597a4.pdb",
+    "sha256": "902846aeb10dcf0027e83be90ead76ae7ca69af639a400704892a1e6acd76cd3"
+  },
+  {
+    "result_id": "b9b84747215e3f9a",
+    "source": "/work/results/qwen/campaign/worker_outputs/r013_proteinmpnn_redesign_cand_v7r013_hyp_0013_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq014.pdb",
+    "file": "all-structures/b9b84747215e3f9a.pdb",
+    "sha256": "22039d908241716f13ddf8df1ddad212801025fb4f34127095d97e994e700fbe"
+  },
+  {
+    "result_id": "b25c04878a0f821e",
+    "source": "/work/results/qwen/campaign/worker_outputs/r013_proteinmpnn_redesign_cand_v7r013_hyp_0013_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq015.pdb",
+    "file": "all-structures/b25c04878a0f821e.pdb",
+    "sha256": "66429ba255ce912cf982a45c5c0e05756f56d33470b1e067fa26825fe8bc4eff"
+  },
+  {
+    "result_id": "0ec87cdf28764d30",
+    "source": "/work/results/qwen/campaign/worker_outputs/r013_proteinmpnn_redesign_cand_v7r013_hyp_0013_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq016.pdb",
+    "file": "all-structures/0ec87cdf28764d30.pdb",
+    "sha256": "25f7275b041a5624ad6481cc804a66b39247b91b92549b2249a787bf5a66861d"
+  },
+  {
+    "result_id": "552feedc70c3e026",
+    "source": "/work/results/qwen/campaign/worker_outputs/r014_structure_refilter_chain_v7r013_proteinmpnn_redesign_to_structure_refilter_081/af2_refilter_prediction.pdb",
+    "file": "all-structures/552feedc70c3e026.pdb",
+    "sha256": "402c310f3c777e521623ad271873c570b8afab34b2cc0a5096e4b4114b5f0d7f"
+  },
+  {
+    "result_id": "5b383a259215f519",
+    "source": "/work/results/qwen/campaign/worker_outputs/r014_proteinmpnn_redesign_cand_v7r014_hyp_0014_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq001.pdb",
+    "file": "all-structures/5b383a259215f519.pdb",
+    "sha256": "ff3492763b6d49634bdca1d786f02964ff2aee05e5df7391583739738d105572"
+  },
+  {
+    "result_id": "1c26b44701c3ebef",
+    "source": "/work/results/qwen/campaign/worker_outputs/r014_proteinmpnn_redesign_cand_v7r014_hyp_0014_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq002.pdb",
+    "file": "all-structures/1c26b44701c3ebef.pdb",
+    "sha256": "3979ab8cb45550c4359328898894b2533030d886b02f5c5b8eea2b2398d11dce"
+  },
+  {
+    "result_id": "1dfda2cb6934de96",
+    "source": "/work/results/qwen/campaign/worker_outputs/r014_proteinmpnn_redesign_cand_v7r014_hyp_0014_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq003.pdb",
+    "file": "all-structures/1dfda2cb6934de96.pdb",
+    "sha256": "661cd76afffa814600ae06c46d7937b57739ce39c92896aafb3e6b475bcc5e43"
+  },
+  {
+    "result_id": "38215f60c234b746",
+    "source": "/work/results/qwen/campaign/worker_outputs/r014_proteinmpnn_redesign_cand_v7r014_hyp_0014_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq004.pdb",
+    "file": "all-structures/38215f60c234b746.pdb",
+    "sha256": "582aceed65c9286ae0705f24b6e3a2f35561e6ae8f8f1c42bd145e52e0366812"
+  },
+  {
+    "result_id": "53c96ca530249766",
+    "source": "/work/results/qwen/campaign/worker_outputs/r014_proteinmpnn_redesign_cand_v7r014_hyp_0014_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq005.pdb",
+    "file": "all-structures/53c96ca530249766.pdb",
+    "sha256": "3ee81291514e1809f12de1990f85c7521994e0a442192b9155cee449261e4099"
+  },
+  {
+    "result_id": "98b052b4485060d3",
+    "source": "/work/results/qwen/campaign/worker_outputs/r014_proteinmpnn_redesign_cand_v7r014_hyp_0014_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq006.pdb",
+    "file": "all-structures/98b052b4485060d3.pdb",
+    "sha256": "89313c325d74ae62623b5d4cfa6d933eb754113fb6be26ca39b9cc6decc80ef3"
+  },
+  {
+    "result_id": "7bf8f5a431bf149c",
+    "source": "/work/results/qwen/campaign/worker_outputs/r014_proteinmpnn_redesign_cand_v7r014_hyp_0014_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq007.pdb",
+    "file": "all-structures/7bf8f5a431bf149c.pdb",
+    "sha256": "fe069801609203d6df65d8494ff9099c097ce07aa5e625cb4c934acb2a6ec045"
+  },
+  {
+    "result_id": "53e17334e9f3d1b8",
+    "source": "/work/results/qwen/campaign/worker_outputs/r014_proteinmpnn_redesign_cand_v7r014_hyp_0014_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq008.pdb",
+    "file": "all-structures/53e17334e9f3d1b8.pdb",
+    "sha256": "46f87eb670973d83aef47972b6352518bd8ff747dcf523e90a596d682ad79c68"
+  },
+  {
+    "result_id": "9f70a538e9fe8dd5",
+    "source": "/work/results/qwen/campaign/worker_outputs/r014_proteinmpnn_redesign_cand_v7r014_hyp_0014_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq009.pdb",
+    "file": "all-structures/9f70a538e9fe8dd5.pdb",
+    "sha256": "06288cecccbadbce0ef1b4cd2d7bec55e8b6cf3f13ef4ff445a07da7ef0f9d1d"
+  },
+  {
+    "result_id": "bc463a93204e8959",
+    "source": "/work/results/qwen/campaign/worker_outputs/r014_proteinmpnn_redesign_cand_v7r014_hyp_0014_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq010.pdb",
+    "file": "all-structures/bc463a93204e8959.pdb",
+    "sha256": "14cb31639064f0865bcebe23f6d3b194327486063212c2136e675a419c17708f"
+  },
+  {
+    "result_id": "87ea5447bfbc900d",
+    "source": "/work/results/qwen/campaign/worker_outputs/r014_proteinmpnn_redesign_cand_v7r014_hyp_0014_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq011.pdb",
+    "file": "all-structures/87ea5447bfbc900d.pdb",
+    "sha256": "b1813ca3655a05e8a8d4407ddc63514360c2982704bd522ef0c62cf64be11cbb"
+  },
+  {
+    "result_id": "74ad3dcce7c30ea2",
+    "source": "/work/results/qwen/campaign/worker_outputs/r014_proteinmpnn_redesign_cand_v7r014_hyp_0014_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq012.pdb",
+    "file": "all-structures/74ad3dcce7c30ea2.pdb",
+    "sha256": "755319e2d87a5c7d8e08825acabadccce9a018ae7f0a9f9d7d7a8a53926d3482"
+  },
+  {
+    "result_id": "6203910d30938ee8",
+    "source": "/work/results/qwen/campaign/worker_outputs/r014_proteinmpnn_redesign_cand_v7r014_hyp_0014_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq013.pdb",
+    "file": "all-structures/6203910d30938ee8.pdb",
+    "sha256": "207b83f0dfef99eea5df5c0d0a0e910d1706294f33288bdf8e5871768af89213"
+  },
+  {
+    "result_id": "d6fe8737d146a75d",
+    "source": "/work/results/qwen/campaign/worker_outputs/r014_proteinmpnn_redesign_cand_v7r014_hyp_0014_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq014.pdb",
+    "file": "all-structures/d6fe8737d146a75d.pdb",
+    "sha256": "035d324d042ac46c76e5d6ed68a366532a240a2355e93c94db550ee4a593e197"
+  },
+  {
+    "result_id": "d2d193fab2099ed7",
+    "source": "/work/results/qwen/campaign/worker_outputs/r014_proteinmpnn_redesign_cand_v7r014_hyp_0014_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq015.pdb",
+    "file": "all-structures/d2d193fab2099ed7.pdb",
+    "sha256": "ae0ac3fd17837445dbdd2aa7c0355ebcb9c21637ac87b9d2948874c97f11a256"
+  },
+  {
+    "result_id": "83f975ac394a70be",
+    "source": "/work/results/qwen/campaign/worker_outputs/r014_proteinmpnn_redesign_cand_v7r014_hyp_0014_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq016.pdb",
+    "file": "all-structures/83f975ac394a70be.pdb",
+    "sha256": "5a75469d447bf8150bf77aa2b21ed8c422f0d5e87a1dad7634bd4e15f420592d"
+  },
+  {
+    "result_id": "b11e8f18e04c1767",
+    "source": "/work/results/qwen/campaign/worker_outputs/r015_structure_refilter_chain_v7r009_proteinmpnn_redesign_to_structure_refilter_018/af2_refilter_prediction.pdb",
+    "file": "all-structures/b11e8f18e04c1767.pdb",
+    "sha256": "45490040309652e43197f4ba37947e14b808152aeef2ffc1cfa96c3ef68c02d8"
+  },
+  {
+    "result_id": "70e2ae56eb0f60f1",
+    "source": "/work/results/qwen/campaign/worker_outputs/r015_proteinmpnn_redesign_cand_v7r015_hyp_0015_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq001.pdb",
+    "file": "all-structures/70e2ae56eb0f60f1.pdb",
+    "sha256": "c73253bf74fe7c20c8b6b04b4f314a23a2bd40be277f79248aa5e072ce3fc506"
+  },
+  {
+    "result_id": "e480db01da293872",
+    "source": "/work/results/qwen/campaign/worker_outputs/r015_proteinmpnn_redesign_cand_v7r015_hyp_0015_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq002.pdb",
+    "file": "all-structures/e480db01da293872.pdb",
+    "sha256": "866a840dea73ae37015e58f8c323394791626bce844f1347c05f78195bb9a1b0"
+  },
+  {
+    "result_id": "27f84a6d70c6ad92",
+    "source": "/work/results/qwen/campaign/worker_outputs/r015_proteinmpnn_redesign_cand_v7r015_hyp_0015_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq003.pdb",
+    "file": "all-structures/27f84a6d70c6ad92.pdb",
+    "sha256": "328d4026d2f94fe026b35fd2b9e95fc8ce81c12e3979be679990014a8ea2f141"
+  },
+  {
+    "result_id": "1db997daa109de6b",
+    "source": "/work/results/qwen/campaign/worker_outputs/r015_proteinmpnn_redesign_cand_v7r015_hyp_0015_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq004.pdb",
+    "file": "all-structures/1db997daa109de6b.pdb",
+    "sha256": "6acb06ad2a4f90b5d20253ece6cecc02b8fc72decb2a6d6cc74f562b09d5ffe0"
+  },
+  {
+    "result_id": "0f1de6643c9b4e11",
+    "source": "/work/results/qwen/campaign/worker_outputs/r015_proteinmpnn_redesign_cand_v7r015_hyp_0015_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq005.pdb",
+    "file": "all-structures/0f1de6643c9b4e11.pdb",
+    "sha256": "980a2140d07734a04ece2646d7c042eabe53d1db5c3498750a7d18de2b886b52"
+  },
+  {
+    "result_id": "a4b6aad7f882c671",
+    "source": "/work/results/qwen/campaign/worker_outputs/r015_proteinmpnn_redesign_cand_v7r015_hyp_0015_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq006.pdb",
+    "file": "all-structures/a4b6aad7f882c671.pdb",
+    "sha256": "f4019280b4df3631f5a94c27d78bfc7ddb46a4d2f24a8bed632f593c3fda8ff5"
+  },
+  {
+    "result_id": "6fcaf1a828e7766b",
+    "source": "/work/results/qwen/campaign/worker_outputs/r015_proteinmpnn_redesign_cand_v7r015_hyp_0015_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq007.pdb",
+    "file": "all-structures/6fcaf1a828e7766b.pdb",
+    "sha256": "60dce1b5cb1dbd139cacf793b1508cb67c5c93fddc68ea0953c3e7c5e93345cc"
+  },
+  {
+    "result_id": "d77f753b9e56a6f9",
+    "source": "/work/results/qwen/campaign/worker_outputs/r015_proteinmpnn_redesign_cand_v7r015_hyp_0015_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq008.pdb",
+    "file": "all-structures/d77f753b9e56a6f9.pdb",
+    "sha256": "40c9b97d624613ba87ab99c20e90593989f4fc6b81dfd4d5ac240af11e736303"
+  },
+  {
+    "result_id": "aaa6125a621a8a4a",
+    "source": "/work/results/qwen/campaign/worker_outputs/r015_proteinmpnn_redesign_cand_v7r015_hyp_0015_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq009.pdb",
+    "file": "all-structures/aaa6125a621a8a4a.pdb",
+    "sha256": "b24c4adf6bfd2310842dffb5f0cb06ca601996042e2ad303a1e55a6f78762653"
+  },
+  {
+    "result_id": "e6288e4ce782497a",
+    "source": "/work/results/qwen/campaign/worker_outputs/r015_proteinmpnn_redesign_cand_v7r015_hyp_0015_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq010.pdb",
+    "file": "all-structures/e6288e4ce782497a.pdb",
+    "sha256": "b5048c89e5a6553dc3e0cea6c4d6fc7bead2be61c99f2ec6d2846d8fd3d0d271"
+  },
+  {
+    "result_id": "e2621c30cc8ecf6e",
+    "source": "/work/results/qwen/campaign/worker_outputs/r015_proteinmpnn_redesign_cand_v7r015_hyp_0015_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq011.pdb",
+    "file": "all-structures/e2621c30cc8ecf6e.pdb",
+    "sha256": "f76fd186b129ee0bd698d33cd53a11ade6763fcc80eaab7fb125213c9aa869ff"
+  },
+  {
+    "result_id": "cf02b83a703e4d96",
+    "source": "/work/results/qwen/campaign/worker_outputs/r015_proteinmpnn_redesign_cand_v7r015_hyp_0015_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq012.pdb",
+    "file": "all-structures/cf02b83a703e4d96.pdb",
+    "sha256": "86fa3603704c9c2728b6867ae47a237e03b03720665d06c3228df9a2ecc0cf72"
+  },
+  {
+    "result_id": "1f780ac35c871a89",
+    "source": "/work/results/qwen/campaign/worker_outputs/r015_proteinmpnn_redesign_cand_v7r015_hyp_0015_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq013.pdb",
+    "file": "all-structures/1f780ac35c871a89.pdb",
+    "sha256": "bbf41373584f81769435bd7bf06179c34dcec65e72f8905c6ae3043b18ef6657"
+  },
+  {
+    "result_id": "76fbb570a22d5406",
+    "source": "/work/results/qwen/campaign/worker_outputs/r015_proteinmpnn_redesign_cand_v7r015_hyp_0015_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq014.pdb",
+    "file": "all-structures/76fbb570a22d5406.pdb",
+    "sha256": "151c3a3a72a1fd6af9f133cf5a947b82e69c5c77b3b9d653a15638e26c5d5431"
+  },
+  {
+    "result_id": "612718317ffe65d4",
+    "source": "/work/results/qwen/campaign/worker_outputs/r015_proteinmpnn_redesign_cand_v7r015_hyp_0015_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq015.pdb",
+    "file": "all-structures/612718317ffe65d4.pdb",
+    "sha256": "9a327ae4bdd5013534a9bc407d875d74b9ddbd17e4cc87e72d69bcbc18d09872"
+  },
+  {
+    "result_id": "3f2266ccba1b7ad6",
+    "source": "/work/results/qwen/campaign/worker_outputs/r015_proteinmpnn_redesign_cand_v7r015_hyp_0015_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq016.pdb",
+    "file": "all-structures/3f2266ccba1b7ad6.pdb",
+    "sha256": "63c3c937c2c06999849062a25653dda97d4860f87f27a7fd250521887f6b9ae5"
+  },
+  {
+    "result_id": "946dc5e08ccd575d",
+    "source": "/work/results/qwen/campaign/worker_outputs/r016_structure_refilter_chain_v7r009_proteinmpnn_redesign_to_structure_refilter_019/af2_refilter_prediction.pdb",
+    "file": "all-structures/946dc5e08ccd575d.pdb",
+    "sha256": "a4121f66daf6bc22f0a7d2c0d7e581c55e01709b7f8eecc39a68f512106f1a21"
+  },
+  {
+    "result_id": "724b5380cacf1e5a",
+    "source": "/work/results/qwen/campaign/worker_outputs/r016_proteinmpnn_redesign_cand_v7r016_hyp_0016_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq001.pdb",
+    "file": "all-structures/724b5380cacf1e5a.pdb",
+    "sha256": "1ef4e4f0df77e6fbcc4527c10af688f69df4467d097fd0ebb7c716c9c95d82ce"
+  },
+  {
+    "result_id": "dd60613499df795a",
+    "source": "/work/results/qwen/campaign/worker_outputs/r016_proteinmpnn_redesign_cand_v7r016_hyp_0016_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq002.pdb",
+    "file": "all-structures/dd60613499df795a.pdb",
+    "sha256": "6df5cc1c64e5529221d52344c7ed27c11b2e00c2ac2daae1c9eb965c7669c225"
+  },
+  {
+    "result_id": "3a3e9360c1fd1a87",
+    "source": "/work/results/qwen/campaign/worker_outputs/r016_proteinmpnn_redesign_cand_v7r016_hyp_0016_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq003.pdb",
+    "file": "all-structures/3a3e9360c1fd1a87.pdb",
+    "sha256": "06533ad171feb541e82876422b9b1d8b8176e86b9bad9d1cc424fbbc39705cfd"
+  },
+  {
+    "result_id": "f700336495954507",
+    "source": "/work/results/qwen/campaign/worker_outputs/r016_proteinmpnn_redesign_cand_v7r016_hyp_0016_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq004.pdb",
+    "file": "all-structures/f700336495954507.pdb",
+    "sha256": "46b03592950e176e349282c5b85164f84db8c0983ffb730c3b81f5978ff3ba9d"
+  },
+  {
+    "result_id": "3b89faf74c379223",
+    "source": "/work/results/qwen/campaign/worker_outputs/r016_proteinmpnn_redesign_cand_v7r016_hyp_0016_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq005.pdb",
+    "file": "all-structures/3b89faf74c379223.pdb",
+    "sha256": "2856a9880b1d5da6251b994cce88e01d586d490cdf1981c898d2f37ffa065735"
+  },
+  {
+    "result_id": "66f3fc50f9d41fef",
+    "source": "/work/results/qwen/campaign/worker_outputs/r016_proteinmpnn_redesign_cand_v7r016_hyp_0016_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq006.pdb",
+    "file": "all-structures/66f3fc50f9d41fef.pdb",
+    "sha256": "b2b199d04bb6ebacecbd5a74eeddec281cdcec9073e35f52767111fddcc4050f"
+  },
+  {
+    "result_id": "08bfd64955744596",
+    "source": "/work/results/qwen/campaign/worker_outputs/r016_proteinmpnn_redesign_cand_v7r016_hyp_0016_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq007.pdb",
+    "file": "all-structures/08bfd64955744596.pdb",
+    "sha256": "51ddfc58e96f189baea19e137dfba1f04103766b674db5da98000fc717915cec"
+  },
+  {
+    "result_id": "df15dcec36a01b8d",
+    "source": "/work/results/qwen/campaign/worker_outputs/r016_proteinmpnn_redesign_cand_v7r016_hyp_0016_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq008.pdb",
+    "file": "all-structures/df15dcec36a01b8d.pdb",
+    "sha256": "e49eafaa007931a2f156cc250da1c0d8344e30f24a764c03572e6649f31c815c"
+  },
+  {
+    "result_id": "97fdf028c681752d",
+    "source": "/work/results/qwen/campaign/worker_outputs/r016_proteinmpnn_redesign_cand_v7r016_hyp_0016_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq009.pdb",
+    "file": "all-structures/97fdf028c681752d.pdb",
+    "sha256": "45bd1e2ff0592f831f424aa5facc23cb330024fc3a902e07dc6831775b73dfff"
+  },
+  {
+    "result_id": "be93a8bb3cfbb2f1",
+    "source": "/work/results/qwen/campaign/worker_outputs/r016_proteinmpnn_redesign_cand_v7r016_hyp_0016_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq010.pdb",
+    "file": "all-structures/be93a8bb3cfbb2f1.pdb",
+    "sha256": "3b391d4a8007cb1731ae6e511ff1aedee473bfb2948504c5ac18bd7b36d09470"
+  },
+  {
+    "result_id": "12bcb241ca910be7",
+    "source": "/work/results/qwen/campaign/worker_outputs/r016_proteinmpnn_redesign_cand_v7r016_hyp_0016_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq011.pdb",
+    "file": "all-structures/12bcb241ca910be7.pdb",
+    "sha256": "cc7864c4b7484349860b1951442e90f2489dc194f9156485a9f4e59dea48a54f"
+  },
+  {
+    "result_id": "a37cd22693607715",
+    "source": "/work/results/qwen/campaign/worker_outputs/r016_proteinmpnn_redesign_cand_v7r016_hyp_0016_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq012.pdb",
+    "file": "all-structures/a37cd22693607715.pdb",
+    "sha256": "a843f0077bf6818a8871bd598e5ef2b5512daae5adda5c690885048da0c836ff"
+  },
+  {
+    "result_id": "299fa2e1f70dacb7",
+    "source": "/work/results/qwen/campaign/worker_outputs/r016_proteinmpnn_redesign_cand_v7r016_hyp_0016_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq013.pdb",
+    "file": "all-structures/299fa2e1f70dacb7.pdb",
+    "sha256": "8eefc7a326b8eadc177dc032fff4c60ac62a1bf03673dd272b5ef035eae4c8b6"
+  },
+  {
+    "result_id": "c84ec7b18f856939",
+    "source": "/work/results/qwen/campaign/worker_outputs/r016_proteinmpnn_redesign_cand_v7r016_hyp_0016_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq014.pdb",
+    "file": "all-structures/c84ec7b18f856939.pdb",
+    "sha256": "9c5ff1087b55d82532dbebde0b259360fb313fcdebdc7ff0343085989c6e20a4"
+  },
+  {
+    "result_id": "ab310a0cdb306022",
+    "source": "/work/results/qwen/campaign/worker_outputs/r016_proteinmpnn_redesign_cand_v7r016_hyp_0016_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq015.pdb",
+    "file": "all-structures/ab310a0cdb306022.pdb",
+    "sha256": "eea673d8494b8c26166d1f660bc0d41ea97884481fe1600373c8ad367c8f18ba"
+  },
+  {
+    "result_id": "002abd2b044e12fa",
+    "source": "/work/results/qwen/campaign/worker_outputs/r016_proteinmpnn_redesign_cand_v7r016_hyp_0016_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq016.pdb",
+    "file": "all-structures/002abd2b044e12fa.pdb",
+    "sha256": "7de09806c8437e64ace677e550b46e4bd7dc9797a5f566334b9b497c0c435043"
+  },
+  {
+    "result_id": "64daae76b918e4a4",
+    "source": "/work/results/qwen/campaign/worker_outputs/r017_structure_refilter_chain_v7r016_proteinmpnn_redesign_to_structure_refilter_129/af2_refilter_prediction.pdb",
+    "file": "all-structures/64daae76b918e4a4.pdb",
+    "sha256": "92020793ff920d4f403c830d72fa079360bfec4e912f9f60f401de0212d095a1"
+  },
+  {
+    "result_id": "95e79cea8721d2d0",
+    "source": "/work/results/qwen/campaign/worker_outputs/r017_proteinmpnn_redesign_cand_v7r017_hyp_0017_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq001.pdb",
+    "file": "all-structures/95e79cea8721d2d0.pdb",
+    "sha256": "6112fc29d7056f9893ed322d711ab45724b0dc439f7d80518d3984e1b5bef587"
+  },
+  {
+    "result_id": "b3e13d8a8413852c",
+    "source": "/work/results/qwen/campaign/worker_outputs/r017_proteinmpnn_redesign_cand_v7r017_hyp_0017_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq002.pdb",
+    "file": "all-structures/b3e13d8a8413852c.pdb",
+    "sha256": "aac2523d3b527d1b4ec76591ebde7ed05700b289dd1c58bc1407465a7edb09f9"
+  },
+  {
+    "result_id": "e430b73cdbc711b4",
+    "source": "/work/results/qwen/campaign/worker_outputs/r017_proteinmpnn_redesign_cand_v7r017_hyp_0017_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq003.pdb",
+    "file": "all-structures/e430b73cdbc711b4.pdb",
+    "sha256": "fe90d014d78c47a2d5165f6b87722e0a2b9c6f5de5f57edd3d03a23aecbefcb1"
+  },
+  {
+    "result_id": "b62133d50c5f329c",
+    "source": "/work/results/qwen/campaign/worker_outputs/r017_proteinmpnn_redesign_cand_v7r017_hyp_0017_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq004.pdb",
+    "file": "all-structures/b62133d50c5f329c.pdb",
+    "sha256": "e887bbcc77655d4eabef81f7cf0e24698a22f42c8950146545a0ad65da0c581a"
+  },
+  {
+    "result_id": "acfefca305f4ef01",
+    "source": "/work/results/qwen/campaign/worker_outputs/r017_proteinmpnn_redesign_cand_v7r017_hyp_0017_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq005.pdb",
+    "file": "all-structures/acfefca305f4ef01.pdb",
+    "sha256": "00d2d601cff491ac983f9aadf39f92b20f824fc027e361bd656108d7589a9613"
+  },
+  {
+    "result_id": "c665df6674fd6fe2",
+    "source": "/work/results/qwen/campaign/worker_outputs/r017_proteinmpnn_redesign_cand_v7r017_hyp_0017_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq006.pdb",
+    "file": "all-structures/c665df6674fd6fe2.pdb",
+    "sha256": "06be731cfa2668457dace49eb655a95db45c1fd687a902695b3d956c21b4126f"
+  },
+  {
+    "result_id": "ac819e55dd504100",
+    "source": "/work/results/qwen/campaign/worker_outputs/r017_proteinmpnn_redesign_cand_v7r017_hyp_0017_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq007.pdb",
+    "file": "all-structures/ac819e55dd504100.pdb",
+    "sha256": "4ff3ba6f0a6f0bb8f881b0c8dfc663f367f1202c160f6bb81ccfdd50c39a7d65"
+  },
+  {
+    "result_id": "2ae13551a7d9bab2",
+    "source": "/work/results/qwen/campaign/worker_outputs/r017_proteinmpnn_redesign_cand_v7r017_hyp_0017_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq008.pdb",
+    "file": "all-structures/2ae13551a7d9bab2.pdb",
+    "sha256": "a6e543b57854d9d0eb945c002c9636eec4d9c335a009e27910efce24ac0c2c17"
+  },
+  {
+    "result_id": "ba6f8611333fabd4",
+    "source": "/work/results/qwen/campaign/worker_outputs/r017_proteinmpnn_redesign_cand_v7r017_hyp_0017_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq009.pdb",
+    "file": "all-structures/ba6f8611333fabd4.pdb",
+    "sha256": "a233e06898711bf3ba4f985fb75f00465a5daceff5ca778788212080b76bac44"
+  },
+  {
+    "result_id": "d4e3aeed8acaa58b",
+    "source": "/work/results/qwen/campaign/worker_outputs/r017_proteinmpnn_redesign_cand_v7r017_hyp_0017_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq010.pdb",
+    "file": "all-structures/d4e3aeed8acaa58b.pdb",
+    "sha256": "eba9e7898ac5068cbe8f167939b916617ae3f09cea309d3a2aedcb1d0408209c"
+  },
+  {
+    "result_id": "efabd105d61b999c",
+    "source": "/work/results/qwen/campaign/worker_outputs/r017_proteinmpnn_redesign_cand_v7r017_hyp_0017_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq011.pdb",
+    "file": "all-structures/efabd105d61b999c.pdb",
+    "sha256": "1e66581bd5399606a22b7736249e8c8ae215ef7cd3919defb7c7c099646c10ea"
+  },
+  {
+    "result_id": "8f665b88234b1b1d",
+    "source": "/work/results/qwen/campaign/worker_outputs/r017_proteinmpnn_redesign_cand_v7r017_hyp_0017_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq012.pdb",
+    "file": "all-structures/8f665b88234b1b1d.pdb",
+    "sha256": "be6aecae630226739fc2d56beb57b068fb4b3085e15cd8a12a86c9e4281fd0f6"
+  },
+  {
+    "result_id": "611f6b0e7ed622cd",
+    "source": "/work/results/qwen/campaign/worker_outputs/r017_proteinmpnn_redesign_cand_v7r017_hyp_0017_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq013.pdb",
+    "file": "all-structures/611f6b0e7ed622cd.pdb",
+    "sha256": "c842f87f62ac2d493e51ed1a74d48165639f0a42455eb91868ef6b9d16bc01ba"
+  },
+  {
+    "result_id": "7152a831cdaa36a6",
+    "source": "/work/results/qwen/campaign/worker_outputs/r017_proteinmpnn_redesign_cand_v7r017_hyp_0017_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq014.pdb",
+    "file": "all-structures/7152a831cdaa36a6.pdb",
+    "sha256": "f8bb53fba4006e36e49c6bf560c8df50b66eb7740c681232ceebc798af1953e0"
+  },
+  {
+    "result_id": "34880bb1adaa1ae6",
+    "source": "/work/results/qwen/campaign/worker_outputs/r017_proteinmpnn_redesign_cand_v7r017_hyp_0017_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq015.pdb",
+    "file": "all-structures/34880bb1adaa1ae6.pdb",
+    "sha256": "0518df4c6a892ec8c98e3e75d3443bc61f960e1074770a9f5620743a17a12d49"
+  },
+  {
+    "result_id": "04f6b13c72ea6d0c",
+    "source": "/work/results/qwen/campaign/worker_outputs/r017_proteinmpnn_redesign_cand_v7r017_hyp_0017_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq016.pdb",
+    "file": "all-structures/04f6b13c72ea6d0c.pdb",
+    "sha256": "936ea7be06c936403982fc4357647e0d5c535305dcfeb5276c51b4c5ca4a66e9"
+  },
+  {
+    "result_id": "eb3c436b24562c2a",
+    "source": "/work/results/qwen/campaign/worker_outputs/r018_structure_refilter_chain_v7r016_proteinmpnn_redesign_to_structure_refilter_130/af2_refilter_prediction.pdb",
+    "file": "all-structures/eb3c436b24562c2a.pdb",
+    "sha256": "2672797ba3260038dc06507222c249b497a5f1fdfca840fd7f91b2bddfb3cc66"
+  },
+  {
+    "result_id": "1116f954f62e7f80",
+    "source": "/work/results/qwen/campaign/worker_outputs/r018_proteinmpnn_redesign_cand_v7r018_hyp_0018_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq001.pdb",
+    "file": "all-structures/1116f954f62e7f80.pdb",
+    "sha256": "5a8d77d4e090009e94594794e7c42780fa507b2639f948559508c367f5bdd93b"
+  },
+  {
+    "result_id": "bc1027b62968bfea",
+    "source": "/work/results/qwen/campaign/worker_outputs/r018_proteinmpnn_redesign_cand_v7r018_hyp_0018_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq002.pdb",
+    "file": "all-structures/bc1027b62968bfea.pdb",
+    "sha256": "dd31e6219ddffe5e7dcc4a6ebca68fbf430cb9cc495a093c24e363cf3b715d88"
+  },
+  {
+    "result_id": "4c59af7f1c7c62f7",
+    "source": "/work/results/qwen/campaign/worker_outputs/r018_proteinmpnn_redesign_cand_v7r018_hyp_0018_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq003.pdb",
+    "file": "all-structures/4c59af7f1c7c62f7.pdb",
+    "sha256": "b38420fdb0bb20ab0be4cf41614b2e334fb6e75bf57ed086909466a3121a7ba8"
+  },
+  {
+    "result_id": "76aefba503d33605",
+    "source": "/work/results/qwen/campaign/worker_outputs/r018_proteinmpnn_redesign_cand_v7r018_hyp_0018_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq004.pdb",
+    "file": "all-structures/76aefba503d33605.pdb",
+    "sha256": "f6ac217e27ad08218862ef78a123a9f63b02f7488e6c934cb505f2d00f8b8d65"
+  },
+  {
+    "result_id": "0992add56744176c",
+    "source": "/work/results/qwen/campaign/worker_outputs/r018_proteinmpnn_redesign_cand_v7r018_hyp_0018_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq005.pdb",
+    "file": "all-structures/0992add56744176c.pdb",
+    "sha256": "d11c8c58fcc2f875b2da44f5c782f40d971a7b16f9b803b5a664d9386ca6cb18"
+  },
+  {
+    "result_id": "3056a3f4b8310270",
+    "source": "/work/results/qwen/campaign/worker_outputs/r018_proteinmpnn_redesign_cand_v7r018_hyp_0018_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq006.pdb",
+    "file": "all-structures/3056a3f4b8310270.pdb",
+    "sha256": "143e6a787a6a0256255dac1457e7b00c55bd12376d688f79233b4843b6e527d5"
+  },
+  {
+    "result_id": "fb296c2a2d3924ae",
+    "source": "/work/results/qwen/campaign/worker_outputs/r018_proteinmpnn_redesign_cand_v7r018_hyp_0018_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq007.pdb",
+    "file": "all-structures/fb296c2a2d3924ae.pdb",
+    "sha256": "176ba3c2078e631899ffd066962123c97daa6558495f47b7de8d73a77f752bd0"
+  },
+  {
+    "result_id": "1da163be9ca2cc3f",
+    "source": "/work/results/qwen/campaign/worker_outputs/r018_proteinmpnn_redesign_cand_v7r018_hyp_0018_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq008.pdb",
+    "file": "all-structures/1da163be9ca2cc3f.pdb",
+    "sha256": "1dac06bfa52e70e9cb7737898f06d9a645dc74d3f9cf9fccc0020884bc449f2f"
+  },
+  {
+    "result_id": "83888ed7ec441c7e",
+    "source": "/work/results/qwen/campaign/worker_outputs/r018_proteinmpnn_redesign_cand_v7r018_hyp_0018_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq009.pdb",
+    "file": "all-structures/83888ed7ec441c7e.pdb",
+    "sha256": "a37378444c6cb99eb16d02257dc3ab27d8b9ae05d6781222eab54e85423187ad"
+  },
+  {
+    "result_id": "1f4586af9875aba1",
+    "source": "/work/results/qwen/campaign/worker_outputs/r018_proteinmpnn_redesign_cand_v7r018_hyp_0018_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq010.pdb",
+    "file": "all-structures/1f4586af9875aba1.pdb",
+    "sha256": "237248613dc16bde353655c125c13bec2db4e532c6cbcef97c65131ab5f70505"
+  },
+  {
+    "result_id": "4f766ec35324e1c3",
+    "source": "/work/results/qwen/campaign/worker_outputs/r018_proteinmpnn_redesign_cand_v7r018_hyp_0018_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq011.pdb",
+    "file": "all-structures/4f766ec35324e1c3.pdb",
+    "sha256": "e6098156cf41e399b9c8b94cd559860221600e7e48009732427197d1ba4d36a3"
+  },
+  {
+    "result_id": "21bb4d0f7ec60ae5",
+    "source": "/work/results/qwen/campaign/worker_outputs/r018_proteinmpnn_redesign_cand_v7r018_hyp_0018_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq012.pdb",
+    "file": "all-structures/21bb4d0f7ec60ae5.pdb",
+    "sha256": "d9b8f2c75dd5330743cb7be8bcb32d038ade87f11488ce5b549dcc012f995f5f"
+  },
+  {
+    "result_id": "de48ebed9adab00b",
+    "source": "/work/results/qwen/campaign/worker_outputs/r018_proteinmpnn_redesign_cand_v7r018_hyp_0018_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq013.pdb",
+    "file": "all-structures/de48ebed9adab00b.pdb",
+    "sha256": "5ed50366fdd82a3938543c8d15f10a99d6d012bc2c9610fcccd259e5751bba51"
+  },
+  {
+    "result_id": "51de103cc9b625a3",
+    "source": "/work/results/qwen/campaign/worker_outputs/r018_proteinmpnn_redesign_cand_v7r018_hyp_0018_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq014.pdb",
+    "file": "all-structures/51de103cc9b625a3.pdb",
+    "sha256": "a2d40d1bc190f6ba94be7653ac9a3dc0c8ff889212c0f3e7497eb66e7793bf1d"
+  },
+  {
+    "result_id": "8a6750954f6aa49d",
+    "source": "/work/results/qwen/campaign/worker_outputs/r018_proteinmpnn_redesign_cand_v7r018_hyp_0018_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq015.pdb",
+    "file": "all-structures/8a6750954f6aa49d.pdb",
+    "sha256": "835a034f4066a879218e7292ec772d2b71b34c18d303bfdec30d5d9006b0920a"
+  },
+  {
+    "result_id": "841b2038f019f730",
+    "source": "/work/results/qwen/campaign/worker_outputs/r018_proteinmpnn_redesign_cand_v7r018_hyp_0018_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq016.pdb",
+    "file": "all-structures/841b2038f019f730.pdb",
+    "sha256": "2c50be8cb51fc15483b9549487bd031b235f454c074d0c6e9160b9db1315e74f"
+  },
+  {
+    "result_id": "37e854bd855d1c63",
+    "source": "/work/results/qwen/campaign/worker_outputs/r019_structure_refilter_chain_v7r017_proteinmpnn_redesign_to_structure_refilter_145/af2_refilter_prediction.pdb",
+    "file": "all-structures/37e854bd855d1c63.pdb",
+    "sha256": "e2b88d2191a211d8c29f31ed13901a130519cc8ef7a559176aa3c1e7e53d3df4"
+  },
+  {
+    "result_id": "195d6d8a3a8167ee",
+    "source": "/work/results/qwen/campaign/worker_outputs/r019_proteinmpnn_redesign_cand_v7r019_hyp_0019_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq001.pdb",
+    "file": "all-structures/195d6d8a3a8167ee.pdb",
+    "sha256": "6428144a00ce4eea2c0a36ba6e295d4e24ad1f5d2443d945c60de6a7db90edb9"
+  },
+  {
+    "result_id": "50d720f273f2ac0e",
+    "source": "/work/results/qwen/campaign/worker_outputs/r019_proteinmpnn_redesign_cand_v7r019_hyp_0019_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq002.pdb",
+    "file": "all-structures/50d720f273f2ac0e.pdb",
+    "sha256": "7b1913e3317e6179b3e64e61fb81f914f993cfddeae036981c3ba506bf0c804b"
+  },
+  {
+    "result_id": "0729cd3c5b1c65ed",
+    "source": "/work/results/qwen/campaign/worker_outputs/r019_proteinmpnn_redesign_cand_v7r019_hyp_0019_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq003.pdb",
+    "file": "all-structures/0729cd3c5b1c65ed.pdb",
+    "sha256": "21e9e4cf055312851b0204d8e9e3ebc63ba8bad865a42de939ce0c93fdef2b35"
+  },
+  {
+    "result_id": "0bef674fdd112bea",
+    "source": "/work/results/qwen/campaign/worker_outputs/r019_proteinmpnn_redesign_cand_v7r019_hyp_0019_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq004.pdb",
+    "file": "all-structures/0bef674fdd112bea.pdb",
+    "sha256": "f169371955fdf161489fe8766dde1b3c71c54747108429bcd180435d8cf8a06f"
+  },
+  {
+    "result_id": "18c332ae4b9ec042",
+    "source": "/work/results/qwen/campaign/worker_outputs/r019_proteinmpnn_redesign_cand_v7r019_hyp_0019_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq005.pdb",
+    "file": "all-structures/18c332ae4b9ec042.pdb",
+    "sha256": "3fe8a2f6927f15cbb0e485de804e48cd4aff978ca6877ccbb2815de441d9db49"
+  },
+  {
+    "result_id": "800ccb71eee3f20d",
+    "source": "/work/results/qwen/campaign/worker_outputs/r019_proteinmpnn_redesign_cand_v7r019_hyp_0019_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq006.pdb",
+    "file": "all-structures/800ccb71eee3f20d.pdb",
+    "sha256": "df2cdbfa6091cb1e3c090ffe7819534041633445e2eba2655ad64d67fa3e02b8"
+  },
+  {
+    "result_id": "75c6eaaa53aa7ed5",
+    "source": "/work/results/qwen/campaign/worker_outputs/r019_proteinmpnn_redesign_cand_v7r019_hyp_0019_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq007.pdb",
+    "file": "all-structures/75c6eaaa53aa7ed5.pdb",
+    "sha256": "e473781888180786a7adc30707a05dba7ba8285835ee400ee53f07d129de6d12"
+  },
+  {
+    "result_id": "af94ff3635d32f59",
+    "source": "/work/results/qwen/campaign/worker_outputs/r019_proteinmpnn_redesign_cand_v7r019_hyp_0019_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq008.pdb",
+    "file": "all-structures/af94ff3635d32f59.pdb",
+    "sha256": "9fe160faabcde7ac203bb0238b495f6f3286f970bd3a3b9f0538876ad25b3fb3"
+  },
+  {
+    "result_id": "f31402339366663f",
+    "source": "/work/results/qwen/campaign/worker_outputs/r019_proteinmpnn_redesign_cand_v7r019_hyp_0019_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq009.pdb",
+    "file": "all-structures/f31402339366663f.pdb",
+    "sha256": "723c0907fef2aaeb1b4d1d5ecfd85680c9688e025f4d5ec2c25bad89d1f7ab7f"
+  },
+  {
+    "result_id": "794cd77c8fa77fca",
+    "source": "/work/results/qwen/campaign/worker_outputs/r019_proteinmpnn_redesign_cand_v7r019_hyp_0019_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq010.pdb",
+    "file": "all-structures/794cd77c8fa77fca.pdb",
+    "sha256": "08d8c23dbe8c2f0d199d6ab6674a374c7fa8783ea5717139d0aa09bc3742d570"
+  },
+  {
+    "result_id": "01b2334f30ecbfbb",
+    "source": "/work/results/qwen/campaign/worker_outputs/r019_proteinmpnn_redesign_cand_v7r019_hyp_0019_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq011.pdb",
+    "file": "all-structures/01b2334f30ecbfbb.pdb",
+    "sha256": "528626340383788544fcb6a74c79586d81ae7c2932b94065e45c66da1818be24"
+  },
+  {
+    "result_id": "806ff4a77a7ec491",
+    "source": "/work/results/qwen/campaign/worker_outputs/r019_proteinmpnn_redesign_cand_v7r019_hyp_0019_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq012.pdb",
+    "file": "all-structures/806ff4a77a7ec491.pdb",
+    "sha256": "048113ede63d62cb131b066ae686ef58086794b41e1e0127bd5bff34ecf72617"
+  },
+  {
+    "result_id": "850b79a2712f8bed",
+    "source": "/work/results/qwen/campaign/worker_outputs/r019_proteinmpnn_redesign_cand_v7r019_hyp_0019_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq013.pdb",
+    "file": "all-structures/850b79a2712f8bed.pdb",
+    "sha256": "3dcda24787613c3648f1a303fa128f3a1601bdad9296e7e0257ab42859e5ddf8"
+  },
+  {
+    "result_id": "8978e0c0f293eff8",
+    "source": "/work/results/qwen/campaign/worker_outputs/r019_proteinmpnn_redesign_cand_v7r019_hyp_0019_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq014.pdb",
+    "file": "all-structures/8978e0c0f293eff8.pdb",
+    "sha256": "9f3a82a8ac94ae10b281ee6c112d015d27a23afcd6bf2cf7d07d3e796219f083"
+  },
+  {
+    "result_id": "6807fc4bd16b2065",
+    "source": "/work/results/qwen/campaign/worker_outputs/r019_proteinmpnn_redesign_cand_v7r019_hyp_0019_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq015.pdb",
+    "file": "all-structures/6807fc4bd16b2065.pdb",
+    "sha256": "43ffff5d24f16acb016bffa99d85cdf8e65281d4e82d8c872267b941b9f56fbb"
+  },
+  {
+    "result_id": "7b953527e27c80c7",
+    "source": "/work/results/qwen/campaign/worker_outputs/r019_proteinmpnn_redesign_cand_v7r019_hyp_0019_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq016.pdb",
+    "file": "all-structures/7b953527e27c80c7.pdb",
+    "sha256": "ba4808bdea8549b7017e3444cd5fd2af90e6df80026e3202ea0e592fb26eebd3"
+  },
+  {
+    "result_id": "90a221000babad78",
+    "source": "/work/results/qwen/campaign/worker_outputs/r020_structure_refilter_chain_v7r017_proteinmpnn_redesign_to_structure_refilter_146/af2_refilter_prediction.pdb",
+    "file": "all-structures/90a221000babad78.pdb",
+    "sha256": "3fe2f8194fefe5a2b3ec71e697f09ace1cf2e31c17f53edf52ff81b010763a35"
+  },
+  {
+    "result_id": "6a798742ee861973",
+    "source": "/work/results/qwen/campaign/worker_outputs/r020_proteinmpnn_redesign_cand_v7r020_hyp_0020_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq001.pdb",
+    "file": "all-structures/6a798742ee861973.pdb",
+    "sha256": "d662ffcae6ef3d293150394164fc09aadd8746ebc5172ee3be6ffea5d65bef29"
+  },
+  {
+    "result_id": "065208abe007b101",
+    "source": "/work/results/qwen/campaign/worker_outputs/r020_proteinmpnn_redesign_cand_v7r020_hyp_0020_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq002.pdb",
+    "file": "all-structures/065208abe007b101.pdb",
+    "sha256": "7ee86ba9e024d030d05017835f799eeec6e2a8a8a76017702c1252097913ae75"
+  },
+  {
+    "result_id": "525fe84c304ac699",
+    "source": "/work/results/qwen/campaign/worker_outputs/r020_proteinmpnn_redesign_cand_v7r020_hyp_0020_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq003.pdb",
+    "file": "all-structures/525fe84c304ac699.pdb",
+    "sha256": "d74bb96362697ac6363a8f792572d5a5ff5c3f43e61eab8b75dd7a5a1da9b786"
+  },
+  {
+    "result_id": "a2dbfb2bf540576e",
+    "source": "/work/results/qwen/campaign/worker_outputs/r020_proteinmpnn_redesign_cand_v7r020_hyp_0020_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq004.pdb",
+    "file": "all-structures/a2dbfb2bf540576e.pdb",
+    "sha256": "5a0e6dec9626206be5a83032aac2cb7a90037aa97f86017ca6c5bf601496c064"
+  },
+  {
+    "result_id": "9a7c2ad03586a0a0",
+    "source": "/work/results/qwen/campaign/worker_outputs/r020_proteinmpnn_redesign_cand_v7r020_hyp_0020_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq005.pdb",
+    "file": "all-structures/9a7c2ad03586a0a0.pdb",
+    "sha256": "ffbc1fe97228ee00dc19d35445a3cbe22ba44654adbe1196fd82bca3084b37a4"
+  },
+  {
+    "result_id": "00b9bd3c2ab3a2b3",
+    "source": "/work/results/qwen/campaign/worker_outputs/r020_proteinmpnn_redesign_cand_v7r020_hyp_0020_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq006.pdb",
+    "file": "all-structures/00b9bd3c2ab3a2b3.pdb",
+    "sha256": "abb1fc49b989760ed4a980f405bd593ae1b649d5ce838552b1dbdb6ba2eefed6"
+  },
+  {
+    "result_id": "655b92bb1f406d27",
+    "source": "/work/results/qwen/campaign/worker_outputs/r020_proteinmpnn_redesign_cand_v7r020_hyp_0020_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq007.pdb",
+    "file": "all-structures/655b92bb1f406d27.pdb",
+    "sha256": "e2a7e46dacd6755a0e3969dd96404bc96c5b84bd9ddac7047450ba686be2d949"
+  },
+  {
+    "result_id": "c28875493a3c41f0",
+    "source": "/work/results/qwen/campaign/worker_outputs/r020_proteinmpnn_redesign_cand_v7r020_hyp_0020_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq008.pdb",
+    "file": "all-structures/c28875493a3c41f0.pdb",
+    "sha256": "72170d117d09c3f8304c47a77c8e8fcd3bbf1df817fbb59f5894d761505f7c14"
+  },
+  {
+    "result_id": "acf1f8cbe9d16aac",
+    "source": "/work/results/qwen/campaign/worker_outputs/r020_proteinmpnn_redesign_cand_v7r020_hyp_0020_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq009.pdb",
+    "file": "all-structures/acf1f8cbe9d16aac.pdb",
+    "sha256": "490e01d4aedccb76be5852a1c8b4bf0ca34b6065273d49316c4d31ede7c64338"
+  },
+  {
+    "result_id": "934c2566361a8abb",
+    "source": "/work/results/qwen/campaign/worker_outputs/r020_proteinmpnn_redesign_cand_v7r020_hyp_0020_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq010.pdb",
+    "file": "all-structures/934c2566361a8abb.pdb",
+    "sha256": "4a16664f3e0687908f7947f406ab7a81d5b7efc21bfddf46d2d8df67b93edf65"
+  },
+  {
+    "result_id": "6c9ce68e16f4b943",
+    "source": "/work/results/qwen/campaign/worker_outputs/r020_proteinmpnn_redesign_cand_v7r020_hyp_0020_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq011.pdb",
+    "file": "all-structures/6c9ce68e16f4b943.pdb",
+    "sha256": "ec1ce4a78583c7d3aabeb23a47ff29a599f5d4176cb43ecc06ac7cdf0a42cc9a"
+  },
+  {
+    "result_id": "73c2ee35ef34ba5a",
+    "source": "/work/results/qwen/campaign/worker_outputs/r020_proteinmpnn_redesign_cand_v7r020_hyp_0020_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq012.pdb",
+    "file": "all-structures/73c2ee35ef34ba5a.pdb",
+    "sha256": "e8ae2b33ac581351191a30f4e762dcf0fe3141ba8a46162afef5d0599731ec7c"
+  },
+  {
+    "result_id": "a4a774637e780426",
+    "source": "/work/results/qwen/campaign/worker_outputs/r020_proteinmpnn_redesign_cand_v7r020_hyp_0020_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq013.pdb",
+    "file": "all-structures/a4a774637e780426.pdb",
+    "sha256": "82076dc880a0d268523d43212a42e472a1e8d4aa6442608ad35d47de2a9c3c45"
+  },
+  {
+    "result_id": "cda7505a1b30f632",
+    "source": "/work/results/qwen/campaign/worker_outputs/r020_proteinmpnn_redesign_cand_v7r020_hyp_0020_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq014.pdb",
+    "file": "all-structures/cda7505a1b30f632.pdb",
+    "sha256": "247675d5e2ab0bf5c826a985f35f6e62ee99034453a395a59bd23743cce110f5"
+  },
+  {
+    "result_id": "25754754bbbf655c",
+    "source": "/work/results/qwen/campaign/worker_outputs/r020_proteinmpnn_redesign_cand_v7r020_hyp_0020_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq015.pdb",
+    "file": "all-structures/25754754bbbf655c.pdb",
+    "sha256": "3b291c240441f6861217c8f4c2149997703d0d8c000facee1108462b6aa17aaf"
+  },
+  {
+    "result_id": "212f539d68628a52",
+    "source": "/work/results/qwen/campaign/worker_outputs/r020_proteinmpnn_redesign_cand_v7r020_hyp_0020_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq016.pdb",
+    "file": "all-structures/212f539d68628a52.pdb",
+    "sha256": "23aba6804da9f0769df00a0d54d5973be49a9e1e6c2b24699aceaa4bc0ca51ca"
+  },
+  {
+    "result_id": "1f091d3e0417c7ab",
+    "source": "/work/results/qwen/campaign/worker_outputs/r021_structure_refilter_chain_v7r019_proteinmpnn_redesign_to_structure_refilter_177/af2_refilter_prediction.pdb",
+    "file": "all-structures/1f091d3e0417c7ab.pdb",
+    "sha256": "3184d8a2bd4bea5caf311ffa8a2799ce345f0972762af9a1bf18c0d7f7044482"
+  },
+  {
+    "result_id": "afb3eb5ccae10bd9",
+    "source": "/work/results/qwen/campaign/worker_outputs/r021_proteinmpnn_redesign_cand_v7r021_hyp_0021_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq001.pdb",
+    "file": "all-structures/afb3eb5ccae10bd9.pdb",
+    "sha256": "76b5fe9f7de6d31f711791151180116f41f16b90028b2091a7c4e371b04bfe18"
+  },
+  {
+    "result_id": "1dd036441afd6d73",
+    "source": "/work/results/qwen/campaign/worker_outputs/r021_proteinmpnn_redesign_cand_v7r021_hyp_0021_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq002.pdb",
+    "file": "all-structures/1dd036441afd6d73.pdb",
+    "sha256": "29de120e26dff8bb9d25bb7c0db76de55562824337d946662697dff34b4788cd"
+  },
+  {
+    "result_id": "ae28d6bfb956b151",
+    "source": "/work/results/qwen/campaign/worker_outputs/r021_proteinmpnn_redesign_cand_v7r021_hyp_0021_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq003.pdb",
+    "file": "all-structures/ae28d6bfb956b151.pdb",
+    "sha256": "912f42bd7418297e04e224de6eec398bfbc92127e9d207f93baaafc5d6642ef6"
+  },
+  {
+    "result_id": "4aa60e8a32ed2826",
+    "source": "/work/results/qwen/campaign/worker_outputs/r021_proteinmpnn_redesign_cand_v7r021_hyp_0021_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq004.pdb",
+    "file": "all-structures/4aa60e8a32ed2826.pdb",
+    "sha256": "3ac9e71074100f8b51189b1b65a82979d46c32df32075f58fc922cd6cf07e30e"
+  },
+  {
+    "result_id": "e7a8d914ebb62703",
+    "source": "/work/results/qwen/campaign/worker_outputs/r021_proteinmpnn_redesign_cand_v7r021_hyp_0021_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq005.pdb",
+    "file": "all-structures/e7a8d914ebb62703.pdb",
+    "sha256": "59e2dd66df4c7da80c996469e12278d46c084961b3adf327d2bd22bd7c81c349"
+  },
+  {
+    "result_id": "c4dc73f7970e9072",
+    "source": "/work/results/qwen/campaign/worker_outputs/r021_proteinmpnn_redesign_cand_v7r021_hyp_0021_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq006.pdb",
+    "file": "all-structures/c4dc73f7970e9072.pdb",
+    "sha256": "582d8f65dcc950105511b7e337d3750bee66143ca75aea80aa906bb88af0e937"
+  },
+  {
+    "result_id": "4ac5b346a1200cda",
+    "source": "/work/results/qwen/campaign/worker_outputs/r021_proteinmpnn_redesign_cand_v7r021_hyp_0021_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq007.pdb",
+    "file": "all-structures/4ac5b346a1200cda.pdb",
+    "sha256": "fd27c394baa30d2768fcaa3668cc5ff0eabacdf822c6790af1c4fbe0d029e32d"
+  },
+  {
+    "result_id": "63a1f49922278840",
+    "source": "/work/results/qwen/campaign/worker_outputs/r021_proteinmpnn_redesign_cand_v7r021_hyp_0021_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq008.pdb",
+    "file": "all-structures/63a1f49922278840.pdb",
+    "sha256": "41797d3dda7b82b5112b147cdcb23ddc0f535c5d70cdd7ee8ff8bc6e7d5e4e50"
+  },
+  {
+    "result_id": "310eaf5fe07afa07",
+    "source": "/work/results/qwen/campaign/worker_outputs/r021_proteinmpnn_redesign_cand_v7r021_hyp_0021_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq009.pdb",
+    "file": "all-structures/310eaf5fe07afa07.pdb",
+    "sha256": "883157494d9443c44afcb0577d57304a55a6a94d8b549dcb48b7af8a3e585a2f"
+  },
+  {
+    "result_id": "7c1ae0d894be804e",
+    "source": "/work/results/qwen/campaign/worker_outputs/r021_proteinmpnn_redesign_cand_v7r021_hyp_0021_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq010.pdb",
+    "file": "all-structures/7c1ae0d894be804e.pdb",
+    "sha256": "6fdc943bc9f478e1d15f694852e49b195ec761b5b11bf67920d6bd3f8d7adcc5"
+  },
+  {
+    "result_id": "86655b0389728a60",
+    "source": "/work/results/qwen/campaign/worker_outputs/r021_proteinmpnn_redesign_cand_v7r021_hyp_0021_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq011.pdb",
+    "file": "all-structures/86655b0389728a60.pdb",
+    "sha256": "f24933ab2fa4ad3a55c71b212992de7479cc42b5c805a456ab915f7fe4296869"
+  },
+  {
+    "result_id": "016427b606fc5049",
+    "source": "/work/results/qwen/campaign/worker_outputs/r021_proteinmpnn_redesign_cand_v7r021_hyp_0021_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq012.pdb",
+    "file": "all-structures/016427b606fc5049.pdb",
+    "sha256": "02d5a8f13a2ef51f7e36e9bb120799951eaef0663da251f767a1722467e0e1be"
+  },
+  {
+    "result_id": "8a42ae77fdc551f6",
+    "source": "/work/results/qwen/campaign/worker_outputs/r021_proteinmpnn_redesign_cand_v7r021_hyp_0021_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq013.pdb",
+    "file": "all-structures/8a42ae77fdc551f6.pdb",
+    "sha256": "343975e759578dc0fe9dd46efa5fb972562d5a07e85221eacdf29322485d6171"
+  },
+  {
+    "result_id": "8a43e41dd3d46093",
+    "source": "/work/results/qwen/campaign/worker_outputs/r021_proteinmpnn_redesign_cand_v7r021_hyp_0021_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq014.pdb",
+    "file": "all-structures/8a43e41dd3d46093.pdb",
+    "sha256": "14d77533a74893bd6eb9ba9f71c05bf858fb0361db17123a2b23a77e35108642"
+  },
+  {
+    "result_id": "4dc5067a14632810",
+    "source": "/work/results/qwen/campaign/worker_outputs/r021_proteinmpnn_redesign_cand_v7r021_hyp_0021_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq015.pdb",
+    "file": "all-structures/4dc5067a14632810.pdb",
+    "sha256": "1afc62d13f5dd1dae0678c399f4dee69c21ca0534948a22235dc8d51debf3392"
+  },
+  {
+    "result_id": "92229c6ce8c42d90",
+    "source": "/work/results/qwen/campaign/worker_outputs/r021_proteinmpnn_redesign_cand_v7r021_hyp_0021_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq016.pdb",
+    "file": "all-structures/92229c6ce8c42d90.pdb",
+    "sha256": "9c13b22c519496bed108bb45fb0dc9766183b0e63920a6d302a5ef8fe79c996b"
+  },
+  {
+    "result_id": "086ec90f5e1a0d90",
+    "source": "/work/results/qwen/campaign/worker_outputs/r022_proteinmpnn_redesign_cand_v7r022_hyp_0022_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq001.pdb",
+    "file": "all-structures/086ec90f5e1a0d90.pdb",
+    "sha256": "0cb777c1583815b5a4db62f4eaaa66977c14dc76f87e7a784624f45661ae7e16"
+  },
+  {
+    "result_id": "118f724da8e4d8ac",
+    "source": "/work/results/qwen/campaign/worker_outputs/r022_proteinmpnn_redesign_cand_v7r022_hyp_0022_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq002.pdb",
+    "file": "all-structures/118f724da8e4d8ac.pdb",
+    "sha256": "54c09b647eb20fca8d6fff8acc0dd9c2867317c062fe0c1ad9cdcf44956c59bd"
+  },
+  {
+    "result_id": "dc3bccb42b06f925",
+    "source": "/work/results/qwen/campaign/worker_outputs/r022_proteinmpnn_redesign_cand_v7r022_hyp_0022_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq003.pdb",
+    "file": "all-structures/dc3bccb42b06f925.pdb",
+    "sha256": "3b0c17ee5277e337b90ecc9d98d57aee85b4ab4b2b47edbf9a769e2ecab90ade"
+  },
+  {
+    "result_id": "c951221898b24235",
+    "source": "/work/results/qwen/campaign/worker_outputs/r022_proteinmpnn_redesign_cand_v7r022_hyp_0022_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq004.pdb",
+    "file": "all-structures/c951221898b24235.pdb",
+    "sha256": "efdf23e947dc55ff757de3a48083ad42250a94b569fc5159d2599f4a7a58802a"
+  },
+  {
+    "result_id": "d7de88a15d38efc0",
+    "source": "/work/results/qwen/campaign/worker_outputs/r022_proteinmpnn_redesign_cand_v7r022_hyp_0022_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq005.pdb",
+    "file": "all-structures/d7de88a15d38efc0.pdb",
+    "sha256": "01b4c5800b90b1a0022f03342e94d317904013450471af3b95f29f2788d9d51b"
+  },
+  {
+    "result_id": "6e02a45062470811",
+    "source": "/work/results/qwen/campaign/worker_outputs/r022_proteinmpnn_redesign_cand_v7r022_hyp_0022_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq006.pdb",
+    "file": "all-structures/6e02a45062470811.pdb",
+    "sha256": "aa816fd474e2cc155f30074e38b4c20e6b6b583adbfaf603bcd0ae67a5d95466"
+  },
+  {
+    "result_id": "8299929b6bd9859c",
+    "source": "/work/results/qwen/campaign/worker_outputs/r022_proteinmpnn_redesign_cand_v7r022_hyp_0022_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq007.pdb",
+    "file": "all-structures/8299929b6bd9859c.pdb",
+    "sha256": "a8f996934ac2b3987750b69972299608f7f97a5679cc5b35789089b48a10c4ad"
+  },
+  {
+    "result_id": "9a1bf88046e08eee",
+    "source": "/work/results/qwen/campaign/worker_outputs/r022_proteinmpnn_redesign_cand_v7r022_hyp_0022_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq008.pdb",
+    "file": "all-structures/9a1bf88046e08eee.pdb",
+    "sha256": "8ecd6afad12ae2a8655853512dba8158a9c15c3fc9a259212bfd541a955f3b82"
+  },
+  {
+    "result_id": "a1d5e39500fda27f",
+    "source": "/work/results/qwen/campaign/worker_outputs/r022_proteinmpnn_redesign_cand_v7r022_hyp_0022_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq009.pdb",
+    "file": "all-structures/a1d5e39500fda27f.pdb",
+    "sha256": "20d3c9ca25fb5a881a1bb0268e9e3365f3f405a95f426cad5cf1f0dbcaf40ab7"
+  },
+  {
+    "result_id": "c2ca813422b636bb",
+    "source": "/work/results/qwen/campaign/worker_outputs/r022_proteinmpnn_redesign_cand_v7r022_hyp_0022_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq010.pdb",
+    "file": "all-structures/c2ca813422b636bb.pdb",
+    "sha256": "fc8100d27cd6f04b48804936279c3c7393763b05bae9346163285531329ad863"
+  },
+  {
+    "result_id": "e4e994e7c2a2cd64",
+    "source": "/work/results/qwen/campaign/worker_outputs/r022_proteinmpnn_redesign_cand_v7r022_hyp_0022_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq011.pdb",
+    "file": "all-structures/e4e994e7c2a2cd64.pdb",
+    "sha256": "04bfcf748accadac3fa76a4ad081b2f6a73e72b728b498ee411dc052e8933c7c"
+  },
+  {
+    "result_id": "e232df73aa5a3271",
+    "source": "/work/results/qwen/campaign/worker_outputs/r022_proteinmpnn_redesign_cand_v7r022_hyp_0022_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq012.pdb",
+    "file": "all-structures/e232df73aa5a3271.pdb",
+    "sha256": "5aa3ad0ee81246c28fa7bf15151477171c659a1aec6512cc1103f4484d8ee330"
+  },
+  {
+    "result_id": "a4a541c8671a2b93",
+    "source": "/work/results/qwen/campaign/worker_outputs/r022_proteinmpnn_redesign_cand_v7r022_hyp_0022_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq013.pdb",
+    "file": "all-structures/a4a541c8671a2b93.pdb",
+    "sha256": "bb8567ab776ddd817b36cbaee308e8261ebc02cbc661dffcd16d224f05d766ef"
+  },
+  {
+    "result_id": "9cfdb611eb330730",
+    "source": "/work/results/qwen/campaign/worker_outputs/r022_proteinmpnn_redesign_cand_v7r022_hyp_0022_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq014.pdb",
+    "file": "all-structures/9cfdb611eb330730.pdb",
+    "sha256": "737bb4e580d42f66b1163f46581091554712214297fa612db76ab149dc50c4fe"
+  },
+  {
+    "result_id": "e439a3fb3a24515b",
+    "source": "/work/results/qwen/campaign/worker_outputs/r022_proteinmpnn_redesign_cand_v7r022_hyp_0022_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq015.pdb",
+    "file": "all-structures/e439a3fb3a24515b.pdb",
+    "sha256": "c4b369aedd8ee6b8821cd7fa98970d99d5b8846090c70741f645bf93c641f6a4"
+  },
+  {
+    "result_id": "69eabdec5ac92b9e",
+    "source": "/work/results/qwen/campaign/worker_outputs/r022_proteinmpnn_redesign_cand_v7r022_hyp_0022_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig3_bm0-s0to100br1-s100to200br2-s200to300br2-s300to400br1_seq016.pdb",
+    "file": "all-structures/69eabdec5ac92b9e.pdb",
+    "sha256": "b19b5b1551929535aa8514ae72232553bb04d39ee25c7a72cb190696603d7194"
+  },
+  {
+    "result_id": "d65088391896741d",
+    "source": "/work/results/qwen/campaign/worker_outputs/r022_structure_refilter_chain_v7r019_proteinmpnn_redesign_to_structure_refilter_178/af2_refilter_prediction.pdb",
+    "file": "all-structures/d65088391896741d.pdb",
+    "sha256": "eb597caf2136183889d8ec9ac4ef0e48a586c1198ddd94900575392aeccf016b"
+  },
+  {
+    "result_id": "62153036ce3f483b",
+    "source": "/work/results/qwen/campaign/worker_outputs/r023_proteinmpnn_redesign_cand_v7r003_hyp_0003_00_001/threaded_pdbs/job_0_n_184_id_2_bon_orig0_r2_seq001.pdb",
+    "file": "all-structures/62153036ce3f483b.pdb",
+    "sha256": "af14b754f3fd3edef495aaebcdc62b15072517b61357e7960d1b76212d53ba60"
+  },
+  {
+    "result_id": "bc9ee3f8301fb267",
+    "source": "/work/results/qwen/campaign/worker_outputs/r023_proteinmpnn_redesign_cand_v7r003_hyp_0003_00_001/threaded_pdbs/job_0_n_184_id_2_bon_orig0_r2_seq002.pdb",
+    "file": "all-structures/bc9ee3f8301fb267.pdb",
+    "sha256": "d3509051148d787c60e8bc9e6e057f704e1548dbf36b7333cec766893d45cc8f"
+  },
+  {
+    "result_id": "a95dcd1250e5f8fb",
+    "source": "/work/results/qwen/campaign/worker_outputs/r023_proteinmpnn_redesign_cand_v7r003_hyp_0003_00_001/threaded_pdbs/job_0_n_184_id_2_bon_orig0_r2_seq003.pdb",
+    "file": "all-structures/a95dcd1250e5f8fb.pdb",
+    "sha256": "31f93b7fb1af6b005aac1330fe9276b86d1650ade4c0ce5d4a67e49207cd7185"
+  },
+  {
+    "result_id": "c1e4f50eb6b2217f",
+    "source": "/work/results/qwen/campaign/worker_outputs/r023_proteinmpnn_redesign_cand_v7r003_hyp_0003_00_001/threaded_pdbs/job_0_n_184_id_2_bon_orig0_r2_seq004.pdb",
+    "file": "all-structures/c1e4f50eb6b2217f.pdb",
+    "sha256": "df9a5af56dc24cf6dcbedb65911e003979f15b7c2de5e34db6d166288a2492df"
+  },
+  {
+    "result_id": "fbcbf24899c73bcd",
+    "source": "/work/results/qwen/campaign/worker_outputs/r023_proteinmpnn_redesign_cand_v7r003_hyp_0003_00_001/threaded_pdbs/job_0_n_184_id_2_bon_orig0_r2_seq005.pdb",
+    "file": "all-structures/fbcbf24899c73bcd.pdb",
+    "sha256": "d09f5bd872c8c35c39660223205f222c3499941705b7371a1dba2c8886359e5c"
+  },
+  {
+    "result_id": "4b43e092f0948470",
+    "source": "/work/results/qwen/campaign/worker_outputs/r023_proteinmpnn_redesign_cand_v7r003_hyp_0003_00_001/threaded_pdbs/job_0_n_184_id_2_bon_orig0_r2_seq006.pdb",
+    "file": "all-structures/4b43e092f0948470.pdb",
+    "sha256": "1417c5856a12742ba546510a667aabe13823e663a69c1ac4636f7e1b70b8e390"
+  },
+  {
+    "result_id": "4f8d0615830fd3b9",
+    "source": "/work/results/qwen/campaign/worker_outputs/r023_proteinmpnn_redesign_cand_v7r003_hyp_0003_00_001/threaded_pdbs/job_0_n_184_id_2_bon_orig0_r2_seq007.pdb",
+    "file": "all-structures/4f8d0615830fd3b9.pdb",
+    "sha256": "6649efae9d01101b3678a62a7b0c97177398723347ccf5e8e23e4cf2f55d368d"
+  },
+  {
+    "result_id": "d4c57760216e2f58",
+    "source": "/work/results/qwen/campaign/worker_outputs/r023_proteinmpnn_redesign_cand_v7r003_hyp_0003_00_001/threaded_pdbs/job_0_n_184_id_2_bon_orig0_r2_seq008.pdb",
+    "file": "all-structures/d4c57760216e2f58.pdb",
+    "sha256": "2118048ad61e7e7e673a9461607e15dfb3dc5d9956b80fe57046d03df2ba1e38"
+  },
+  {
+    "result_id": "c239603473533cb5",
+    "source": "/work/results/qwen/campaign/worker_outputs/r023_proteinmpnn_redesign_cand_v7r003_hyp_0003_00_001/threaded_pdbs/job_0_n_184_id_2_bon_orig0_r2_seq009.pdb",
+    "file": "all-structures/c239603473533cb5.pdb",
+    "sha256": "d3ad04e35b8653b7987745b50c08ca858a884ee9d67b428f7e9cb530ebde0505"
+  },
+  {
+    "result_id": "db171d0f1dfe2914",
+    "source": "/work/results/qwen/campaign/worker_outputs/r023_proteinmpnn_redesign_cand_v7r003_hyp_0003_00_001/threaded_pdbs/job_0_n_184_id_2_bon_orig0_r2_seq010.pdb",
+    "file": "all-structures/db171d0f1dfe2914.pdb",
+    "sha256": "74be846a96476f40ffd856f0dace5abfa2ec4eb9fcee7c790b7f3b566e6dda5e"
+  },
+  {
+    "result_id": "c74c2821ad0bd147",
+    "source": "/work/results/qwen/campaign/worker_outputs/r023_proteinmpnn_redesign_cand_v7r003_hyp_0003_00_001/threaded_pdbs/job_0_n_184_id_2_bon_orig0_r2_seq011.pdb",
+    "file": "all-structures/c74c2821ad0bd147.pdb",
+    "sha256": "b28c22c4bdc659d4d2486b91db0af3a4acb43343fb326a03823ced4dc7acd079"
+  },
+  {
+    "result_id": "5817ef88fa384c33",
+    "source": "/work/results/qwen/campaign/worker_outputs/r023_proteinmpnn_redesign_cand_v7r003_hyp_0003_00_001/threaded_pdbs/job_0_n_184_id_2_bon_orig0_r2_seq012.pdb",
+    "file": "all-structures/5817ef88fa384c33.pdb",
+    "sha256": "e82e7857c6590f4f5f40feb23fbdf74f5ed4148dfde99cf85bfdaa50942ce678"
+  },
+  {
+    "result_id": "6987f8ffd931d2b2",
+    "source": "/work/results/qwen/campaign/worker_outputs/r023_proteinmpnn_redesign_cand_v7r003_hyp_0003_00_001/threaded_pdbs/job_0_n_184_id_2_bon_orig0_r2_seq013.pdb",
+    "file": "all-structures/6987f8ffd931d2b2.pdb",
+    "sha256": "995383a8ed3dd4d3fb524d881ca47e225dfe531c9738d7dd2f07ed672a3b5935"
+  },
+  {
+    "result_id": "7ac5755187c792e1",
+    "source": "/work/results/qwen/campaign/worker_outputs/r023_proteinmpnn_redesign_cand_v7r003_hyp_0003_00_001/threaded_pdbs/job_0_n_184_id_2_bon_orig0_r2_seq014.pdb",
+    "file": "all-structures/7ac5755187c792e1.pdb",
+    "sha256": "adf1322654d79c7b9f01a3073ad50bd50d4abf7aec03137cbc6e1fbdd0b94472"
+  },
+  {
+    "result_id": "9626361f93bc4983",
+    "source": "/work/results/qwen/campaign/worker_outputs/r023_proteinmpnn_redesign_cand_v7r003_hyp_0003_00_001/threaded_pdbs/job_0_n_184_id_2_bon_orig0_r2_seq015.pdb",
+    "file": "all-structures/9626361f93bc4983.pdb",
+    "sha256": "c9c26ce4e9348eaa75909b6ed5c5762f70deec13bf0d589a5a81274153a43d6a"
+  },
+  {
+    "result_id": "aa6bc80dc69361e5",
+    "source": "/work/results/qwen/campaign/worker_outputs/r023_proteinmpnn_redesign_cand_v7r003_hyp_0003_00_001/threaded_pdbs/job_0_n_184_id_2_bon_orig0_r2_seq016.pdb",
+    "file": "all-structures/aa6bc80dc69361e5.pdb",
+    "sha256": "63371c1cf3c67d55b73be2f300386db636537d0898b1d6877c9740c90e1b5826"
+  },
+  {
+    "result_id": "14fb440c3f0e6d72",
+    "source": "/work/results/qwen/campaign/worker_outputs/r024_structure_refilter_chain_v7r021_proteinmpnn_redesign_to_structure_refilter_209/af2_refilter_prediction.pdb",
+    "file": "all-structures/14fb440c3f0e6d72.pdb",
+    "sha256": "a54b072e22c8e342a388cfd9228f91c6f3fbc7274fa647b696b461b9f834495c"
+  },
+  {
+    "result_id": "e948ee79568c079f",
+    "source": "/work/results/qwen/campaign/worker_outputs/r025_structure_refilter_chain_v7r021_proteinmpnn_redesign_to_structure_refilter_210/af2_refilter_prediction.pdb",
+    "file": "all-structures/e948ee79568c079f.pdb",
+    "sha256": "b95ea5aa1d48dbc6365e4cc567e786a446a8ce630afede534f4c19de6d650a5d"
+  },
+  {
+    "result_id": "aa6eb2737f53a55c",
+    "source": "/work/results/qwen/campaign/worker_outputs/r026_structure_refilter_chain_v7r022_proteinmpnn_redesign_to_structure_refilter_225/af2_refilter_prediction.pdb",
+    "file": "all-structures/aa6eb2737f53a55c.pdb",
+    "sha256": "e071d2a139006649d59af2ee4659317757712b4a787f28f65eea8fb7a130b081"
+  },
+  {
+    "result_id": "0ec29a445e8e93c8",
+    "source": "/work/results/qwen/campaign/worker_outputs/r027_structure_refilter_chain_v7r022_proteinmpnn_redesign_to_structure_refilter_226/af2_refilter_prediction.pdb",
+    "file": "all-structures/0ec29a445e8e93c8.pdb",
+    "sha256": "8829e93a77125ad3ef202552dfad86c608d99ce48965b05d7abe79a25e7a9d56"
+  },
+  {
+    "result_id": "00808b66f8848166",
+    "source": "/work/results/qwen/campaign/worker_outputs/r028_structure_refilter_chain_v7r022_proteinmpnn_redesign_to_structure_refilter_227/af2_refilter_prediction.pdb",
+    "file": "all-structures/00808b66f8848166.pdb",
+    "sha256": "cb966a9d35f001189471aa22fe7eb648d70050c2d0a3e891e62a55dda20a3571"
+  },
+  {
+    "result_id": "78c7b06784463676",
+    "source": "/work/results/qwen/campaign/worker_outputs/r029_structure_refilter_chain_v7r022_proteinmpnn_redesign_to_structure_refilter_228/af2_refilter_prediction.pdb",
+    "file": "all-structures/78c7b06784463676.pdb",
+    "sha256": "32893b4311a44fe50d6338d59b54cf938c67ee275a8a2652a5a45b71b1b17294"
+  },
+  {
+    "result_id": "12de82bf91174a72",
+    "source": "/work/results/qwen/campaign/worker_outputs/r030_structure_refilter_chain_v7r009_proteinmpnn_redesign_to_structure_refilter_020/af2_refilter_prediction.pdb",
+    "file": "all-structures/12de82bf91174a72.pdb",
+    "sha256": "21650b3c40e3714a9b935f945d4a9075bb4bd89341f31ad59116cd3635870b27"
+  },
+  {
+    "result_id": "d3a85c38414232a9",
+    "source": "/work/results/qwen/campaign/worker_outputs/r031_structure_refilter_chain_v7r009_proteinmpnn_redesign_to_structure_refilter_021/af2_refilter_prediction.pdb",
+    "file": "all-structures/d3a85c38414232a9.pdb",
+    "sha256": "dce6683675bece43b145fb59802fdb5ffcbc408ec855bb48c69e8b70ec99879c"
+  },
+  {
+    "result_id": "0495572ff8341739",
+    "source": "/work/results/qwen/campaign/worker_outputs/r032_structure_refilter_chain_v7r023_proteinmpnn_redesign_to_structure_refilter_241/af2_refilter_prediction.pdb",
+    "file": "all-structures/0495572ff8341739.pdb",
+    "sha256": "ce1b8447148b5df429bca396886f6cc16d07d8d79409ddd336a3ab050169dc1b"
+  },
+  {
+    "result_id": "ebe720b73611c97e",
+    "source": "/work/results/qwen/campaign/worker_outputs/r033_structure_refilter_chain_v7r009_proteinmpnn_redesign_to_structure_refilter_022/af2_refilter_prediction.pdb",
+    "file": "all-structures/ebe720b73611c97e.pdb",
+    "sha256": "58d0fa65c37725dc9826484f8a827a04eab508d6c24b6e297abd406136f7389b"
+  },
+  {
+    "result_id": "a0195c25daedddee",
+    "source": "/work/results/qwen/campaign/worker_outputs/r035_structure_refilter_chain_v7r009_proteinmpnn_redesign_to_structure_refilter_023/af2_refilter_prediction.pdb",
+    "file": "all-structures/a0195c25daedddee.pdb",
+    "sha256": "c3f183d638405d9dff0c4108e2f453cf38eaafe227cd118fb39058d812e52a2a"
+  },
+  {
+    "result_id": "d59974f4a4ca172f",
+    "source": "/work/results/qwen/campaign/worker_outputs/r037_structure_refilter_chain_v7r008_proteinmpnn_redesign_to_structure_refilter_004/af2_refilter_prediction.pdb",
+    "file": "all-structures/d59974f4a4ca172f.pdb",
+    "sha256": "7eaf778a5cf54f07fb4f3a029811dd3a258081b648bc8fde37bba3c1ae4c28b8"
+  },
+  {
+    "result_id": "f11945a29b99712f",
+    "source": "/work/results/qwen/campaign/worker_outputs/r039_structure_refilter_chain_v7r008_proteinmpnn_redesign_to_structure_refilter_005/af2_refilter_prediction.pdb",
+    "file": "all-structures/f11945a29b99712f.pdb",
+    "sha256": "18487629567b6736710933b28f8b4e37aa9edeb39124191d5d76d10621d2a6d5"
+  },
+  {
+    "result_id": "a543125d773bf806",
+    "source": "/work/results/qwen/campaign/worker_outputs/r041_structure_refilter_chain_v7r008_proteinmpnn_redesign_to_structure_refilter_006/af2_refilter_prediction.pdb",
+    "file": "all-structures/a543125d773bf806.pdb",
+    "sha256": "0d22ba80e5260a223c0414173c318c8ca769c9fd25eab6a6fe528c955ddaec09"
+  },
+  {
+    "result_id": "df133d17416705ca",
+    "source": "/work/results/qwen/campaign/worker_outputs/r043_structure_refilter_chain_v7r008_proteinmpnn_redesign_to_structure_refilter_007/af2_refilter_prediction.pdb",
+    "file": "all-structures/df133d17416705ca.pdb",
+    "sha256": "1d350669d1897d36fa58426a67978e5b1b7d903d1071f0f18d5d00d71833783b"
+  },
+  {
+    "result_id": "26abbb4bac26bad1",
+    "source": "/work/results/qwen/campaign/worker_outputs/r045_structure_refilter_chain_v7r009_proteinmpnn_redesign_to_structure_refilter_024/af2_refilter_prediction.pdb",
+    "file": "all-structures/26abbb4bac26bad1.pdb",
+    "sha256": "07457786f23798ed4524f702ab0b1c3d8c114637c56f88d8bc45c366f38c34c9"
+  },
+  {
+    "result_id": "039ecdf5498411ee",
+    "source": "/work/results/qwen/campaign/worker_outputs/r047_structure_refilter_chain_v7r009_proteinmpnn_redesign_to_structure_refilter_025/af2_refilter_prediction.pdb",
+    "file": "all-structures/039ecdf5498411ee.pdb",
+    "sha256": "737b1c06c98638390f52640366f945c892a4a8d60045320234932df6f2065d13"
+  },
+  {
+    "result_id": "dcf374017adb652a",
+    "source": "/work/results/qwen/campaign/worker_outputs/r049_structure_refilter_chain_v7r023_proteinmpnn_redesign_to_structure_refilter_242/af2_refilter_prediction.pdb",
+    "file": "all-structures/dcf374017adb652a.pdb",
+    "sha256": "300df3aa96ffe8d1d815b2e826da0872a8cb5f32820a4f6d0e396f2939b5de16"
+  },
+  {
+    "result_id": "7599d1dc7f7580e7",
+    "source": "/work/results/qwen/campaign/worker_outputs/r051_structure_refilter_chain_v7r009_proteinmpnn_redesign_to_structure_refilter_026/af2_refilter_prediction.pdb",
+    "file": "all-structures/7599d1dc7f7580e7.pdb",
+    "sha256": "1b1c7fde71cad627b98c88b209ae109d29bfa9e9ade9fa9c2c46c9b6cf0ebc9c"
+  },
+  {
+    "result_id": "5a8996d754b79143",
+    "source": "/work/results/qwen/campaign/worker_outputs/r053_structure_refilter_chain_v7r009_proteinmpnn_redesign_to_structure_refilter_027/af2_refilter_prediction.pdb",
+    "file": "all-structures/5a8996d754b79143.pdb",
+    "sha256": "e24fd6adfc1ddbb5cafb49cfeeec08c8ab2e9fd17040cf7c3b82c908f4e97621"
+  },
+  {
+    "result_id": "ae573444b77772c3",
+    "source": "/work/results/qwen/campaign/worker_outputs/r055_structure_refilter_chain_v7r009_proteinmpnn_redesign_to_structure_refilter_028/af2_refilter_prediction.pdb",
+    "file": "all-structures/ae573444b77772c3.pdb",
+    "sha256": "4bd8f779d1da9027cc6ca70271d26e5730b0a8561d2c396020481201674121cf"
+  },
+  {
+    "result_id": "461258cd16bf40ba",
+    "source": "/work/results/qwen/campaign/worker_outputs/r057_structure_refilter_chain_v7r009_proteinmpnn_redesign_to_structure_refilter_029/af2_refilter_prediction.pdb",
+    "file": "all-structures/461258cd16bf40ba.pdb",
+    "sha256": "7f4e0995c42c0fc99555fd9b58454aec52d3c743a99cd6b3b5a4ad87cda621ad"
+  }
+]

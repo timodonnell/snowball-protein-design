@@ -1,0 +1,1014 @@
+{
+  "n_results": 406,
+  "n_unique_started_candidates": 61,
+  "dispatch_status": {
+    "started": 61
+  },
+  "launch_status": {
+    "launched": 61,
+    "rejected": 10
+  },
+  "selected_not_started": [],
+  "started_by_family": {
+    "complexa_best_of_n": 1,
+    "proteinmpnn_redesign": 16,
+    "complexa_beam": 4,
+    "complexa_fk_steering": 2,
+    "structure_refilter": 38
+  },
+  "started_jobs": [
+    {
+      "candidate_id": "cand_v7r002_hyp_0002_00_001",
+      "family": "complexa_best_of_n",
+      "hypothesis_ids": [
+        "hyp_0002_00"
+      ],
+      "config": {
+        "nsamples": 4,
+        "nsteps": 400,
+        "replicas": 4
+      },
+      "n_result_records": 16,
+      "result_statuses": {
+        "ok": 16
+      },
+      "recorded_gpu_h": 0.0403008402718438
+    },
+    {
+      "candidate_id": "cand_v7r003_hyp_0003_00_001",
+      "family": "proteinmpnn_redesign",
+      "hypothesis_ids": [
+        "hyp_0003_00"
+      ],
+      "config": {
+        "backbone_noise": 0.0,
+        "num_seq_per_target": 16,
+        "sampling_temp": 0.1
+      },
+      "n_result_records": 16,
+      "result_statuses": {
+        "ok": 16
+      },
+      "recorded_gpu_h": 0.0081206480662028
+    },
+    {
+      "candidate_id": "cand_v7r003_hyp_0003_01_002",
+      "family": "complexa_beam",
+      "hypothesis_ids": [
+        "hyp_0003_01"
+      ],
+      "config": {
+        "beam_width": 4,
+        "n_branch": 4,
+        "nsamples": 4,
+        "nsteps": 400,
+        "sc_scale_noise": 0.2
+      },
+      "n_result_records": 16,
+      "result_statuses": {
+        "ok": 16
+      },
+      "recorded_gpu_h": 0.1680505868461397
+    },
+    {
+      "candidate_id": "cand_v7r004_hyp_0004_02_003",
+      "family": "complexa_fk_steering",
+      "hypothesis_ids": [
+        "hyp_0004_02"
+      ],
+      "config": {
+        "beam_width": 4,
+        "n_branch": 4,
+        "nsamples": 4,
+        "nsteps": 400,
+        "temperature": 0.1
+      },
+      "n_result_records": 16,
+      "result_statuses": {
+        "ok": 16
+      },
+      "recorded_gpu_h": 0.1742641403939989
+    },
+    {
+      "candidate_id": "cand_v7r005_hyp_0005_01_002",
+      "family": "complexa_fk_steering",
+      "hypothesis_ids": [
+        "hyp_0005_01"
+      ],
+      "config": {
+        "beam_width": 4,
+        "n_branch": 4,
+        "nsamples": 4,
+        "nsteps": 400,
+        "reward_avg_ipsae_weight": 1.0,
+        "reward_i_ptm_weight": 1.5,
+        "temperature": 0.1
+      },
+      "n_result_records": 16,
+      "result_statuses": {
+        "ok": 16
+      },
+      "recorded_gpu_h": 0.16633184870084128
+    },
+    {
+      "candidate_id": "cand_v7r006_hyp_0006_00_001",
+      "family": "complexa_beam",
+      "hypothesis_ids": [
+        "hyp_0006_00"
+      ],
+      "config": {
+        "beam_width": 4,
+        "n_branch": 4,
+        "nsamples": 4,
+        "nsteps": 400,
+        "reward_avg_ipsae_weight": 1.0,
+        "reward_i_ptm_weight": 1.5,
+        "sc_scale_noise": 0.25
+      },
+      "n_result_records": 16,
+      "result_statuses": {
+        "ok": 16
+      },
+      "recorded_gpu_h": 0.157578694290585
+    },
+    {
+      "candidate_id": "cand_v7r007_hyp_0007_00_001",
+      "family": "complexa_beam",
+      "hypothesis_ids": [
+        "hyp_0007_00"
+      ],
+      "config": {
+        "beam_width": 4,
+        "n_branch": 4,
+        "nsamples": 4,
+        "nsteps": 400,
+        "reward_avg_ipsae_weight": 1.0,
+        "reward_i_ptm_weight": 1.5,
+        "sc_scale_noise": 0.25
+      },
+      "n_result_records": 16,
+      "result_statuses": {
+        "ok": 16
+      },
+      "recorded_gpu_h": 0.14755726787779067
+    },
+    {
+      "candidate_id": "cand_v7r008_hyp_0008_00_001",
+      "family": "proteinmpnn_redesign",
+      "hypothesis_ids": [
+        "hyp_0008_00"
+      ],
+      "config": {
+        "backbone_noise": 0.0,
+        "num_seq_per_target": 16,
+        "sampling_temp": 0.1
+      },
+      "n_result_records": 16,
+      "result_statuses": {
+        "ok": 16
+      },
+      "recorded_gpu_h": 0.012862101462152269
+    },
+    {
+      "candidate_id": "cand_v7r009_hyp_0009_01_002",
+      "family": "proteinmpnn_redesign",
+      "hypothesis_ids": [
+        "hyp_0009_01"
+      ],
+      "config": {
+        "backbone_noise": 0.0,
+        "num_seq_per_target": 16,
+        "sampling_temp": 0.1
+      },
+      "n_result_records": 16,
+      "result_statuses": {
+        "ok": 16
+      },
+      "recorded_gpu_h": 0.010609953337245518
+    },
+    {
+      "candidate_id": "cand_v7r010_hyp_0010_00_001",
+      "family": "proteinmpnn_redesign",
+      "hypothesis_ids": [
+        "hyp_0010_00"
+      ],
+      "config": {
+        "backbone_noise": 0.0,
+        "num_seq_per_target": 16,
+        "sampling_temp": 0.1
+      },
+      "n_result_records": 16,
+      "result_statuses": {
+        "ok": 16
+      },
+      "recorded_gpu_h": 0.010468518005477058
+    },
+    {
+      "candidate_id": "cand_v7r011_hyp_0011_00_001",
+      "family": "proteinmpnn_redesign",
+      "hypothesis_ids": [
+        "hyp_0011_00"
+      ],
+      "config": {
+        "backbone_noise": 0.0,
+        "num_seq_per_target": 16,
+        "sampling_temp": 0.1
+      },
+      "n_result_records": 16,
+      "result_statuses": {
+        "ok": 16
+      },
+      "recorded_gpu_h": 0.009859941601753235
+    },
+    {
+      "candidate_id": "cand_v7r012_hyp_0012_00_001",
+      "family": "proteinmpnn_redesign",
+      "hypothesis_ids": [
+        "hyp_0012_00"
+      ],
+      "config": {
+        "backbone_noise": 0.0,
+        "num_seq_per_target": 16,
+        "sampling_temp": 0.1
+      },
+      "n_result_records": 16,
+      "result_statuses": {
+        "ok": 16
+      },
+      "recorded_gpu_h": 0.010174474583731757
+    },
+    {
+      "candidate_id": "cand_v7r013_hyp_0013_00_001",
+      "family": "proteinmpnn_redesign",
+      "hypothesis_ids": [
+        "hyp_0013_00"
+      ],
+      "config": {
+        "backbone_noise": 0.0,
+        "num_seq_per_target": 16,
+        "sampling_temp": 0.1
+      },
+      "n_result_records": 16,
+      "result_statuses": {
+        "ok": 16
+      },
+      "recorded_gpu_h": 0.011007633474138048
+    },
+    {
+      "candidate_id": "cand_v7r014_hyp_0014_00_001",
+      "family": "proteinmpnn_redesign",
+      "hypothesis_ids": [
+        "hyp_0014_00"
+      ],
+      "config": {
+        "backbone_noise": 0.0,
+        "num_seq_per_target": 16,
+        "sampling_temp": 0.1
+      },
+      "n_result_records": 16,
+      "result_statuses": {
+        "ok": 16
+      },
+      "recorded_gpu_h": 0.010098023745748731
+    },
+    {
+      "candidate_id": "cand_v7r015_hyp_0015_00_001",
+      "family": "proteinmpnn_redesign",
+      "hypothesis_ids": [
+        "hyp_0015_00"
+      ],
+      "config": {
+        "backbone_noise": 0.0,
+        "num_seq_per_target": 16,
+        "sampling_temp": 0.1
+      },
+      "n_result_records": 16,
+      "result_statuses": {
+        "ok": 16
+      },
+      "recorded_gpu_h": 0.008512235085169474
+    },
+    {
+      "candidate_id": "cand_v7r016_hyp_0016_00_001",
+      "family": "proteinmpnn_redesign",
+      "hypothesis_ids": [
+        "hyp_0016_00"
+      ],
+      "config": {
+        "backbone_noise": 0.0,
+        "num_seq_per_target": 16,
+        "sampling_temp": 0.15
+      },
+      "n_result_records": 16,
+      "result_statuses": {
+        "ok": 16
+      },
+      "recorded_gpu_h": 0.010541216068797642
+    },
+    {
+      "candidate_id": "cand_v7r017_hyp_0017_00_001",
+      "family": "proteinmpnn_redesign",
+      "hypothesis_ids": [
+        "hyp_0017_00"
+      ],
+      "config": {
+        "backbone_noise": 0.0,
+        "num_seq_per_target": 16,
+        "sampling_temp": 0.15
+      },
+      "n_result_records": 16,
+      "result_statuses": {
+        "ok": 16
+      },
+      "recorded_gpu_h": 0.013668001294136048
+    },
+    {
+      "candidate_id": "cand_v7r018_hyp_0018_00_001",
+      "family": "proteinmpnn_redesign",
+      "hypothesis_ids": [
+        "hyp_0018_00"
+      ],
+      "config": {
+        "backbone_noise": 0.0,
+        "num_seq_per_target": 16,
+        "sampling_temp": 0.15
+      },
+      "n_result_records": 16,
+      "result_statuses": {
+        "ok": 16
+      },
+      "recorded_gpu_h": 0.013483657903141445
+    },
+    {
+      "candidate_id": "cand_v7r019_hyp_0019_00_001",
+      "family": "proteinmpnn_redesign",
+      "hypothesis_ids": [
+        "hyp_0019_00"
+      ],
+      "config": {
+        "backbone_noise": 0.0,
+        "num_seq_per_target": 16,
+        "sampling_temp": 0.25
+      },
+      "n_result_records": 16,
+      "result_statuses": {
+        "ok": 16
+      },
+      "recorded_gpu_h": 0.011003315846125284
+    },
+    {
+      "candidate_id": "cand_v7r020_hyp_0020_00_001",
+      "family": "proteinmpnn_redesign",
+      "hypothesis_ids": [
+        "hyp_0020_00"
+      ],
+      "config": {
+        "backbone_noise": 0.0,
+        "num_seq_per_target": 16,
+        "sampling_temp": 0.15
+      },
+      "n_result_records": 16,
+      "result_statuses": {
+        "ok": 16
+      },
+      "recorded_gpu_h": 0.009236995379130046
+    },
+    {
+      "candidate_id": "cand_v7r021_hyp_0021_00_001",
+      "family": "proteinmpnn_redesign",
+      "hypothesis_ids": [
+        "hyp_0021_00"
+      ],
+      "config": {
+        "backbone_noise": 0.0,
+        "num_seq_per_target": 16,
+        "sampling_temp": 0.25
+      },
+      "n_result_records": 16,
+      "result_statuses": {
+        "ok": 16
+      },
+      "recorded_gpu_h": 0.00911609219180213
+    },
+    {
+      "candidate_id": "cand_v7r022_hyp_0022_00_001",
+      "family": "proteinmpnn_redesign",
+      "hypothesis_ids": [
+        "hyp_0022_00"
+      ],
+      "config": {
+        "backbone_noise": 0.0,
+        "num_seq_per_target": 16,
+        "sampling_temp": 0.3
+      },
+      "n_result_records": 16,
+      "result_statuses": {
+        "ok": 16
+      },
+      "recorded_gpu_h": 0.005832674039734734
+    },
+    {
+      "candidate_id": "chain_v7r008_proteinmpnn_redesign_to_structure_refilter_001",
+      "family": "structure_refilter",
+      "hypothesis_ids": [
+        "hyp_0008_00"
+      ],
+      "config": {},
+      "n_result_records": 1,
+      "result_statuses": {
+        "ok": 1
+      },
+      "recorded_gpu_h": 0.006959788269466824
+    },
+    {
+      "candidate_id": "chain_v7r008_proteinmpnn_redesign_to_structure_refilter_002",
+      "family": "structure_refilter",
+      "hypothesis_ids": [
+        "hyp_0008_00"
+      ],
+      "config": {},
+      "n_result_records": 1,
+      "result_statuses": {
+        "ok": 1
+      },
+      "recorded_gpu_h": 0.006978318360116747
+    },
+    {
+      "candidate_id": "chain_v7r008_proteinmpnn_redesign_to_structure_refilter_003",
+      "family": "structure_refilter",
+      "hypothesis_ids": [
+        "hyp_0008_00"
+      ],
+      "config": {},
+      "n_result_records": 1,
+      "result_statuses": {
+        "ok": 1
+      },
+      "recorded_gpu_h": 0.018067160844802855
+    },
+    {
+      "candidate_id": "chain_v7r008_proteinmpnn_redesign_to_structure_refilter_004",
+      "family": "structure_refilter",
+      "hypothesis_ids": [
+        "hyp_0008_00"
+      ],
+      "config": {},
+      "n_result_records": 1,
+      "result_statuses": {
+        "ok": 1
+      },
+      "recorded_gpu_h": 0.006613847944471571
+    },
+    {
+      "candidate_id": "chain_v7r008_proteinmpnn_redesign_to_structure_refilter_005",
+      "family": "structure_refilter",
+      "hypothesis_ids": [
+        "hyp_0008_00"
+      ],
+      "config": {},
+      "n_result_records": 1,
+      "result_statuses": {
+        "ok": 1
+      },
+      "recorded_gpu_h": 0.009251355396376715
+    },
+    {
+      "candidate_id": "chain_v7r008_proteinmpnn_redesign_to_structure_refilter_006",
+      "family": "structure_refilter",
+      "hypothesis_ids": [
+        "hyp_0008_00"
+      ],
+      "config": {},
+      "n_result_records": 1,
+      "result_statuses": {
+        "ok": 1
+      },
+      "recorded_gpu_h": 0.011809446944130792
+    },
+    {
+      "candidate_id": "chain_v7r008_proteinmpnn_redesign_to_structure_refilter_007",
+      "family": "structure_refilter",
+      "hypothesis_ids": [
+        "hyp_0008_00"
+      ],
+      "config": {},
+      "n_result_records": 1,
+      "result_statuses": {
+        "ok": 1
+      },
+      "recorded_gpu_h": 0.0067111819982528685
+    },
+    {
+      "candidate_id": "chain_v7r009_proteinmpnn_redesign_to_structure_refilter_017",
+      "family": "structure_refilter",
+      "hypothesis_ids": [
+        "hyp_0009_01"
+      ],
+      "config": {},
+      "n_result_records": 1,
+      "result_statuses": {
+        "ok": 1
+      },
+      "recorded_gpu_h": 0.010468015472094219
+    },
+    {
+      "candidate_id": "chain_v7r009_proteinmpnn_redesign_to_structure_refilter_018",
+      "family": "structure_refilter",
+      "hypothesis_ids": [
+        "hyp_0009_01"
+      ],
+      "config": {},
+      "n_result_records": 1,
+      "result_statuses": {
+        "ok": 1
+      },
+      "recorded_gpu_h": 0.00851107292705112
+    },
+    {
+      "candidate_id": "chain_v7r009_proteinmpnn_redesign_to_structure_refilter_019",
+      "family": "structure_refilter",
+      "hypothesis_ids": [
+        "hyp_0009_01"
+      ],
+      "config": {},
+      "n_result_records": 1,
+      "result_statuses": {
+        "ok": 1
+      },
+      "recorded_gpu_h": 0.010540178683069017
+    },
+    {
+      "candidate_id": "chain_v7r009_proteinmpnn_redesign_to_structure_refilter_020",
+      "family": "structure_refilter",
+      "hypothesis_ids": [
+        "hyp_0009_01"
+      ],
+      "config": {},
+      "n_result_records": 1,
+      "result_statuses": {
+        "ok": 1
+      },
+      "recorded_gpu_h": 0.005916281011369494
+    },
+    {
+      "candidate_id": "chain_v7r009_proteinmpnn_redesign_to_structure_refilter_021",
+      "family": "structure_refilter",
+      "hypothesis_ids": [
+        "hyp_0009_01"
+      ],
+      "config": {},
+      "n_result_records": 1,
+      "result_statuses": {
+        "ok": 1
+      },
+      "recorded_gpu_h": 0.005851706332630581
+    },
+    {
+      "candidate_id": "chain_v7r009_proteinmpnn_redesign_to_structure_refilter_022",
+      "family": "structure_refilter",
+      "hypothesis_ids": [
+        "hyp_0009_01"
+      ],
+      "config": {},
+      "n_result_records": 1,
+      "result_statuses": {
+        "ok": 1
+      },
+      "recorded_gpu_h": 0.011787900328636169
+    },
+    {
+      "candidate_id": "chain_v7r009_proteinmpnn_redesign_to_structure_refilter_023",
+      "family": "structure_refilter",
+      "hypothesis_ids": [
+        "hyp_0009_01"
+      ],
+      "config": {},
+      "n_result_records": 1,
+      "result_statuses": {
+        "ok": 1
+      },
+      "recorded_gpu_h": 0.009006831447283427
+    },
+    {
+      "candidate_id": "chain_v7r009_proteinmpnn_redesign_to_structure_refilter_024",
+      "family": "structure_refilter",
+      "hypothesis_ids": [
+        "hyp_0009_01"
+      ],
+      "config": {},
+      "n_result_records": 1,
+      "result_statuses": {
+        "ok": 1
+      },
+      "recorded_gpu_h": 0.006434105700916714
+    },
+    {
+      "candidate_id": "chain_v7r009_proteinmpnn_redesign_to_structure_refilter_025",
+      "family": "structure_refilter",
+      "hypothesis_ids": [
+        "hyp_0009_01"
+      ],
+      "config": {},
+      "n_result_records": 1,
+      "result_statuses": {
+        "ok": 1
+      },
+      "recorded_gpu_h": 0.006341845922999912
+    },
+    {
+      "candidate_id": "chain_v7r009_proteinmpnn_redesign_to_structure_refilter_026",
+      "family": "structure_refilter",
+      "hypothesis_ids": [
+        "hyp_0009_01"
+      ],
+      "config": {},
+      "n_result_records": 1,
+      "result_statuses": {
+        "ok": 1
+      },
+      "recorded_gpu_h": 0.006224210063616435
+    },
+    {
+      "candidate_id": "chain_v7r009_proteinmpnn_redesign_to_structure_refilter_027",
+      "family": "structure_refilter",
+      "hypothesis_ids": [
+        "hyp_0009_01"
+      ],
+      "config": {},
+      "n_result_records": 1,
+      "result_statuses": {
+        "ok": 1
+      },
+      "recorded_gpu_h": 0.010740125709109836
+    },
+    {
+      "candidate_id": "chain_v7r009_proteinmpnn_redesign_to_structure_refilter_028",
+      "family": "structure_refilter",
+      "hypothesis_ids": [
+        "hyp_0009_01"
+      ],
+      "config": {},
+      "n_result_records": 1,
+      "result_statuses": {
+        "ok": 1
+      },
+      "recorded_gpu_h": 0.006193451550271776
+    },
+    {
+      "candidate_id": "chain_v7r009_proteinmpnn_redesign_to_structure_refilter_029",
+      "family": "structure_refilter",
+      "hypothesis_ids": [
+        "hyp_0009_01"
+      ],
+      "config": {},
+      "n_result_records": 1,
+      "result_statuses": {
+        "ok": 1
+      },
+      "recorded_gpu_h": 0.00579272535112169
+    },
+    {
+      "candidate_id": "chain_v7r010_proteinmpnn_redesign_to_structure_refilter_033",
+      "family": "structure_refilter",
+      "hypothesis_ids": [
+        "hyp_0010_00"
+      ],
+      "config": {},
+      "n_result_records": 1,
+      "result_statuses": {
+        "ok": 1
+      },
+      "recorded_gpu_h": 0.009859925044907463
+    },
+    {
+      "candidate_id": "chain_v7r010_proteinmpnn_redesign_to_structure_refilter_034",
+      "family": "structure_refilter",
+      "hypothesis_ids": [
+        "hyp_0010_00"
+      ],
+      "config": {},
+      "n_result_records": 1,
+      "result_statuses": {
+        "ok": 1
+      },
+      "recorded_gpu_h": 0.01017342812485165
+    },
+    {
+      "candidate_id": "chain_v7r012_proteinmpnn_redesign_to_structure_refilter_065",
+      "family": "structure_refilter",
+      "hypothesis_ids": [
+        "hyp_0012_00"
+      ],
+      "config": {},
+      "n_result_records": 1,
+      "result_statuses": {
+        "ok": 1
+      },
+      "recorded_gpu_h": 0.011006630725330776
+    },
+    {
+      "candidate_id": "chain_v7r013_proteinmpnn_redesign_to_structure_refilter_081",
+      "family": "structure_refilter",
+      "hypothesis_ids": [
+        "hyp_0013_00"
+      ],
+      "config": {},
+      "n_result_records": 1,
+      "result_statuses": {
+        "ok": 1
+      },
+      "recorded_gpu_h": 0.010096984174516465
+    },
+    {
+      "candidate_id": "chain_v7r016_proteinmpnn_redesign_to_structure_refilter_129",
+      "family": "structure_refilter",
+      "hypothesis_ids": [
+        "hyp_0016_00"
+      ],
+      "config": {},
+      "n_result_records": 1,
+      "result_statuses": {
+        "ok": 1
+      },
+      "recorded_gpu_h": 0.013666385875807869
+    },
+    {
+      "candidate_id": "chain_v7r016_proteinmpnn_redesign_to_structure_refilter_130",
+      "family": "structure_refilter",
+      "hypothesis_ids": [
+        "hyp_0016_00"
+      ],
+      "config": {},
+      "n_result_records": 1,
+      "result_statuses": {
+        "ok": 1
+      },
+      "recorded_gpu_h": 0.013481810755199856
+    },
+    {
+      "candidate_id": "chain_v7r017_proteinmpnn_redesign_to_structure_refilter_145",
+      "family": "structure_refilter",
+      "hypothesis_ids": [
+        "hyp_0017_00"
+      ],
+      "config": {},
+      "n_result_records": 1,
+      "result_statuses": {
+        "ok": 1
+      },
+      "recorded_gpu_h": 0.011001566582255894
+    },
+    {
+      "candidate_id": "chain_v7r017_proteinmpnn_redesign_to_structure_refilter_146",
+      "family": "structure_refilter",
+      "hypothesis_ids": [
+        "hyp_0017_00"
+      ],
+      "config": {},
+      "n_result_records": 1,
+      "result_statuses": {
+        "ok": 1
+      },
+      "recorded_gpu_h": 0.009235031869676377
+    },
+    {
+      "candidate_id": "chain_v7r019_proteinmpnn_redesign_to_structure_refilter_177",
+      "family": "structure_refilter",
+      "hypothesis_ids": [
+        "hyp_0019_00"
+      ],
+      "config": {},
+      "n_result_records": 1,
+      "result_statuses": {
+        "ok": 1
+      },
+      "recorded_gpu_h": 0.009114289946026272
+    },
+    {
+      "candidate_id": "chain_v7r019_proteinmpnn_redesign_to_structure_refilter_178",
+      "family": "structure_refilter",
+      "hypothesis_ids": [
+        "hyp_0019_00"
+      ],
+      "config": {},
+      "n_result_records": 1,
+      "result_statuses": {
+        "ok": 1
+      },
+      "recorded_gpu_h": 0.014213201602300008
+    },
+    {
+      "candidate_id": "chain_v7r021_proteinmpnn_redesign_to_structure_refilter_209",
+      "family": "structure_refilter",
+      "hypothesis_ids": [
+        "hyp_0021_00"
+      ],
+      "config": {},
+      "n_result_records": 1,
+      "result_statuses": {
+        "ok": 1
+      },
+      "recorded_gpu_h": 0.008630158106486003
+    },
+    {
+      "candidate_id": "chain_v7r021_proteinmpnn_redesign_to_structure_refilter_210",
+      "family": "structure_refilter",
+      "hypothesis_ids": [
+        "hyp_0021_00"
+      ],
+      "config": {},
+      "n_result_records": 1,
+      "result_statuses": {
+        "ok": 1
+      },
+      "recorded_gpu_h": 0.006364945239490933
+    },
+    {
+      "candidate_id": "chain_v7r022_proteinmpnn_redesign_to_structure_refilter_225",
+      "family": "structure_refilter",
+      "hypothesis_ids": [
+        "hyp_0022_00"
+      ],
+      "config": {},
+      "n_result_records": 1,
+      "result_statuses": {
+        "ok": 1
+      },
+      "recorded_gpu_h": 0.008067256675826178
+    },
+    {
+      "candidate_id": "chain_v7r022_proteinmpnn_redesign_to_structure_refilter_226",
+      "family": "structure_refilter",
+      "hypothesis_ids": [
+        "hyp_0022_00"
+      ],
+      "config": {},
+      "n_result_records": 1,
+      "result_statuses": {
+        "ok": 1
+      },
+      "recorded_gpu_h": 0.005993184049924214
+    },
+    {
+      "candidate_id": "chain_v7r022_proteinmpnn_redesign_to_structure_refilter_227",
+      "family": "structure_refilter",
+      "hypothesis_ids": [
+        "hyp_0022_00"
+      ],
+      "config": {},
+      "n_result_records": 1,
+      "result_statuses": {
+        "ok": 1
+      },
+      "recorded_gpu_h": 0.00808061096403334
+    },
+    {
+      "candidate_id": "chain_v7r022_proteinmpnn_redesign_to_structure_refilter_228",
+      "family": "structure_refilter",
+      "hypothesis_ids": [
+        "hyp_0022_00"
+      ],
+      "config": {},
+      "n_result_records": 1,
+      "result_statuses": {
+        "ok": 1
+      },
+      "recorded_gpu_h": 0.008794256514973111
+    },
+    {
+      "candidate_id": "chain_v7r023_proteinmpnn_redesign_to_structure_refilter_241",
+      "family": "structure_refilter",
+      "hypothesis_ids": [
+        "hyp_0003_00"
+      ],
+      "config": {},
+      "n_result_records": 1,
+      "result_statuses": {
+        "ok": 1
+      },
+      "recorded_gpu_h": 0.005992350644535489
+    },
+    {
+      "candidate_id": "chain_v7r023_proteinmpnn_redesign_to_structure_refilter_242",
+      "family": "structure_refilter",
+      "hypothesis_ids": [
+        "hyp_0003_00"
+      ],
+      "config": {},
+      "n_result_records": 1,
+      "result_statuses": {
+        "ok": 1
+      },
+      "recorded_gpu_h": 0.006621282762951321
+    },
+    {
+      "candidate_id": "warmstart_v7r001_00_complexa_beam",
+      "family": "complexa_beam",
+      "hypothesis_ids": [
+        "warmstart"
+      ],
+      "config": {
+        "beam_width": 4,
+        "n_branch": 4,
+        "nsamples": 4
+      },
+      "n_result_records": 16,
+      "result_statuses": {
+        "ok": 16
+      },
+      "recorded_gpu_h": 0.1657853388124042
+    }
+  ],
+  "candidate_feasibility_reasons": {
+    "config_delta_adjusted:reward_deferred:evidence_sparse_axis_n=16<32:material_search_first": 3,
+    "insufficient_wall_for_complexa_beam(~0.5h+0.1h_drain_margin>0.6h_remaining)": 1,
+    "insufficient_wall_for_complexa_fk_steering(~0.5h+0.1h_drain_margin>0.6h_remaining)": 1,
+    "config_delta_adjusted:auto_pair:refinement_algorithm=sequence_hallucination_for_complexa_rescue": 14,
+    "insufficient_wall_for_complexa_beam(~0.5h+0.1h_drain_margin>0.5h_remaining)": 1,
+    "insufficient_wall_for_complexa_fk_steering(~0.5h+0.1h_drain_margin>0.5h_remaining)": 1,
+    "insufficient_wall_for_complexa_beam(~0.5h+0.1h_drain_margin>0.4h_remaining)": 10,
+    "insufficient_wall_for_complexa_best_of_n(~0.5h+0.1h_drain_margin>0.4h_remaining)": 4,
+    "insufficient_wall_for_complexa_fk_steering(~0.5h+0.1h_drain_margin>0.4h_remaining)": 4,
+    "insufficient_wall_for_complexa_fk_steering(~0.5h+0.1h_drain_margin>0.3h_remaining)": 13,
+    "insufficient_wall_for_complexa_best_of_n(~0.5h+0.1h_drain_margin>0.3h_remaining)": 8,
+    "insufficient_wall_for_complexa_beam(~0.5h+0.1h_drain_margin>0.3h_remaining)": 12,
+    "prior_joint_fail_caution_not_ban:(complexa_fk_steering_default,{\"beam_width\": 4, \"n_branch\": 4, \"nsamples\": 4, \"n)": 1,
+    "insufficient_wall_for_proteinmpnn_redesign_heavy_config(~0.2h[x2.0]>0.3h_remaining)": 2,
+    "insufficient_wall_for_proteinmpnn_redesign_heavy_config(~0.2h[x2.0]>0.2h_remaining)": 8,
+    "insufficient_wall_for_complexa_beam(~0.5h+0.1h_drain_margin>0.2h_remaining)": 33,
+    "insufficient_wall_for_complexa_fk_steering(~0.5h+0.1h_drain_margin>0.2h_remaining)": 20,
+    "insufficient_wall_for_complexa_best_of_n(~0.5h+0.1h_drain_margin>0.2h_remaining)": 10,
+    "insufficient_wall_for_proteinmpnn_redesign(~0.1h+0.1h_drain_margin>0.2h_remaining)": 3,
+    "insufficient_wall_for_proteinmpnn_redesign(~0.1h+0.1h_drain_margin>0.1h_remaining)": 75,
+    "insufficient_wall_for_complexa_beam(~0.5h+0.1h_drain_margin>0.1h_remaining)": 48,
+    "insufficient_wall_for_complexa_fk_steering(~0.5h+0.1h_drain_margin>0.1h_remaining)": 32,
+    "insufficient_wall_for_complexa_best_of_n(~0.5h+0.1h_drain_margin>0.1h_remaining)": 16,
+    "insufficient_wall_for_proteinmpnn_redesign(~0.1h+0.1h_drain_margin>0.0h_remaining)": 21,
+    "insufficient_wall_for_complexa_beam(~0.5h+0.1h_drain_margin>0.0h_remaining)": 28,
+    "insufficient_wall_for_complexa_fk_steering(~0.5h+0.1h_drain_margin>0.0h_remaining)": 16,
+    "insufficient_wall_for_complexa_best_of_n(~0.5h+0.1h_drain_margin>0.0h_remaining)": 8
+  },
+  "llm": {
+    "planner": {
+      "n_records": 58,
+      "parse_status": {
+        "ok": 58
+      },
+      "fail_reasons": {
+        "low_confidence(0.50<0.55)": 12,
+        "low_confidence(0.40<0.55)": 5,
+        "abstain": 18
+      },
+      "fallback_records": 18,
+      "zero_token_records": 0,
+      "input_tokens": 1788832,
+      "output_tokens": 47587
+    },
+    "supervisor": {
+      "n_records": 58,
+      "parse_status": {
+        "ok": 22,
+        "no_hypotheses_or_candidates": 36
+      },
+      "fail_reasons": {
+        "low_confidence(0.50<0.55)": 2,
+        "no_hypotheses_or_candidates": 36
+      },
+      "fallback_records": 36,
+      "zero_token_records": 36,
+      "input_tokens": 477774,
+      "output_tokens": 15095
+    },
+    "critic": {
+      "n_records": 40,
+      "parse_status": {
+        "ok": 40
+      },
+      "fail_reasons": {},
+      "fallback_records": 0,
+      "zero_token_records": 40,
+      "input_tokens": 0,
+      "output_tokens": 0
+    }
+  },
+  "controller_start": "2026-09-25T19:05:23Z",
+  "controller_end": "2026-09-25T20:05:49Z",
+  "controller_wall_h_including_drain": 1.0072222222222222,
+  "worker_slots": 2.0,
+  "worker_wall_gpu_h_including_drain": 2.0144444444444445,
+  "sum_recorded_worker_gpu_h": 1.5250570491949718,
+  "last_evidence": {
+    "tick_id": "v7r058",
+    "elapsed_wall_h": 0.996546876328066,
+    "completed_children": 405,
+    "strict_count": 28,
+    "run_su_count": 4,
+    "worker_wall_gpu_h_total": 1.993093752656132
+  },
+  "notes": [
+    "Critic records are deterministic guard evaluations, not extra LLM requests.",
+    "No-candidate Supervisor records skip inference; keep them separate from invalid model replies.",
+    "Started jobs, result records, selected candidates and independent molecular samples are different denominators.",
+    "Worker-wall includes idle slots and drain; recorded worker compute sums parsed job charges. LLM GPUs are excluded."
+  ]
+}
