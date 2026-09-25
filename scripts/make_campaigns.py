@@ -11,6 +11,7 @@ def main():
     p.add_argument("--root", type=Path, default=Path("/work"))
     p.add_argument("--hours", type=float, default=1.0)
     p.add_argument("--seed", type=int, default=0)
+    p.add_argument("--all-families", action="store_true")
     args = p.parse_args()
     args.root.joinpath("configs").mkdir(parents=True, exist_ok=True)
     for arm in ("qwen", "snowball"):
@@ -19,6 +20,10 @@ def main():
             asset_root=str(args.root / "T-REX-assets"), target_constraint=None,
             target_pdb=None, max_wall_hours=args.hours, total_gpus=3)
         config["run"].update(worker_gpus=["2", "3"], seed=args.seed)
+        config["llm"]["base_url"] = "http://127.0.0.1:12002/v1"
+        if not args.all_families:
+            config["run"]["enabled_families"] = ["complexa_beam", "complexa_best_of_n",
+                "complexa_fk_steering", "proteinmpnn_redesign", "structure_refilter"]
         config["backends"]["repo_root"] = str(args.root / "T-REX")
         if arm == "snowball":
             config["llm"]["model"] = "vllm/open-athena/Snowball-67B-A2B-5.7T-Mixed-RLVR-Step38"

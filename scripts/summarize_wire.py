@@ -38,6 +38,7 @@ def summarize(root: Path, after=None, before=None):
             completion_tokens=usage.get("completion_tokens"), error=response.get("error")))
     latencies = [r["latency_s"] for r in rows if r["latency_s"] is not None]
     counts = dict(http_calls=len(rows), statuses=dict(Counter(str(r["status"]) for r in rows)),
+        transport_states=dict(Counter(r["state"] for r in rows)),
         roles=dict(Counter(r["role"] for r in rows)),
         repair_calls=sum(r["is_repair_call"] for r in rows),
         json_only_calls=sum(r["json_only"] for r in rows),

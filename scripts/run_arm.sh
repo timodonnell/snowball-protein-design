@@ -33,8 +33,12 @@ setsid "$controller" /work/pilot-scripts/recording_proxy.py \
   --output "/work/results/$arm/wire" \
   > "/work/logs/$arm-proxy.log" 2>&1 &
 proxy_pid=$!
+setsid "$controller" /work/pilot-scripts/recording_proxy.py \
+  --port 12002 --cancel-on-disconnect --output "/work/results/$arm/wire" \
+  > "/work/logs/$arm-campaign-proxy.log" 2>&1 &
+campaign_proxy_pid=$!
 cleanup() {
-  kill -TERM -- "-$server_pid" "-$proxy_pid" 2>/dev/null || true
+  kill -TERM -- "-$server_pid" "-$proxy_pid" "-$campaign_proxy_pid" 2>/dev/null || true
 }
 trap cleanup EXIT
 ready=0

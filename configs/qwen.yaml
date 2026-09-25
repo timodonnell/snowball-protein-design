@@ -19,7 +19,7 @@ run:
   - proteinmpnn_redesign
   - structure_refilter
 llm:
-  base_url: http://127.0.0.1:12000/v1
+  base_url: http://127.0.0.1:12002/v1
   model: vllm/Qwen/Qwen3.6-27B-FP8
 policy:
   critic: true

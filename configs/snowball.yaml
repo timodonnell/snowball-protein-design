@@ -19,7 +19,7 @@ run:
   - proteinmpnn_redesign
   - structure_refilter
 llm:
-  base_url: http://127.0.0.1:12000/v1
+  base_url: http://127.0.0.1:12002/v1
   model: vllm/open-athena/Snowball-67B-A2B-5.7T-Mixed-RLVR-Step38
 policy:
   critic: true

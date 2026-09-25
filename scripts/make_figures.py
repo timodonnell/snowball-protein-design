@@ -47,18 +47,42 @@ def main():
                            cmap="viridis", s=25, alpha=0.8, edgecolors="none")
         ax.axvline(7/31, color="#555555", linestyle="--", linewidth=1)
         ax.axhline(1.5, color="#555555", linestyle="--", linewidth=1)
-        ax.set(xlim=(0, 1), ylim=(0, ymax), xlabel="Normalized AF2 interface PAE",
+        ax.set_yscale("log")
+        ax.set(xlim=(0, 1), ylim=(0.3, ymax), xlabel="Normalized AF2 interface PAE",
                title=f"{title}\n{len(rows)} verified, scored records")
         strict = [r for r in rows if r["strict"] == "True"]
         ax.scatter([number(r, "iPAE") for r in strict], [number(r, "binder_scRMSD") for r in strict],
                    marker="*", facecolors="none", edgecolors="#d04a2b", s=135, linewidths=1.2,
                    label=f"Strict passes: {len(strict)}")
         ax.legend(loc="upper right", frameon=False)
-    axes[0].set_ylabel("Binder self-consistency RMSD (Å)")
+    axes[0].set_ylabel("Binder self-consistency RMSD (Å; log scale)")
     fig.colorbar(artist, ax=axes, label="AF2 pLDDT (strict gate ≥90)", shrink=0.8)
     fig.suptitle("PD-L1: one-hour campaigns, two H100 molecular workers each", fontsize=13)
     for extension in ["png", "svg", "pdf"]:
         fig.savefig(args.output / f"design-comparison.{extension}")
+    plt.close(fig)
+
+    fig, axes = plt.subplots(1, 2, figsize=(10, 4), layout="constrained")
+    for arm, title in arms:
+        root = args.artifacts / arm
+        evidence = [json.loads(line) for line in
+                    (root / "campaign/evidence_summaries.jsonl").read_text().splitlines()]
+        summary = json.loads((root / "designs/summary.json").read_text())
+        accounting = json.loads((root / "accounting.json").read_text())
+        end = accounting["controller_wall_h_including_drain"] * 60
+        for ax, key, endpoint in [(axes[0], "strict_count", summary["upstream_export"]["n_exported"]),
+                                  (axes[1], "run_su_count", summary["upstream_export"]["distinct_structure_bins"])]:
+            ax.step([r["elapsed_wall_h"]*60 for r in evidence]+[end],
+                    [r[key] for r in evidence]+[endpoint], where="post", label=title)
+            ax.set(xlabel="Controller elapsed time (minutes)", ylim=(0, None))
+            ax.axvline(60, color="#777777", linewidth=1, linestyle="--")
+            ax.yaxis.set_major_locator(plt.MaxNLocator(integer=True))
+    axes[0].set_ylabel("Qualified records")
+    axes[1].set_ylabel("Qualified binder-chain clusters (TM 0.6)")
+    axes[1].legend(frameon=False)
+    fig.suptitle("Computational yield over time; final endpoint includes worker drain")
+    for extension in ["png", "svg", "pdf"]:
+        fig.savefig(args.output / f"campaign-progress.{extension}")
     plt.close(fig)
 
     fig, ax = plt.subplots(figsize=(8, 4.2), layout="constrained")

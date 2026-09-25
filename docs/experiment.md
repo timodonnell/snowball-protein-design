@@ -83,6 +83,17 @@ by up to ten minutes of drain per busy worker. We retain timestamps and recomput
 endpoint exports from the complete archive after drain; the upstream summary's
 last evidence tick alone can omit late results.
 
+The original recorder on port 12000 keeps late upstream responses after a client
+timeout. That behavior affected Snowball's fixed checks and may increase retry
+contention; their timing is not a clean direct-server speed benchmark. Before
+Snowball's molecular campaign, port 12002 was introduced to propagate client
+disconnects upstream, matching the installed vLLM endpoint's cancellation
+semantics. Canceled requests retain their input and cancellation status, with no
+invented HTTP response. Qwen's completed campaign used port 12000 but had no
+timeouts. Its historical input is in the archive; current checked-in YAMLs and
+launcher use port 12002 for both campaigns. Fixed checks remain on port 12000 so
+late generated content remains inspectable. See I014 and the proxy tests.
+
 Complexa's seed is derived from the campaign seed, candidate ID and logical run
 name. The physical output namespace is excluded from that seed. Identical
 warm-start jobs therefore share a seed across arms; subsequent asynchronous

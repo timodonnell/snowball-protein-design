@@ -21,6 +21,21 @@ separately from extraction, repair and final upstream acceptance. The negative
 controls in `tests/test_offline_audit.py` catch hallucinated references,
 unoffered candidates, truncated JSON and combined-budget violations.
 
+`scripts/evidence_tasks.py` provides a smaller executable starting point:
+four development examples built from 28 actual Qwen campaign records, with
+deterministic SFT answers and an exact JSON reward. They test source-family
+attribution, canonical qualification, missing measurements and unresolved chain
+identity. They are intentionally **not** held-out evaluation or policy-optimality
+labels. The negative controls reject the exact RMSD boundary, native-score
+substitution, invented source families, prose and duplicate JSON keys.
+
+```bash
+PYTHONPATH=vendor/T-REX .venv/bin/python scripts/evidence_tasks.py build \
+  artifacts/qwen artifacts/training-development/qwen-evidence.jsonl
+PYTHONPATH=vendor/T-REX .venv/bin/python scripts/evidence_tasks.py grade \
+  artifacts/training-development/qwen-evidence.jsonl qwen_evidence_00 response.json
+```
+
 A starter reward should require a usable non-abstaining action when a feasible
 one is offered. Rewarding schema alone can be gamed by empty output, generic
 claims or perpetual abstention. Treat validity, evidence consistency and action
@@ -72,3 +87,8 @@ infrastructure failures masquerading as model mistakes. The observed cold-start
 stall is a controller feasibility issue; training the LLM cannot fix a builder
 that suppresses its proposals. Sparse-evidence reward-setting adjustments are
 also controller behavior, not necessarily schema errors.
+
+See [reviewed case studies](case-studies.md): Qwen proposed a measured successful
+rescue while also misattributing another parent's source family, and Snowball
+returned a terminal-agent schema on a T-REX fixture. These motivate separate
+format, factual-consistency and molecular-utility objectives.

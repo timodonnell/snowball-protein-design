@@ -53,6 +53,12 @@ HTTP metadata, including token truncation that the upstream client hides. The
 proxy never changes the prompt or response. Its JSON-syntax summary is separate
 from T-REX's semantic validation.
 
+Fixed checks use the recorder on port 12000, retaining late responses after a
+timeout. Campaigns use port 12002 with disconnect propagation. Cancellation has
+no upstream HTTP status/response and is reported as `client_disconnected`, not a
+fabricated HTTP error. This distinction was added after observing Snowball's
+first timeouts; see [I014](issues.md).
+
 ## Collect before releasing GPUs
 
 Run the collector **after campaign drain**, while external structure paths still
@@ -67,6 +73,12 @@ for arm in qwen snowball; do
     --mmseqs external/Proteina-Complexa/.venv/bin/mmseqs
 done
 ```
+
+After both exports exist, run `scripts/compare_designs.py /work/results
+/work/results/design-comparison.json --foldseek
+external/Proteina-Complexa/.venv/bin/foldseek` from the same pinned controller
+environment. This jointly clusters the qualified binder chains across arms,
+using collected structure copies rather than original backend paths.
 
 Copy `/work/results/` and relevant `/work/logs/` files locally with `kubectl cp`.
 Use `.txt` for retained logs because the repository ignores `.log` files. Keep
