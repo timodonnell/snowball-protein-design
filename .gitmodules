@@ -1,0 +1,3 @@
+[submodule "vendor/T-REX"]
+	path = vendor/T-REX
+	url = https://github.com/ml-struct-bio/T-REX.git

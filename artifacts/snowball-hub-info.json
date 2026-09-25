@@ -1,0 +1,190 @@
+{
+  "id": "open-athena/Snowball-67B-A2B-5.7T-Mixed-RLVR-Step38",
+  "author": "open-athena",
+  "sha": "cfc1d845dae89b067cdc7250d0164abefa5a69cf",
+  "created_at": "2026-09-22T18:34:28+00:00",
+  "last_modified": "2026-09-23T00:19:12+00:00",
+  "private": false,
+  "disabled": false,
+  "downloads": 34,
+  "gated": false,
+  "likes": 0,
+  "tags": [
+    "safetensors",
+    "grug_moe",
+    "reinforcement-learning",
+    "rlvr",
+    "mixture-of-experts",
+    "megatron",
+    "base_model:laion/snowball-67b-a2b-sft-s3-nemotron-terminal-step1888",
+    "base_model:finetune:laion/snowball-67b-a2b-sft-s3-nemotron-terminal-step1888",
+    "region:us"
+  ],
+  "pipeline_tag": "reinforcement-learning",
+  "card_data": {},
+  "config": {
+    "architectures": [
+      "GrugMoeForCausalLM"
+    ],
+    "model_type": "grug_moe",
+    "num_experts": 256,
+    "num_experts_per_tok": 4,
+    "tokenizer_config": {
+      "bos_token": "<|begin_of_text|>",
+      "eos_token": "<|end_of_text|>",
+      "pad_token": "<|end_of_text|>"
+    },
+    "chat_template_jinja": "{{ bos_token }}\n{%- if enable_thinking is defined -%}\n  {%- if enable_thinking is sameas true -%}\n    {%- set _reasoning_mode = \"/think\" -%}\n  {%- elif enable_thinking is sameas false -%}\n    {%- set _reasoning_mode = \"/nothink\" -%}\n  {%- else -%}\n    {%- set _reasoning_mode = enable_thinking -%}\n  {%- endif -%}\n{%- else -%}\n  {%- set _reasoning_mode = none -%}\n{%- endif -%}\n{%- set _custom_instructions = custom_instructions | default(None, true) -%}\n{%- set _xml_tools_list = xml_tools | default([], true) -%}\n{%- if tools is defined and tools -%}\n  {%- set _xml_tools_list = tools -%}\n{%- endif -%}\n{%- set _python_tools = python_tools | default([], true) -%}\n{%- set _has_aux_header = (_reasoning_mode is not none) or _custom_instructions or (_xml_tools_list) or (_python_tools) -%}\n{%- if _has_aux_header -%}\n<|start_header_id|>system<|end_header_id|>\n{%- if _reasoning_mode is not none -%}\nReasoning: {{ _reasoning_mode }}\n{%- endif %}\n{%- if _custom_instructions %}\n{{ _custom_instructions | trim }}\n{%- endif %}\n{% if _xml_tools_list or _python_tools %}\n{{ \"\n### Tools\n\" }}\nYou may call one or more functions to assist with the user query.\n{% if _xml_tools_list %}\nYou are provided with function signatures within <tools> </tools> tags:\n\n<tools>\n{% for tool in _xml_tools_list %}\n{{ tool | string }}{% if not loop.last %}\n{% endif %}\n{% endfor %}\n</tools>\n\nFor each function call, pass a json object with function name and arguments within <tool_call> </tool_call> tags:\n<tool_call>\n{\"name\": <function-name>, \"arguments\": <args-json-object>}\n</tool_call>\n\n{% endif %}\n{% if _python_tools %}\nWhen you send a message containing Python code between <|python_tag|> and <|eom_id|> tags, it will be executed in a stateful Jupyter notebook environment, and you will then be given the output.\n\nYou can use the following tools in your python code like regular functions:\n<tools>\n{% for tool in _python_tools %}\n{{ tool | string }}{% if not loop.last %}\n{% endif %}\n{% endfor %}\n</tools>\n{% endif %}\n{% endif %}\n<|eot_id|>\n{%- endif -%}\n{%- for message in messages -%}\n  {%- set has_tool_calls = message.get('tool_calls') is not none and message.get('tool_calls') -%}\n  {%- if not (message.get('role') in ['tool', 'ipython'] or has_tool_calls) -%}\n    {%- if message.get('role') == 'assistant' -%}\n<|start_header_id|>assistant<|end_header_id|>\n{% set content = message.get('content') %}\n{% if content is string %}\n{% generation %}{{- content | trim }}<|eot_id|>{% endgeneration %}\n{% elif content is mapping %}\n{% generation %}{{- content.get('text', '') | trim }}<|eot_id|>{% endgeneration %}\n{% elif content is iterable %}\n{% generation %}\n{%- for chunk in content -%}\n  {%- if chunk.get('type') == 'text' -%}\n    {{ chunk.get('text', '') | trim }}\n  {%- endif -%}\n{%- endfor -%}\n<|eot_id|>\n{% endgeneration %}\n{% else %}\n{% generation %}{% endgeneration %}<|eot_id|>\n{% endif %}\n    {%- else -%}\n<|start_header_id|>{{ message['role'] }}<|end_header_id|>\n{% set content = message.get('content') %}\n{% if content is string %}\n{{ content | trim }}<|eot_id|>\n{% elif content is mapping %}\n{{ content.get('text', '') | trim }}<|eot_id|>\n{% elif content is iterable %}\n{%- for chunk in content -%}\n  {%- if chunk.get('type') == 'text' -%}\n    {{ chunk.get('text', '') | trim }}\n  {%- endif -%}\n{%- endfor -%}<|eot_id|>\n{% else %}\n<|eot_id|>\n{% endif %}\n    {%- endif -%}\n\n  {%- elif message.get('role') == 'tool' -%}\n    {%- set _tool_name = message.get('name') -%}\n    {%- set _tool_id = message.get('tool_call_id') -%}\n    {%- set _attr_name = ' name=\"' ~ _tool_name ~ '\"' if _tool_name else '' -%}\n    {%- set _attr_id = ' id=\"' ~ _tool_id ~ '\"' if _tool_id else '' -%}\n<|start_header_id|>tool<|end_header_id|>\n<tool_response{{ _attr_name }}{{ _attr_id }}>\n{%- set tool_content = message.get('content') -%}\n{%- if tool_content is mapping or (tool_content is iterable and tool_content is not string) -%}\n{{- tool_content | tojson }}\n{%- else -%}\n{{- tool_content if tool_content is not none else '' }}\n{%- endif -%}\n</tool_response><|eot_id|>\n{{- \"\n\" -}}\n  {%- elif message.get('role') == 'ipython' -%}\n<|start_header_id|>ipython<|end_header_id|>\n{% set ipy_content = message.get('content') %}\n{% if ipy_content is string %}\n{{- { \"output\": ipy_content } | tojson -}}\n{% elif ipy_content is iterable %}\n{%- for chunk in ipy_content -%}\n  {%- if chunk.get('type') == 'text' -%}\n    {{- { \"output\": chunk.get('text', '') } | tojson -}}\n  {%- endif -%}\n{%- endfor -%}\n{% else %}\n{{- { \"output\": ipy_content } | tojson -}}\n{% endif %}\n<|eot_id|>\n{% elif has_tool_calls -%}\n    {%- if message.tool_calls|length != 1 -%}\n      {{- raise_exception(\"This template expects exactly one tool call per assistant turn.\") -}}\n    {%- endif -%}\n    {%- set tool_call = message.tool_calls[0].function -%}\n<|start_header_id|>assistant<|end_header_id|>\n{% generation %}\n{{- '{\"name\": \"' + tool_call.name + '\", \"arguments\": ' -}}\n{{- tool_call.arguments | tojson -}}\n{{- \"}\" -}}<|eot_id|>\n{% endgeneration %}\n  {%- endif -%}\n{%- endfor -%}\n{%- if add_generation_prompt -%}\n<|start_header_id|>assistant<|end_header_id|>\n{% endif -%}"
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes"
+    },
+    {
+      "rfilename": "README.md"
+    },
+    {
+      "rfilename": "chat_template.jinja"
+    },
+    {
+      "rfilename": "config.json"
+    },
+    {
+      "rfilename": "generation_config.json"
+    },
+    {
+      "rfilename": "model-00001-of-00039.safetensors"
+    },
+    {
+      "rfilename": "model-00002-of-00039.safetensors"
+    },
+    {
+      "rfilename": "model-00003-of-00039.safetensors"
+    },
+    {
+      "rfilename": "model-00004-of-00039.safetensors"
+    },
+    {
+      "rfilename": "model-00005-of-00039.safetensors"
+    },
+    {
+      "rfilename": "model-00006-of-00039.safetensors"
+    },
+    {
+      "rfilename": "model-00007-of-00039.safetensors"
+    },
+    {
+      "rfilename": "model-00008-of-00039.safetensors"
+    },
+    {
+      "rfilename": "model-00009-of-00039.safetensors"
+    },
+    {
+      "rfilename": "model-00010-of-00039.safetensors"
+    },
+    {
+      "rfilename": "model-00011-of-00039.safetensors"
+    },
+    {
+      "rfilename": "model-00012-of-00039.safetensors"
+    },
+    {
+      "rfilename": "model-00013-of-00039.safetensors"
+    },
+    {
+      "rfilename": "model-00014-of-00039.safetensors"
+    },
+    {
+      "rfilename": "model-00015-of-00039.safetensors"
+    },
+    {
+      "rfilename": "model-00016-of-00039.safetensors"
+    },
+    {
+      "rfilename": "model-00017-of-00039.safetensors"
+    },
+    {
+      "rfilename": "model-00018-of-00039.safetensors"
+    },
+    {
+      "rfilename": "model-00019-of-00039.safetensors"
+    },
+    {
+      "rfilename": "model-00020-of-00039.safetensors"
+    },
+    {
+      "rfilename": "model-00021-of-00039.safetensors"
+    },
+    {
+      "rfilename": "model-00022-of-00039.safetensors"
+    },
+    {
+      "rfilename": "model-00023-of-00039.safetensors"
+    },
+    {
+      "rfilename": "model-00024-of-00039.safetensors"
+    },
+    {
+      "rfilename": "model-00025-of-00039.safetensors"
+    },
+    {
+      "rfilename": "model-00026-of-00039.safetensors"
+    },
+    {
+      "rfilename": "model-00027-of-00039.safetensors"
+    },
+    {
+      "rfilename": "model-00028-of-00039.safetensors"
+    },
+    {
+      "rfilename": "model-00029-of-00039.safetensors"
+    },
+    {
+      "rfilename": "model-00030-of-00039.safetensors"
+    },
+    {
+      "rfilename": "model-00031-of-00039.safetensors"
+    },
+    {
+      "rfilename": "model-00032-of-00039.safetensors"
+    },
+    {
+      "rfilename": "model-00033-of-00039.safetensors"
+    },
+    {
+      "rfilename": "model-00034-of-00039.safetensors"
+    },
+    {
+      "rfilename": "model-00035-of-00039.safetensors"
+    },
+    {
+      "rfilename": "model-00036-of-00039.safetensors"
+    },
+    {
+      "rfilename": "model-00037-of-00039.safetensors"
+    },
+    {
+      "rfilename": "model-00038-of-00039.safetensors"
+    },
+    {
+      "rfilename": "model-00039-of-00039.safetensors"
+    },
+    {
+      "rfilename": "model.safetensors.index.json"
+    },
+    {
+      "rfilename": "tokenizer.json"
+    },
+    {
+      "rfilename": "tokenizer_config.json"
+    }
+  ],
+  "spaces": [],
+  "safetensors": {
+    "parameters": {
+      "F32": 6656,
+      "BF16": 67078876160
+    },
+    "total": 67078882816
+  }
+}
