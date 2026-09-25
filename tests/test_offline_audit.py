@@ -54,3 +54,11 @@ def test_truncated_json_is_not_schema_success():
     labels, _ = score('{"cards": [', context)
     assert not labels["json_only"]
     assert not labels["schema_valid"]
+
+
+def test_wrong_task_object_gets_no_vacuous_configuration_credit():
+    _, context = fixture("planner")
+    labels, _ = score('{"commands": [], "task_complete": true}', context)
+    assert not labels["schema_valid"]
+    assert labels["all_configs_valid"] is None
+    assert not labels["config_check_applicable"]

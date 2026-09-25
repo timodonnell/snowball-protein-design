@@ -64,6 +64,20 @@ if [ "${TREX_SKIP_FIXED_VALIDATION:-0}" != 1 ]; then
   --repeats 3 --max-tokens 3072 \
   --out "/work/results/$arm/supervisor-validation.json"
 fi
+# Fixed-call diagnostics retain late responses. Finish them before starting the
+# molecular budget, so retries cannot compete with campaign model requests.
+"$controller" - "/work/results/$arm/wire" <<'PY'
+import json, sys, time
+from pathlib import Path
+root = Path(sys.argv[1])
+for _ in range(130):
+    pending = [p for p in root.glob("*.json") if json.loads(p.read_text())["state"] == "pending"]
+    if not pending:
+        break
+    time.sleep(5)
+else:
+    raise SystemExit("Fixed-call recorder still has pending requests; inspect before campaign.")
+PY
 # Interface checks can overlap molecular-environment installation.
 for _ in $(seq 1 360); do
   if [ -f /work/T-REX/.env ]; then break; fi

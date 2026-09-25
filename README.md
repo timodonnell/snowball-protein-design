@@ -3,7 +3,7 @@
 Pilot comparison of T-REX with the study's Qwen3.6-27B-FP8 controller and
 `open-athena/Snowball-67B-A2B-5.7T-Mixed-RLVR-Step38`. Work in progress:
 Qwen finished with **29 AF2-qualified records in four structural clusters**;
-Snowball's fixed checks and matched molecular campaign are in progress.
+Snowball's fixed checks are complete and its matched molecular campaign is running.
 
 We run the upstream planner, supervisor, deterministic validation and molecular
 backends on the same PD-L1 target. First establish a short Qwen campaign, then

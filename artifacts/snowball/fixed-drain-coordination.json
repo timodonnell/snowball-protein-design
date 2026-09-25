@@ -1,0 +1,22 @@
+[
+  {
+    "event": "parent_held_while_supervisor_runs",
+    "time": "2026-09-25T20:37:01.758481+00:00",
+    "parent_pid": 28165,
+    "supervisor_pids": [
+      "68217"
+    ]
+  },
+  {
+    "event": "fixed_report_complete",
+    "time": "2026-09-25T20:47:44.555012+00:00"
+  },
+  {
+    "event": "fixed_requests_drained",
+    "time": "2026-09-25T20:47:44.594773+00:00"
+  },
+  {
+    "event": "campaign_launcher_resumed",
+    "time": "2026-09-25T20:47:44.598041+00:00"
+  }
+]

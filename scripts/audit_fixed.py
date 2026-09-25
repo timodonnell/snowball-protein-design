@@ -59,6 +59,8 @@ def score(raw, context):
                   schema_valid=False, schema_reason="parse_fail")
     if obj is None:
         return labels, None
+    items = obj.get("cards" if context["role"] == "planner" else "candidate_decisions")
+    labels.update(abstain=obj.get("abstain"), emitted_item_count=len(items) if isinstance(items, list) else None)
     if context["role"] == "planner":
         ok, why = planner._validate_schema(obj, allowed_evidence_refs=context["refs"])
         labels.update(schema_valid=ok, schema_reason=why)
@@ -87,14 +89,22 @@ def score(raw, context):
                 else:
                     valid, reasons = validate_config_delta(capability, config)
                 config_checks.append(dict(card=i, family=family, valid=valid, reasons=reasons))
-        labels.update(config_checks=config_checks,
-            all_configs_valid=all(c["valid"] for c in config_checks))
+        applicable = isinstance(cards, list) and (bool(cards) or obj.get("abstain") is True)
+        labels.update(config_checks=config_checks, config_check_applicable=applicable,
+            all_configs_valid=all(c["valid"] for c in config_checks) if applicable else None)
         return labels, repaired if repair_ok else None
     candidates, hypotheses = context["candidates"], context["hypotheses"]
+    original_keys = set(obj)
     ok, why = supervisor._validate_schema(obj, set(candidates),
         allowed_evidence_refs=context["refs"], candidate_by_id=candidates,
         hypothesis_by_id=hypotheses)
+    # This native validator fills optional/defaulted fields in place. Expose
+    # those defaults, and use its effective abstention/decision values.
+    items = obj.get("candidate_decisions")
     labels.update(schema_valid=ok, schema_reason=why,
+                  native_schema_defaults={k:obj[k] for k in obj.keys()-original_keys},
+                  abstain=obj.get("abstain"),
+                  emitted_item_count=len(items) if isinstance(items, list) else None,
                   mixture_assessment=sv.assess_mode_mixture(obj.get("mode_mixture") or {}, context["expectations"])
                   if ok else {"all_ok": False, "reason": "invalid_schema"})
     return labels, obj if ok else None
@@ -158,11 +168,18 @@ def main():
             schema_valid_before_repair=sum(r["labels"]["schema_valid"] for r in primary),
             timely_schema_valid=sum(r["labels"]["schema_valid"] and r["within_controller_timeout"] for r in primary),
             late_http_responses=sum(r["http_latency_s"] is not None and r["http_latency_s"] >= 90 for r in primary),
+            abstaining_primary_responses=sum(r["labels"].get("abstain") is True for r in primary),
+            schema_valid_nonabstaining_with_items=sum(r["labels"]["schema_valid"]
+                and r["labels"].get("abstain") is False and (r["labels"].get("emitted_item_count") or 0) > 0 for r in primary),
             schema_failure_reasons=dict(Counter(r["labels"]["schema_reason"] for r in primary if not r["labels"]["schema_valid"])),
             length_terminated=sum(r["finish_reason"] == "length" for r in primary))
         if role == "planner":
-            summaries[role]["all_configs_valid"] = sum(r["labels"].get("all_configs_valid", False) for r in primary)
-            summaries[role]["schema_and_configs_valid"] = sum(r["labels"]["schema_valid"] and r["labels"].get("all_configs_valid", False) for r in primary)
+            summaries[role]["all_configs_valid"] = sum(r["labels"].get("all_configs_valid") is True for r in primary)
+            summaries[role]["schema_and_configs_valid"] = sum(r["labels"]["schema_valid"] and r["labels"].get("all_configs_valid") is True for r in primary)
+        else:
+            summaries[role]["primary_responses_using_native_defaults"] = sum(bool(r["labels"].get("native_schema_defaults")) for r in primary)
+            summaries[role]["mixture_aligned_schema_valid_primary"] = sum(r["labels"]["schema_valid"]
+                and r["labels"]["mixture_assessment"]["all_ok"] for r in primary)
     report = dict(arm=args.arm, roles=summaries, n_http_calls=len(rows),
         n_model_repair_retries=sum(r["is_model_repair_retry"] for r in rows),
         n_sdk_retries=sum(r["is_sdk_retry"] for r in rows),

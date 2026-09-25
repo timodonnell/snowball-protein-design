@@ -68,6 +68,8 @@ def main():
         evidence = [json.loads(line) for line in
                     (root / "campaign/evidence_summaries.jsonl").read_text().splitlines()]
         summary = json.loads((root / "designs/summary.json").read_text())
+        if summary["upstream_export"]["n_exported"]:
+            assert summary["upstream_export"]["foldseek_su_status"] == "ok", "Missing verified structural endpoint"
         accounting = json.loads((root / "accounting.json").read_text())
         end = accounting["controller_wall_h_including_drain"] * 60
         for ax, key, endpoint in [(axes[0], "strict_count", summary["upstream_export"]["n_exported"]),
@@ -95,7 +97,7 @@ def main():
             values.append((f"{title}\n{role.capitalize()}", raw["schema_valid_before_repair"],
                            native["valid_calls"], raw["n"]))
     for i, (label, raw, final, n) in enumerate(values):
-        ax.bar(i-0.18, raw/n*100, 0.34, color="#315b8a", label="First response" if i == 0 else None)
+        ax.bar(i-0.18, raw/n*100, 0.34, color="#315b8a", label="Extracted first-response schema" if i == 0 else None)
         ax.bar(i+0.18, final/n*100, 0.34, color="#54a688", label="After T-REX recovery" if i == 0 else None)
         for x, count in [(i-0.18, raw), (i+0.18, final)]:
             ax.text(x, count/n*100+2, f"{count}/{n}", ha="center", fontsize=10)

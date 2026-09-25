@@ -43,6 +43,13 @@ utility as separate measurements; do not use the model's confidence or fluent
 rationale as ground truth. Model output can pass the native schema while later
 being dropped or changed by candidate construction.
 
+The upstream fixed checks also lower the confidence gate from production's 0.55
+to zero. Snowball's accepted fixed Supervisor outputs omitted confidence; T-REX
+supplied 0.5, below the live gate. Three Qwen outputs also used this default.
+Schema acceptance alone therefore overstates live compatibility. Do not solve this by
+rewarding unsupported confidence: evaluate calibration and action quality
+separately from the chosen operational threshold.
+
 ## SFT candidates
 
 The retained `wire/` records contain exact prompts and responses; `fixed-audit/`

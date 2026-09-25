@@ -32,6 +32,10 @@ def main():
         root = args.results / arm / "designs"
         rows = read_csv(root / "designs.csv")
         manifest = read_csv(root / "strict-export/manifest.csv")
+        export_status = json.loads((root / "summary.json").read_text())["upstream_export"]
+        if manifest:
+            assert export_status["foldseek_su_status"] == "ok", "Unverified per-arm structural endpoint"
+            assert export_status["sequence_dedup_status"] == "ok", "Unverified per-arm sequence endpoint"
         strict_ids = {row["result_id"] for row in manifest}
         strict = [row for row in rows if row["result_id"] in strict_ids]
         portable = {row["result_id"]: root / row["structure"] for row in rows if row["structure"]}

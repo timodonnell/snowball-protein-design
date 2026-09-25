@@ -1,0 +1,20 @@
+{
+  "schema": "trex.llm-wire.v1",
+  "call_id": "f49b446b-541e-4147-805b-a5a723b90c80",
+  "started_at": "2026-09-25T20:25:53.857662+00:00",
+  "method": "GET",
+  "path": "/health",
+  "upstream": "http://127.0.0.1:12001",
+  "request": {
+    "body_base64": "",
+    "text": ""
+  },
+  "state": "completed",
+  "cancel_on_disconnect": true,
+  "status": 200,
+  "latency_s": 0.4735748926177621,
+  "response": {
+    "body_base64": "",
+    "text": ""
+  }
+}

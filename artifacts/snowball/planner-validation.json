@@ -1,0 +1,477 @@
+{
+  "records": [
+    {
+      "abstain": false,
+      "card_action_families": [],
+      "card_axes": [],
+      "card_config_delta_suggestions": [],
+      "card_mode_affinities": [],
+      "case": "productive_cd45_like",
+      "confidence": 0.0,
+      "elapsed_s": 182.77,
+      "fail_reason": "call_error:APITimeoutError:Request timed out.",
+      "n_cards": 0,
+      "prompt_variant": "default",
+      "raw_excerpt": "",
+      "repeat": 0,
+      "temperature": 0.2,
+      "tick_id_int": 0,
+      "usage": {},
+      "valid": false
+    },
+    {
+      "abstain": false,
+      "card_action_families": [],
+      "card_axes": [],
+      "card_config_delta_suggestions": [],
+      "card_mode_affinities": [],
+      "case": "rescue_rich_betv1_like",
+      "confidence": 0.5,
+      "elapsed_s": 76.88,
+      "fail_reason": "schema_fail:missing_top:cards; repair_failed:missing_top:cards",
+      "n_cards": 0,
+      "prompt_variant": "default",
+      "raw_excerpt": "We are in a \"rescue_rich\" state with recent SU=2 (no recent delta), raw_strict=2, and a collapse signal of 0.5 (diversify). There's a remaining wall time of 28 hours, which is ample. The diagnostic_driver_tldr is \"none\", meaning we don't have a clear scientific lever from the diagnostics. The method_health shows complexa_beam has 2 strict successes (out of 22 attempts) and 18 near-misses. The axis_stats are provisional and not showing clear deficits (pLDDT median deficit 0.5, iPAE 0.25, binder_scRMSD 0.2). The joint_patterns show some mixed results but no clear dominant failure.\n\nGiven the state:\n- We have a rescue_rich state: we have some strict successes but not many recent new SU/GPU-h. We should focus on improving the current family (complexa_beam) to increase structurally-unique strict successes per GPU-hour.\n- Since there's no clear diagnostic blocker, we can consider exploiting the existing family with a material search perturbation (L1) or a rescue around the current near-misses (L2) if we can identify a specific axis to improve.\n\nLooking at the allowed_params_per_family for complexa_beam, we have many knobs. We can propose a hypothesis that tweaks the beam_width and sc_sca",
+      "repeat": 0,
+      "temperature": 0.2,
+      "tick_id_int": 1,
+      "usage": {
+        "input_tokens": 8399,
+        "output_tokens": 1711
+      },
+      "valid": false
+    },
+    {
+      "abstain": false,
+      "card_action_families": [],
+      "card_axes": [],
+      "card_config_delta_suggestions": [],
+      "card_mode_affinities": [],
+      "case": "stalled_sc2rbd_like",
+      "confidence": 0.5,
+      "elapsed_s": 82.38,
+      "fail_reason": "schema_fail:missing_top:cards; repair_failed:missing_top:cards",
+      "n_cards": 0,
+      "prompt_variant": "default",
+      "raw_excerpt": "Given the stalled state with no recent new SU/GPU-h, flat metric deficits (pLDDT 70, iPAE 0.65), and a collapse signal indicating duplicate/SU bottleneck, we should focus on rescue of the dominant blocker (pLDDT) with a material search that can potentially improve the canonical axis. Since diagnostics show no active driver and the family role table indicates available families, we can propose a rescue hypothesis using a material search within a family that can directly improve pLDDT. Given the budget and constraints, we should choose a family with a reasonable cost and a plausible path to improve pLDDT via sequence-level changes (e.g., complexa_mcts with sequence_hallucination) or via reward tuning (complexa_beam with pLDDT-weighted reward). However, we must be cautious: the remaining wall time is 24h, but we are in a stalled state with no recent progress, so we need a hypothesis that can break the deadlock.\n\nWe have 8 available families. We'll pick one that can be used for rescue with a material search (L2) given the diagnostic signal of low pLDDT (though pLDDT is 70, which is above the strict threshold of 90, but the deficit is 20, indicating room for improvement). Since there's ",
+      "repeat": 0,
+      "temperature": 0.2,
+      "tick_id_int": 2,
+      "usage": {
+        "input_tokens": 8832,
+        "output_tokens": 1845
+      },
+      "valid": false
+    },
+    {
+      "abstain": false,
+      "card_action_families": [
+        [
+          "complexa_mcts"
+        ]
+      ],
+      "card_axes": [
+        [
+          "iPAE"
+        ]
+      ],
+      "card_config_delta_suggestions": [
+        {
+          "complexa_mcts": {
+            "beam_width": 8,
+            "n_simulations": 5,
+            "nsamples": 4,
+            "nsteps": 100
+          }
+        }
+      ],
+      "card_mode_affinities": [
+        {
+          "exploit": 0.1,
+          "explore": 0.2,
+          "rescue": 0.7
+        }
+      ],
+      "case": "ambiguous_cbago_like",
+      "confidence": 0.6,
+      "elapsed_s": 28.87,
+      "fail_reason": null,
+      "n_cards": 1,
+      "prompt_variant": "default",
+      "repeat": 0,
+      "temperature": 0.2,
+      "tick_id_int": 3,
+      "usage": {
+        "input_tokens": 7893,
+        "output_tokens": 652
+      },
+      "valid": true
+    },
+    {
+      "abstain": false,
+      "card_action_families": [],
+      "card_axes": [],
+      "card_config_delta_suggestions": [],
+      "card_mode_affinities": [],
+      "case": "stalled_redundant_pdl1",
+      "confidence": 0.0,
+      "elapsed_s": 180.46,
+      "fail_reason": "call_error:APITimeoutError:Request timed out.",
+      "n_cards": 0,
+      "prompt_variant": "default",
+      "raw_excerpt": "",
+      "repeat": 0,
+      "temperature": 0.2,
+      "tick_id_int": 4,
+      "usage": {},
+      "valid": false
+    },
+    {
+      "abstain": false,
+      "card_action_families": [],
+      "card_axes": [],
+      "card_config_delta_suggestions": [],
+      "card_mode_affinities": [],
+      "case": "productive_cd45_like",
+      "confidence": 0.5,
+      "elapsed_s": 132.11,
+      "fail_reason": "schema_fail:missing_top:cards; repair_failed:missing_top:cards",
+      "n_cards": 0,
+      "prompt_variant": "default",
+      "raw_excerpt": "We are in a productive state with recent SU growth (6 live SU, +2 recent) and a decent top bin share (0.40). There are 8 raw strict successes and 6 near-misses. The diagnostic driver is \"none\", but we have a good recent progress. We should propose hypotheses that exploit the current progress, possibly rescue a blocker if any, or explore if needed. Since the state is productive and we have recent new SU, we should focus on exploiting the current route (complexa_beam) that is already producing results. We can propose a card that continues with complexa_beam with a slight tweak to improve the limiting axis (pLDDT is at 92, which is good, but we can still try to increase it further or maintain). We'll use the available family complexa_beam and suggest a config_delta_suggestions with beam_width=8 (within allowed range) to potentially increase throughput.\n\nWe need to produce 1-4 hypothesis cards. Given the evidence, we can propose:\n\n1. Exploit the current complexa_beam with a slightly wider beam to possibly get more SU/GPU-h.\n\nWe'll craft the JSON accordingly.\n\nWe must ensure each card has:\n- claim: testable claim\n- mode_affinity: exploit 0.1, rescue 0.7, explore 0.2 (since we are in a r",
+      "repeat": 1,
+      "temperature": 0.2,
+      "tick_id_int": 100,
+      "usage": {
+        "input_tokens": 8659,
+        "output_tokens": 933
+      },
+      "valid": false
+    },
+    {
+      "abstain": false,
+      "card_action_families": [],
+      "card_axes": [],
+      "card_config_delta_suggestions": [],
+      "card_mode_affinities": [],
+      "case": "rescue_rich_betv1_like",
+      "confidence": 0.5,
+      "elapsed_s": 78.18,
+      "fail_reason": "schema_fail:missing_top:cards; repair_failed:missing_top:cards",
+      "n_cards": 0,
+      "prompt_variant": "default",
+      "raw_excerpt": "We are in a \"rescue_rich\" state with 2 recent SU, 2 raw strict, and a collapse signal of 0.5. The remaining wall time is 28 hours, which is plenty. The diagnostic_driver_tldr is \"none\", meaning we don't have a clear scientific driver from diagnostics. The method_health shows that complexa_beam has 2 strict yields (out of 22 attempts) and 18 near-misses. The axis_stats are provisional and show deficits in pLDDT (0.5), iPAE (0.25), and binder_scRMSD (0.2). Since we are rescue_rich, we should focus on rescuing the dominant blocker (likely pLDDT, given it's the most deficient) while leveraging the near-misses and the fact that we have recent SU.\n\nWe need to propose 1-4 testable HypothesisCards that increase structurally-unique strict successes per live WORKER-WALL GPU-hour. We should choose from available families: bindcraft, boltzgen, complexa_beam, complexa_best_of_n, complexa_fk_steering, complexa_mcts, proteinmpnn_redesign, structure_refilter.\n\nGiven the state, we should:\n\n1. Rescue the pLDDT deficit. Since we have near-misses, we can try to improve pLDDT with a material perturbation in a family that is already producing near-misses (complexa_beam). We can use complexa_beam with a ",
+      "repeat": 1,
+      "temperature": 0.2,
+      "tick_id_int": 101,
+      "usage": {
+        "input_tokens": 8399,
+        "output_tokens": 1742
+      },
+      "valid": false
+    },
+    {
+      "abstain": false,
+      "card_action_families": [
+        [
+          "complexa_mcts"
+        ],
+        [
+          "complexa_best_of_n"
+        ]
+      ],
+      "card_axes": [
+        [
+          "pLDDT"
+        ],
+        [
+          "pLDDT"
+        ]
+      ],
+      "card_config_delta_suggestions": [
+        {
+          "complexa_mcts": {
+            "beam_width": 8
+          }
+        },
+        {
+          "complexa_best_of_n": {
+            "nsamples": 8,
+            "nsteps": 400,
+            "replicas": 4
+          }
+        }
+      ],
+      "card_mode_affinities": [
+        {
+          "exploit": 0.1,
+          "explore": 0.2,
+          "rescue": 0.7
+        },
+        {
+          "exploit": 0.1,
+          "explore": 0.7,
+          "rescue": 0.2
+        }
+      ],
+      "case": "stalled_sc2rbd_like",
+      "confidence": 0.6,
+      "elapsed_s": 69.36,
+      "fail_reason": "schema_repaired:card[0]:unknown_evidence_refs:['result_or_route_id']; card[0]:filtered_unknown_evidence_refs,card[1]:filtered_unknown_evidence_refs",
+      "n_cards": 2,
+      "prompt_variant": "default",
+      "repeat": 1,
+      "temperature": 0.2,
+      "tick_id_int": 102,
+      "usage": {
+        "input_tokens": 8832,
+        "output_tokens": 1555
+      },
+      "valid": true
+    },
+    {
+      "abstain": false,
+      "card_action_families": [
+        [
+          "complexa_beam"
+        ]
+      ],
+      "card_axes": [
+        [
+          "iPAE",
+          "binder_scRMSD"
+        ]
+      ],
+      "card_config_delta_suggestions": [
+        {
+          "complexa_beam": {
+            "beam_width": 8
+          }
+        }
+      ],
+      "card_mode_affinities": [
+        {
+          "exploit": 0.1,
+          "explore": 0.2,
+          "rescue": 0.7
+        }
+      ],
+      "case": "ambiguous_cbago_like",
+      "confidence": 0.6,
+      "elapsed_s": 50.43,
+      "fail_reason": "schema_repaired:card[0]:unknown_evidence_refs:['result_or_route_id']; card[0]:filtered_unknown_evidence_refs",
+      "n_cards": 1,
+      "prompt_variant": "default",
+      "repeat": 1,
+      "temperature": 0.2,
+      "tick_id_int": 103,
+      "usage": {
+        "input_tokens": 7893,
+        "output_tokens": 1127
+      },
+      "valid": true
+    },
+    {
+      "abstain": false,
+      "card_action_families": [],
+      "card_axes": [],
+      "card_config_delta_suggestions": [],
+      "card_mode_affinities": [],
+      "case": "stalled_redundant_pdl1",
+      "confidence": 0.0,
+      "elapsed_s": 180.59,
+      "fail_reason": "call_error:APITimeoutError:Request timed out.",
+      "n_cards": 0,
+      "prompt_variant": "default",
+      "raw_excerpt": "",
+      "repeat": 1,
+      "temperature": 0.2,
+      "tick_id_int": 104,
+      "usage": {},
+      "valid": false
+    },
+    {
+      "abstain": false,
+      "card_action_families": [],
+      "card_axes": [],
+      "card_config_delta_suggestions": [],
+      "card_mode_affinities": [],
+      "case": "productive_cd45_like",
+      "confidence": 0.5,
+      "elapsed_s": 160.0,
+      "fail_reason": "schema_fail:missing_top:cards; repair_failed:missing_top:cards",
+      "n_cards": 0,
+      "prompt_variant": "default",
+      "raw_excerpt": "We are in a productive state with recent SU growth (6 live SU, +2 recent) and raw strict count 8. The route_values are empty, but we have a decent baseline. The diagnostic_driver_tldr is none, but we have axis_stats showing pLDDT median deficit 1.0 (so pLDDT is low), iPAE median deficit 0.05 (iPAE is okay), binder_scRMSD median deficit 0.3 (scRMSD okay). Since pLDDT is the limiting axis (deficit 1.0), we should focus on improving pLDDT.\n\nWe have available families: bindcraft, boltzgen, complexa_beam, complexa_best_of_n, complexa_fk_steering, complexa_mcts, proteinmpnn_redesign, structure_refilter.\n\nGiven the state is productive and recent SU is growing, we should exploit the current success by refining the current family (complexa_beam) that already produced some strict successes (6 strict yields). We can propose a hypothesis that continues with complexa_beam but with a tweak to improve pLDDT.\n\nWe need to propose 1-4 testable HypothesisCards. Each card must have:\n\n- claim: one-sentence testable claim\n- mode_affinity: exploit 0.1, rescue 0.7, explore 0.2 (since we are in a rescue-rich state? Actually we are productive, but pLDDT is low, so we need to rescue that axis. So rescue mode",
+      "repeat": 2,
+      "temperature": 0.2,
+      "tick_id_int": 200,
+      "usage": {
+        "input_tokens": 8659,
+        "output_tokens": 1563
+      },
+      "valid": false
+    },
+    {
+      "abstain": false,
+      "card_action_families": [],
+      "card_axes": [],
+      "card_config_delta_suggestions": [],
+      "card_mode_affinities": [],
+      "case": "rescue_rich_betv1_like",
+      "confidence": 0.0,
+      "elapsed_s": 180.49,
+      "fail_reason": "call_error:APITimeoutError:Request timed out.",
+      "n_cards": 0,
+      "prompt_variant": "default",
+      "raw_excerpt": "",
+      "repeat": 2,
+      "temperature": 0.2,
+      "tick_id_int": 201,
+      "usage": {},
+      "valid": false
+    },
+    {
+      "abstain": false,
+      "card_action_families": [
+        [
+          "complexa_mcts"
+        ]
+      ],
+      "card_axes": [
+        [
+          "pLDDT"
+        ]
+      ],
+      "card_config_delta_suggestions": [
+        {
+          "complexa_mcts": {
+            "reward_plddt_weight": 1.0,
+            "sc_scale_noise": 0.2
+          }
+        }
+      ],
+      "card_mode_affinities": [
+        {
+          "exploit": 0.1,
+          "explore": 0.2,
+          "rescue": 0.7
+        }
+      ],
+      "case": "stalled_sc2rbd_like",
+      "confidence": 0.6,
+      "elapsed_s": 175.68,
+      "fail_reason": "schema_repaired:card[0]:unknown_evidence_refs:['result_or_route_id']; card[0]:filtered_unknown_evidence_refs",
+      "n_cards": 1,
+      "prompt_variant": "default",
+      "repeat": 2,
+      "temperature": 0.2,
+      "tick_id_int": 202,
+      "usage": {
+        "input_tokens": 8832,
+        "output_tokens": 1911
+      },
+      "valid": true
+    },
+    {
+      "abstain": false,
+      "card_action_families": [
+        [
+          "complexa_beam"
+        ]
+      ],
+      "card_axes": [
+        [
+          "iPAE",
+          "pLDDT"
+        ]
+      ],
+      "card_config_delta_suggestions": [
+        {
+          "complexa_beam": {
+            "beam_width": 8
+          }
+        }
+      ],
+      "card_mode_affinities": [
+        {
+          "exploit": 0.1,
+          "explore": 0.2,
+          "rescue": 0.7
+        }
+      ],
+      "case": "ambiguous_cbago_like",
+      "confidence": 0.6,
+      "elapsed_s": 36.13,
+      "fail_reason": "schema_repaired:card[0]:unknown_evidence_refs:['result_or_route_id']; card[0]:filtered_unknown_evidence_refs",
+      "n_cards": 1,
+      "prompt_variant": "default",
+      "repeat": 2,
+      "temperature": 0.2,
+      "tick_id_int": 203,
+      "usage": {
+        "input_tokens": 7893,
+        "output_tokens": 812
+      },
+      "valid": true
+    },
+    {
+      "abstain": false,
+      "card_action_families": [
+        [
+          "complexa_beam"
+        ]
+      ],
+      "card_axes": [
+        [
+          "pLDDT",
+          "iPAE",
+          "binder_scRMSD"
+        ]
+      ],
+      "card_config_delta_suggestions": [
+        {
+          "complexa_beam": {
+            "beam_width": 8
+          }
+        }
+      ],
+      "card_mode_affinities": [
+        {
+          "exploit": 0.1,
+          "explore": 0.2,
+          "rescue": 0.7
+        }
+      ],
+      "case": "stalled_redundant_pdl1",
+      "confidence": 0.6,
+      "elapsed_s": 150.59,
+      "fail_reason": "schema_repaired:card[0]:unknown_evidence_refs:['result_or_route_id']; card[0]:filtered_unknown_evidence_refs",
+      "n_cards": 1,
+      "prompt_variant": "default",
+      "repeat": 2,
+      "temperature": 0.2,
+      "tick_id_int": 204,
+      "usage": {
+        "input_tokens": 8397,
+        "output_tokens": 1340
+      },
+      "valid": true
+    }
+  ],
+  "summary": {
+    "base_url": "http://127.0.0.1:12000/v1",
+    "confidence_max": 0.6,
+    "confidence_median": 0.6,
+    "confidence_min": 0.6,
+    "confidence_stdev": 0.0,
+    "median_latency_s": 132.11,
+    "model": "vllm/open-athena/Snowball-67B-A2B-5.7T-Mixed-RLVR-Step38",
+    "prompt_variant": "default",
+    "schema_version": "v7.3.3-reward-guard",
+    "total_calls": 15,
+    "valid_calls": 6,
+    "valid_rate": 0.4,
+    "wall_clock_s": 1764.9
+  }
+}

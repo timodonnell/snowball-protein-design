@@ -1,39 +1,42 @@
 {
-  "arm": "qwen",
+  "arm": "snowball",
   "roles": {
     "planner": {
       "n": 15,
-      "json_only": 15,
-      "schema_valid_before_repair": 13,
-      "timely_schema_valid": 13,
-      "late_http_responses": 0,
+      "json_only": 0,
+      "schema_valid_before_repair": 1,
+      "timely_schema_valid": 1,
+      "late_http_responses": 8,
       "abstaining_primary_responses": 0,
-      "schema_valid_nonabstaining_with_items": 13,
+      "schema_valid_nonabstaining_with_items": 1,
       "schema_failure_reasons": {
-        "card[0].predicted[0]:bad_abs_delta": 1,
-        "card[2]:unknown_evidence_refs:['family_role_table']": 1
+        "missing_top:cards": 9,
+        "card[0]:unknown_evidence_refs:['result_or_route_id']": 4,
+        "parse_fail": 1
       },
-      "length_terminated": 0,
-      "all_configs_valid": 15,
-      "schema_and_configs_valid": 13
+      "length_terminated": 5,
+      "all_configs_valid": 3,
+      "schema_and_configs_valid": 0
     },
     "supervisor": {
       "n": 12,
-      "json_only": 12,
-      "schema_valid_before_repair": 12,
-      "timely_schema_valid": 12,
+      "json_only": 0,
+      "schema_valid_before_repair": 6,
+      "timely_schema_valid": 6,
       "late_http_responses": 0,
-      "abstaining_primary_responses": 0,
-      "schema_valid_nonabstaining_with_items": 12,
-      "schema_failure_reasons": {},
+      "abstaining_primary_responses": 3,
+      "schema_valid_nonabstaining_with_items": 3,
+      "schema_failure_reasons": {
+        "missing_top:mode_mixture": 6
+      },
       "length_terminated": 0,
       "primary_responses_using_native_defaults": 12,
-      "mixture_aligned_schema_valid_primary": 12
+      "mixture_aligned_schema_valid_primary": 3
     }
   },
-  "n_http_calls": 27,
+  "n_http_calls": 35,
   "n_model_repair_retries": 0,
-  "n_sdk_retries": 0,
+  "n_sdk_retries": 8,
   "matched_prompt_sha256": [
     "08590e623ea2a7cfdf57c2bf2a25d15fac124c61618116ff103f324472167af0",
     "0d4ce3f8dff9e8c7347313c50ff30d82d6a0b2c1e432ef480e3554789fc6fcf5",
@@ -45,5 +48,5 @@
     "edcc1025fb4a7315ac7c28052018ac810d455c4465e1956b85ea6a4c1f955514",
     "ee0ce0ff4360d0cfb3c9a16ea5a4117a178b52ff9230678674d09dc5cdd33ebd"
   ],
-  "excluded_nonfixture_calls": 80
+  "excluded_nonfixture_calls": 0
 }

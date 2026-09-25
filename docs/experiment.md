@@ -19,6 +19,10 @@
 - Fixed evidence checks: five Planner and four Supervisor cases × three repeats
   per model. Set output limit 3072 and Planner temperature 0.2 explicitly:
   benchmark CLI defaults differ from the production campaign defaults.
+- Upstream fixed-check runners set the confidence threshold to zero to expose
+  schema-valid responses. Production uses 0.55 in both roles. A valid fixed-case
+  response may therefore abstain, rank nothing, or fail the production confidence
+  gate; fixed validity is not equivalent to an actionable live decision.
 - Qwen's checkpoint supplies top-k 20/top-p 0.95; Snowball's supplies neither.
   Set the Snowball server's generation overrides to top-k 20/top-p 0.95 to match
   the baseline, preserving each tokenizer's native EOS IDs. No prompt truncation

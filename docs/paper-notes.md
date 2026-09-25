@@ -24,6 +24,19 @@ Supplement D.3.1/Table S15). Selection fallback has a separate denominator:
 Comparisons must distinguish raw JSON validity, schema repair, semantic reference
 validity, abstention, skipped calls, deterministic candidates and actual starts.
 
+The authors explicitly state that their PUCT/epsilon-greedy comparisons evaluate
+complete allocation policies, not the isolated contribution of LLM reasoning
+(Supplement B.5). Candidate proposal and deterministic supplementation differ
+between policies. Controller development also used some primary-panel targets;
+"target-independent" refers to shared runtime rules, not a disjoint development
+test split (B.4). Both points matter when designing a future Snowball RL benchmark.
+
+The supplement separately charges the full dedicated LLM-server reservation in
+a compute sensitivity (D.1.3). Summed call latency is not the added campaign delay:
+workers can run concurrently, while slow decisions can also leave them idle.
+Our reports therefore retain worker-wall, recorded worker compute, and LLM
+serving/allocation costs as different quantities.
+
 Serving settings (Supplement C.5.1): Qwen3.6-27B-FP8, 65,536-token context,
 GPU memory fraction 0.90, thinking disabled; maximum output 3,072 tokens;
 90-second call timeout, one OpenAI SDK retry; Planner temperature 0.2,

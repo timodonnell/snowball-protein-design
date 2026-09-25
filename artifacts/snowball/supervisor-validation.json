@@ -1,0 +1,420 @@
+{
+  "records": [
+    {
+      "abstain": false,
+      "case": "productive_cd45_like",
+      "confidence": 0.5,
+      "decisions_per_mode": {
+        "exploit": 0,
+        "explore": 0,
+        "rescue": 0
+      },
+      "elapsed_s": 75.38,
+      "fail_reason": "schema_fail:missing_top:mode_mixture",
+      "mixture_assessment": {
+        "all_ok": false,
+        "reason": "no_valid_mixture"
+      },
+      "mode_mixture": {},
+      "n_candidates_in": 3,
+      "n_decisions": 0,
+      "raw_excerpt": "We are in a productive state with recent SU gain of +2 in 6 completed worker-GPU-hours (0.17 SU/GPU-h). The top_bin_share is 0.4 (below collapse threshold of 0.5), so we are not in mode-collapse. The diagnostic_driver_tldr is \"none\", and there's no strong duplicate collapse signal. The method_health for complexa_beam shows 6 strict yields (all from the same family) and 20 raw artifacts, but no recent SU/GPU-h (chained_su_per_gpu_h_recent is null). The proteinmpnn_redesign and structure_refilter are diagnostic-only (outputs_diagnostic_only: true for p2_002, false for p2_003) and parent_result_id is tick_010 (the current tick). Given the evidence, we should continue exploiting the current productive route while keeping a small explore component for safety.\n\nWe have three candidates:\n- cand_hyp_p1_001: complexa_beam, direct official strict metrics, parent tick_010, with evidence tick_010. This is a direct continuation of the current productive route.\n- cand_hyp_p2_002: proteinmpnn_redesign, diagnostic-only, parent tick_010. This is a diagnostic probe, not a direct launchable.\n- cand_hyp_p2_003: structure_refilter, direct official strict metrics, parent tick_010. This is also a direct ",
+      "repeat": 0,
+      "resources_used": [],
+      "state": "productive",
+      "usage": {
+        "input_tokens": 4700,
+        "output_tokens": 1650
+      },
+      "valid": false
+    },
+    {
+      "abstain": true,
+      "case": "rescue_rich_betv1_like",
+      "confidence": 0.5,
+      "decisions_per_mode": {
+        "exploit": 0,
+        "explore": 0,
+        "rescue": 0
+      },
+      "elapsed_s": 41.11,
+      "fail_reason": "abstain",
+      "mixture_assessment": {
+        "all_ok": false,
+        "checks": {
+          "rescue_min": false
+        },
+        "normalized_mixture": {
+          "exploit": 0.1,
+          "explore": 0.7,
+          "rescue": 0.2
+        }
+      },
+      "mode_mixture": {
+        "exploit": 0.1,
+        "explore": 0.7,
+        "rescue": 0.2
+      },
+      "n_candidates_in": 1,
+      "n_decisions": 0,
+      "repeat": 0,
+      "resources_used": [],
+      "state": "rescue_rich",
+      "usage": {
+        "input_tokens": 3963,
+        "output_tokens": 937
+      },
+      "valid": true
+    },
+    {
+      "abstain": false,
+      "case": "stalled_sc2rbd_like",
+      "confidence": 0.5,
+      "decisions_per_mode": {
+        "exploit": 0,
+        "explore": 0,
+        "rescue": 0
+      },
+      "elapsed_s": 57.5,
+      "fail_reason": "schema_fail:missing_top:mode_mixture",
+      "mixture_assessment": {
+        "all_ok": false,
+        "reason": "no_valid_mixture"
+      },
+      "mode_mixture": {},
+      "n_candidates_in": 2,
+      "n_decisions": 0,
+      "raw_excerpt": "We are in a stalled state with top_bin_share=0.80 (collapse>=0.5) and no recent SU/GPU-h. The mode_mixture guidance says: state=stalled: recommended exploit <=0.35; rescue >=0.25; explore >=0.25. Since collapse is high, we should push explore upward beyond the guidance to break the collapse. We'll set mode_mixture accordingly: explore dominant, with some rescue and a tiny exploit.\n\nWe have two candidates: cand_hyp_s1_001 (boltzgen) and cand_hyp_s1_002 (bindcraft). Both are diagnostic-only and parent_result_id=tick_015 (the current tick). Since we are in collapse, we should prioritize explore. We'll assign both to explore mode, but we need to rank them? The candidates are both diagnostic and not showing recent progress. We'll give them both a global_rank but we must ensure we don't duplicate. Since we are in explore mode, we can give both a rank_in_mode (1 and 2) and global_rank 1 and 2? But we must be careful: we are only allowed to have each candidate_id in at most one mode. Since we are putting both in explore, that's fine.\n\nWe'll set mode_mixture: explore=0.7, rescue=0.2, exploit=0.1 (summing to 1.0). We'll create candidate_decisions for both with appropriate reasoning.\n\nWe need",
+      "repeat": 0,
+      "resources_used": [],
+      "state": "stalled",
+      "usage": {
+        "input_tokens": 4580,
+        "output_tokens": 1285
+      },
+      "valid": false
+    },
+    {
+      "abstain": false,
+      "case": "stalled_redundant_pdl1",
+      "confidence": 0.5,
+      "decisions_per_mode": {
+        "exploit": 0,
+        "explore": 1,
+        "rescue": 0
+      },
+      "elapsed_s": 40.82,
+      "fail_reason": null,
+      "mixture_assessment": {
+        "all_ok": true,
+        "checks": {
+          "explore_min": true
+        },
+        "normalized_mixture": {
+          "exploit": 0.1,
+          "explore": 0.7,
+          "rescue": 0.2
+        }
+      },
+      "mode_mixture": {
+        "exploit": 0.1,
+        "explore": 0.7,
+        "rescue": 0.2
+      },
+      "n_candidates_in": 1,
+      "n_decisions": 1,
+      "repeat": 0,
+      "resources_used": [
+        "standard"
+      ],
+      "state": "stalled",
+      "usage": {
+        "input_tokens": 3973,
+        "output_tokens": 923
+      },
+      "valid": true
+    },
+    {
+      "abstain": false,
+      "case": "productive_cd45_like",
+      "confidence": 0.5,
+      "decisions_per_mode": {
+        "exploit": 0,
+        "explore": 0,
+        "rescue": 0
+      },
+      "elapsed_s": 73.49,
+      "fail_reason": "schema_fail:missing_top:mode_mixture",
+      "mixture_assessment": {
+        "all_ok": false,
+        "reason": "no_valid_mixture"
+      },
+      "mode_mixture": {},
+      "n_candidates_in": 3,
+      "n_decisions": 0,
+      "raw_excerpt": "We are in a productive state with recent SU gain of +2 in 6 completed worker-GPU-hours (0.17 SU/GPU-h). The top_bin_share is 0.4 (below collapse threshold of 0.5), so we are not in mode-collapse. The diagnostic_driver_tldr is \"none\", and there's no strong duplicate collapse signal. The method_health for complexa_beam shows 6 strict yields (all from the same family) and 20 raw artifacts, but no recent SU/GPU-h (chained_su_per_gpu_h_recent is null). The proteinmpnn_redesign and structure_refilter are diagnostic-only (outputs_diagnostic_only: true for p2_002, false for p2_003) and parent_result_id is tick_010 (the current tick). Given the evidence, we should continue exploiting the current productive route while keeping a small explore component for safety.\n\nWe have three candidates:\n- cand_hyp_p1_001: complexa_beam, direct official strict metrics, parent tick_010, with evidence tick_010. This is a direct continuation of the current productive route.\n- cand_hyp_p2_002: proteinmpnn_redesign, diagnostic-only, parent tick_010. This is a diagnostic probe, not a direct launchable.\n- cand_hyp_p2_003: structure_refilter, direct official strict metrics, parent tick_010. This is also a direct ",
+      "repeat": 1,
+      "resources_used": [],
+      "state": "productive",
+      "usage": {
+        "input_tokens": 4700,
+        "output_tokens": 1650
+      },
+      "valid": false
+    },
+    {
+      "abstain": true,
+      "case": "rescue_rich_betv1_like",
+      "confidence": 0.5,
+      "decisions_per_mode": {
+        "exploit": 0,
+        "explore": 0,
+        "rescue": 0
+      },
+      "elapsed_s": 41.08,
+      "fail_reason": "abstain",
+      "mixture_assessment": {
+        "all_ok": false,
+        "checks": {
+          "rescue_min": false
+        },
+        "normalized_mixture": {
+          "exploit": 0.1,
+          "explore": 0.7,
+          "rescue": 0.2
+        }
+      },
+      "mode_mixture": {
+        "exploit": 0.1,
+        "explore": 0.7,
+        "rescue": 0.2
+      },
+      "n_candidates_in": 1,
+      "n_decisions": 0,
+      "repeat": 1,
+      "resources_used": [],
+      "state": "rescue_rich",
+      "usage": {
+        "input_tokens": 3963,
+        "output_tokens": 937
+      },
+      "valid": true
+    },
+    {
+      "abstain": false,
+      "case": "stalled_sc2rbd_like",
+      "confidence": 0.5,
+      "decisions_per_mode": {
+        "exploit": 0,
+        "explore": 0,
+        "rescue": 0
+      },
+      "elapsed_s": 57.17,
+      "fail_reason": "schema_fail:missing_top:mode_mixture",
+      "mixture_assessment": {
+        "all_ok": false,
+        "reason": "no_valid_mixture"
+      },
+      "mode_mixture": {},
+      "n_candidates_in": 2,
+      "n_decisions": 0,
+      "raw_excerpt": "We are in a stalled state with top_bin_share=0.80 (collapse>=0.5) and no recent SU/GPU-h. The mode_mixture guidance says: state=stalled: recommended exploit <=0.35; rescue >=0.25; explore >=0.25. Since collapse is high, we should push explore upward beyond the guidance to break the collapse. We'll set mode_mixture accordingly: explore dominant, with some rescue and a tiny exploit.\n\nWe have two candidates: cand_hyp_s1_001 (boltzgen) and cand_hyp_s1_002 (bindcraft). Both are diagnostic-only and parent_result_id=tick_015 (the current tick). Since we are in collapse, we should prioritize explore. We'll assign both to explore mode, but we need to rank them? The candidates are both diagnostic and not showing recent progress. We'll give them both a global_rank but we must ensure we don't duplicate. Since we are in explore mode, we can give both a rank_in_mode (1 and 2) and global_rank 1 and 2? But we must be careful: we are only allowed to have each candidate_id in at most one mode. Since we are putting both in explore, that's fine.\n\nWe'll set mode_mixture: explore=0.7, rescue=0.2, exploit=0.1 (summing to 1.0). We'll create candidate_decisions for both with appropriate reasoning.\n\nWe need",
+      "repeat": 1,
+      "resources_used": [],
+      "state": "stalled",
+      "usage": {
+        "input_tokens": 4580,
+        "output_tokens": 1285
+      },
+      "valid": false
+    },
+    {
+      "abstain": false,
+      "case": "stalled_redundant_pdl1",
+      "confidence": 0.5,
+      "decisions_per_mode": {
+        "exploit": 0,
+        "explore": 1,
+        "rescue": 0
+      },
+      "elapsed_s": 40.37,
+      "fail_reason": null,
+      "mixture_assessment": {
+        "all_ok": true,
+        "checks": {
+          "explore_min": true
+        },
+        "normalized_mixture": {
+          "exploit": 0.1,
+          "explore": 0.7,
+          "rescue": 0.2
+        }
+      },
+      "mode_mixture": {
+        "exploit": 0.1,
+        "explore": 0.7,
+        "rescue": 0.2
+      },
+      "n_candidates_in": 1,
+      "n_decisions": 1,
+      "repeat": 1,
+      "resources_used": [
+        "standard"
+      ],
+      "state": "stalled",
+      "usage": {
+        "input_tokens": 3973,
+        "output_tokens": 923
+      },
+      "valid": true
+    },
+    {
+      "abstain": false,
+      "case": "productive_cd45_like",
+      "confidence": 0.5,
+      "decisions_per_mode": {
+        "exploit": 0,
+        "explore": 0,
+        "rescue": 0
+      },
+      "elapsed_s": 73.68,
+      "fail_reason": "schema_fail:missing_top:mode_mixture",
+      "mixture_assessment": {
+        "all_ok": false,
+        "reason": "no_valid_mixture"
+      },
+      "mode_mixture": {},
+      "n_candidates_in": 3,
+      "n_decisions": 0,
+      "raw_excerpt": "We are in a productive state with recent SU gain of +2 in 6 completed worker-GPU-hours (0.17 SU/GPU-h). The top_bin_share is 0.4 (below collapse threshold of 0.5), so we are not in mode-collapse. The diagnostic_driver_tldr is \"none\", and there's no strong duplicate collapse signal. The method_health for complexa_beam shows 6 strict yields (all from the same family) and 20 raw artifacts, but no recent SU/GPU-h (chained_su_per_gpu_h_recent is null). The proteinmpnn_redesign and structure_refilter are diagnostic-only (outputs_diagnostic_only: true for p2_002, false for p2_003) and parent_result_id is tick_010 (the current tick). Given the evidence, we should continue exploiting the current productive route while keeping a small explore component for safety.\n\nWe have three candidates:\n- cand_hyp_p1_001: complexa_beam, direct official strict metrics, parent tick_010, with evidence tick_010. This is a direct continuation of the current productive route.\n- cand_hyp_p2_002: proteinmpnn_redesign, diagnostic-only, parent tick_010. This is a diagnostic probe, not a direct launchable.\n- cand_hyp_p2_003: structure_refilter, direct official strict metrics, parent tick_010. This is also a direct ",
+      "repeat": 2,
+      "resources_used": [],
+      "state": "productive",
+      "usage": {
+        "input_tokens": 4700,
+        "output_tokens": 1650
+      },
+      "valid": false
+    },
+    {
+      "abstain": true,
+      "case": "rescue_rich_betv1_like",
+      "confidence": 0.5,
+      "decisions_per_mode": {
+        "exploit": 0,
+        "explore": 0,
+        "rescue": 0
+      },
+      "elapsed_s": 41.36,
+      "fail_reason": "abstain",
+      "mixture_assessment": {
+        "all_ok": false,
+        "checks": {
+          "rescue_min": false
+        },
+        "normalized_mixture": {
+          "exploit": 0.1,
+          "explore": 0.7,
+          "rescue": 0.2
+        }
+      },
+      "mode_mixture": {
+        "exploit": 0.1,
+        "explore": 0.7,
+        "rescue": 0.2
+      },
+      "n_candidates_in": 1,
+      "n_decisions": 0,
+      "repeat": 2,
+      "resources_used": [],
+      "state": "rescue_rich",
+      "usage": {
+        "input_tokens": 3963,
+        "output_tokens": 937
+      },
+      "valid": true
+    },
+    {
+      "abstain": false,
+      "case": "stalled_sc2rbd_like",
+      "confidence": 0.5,
+      "decisions_per_mode": {
+        "exploit": 0,
+        "explore": 0,
+        "rescue": 0
+      },
+      "elapsed_s": 58.42,
+      "fail_reason": "schema_fail:missing_top:mode_mixture",
+      "mixture_assessment": {
+        "all_ok": false,
+        "reason": "no_valid_mixture"
+      },
+      "mode_mixture": {},
+      "n_candidates_in": 2,
+      "n_decisions": 0,
+      "raw_excerpt": "We are in a stalled state with top_bin_share=0.80 (collapse>=0.5) and no recent SU/GPU-h. The mode_mixture guidance says: state=stalled: recommended exploit <=0.35; rescue >=0.25; explore >=0.25. Since collapse is high, we should push explore upward beyond the guidance to break the collapse. We'll set mode_mixture accordingly: explore dominant, with some rescue and a tiny exploit.\n\nWe have two candidates: cand_hyp_s1_001 (boltzgen) and cand_hyp_s1_002 (bindcraft). Both are diagnostic-only and parent_result_id=tick_015 (the current tick). Since we are in collapse, we should prioritize explore. We'll assign both to explore mode, but we need to rank them? The candidates are both diagnostic and not showing recent progress. We'll give them both a global_rank but we must ensure we don't duplicate. Since we are in explore mode, we can give both a rank_in_mode (1 and 2) and global_rank 1 and 2? But we must be careful: we are only allowed to have each candidate_id in at most one mode. Since we are putting both in explore, that's fine.\n\nWe'll set mode_mixture: explore=0.7, rescue=0.2, exploit=0.1 (summing to 1.0). We'll create candidate_decisions for both with appropriate reasoning.\n\nWe need",
+      "repeat": 2,
+      "resources_used": [],
+      "state": "stalled",
+      "usage": {
+        "input_tokens": 4580,
+        "output_tokens": 1285
+      },
+      "valid": false
+    },
+    {
+      "abstain": false,
+      "case": "stalled_redundant_pdl1",
+      "confidence": 0.5,
+      "decisions_per_mode": {
+        "exploit": 0,
+        "explore": 1,
+        "rescue": 0
+      },
+      "elapsed_s": 40.7,
+      "fail_reason": null,
+      "mixture_assessment": {
+        "all_ok": true,
+        "checks": {
+          "explore_min": true
+        },
+        "normalized_mixture": {
+          "exploit": 0.1,
+          "explore": 0.7,
+          "rescue": 0.2
+        }
+      },
+      "mode_mixture": {
+        "exploit": 0.1,
+        "explore": 0.7,
+        "rescue": 0.2
+      },
+      "n_candidates_in": 1,
+      "n_decisions": 1,
+      "repeat": 2,
+      "resources_used": [
+        "standard"
+      ],
+      "state": "stalled",
+      "usage": {
+        "input_tokens": 3973,
+        "output_tokens": 923
+      },
+      "valid": true
+    }
+  ],
+  "summary": {
+    "base_url": "http://127.0.0.1:12000/v1",
+    "confidence_max": 0.5,
+    "confidence_median": 0.5,
+    "confidence_min": 0.5,
+    "median_latency_s": 49.265,
+    "mixture_aligned_with_state_rate": 0.5,
+    "model": "vllm/open-athena/Snowball-67B-A2B-5.7T-Mixed-RLVR-Step38",
+    "schema_version": "v7.3.3-reward-guard",
+    "total_calls": 12,
+    "valid_calls": 6,
+    "valid_rate": 0.5,
+    "wall_clock_s": 641.1
+  }
+}

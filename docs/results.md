@@ -1,6 +1,6 @@
 # Pilot results — 25 September 2026
 
-**In progress: Qwen is complete; Snowball is running.** The final comparison will
+**In progress: Qwen and both fixed-check suites are complete; Snowball's molecular campaign is running.** The final comparison will
 replace this notice. Both arms use the same PD-L1 crop, seed, five enabled action
 families, one-hour budget and two H100 molecular workers. See
 [protocol](experiment.md) and [failures](issues.md).
@@ -44,7 +44,44 @@ Its scored descendant `b365f28499eb5425` passed at pLDDT 95.000, iPAE 0.14757 an
 scRMSD 1.222Å. This is a candidate for reviewing an evidence-to-action training
 example, not proof that the LLM caused the improvement.
 
-## Qwen interface behavior
+## Same-prompt interface comparison
+
+All nine original prompt hashes match across models; each fixture was repeated
+three times. These checks use the native extractors/validators and a zero
+confidence threshold, unlike the live threshold of 0.55.
+
+| Fixed-check measurement | Qwen | Snowball |
+|---|---:|---:|
+| Planner first reply is JSON only | 15/15 | 0/15 |
+| Planner extracted schema passes before explicit repair | 13/15 | 1/15 |
+| Planner first schema **and** configuration checks pass | 13/15 | 0/15 |
+| Planner final native acceptance | 15/15 | 6/15 |
+| Supervisor first reply is JSON only | 12/12 | 0/12 |
+| Supervisor extracted schema / final native acceptance | 12/12 | 6/12 |
+| Supervisor final valid, non-abstaining, with ranked candidates | 12/12 | 3/12 |
+| Supervisor final mode mixture meets fixture expectations | 12/12 | 3/12 |
+| Supervisor valid, ranked, non-abstaining and confidence ≥0.55 | 9/12 | 0/12 |
+| Median logical Planner call, including retries | 24.56s | 132.11s |
+| Median logical Supervisor call | 9.915s | 49.265s |
+
+Snowball's accepted replies required extraction from surrounding prose. Five of
+its six accepted Planner calls also needed placeholder evidence-reference
+repair. The one extracted first-response Planner object passing schema supplied
+an unsupported MCTS parameter. All six accepted Snowball Supervisor replies
+omitted confidence, receiving the native default 0.5; three also abstained.
+Three Qwen Supervisor replies omitted confidence/abstention fields too, using
+native defaults. "Schema passes" here means the native validator, including its
+built-in defaults, before explicit schema-field repair.
+
+Snowball made 35 HTTP attempts for 27 logical calls (eight SDK retries), with
+eight length-terminated responses and no JSON-only responses. All eventually
+returned HTTP 200 through the diagnostic recorder, but four logical Planner
+calls timed out; late HTTP success does not imply controller success. Eight
+first Planner responses took at least 90 seconds. Model-format errors also
+occurred in responses that finished on time. The recorder's late-response
+behavior and differing serving stacks limit latency interpretation (I014).
+
+## Qwen live interface behavior
 
 On identical fixed fixtures, Qwen passed 13/15 Planner responses before repair
 and 15/15 after deterministic repair. Supervisor passed 12/12 first responses.
