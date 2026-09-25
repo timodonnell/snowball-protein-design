@@ -1,0 +1,38 @@
+{
+  "arm": "qwen",
+  "roles": {
+    "planner": {
+      "n": 15,
+      "json_only": 15,
+      "schema_valid_before_repair": 13,
+      "schema_failure_reasons": {
+        "card[0].predicted[0]:bad_abs_delta": 1,
+        "card[2]:unknown_evidence_refs:['family_role_table']": 1
+      },
+      "length_terminated": 0,
+      "all_configs_valid": 15,
+      "schema_and_configs_valid": 13
+    },
+    "supervisor": {
+      "n": 12,
+      "json_only": 12,
+      "schema_valid_before_repair": 12,
+      "schema_failure_reasons": {},
+      "length_terminated": 0
+    }
+  },
+  "n_http_calls": 27,
+  "n_model_repair_retries": 0,
+  "matched_prompt_sha256": [
+    "08590e623ea2a7cfdf57c2bf2a25d15fac124c61618116ff103f324472167af0",
+    "0d4ce3f8dff9e8c7347313c50ff30d82d6a0b2c1e432ef480e3554789fc6fcf5",
+    "3ec8add1f7758dd9630cd97f41f51cf31352ce8249c045410ccafc565192df7f",
+    "9f1cbbbe6c221bcd23724259c798eb0ba1443bd90177c5cd4cbe5bfee194efff",
+    "a601604c1b9d0df24c1b1483d0ad3dc5ff9d9239de0b24b1946c4b85dc8bd730",
+    "a74dad04f00b490429b5b988c373d88cafa3b6740ccb3d9b5e778b1b7061c902",
+    "bf1858f256cb346e4831ad81048b0cfb992d94e21907e418aebd719b42d94f33",
+    "edcc1025fb4a7315ac7c28052018ac810d455c4465e1956b85ea6a4c1f955514",
+    "ee0ce0ff4360d0cfb3c9a16ea5a4117a178b52ff9230678674d09dc5cdd33ebd"
+  ],
+  "excluded_nonfixture_calls": 32
+}

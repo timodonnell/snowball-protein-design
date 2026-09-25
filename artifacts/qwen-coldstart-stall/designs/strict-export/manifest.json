@@ -1,0 +1,30 @@
+{
+  "schema_version": "trex.best-n-manifest.v1",
+  "archive_root": "/work/results/qwen-coldstart-stall/campaign",
+  "target_id": "32_PDL1_ALPHA_REPACK",
+  "diagnostics": {
+    "target_id": "32_PDL1_ALPHA_REPACK",
+    "n_results": 16,
+    "n_strict_with_structure": 0,
+    "n_unresolved_output_identity": 4,
+    "foldseek_su_status": "disabled",
+    "sequence_dedup_status": "disabled",
+    "n_requested": 16,
+    "n_exported": 0,
+    "n_pdbs_copied": 0,
+    "n_pdbs_missing_source": 0,
+    "distinct_structure_bins": 0,
+    "family_counts": {},
+    "settings": {
+      "ranking": "production_quality_descending_then_result_id",
+      "su_tm_score": 0.6,
+      "sequence_identity": 0.9,
+      "sequence_coverage": 0.8,
+      "annotate_dedup": true,
+      "require_structure_artifact": true,
+      "copy_structures": true,
+      "overwrite": false
+    }
+  },
+  "designs": []
+}

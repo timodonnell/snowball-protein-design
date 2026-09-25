@@ -13,12 +13,9 @@ run:
   - '2'
   - '3'
   enabled_families:
-  - bindcraft
-  - boltzgen
   - complexa_beam
   - complexa_best_of_n
   - complexa_fk_steering
-  - complexa_mcts
   - proteinmpnn_redesign
   - structure_refilter
 llm:

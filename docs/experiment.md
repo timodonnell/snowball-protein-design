@@ -14,11 +14,16 @@
   model latency/tokens, backend completion, canonical AF2 success and diversity.
 - Keep model inference GPU cost separate from molecular worker GPU cost.
 - Initial matched pilot: one hour, two worker GPUs (2 and 3), campaign seed 0,
-  all upstream families, no cross-campaign memory. Qwen uses GPU 0; Snowball
+  five deadline-compatible families, no cross-campaign memory. Qwen uses GPU 0; Snowball
   uses GPUs 0 and 1 with DP=2, EP enabled, TP=1. Its fork rejects TP>1.
 - Fixed evidence checks: five Planner and four Supervisor cases × three repeats
   per model. Set output limit 3072 and Planner temperature 0.2 explicitly:
   benchmark CLI defaults differ from the production campaign defaults.
+- Qwen's checkpoint supplies top-k 20/top-p 0.95; Snowball's supplies neither.
+  Set the Snowball server's generation overrides to top-k 20/top-p 0.95 to match
+  the baseline, preserving each tokenizer's native EOS IDs. No prompt truncation
+  or extra JSON enforcement is applied to either arm. `PYTHONHASHSEED=0` fixes
+  Python set iteration order in the fixed-case prompts.
 - Replay common evidence through both models to separate decision quality from
   stochastic campaign trajectories, if feasible after molecular smoke.
 - Persist exact inputs and outputs for potential SFT and verifiable RL examples;
@@ -48,3 +53,24 @@ BoltzGen, four Complexa sampling families, ProteinMPNN redesign and AF2 refilter
 The supported deployment is Slurm; an existing OpenAI-compatible endpoint permits
 direct `trex design` execution on Kubernetes. It uses separate incompatible
 Python environments for serving, Complexa, BindCraft and BoltzGen.
+
+## Pilot adjustment after actual execution
+
+The initial all-family baseline generated 16 Complexa records but then stalled.
+With a one-hour budget, BindCraft (2.5h prior), BoltzGen (2h), and MCTS (1h plus
+drain margin) cannot be admitted. The cold-start builder returns missing
+warm-start families before considering Planner hypotheses; infeasible seeds can
+therefore suppress all subsequent jobs when no result qualifies as a recipe.
+This was reproduced in the live baseline and is preserved as
+`qwen-coldstart-stall`. The earlier missing-system-library attempt is preserved
+as `qwen-install-failure`. Neither belongs in the matched comparison.
+
+Both matched arms now enable Complexa beam, best-of-N, FK steering, ProteinMPNN
+redesign, and canonical structure refilter. The original all-family YAMLs are
+retained. Fixed-evidence checks still expose the full native action space. This
+is a short-budget configuration of unmodified T-REX, not a full benchmark run.
+
+The controller's one-hour clock starts after startup/preflight and may be followed
+by up to ten minutes of drain per busy worker. We retain timestamps and recompute
+endpoint exports from the complete archive after drain; the upstream summary's
+last evidence tick alone can omit late results.

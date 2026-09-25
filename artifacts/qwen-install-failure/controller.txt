@@ -1,0 +1,227 @@
+{"case": "productive_cd45_like", "valid": true, "confidence": 0.75, "n_cards": 2, "fail_reason": null, "elapsed_s": 26.42}
+{"case": "rescue_rich_betv1_like", "valid": true, "confidence": 0.55, "n_cards": 3, "fail_reason": null, "elapsed_s": 25.63}
+{"case": "stalled_sc2rbd_like", "valid": true, "confidence": 0.5, "n_cards": 3, "fail_reason": null, "elapsed_s": 23.86}
+{"case": "ambiguous_cbago_like", "valid": true, "confidence": 0.5, "n_cards": 4, "fail_reason": null, "elapsed_s": 24.56}
+{"case": "stalled_redundant_pdl1", "valid": true, "confidence": 0.5, "n_cards": 3, "fail_reason": "schema_repaired:card[0].predicted[0]:bad_abs_delta; card[0].predicted[0]:dropped_zero_abs_delta,card[0].predicted[0]:defaulted_threshold_after_abs_delta_drop,card[1].predicted[0]:dropped_zero_abs_delta,card[1].predicted[0]:defaulted_threshold_after_abs_delta_drop,card[2].predicted[0]:dropped_zero_abs_delta,card[2].predicted[0]:defaulted_threshold_after_abs_delta_drop", "elapsed_s": 24.19}
+{"case": "productive_cd45_like", "valid": true, "confidence": 0.75, "n_cards": 3, "fail_reason": null, "elapsed_s": 27.62}
+{"case": "rescue_rich_betv1_like", "valid": true, "confidence": 0.75, "n_cards": 3, "fail_reason": null, "elapsed_s": 27.14}
+{"case": "stalled_sc2rbd_like", "valid": true, "confidence": 0.5, "n_cards": 3, "fail_reason": null, "elapsed_s": 23.17}
+{"case": "ambiguous_cbago_like", "valid": true, "confidence": 0.5, "n_cards": 3, "fail_reason": "schema_repaired:card[2]:unknown_evidence_refs:['family_role_table']; card[2]:filtered_unknown_evidence_refs,card[2].predicted[0]:dropped_zero_abs_delta,card[2].predicted[0]:defaulted_threshold_after_abs_delta_drop", "elapsed_s": 19.83}
+{"case": "stalled_redundant_pdl1", "valid": true, "confidence": 0.5, "n_cards": 3, "fail_reason": null, "elapsed_s": 24.48}
+{"case": "productive_cd45_like", "valid": true, "confidence": 0.75, "n_cards": 3, "fail_reason": null, "elapsed_s": 24.8}
+{"case": "rescue_rich_betv1_like", "valid": true, "confidence": 0.65, "n_cards": 3, "fail_reason": null, "elapsed_s": 26.75}
+{"case": "stalled_sc2rbd_like", "valid": true, "confidence": 0.5, "n_cards": 2, "fail_reason": null, "elapsed_s": 16.97}
+{"case": "ambiguous_cbago_like", "valid": true, "confidence": 0.5, "n_cards": 4, "fail_reason": null, "elapsed_s": 23.69}
+{"case": "stalled_redundant_pdl1", "valid": true, "confidence": 0.5, "n_cards": 4, "fail_reason": null, "elapsed_s": 28.97}
+{
+  "base_url": "http://127.0.0.1:12000/v1",
+  "confidence_max": 0.75,
+  "confidence_median": 0.5,
+  "confidence_min": 0.5,
+  "confidence_stdev": 0.10923979738782626,
+  "median_latency_s": 24.56,
+  "model": "vllm/Qwen/Qwen3.6-27B-FP8",
+  "prompt_variant": "default",
+  "schema_version": "v7.3.3-reward-guard",
+  "total_calls": 15,
+  "valid_calls": 15,
+  "valid_rate": 1.0,
+  "wall_clock_s": 368.1
+}
+{"case": "productive_cd45_like", "valid": true, "confidence": 0.7, "n_decisions": 3, "mode_mixture": {"rescue": 0.25, "explore": 0.15, "exploit": 0.6}, "fail_reason": null, "elapsed_s": 16.89}
+{"case": "rescue_rich_betv1_like", "valid": true, "confidence": 0.65, "n_decisions": 1, "mode_mixture": {"rescue": 0.5, "explore": 0.4, "exploit": 0.1}, "fail_reason": null, "elapsed_s": 7.67}
+{"case": "stalled_sc2rbd_like", "valid": true, "confidence": 0.5, "n_decisions": 2, "mode_mixture": {"rescue": 0.2, "explore": 0.7, "exploit": 0.1}, "fail_reason": null, "elapsed_s": 12.11}
+{"case": "stalled_redundant_pdl1", "valid": true, "confidence": 0.7, "n_decisions": 1, "mode_mixture": {"rescue": 0.25, "explore": 0.6, "exploit": 0.15}, "fail_reason": null, "elapsed_s": 7.72}
+{"case": "productive_cd45_like", "valid": true, "confidence": 0.7, "n_decisions": 3, "mode_mixture": {"rescue": 0.25, "explore": 0.15, "exploit": 0.6}, "fail_reason": null, "elapsed_s": 14.98}
+{"case": "rescue_rich_betv1_like", "valid": true, "confidence": 0.65, "n_decisions": 1, "mode_mixture": {"rescue": 0.5, "explore": 0.4, "exploit": 0.1}, "fail_reason": null, "elapsed_s": 7.67}
+{"case": "stalled_sc2rbd_like", "valid": true, "confidence": 0.5, "n_decisions": 2, "mode_mixture": {"rescue": 0.2, "explore": 0.7, "exploit": 0.1}, "fail_reason": null, "elapsed_s": 12.12}
+{"case": "stalled_redundant_pdl1", "valid": true, "confidence": 0.7, "n_decisions": 1, "mode_mixture": {"rescue": 0.25, "explore": 0.6, "exploit": 0.15}, "fail_reason": null, "elapsed_s": 7.71}
+{"case": "productive_cd45_like", "valid": true, "confidence": 0.7, "n_decisions": 3, "mode_mixture": {"rescue": 0.25, "explore": 0.15, "exploit": 0.6}, "fail_reason": null, "elapsed_s": 14.98}
+{"case": "rescue_rich_betv1_like", "valid": true, "confidence": 0.65, "n_decisions": 1, "mode_mixture": {"rescue": 0.5, "explore": 0.4, "exploit": 0.1}, "fail_reason": null, "elapsed_s": 7.67}
+{"case": "stalled_sc2rbd_like", "valid": true, "confidence": 0.5, "n_decisions": 2, "mode_mixture": {"rescue": 0.2, "explore": 0.7, "exploit": 0.1}, "fail_reason": null, "elapsed_s": 12.11}
+{"case": "stalled_redundant_pdl1", "valid": true, "confidence": 0.7, "n_decisions": 1, "mode_mixture": {"rescue": 0.25, "explore": 0.6, "exploit": 0.15}, "fail_reason": null, "elapsed_s": 7.72}
+{
+  "base_url": "http://127.0.0.1:12000/v1",
+  "confidence_max": 0.7,
+  "confidence_median": 0.675,
+  "confidence_min": 0.5,
+  "median_latency_s": 9.915,
+  "mixture_aligned_with_state_rate": 1.0,
+  "model": "vllm/Qwen/Qwen3.6-27B-FP8",
+  "schema_version": "v7.3.3-reward-guard",
+  "total_calls": 12,
+  "valid_calls": 12,
+  "valid_rate": 1.0,
+  "wall_clock_s": 129.4
+}
+Campaign
+  name           pdl1-qwen-s0
+  source         /work/configs/qwen.yaml
+  source SHA256  272a000519c0a4c41054ee67aef695aabd75a69a14f4809b0d38fb5a4f5cfd87
+
+Target input
+  name        pdl1
+  target ID   32_PDL1_ALPHA_REPACK
+  constraint  /work/T-REX/config/targets/pdl1.json
+  PDB         /work/T-REX-assets/targets/alpha_proteo_targets/5o45_repacked.pdb
+
+Execution
+  archive                /work/results/qwen/campaign
+  controller time limit  1 h (cumulative)
+  seed                   0
+  worker GPUs            2, 3
+  families               bindcraft, boltzgen, complexa_beam, complexa_best_of_n, complexa_fk_steering, complexa_mcts, proteinmpnn_redesign, structure_refilter
+
+Decision policy
+  LLM endpoint           http://127.0.0.1:12000/v1
+  LLM model              vllm/Qwen/Qwen3.6-27B-FP8
+  critic                 on
+  evidence skip          off
+  exemplars              on
+  Foldseek SU TM         0.6
+  collapse TM            0.6
+  quota realization      fractional_carry
+  cross-campaign memory  disabled
+
+Backend runtime
+  T-REX repository            /work/T-REX
+  external root               /work/T-REX/external
+  Complexa repository         /work/T-REX/external/Proteina-Complexa
+  Complexa Python             /work/T-REX/external/Proteina-Complexa/.venv/bin/python
+  legacy Complexa repository  /work/T-REX/external/Proteina-Complexa
+  AF2 parameters              /work/T-REX/external/Proteina-Complexa/community_models/ckpts/AF2
+  ProteinMPNN weights         /work/T-REX/external/Proteina-Complexa/community_models/ProteinMPNN/vanilla_model_weights/v_48_020.pt
+  BindCraft repository        /work/T-REX/external/BindCraft
+  BindCraft environment       /work/T-REX/external/BindCraft/.venv
+  BoltzGen repository         /work/T-REX/external/BoltzGen
+  BoltzGen binary             /work/T-REX/external/BoltzGen/.venv/bin/boltzgen
+  BoltzGen cache              /work/T-REX-assets/checkpoints/boltzgen
+  Foldseek binary             /work/T-REX/external/Proteina-Complexa/.venv/bin/foldseek
+  MMseqs binary               /work/T-REX/external/Proteina-Complexa/.venv/bin/mmseqs
+  Qwen model path             /work/T-REX-assets/checkpoints/Qwen3.6-27B-FP8
+  Qwen model manifest         /work/T-REX/config/trex/qwen3_6_27b_fp8_model_manifest.json
+
+Resolution notes
+  1   backends.complexa_repo inherited from TREX_COMPLEXA_REPO
+  2   backends.legacy_complexa_repo inherited from TREX_LEGACY_COMPLEXA_REPO
+  3   backends.bindcraft_repo inherited from TREX_BINDCRAFT_REPO
+  4   backends.boltzgen_repo inherited from TREX_BOLTZGEN_REPO
+  5   backends.complexa_python inherited from TREX_COMPLEXA_PYTHON
+  6   backends.bindcraft_env inherited from TREX_BINDCRAFT_ENV
+  7   backends.boltzgen_binary inherited from TREX_BOLTZGEN_BIN
+  8   backends.boltzgen_cache inherited from TREX_BOLTZGEN_CACHE
+  9   backends.foldseek_binary inherited from TREX_FOLDSEEK_BIN
+  10  backends.mmseqs_binary inherited from TREX_MMSEQS_BIN
+  11  backends.qwen_model_path inherited from TREX_QWEN_MODEL_PATH
+  12  backends.qwen_model_manifest inherited from TREX_MODEL_MANIFEST
+
+Preflight checks
+OK    campaign source SHA256                                           272a000519c0a4c41054ee67aef695aabd75a69a14f4809b0d38fb5a4f5cfd87
+OK    executed T-REX source                                            /work/T-REX
+OK    archive output                                                   /work/results/qwen/campaign (will be created; nearest parent: /work/results/qwen)
+OK    worker GPU mapping                                               2,3
+OK    LLM endpoint                                                     http://127.0.0.1:12000/v1
+OK    cross-campaign memory                                            disabled
+OK    target config                                                    /work/T-REX/config/targets/pdl1.json
+OK    target id                                                        expected=32_PDL1_ALPHA_REPACK observed=32_PDL1_ALPHA_REPACK
+OK    target chains                                                    A
+OK    target PDB                                                       /work/T-REX-assets/targets/alpha_proteo_targets/5o45_repacked.pdb
+OK    configured chains in PDB                                         A
+OK    hotspots in PDB                                                  A56,A115,A123
+OK    target PDB SHA256                                                expected=dcd82d0a0258524ad6b036c39a3743cd8e16fb455178531781f81f5735a6a397 observed=dcd82d0a0258524ad6b036c39a3743cd8e16fb455178531781f81f5735a6a397
+OK    enabled family registry                                          bindcraft,boltzgen,complexa_beam,complexa_best_of_n,complexa_fk_steering,complexa_mcts,proteinmpnn_redesign,structure_refilter
+OK    Foldseek executable                                              /work/T-REX/external/Proteina-Complexa/.venv/bin/foldseek
+OK    MMseqs2 executable                                               /work/T-REX/external/Proteina-Complexa/.venv/bin/mmseqs
+OK    Foldseek version                                                 expected=8dc75c74ad0eddab73cfd905963d13bf74dc012b observed=8dc75c74ad0eddab73cfd905963d13bf74dc012b
+OK    MMseqs2 version                                                  expected=76da68ad7577378410c075049e18666fcc94f8d1 observed=76da68ad7577378410c075049e18666fcc94f8d1
+OK    Proteina-Complexa checkout                                       /work/T-REX/external/Proteina-Complexa
+OK    Proteina-Complexa env.sh                                         /work/T-REX/external/Proteina-Complexa/env.sh
+OK    Complexa/AF2 Python                                              /work/T-REX/external/Proteina-Complexa/.venv/bin/python
+OK    Complexa checkpoint                                              /work/T-REX/external/Proteina-Complexa/ckpts/complexa.ckpt
+OK    Complexa AE checkpoint                                           /work/T-REX/external/Proteina-Complexa/ckpts/complexa_ae.ckpt
+OK    AF2 parameters                                                   /work/T-REX/external/Proteina-Complexa/community_models/ckpts/AF2
+OK    AF2 multimer-v3 model 1                                          /work/T-REX/external/Proteina-Complexa/community_models/ckpts/AF2/params_model_1_multimer_v3.npz
+OK    AF2 multimer-v3 model 2                                          /work/T-REX/external/Proteina-Complexa/community_models/ckpts/AF2/params_model_2_multimer_v3.npz
+OK    AF2 multimer-v3 model 3                                          /work/T-REX/external/Proteina-Complexa/community_models/ckpts/AF2/params_model_3_multimer_v3.npz
+OK    AF2 multimer-v3 model 4                                          /work/T-REX/external/Proteina-Complexa/community_models/ckpts/AF2/params_model_4_multimer_v3.npz
+OK    AF2 multimer-v3 model 5                                          /work/T-REX/external/Proteina-Complexa/community_models/ckpts/AF2/params_model_5_multimer_v3.npz
+OK    ProteinMPNN weight v_48_002                                      /work/T-REX/external/Proteina-Complexa/community_models/ProteinMPNN/vanilla_model_weights/v_48_002.pt
+OK    ProteinMPNN weight v_48_010                                      /work/T-REX/external/Proteina-Complexa/community_models/ProteinMPNN/vanilla_model_weights/v_48_010.pt
+OK    ProteinMPNN weight v_48_020                                      /work/T-REX/external/Proteina-Complexa/community_models/ProteinMPNN/vanilla_model_weights/v_48_020.pt
+OK    ProteinMPNN weight v_48_030                                      /work/T-REX/external/Proteina-Complexa/community_models/ProteinMPNN/vanilla_model_weights/v_48_030.pt
+OK    AF2 parameters manifest                                          /work/T-REX/config/reproducibility/af2_parameters_manifest.json
+OK    AF2 parameters verification                                      2ce0664041f82ce7fdbbaa523696327e0895465210d066c8bdfd4ed19e4732b0 (manifest + sizes)
+OK    ProteinMPNN weights manifest                                     /work/T-REX/config/reproducibility/proteinmpnn_weights_manifest.json
+OK    ProteinMPNN weights verification                                 3022126a2617a96ded10604eba039b6fcd1ad094512291c2eab9429f463dc160 (manifest + sizes)
+OK    BindCraft checkout                                               /work/T-REX/external/BindCraft/bindcraft.py
+OK    BindCraft Python                                                 /work/T-REX/external/BindCraft/.venv/bin/python
+OK    BoltzGen checkout                                                /work/T-REX/external/BoltzGen
+OK    BoltzGen executable                                              /work/T-REX/external/BoltzGen/.venv/bin/boltzgen
+OK    campaign serving/controller Python                               /work/T-REX/.venv-serving/bin/python
+OK    Qwen model directory                                             /work/T-REX-assets/checkpoints/Qwen3.6-27B-FP8
+OK    Qwen model manifest                                              /work/T-REX/config/trex/qwen3_6_27b_fp8_model_manifest.json
+OK    Qwen model manifest verification                                 77409ac00f81e48d29b9f079ab448044a5ec1cdd91dfdb50b3035c197f065722
+OK    proteina_complexa revision                                       expected=5ae24b055d828918296f2aad63616b1f4cc0e491 observed=5ae24b055d828918296f2aad63616b1f4cc0e491
+OK    proteina_complexa_community revision                             expected=d323517efbffe3ea280e4e3d0442b0257a37b5a8 observed=5ae24b055d828918296f2aad63616b1f4cc0e491; identical declared source trees
+OK    proteina_complexa_community source community_models/ProteinMPNN  tree=6825955f4c3dec0ada2dd0f1a969f61515bd24d2 expected=6825955f4c3dec0ada2dd0f1a969f61515bd24d2 tracked_source_unchanged=True
+OK    proteina_complexa_community source community_models/colabdesign  tree=844c76c09355e094a29a34c16fead3f63dea3819 expected=844c76c09355e094a29a34c16fead3f63dea3819 tracked_source_unchanged=True
+OK    bindcraft revision                                               expected=b971db42ba6e091afab63ccb30ae02215150a990 observed=b971db42ba6e091afab63ccb30ae02215150a990
+OK    bindcraft patch artifact                                         expected=dc69de94f8b21a14ebd26e13f41330676161df63b29340fa90d15100f7406268 observed=dc69de94f8b21a14ebd26e13f41330676161df63b29340fa90d15100f7406268
+OK    bindcraft tracked patch                                          expected=81b8e5394f5cd68a6c7f8b5355e1d62593cb92cfad6ba612c50019104dc21a28 observed=81b8e5394f5cd68a6c7f8b5355e1d62593cb92cfad6ba612c50019104dc21a28
+OK    boltzgen revision                                                expected=31d9d9b9c72245b4ed6fe8742d6fbf4e1a3552a0 observed=31d9d9b9c72245b4ed6fe8742d6fbf4e1a3552a0
+
+Preflight passed.
+
+Recorded campaign input
+  input     /work/results/qwen/campaign/campaign_input.yaml
+  resolved  /work/results/qwen/campaign/campaign_resolved.json
+
+Recorded run provenance
+  provenance  /work/results/qwen/campaign/run_provenance.json
+  source SHA  408e8df0708a1c4453bf457663fe92239c233fbe3178814c6b2f0843732d6beb
+  model SHA   77409ac00f81e48d29b9f079ab448044a5ec1cdd91dfdb50b3035c197f065722
+[v7_controller] run_seed=0
+[v7_controller] runtime_paths={"af2_data_dir": "/work/T-REX/external/Proteina-Complexa/community_models/ckpts/AF2", "bindcraft_env": "/work/T-REX/external/BindCraft/.venv", "bindcraft_repo": "/work/T-REX/external/BindCraft", "boltzgen_binary": "/work/T-REX/external/BoltzGen/.venv/bin/boltzgen", "boltzgen_cache": "/work/T-REX-assets/checkpoints/boltzgen", "boltzgen_repo": "/work/T-REX/external/BoltzGen", "community_models_root": "/work/T-REX/external/Proteina-Complexa/community_models", "complexa_python": "/work/T-REX/external/Proteina-Complexa/.venv/bin/python", "complexa_repo": "/work/T-REX/external/Proteina-Complexa", "external_root": "/work/T-REX/external", "foldseek_binary": "/work/T-REX/external/Proteina-Complexa/.venv/bin/foldseek", "legacy_complexa_repo": "/work/T-REX/external/Proteina-Complexa", "mmseqs_binary": "/work/T-REX/external/Proteina-Complexa/.venv/bin/mmseqs", "proteinmpnn_dir": "/work/T-REX/external/Proteina-Complexa/community_models/ProteinMPNN", "proteinmpnn_weights": "/work/T-REX/external/Proteina-Complexa/community_models/ProteinMPNN/vanilla_model_weights/v_48_020.pt", "qwen_model_manifest": "/work/T-REX/config/trex/qwen3_6_27b_fp8_model_manifest.json", "qwen_model_path": "/work/T-REX-assets/checkpoints/Qwen3.6-27B-FP8", "repo_root": "/work/T-REX"}
+[v7_controller] target_res_count=116 target_chains=A (pdb_chains={'A': 116})
+[v7_controller] enabled families: ['bindcraft', 'boltzgen', 'complexa_beam', 'complexa_best_of_n', 'complexa_fk_steering', 'complexa_mcts', 'proteinmpnn_redesign', 'structure_refilter']
+[v7_controller] disabled by --enabled-families: []
+[v7_controller] AF2/ProteinMPNN runtime preflight=ok executable=/work/T-REX/external/Proteina-Complexa/.venv/bin/python | prefix=/work/T-REX/external/Proteina-Complexa/.venv | modules=jax,community_models.colabdesign,torch
+[v7_controller] foldseek_binary=/work/T-REX/external/Proteina-Complexa/.venv/bin/foldseek
+[v7_controller] exemplars=on
+[v7_controller] evidence_skip=off
+[v7_controller] selector_quota_realization=fractional_carry mode_window_k=1 adaptive_mode_window_k=0
+[v7_controller] foldseek_su_tm=0.60 foldseek_collapse_tm=0.60 structure_scope=binder_chain alignment_type=1 min_seq_id=0.0 cov_mode=0 threads=1
+[v7_controller] target=32_PDL1_ALPHA_REPACK start=2026-09-25T18:45:49Z
+[v7_controller] archive=/work/results/qwen/campaign
+[v7_controller] vLLM=http://127.0.0.1:12000/v1
+[v7_controller] worker_gpus=['2', '3'] worker_wall_gpu_count=2
+  [controller_checkpoint] elapsed=0.000h SU=0 state=None
+
+[v7_controller] ===== round 1 (elapsed 0.00 h, busy=0/2, queued=0, refill=2) =====
+  [candidate_filter] 2 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  state=low_evidence  planned=1  chain_reserved=0  queued_now=1
+  [worker:complexa_beam][gpu=2] launching → v7_r001_warmstart_v7r001_00_complexa_beam_ad859576e7311
+  [chain_refilter_predispatch] left single free slot for fresh LLM-planned action before chain reserve
+
+[v7_controller] ===== round 2 (elapsed 0.01 h, busy=1/2, queued=0, refill=2) =====
+  [planner] last-tick critic flags surfaced: ['(b) boltzgen expected ~2.0h runtime but only 1.0h remain']
+  [candidate_filter] 2 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  state=low_evidence  planned=0  chain_reserved=0  queued_now=0
+  [chain_refilter_predispatch] left single free slot for fresh LLM-planned action before chain reserve
+
+[v7_controller] ===== round 3 (elapsed 0.01 h, busy=1/2, queued=0, refill=2) =====
+  [candidate_filter] 2 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  state=low_evidence  planned=0  chain_reserved=0  queued_now=0
+  [worker exit_code=1][gpu=2] complexa_beam — attempting parse anyway (resilient mode)
+  [parse_error][gpu=2] Complexa output dir has no rewards_*.csv: /work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r001_warmstart_v7r001_00_complexa_beam_ad859576e7311
+  [gpu=2] complexa_beam → 0 records (parsed=0; elapsed_gpu_h=0.01; delta_gpu_h=0.01; per-record=0.000)
+  [synth_summary][gpu=2] complexa_beam exit_status=nonzero_exit gpu_h=0.01 (rc=1; no records; 0.7 min newly spent — tracked for truthful method health)
+  [controller_checkpoint] elapsed=0.018h SU=0 state=low_evidence
+  [foldseek] status=no_structures scope=recent_scored_window_400 n_structures=0 n_clusters=0 n_updated=0 struct_scope=binder_chain scope_fallback=0
+
+[v7_controller] ===== round 4 (elapsed 0.02 h, busy=0/2, queued=0, refill=2) =====
+  [foldseek] status=no_structures scope=recent_scored_window_400 n_structures=0 n_clusters=0 n_updated=0 struct_scope=binder_chain scope_fallback=0
+  [candidate_filter] 2 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  state=low_evidence  planned=0  chain_reserved=0  queued_now=0
+  [no_progress] sleeping 120s
+Terminated

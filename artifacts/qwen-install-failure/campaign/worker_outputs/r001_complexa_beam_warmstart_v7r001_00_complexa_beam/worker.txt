@@ -1,0 +1,528 @@
+Loading Atomworks Patches
+[atomworks_patches] Patched initialize_chain_info_from_category
+[atomworks_patches] Patched atom_array_to_encoding (added atomize_token parameter)
+2026-09-25 18:46:35.051 | INFO     | __main__:validate_checkpoint_paths:117 - Checkpoint validated: /work/T-REX/external/Proteina-Complexa/ckpts/complexa.ckpt
+2026-09-25 18:46:35.052 | INFO     | __main__:validate_checkpoint_paths:119 - Autoencoder checkpoint validated: /work/T-REX/external/Proteina-Complexa/ckpts/complexa_ae.ckpt
+2026-09-25 18:46:35.052 | INFO     | __main__:setup:50 - /work/T-REX/external/Proteina-Complexa/src/proteinfoundation/generate.py --config-path /work/T-REX/external/Proteina-Complexa/configs --config-name search_binder_local_pipeline ++generation.task_name=32_PDL1_ALPHA_REPACK ++ckpt_path=/work/T-REX/external/Proteina-Complexa/ckpts ++ckpt_name=complexa.ckpt ++autoencoder_ckpt_path=/work/T-REX/external/Proteina-Complexa/ckpts/complexa_ae.ckpt ++run_name=v7_r001_warmstart_v7r001_00_complexa_beam_ad859576e7311 ++gen_njobs=1 ++job_id=0 ++seed=587406 ++base_config_name=search_binder_local_pipeline ++generation.search.algorithm=beam-search ++generation.dataloader.dataset.nres.nsamples=4 ++generation.reward_model.reward_models.af2folding.model_nums=0 ++generation.reward_model.reward_models.af2folding.num_recycles=3 ++generation.reward_model.reward_models.af2folding.use_initial_guess=True ++generation.reward_model.reward_models.af2folding.use_multimer=True ++generation.search.beam_search.beam_width=4 ++generation.search.beam_search.n_branch=4
+2026-09-25 18:46:35.100 | INFO     | __main__:setup:75 - Seeding everything to seed 587406
+2026-09-25 18:46:35 | INFO | generate.py:75 | Seeding everything to seed 587406
+Seed set to 587406
+2026-09-25 18:46:35.108 | INFO     | __main__:main:578 - Starting generation job at 2026-09-25 18:46:35
+2026-09-25 18:46:35 | INFO | generate.py:578 | Starting generation job at 2026-09-25 18:46:35
+2026-09-25 18:46:35.109 | INFO     | __main__:check_cfg_validity:141 - Guidance is turned off.
+2026-09-25 18:46:35 | INFO | generate.py:141 | Guidance is turned off.
+2026-09-25 18:46:35.109 | INFO     | __main__:load_ckpt_n_configure_inference:180 - Using checkpoint /work/T-REX/external/Proteina-Complexa/ckpts/complexa.ckpt
+2026-09-25 18:46:35 | INFO | generate.py:180 | Using checkpoint /work/T-REX/external/Proteina-Complexa/ckpts/complexa.ckpt
+2026-09-25 18:46:37.220 | INFO     | proteinfoundation.proteina:__init__:70 - Manually setting autoencoder_ckpt_path to /work/T-REX/external/Proteina-Complexa/ckpts/complexa_ae.ckpt
+2026-09-25 18:46:37 | INFO | proteina.py:70 | Manually setting autoencoder_ckpt_path to /work/T-REX/external/Proteina-Complexa/ckpts/complexa_ae.ckpt
+2026-09-25 18:46:39.555 | INFO     | proteinfoundation.nn.feature_factory.feature_factory:__init__:181 - No features requested
+2026-09-25 18:46:39 | INFO | feature_factory.py:181 | No features requested
+['nlayers', 'token_dim', 'abs_coors', 'nheads', 'parallel_mha_transition', 'strict_feats', 'feats_seq', 'feats_cond_seq', 'dim_cond', 'idx_emb_dim', 'feats_pair_repr', 'seq_sep_dim', 'pair_repr_dim', 'update_pair_repr', 'update_pair_repr_every_n', 'use_tri_mult', 'use_qkln']
+2026-09-25 18:46:40.120 | INFO     | proteinfoundation.nn.feature_factory.feature_factory:__init__:181 - No features requested
+2026-09-25 18:46:40 | INFO | feature_factory.py:181 | No features requested
+2026-09-25 18:46:40.896 | INFO     | proteinfoundation.nn.feature_factory.concat_feature_factory:__init__:37 - Enabled target concat features
+2026-09-25 18:46:40 | INFO | concat_feature_factory.py:37 | Enabled target concat features
+2026-09-25 18:46:40.897 | INFO     | proteinfoundation.nn.feature_factory.concat_feature_factory:__init__:49 - ConcatFeaturesFactory: input feat dim 505 -> output feat dim 768
+2026-09-25 18:46:40 | INFO | concat_feature_factory.py:49 | ConcatFeaturesFactory: input feat dim 505 -> output feat dim 768
+2026-09-25 18:46:40.898 | INFO     | proteinfoundation.nn.feature_factory.concat_pair_feature_factory:__init__:148 - Enabled target-to-sample cross-sequence pair features: 213 -> 256
+2026-09-25 18:46:40 | INFO | concat_pair_feature_factory.py:148 | Enabled target-to-sample cross-sequence pair features: 213 -> 256
+2026-09-25 18:46:40.898 | INFO     | proteinfoundation.nn.local_latents_transformer:__init__:92 - Enabled advanced pair representation with cross-sequence features
+2026-09-25 18:46:40 | INFO | local_latents_transformer.py:92 | Enabled advanced pair representation with cross-sequence features
+2026-09-25 18:46:42.331 | INFO     | __main__:main:642 - cfg_gen: {'target_dict_cfg': '<filtered: 44 entries>', 'dataloader': {'_target_': 'torch.utils.data.DataLoader', 'batch_size': 16, 'shuffle': False, 'collate_fn': {'_target_': 'proteinfoundation.datasets.gen_dataset.collate_fn', '_partial_': True, 'padding_values': {'target_chains': -1, 'chains': -1}}, 'dataset': {'_target_': 'proteinfoundation.datasets.gen_dataset.GenDataset', 'task_name': '32_PDL1_ALPHA_REPACK', 'nres': {'_target_': 'proteinfoundation.datasets.gen_dataset.UniformInt', 'low': 50, 'high': 120, 'nsamples': 4, 'endpoint': True}, 'nrepeat_per_sample': 1, 'conditional_features': [{'_target_': 'proteinfoundation.datasets.gen_dataset.TargetFeatures', 'task_name': '32_PDL1_ALPHA_REPACK', 'binder_gen_only': True, 'pdb_path': './assets/target_data/alpha_proteo_targets/5o45_repacked.pdb', 'input_spec': 'A17-132', 'target_hotspots': ['A56', 'A115', 'A123'], 'binder_center': None, 'pdb_id': '5o45'}], 'transforms': [{'_target_': 'proteinfoundation.datasets.transforms.CoordsTensorCenteringTransform', 'tensor_name': 'x_target', 'mask_name': 'target_mask', 'data_mode': 'all-atom'}]}}, 'args': {'nsteps': 400, 'self_cond': True, 'guidance_w': 1.0, 'ag_ratio': 0.0, 'ag_ckpt_path': None, 'save_trajectory_every': 0, 'fold_cond': False}, 'model': {'bb_ca': {'schedule': {'mode': 'log', 'p': 2.0}, 'gt': {'mode': '1/t', 'p': 1.0, 'clamp_val': None}, 'simulation_step_params': {'sampling_mode': 'sc', 'sc_scale_noise': 0.1, 'sc_scale_score': 1.0, 't_lim_ode': 0.98, 't_lim_ode_below': 0.02, 'tsr_k': 1.0, 'tsr_sigma': 1.0, 'center_every_step': False}}, 'local_latents': {'schedule': {'mode': 'power', 'p': 2.0}, 'gt': {'mode': 'tan', 'p': 1.0, 'clamp_val': None}, 'simulation_step_params': {'sampling_mode': 'sc', 'sc_scale_noise': 0.1, 'sc_scale_score': 1.0, 't_lim_ode': 0.98, 't_lim_ode_below': 0.02, 'tsr_k': 1.0, 'tsr_sigma': 1.0, 'center_every_step': False}}}, 'n_recycle': 0, 'task_name': '32_PDL1_ALPHA_REPACK', 'search': {'algorithm': 'beam-search', 'max_batch_size': 16, 'reward_threshold': None, 'step_checkpoints': [0, 100, 200, 300, 400], 'best_of_n': {'replicas': 2}, 'beam_search': {'n_branch': 4, 'beam_width': 4, 'keep_lookahead_samples': True, 'save_intermediate_states': False}, 'fk_steering': {'n_branch': 4, 'beam_width': 4, 'temperature': 0.1, 'keep_lookahead_samples': True}, 'mcts': {'n_simulations': 20, 'exploration_prob': 0.5, 'exploration_constant': 1.0, 'keep_lookahead_samples': True}}, 'refinement': {'algorithm': None, 'refine_targets': 'final', 'save_pre_refinement': 'none', 'enable_soft_optimization': False, 'enable_greedy_optimization': True, 'n_temp_iters': 45, 'n_hard_iters': 5, 'n_recycles': 3, 'n_greedy_iters': 15, 'greedy_percentage': 1, 'loss_weights': {'pae': 0.4, 'plddt': 0.1, 'i_pae': 0.1, 'con': 1.0, 'i_con': 1.0, 'dgram_cce': 0.0, 'rg': 0.3, 'i_ptm': 0.05, 'helix_binder': -0.3}}, 'filter': {'filter_samples_limit': 1000, 'delete_non_top_n_samples': False, 'dedup_sequence': True, 'reward_threshold': None}, 'reward_model': {'_target_': 'proteinfoundation.rewards.base_reward.CompositeRewardModel', 'reward_models': {'af2folding': {'_target_': 'proteinfoundation.rewards.alphafold2_reward.AF2RewardModel', 'protocol': 'binder', 'use_multimer': True, 'af_params_dir': '/work/T-REX/external/Proteina-Complexa/community_models/ckpts/AF2', 'num_recycles': 3, 'use_initial_guess': True, 'use_initial_atom_pos': False, 'reward_weights': {'con': 0.0, 'i_pae': -1.0, 'plddt': 0.0, 'dgram_cce': 0.0, 'min_ipae': 0.0, 'min_ipsae': 0.0, 'avg_ipsae': 0.0, 'max_ipsae': 0.0, 'min_ipsae_10': 0.0, 'max_ipsae_10': 0.0, 'avg_ipsae_10': 0.0}, 'seed': 0, 'device_id': None, 'model_nums': 0}}}}
+2026-09-25 18:46:42 | INFO | generate.py:642 | cfg_gen: {'target_dict_cfg': '<filtered: 44 entries>', 'dataloader': {'_target_': 'torch.utils.data.DataLoader', 'batch_size': 16, 'shuffle': False, 'collate_fn': {'_target_': 'proteinfoundation.datasets.gen_dataset.collate_fn', '_partial_': True, 'padding_values': {'target_chains': -1, 'chains': -1}}, 'dataset': {'_target_': 'proteinfoundation.datasets.gen_dataset.GenDataset', 'task_name': '32_PDL1_ALPHA_REPACK', 'nres': {'_target_': 'proteinfoundation.datasets.gen_dataset.UniformInt', 'low': 50, 'high': 120, 'nsamples': 4, 'endpoint': True}, 'nrepeat_per_sample': 1, 'conditional_features': [{'_target_': 'proteinfoundation.datasets.gen_dataset.TargetFeatures', 'task_name': '32_PDL1_ALPHA_REPACK', 'binder_gen_only': True, 'pdb_path': './assets/target_data/alpha_proteo_targets/5o45_repacked.pdb', 'input_spec': 'A17-132', 'target_hotspots': ['A56', 'A115', 'A123'], 'binder_center': None, 'pdb_id': '5o45'}], 'transforms': [{'_target_': 'proteinfoundation.datasets.transforms.CoordsTensorCenteringTransform', 'tensor_name': 'x_target', 'mask_name': 'target_mask', 'data_mode': 'all-atom'}]}}, 'args': {'nsteps': 400, 'self_cond': True, 'guidance_w': 1.0, 'ag_ratio': 0.0, 'ag_ckpt_path': None, 'save_trajectory_every': 0, 'fold_cond': False}, 'model': {'bb_ca': {'schedule': {'mode': 'log', 'p': 2.0}, 'gt': {'mode': '1/t', 'p': 1.0, 'clamp_val': None}, 'simulation_step_params': {'sampling_mode': 'sc', 'sc_scale_noise': 0.1, 'sc_scale_score': 1.0, 't_lim_ode': 0.98, 't_lim_ode_below': 0.02, 'tsr_k': 1.0, 'tsr_sigma': 1.0, 'center_every_step': False}}, 'local_latents': {'schedule': {'mode': 'power', 'p': 2.0}, 'gt': {'mode': 'tan', 'p': 1.0, 'clamp_val': None}, 'simulation_step_params': {'sampling_mode': 'sc', 'sc_scale_noise': 0.1, 'sc_scale_score': 1.0, 't_lim_ode': 0.98, 't_lim_ode_below': 0.02, 'tsr_k': 1.0, 'tsr_sigma': 1.0, 'center_every_step': False}}}, 'n_recycle': 0, 'task_name': '32_PDL1_ALPHA_REPACK', 'search': {'algorithm': 'beam-search', 'max_batch_size': 16, 'reward_threshold': None, 'step_checkpoints': [0, 100, 200, 300, 400], 'best_of_n': {'replicas': 2}, 'beam_search': {'n_branch': 4, 'beam_width': 4, 'keep_lookahead_samples': True, 'save_intermediate_states': False}, 'fk_steering': {'n_branch': 4, 'beam_width': 4, 'temperature': 0.1, 'keep_lookahead_samples': True}, 'mcts': {'n_simulations': 20, 'exploration_prob': 0.5, 'exploration_constant': 1.0, 'keep_lookahead_samples': True}}, 'refinement': {'algorithm': None, 'refine_targets': 'final', 'save_pre_refinement': 'none', 'enable_soft_optimization': False, 'enable_greedy_optimization': True, 'n_temp_iters': 45, 'n_hard_iters': 5, 'n_recycles': 3, 'n_greedy_iters': 15, 'greedy_percentage': 1, 'loss_weights': {'pae': 0.4, 'plddt': 0.1, 'i_pae': 0.1, 'con': 1.0, 'i_con': 1.0, 'dgram_cce': 0.0, 'rg': 0.3, 'i_ptm': 0.05, 'helix_binder': -0.3}}, 'filter': {'filter_samples_limit': 1000, 'delete_non_top_n_samples': False, 'dedup_sequence': True, 'reward_threshold': None}, 'reward_model': {'_target_': 'proteinfoundation.rewards.base_reward.CompositeRewardModel', 'reward_models': {'af2folding': {'_target_': 'proteinfoundation.rewards.alphafold2_reward.AF2RewardModel', 'protocol': 'binder', 'use_multimer': True, 'af_params_dir': '/work/T-REX/external/Proteina-Complexa/community_models/ckpts/AF2', 'num_recycles': 3, 'use_initial_guess': True, 'use_initial_atom_pos': False, 'reward_weights': {'con': 0.0, 'i_pae': -1.0, 'plddt': 0.0, 'dgram_cce': 0.0, 'min_ipae': 0.0, 'min_ipsae': 0.0, 'avg_ipsae': 0.0, 'max_ipsae': 0.0, 'min_ipsae_10': 0.0, 'max_ipsae_10': 0.0, 'avg_ipsae_10': 0.0}, 'seed': 0, 'device_id': None, 'model_nums': 0}}}}
+<frozen importlib._bootstrap>:488: DeprecationWarning: builtin type SwigPyPacked has no __module__ attribute
+<frozen importlib._bootstrap>:488: DeprecationWarning: builtin type SwigPyObject has no __module__ attribute
+<frozen importlib._bootstrap>:488: DeprecationWarning: builtin type swigvarlink has no __module__ attribute
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/APIInterface.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/CSRformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/MCDLformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/MNAformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/PQSformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/abinitformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/acesformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/acrformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/adfformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/alchemyformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/amberformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/aoforceformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/asciiformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/balstformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/bgfformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/boxformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/cacaoformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/cacheformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/carformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/castepformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/cccformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/cdxmlformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/chem3dformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/chemdoodlejsonformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/chemdrawcdx.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/chemdrawct.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/chemkinformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/chemtoolformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/cifformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/cmlformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/cmlreactformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/cofformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/confabreport.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/copyformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/crkformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/crystal09format.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/cssrformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/daltonformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/dlpolyformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/dmolformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/exyzformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/fastaformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/fastsearchformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/fchkformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/featformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/fhformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/fhiaimsformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/fingerprintformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/fpsformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/freefracformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/gamessformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/gamessukformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/gausscubeformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/gaussformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/gausszmatformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/ghemicalformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/groformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/gromos96format.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/gulpformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/hinformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/inchiformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/jaguarformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/lmpdatformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/lpmdformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/mdffformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/mdlformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/mmcifformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/mmodformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/mol2format.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/moldenformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/molproformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/molreport.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/mopacformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/mpdformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/mpqcformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/msiformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/msmsformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/nulformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/nwchemformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/opendxformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/orcaformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/outformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/painterformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/pcmodelformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/pdbformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/pdbqtformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/png2format.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/pngformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/pointcloudformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/posformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/povrayformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/pqrformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/pubchem.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/pubchemjsonformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/pwscfformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/qchemformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/reportformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/rinchiformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/rsmiformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/rxnformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/shelxformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/siestaformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/smilesformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/smileyformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/stlformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/svgformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/textformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/thermoformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/tinkerformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/titleformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/turbomoleformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/unichemformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/vaspformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/viewmolformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/wlnformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/xedformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/xmlformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/xsfformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/xtcformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/xyzformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/yasaraformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+==============================
+*** Open Babel Error  in openLib
+  /work/T-REX/external/Proteina-Complexa/.venv/lib/python3.12/site-packages/openbabel/lib/openbabel/3.1.0/zindoformat.so did not load properly.
+ Error: libXrender.so.1: cannot open shared object file: No such file or directory
+Error executing job with overrides: ['++generation.task_name=32_PDL1_ALPHA_REPACK', '++ckpt_path=/work/T-REX/external/Proteina-Complexa/ckpts', '++ckpt_name=complexa.ckpt', '++autoencoder_ckpt_path=/work/T-REX/external/Proteina-Complexa/ckpts/complexa_ae.ckpt', '++run_name=v7_r001_warmstart_v7r001_00_complexa_beam_ad859576e7311', '++gen_njobs=1', '++job_id=0', '++seed=587406', '++base_config_name=search_binder_local_pipeline', '++generation.search.algorithm=beam-search', '++generation.dataloader.dataset.nres.nsamples=4', '++generation.reward_model.reward_models.af2folding.model_nums=0', '++generation.reward_model.reward_models.af2folding.num_recycles=3', '++generation.reward_model.reward_models.af2folding.use_initial_guess=True', '++generation.reward_model.reward_models.af2folding.use_multimer=True', '++generation.search.beam_search.beam_width=4', '++generation.search.beam_search.n_branch=4']
+Error locating target 'proteinfoundation.datasets.gen_dataset.collate_fn', set env var HYDRA_FULL_ERROR=1 to see chained exception.
+full_key: generation.dataloader.collate_fn
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.

@@ -9,10 +9,11 @@ export UV_CACHE_DIR=/work/cache/uv
 export PYTHONUNBUFFERED=1
 export PYTHONHASHSEED=0
 mkdir -p "/work/results/$arm" /work/logs
+if [ -e "/work/results/$arm/campaign" ]; then
+  echo 'Archive already exists; preserve/move it before starting a fresh run.' >&2
+  exit 2
+fi
 cd /work/T-REX
-set -a
-source .env
-set +a
 controller=/work/T-REX/.venv-serving/bin/python
 if [ "$arm" = qwen ]; then
   model=Qwen/Qwen3.6-27B-FP8
@@ -20,9 +21,14 @@ else
   model=open-athena/Snowball-67B-A2B-5.7T-Mixed-RLVR-Step38
 fi
 # Process groups permit cleanup of vLLM's worker descendants.
-setsid bash /work/pilot-scripts/serve_model.sh "$arm" 12001 \
-  > "/work/logs/$arm-vllm.log" 2>&1 &
-server_pid=$!
+if [ -n "${TREX_SERVER_PID:-}" ]; then
+  # Adopt only the task's prestarted server, supplied explicitly by the operator.
+  server_pid=$TREX_SERVER_PID
+else
+  setsid bash /work/pilot-scripts/serve_model.sh "$arm" 12001 \
+    > "/work/logs/$arm-vllm.log" 2>&1 &
+  server_pid=$!
+fi
 setsid "$controller" /work/pilot-scripts/recording_proxy.py \
   --output "/work/results/$arm/wire" \
   > "/work/logs/$arm-proxy.log" 2>&1 &
@@ -44,6 +50,7 @@ for _ in $(seq 1 180); do
   sleep 10
 done
 test "$ready" = 1
+if [ "${TREX_SKIP_FIXED_VALIDATION:-0}" != 1 ]; then
 "$controller" -m benchmarks.llm_validation.planner_validation \
   --model "vllm/$model" --base-url http://127.0.0.1:12000/v1 \
   --repeats 3 --max-tokens 3072 --temperature 0.2 \
@@ -52,6 +59,16 @@ test "$ready" = 1
   --model "vllm/$model" --base-url http://127.0.0.1:12000/v1 \
   --repeats 3 --max-tokens 3072 \
   --out "/work/results/$arm/supervisor-validation.json"
+fi
+# Interface checks can overlap molecular-environment installation.
+for _ in $(seq 1 360); do
+  if [ -f /work/T-REX/.env ]; then break; fi
+  sleep 10
+done
+test -f /work/T-REX/.env
+set -a
+source /work/T-REX/.env
+set +a
 date -u +%FT%TZ > "/work/results/$arm/campaign-start-time.txt"
 "$controller" -m trex.cli design "/work/configs/$arm.yaml" \
   --verify-backend-revisions

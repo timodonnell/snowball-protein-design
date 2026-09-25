@@ -1,0 +1,61 @@
+{
+  "n_records": 16,
+  "exit_status": {
+    "ok": 16
+  },
+  "family": {
+    "complexa_beam": 16
+  },
+  "n_canonical_complete_ok": 16,
+  "n_strict": 0,
+  "n_near_miss": 0,
+  "n_structures": 16,
+  "n_sequences": 12,
+  "n_distinct_exact_sequences": 3,
+  "metric_stats": {
+    "pLDDT": {
+      "n": 16,
+      "median": 86.6046565,
+      "min": 85.98698999999999,
+      "max": 91.84794
+    },
+    "iPAE": {
+      "n": 16,
+      "median": 0.34234337000000004,
+      "min": 0.14051232,
+      "max": 0.5281716
+    },
+    "binder_scRMSD": {
+      "n": 16,
+      "median": 4.1494585,
+      "min": 2.076693,
+      "max": 5.3825307
+    }
+  },
+  "upstream_export": {
+    "target_id": "32_PDL1_ALPHA_REPACK",
+    "n_results": 16,
+    "n_strict_with_structure": 0,
+    "n_unresolved_output_identity": 4,
+    "foldseek_su_status": "disabled",
+    "sequence_dedup_status": "disabled",
+    "n_requested": 16,
+    "n_exported": 0,
+    "n_pdbs_copied": 0,
+    "n_pdbs_missing_source": 0,
+    "distinct_structure_bins": 0,
+    "family_counts": {},
+    "settings": {
+      "ranking": "production_quality_descending_then_result_id",
+      "su_tm_score": 0.6,
+      "sequence_identity": 0.9,
+      "sequence_coverage": 0.8,
+      "annotate_dedup": true,
+      "require_structure_artifact": true,
+      "copy_structures": true,
+      "overwrite": false
+    }
+  },
+  "archive_read_skips": {},
+  "note": "Full archive after drain. Native diagnostic scores do not count as canonical AF2 success. SU requires successful Foldseek clustering; missing measurements remain missing."
+}

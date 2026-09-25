@@ -23,6 +23,7 @@ case "$arm" in
       --host 127.0.0.1 --port "$port" --max-model-len 32768 \
       --gpu-memory-utilization 0.92 --tensor-parallel-size 1 \
       --data-parallel-size 2 --enable-expert-parallel --enforce-eager \
+      --override-generation-config '{"top_k": 20, "top_p": 0.95}' \
       --max-num-seqs 4
     ;;
   *) exit 2 ;;

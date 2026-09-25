@@ -1,0 +1,102 @@
+{
+  "n_results": 16,
+  "n_unique_started_candidates": 1,
+  "dispatch_status": {
+    "started": 1
+  },
+  "launch_status": {
+    "launched": 1
+  },
+  "selected_not_started": [],
+  "started_by_family": {
+    "complexa_beam": 1
+  },
+  "started_jobs": [
+    {
+      "candidate_id": "warmstart_v7r001_00_complexa_beam",
+      "family": "complexa_beam",
+      "hypothesis_ids": [
+        "warmstart"
+      ],
+      "config": {
+        "beam_width": 4,
+        "n_branch": 4,
+        "nsamples": 4
+      },
+      "n_result_records": 16,
+      "result_statuses": {
+        "ok": 16
+      },
+      "recorded_gpu_h": 0.16839792827765146
+    }
+  ],
+  "candidate_feasibility_reasons": {
+    "insufficient_wall_for_boltzgen(~2.0h+0.1h_drain_margin>1.0h_remaining)": 9,
+    "insufficient_wall_for_bindcraft(~2.5h+0.1h_drain_margin>1.0h_remaining)": 9,
+    "insufficient_wall_for_boltzgen(~2.0h+0.1h_drain_margin>0.9h_remaining)": 16,
+    "insufficient_wall_for_bindcraft(~2.5h+0.1h_drain_margin>0.9h_remaining)": 16,
+    "insufficient_wall_for_boltzgen(~2.0h+0.1h_drain_margin>0.8h_remaining)": 6,
+    "insufficient_wall_for_bindcraft(~2.5h+0.1h_drain_margin>0.8h_remaining)": 6
+  },
+  "llm": {
+    "planner": {
+      "n_records": 31,
+      "parse_status": {
+        "ok": 31
+      },
+      "fail_reasons": {
+        "low_confidence(0.50<0.55)": 23,
+        "low_confidence(0.40<0.55)": 6
+      },
+      "fallback_records": 0,
+      "zero_token_records": 0,
+      "input_tokens": 457310,
+      "output_tokens": 29001
+    },
+    "supervisor": {
+      "n_records": 31,
+      "parse_status": {
+        "ok": 1,
+        "no_hypotheses_or_candidates": 30
+      },
+      "fail_reasons": {
+        "no_hypotheses_or_candidates": 30
+      },
+      "fallback_records": 30,
+      "zero_token_records": 30,
+      "input_tokens": 6848,
+      "output_tokens": 458
+    },
+    "critic": {
+      "n_records": 31,
+      "parse_status": {
+        "ok": 31
+      },
+      "fail_reasons": {},
+      "fallback_records": 0,
+      "zero_token_records": 31,
+      "input_tokens": 0,
+      "output_tokens": 0
+    }
+  },
+  "controller_start": "2026-09-25T18:50:03Z",
+  "controller_end": null,
+  "controller_wall_h_including_drain": null,
+  "worker_slots": 2.0,
+  "worker_wall_gpu_h_including_drain": null,
+  "sum_recorded_worker_gpu_h": 0.16839792827765146,
+  "last_evidence": {
+    "tick_id": "v7r031",
+    "elapsed_wall_h": 0.21642449761663254,
+    "completed_children": 16,
+    "strict_count": 0,
+    "run_su_count": 0,
+    "worker_wall_gpu_h_total": 0.4328489952332651
+  },
+  "notes": [
+    "Critic records are deterministic guard evaluations, not extra LLM requests.",
+    "No-candidate Supervisor records skip inference; keep them separate from invalid model replies.",
+    "Started jobs, result records, selected candidates and independent molecular samples are different denominators.",
+    "Worker-wall includes idle slots and drain; recorded worker compute sums parsed job charges. LLM GPUs are excluded."
+  ]
+}

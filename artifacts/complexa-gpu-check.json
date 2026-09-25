@@ -1,0 +1,15 @@
+{
+  "installed_packages": 256,
+  "pinned_dependencies": 254,
+  "dependency_conflicts": [],
+  "backend_imports_and_config": "passed",
+  "gpu": {
+    "device": "NVIDIA H100 80GB HBM3",
+    "torch_jax_flax_optax_orbax": "passed",
+    "af2_parameter_arrays": 330,
+    "complexa_generator_and_autoencoder_loading": "passed",
+    "complexa_parameter_count": 415220736
+  },
+  "ok": true,
+  "scope": "Dependency/import/GPU/checkpoint-loading checks; no design campaign or scientific-result equivalence test."
+}
