@@ -1,0 +1,131 @@
+{
+  "n_results": 16,
+  "n_unique_started_candidates": 1,
+  "dispatch_status": {
+    "started": 1
+  },
+  "launch_status": {
+    "launched": 1
+  },
+  "selected_not_started": [],
+  "started_by_family": {
+    "complexa_beam": 1
+  },
+  "started_jobs": [
+    {
+      "candidate_id": "warmstart_v7r001_00_complexa_beam",
+      "family": "complexa_beam",
+      "hypothesis_ids": [
+        "warmstart"
+      ],
+      "config": {
+        "beam_width": 4,
+        "n_branch": 4,
+        "nsamples": 4
+      },
+      "n_result_records": 16,
+      "result_statuses": {
+        "ok": 16
+      },
+      "recorded_gpu_h": 0.1827651060289807
+    }
+  ],
+  "candidate_feasibility_reasons": {
+    "insufficient_wall_for_complexa_beam_heavy_config(~1.0h[x2.0]>0.9h_remaining)": 4,
+    "insufficient_wall_for_complexa_beam_heavy_config(~1.1h[x2.2]>0.9h_remaining)": 2,
+    "insufficient_wall_for_complexa_beam_heavy_config(~1.1h[x2.2]>0.8h_remaining)": 5,
+    "insufficient_wall_for_complexa_beam_heavy_config(~1.0h[x2.0]>0.8h_remaining)": 6,
+    "insufficient_wall_for_complexa_beam_heavy_config(~1.1h[x2.2]>0.7h_remaining)": 3,
+    "insufficient_wall_for_complexa_beam_heavy_config(~1.0h[x2.0]>0.7h_remaining)": 4,
+    "insufficient_wall_for_complexa_beam_heavy_config(~1.1h[x2.2]>0.6h_remaining)": 3,
+    "insufficient_wall_for_complexa_beam_heavy_config(~1.0h[x2.0]>0.6h_remaining)": 4,
+    "insufficient_wall_for_complexa_best_of_n(~0.5h+0.1h_drain_margin>0.5h_remaining)": 1,
+    "config_delta_adjusted:unknown_param:beam_width|unknown_param:n_branch": 7,
+    "config_delta_adjusted:memory_safe_best_of_n_batch_size=16->8": 7,
+    "insufficient_wall_for_complexa_fk_steering(~0.5h+0.1h_drain_margin>0.5h_remaining)": 1,
+    "config_delta_adjusted:reward_deferred:evidence_sparse_axis_n=16<32:material_search_first": 7,
+    "config_delta_adjusted:not_allowed_value:omit_AAs=['X', 'C', 'CP', 'CW', 'FWY', 'G', 'P', 'GP', 'DE', 'KR'] not in ['X', 'C', 'CP', 'CW', 'FWY', 'G', 'P', 'GP', 'DE', 'KR']": 12,
+    "no_concrete_parent_result_id(aggregate:recent_ticks_history,EvidenceSummary):proteinmpnn_redesign": 12,
+    "insufficient_wall_for_complexa_fk_steering(~0.5h+0.1h_drain_margin>0.4h_remaining)": 2,
+    "insufficient_wall_for_complexa_best_of_n(~0.5h+0.1h_drain_margin>0.4h_remaining)": 2,
+    "insufficient_wall_for_complexa_beam(~0.5h+0.1h_drain_margin>0.4h_remaining)": 10,
+    "insufficient_wall_for_complexa_beam(~0.5h+0.1h_drain_margin>0.3h_remaining)": 1,
+    "insufficient_wall_for_complexa_beam(~0.5h+0.1h_drain_margin>0.2h_remaining)": 7,
+    "insufficient_wall_for_complexa_fk_steering(~0.5h+0.1h_drain_margin>0.2h_remaining)": 2,
+    "insufficient_wall_for_complexa_best_of_n(~0.5h+0.1h_drain_margin>0.2h_remaining)": 2,
+    "insufficient_wall_for_proteinmpnn_redesign(~0.1h+0.1h_drain_margin>0.2h_remaining)": 2,
+    "insufficient_wall_for_complexa_beam(~0.5h+0.1h_drain_margin>0.1h_remaining)": 1,
+    "insufficient_wall_for_proteinmpnn_redesign(~0.1h+0.1h_drain_margin>0.1h_remaining)": 2,
+    "insufficient_wall_for_complexa_fk_steering(~0.5h+0.1h_drain_margin>0.1h_remaining)": 1,
+    "insufficient_wall_for_complexa_best_of_n(~0.5h+0.1h_drain_margin>0.1h_remaining)": 1,
+    "insufficient_wall_for_complexa_beam(~0.5h+0.1h_drain_margin>0.0h_remaining)": 1,
+    "insufficient_wall_for_proteinmpnn_redesign(~0.1h+0.1h_drain_margin>0.0h_remaining)": 2,
+    "insufficient_wall_for_complexa_fk_steering(~0.5h+0.1h_drain_margin>0.0h_remaining)": 1,
+    "insufficient_wall_for_complexa_best_of_n(~0.5h+0.1h_drain_margin>0.0h_remaining)": 1
+  },
+  "llm": {
+    "planner": {
+      "n_records": 21,
+      "parse_status": {
+        "schema_fail": 6,
+        "ok": 8,
+        "call_error": 7
+      },
+      "fail_reasons": {
+        "schema_fail:missing_top:cards; repair_failed:missing_top:cards": 4,
+        "schema_fail:confidence_not_number; repair_failed:confidence_not_number": 1,
+        "abstain": 1,
+        "schema_fail:cards_not_list; repair_failed:cards_not_list": 1,
+        "call_error:APITimeoutError:Request timed out.": 7
+      },
+      "fallback_records": 14,
+      "zero_token_records": 7,
+      "input_tokens": 166272,
+      "output_tokens": 15537
+    },
+    "supervisor": {
+      "n_records": 21,
+      "parse_status": {
+        "no_hypotheses_or_candidates": 21
+      },
+      "fail_reasons": {
+        "no_hypotheses_or_candidates": 21
+      },
+      "fallback_records": 21,
+      "zero_token_records": 21,
+      "input_tokens": 0,
+      "output_tokens": 0
+    },
+    "critic": {
+      "n_records": 7,
+      "parse_status": {
+        "ok": 7
+      },
+      "fail_reasons": {},
+      "fallback_records": 0,
+      "zero_token_records": 7,
+      "input_tokens": 0,
+      "output_tokens": 0
+    }
+  },
+  "controller_start": "2026-09-25T20:47:53Z",
+  "controller_end": "2026-09-25T21:52:30Z",
+  "controller_wall_h_including_drain": 1.0769444444444445,
+  "worker_slots": 2.0,
+  "worker_wall_gpu_h_including_drain": 2.153888888888889,
+  "sum_recorded_worker_gpu_h": 0.1827651060289807,
+  "last_evidence": {
+    "tick_id": "v7r021",
+    "elapsed_wall_h": 0.9986924976353637,
+    "completed_children": 16,
+    "strict_count": 0,
+    "run_su_count": 0,
+    "worker_wall_gpu_h_total": 1.9973849952707274
+  },
+  "notes": [
+    "Critic records are deterministic guard evaluations, not extra LLM requests.",
+    "No-candidate Supervisor records skip inference; keep them separate from invalid model replies.",
+    "Started jobs, result records, selected candidates and independent molecular samples are different denominators.",
+    "Worker-wall includes idle slots and drain. Native job charges measure launch-to-reap wall time and can include observation delay; they are not hardware-active GPU time. LLM GPUs are excluded."
+  ]
+}

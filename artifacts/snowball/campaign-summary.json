@@ -1,0 +1,98 @@
+{
+  "archive_root": "/work/results/snowball/campaign",
+  "budget": {
+    "completed_result_gpu_h": 0.1827651060289807,
+    "elapsed_wall_h": 0.9986924976353637,
+    "remaining_wall_h": 0.0013075023646362816,
+    "worker_wall_gpu_count": 2.0,
+    "worker_wall_gpu_h": 1.9973849952707274
+  },
+  "dispatch_outcome": {
+    "started": 1
+  },
+  "dispatch_status": {
+    "started": 1
+  },
+  "endpoint": {
+    "foldseek_su_coverage": null,
+    "foldseek_su_status": "no_strict",
+    "sequence_dedup_coverage": null,
+    "sequence_dedup_status": "disabled",
+    "sequence_unique_strict_count": null,
+    "strict_count": 0,
+    "structure_dedup_scope": "binder_chain",
+    "structure_unique_successes_tm_live": 0,
+    "su_per_worker_wall_gpu_h": 0.0
+  },
+  "latest_tick": "v7r021",
+  "launch_status": {
+    "launched": 1
+  },
+  "llm_usage": {
+    "by_role": {
+      "critic": {
+        "calls": 7,
+        "fallback_calls": 0,
+        "latency_s": 0.0,
+        "parse_status": {
+          "ok": 7
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      "planner": {
+        "calls": 21,
+        "fallback_calls": 14,
+        "latency_s": 2495.933,
+        "parse_status": {
+          "call_error": 7,
+          "ok": 8,
+          "schema_fail": 6
+        },
+        "tokens_in": 166272,
+        "tokens_out": 15537
+      },
+      "supervisor": {
+        "calls": 21,
+        "fallback_calls": 21,
+        "latency_s": 0.0,
+        "parse_status": {
+          "no_hypotheses_or_candidates": 21
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      }
+    },
+    "calls": 49,
+    "tokens_in": 166272,
+    "tokens_out": 15537
+  },
+  "provenance_files": [
+    "run_provenance.json"
+  ],
+  "records": {
+    "action_candidates": 78,
+    "dispatch_records": 1,
+    "evidence_summaries": 21,
+    "launch_decisions": 1,
+    "panel_selections": 21,
+    "results": 16
+  },
+  "result_exit_status": {
+    "ok": 16
+  },
+  "results_by_family": {
+    "complexa_beam": 16
+  },
+  "schema_version": "trex.analysis-summary.v1",
+  "started_by_family": {
+    "complexa_beam": 1
+  },
+  "started_by_mode": {
+    "exploit": 1
+  },
+  "state_label": "low_evidence",
+  "target_ids": [
+    "32_PDL1_ALPHA_REPACK"
+  ]
+}

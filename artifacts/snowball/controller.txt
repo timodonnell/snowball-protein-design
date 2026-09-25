@@ -1,0 +1,343 @@
+{"case": "productive_cd45_like", "valid": false, "confidence": 0.0, "n_cards": 0, "fail_reason": "call_error:APITimeoutError:Request timed out.", "elapsed_s": 182.77}
+{"case": "rescue_rich_betv1_like", "valid": false, "confidence": 0.5, "n_cards": 0, "fail_reason": "schema_fail:missing_top:cards; repair_failed:missing_top:cards", "elapsed_s": 76.88}
+{"case": "stalled_sc2rbd_like", "valid": false, "confidence": 0.5, "n_cards": 0, "fail_reason": "schema_fail:missing_top:cards; repair_failed:missing_top:cards", "elapsed_s": 82.38}
+{"case": "ambiguous_cbago_like", "valid": true, "confidence": 0.6, "n_cards": 1, "fail_reason": null, "elapsed_s": 28.87}
+{"case": "stalled_redundant_pdl1", "valid": false, "confidence": 0.0, "n_cards": 0, "fail_reason": "call_error:APITimeoutError:Request timed out.", "elapsed_s": 180.46}
+{"case": "productive_cd45_like", "valid": false, "confidence": 0.5, "n_cards": 0, "fail_reason": "schema_fail:missing_top:cards; repair_failed:missing_top:cards", "elapsed_s": 132.11}
+{"case": "rescue_rich_betv1_like", "valid": false, "confidence": 0.5, "n_cards": 0, "fail_reason": "schema_fail:missing_top:cards; repair_failed:missing_top:cards", "elapsed_s": 78.18}
+{"case": "stalled_sc2rbd_like", "valid": true, "confidence": 0.6, "n_cards": 2, "fail_reason": "schema_repaired:card[0]:unknown_evidence_refs:['result_or_route_id']; card[0]:filtered_unknown_evidence_refs,card[1]:filtered_unknown_evidence_refs", "elapsed_s": 69.36}
+{"case": "ambiguous_cbago_like", "valid": true, "confidence": 0.6, "n_cards": 1, "fail_reason": "schema_repaired:card[0]:unknown_evidence_refs:['result_or_route_id']; card[0]:filtered_unknown_evidence_refs", "elapsed_s": 50.43}
+{"case": "stalled_redundant_pdl1", "valid": false, "confidence": 0.0, "n_cards": 0, "fail_reason": "call_error:APITimeoutError:Request timed out.", "elapsed_s": 180.59}
+{"case": "productive_cd45_like", "valid": false, "confidence": 0.5, "n_cards": 0, "fail_reason": "schema_fail:missing_top:cards; repair_failed:missing_top:cards", "elapsed_s": 160.0}
+{"case": "rescue_rich_betv1_like", "valid": false, "confidence": 0.0, "n_cards": 0, "fail_reason": "call_error:APITimeoutError:Request timed out.", "elapsed_s": 180.49}
+{"case": "stalled_sc2rbd_like", "valid": true, "confidence": 0.6, "n_cards": 1, "fail_reason": "schema_repaired:card[0]:unknown_evidence_refs:['result_or_route_id']; card[0]:filtered_unknown_evidence_refs", "elapsed_s": 175.68}
+{"case": "ambiguous_cbago_like", "valid": true, "confidence": 0.6, "n_cards": 1, "fail_reason": "schema_repaired:card[0]:unknown_evidence_refs:['result_or_route_id']; card[0]:filtered_unknown_evidence_refs", "elapsed_s": 36.13}
+{"case": "stalled_redundant_pdl1", "valid": true, "confidence": 0.6, "n_cards": 1, "fail_reason": "schema_repaired:card[0]:unknown_evidence_refs:['result_or_route_id']; card[0]:filtered_unknown_evidence_refs", "elapsed_s": 150.59}
+{
+  "base_url": "http://127.0.0.1:12000/v1",
+  "confidence_max": 0.6,
+  "confidence_median": 0.6,
+  "confidence_min": 0.6,
+  "confidence_stdev": 0.0,
+  "median_latency_s": 132.11,
+  "model": "vllm/open-athena/Snowball-67B-A2B-5.7T-Mixed-RLVR-Step38",
+  "prompt_variant": "default",
+  "schema_version": "v7.3.3-reward-guard",
+  "total_calls": 15,
+  "valid_calls": 6,
+  "valid_rate": 0.4,
+  "wall_clock_s": 1764.9
+}
+{"case": "productive_cd45_like", "valid": false, "confidence": 0.5, "n_decisions": 0, "mode_mixture": {}, "fail_reason": "schema_fail:missing_top:mode_mixture", "elapsed_s": 75.38}
+{"case": "rescue_rich_betv1_like", "valid": true, "confidence": 0.5, "n_decisions": 0, "mode_mixture": {"rescue": 0.2, "explore": 0.7, "exploit": 0.1}, "fail_reason": "abstain", "elapsed_s": 41.11}
+{"case": "stalled_sc2rbd_like", "valid": false, "confidence": 0.5, "n_decisions": 0, "mode_mixture": {}, "fail_reason": "schema_fail:missing_top:mode_mixture", "elapsed_s": 57.5}
+{"case": "stalled_redundant_pdl1", "valid": true, "confidence": 0.5, "n_decisions": 1, "mode_mixture": {"rescue": 0.2, "explore": 0.7, "exploit": 0.1}, "fail_reason": null, "elapsed_s": 40.82}
+{"case": "productive_cd45_like", "valid": false, "confidence": 0.5, "n_decisions": 0, "mode_mixture": {}, "fail_reason": "schema_fail:missing_top:mode_mixture", "elapsed_s": 73.49}
+{"case": "rescue_rich_betv1_like", "valid": true, "confidence": 0.5, "n_decisions": 0, "mode_mixture": {"rescue": 0.2, "explore": 0.7, "exploit": 0.1}, "fail_reason": "abstain", "elapsed_s": 41.08}
+{"case": "stalled_sc2rbd_like", "valid": false, "confidence": 0.5, "n_decisions": 0, "mode_mixture": {}, "fail_reason": "schema_fail:missing_top:mode_mixture", "elapsed_s": 57.17}
+{"case": "stalled_redundant_pdl1", "valid": true, "confidence": 0.5, "n_decisions": 1, "mode_mixture": {"rescue": 0.2, "explore": 0.7, "exploit": 0.1}, "fail_reason": null, "elapsed_s": 40.37}
+{"case": "productive_cd45_like", "valid": false, "confidence": 0.5, "n_decisions": 0, "mode_mixture": {}, "fail_reason": "schema_fail:missing_top:mode_mixture", "elapsed_s": 73.68}
+{"case": "rescue_rich_betv1_like", "valid": true, "confidence": 0.5, "n_decisions": 0, "mode_mixture": {"rescue": 0.2, "explore": 0.7, "exploit": 0.1}, "fail_reason": "abstain", "elapsed_s": 41.36}
+{"case": "stalled_sc2rbd_like", "valid": false, "confidence": 0.5, "n_decisions": 0, "mode_mixture": {}, "fail_reason": "schema_fail:missing_top:mode_mixture", "elapsed_s": 58.42}
+{"case": "stalled_redundant_pdl1", "valid": true, "confidence": 0.5, "n_decisions": 1, "mode_mixture": {"rescue": 0.2, "explore": 0.7, "exploit": 0.1}, "fail_reason": null, "elapsed_s": 40.7}
+{
+  "base_url": "http://127.0.0.1:12000/v1",
+  "confidence_max": 0.5,
+  "confidence_median": 0.5,
+  "confidence_min": 0.5,
+  "median_latency_s": 49.265,
+  "mixture_aligned_with_state_rate": 0.5,
+  "model": "vllm/open-athena/Snowball-67B-A2B-5.7T-Mixed-RLVR-Step38",
+  "schema_version": "v7.3.3-reward-guard",
+  "total_calls": 12,
+  "valid_calls": 6,
+  "valid_rate": 0.5,
+  "wall_clock_s": 641.1
+}
+Campaign
+  name           pdl1-snowball-s0
+  source         /work/configs/snowball.yaml
+  source SHA256  febb1996fe5955f1967515a898596e3e980345b41494ff514288e9525bace42b
+
+Target input
+  name        pdl1
+  target ID   32_PDL1_ALPHA_REPACK
+  constraint  /work/T-REX/config/targets/pdl1.json
+  PDB         /work/T-REX-assets/targets/alpha_proteo_targets/5o45_repacked.pdb
+
+Execution
+  archive                /work/results/snowball/campaign
+  controller time limit  1 h (cumulative)
+  seed                   0
+  worker GPUs            2, 3
+  families               complexa_beam, complexa_best_of_n, complexa_fk_steering, proteinmpnn_redesign, structure_refilter
+
+Decision policy
+  LLM endpoint           http://127.0.0.1:12002/v1
+  LLM model              vllm/open-athena/Snowball-67B-A2B-5.7T-Mixed-RLVR-Step38
+  critic                 on
+  evidence skip          off
+  exemplars              on
+  Foldseek SU TM         0.6
+  collapse TM            0.6
+  quota realization      fractional_carry
+  cross-campaign memory  disabled
+
+Backend runtime
+  T-REX repository            /work/T-REX
+  external root               /work/T-REX/external
+  Complexa repository         /work/T-REX/external/Proteina-Complexa
+  Complexa Python             /work/T-REX/external/Proteina-Complexa/.venv/bin/python
+  legacy Complexa repository  /work/T-REX/external/Proteina-Complexa
+  AF2 parameters              /work/T-REX/external/Proteina-Complexa/community_models/ckpts/AF2
+  ProteinMPNN weights         /work/T-REX/external/Proteina-Complexa/community_models/ProteinMPNN/vanilla_model_weights/v_48_020.pt
+  BindCraft repository        /work/T-REX/external/BindCraft
+  BindCraft environment       /work/T-REX/external/BindCraft/.venv
+  BoltzGen repository         /work/T-REX/external/BoltzGen
+  BoltzGen binary             /work/T-REX/external/BoltzGen/.venv/bin/boltzgen
+  BoltzGen cache              /work/T-REX-assets/checkpoints/boltzgen
+  Foldseek binary             /work/T-REX/external/Proteina-Complexa/.venv/bin/foldseek
+  MMseqs binary               /work/T-REX/external/Proteina-Complexa/.venv/bin/mmseqs
+  Qwen model path             /work/models/snowball
+  Qwen model manifest         /work/configs/snowball-manifest.json
+
+Resolution notes
+  1   backends.complexa_repo inherited from TREX_COMPLEXA_REPO
+  2   backends.legacy_complexa_repo inherited from TREX_LEGACY_COMPLEXA_REPO
+  3   backends.bindcraft_repo inherited from TREX_BINDCRAFT_REPO
+  4   backends.boltzgen_repo inherited from TREX_BOLTZGEN_REPO
+  5   backends.complexa_python inherited from TREX_COMPLEXA_PYTHON
+  6   backends.bindcraft_env inherited from TREX_BINDCRAFT_ENV
+  7   backends.boltzgen_binary inherited from TREX_BOLTZGEN_BIN
+  8   backends.boltzgen_cache inherited from TREX_BOLTZGEN_CACHE
+  9   backends.foldseek_binary inherited from TREX_FOLDSEEK_BIN
+  10  backends.mmseqs_binary inherited from TREX_MMSEQS_BIN
+
+Preflight checks
+OK    campaign source SHA256                                           febb1996fe5955f1967515a898596e3e980345b41494ff514288e9525bace42b
+OK    executed T-REX source                                            /work/T-REX
+OK    archive output                                                   /work/results/snowball/campaign (will be created; nearest parent: /work/results/snowball)
+OK    worker GPU mapping                                               2,3
+OK    LLM endpoint                                                     http://127.0.0.1:12002/v1
+OK    cross-campaign memory                                            disabled
+OK    target config                                                    /work/T-REX/config/targets/pdl1.json
+OK    target id                                                        expected=32_PDL1_ALPHA_REPACK observed=32_PDL1_ALPHA_REPACK
+OK    target chains                                                    A
+OK    target PDB                                                       /work/T-REX-assets/targets/alpha_proteo_targets/5o45_repacked.pdb
+OK    configured chains in PDB                                         A
+OK    hotspots in PDB                                                  A56,A115,A123
+OK    target PDB SHA256                                                expected=dcd82d0a0258524ad6b036c39a3743cd8e16fb455178531781f81f5735a6a397 observed=dcd82d0a0258524ad6b036c39a3743cd8e16fb455178531781f81f5735a6a397
+OK    enabled family registry                                          complexa_beam,complexa_best_of_n,complexa_fk_steering,proteinmpnn_redesign,structure_refilter
+OK    Foldseek executable                                              /work/T-REX/external/Proteina-Complexa/.venv/bin/foldseek
+OK    MMseqs2 executable                                               /work/T-REX/external/Proteina-Complexa/.venv/bin/mmseqs
+OK    Foldseek version                                                 expected=8dc75c74ad0eddab73cfd905963d13bf74dc012b observed=8dc75c74ad0eddab73cfd905963d13bf74dc012b
+OK    MMseqs2 version                                                  expected=76da68ad7577378410c075049e18666fcc94f8d1 observed=76da68ad7577378410c075049e18666fcc94f8d1
+OK    Proteina-Complexa checkout                                       /work/T-REX/external/Proteina-Complexa
+OK    Proteina-Complexa env.sh                                         /work/T-REX/external/Proteina-Complexa/env.sh
+OK    Complexa/AF2 Python                                              /work/T-REX/external/Proteina-Complexa/.venv/bin/python
+OK    Complexa checkpoint                                              /work/T-REX/external/Proteina-Complexa/ckpts/complexa.ckpt
+OK    Complexa AE checkpoint                                           /work/T-REX/external/Proteina-Complexa/ckpts/complexa_ae.ckpt
+OK    AF2 parameters                                                   /work/T-REX/external/Proteina-Complexa/community_models/ckpts/AF2
+OK    AF2 multimer-v3 model 1                                          /work/T-REX/external/Proteina-Complexa/community_models/ckpts/AF2/params_model_1_multimer_v3.npz
+OK    AF2 multimer-v3 model 2                                          /work/T-REX/external/Proteina-Complexa/community_models/ckpts/AF2/params_model_2_multimer_v3.npz
+OK    AF2 multimer-v3 model 3                                          /work/T-REX/external/Proteina-Complexa/community_models/ckpts/AF2/params_model_3_multimer_v3.npz
+OK    AF2 multimer-v3 model 4                                          /work/T-REX/external/Proteina-Complexa/community_models/ckpts/AF2/params_model_4_multimer_v3.npz
+OK    AF2 multimer-v3 model 5                                          /work/T-REX/external/Proteina-Complexa/community_models/ckpts/AF2/params_model_5_multimer_v3.npz
+OK    ProteinMPNN weight v_48_002                                      /work/T-REX/external/Proteina-Complexa/community_models/ProteinMPNN/vanilla_model_weights/v_48_002.pt
+OK    ProteinMPNN weight v_48_010                                      /work/T-REX/external/Proteina-Complexa/community_models/ProteinMPNN/vanilla_model_weights/v_48_010.pt
+OK    ProteinMPNN weight v_48_020                                      /work/T-REX/external/Proteina-Complexa/community_models/ProteinMPNN/vanilla_model_weights/v_48_020.pt
+OK    ProteinMPNN weight v_48_030                                      /work/T-REX/external/Proteina-Complexa/community_models/ProteinMPNN/vanilla_model_weights/v_48_030.pt
+OK    AF2 parameters manifest                                          /work/T-REX/config/reproducibility/af2_parameters_manifest.json
+OK    AF2 parameters verification                                      2ce0664041f82ce7fdbbaa523696327e0895465210d066c8bdfd4ed19e4732b0 (manifest + sizes)
+OK    ProteinMPNN weights manifest                                     /work/T-REX/config/reproducibility/proteinmpnn_weights_manifest.json
+OK    ProteinMPNN weights verification                                 3022126a2617a96ded10604eba039b6fcd1ad094512291c2eab9429f463dc160 (manifest + sizes)
+OK    BindCraft checkout                                               /work/T-REX/external/BindCraft/bindcraft.py
+OK    BindCraft Python                                                 /work/T-REX/external/BindCraft/.venv/bin/python
+OK    BoltzGen checkout                                                /work/T-REX/external/BoltzGen
+OK    BoltzGen executable                                              /work/T-REX/external/BoltzGen/.venv/bin/boltzgen
+OK    campaign serving/controller Python                               /work/T-REX/.venv-serving/bin/python
+OK    Qwen model directory                                             /work/models/snowball
+OK    Qwen model manifest                                              /work/configs/snowball-manifest.json
+OK    Qwen model manifest verification                                 2d379bbfa9fdbfe4ad621db21fdd86d1a28d9578f2bc75c99998c8bc216f8ef9
+OK    proteina_complexa revision                                       expected=5ae24b055d828918296f2aad63616b1f4cc0e491 observed=5ae24b055d828918296f2aad63616b1f4cc0e491
+OK    proteina_complexa_community revision                             expected=d323517efbffe3ea280e4e3d0442b0257a37b5a8 observed=5ae24b055d828918296f2aad63616b1f4cc0e491; identical declared source trees
+OK    proteina_complexa_community source community_models/ProteinMPNN  tree=6825955f4c3dec0ada2dd0f1a969f61515bd24d2 expected=6825955f4c3dec0ada2dd0f1a969f61515bd24d2 tracked_source_unchanged=True
+OK    proteina_complexa_community source community_models/colabdesign  tree=844c76c09355e094a29a34c16fead3f63dea3819 expected=844c76c09355e094a29a34c16fead3f63dea3819 tracked_source_unchanged=True
+
+Preflight passed.
+
+Recorded campaign input
+  input     /work/results/snowball/campaign/campaign_input.yaml
+  resolved  /work/results/snowball/campaign/campaign_resolved.json
+
+Recorded run provenance
+  provenance  /work/results/snowball/campaign/run_provenance.json
+  source SHA  408e8df0708a1c4453bf457663fe92239c233fbe3178814c6b2f0843732d6beb
+  model SHA   2d379bbfa9fdbfe4ad621db21fdd86d1a28d9578f2bc75c99998c8bc216f8ef9
+[v7_controller] run_seed=0
+[v7_controller] runtime_paths={"af2_data_dir": "/work/T-REX/external/Proteina-Complexa/community_models/ckpts/AF2", "bindcraft_env": "/work/T-REX/external/BindCraft/.venv", "bindcraft_repo": "/work/T-REX/external/BindCraft", "boltzgen_binary": "/work/T-REX/external/BoltzGen/.venv/bin/boltzgen", "boltzgen_cache": "/work/T-REX-assets/checkpoints/boltzgen", "boltzgen_repo": "/work/T-REX/external/BoltzGen", "community_models_root": "/work/T-REX/external/Proteina-Complexa/community_models", "complexa_python": "/work/T-REX/external/Proteina-Complexa/.venv/bin/python", "complexa_repo": "/work/T-REX/external/Proteina-Complexa", "external_root": "/work/T-REX/external", "foldseek_binary": "/work/T-REX/external/Proteina-Complexa/.venv/bin/foldseek", "legacy_complexa_repo": "/work/T-REX/external/Proteina-Complexa", "mmseqs_binary": "/work/T-REX/external/Proteina-Complexa/.venv/bin/mmseqs", "proteinmpnn_dir": "/work/T-REX/external/Proteina-Complexa/community_models/ProteinMPNN", "proteinmpnn_weights": "/work/T-REX/external/Proteina-Complexa/community_models/ProteinMPNN/vanilla_model_weights/v_48_020.pt", "qwen_model_manifest": "/work/configs/snowball-manifest.json", "qwen_model_path": "/work/models/snowball", "repo_root": "/work/T-REX"}
+[v7_controller] target_res_count=116 target_chains=A (pdb_chains={'A': 116})
+[v7_controller] enabled families: ['complexa_beam', 'complexa_best_of_n', 'complexa_fk_steering', 'proteinmpnn_redesign', 'structure_refilter']
+[v7_controller] disabled by --enabled-families: ['bindcraft', 'boltzgen', 'complexa_mcts']
+[v7_controller] AF2/ProteinMPNN runtime preflight=ok executable=/work/T-REX/external/Proteina-Complexa/.venv/bin/python | prefix=/work/T-REX/external/Proteina-Complexa/.venv | modules=jax,community_models.colabdesign,torch
+[v7_controller] foldseek_binary=/work/T-REX/external/Proteina-Complexa/.venv/bin/foldseek
+[v7_controller] exemplars=on
+[v7_controller] evidence_skip=off
+[v7_controller] selector_quota_realization=fractional_carry mode_window_k=1 adaptive_mode_window_k=0
+[v7_controller] foldseek_su_tm=0.60 foldseek_collapse_tm=0.60 structure_scope=binder_chain alignment_type=1 min_seq_id=0.0 cov_mode=0 threads=1
+[v7_controller] target=32_PDL1_ALPHA_REPACK start=2026-09-25T20:47:53Z
+[v7_controller] archive=/work/results/snowball/campaign
+[v7_controller] vLLM=http://127.0.0.1:12002/v1
+[v7_controller] worker_gpus=['2', '3'] worker_wall_gpu_count=2
+  [controller_checkpoint] elapsed=0.000h SU=0 state=None
+
+[v7_controller] ===== round 1 (elapsed 0.00 h, busy=0/2, queued=0, refill=2) =====
+  state=low_evidence  planned=1  chain_reserved=0  queued_now=1
+  [worker:complexa_beam][gpu=2] launching → v7_r001_warmstart_v7r001_00_complexa_beam_ad6b3bc2f99b0
+  [controller_checkpoint] elapsed=0.049h SU=0 state=low_evidence
+  [chain_refilter_predispatch] left single free slot for fresh LLM-planned action before chain reserve
+
+[v7_controller] ===== round 2 (elapsed 0.05 h, busy=1/2, queued=0, refill=2) =====
+  state=low_evidence  planned=0  chain_reserved=0  queued_now=0
+  [chain_refilter_predispatch] left single free slot for fresh LLM-planned action before chain reserve
+
+[v7_controller] ===== round 3 (elapsed 0.05 h, busy=1/2, queued=0, refill=2) =====
+  state=low_evidence  planned=0  chain_reserved=0  queued_now=0
+  [chain_refilter_predispatch] left single free slot for fresh LLM-planned action before chain reserve
+
+[v7_controller] ===== round 4 (elapsed 0.06 h, busy=1/2, queued=0, refill=2) =====
+  state=low_evidence  planned=0  chain_reserved=0  queued_now=0
+  [chain_refilter_predispatch] left single free slot for fresh LLM-planned action before chain reserve
+
+[v7_controller] ===== round 5 (elapsed 0.06 h, busy=1/2, queued=0, refill=2) =====
+  [candidate_filter] 1 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  state=low_evidence  planned=0  chain_reserved=0  queued_now=0
+  [controller_checkpoint] elapsed=0.099h SU=0 state=low_evidence
+  [chain_refilter_predispatch] left single free slot for fresh LLM-planned action before chain reserve
+
+[v7_controller] ===== round 6 (elapsed 0.10 h, busy=1/2, queued=0, refill=2) =====
+  [candidate_filter] 1 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  state=low_evidence  planned=0  chain_reserved=0  queued_now=0
+  [chain_refilter_predispatch] left single free slot for fresh LLM-planned action before chain reserve
+
+[v7_controller] ===== round 7 (elapsed 0.11 h, busy=1/2, queued=0, refill=2) =====
+  [candidate_filter] 1 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  state=low_evidence  planned=0  chain_reserved=0  queued_now=0
+  [controller_checkpoint] elapsed=0.147h SU=0 state=low_evidence
+  [chain_refilter_predispatch] left single free slot for fresh LLM-planned action before chain reserve
+
+[v7_controller] ===== round 8 (elapsed 0.15 h, busy=1/2, queued=0, refill=2) =====
+  [candidate_filter] 3 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  state=low_evidence  planned=0  chain_reserved=0  queued_now=0
+  [controller_checkpoint] elapsed=0.171h SU=0 state=low_evidence
+  [chain_refilter_predispatch] left single free slot for fresh LLM-planned action before chain reserve
+
+[v7_controller] ===== round 9 (elapsed 0.17 h, busy=1/2, queued=0, refill=2) =====
+  [candidate_filter] 2 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  state=low_evidence  planned=0  chain_reserved=0  queued_now=0
+  [controller_checkpoint] elapsed=0.189h SU=0 state=low_evidence
+  [chain_refilter_predispatch] left single free slot for fresh LLM-planned action before chain reserve
+
+[v7_controller] ===== round 10 (elapsed 0.19 h, busy=1/2, queued=0, refill=2) =====
+  [candidate_filter] 2 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  state=low_evidence  planned=0  chain_reserved=0  queued_now=0
+  [gpu=2] complexa_beam → 16 records (parsed=16; elapsed_gpu_h=0.18; delta_gpu_h=0.18; per-record=0.011)
+  [controller_checkpoint] elapsed=0.230h SU=0 state=low_evidence
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=16 n_clusters=3 n_updated=12 struct_scope=binder_chain scope_fallback=4
+
+[v7_controller] ===== round 11 (elapsed 0.23 h, busy=0/2, queued=0, refill=2) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=16 n_clusters=3 n_updated=12 struct_scope=binder_chain scope_fallback=4
+  [candidate_filter] 7 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  state=low_evidence  planned=0  chain_reserved=0  queued_now=0
+  [no_progress] sleeping 120s
+  [controller_checkpoint] elapsed=0.316h SU=0 state=low_evidence
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=16 n_clusters=3 n_updated=12 struct_scope=binder_chain scope_fallback=4
+
+[v7_controller] ===== round 12 (elapsed 0.32 h, busy=0/2, queued=0, refill=2) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=16 n_clusters=3 n_updated=12 struct_scope=binder_chain scope_fallback=4
+  [candidate_filter] 7 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  state=low_evidence  planned=0  chain_reserved=0  queued_now=0
+  [no_progress] sleeping 120s
+  [controller_checkpoint] elapsed=0.400h SU=0 state=low_evidence
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=16 n_clusters=3 n_updated=12 struct_scope=binder_chain scope_fallback=4
+
+[v7_controller] ===== round 13 (elapsed 0.40 h, busy=0/2, queued=0, refill=2) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=16 n_clusters=3 n_updated=12 struct_scope=binder_chain scope_fallback=4
+  [candidate_filter] 7 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  state=low_evidence  planned=0  chain_reserved=0  queued_now=0
+  [no_progress] sleeping 120s
+  [controller_checkpoint] elapsed=0.483h SU=0 state=low_evidence
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=16 n_clusters=3 n_updated=12 struct_scope=binder_chain scope_fallback=4
+
+[v7_controller] ===== round 14 (elapsed 0.48 h, busy=0/2, queued=0, refill=2) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=16 n_clusters=3 n_updated=12 struct_scope=binder_chain scope_fallback=4
+  [candidate_filter] 3 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  state=low_evidence  planned=0  chain_reserved=0  queued_now=0
+  [no_progress] sleeping 120s
+  [controller_checkpoint] elapsed=0.559h SU=0 state=low_evidence
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=16 n_clusters=3 n_updated=12 struct_scope=binder_chain scope_fallback=4
+
+[v7_controller] ===== round 15 (elapsed 0.56 h, busy=0/2, queued=0, refill=2) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=16 n_clusters=3 n_updated=12 struct_scope=binder_chain scope_fallback=4
+  [lifecycle] retired 1 TTL-expired descendant-free hypothesis card(s) before Planner
+  [candidate_filter] 8 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  state=low_evidence  planned=0  chain_reserved=0  queued_now=0
+  [no_progress] sleeping 120s
+  [controller_checkpoint] elapsed=0.642h SU=0 state=low_evidence
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=16 n_clusters=3 n_updated=12 struct_scope=binder_chain scope_fallback=4
+
+[v7_controller] ===== round 16 (elapsed 0.64 h, busy=0/2, queued=0, refill=2) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=16 n_clusters=3 n_updated=12 struct_scope=binder_chain scope_fallback=4
+  [lifecycle] retired 1 TTL-expired descendant-free hypothesis card(s) before Planner
+  [candidate_filter] 8 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  state=low_evidence  planned=0  chain_reserved=0  queued_now=0
+  [no_progress] sleeping 120s
+  [controller_checkpoint] elapsed=0.726h SU=0 state=low_evidence
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=16 n_clusters=3 n_updated=12 struct_scope=binder_chain scope_fallback=4
+
+[v7_controller] ===== round 17 (elapsed 0.73 h, busy=0/2, queued=0, refill=2) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=16 n_clusters=3 n_updated=12 struct_scope=binder_chain scope_fallback=4
+  [lifecycle] retired 1 TTL-expired descendant-free hypothesis card(s) before Planner
+  [candidate_filter] 2 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  state=low_evidence  planned=0  chain_reserved=0  queued_now=0
+  [no_progress] sleeping 120s
+  [controller_checkpoint] elapsed=0.773h SU=0 state=low_evidence
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=16 n_clusters=3 n_updated=12 struct_scope=binder_chain scope_fallback=4
+
+[v7_controller] ===== round 18 (elapsed 0.77 h, busy=0/2, queued=0, refill=2) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=16 n_clusters=3 n_updated=12 struct_scope=binder_chain scope_fallback=4
+  [planner] last-tick critic flags surfaced: ['(b) complexa_beam expected ~0.5h runtime but only 0.3h remain']
+  [candidate_filter] 8 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  state=low_evidence  planned=0  chain_reserved=0  queued_now=0
+  [no_progress] sleeping 120s
+  [controller_checkpoint] elapsed=0.832h SU=0 state=low_evidence
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=16 n_clusters=3 n_updated=12 struct_scope=binder_chain scope_fallback=4
+
+[v7_controller] ===== round 19 (elapsed 0.83 h, busy=0/2, queued=0, refill=2) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=16 n_clusters=3 n_updated=12 struct_scope=binder_chain scope_fallback=4
+  [lifecycle] retired 2 TTL-expired descendant-free hypothesis card(s) before Planner
+  [planner] last-tick critic flags surfaced: ['(b) complexa_beam expected ~0.5h runtime but only 0.3h remain']
+  [candidate_filter] 7 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  state=low_evidence  planned=0  chain_reserved=0  queued_now=0
+  [no_progress] sleeping 120s
+  [controller_checkpoint] elapsed=0.915h SU=0 state=low_evidence
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=16 n_clusters=3 n_updated=12 struct_scope=binder_chain scope_fallback=4
+
+[v7_controller] ===== round 20 (elapsed 0.92 h, busy=0/2, queued=0, refill=2) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=16 n_clusters=3 n_updated=12 struct_scope=binder_chain scope_fallback=4
+  [lifecycle] retired 2 TTL-expired descendant-free hypothesis card(s) before Planner
+  [planner] last-tick critic flags surfaced: ['(b) complexa_beam expected ~0.5h runtime but only 0.3h remain']
+  [candidate_filter] 5 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  state=low_evidence  planned=0  chain_reserved=0  queued_now=0
+  [no_progress] sleeping 120s
+  [controller_checkpoint] elapsed=0.999h SU=0 state=low_evidence
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=16 n_clusters=3 n_updated=12 struct_scope=binder_chain scope_fallback=4
+
+[v7_controller] ===== round 21 (elapsed 1.00 h, busy=0/2, queued=0, refill=2) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=16 n_clusters=3 n_updated=12 struct_scope=binder_chain scope_fallback=4
+  [planner] last-tick critic flags surfaced: ['(b) complexa_beam expected ~0.5h runtime but only 0.3h remain']
+  [candidate_filter] 5 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  state=low_evidence  planned=0  chain_reserved=0  queued_now=0
+  [no_progress] sleeping 120s
+[v7_controller] max wall reached (1.08 h); draining remaining workers and exit
+[v7_controller] done at 2026-09-25T21:52:30Z

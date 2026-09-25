@@ -18,6 +18,8 @@ def main():
     parser.add_argument("tokenizer", type=Path)
     parser.add_argument("output", type=Path)
     parser.add_argument("--context", type=int, default=32768)
+    parser.add_argument("--same-model", action="store_true",
+                        help="Label retokenization of the served model's own requests.")
     args = parser.parse_args()
     tokenizer = AutoTokenizer.from_pretrained(str(args.tokenizer), local_files_only=True)
     rows = []
@@ -34,7 +36,8 @@ def main():
             prompt_tokens=n, output_allowance=allowance,
             fits_declared_window=n+allowance <= args.context))
     report = dict(tokenizer=str(args.tokenizer), context=args.context, enable_thinking=False,
-        note="Counterfactual tokenization of recorded requests; does not execute this model.",
+        note=("Retokenization of this model's recorded inputs, including canceled requests; no new inference."
+              if args.same_model else "Counterfactual tokenization of recorded requests; does not execute this model."),
         n_requests=len(rows), n_exceeding_window=sum(not r["fits_declared_window"] for r in rows),
         max_prompt_tokens=max((r["prompt_tokens"] for r in rows), default=0), calls=rows)
     args.output.write_text(json.dumps(report, indent=2) + "\n")

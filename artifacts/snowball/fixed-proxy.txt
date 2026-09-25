@@ -1,0 +1,287 @@
+127.0.0.1 - - [25/Sep/2026 20:09:56] "POST /v1/chat/completions HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 35306)
+Traceback (most recent call last):
+  File "/root/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/root/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/root/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/socketserver.py", line 766, in __init__
+    self.handle()
+  File "/root/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/http/server.py", line 440, in handle
+    self.handle_one_request()
+  File "/root/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/http/server.py", line 428, in handle_one_request
+    method()
+  File "/work/pilot-scripts/recording_proxy.py", line 43, in do_POST
+    self.forward()
+  File "/work/pilot-scripts/recording_proxy.py", line 91, in forward
+    self.wfile.write(response_body)
+  File "/root/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+127.0.0.1 - - [25/Sep/2026 20:11:27] "POST /v1/chat/completions HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 42310)
+Traceback (most recent call last):
+  File "/root/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/root/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/root/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/socketserver.py", line 766, in __init__
+    self.handle()
+  File "/root/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/http/server.py", line 440, in handle
+    self.handle_one_request()
+  File "/root/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/http/server.py", line 428, in handle_one_request
+    method()
+  File "/work/pilot-scripts/recording_proxy.py", line 43, in do_POST
+    self.forward()
+  File "/work/pilot-scripts/recording_proxy.py", line 91, in forward
+    self.wfile.write(response_body)
+  File "/root/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+127.0.0.1 - - [25/Sep/2026 20:11:56] "POST /v1/chat/completions HTTP/1.1" 200 -
+127.0.0.1 - - [25/Sep/2026 20:13:18] "POST /v1/chat/completions HTTP/1.1" 200 -
+127.0.0.1 - - [25/Sep/2026 20:13:47] "POST /v1/chat/completions HTTP/1.1" 200 -
+127.0.0.1 - - [25/Sep/2026 20:15:26] "POST /v1/chat/completions HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 51196)
+Traceback (most recent call last):
+  File "/root/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/root/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/root/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/socketserver.py", line 766, in __init__
+    self.handle()
+  File "/root/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/http/server.py", line 440, in handle
+    self.handle_one_request()
+  File "/root/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/http/server.py", line 428, in handle_one_request
+    method()
+  File "/work/pilot-scripts/recording_proxy.py", line 43, in do_POST
+    self.forward()
+  File "/work/pilot-scripts/recording_proxy.py", line 91, in forward
+    self.wfile.write(response_body)
+  File "/root/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+127.0.0.1 - - [25/Sep/2026 20:17:36] "POST /v1/chat/completions HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 51058)
+Traceback (most recent call last):
+  File "/root/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/root/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/root/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/socketserver.py", line 766, in __init__
+    self.handle()
+  File "/root/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/http/server.py", line 440, in handle
+    self.handle_one_request()
+  File "/root/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/http/server.py", line 428, in handle_one_request
+    method()
+  File "/work/pilot-scripts/recording_proxy.py", line 43, in do_POST
+    self.forward()
+  File "/work/pilot-scripts/recording_proxy.py", line 91, in forward
+    self.wfile.write(response_body)
+  File "/root/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+127.0.0.1 - - [25/Sep/2026 20:19:00] "POST /v1/chat/completions HTTP/1.1" 200 -
+127.0.0.1 - - [25/Sep/2026 20:19:05] "POST /v1/chat/completions HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 44372)
+Traceback (most recent call last):
+  File "/root/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/root/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/root/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/socketserver.py", line 766, in __init__
+    self.handle()
+  File "/root/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/http/server.py", line 440, in handle
+    self.handle_one_request()
+  File "/root/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/http/server.py", line 428, in handle_one_request
+    method()
+  File "/work/pilot-scripts/recording_proxy.py", line 43, in do_POST
+    self.forward()
+  File "/work/pilot-scripts/recording_proxy.py", line 91, in forward
+    self.wfile.write(response_body)
+  File "/root/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+127.0.0.1 - - [25/Sep/2026 20:20:18] "POST /v1/chat/completions HTTP/1.1" 200 -
+127.0.0.1 - - [25/Sep/2026 20:21:27] "POST /v1/chat/completions HTTP/1.1" 200 -
+127.0.0.1 - - [25/Sep/2026 20:22:18] "POST /v1/chat/completions HTTP/1.1" 200 -
+127.0.0.1 - - [25/Sep/2026 20:24:33] "POST /v1/chat/completions HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 55454)
+Traceback (most recent call last):
+  File "/root/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/root/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/root/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/socketserver.py", line 766, in __init__
+    self.handle()
+  File "/root/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/http/server.py", line 440, in handle
+    self.handle_one_request()
+  File "/root/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/http/server.py", line 428, in handle_one_request
+    method()
+  File "/work/pilot-scripts/recording_proxy.py", line 43, in do_POST
+    self.forward()
+  File "/work/pilot-scripts/recording_proxy.py", line 91, in forward
+    self.wfile.write(response_body)
+  File "/root/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+127.0.0.1 - - [25/Sep/2026 20:26:06] "POST /v1/chat/completions HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 47448)
+Traceback (most recent call last):
+  File "/root/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/root/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/root/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/socketserver.py", line 766, in __init__
+    self.handle()
+  File "/root/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/http/server.py", line 440, in handle
+    self.handle_one_request()
+  File "/root/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/http/server.py", line 428, in handle_one_request
+    method()
+  File "/work/pilot-scripts/recording_proxy.py", line 43, in do_POST
+    self.forward()
+  File "/work/pilot-scripts/recording_proxy.py", line 91, in forward
+    self.wfile.write(response_body)
+  File "/root/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+127.0.0.1 - - [25/Sep/2026 20:27:35] "POST /v1/chat/completions HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 53108)
+Traceback (most recent call last):
+  File "/root/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/root/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/root/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/socketserver.py", line 766, in __init__
+    self.handle()
+  File "/root/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/http/server.py", line 440, in handle
+    self.handle_one_request()
+  File "/root/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/http/server.py", line 428, in handle_one_request
+    method()
+  File "/work/pilot-scripts/recording_proxy.py", line 43, in do_POST
+    self.forward()
+  File "/work/pilot-scripts/recording_proxy.py", line 91, in forward
+    self.wfile.write(response_body)
+  File "/root/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+127.0.0.1 - - [25/Sep/2026 20:27:58] "POST /v1/chat/completions HTTP/1.1" 200 -
+127.0.0.1 - - [25/Sep/2026 20:30:13] "POST /v1/chat/completions HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 44960)
+Traceback (most recent call last):
+  File "/root/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/root/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/root/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/socketserver.py", line 766, in __init__
+    self.handle()
+  File "/root/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/http/server.py", line 440, in handle
+    self.handle_one_request()
+  File "/root/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/http/server.py", line 428, in handle_one_request
+    method()
+  File "/work/pilot-scripts/recording_proxy.py", line 43, in do_POST
+    self.forward()
+  File "/work/pilot-scripts/recording_proxy.py", line 91, in forward
+    self.wfile.write(response_body)
+  File "/root/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+127.0.0.1 - - [25/Sep/2026 20:31:37] "POST /v1/chat/completions HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 39856)
+Traceback (most recent call last):
+  File "/root/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/root/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/root/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/socketserver.py", line 766, in __init__
+    self.handle()
+  File "/root/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/http/server.py", line 440, in handle
+    self.handle_one_request()
+  File "/root/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/http/server.py", line 428, in handle_one_request
+    method()
+  File "/work/pilot-scripts/recording_proxy.py", line 43, in do_POST
+    self.forward()
+  File "/work/pilot-scripts/recording_proxy.py", line 91, in forward
+    self.wfile.write(response_body)
+  File "/root/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+127.0.0.1 - - [25/Sep/2026 20:32:52] "POST /v1/chat/completions HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 42782)
+Traceback (most recent call last):
+  File "/root/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/root/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/root/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/socketserver.py", line 766, in __init__
+    self.handle()
+  File "/root/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/http/server.py", line 440, in handle
+    self.handle_one_request()
+  File "/root/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/http/server.py", line 428, in handle_one_request
+    method()
+  File "/work/pilot-scripts/recording_proxy.py", line 43, in do_POST
+    self.forward()
+  File "/work/pilot-scripts/recording_proxy.py", line 91, in forward
+    self.wfile.write(response_body)
+  File "/root/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+127.0.0.1 - - [25/Sep/2026 20:33:54] "POST /v1/chat/completions HTTP/1.1" 200 -
+127.0.0.1 - - [25/Sep/2026 20:34:30] "POST /v1/chat/completions HTTP/1.1" 200 -
+127.0.0.1 - - [25/Sep/2026 20:36:50] "POST /v1/chat/completions HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 40292)
+Traceback (most recent call last):
+  File "/root/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/root/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/root/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/socketserver.py", line 766, in __init__
+    self.handle()
+  File "/root/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/http/server.py", line 440, in handle
+    self.handle_one_request()
+  File "/root/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/http/server.py", line 428, in handle_one_request
+    method()
+  File "/work/pilot-scripts/recording_proxy.py", line 43, in do_POST
+    self.forward()
+  File "/work/pilot-scripts/recording_proxy.py", line 91, in forward
+    self.wfile.write(response_body)
+  File "/root/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/socketserver.py", line 845, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+127.0.0.1 - - [25/Sep/2026 20:37:01] "POST /v1/chat/completions HTTP/1.1" 200 -
+127.0.0.1 - - [25/Sep/2026 20:38:17] "POST /v1/chat/completions HTTP/1.1" 200 -
+127.0.0.1 - - [25/Sep/2026 20:38:58] "POST /v1/chat/completions HTTP/1.1" 200 -
+127.0.0.1 - - [25/Sep/2026 20:39:55] "POST /v1/chat/completions HTTP/1.1" 200 -
+127.0.0.1 - - [25/Sep/2026 20:40:36] "POST /v1/chat/completions HTTP/1.1" 200 -
+127.0.0.1 - - [25/Sep/2026 20:41:50] "POST /v1/chat/completions HTTP/1.1" 200 -
+127.0.0.1 - - [25/Sep/2026 20:42:31] "POST /v1/chat/completions HTTP/1.1" 200 -
+127.0.0.1 - - [25/Sep/2026 20:43:28] "POST /v1/chat/completions HTTP/1.1" 200 -
+127.0.0.1 - - [25/Sep/2026 20:44:08] "POST /v1/chat/completions HTTP/1.1" 200 -
+127.0.0.1 - - [25/Sep/2026 20:45:22] "POST /v1/chat/completions HTTP/1.1" 200 -
+127.0.0.1 - - [25/Sep/2026 20:46:03] "POST /v1/chat/completions HTTP/1.1" 200 -
+127.0.0.1 - - [25/Sep/2026 20:47:02] "POST /v1/chat/completions HTTP/1.1" 200 -
+127.0.0.1 - - [25/Sep/2026 20:47:43] "POST /v1/chat/completions HTTP/1.1" 200 -

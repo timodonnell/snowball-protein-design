@@ -89,7 +89,7 @@ def main():
         fig.savefig(args.output / f"campaign-progress.{extension}")
     plt.close(fig)
 
-    fig, ax = plt.subplots(figsize=(8, 4.2), layout="constrained")
+    fig, ax = plt.subplots(figsize=(9, 4.8), layout="constrained")
     values = []
     for arm, title in arms:
         audit = json.loads((args.artifacts / arm / "fixed-audit/summary.json").read_text())
@@ -106,7 +106,7 @@ def main():
     ax.set_xticks(range(len(values)), [v[0] for v in values])
     ax.set(ylim=(0, 116), ylabel="Valid structured responses (%)",
            title="Same nine fixed-evidence prompts, three calls each")
-    ax.legend(frameon=False, loc="lower right")
+    ax.legend(frameon=False, loc="upper center", bbox_to_anchor=(0.5, -0.22), ncol=2, fontsize=10)
     for extension in ["png", "svg", "pdf"]:
         fig.savefig(args.output / f"interface-comparison.{extension}")
     plt.close(fig)

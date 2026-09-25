@@ -1,0 +1,98 @@
+[
+  {
+    "result_id": "ff5581fbcfa213ed",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r001_warmstart_v7r001_00_complexa_beam_ad6b3bc2f99b0/job_0_n_232_id_64_beam_orig0_bm0-s0to100br1-s100to200br3-s200to300br0-s300to400br3/job_0_n_232_id_64_beam_orig0_bm0-s0to100br1-s100to200br3-s200to300br0-s300to400br3.pdb",
+    "file": "all-structures/ff5581fbcfa213ed.pdb",
+    "sha256": "ef2d844c5352257e71315f4c0270bc06ea7464ce2dd4ae2f72bb3ce8a2635565"
+  },
+  {
+    "result_id": "0c8631e7dc7e8fb2",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r001_warmstart_v7r001_00_complexa_beam_ad6b3bc2f99b0/job_0_n_232_id_65_beam_orig0_bm0-s0to100br1-s100to200br3-s200to300br0-s300to400br0/job_0_n_232_id_65_beam_orig0_bm0-s0to100br1-s100to200br3-s200to300br0-s300to400br0.pdb",
+    "file": "all-structures/0c8631e7dc7e8fb2.pdb",
+    "sha256": "98e552984d68626013b988bd6d58311dfcf007d51836c72ba89e854a93734c48"
+  },
+  {
+    "result_id": "9e7a0f13afeb702e",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r001_warmstart_v7r001_00_complexa_beam_ad6b3bc2f99b0/job_0_n_232_id_66_beam_orig0_bm0-s0to100br1-s100to200br3-s200to300br1-s300to400br2/job_0_n_232_id_66_beam_orig0_bm0-s0to100br1-s100to200br3-s200to300br1-s300to400br2.pdb",
+    "file": "all-structures/9e7a0f13afeb702e.pdb",
+    "sha256": "65a3768404ea1c35130e71e6b1e2b0f1cc82b612ca3fccf88d4046890b07b912"
+  },
+  {
+    "result_id": "f0b5a3569e0ebe87",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r001_warmstart_v7r001_00_complexa_beam_ad6b3bc2f99b0/job_0_n_232_id_67_beam_orig0_bm0-s0to100br1-s100to200br3-s200to300br0-s300to400br1/job_0_n_232_id_67_beam_orig0_bm0-s0to100br1-s100to200br3-s200to300br0-s300to400br1.pdb",
+    "file": "all-structures/f0b5a3569e0ebe87.pdb",
+    "sha256": "b08ff2e62809de32f3fb88554a2ff9ec9e417c2cc8551b9746a21dabad39f4fa"
+  },
+  {
+    "result_id": "edc7fb983889b2ca",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r001_warmstart_v7r001_00_complexa_beam_ad6b3bc2f99b0/job_0_n_229_id_64_beam_orig1_bm2-s0to100br3-s100to200br2-s200to300br3-s300to400br1/job_0_n_229_id_64_beam_orig1_bm2-s0to100br3-s100to200br2-s200to300br3-s300to400br1.pdb",
+    "file": "all-structures/edc7fb983889b2ca.pdb",
+    "sha256": "068d94045398db9bedd2eda10da134d3cb70e60918f2e4f6acca539a8a509003"
+  },
+  {
+    "result_id": "8a69767631ddb78e",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r001_warmstart_v7r001_00_complexa_beam_ad6b3bc2f99b0/job_0_n_229_id_65_beam_orig1_bm2-s0to100br3-s100to200br2-s200to300br3-s300to400br3/job_0_n_229_id_65_beam_orig1_bm2-s0to100br3-s100to200br2-s200to300br3-s300to400br3.pdb",
+    "file": "all-structures/8a69767631ddb78e.pdb",
+    "sha256": "e84ed5192c2ba0fae97334da501cb8929ab2eb8632cd8d65091e3da43c9df799"
+  },
+  {
+    "result_id": "79e5c84cdf80f5ba",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r001_warmstart_v7r001_00_complexa_beam_ad6b3bc2f99b0/job_0_n_229_id_66_beam_orig1_bm2-s0to100br1-s100to200br0-s200to300br1-s300to400br3/job_0_n_229_id_66_beam_orig1_bm2-s0to100br1-s100to200br0-s200to300br1-s300to400br3.pdb",
+    "file": "all-structures/79e5c84cdf80f5ba.pdb",
+    "sha256": "44a3ac9abb32f828ba7ee2df7fe8bfd2f2738f0a4ea40a8d3c2964b1b23bec35"
+  },
+  {
+    "result_id": "b1b393278bb0ccf9",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r001_warmstart_v7r001_00_complexa_beam_ad6b3bc2f99b0/job_0_n_229_id_67_beam_orig1_bm2-s0to100br1-s100to200br3-s200to300br2-s300to400br3/job_0_n_229_id_67_beam_orig1_bm2-s0to100br1-s100to200br3-s200to300br2-s300to400br3.pdb",
+    "file": "all-structures/b1b393278bb0ccf9.pdb",
+    "sha256": "28625743c533633053eaecf62cfc73a4190f57f99a83e4f66db08248162011e2"
+  },
+  {
+    "result_id": "5350b16ddc62bf9f",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r001_warmstart_v7r001_00_complexa_beam_ad6b3bc2f99b0/job_0_n_167_id_64_beam_orig2_bm3-s0to100br1-s100to200br0-s200to300br0-s300to400br3/job_0_n_167_id_64_beam_orig2_bm3-s0to100br1-s100to200br0-s200to300br0-s300to400br3.pdb",
+    "file": "all-structures/5350b16ddc62bf9f.pdb",
+    "sha256": "8f41a776e606e97701a127ae373e6c9d8ba1885d52306a5a66fb845e6f68d06b"
+  },
+  {
+    "result_id": "fdb91406e3df06b5",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r001_warmstart_v7r001_00_complexa_beam_ad6b3bc2f99b0/job_0_n_167_id_65_beam_orig2_bm3-s0to100br1-s100to200br0-s200to300br0-s300to400br0/job_0_n_167_id_65_beam_orig2_bm3-s0to100br1-s100to200br0-s200to300br0-s300to400br0.pdb",
+    "file": "all-structures/fdb91406e3df06b5.pdb",
+    "sha256": "65eddbe1ba0be11f8ebb31e7f3b57e4bb8c40bdb148432947122effb182ead91"
+  },
+  {
+    "result_id": "c83210264c6f5f1c",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r001_warmstart_v7r001_00_complexa_beam_ad6b3bc2f99b0/job_0_n_167_id_66_beam_orig2_bm3-s0to100br1-s100to200br0-s200to300br0-s300to400br2/job_0_n_167_id_66_beam_orig2_bm3-s0to100br1-s100to200br0-s200to300br0-s300to400br2.pdb",
+    "file": "all-structures/c83210264c6f5f1c.pdb",
+    "sha256": "b319721b0272baae5a8ab7f6f7e2f46e7b27044d8fc7820559f8bc6bf509c178"
+  },
+  {
+    "result_id": "d054eb7ab56baa25",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r001_warmstart_v7r001_00_complexa_beam_ad6b3bc2f99b0/job_0_n_167_id_67_beam_orig2_bm3-s0to100br1-s100to200br0-s200to300br0-s300to400br1/job_0_n_167_id_67_beam_orig2_bm3-s0to100br1-s100to200br0-s200to300br0-s300to400br1.pdb",
+    "file": "all-structures/d054eb7ab56baa25.pdb",
+    "sha256": "aea344b75e2b54bea3d07e110b21bb85936c0ae56ec83ff3da6cdf4036cf4ef9"
+  },
+  {
+    "result_id": "09f5a1b97503e4b8",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r001_warmstart_v7r001_00_complexa_beam_ad6b3bc2f99b0/job_0_n_175_id_64_beam_orig3_bm2-s0to100br1-s100to200br2-s200to300br1-s300to400br1/job_0_n_175_id_64_beam_orig3_bm2-s0to100br1-s100to200br2-s200to300br1-s300to400br1.pdb",
+    "file": "all-structures/09f5a1b97503e4b8.pdb",
+    "sha256": "1ad86215f3c11f68c12a8eaadced15e4fcabd52f1e52925a6d7912ae80d1b1e8"
+  },
+  {
+    "result_id": "da3a37fc613ec4a2",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r001_warmstart_v7r001_00_complexa_beam_ad6b3bc2f99b0/job_0_n_175_id_65_beam_orig3_bm2-s0to100br1-s100to200br2-s200to300br1-s300to400br3/job_0_n_175_id_65_beam_orig3_bm2-s0to100br1-s100to200br2-s200to300br1-s300to400br3.pdb",
+    "file": "all-structures/da3a37fc613ec4a2.pdb",
+    "sha256": "b9a473f5641157cae5ab45daa78caf673d2f88e37d1438d0cadd0234e377a64a"
+  },
+  {
+    "result_id": "241a839db45c45db",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r001_warmstart_v7r001_00_complexa_beam_ad6b3bc2f99b0/job_0_n_175_id_66_beam_orig3_bm2-s0to100br1-s100to200br2-s200to300br1-s300to400br0/job_0_n_175_id_66_beam_orig3_bm2-s0to100br1-s100to200br2-s200to300br1-s300to400br0.pdb",
+    "file": "all-structures/241a839db45c45db.pdb",
+    "sha256": "00f505057f3692c7e0b1dd1f2af7a97a0bbc92020454256e4a5af6f4d6a9c2ee"
+  },
+  {
+    "result_id": "c80b38d5c18821dc",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r001_warmstart_v7r001_00_complexa_beam_ad6b3bc2f99b0/job_0_n_175_id_67_beam_orig3_bm2-s0to100br1-s100to200br2-s200to300br1-s300to400br2/job_0_n_175_id_67_beam_orig3_bm2-s0to100br1-s100to200br2-s200to300br1-s300to400br2.pdb",
+    "file": "all-structures/c80b38d5c18821dc.pdb",
+    "sha256": "c5e06a8930eee1aabeab25ddf0a02043cd1531abd1335f8526a35e4e23df649e"
+  }
+]

@@ -1,0 +1,126 @@
+{
+  "n_records": 16,
+  "exit_status": {
+    "ok": 16
+  },
+  "family": {
+    "complexa_beam": 16
+  },
+  "n_canonical_complete_ok": 16,
+  "n_strict": 0,
+  "n_near_miss": 0,
+  "n_structures": 16,
+  "n_sequences": 12,
+  "n_distinct_exact_sequences": 3,
+  "metric_stats": {
+    "pLDDT": {
+      "n": 16,
+      "median": 86.6046565,
+      "min": 85.98698999999999,
+      "max": 91.84794
+    },
+    "iPAE": {
+      "n": 16,
+      "median": 0.34234337000000004,
+      "min": 0.14051232,
+      "max": 0.5281716
+    },
+    "binder_scRMSD": {
+      "n": 16,
+      "median": 4.1494585,
+      "min": 2.076693,
+      "max": 5.3825307
+    }
+  },
+  "verified_metric_stats": {
+    "pLDDT": {
+      "n": 12,
+      "median": 87.1896445,
+      "min": 86.115,
+      "max": 91.84794
+    },
+    "iPAE": {
+      "n": 12,
+      "median": 0.1754352,
+      "min": 0.14051232,
+      "max": 0.51871425
+    },
+    "binder_scRMSD": {
+      "n": 12,
+      "median": 5.2765697,
+      "min": 2.076693,
+      "max": 5.3825307
+    }
+  },
+  "all_verified_structure_clustering": {
+    "cluster_by_result_id": {
+      "5350b16ddc62bf9f": "foldseek:5350b16ddc62bf9f",
+      "c83210264c6f5f1c": "foldseek:5350b16ddc62bf9f",
+      "d054eb7ab56baa25": "foldseek:5350b16ddc62bf9f",
+      "fdb91406e3df06b5": "foldseek:5350b16ddc62bf9f",
+      "da3a37fc613ec4a2": "foldseek:da3a37fc613ec4a2",
+      "09f5a1b97503e4b8": "foldseek:da3a37fc613ec4a2",
+      "241a839db45c45db": "foldseek:da3a37fc613ec4a2",
+      "c80b38d5c18821dc": "foldseek:da3a37fc613ec4a2",
+      "edc7fb983889b2ca": "foldseek:edc7fb983889b2ca",
+      "79e5c84cdf80f5ba": "foldseek:edc7fb983889b2ca",
+      "8a69767631ddb78e": "foldseek:edc7fb983889b2ca",
+      "b1b393278bb0ccf9": "foldseek:edc7fb983889b2ca"
+    },
+    "n_structures": 12,
+    "n_clusters": 3,
+    "status": "ok",
+    "stderr_tail": "",
+    "structure_scope": "binder_chain",
+    "n_scope_fallback": 0
+  },
+  "all_verified_sequence_clustering": {
+    "cluster_by_result_id": {
+      "09f5a1b97503e4b8": "seq90:09f5a1b97503e4b8",
+      "241a839db45c45db": "seq90:09f5a1b97503e4b8",
+      "c80b38d5c18821dc": "seq90:09f5a1b97503e4b8",
+      "da3a37fc613ec4a2": "seq90:09f5a1b97503e4b8",
+      "5350b16ddc62bf9f": "seq90:5350b16ddc62bf9f",
+      "c83210264c6f5f1c": "seq90:5350b16ddc62bf9f",
+      "d054eb7ab56baa25": "seq90:5350b16ddc62bf9f",
+      "fdb91406e3df06b5": "seq90:5350b16ddc62bf9f",
+      "79e5c84cdf80f5ba": "seq90:79e5c84cdf80f5ba",
+      "8a69767631ddb78e": "seq90:79e5c84cdf80f5ba",
+      "b1b393278bb0ccf9": "seq90:79e5c84cdf80f5ba",
+      "edc7fb983889b2ca": "seq90:79e5c84cdf80f5ba"
+    },
+    "n_sequences": 12,
+    "n_clusters": 3,
+    "status": "ok",
+    "stderr_tail": "",
+    "min_seq_id": 0.9,
+    "coverage": 0.8,
+    "n_sequence_fallback": 12
+  },
+  "upstream_export": {
+    "target_id": "32_PDL1_ALPHA_REPACK",
+    "n_results": 16,
+    "n_strict_with_structure": 0,
+    "n_unresolved_output_identity": 4,
+    "foldseek_su_status": "disabled",
+    "sequence_dedup_status": "disabled",
+    "n_requested": 16,
+    "n_exported": 0,
+    "n_pdbs_copied": 0,
+    "n_pdbs_missing_source": 0,
+    "distinct_structure_bins": 0,
+    "family_counts": {},
+    "settings": {
+      "ranking": "production_quality_descending_then_result_id",
+      "su_tm_score": 0.6,
+      "sequence_identity": 0.9,
+      "sequence_coverage": 0.8,
+      "annotate_dedup": true,
+      "require_structure_artifact": true,
+      "copy_structures": true,
+      "overwrite": false
+    }
+  },
+  "archive_read_skips": {},
+  "note": "Full archive after drain. Native diagnostic scores do not count as canonical AF2 success. SU requires successful Foldseek clustering; missing measurements remain missing."
+}

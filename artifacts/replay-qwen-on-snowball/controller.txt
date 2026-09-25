@@ -1,0 +1,5 @@
+{"id": "snowball_v7r001", "exact_prompt_reconstruction": true}
+{"id": "snowball_v7r006", "exact_prompt_reconstruction": true}
+{"id": "snowball_v7r011", "exact_prompt_reconstruction": true}
+{"id": "snowball_v7r016", "exact_prompt_reconstruction": true}
+{"id": "snowball_v7r021", "exact_prompt_reconstruction": true}

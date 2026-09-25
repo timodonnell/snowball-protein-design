@@ -1,0 +1,1 @@
+rank,result_id,target_id,backend_family,production_quality,pLDDT,iPAE,binder_scRMSD,ipTM,min_ipae,avg_ipsae,interface_contact_density,structure_bin,sequence_bin,binder_chain,target_chains,output_chain_identity,src_pdb,dst_pdb

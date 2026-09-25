@@ -1,0 +1,53 @@
+{
+  "errors": [],
+  "lineage_references": {
+    "ambiguous": 0,
+    "candidate_only": 16,
+    "external_or_unknown": 0,
+    "external_or_unknown_examples": [],
+    "result_only": 0,
+    "total": 16
+  },
+  "ok": true,
+  "provenance_files": [
+    "run_provenance.json"
+  ],
+  "record_counts": {
+    "action_candidates.jsonl": 78,
+    "dispatch_records.jsonl": 1,
+    "evidence_summaries.jsonl": 21,
+    "hypothesis_cards.jsonl": 19,
+    "launch_decisions.jsonl": 1,
+    "llm_call_records.jsonl": 49,
+    "metric_calibrations.jsonl": 0,
+    "panel_selections.jsonl": 21,
+    "result_records.jsonl": 16,
+    "route_records.jsonl": 0,
+    "runtime_buckets.jsonl": 0,
+    "supervisor_decisions.jsonl": 21,
+    "target_constraints.jsonl": 0
+  },
+  "schema_version": "trex.archive-validation.v1",
+  "skipped_records": {},
+  "target_ids": [
+    "32_PDL1_ALPHA_REPACK"
+  ],
+  "typed_record_counts": {
+    "action_candidates.jsonl": 78,
+    "dispatch_records.jsonl": 1,
+    "evidence_summaries.jsonl": 21,
+    "hypothesis_cards.jsonl": 19,
+    "launch_decisions.jsonl": 1,
+    "llm_call_records.jsonl": 49,
+    "metric_calibrations.jsonl": 0,
+    "panel_selections.jsonl": 21,
+    "result_records.jsonl": 16,
+    "route_records.jsonl": 0,
+    "runtime_buckets.jsonl": 0,
+    "supervisor_decisions.jsonl": 21,
+    "target_constraints.jsonl": 0
+  },
+  "warnings": [
+    "latest Foldseek SU status is 'no_strict'"
+  ]
+}
