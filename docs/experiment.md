@@ -28,6 +28,10 @@
   Snowball checkpoint's own template supports `enable_thinking=false`, emitting
   its native `/nothink` control. Upstream T-REX sends a thinking flag only when
   true, so relying on the client default alone would leave Snowball unspecified.
+- Disable Snowball prefix caching to match Qwen's observed disabled cache.
+  Serving stacks still differ (compiled FP8 dense Qwen versus eager BF16 MoE
+  Snowball on two GPUs); latency is an operational measurement, not an isolated
+  model-speed benchmark.
 - Replay common evidence through both models to separate decision quality from
   stochastic campaign trajectories, if feasible after molecular smoke.
 - Persist exact inputs and outputs for potential SFT and verifiable RL examples;

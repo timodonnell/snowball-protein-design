@@ -2,7 +2,7 @@
 
 Pilot comparison of T-REX with the study's Qwen3.6-27B-FP8 controller and
 `open-athena/Snowball-67B-A2B-5.7T-Mixed-RLVR-Step38`. Work in progress;
-no design results yet.
+Qwen has generated real AF2-qualified designs; the matched comparison is running.
 
 We run the upstream planner, supervisor, deterministic validation and molecular
 backends on the same PD-L1 target. First establish a short Qwen campaign, then
@@ -15,4 +15,5 @@ Source: [paper](https://www.biorxiv.org/content/10.64898/2026.09.22.753604v2),
 in `vendor/T-REX`. This pilot tests operability and produces training-task leads;
 it does not reproduce the paper's 48-hour benchmark or establish binding activity.
 
-See [experiment notes](docs/experiment.md) and [issue log](docs/issues.md).
+See [experiment notes](docs/experiment.md), [issue log](docs/issues.md),
+[reproduction instructions](docs/reproduce.md), and [training-task notes](docs/training.md).

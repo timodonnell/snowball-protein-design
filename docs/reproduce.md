@@ -89,7 +89,7 @@ uv venv --python 3.12.13
 uv pip install -e './vendor/T-REX[dev]'
 export PYTHONPATH=.:vendor/T-REX
 export PYTHONHASHSEED=0
-.venv/bin/pytest -q tests/test_offline_audit.py
+.venv/bin/pytest -q tests
 for arm in qwen snowball; do
   .venv/bin/python scripts/audit_fixed.py "artifacts/$arm/wire" \
     "artifacts/$arm/fixed-audit" --arm "$arm"
@@ -104,3 +104,14 @@ The audit requires nine exact prompt hashes, three primary calls per prompt,
 and the pinned source. It fails loudly on a prompt mismatch or incomplete run.
 The public fixed cases and their recorded responses are evaluation data, not a
 held-out test if included in SFT.
+
+Static figures use Matplotlib 3.10.8:
+
+```bash
+uv pip install matplotlib==3.10.8
+.venv/bin/python scripts/make_figures.py artifacts artifacts/figures
+```
+
+`configs/local-analysis.freeze.txt` records the observed CPU analysis environment;
+the remote molecular/serving locks are separate. `collector-validation-snapshot.json`
+is a pre-final frozen-snapshot check of the exporter, not a campaign endpoint.
