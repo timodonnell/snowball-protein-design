@@ -71,10 +71,16 @@ def score(raw, context):
         labels.update(deterministic_repair_valid=repair_ok, repair_reason=repair_why, repairs=repairs)
         config_checks = []
         registry = default_registry()
-        for i, card in enumerate(obj.get("cards", [])):
+        cards = obj.get("cards", [])
+        for i, card in enumerate(cards if isinstance(cards, list) else []):
             if not isinstance(card, dict):
                 continue
-            for family, config in (card.get("config_delta_suggestions") or {}).items():
+            suggestions = card.get("config_delta_suggestions") or {}
+            if not isinstance(suggestions, dict):
+                config_checks.append(dict(card=i, family=None, valid=False,
+                                          reasons=["config_delta_suggestions_not_object"]))
+                continue
+            for family, config in suggestions.items():
                 capability = registry.get(family)
                 if capability is None or not isinstance(config, dict):
                     valid, reasons = False, ["unknown_family_or_invalid_config"]
@@ -89,7 +95,8 @@ def score(raw, context):
         allowed_evidence_refs=context["refs"], candidate_by_id=candidates,
         hypothesis_by_id=hypotheses)
     labels.update(schema_valid=ok, schema_reason=why,
-                  mixture_assessment=sv.assess_mode_mixture(obj.get("mode_mixture") or {}, context["expectations"]))
+                  mixture_assessment=sv.assess_mode_mixture(obj.get("mode_mixture") or {}, context["expectations"])
+                  if ok else {"all_ok": False, "reason": "invalid_schema"})
     return labels, obj if ok else None
 
 

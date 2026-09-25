@@ -45,7 +45,8 @@ def summarize(archive, log):
     ends = re.findall(r"done at (\d{4}-\d\d-\d\dT\d\d:\d\d:\d\dZ)", text)
     elapsed = None
     if starts and ends:
-        elapsed = (datetime.fromisoformat(ends[-1]) - datetime.fromisoformat(starts[0])).total_seconds() / 3600
+        elapsed = (datetime.fromisoformat(ends[-1].replace("Z", "+00:00"))
+                   - datetime.fromisoformat(starts[0].replace("Z", "+00:00"))).total_seconds() / 3600
     latest = evidence[-1] if evidence else {}
     workers = latest.get("worker_wall_gpu_count")
     return dict(n_results=len(results), n_unique_started_candidates=len(started),

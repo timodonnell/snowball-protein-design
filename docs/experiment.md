@@ -24,6 +24,10 @@
   the baseline, preserving each tokenizer's native EOS IDs. No prompt truncation
   or extra JSON enforcement is applied to either arm. `PYTHONHASHSEED=0` fixes
   Python set iteration order in the fixed-case prompts.
+- Disable thinking through each server's native chat-template setting. The
+  Snowball checkpoint's own template supports `enable_thinking=false`, emitting
+  its native `/nothink` control. Upstream T-REX sends a thinking flag only when
+  true, so relying on the client default alone would leave Snowball unspecified.
 - Replay common evidence through both models to separate decision quality from
   stochastic campaign trajectories, if feasible after molecular smoke.
 - Persist exact inputs and outputs for potential SFT and verifiable RL examples;
@@ -74,3 +78,9 @@ The controller's one-hour clock starts after startup/preflight and may be follow
 by up to ten minutes of drain per busy worker. We retain timestamps and recompute
 endpoint exports from the complete archive after drain; the upstream summary's
 last evidence tick alone can omit late results.
+
+Complexa's seed is derived from the campaign seed, candidate ID and logical run
+name. The physical output namespace is excluded from that seed. Identical
+warm-start jobs therefore share a seed across arms; subsequent asynchronous
+choices generally do not form paired molecular experiments. The archive
+namespace prevents one arm's structures from overwriting the other's.

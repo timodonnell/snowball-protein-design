@@ -2,15 +2,19 @@
 """Summarize HTTP calls without conflating JSON syntax with T-REX validation."""
 import argparse
 from collections import Counter
+from datetime import datetime
 import json
 from pathlib import Path
 import statistics
 
 
-def summarize(root: Path):
+def summarize(root: Path, after=None, before=None):
     rows = []
     for path in sorted(root.glob("*.json")):
         record = json.loads(path.read_text())
+        started = datetime.fromisoformat(record["started_at"])
+        if (after is not None and started < after) or (before is not None and started >= before):
+            continue
         if record["method"] != "POST" or not record["path"].endswith("/chat/completions"):
             continue
         request = record["request"].get("json", {})
@@ -26,6 +30,7 @@ def summarize(root: Path):
             json_only = False
         usage = response.get("usage", {})
         rows.append(dict(file=path.name, call_id=record["call_id"], role=role,
+            started_at=record["started_at"],
             model=request.get("model"), state=record["state"], status=record.get("status"),
             is_repair_call=any(m["role"] == "assistant" for m in messages),
             finish_reason=choice.get("finish_reason"), json_only=json_only,
@@ -40,6 +45,8 @@ def summarize(root: Path):
         median_latency_s=statistics.median(latencies) if latencies else None,
         prompt_tokens=sum(r["prompt_tokens"] or 0 for r in rows),
         completion_tokens=sum(r["completion_tokens"] or 0 for r in rows),
+        max_prompt_tokens=max([r["prompt_tokens"] or 0 for r in rows], default=0),
+        max_completion_tokens=max([r["completion_tokens"] or 0 for r in rows], default=0),
         calls_missing_usage=sum(r["prompt_tokens"] is None for r in rows))
     return dict(summary=counts, calls=rows,
         note="JSON-only measures syntax only. Use T-REX reports for schema, repair, reference, candidate and fallback outcomes. Token sums exclude calls with missing usage.")
@@ -49,8 +56,12 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("wire", type=Path)
     parser.add_argument("output", type=Path)
+    parser.add_argument("--after-time-file", type=Path)
+    parser.add_argument("--before-time-file", type=Path)
     args = parser.parse_args()
-    report = summarize(args.wire)
+    report = summarize(args.wire,
+        after=datetime.fromisoformat(args.after_time_file.read_text().strip().replace("Z", "+00:00")) if args.after_time_file else None,
+        before=datetime.fromisoformat(args.before_time_file.read_text().strip().replace("Z", "+00:00")) if args.before_time_file else None)
     args.output.write_text(json.dumps(report, indent=2) + "\n")
     print(json.dumps(report["summary"], indent=2))
 
