@@ -23,12 +23,15 @@ def sha256(path):
 def verify(root):
     results = {}
     prompts = []
+    target_sha = sha256(root / "target/5o45_repacked.pdb")
     for arm in ["qwen", "snowball"]:
         directory = root / arm
         designs = directory / "designs"
         native = json.loads((directory / "archive-validation.json").read_text())
         assert native["ok"] and not native["errors"] and not native["skipped_records"], arm
         assert (directory / "campaign-end-time.txt").is_file(), arm
+        provenance = json.loads((directory / "campaign/run_provenance.json").read_text())
+        assert provenance["target"]["pdb_sha256"] == target_sha, arm
         rows = read_csv(designs / "designs.csv")
         prepared = read_jsonl(designs / "prepared-results.jsonl")
         original = read_jsonl(directory / "campaign/result_records.jsonl")
@@ -61,10 +64,11 @@ def verify(root):
         audit = json.loads((directory / "fixed-audit/summary.json").read_text())
         prompts.append(audit["matched_prompt_sha256"])
         results[arm] = dict(native_archive_valid=True, result_ids_verified=len(ids),
+            native_archive_warnings=native["warnings"],
             structure_hashes_verified=len(hashes), qualified_pdb_hashes_verified=len(strict),
             qualified_fasta_ids_verified=len(fasta_ids), pending_wire_requests=0)
     assert prompts[0] == prompts[1] and len(prompts[0]) == 9, "Fixed prompts differ"
-    return dict(ok=True, arms=results, matched_fixed_prompt_hashes=9,
+    return dict(ok=True, arms=results, target_pdb_sha256=target_sha, matched_fixed_prompt_hashes=9,
                 note="Local copy integrity and endpoint consistency; not a biological validation.")
 
 

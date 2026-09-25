@@ -82,7 +82,8 @@ def main():
     axes[0].set_ylabel("Qualified records")
     axes[1].set_ylabel("Qualified binder-chain clusters (TM 0.6)")
     for ax in axes:
-        ax.set_ylim(bottom=0)
+        # Keep the zero-yield arm visible above the horizontal axis spine.
+        ax.set_ylim(bottom=-0.03 * ax.get_ylim()[1])
     axes[1].legend(frameon=False)
     fig.suptitle("Computational yield over time; final endpoint includes worker drain")
     for extension in ["png", "svg", "pdf"]:
@@ -110,6 +111,11 @@ def main():
     for extension in ["png", "svg", "pdf"]:
         fig.savefig(args.output / f"interface-comparison.{extension}")
     plt.close(fig)
+
+    # Matplotlib adds trailing spaces to SVG path data. Preserve its geometry
+    # while keeping generated artifacts compatible with git diff --check.
+    for path in args.output.glob("*.svg"):
+        path.write_text("\n".join(line.rstrip() for line in path.read_text().splitlines())+"\n")
 
 
 if __name__ == "__main__":

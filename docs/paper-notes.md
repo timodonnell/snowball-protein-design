@@ -15,7 +15,7 @@ scRMSD <1.5Å. BindCraft/BoltzGen native scores cannot substitute for this gate.
 Qualified structures are clustered on the binder chain; primary structural
 uniqueness uses Foldseek TM-score 0.6. The reported campaign budget is 144 worker
 H100-hours (three workers for 48h), excluding the dedicated LLM GPU. Our short,
-two-worker runs will have a substantially smaller search and feedback horizon.
+two-worker runs have a substantially smaller search and feedback horizon.
 
 The paper reports seven invalid Supervisor responses among 3,125 calls; six had
 invalid evidence references and one an invalid resource class (Methods 4.5,

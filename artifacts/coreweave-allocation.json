@@ -16,5 +16,19 @@
     }
   },
   "image": "nvidia/cuda:12.8.1-devel-ubuntu22.04",
-  "image_id": "docker.io/nvidia/cuda@sha256:a99a1860ba8e2916e5c3e73b72ec4c4301653a84586e05bfc9a2aa2d58027e97"
+  "image_id": "docker.io/nvidia/cuda@sha256:a99a1860ba8e2916e5c3e73b72ec4c4301653a84586e05bfc9a2aa2d58027e97",
+  "release_requested_at": "2026-09-25T21:58:13.208794+00:00",
+  "release_confirmed_at": "2026-09-25T21:59:00.770377+00:00",
+  "gpu_release_confirmed": true,
+  "allocation_wall_h_upper_estimate": 3.825769549166667,
+  "allocated_h100_hours_upper_estimate": 15.303078196666668,
+  "retained_storage": {
+    "pvc": "snowball-trex-workspace",
+    "namespace": "default",
+    "capacity": "600Gi",
+    "phase": "Bound",
+    "last_observed_used": "291GiB",
+    "purpose": "Cached model weights, environments, and original backend outputs for recovery and follow-up work."
+  },
+  "accounting_note": "Four H100s from pod start to confirmed deletion, including setup, diagnostics, idle time, both campaigns, and replay. Upper estimate of reservation duration, not hardware-active GPU time or an invoice."
 }

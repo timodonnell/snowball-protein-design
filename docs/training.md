@@ -77,6 +77,20 @@ ancestry, keeping nearby ticks, parent/child designs, recipes and paraphrases
 in the same split. Report both the original public fixtures and newly held-out
 ones after any training.
 
+The post-campaign replay provides five exact live Snowball prompts with Qwen
+responses, first-response labels, deterministic repairs, and a static candidate
+preview. Selection uses call-index quartiles and retains every outcome. These
+are review material, including late states where abstaining can be correct;
+they are not automatically accepted SFT pairs. `scripts/summarize_replay.py`
+recomputes the interface/feasibility counts without assigning molecular reward.
+
+In the measured replay, all five Qwen replies passed schema/configuration
+checks, but none supplied a feasible action that also passed the live gate:
+three used confidence 0.5 and two abstained. This is a reason to review the
+confidence-gating policy alongside training. An ablation can vary that policy
+while retaining the model's stated uncertainty; an RL reward should not teach
+unsupported confidence inflation simply to cross 0.55.
+
 ## Molecular decision reward
 
 Snapshot a real archive and queue, then branch multiple decisions from that same

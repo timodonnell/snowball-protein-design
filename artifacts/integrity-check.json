@@ -4,6 +4,7 @@
     "qwen": {
       "native_archive_valid": true,
       "result_ids_verified": 406,
+      "native_archive_warnings": [],
       "structure_hashes_verified": 406,
       "qualified_pdb_hashes_verified": 29,
       "qualified_fasta_ids_verified": 29,
@@ -12,12 +13,16 @@
     "snowball": {
       "native_archive_valid": true,
       "result_ids_verified": 16,
+      "native_archive_warnings": [
+        "latest Foldseek SU status is 'no_strict'"
+      ],
       "structure_hashes_verified": 16,
       "qualified_pdb_hashes_verified": 0,
       "qualified_fasta_ids_verified": 0,
       "pending_wire_requests": 0
     }
   },
+  "target_pdb_sha256": "dcd82d0a0258524ad6b036c39a3743cd8e16fb455178531781f81f5735a6a397",
   "matched_fixed_prompt_hashes": 9,
   "note": "Local copy integrity and endpoint consistency; not a biological validation."
 }

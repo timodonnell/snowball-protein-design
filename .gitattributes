@@ -1,0 +1,2 @@
+# Preserve fixed-column scientific source files, including trailing padding.
+*.pdb -text -whitespace

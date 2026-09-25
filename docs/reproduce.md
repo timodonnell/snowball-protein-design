@@ -121,11 +121,19 @@ for arm in qwen snowball; do
     "artifacts/$arm/fixed-audit" --arm "$arm"
   .venv/bin/python scripts/summarize_wire.py "artifacts/$arm/wire" \
     "artifacts/$arm/wire-summary.json"
+  .venv/bin/python scripts/summarize_wire.py "artifacts/$arm/wire" \
+    "artifacts/$arm/wire-campaign-summary.json" \
+    --after-time-file "artifacts/$arm/campaign-start-time.txt"
+  .venv/bin/python scripts/summarize_wire.py "artifacts/$arm/wire" \
+    "artifacts/$arm/wire-fixed-summary.json" \
+    --before-time-file "artifacts/$arm/campaign-start-time.txt"
   .venv/bin/python scripts/summarize_campaign.py "artifacts/$arm/campaign" \
     "artifacts/$arm/controller.txt" "artifacts/$arm/accounting.json"
   .venv/bin/python scripts/index_decisions.py "artifacts/$arm" \
     "artifacts/$arm/decision-index.jsonl"
 done
+.venv/bin/python scripts/summarize_replay.py artifacts/replay-qwen-on-snowball \
+  artifacts/replay-qwen-on-snowball/summary.json
 ```
 
 The audit requires nine exact prompt hashes, three primary calls per prompt,

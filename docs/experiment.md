@@ -96,6 +96,11 @@ by up to ten minutes of drain per busy worker. We retain timestamps and recomput
 endpoint exports from the complete archive after drain; the upstream summary's
 last evidence tick alone can omit late results.
 
+The wall limit is checked at loop start. Model calls and the 120-second
+no-progress backoff can cross the nominal endpoint even with no molecular job
+in flight. Report measured controller duration, including this overrun, instead
+of assuming exactly two worker GPU-hours per arm.
+
 The original recorder on port 12000 keeps late upstream responses after a client
 timeout. That behavior affected Snowball's fixed checks and may increase retry
 contention; their timing is not a clean direct-server speed benchmark. Before
@@ -112,3 +117,10 @@ name. The physical output namespace is excluded from that seed. Identical
 warm-start jobs therefore share a seed across arms; subsequent asynchronous
 choices generally do not form paired molecular experiments. The archive
 namespace prevents one arm's structures from overwriting the other's.
+
+## Completion
+
+Both campaigns, paired fixed checks and the five-state teacher replay completed.
+The pod was deleted at 21:59 UTC after exports, hash checks and a GitHub backup.
+The 600GiB PVC remains for recovery and future work. See [results](results.md)
+for endpoints and the full allocation accounting.
