@@ -1,0 +1,31 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/work/snowball-serving/lib/python3.12/site-packages/vllm/entrypoints/openai/api_server.py", line 5, in <module>
+    from vllm.entrypoints.launchers.api_server.app_state import init_app_state
+  File "/work/snowball-serving/lib/python3.12/site-packages/vllm/entrypoints/launchers/api_server/app_state.py", line 9, in <module>
+    from vllm.engine.protocol import EngineClient
+  File "/work/snowball-serving/lib/python3.12/site-packages/vllm/engine/protocol.py", line 9, in <module>
+    from vllm.config import ModelConfig, VllmConfig
+  File "/work/snowball-serving/lib/python3.12/site-packages/vllm/config/__init__.py", line 24, in <module>
+    from vllm.config.model import (
+  File "/work/snowball-serving/lib/python3.12/site-packages/vllm/config/model.py", line 31, in <module>
+    from vllm.transformers_utils.config import (
+  File "/work/snowball-serving/lib/python3.12/site-packages/vllm/transformers_utils/config.py", line 21, in <module>
+    from transformers.models.auto.image_processing_auto import get_image_processor_config
+  File "/work/snowball-serving/lib/python3.12/site-packages/transformers/models/auto/image_processing_auto.py", line 24, in <module>
+    from ...image_processing_utils import ImageProcessingMixin
+  File "/work/snowball-serving/lib/python3.12/site-packages/transformers/image_processing_utils.py", line 34, in <module>
+    from .processing_utils import ImagesKwargs, Unpack
+  File "/work/snowball-serving/lib/python3.12/site-packages/transformers/processing_utils.py", line 38, in <module>
+    from .audio_utils import AudioInput, load_audio, make_list_of_audio
+  File "/work/snowball-serving/lib/python3.12/site-packages/transformers/audio_utils.py", line 58, in <module>
+    import torchaudio
+  File "/work/snowball-serving/lib/python3.12/site-packages/torchaudio/__init__.py", line 7, in <module>
+    from . import _extension  # noqa  # usort: skip
+    ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/snowball-serving/lib/python3.12/site-packages/torchaudio/_extension/__init__.py", line 36, in <module>
+    _check_cuda_version()
+  File "/work/snowball-serving/lib/python3.12/site-packages/torchaudio/_extension/utils.py", line 124, in _check_cuda_version
+    raise RuntimeError(
+RuntimeError: Detected that PyTorch and TorchAudio were compiled with different CUDA versions. PyTorch has CUDA version 13.2 whereas TorchAudio has CUDA version 13.0. Please install the TorchAudio version that matches your PyTorch version.

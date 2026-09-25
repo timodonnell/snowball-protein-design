@@ -1,0 +1,52 @@
+schema_version: trex.campaign.v1
+name: pdl1-qwen-s0
+target:
+  name: pdl1
+  asset_root: /work/T-REX-assets
+  constraint: null
+  pdb: null
+run:
+  archive_root: /work/results/qwen/campaign
+  max_wall_hours: 1.0
+  seed: 0
+  worker_gpus:
+  - '2'
+  - '3'
+  enabled_families:
+  - bindcraft
+  - boltzgen
+  - complexa_beam
+  - complexa_best_of_n
+  - complexa_fk_steering
+  - complexa_mcts
+  - proteinmpnn_redesign
+  - structure_refilter
+llm:
+  base_url: http://127.0.0.1:12000/v1
+  model: vllm/Qwen/Qwen3.6-27B-FP8
+policy:
+  critic: true
+  evidence_skip: false
+  exemplars: true
+  foldseek_su_tm_score: 0.6
+  foldseek_collapse_tm_score: 0.6
+  selector_quota_realization: fractional_carry
+  selector_mode_window_k: 1
+  selector_adaptive_mode_window_k: false
+memory:
+  cross_campaign_path: null
+backends:
+  repo_root: /work/T-REX
+  external_root: null
+  complexa_repo: null
+  legacy_complexa_repo: null
+  complexa_python: null
+  bindcraft_repo: null
+  bindcraft_env: null
+  boltzgen_repo: null
+  boltzgen_binary: null
+  boltzgen_cache: null
+  foldseek_binary: null
+  mmseqs_binary: null
+  qwen_model_path: null
+  qwen_model_manifest: null

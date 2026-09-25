@@ -15,24 +15,11 @@ set +a
 controller=/work/T-REX/.venv-serving/bin/python
 if [ "$arm" = qwen ]; then
   model=Qwen/Qwen3.6-27B-FP8
-  server_python=$controller
-  devices=0
-  server_args=(--model "$TREX_QWEN_MODEL_PATH" --max-model-len 65536
-    --gpu-memory-utilization 0.90 --trust-remote-code
-    --default-chat-template-kwargs '{"enable_thinking": false}')
 else
   model=open-athena/Snowball-67B-A2B-5.7T-Mixed-RLVR-Step38
-  server_python=/work/snowball-serving/bin/python
-  devices=0,1
-  server_args=(--model /work/models/snowball --max-model-len 32768
-    --gpu-memory-utilization 0.92 --tensor-parallel-size 1
-    --data-parallel-size 2 --enable-expert-parallel --enforce-eager
-    --max-num-seqs 4)
 fi
 # Process groups permit cleanup of vLLM's worker descendants.
-setsid env CUDA_VISIBLE_DEVICES="$devices" "$server_python" \
-  -m vllm.entrypoints.openai.api_server "${server_args[@]}" \
-  --served-model-name "$model" --host 127.0.0.1 --port 12001 \
+setsid bash /work/pilot-scripts/serve_model.sh "$arm" 12001 \
   > "/work/logs/$arm-vllm.log" 2>&1 &
 server_pid=$!
 setsid "$controller" /work/pilot-scripts/recording_proxy.py \
@@ -64,5 +51,13 @@ test "$ready" = 1
   --model "vllm/$model" --base-url http://127.0.0.1:12000/v1 \
   --repeats 3 --max-tokens 3072 \
   --out "/work/results/$arm/supervisor-validation.json"
+date -u +%FT%TZ > "/work/results/$arm/campaign-start-time.txt"
 "$controller" -m trex.cli design "/work/configs/$arm.yaml" \
   --verify-backend-revisions
+date -u +%FT%TZ > "/work/results/$arm/campaign-end-time.txt"
+"$controller" -m trex.analysis summary \
+  --archive-root "/work/results/$arm/campaign" --json \
+  > "/work/results/$arm/campaign-summary.json"
+"$controller" -m trex.analysis validate \
+  --archive-root "/work/results/$arm/campaign" --json \
+  > "/work/results/$arm/archive-validation.json"

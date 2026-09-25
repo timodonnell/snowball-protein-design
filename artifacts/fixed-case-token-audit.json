@@ -1,0 +1,47 @@
+[
+  {
+    "role": "planner",
+    "case": "productive_cd45_like",
+    "content_tokens_without_chat_template": 8633
+  },
+  {
+    "role": "planner",
+    "case": "rescue_rich_betv1_like",
+    "content_tokens_without_chat_template": 8373
+  },
+  {
+    "role": "planner",
+    "case": "stalled_sc2rbd_like",
+    "content_tokens_without_chat_template": 8806
+  },
+  {
+    "role": "planner",
+    "case": "ambiguous_cbago_like",
+    "content_tokens_without_chat_template": 7867
+  },
+  {
+    "role": "planner",
+    "case": "stalled_redundant_pdl1",
+    "content_tokens_without_chat_template": 8371
+  },
+  {
+    "role": "supervisor",
+    "case": "productive_cd45_like",
+    "content_tokens_without_chat_template": 4674
+  },
+  {
+    "role": "supervisor",
+    "case": "rescue_rich_betv1_like",
+    "content_tokens_without_chat_template": 3937
+  },
+  {
+    "role": "supervisor",
+    "case": "stalled_sc2rbd_like",
+    "content_tokens_without_chat_template": 4554
+  },
+  {
+    "role": "supervisor",
+    "case": "stalled_redundant_pdl1",
+    "content_tokens_without_chat_template": 3947
+  }
+]
