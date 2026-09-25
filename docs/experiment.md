@@ -82,6 +82,15 @@ redesign, and canonical structure refilter. The original all-family YAMLs are
 retained. Fixed-evidence checks still expose the full native action space. This
 is a short-budget configuration of unmodified T-REX, not a full benchmark run.
 
+The remaining Complexa generators retain a 0.5h runtime prior plus a 0.1h drain
+margin, so ordinary generator admission closes around minute 24. Heavy beam
+configurations can require still more time. This is an important limitation of
+a one-hour pilot, even when observed jobs finish faster than their priors. The
+`low_evidence` state also persists until at least one cumulative recorded worker
+GPU-hour and three recent completed records; elapsed wall time alone does not
+advance the state. Automatic refilter chains have their own bounded scheduling
+lane and can continue later than ordinary Planner-proposed generators.
+
 The controller's one-hour clock starts after startup/preflight and may be followed
 by up to ten minutes of drain per busy worker. We retain timestamps and recompute
 endpoint exports from the complete archive after drain; the upstream summary's

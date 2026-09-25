@@ -51,3 +51,20 @@ finishing within the token budget, and obeying evidence-reference restrictions.
 Timeout labels must remain separate from format labels: faster serving alone
 would not repair the wrong object. The public fixed fixtures remain evaluation
 data, so generate fresh evidence states for SFT or RL training.
+
+## A valid live proposal that cannot fit the deadline
+
+Snowball rounds 5–6 proposed beam search with width 8 and branch count 4. Both
+cards passed the Planner parser, but the controller assigned the configuration
+its heavy cost (~1.0h), exceeding ~0.9h remaining. Neither job started. This is
+an executable budget-arithmetic task: a per-parameter range check is insufficient;
+evaluate the combined configuration and remaining deadline. The conservative
+prior is part of this environment's rules, not a measurement that the job would
+actually take one hour on these GPUs.
+
+The system prompt's illustrative card itself contains `beam_width: 8` and the
+placeholder `result_or_route_id`. Snowball repeated both. This suggests testing
+whether counterbalanced examples reduce copying; it does not establish that
+the example caused the failures. For a clean arithmetic task, supply the actual
+runtime-scaling formula and drain margin explicitly, because the prompt's rough
+runtime guidance does not spell out every downstream feasibility rule.

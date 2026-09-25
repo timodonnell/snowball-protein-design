@@ -1009,6 +1009,6 @@
     "Critic records are deterministic guard evaluations, not extra LLM requests.",
     "No-candidate Supervisor records skip inference; keep them separate from invalid model replies.",
     "Started jobs, result records, selected candidates and independent molecular samples are different denominators.",
-    "Worker-wall includes idle slots and drain; recorded worker compute sums parsed job charges. LLM GPUs are excluded."
+    "Worker-wall includes idle slots and drain. Native job charges measure launch-to-reap wall time and can include observation delay; they are not hardware-active GPU time. LLM GPUs are excluded."
   ]
 }

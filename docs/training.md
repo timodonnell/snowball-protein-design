@@ -21,6 +21,9 @@ separately from extraction, repair and final upstream acceptance. The negative
 controls in `tests/test_offline_audit.py` catch hallucinated references,
 unoffered candidates, truncated JSON and combined-budget violations.
 
+Supply the precise cost-scaling rule and drain margin in budget-task inputs;
+rough runtime hints alone do not expose every downstream feasibility condition.
+
 `scripts/evidence_tasks.py` provides a smaller executable starting point:
 four development examples built from 28 actual Qwen campaign records, with
 deterministic SFT answers and an exact JSON reward. They test source-family
@@ -83,6 +86,11 @@ snapshot. Count worker time, failed jobs, refilter costs, idle slots and drain;
 report LLM serving cost separately. Repeat across seeds and targets before
 training against the molecular score.
 
+Pin backend seeds independently of the model's card ordering when building that
+counterfactual environment. In native T-REX the launch seed includes candidate ID
+and logical run name, so different tick/card IDs can change molecular samples
+even for otherwise similar proposals.
+
 Useful comparisons include the original Qwen policy, Snowball before/after
 training, and the deterministic controller without useful LLM decisions. This
 pilot's single asynchronous trajectory per model cannot identify a causal
@@ -99,3 +107,9 @@ See [reviewed case studies](case-studies.md): Qwen proposed a measured successfu
 rescue while also misattributing another parent's source family, and Snowball
 returned a terminal-agent schema on a T-REX fixture. These motivate separate
 format, factual-consistency and molecular-utility objectives.
+
+Add few-shot prompts and constrained JSON output as inexpensive baselines in the
+next experiment. They can test how much of the initial gap can be addressed by
+the interface before investing in fine-tuning. Continue measuring capability
+parameters, deadline feasibility and evidence truthfulness after formatting is
+enforced.

@@ -76,11 +76,13 @@ def main():
                                   (axes[1], "run_su_count", summary["upstream_export"]["distinct_structure_bins"])]:
             ax.step([r["elapsed_wall_h"]*60 for r in evidence]+[end],
                     [r[key] for r in evidence]+[endpoint], where="post", label=title)
-            ax.set(xlabel="Controller elapsed time (minutes)", ylim=(0, None))
+            ax.set(xlabel="Controller elapsed time (minutes)")
             ax.axvline(60, color="#777777", linewidth=1, linestyle="--")
             ax.yaxis.set_major_locator(plt.MaxNLocator(integer=True))
     axes[0].set_ylabel("Qualified records")
     axes[1].set_ylabel("Qualified binder-chain clusters (TM 0.6)")
+    for ax in axes:
+        ax.set_ylim(bottom=0)
     axes[1].legend(frameon=False)
     fig.suptitle("Computational yield over time; final endpoint includes worker drain")
     for extension in ["png", "svg", "pdf"]:

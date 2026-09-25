@@ -61,6 +61,20 @@ first timeouts; see [I014](issues.md).
 
 ## Collect before releasing GPUs
 
+After Snowball and its server finish, run the bounded teacher replay:
+
+```bash
+kubectl exec snowball-trex-pilot -- bash /work/pilot-scripts/run_replay.sh
+```
+
+It replays five live Snowball Planner prompts at call-index quartiles through
+Qwen, preserving the original messages and sampling settings. Every prompt is
+reconstructed exactly from its archived evidence before inference. The resulting
+schema/configuration labels and candidate-construction previews are prospective
+SFT review material; no counterfactual molecular jobs are executed. Outputs go
+to `/work/results/replay-qwen-on-snowball/`. This diagnostic is separate from the
+timed campaigns and public fixed fixtures.
+
 Run the collector **after campaign drain**, while external structure paths still
 exist. Use the controller environment from the upstream working directory:
 

@@ -34,7 +34,7 @@ test split (B.4). Both points matter when designing a future Snowball RL benchma
 The supplement separately charges the full dedicated LLM-server reservation in
 a compute sensitivity (D.1.3). Summed call latency is not the added campaign delay:
 workers can run concurrently, while slow decisions can also leave them idle.
-Our reports therefore retain worker-wall, recorded worker compute, and LLM
+Our reports therefore retain worker-wall, native recorded job charges, and LLM
 serving/allocation costs as different quantities.
 
 Serving settings (Supplement C.5.1): Qwen3.6-27B-FP8, 65,536-token context,

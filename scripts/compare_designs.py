@@ -8,6 +8,7 @@ import argparse
 from collections import Counter, defaultdict
 from dataclasses import asdict, replace
 import csv
+import hashlib
 import json
 from pathlib import Path
 import statistics
@@ -27,7 +28,7 @@ def main():
     parser.add_argument("output", type=Path)
     parser.add_argument("--foldseek", required=True)
     args = parser.parse_args()
-    combined, arms, sequences = [], {}, {}
+    combined, arms, sequences, warm = [], {}, {}, {}
     for arm in ["qwen", "snowball"]:
         root = args.results / arm / "designs"
         rows = read_csv(root / "designs.csv")
@@ -39,8 +40,15 @@ def main():
         strict_ids = {row["result_id"] for row in manifest}
         strict = [row for row in rows if row["result_id"] in strict_ids]
         portable = {row["result_id"]: root / row["structure"] for row in rows if row["structure"]}
+        warm[arm] = {}
         for line in (root / "prepared-results.jsonl").read_text().splitlines():
             record = ResultRecord(**json.loads(line))
+            if any(parent.startswith("warmstart_") for parent in record.parent_ids):
+                name = Path(record.artifacts["pdb_path"]).name
+                assert name not in warm[arm], "Warm-start output names are not unique"
+                warm[arm][name] = dict(result_id=record.result_id,
+                    canonical_metrics={k:record.metrics.get(k) for k in ["pLDDT", "iPAE", "binder_scRMSD"]},
+                    structure_sha256=hashlib.sha256(portable[record.result_id].read_bytes()).hexdigest())
             if record.result_id in strict_ids:
                 assert record.bins.get("output_chain_identity") == "verified"
                 source = portable[record.result_id].resolve()
@@ -66,7 +74,13 @@ def main():
     bins_by_arm = {arm: {cluster for cluster, members in memberships.items()
                         if any(member.startswith(arm+"_") for member in members)} for arm in arms}
     valid = clustering.status == "ok"
-    report = dict(arms=arms, joint_qualified_clustering=asdict(clustering),
+    common_warm = warm["qwen"].keys() & warm["snowball"].keys()
+    warm_comparison = dict(n_qwen=len(warm["qwen"]), n_snowball=len(warm["snowball"]),
+        shared_output_names=len(common_warm),
+        exact_canonical_metric_matches=sum(warm["qwen"][name]["canonical_metrics"] == warm["snowball"][name]["canonical_metrics"] for name in common_warm),
+        exact_structure_file_matches=sum(warm["qwen"][name]["structure_sha256"] == warm["snowball"][name]["structure_sha256"] for name in common_warm),
+        records=warm)
+    report = dict(arms=arms, shared_warmstart=warm_comparison, joint_qualified_clustering=asdict(clustering),
         joint_clusters_with_both_arms=len(bins_by_arm["qwen"] & bins_by_arm["snowball"]) if valid else None,
         joint_clusters_with_only_qwen=len(bins_by_arm["qwen"]-bins_by_arm["snowball"]) if valid else None,
         joint_clusters_with_only_snowball=len(bins_by_arm["snowball"]-bins_by_arm["qwen"]) if valid else None,
@@ -76,7 +90,7 @@ def main():
                "Joint clustering can change representatives/membership versus clustering each arm independently.",
                "These are single asynchronous campaigns; differences are descriptive, not causal or statistically powered."])
     args.output.write_text(json.dumps(report, indent=2)+"\n")
-    print(json.dumps({k:v for k,v in report.items() if k not in ["joint_qualified_clustering", "joint_cluster_members"]}, indent=2))
+    print(json.dumps({k:v for k,v in report.items() if k not in ["joint_qualified_clustering", "joint_cluster_members", "shared_warmstart"]}, indent=2))
 
 
 if __name__ == "__main__":

@@ -22,7 +22,7 @@ these are computational predictions, not measured binding.
 | Qualified structural clusters | 4 |
 | Exact qualified sequences | 24 |
 | Worker-wall H100-hours, including idle time/drain | 2.0144 |
-| Recorded molecular compute H100-hours | 1.5251 |
+| Native recorded job charges, H100-hours | 1.5251 |
 | Qualified clusters / worker-wall H100-hour | 1.9857 |
 
 The 256 ProteinMPNN-only records have no canonical AF2 scores. They must not be
@@ -31,6 +31,11 @@ records have unresolved chain identity. The final drain added a 29th qualified
 record after the last evidence summary reported 28; our endpoint comes from the
 complete archive. Native archive validation passed with no errors, warnings or
 skipped records.
+
+Native job charges use launch-to-reap elapsed time and can include time after a
+worker finishes while the controller is in an LLM call. They are not hardware
+active-GPU measurements. The primary efficiency denominator is worker-wall time,
+including idle slots and drain.
 
 Eight qualified records came directly from Complexa beam search, three from FK
 steering, and 18 from AF2 refiltering of ProteinMPNN redesigns. Among qualified
