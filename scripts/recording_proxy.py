@@ -13,11 +13,23 @@ token is never written to an artifact; records keep bodies, not credentials.
 
 ``--inject-extra-body`` merges fixed top-level keys into the forwarded JSON
 body. It exists solely to carry a server control the upstream client does not
-emit, and it refuses to overwrite a key the client already set. When it changes
-the body the record keeps both the received ``request`` and the transmitted
-``forwarded_request``, so the wire archive still shows exactly what the pinned
-controller produced and exactly what the server saw. Prompts, sampling
-parameters and responses are never rewritten.
+emit, and it refuses to overwrite a key the client already set.
+
+``--raise-max-completion-tokens`` is the one exception to leaving the client's
+own values alone, and it exists for one reason. Upstream's client already grants
+a thinking model a larger budget — ``max(max_tokens, 8192)`` in
+``trex/llm/openai_client.py`` — but only when it knows thinking is on. A server
+that reasons by default is invisible to that rule, so it receives the
+non-thinking budget and spends it on reasoning. This flag applies upstream's own
+floor to such a server. It only ever raises the value, never lowers it, and the
+campaign path has no other way to set it because the campaign YAML exposes no
+token knob. The fixed-check runners take ``--max-tokens`` natively and should
+use that instead.
+
+Whenever either flag changes the body the record keeps both the received
+``request`` and the transmitted ``forwarded_request``, so the wire archive shows
+exactly what the pinned controller produced and exactly what the server saw.
+Prompts and responses are never rewritten.
 """
 from __future__ import annotations
 
@@ -83,9 +95,10 @@ async def cancellable_forward(handler, url, body, headers, timeout):
             await asyncio.gather(request, monitor, return_exceptions=True)
 
 
-def inject_extra_body(request_body: bytes, extra: dict) -> tuple[bytes, dict | None]:
-    """Merge fixed top-level keys into a JSON body; keep client-set keys intact."""
-    if not extra:
+def reshape_body(request_body: bytes, extra: dict | None,
+                 token_floor: int | None) -> tuple[bytes, dict | None]:
+    """Add absent keys and apply the thinking-token floor; report what changed."""
+    if not extra and not token_floor:
         return request_body, None
     try:
         parsed = json.loads(request_body)
@@ -93,15 +106,25 @@ def inject_extra_body(request_body: bytes, extra: dict) -> tuple[bytes, dict | N
         return request_body, None  # non-JSON bodies (e.g. GET) pass through
     if not isinstance(parsed, dict):
         return request_body, None
-    added = {key: value for key, value in extra.items() if key not in parsed}
-    if not added:
+    changed = {}
+    for key, value in (extra or {}).items():
+        if key not in parsed:
+            parsed[key] = value
+            changed[key] = value
+    if token_floor:
+        for key in ("max_completion_tokens", "max_tokens"):
+            current = parsed.get(key)
+            if isinstance(current, int) and current < token_floor:
+                parsed[key] = token_floor
+                changed[key] = {"raised_from": current, "to": token_floor}
+    if not changed:
         return request_body, None
-    parsed.update(added)
-    return json.dumps(parsed).encode(), added
+    return json.dumps(parsed).encode(), changed
 
 
 def make_handler(upstream: str, output: Path, timeout: float, cancel_on_disconnect=False,
-                 auth_token: str | None = None, extra_body: dict | None = None):
+                 auth_token: str | None = None, extra_body: dict | None = None,
+                 token_floor: int | None = None):
     class Handler(BaseHTTPRequestHandler):
         def do_GET(self):
             self.forward()
@@ -113,7 +136,7 @@ def make_handler(upstream: str, output: Path, timeout: float, cancel_on_disconne
             call_id = str(uuid.uuid4())
             path = output / f"{time.time_ns()}_{call_id}.json"
             received_body = self.rfile.read(int(self.headers.get("Content-Length", 0)))
-            request_body, injected = inject_extra_body(received_body, extra_body)
+            request_body, injected = reshape_body(received_body, extra_body, token_floor)
             record = {
                 "schema": "trex.llm-wire.v1",
                 "call_id": call_id,
@@ -191,6 +214,10 @@ def main():
     parser.add_argument("--inject-extra-body", type=str,
                         help="JSON object of top-level keys to add to the forwarded body "
                              "when the client did not set them. Both bodies are recorded.")
+    parser.add_argument("--raise-max-completion-tokens", type=int, metavar="N",
+                        help="Raise the client's output limit to at least N, applying "
+                             "upstream's own thinking-model floor to a server that reasons "
+                             "by default. Never lowers it. Both bodies are recorded.")
     args = parser.parse_args()
     args.output.mkdir(parents=True, exist_ok=True)
     auth_token = args.auth_token_file.read_text().strip() if args.auth_token_file else None
@@ -199,7 +226,8 @@ def main():
         parser.error("--inject-extra-body must be a JSON object")
     server = ThreadingHTTPServer(("127.0.0.1", args.port),
                                 make_handler(args.upstream, args.output, args.timeout,
-                                             args.cancel_on_disconnect, auth_token, extra_body))
+                                             args.cancel_on_disconnect, auth_token, extra_body,
+                                             args.raise_max_completion_tokens))
     server.serve_forever()
 
 

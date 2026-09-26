@@ -10,7 +10,7 @@ import time
 import httpx
 import pytest
 
-from scripts.recording_proxy import make_handler
+from scripts.recording_proxy import make_handler, reshape_body
 
 
 @contextmanager
@@ -127,3 +127,37 @@ def test_unmodified_calls_keep_a_single_request_record(tmp_path):
             httpx.post(proxy+"/v1/chat/completions", content=b'{"model":"m"}')
     row = json.loads(next(tmp_path.glob("*.json")).read_text())
     assert "forwarded_request" not in row and "injected_extra_body" not in row
+
+
+def test_token_floor_raises_only_upwards_and_records_the_change(tmp_path):
+    received = []
+    class Upstream(BaseHTTPRequestHandler):
+        def do_POST(self):
+            received.append(json.loads(self.rfile.read(int(self.headers["Content-Length"]))))
+            self.send_response(200)
+            self.send_header("Content-Length", "2")
+            self.end_headers()
+            self.wfile.write(b"{}")
+    with server(Upstream) as upstream:
+        with server(make_handler(upstream, tmp_path, 5, False, token_floor=8192)) as proxy:
+            httpx.post(proxy+"/v1/chat/completions",
+                       content=b'{"model":"m","max_completion_tokens":3072}')
+            httpx.post(proxy+"/v1/chat/completions",
+                       content=b'{"model":"m","max_completion_tokens":16384}')
+    assert received[0]["max_completion_tokens"] == 8192
+    # An already-larger budget is left exactly as the controller set it.
+    assert received[1]["max_completion_tokens"] == 16384
+    rows = sorted((json.loads(p.read_text()) for p in tmp_path.glob("*.json")),
+                  key=lambda r: r["started_at"])
+    assert rows[0]["injected_extra_body"] == {
+        "max_completion_tokens": {"raised_from": 3072, "to": 8192}}
+    assert rows[0]["request"]["json"]["max_completion_tokens"] == 3072
+    assert rows[0]["forwarded_request"]["json"]["max_completion_tokens"] == 8192
+    assert "forwarded_request" not in rows[1]
+
+
+def test_reshape_leaves_bodies_alone_when_nothing_applies():
+    body = b'{"model":"m","max_completion_tokens":3072}'
+    assert reshape_body(body, None, None) == (body, None)
+    assert reshape_body(body, {}, 3072) == (body, None)
+    assert reshape_body(b"not json", {"a": 1}, 8192) == (b"not json", None)

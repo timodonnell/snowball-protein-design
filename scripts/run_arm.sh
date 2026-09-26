@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # Run on the provisioned pod after T-REX setup and campaign YAML creation.
 set -euo pipefail
-arm=${1:?qwen, snowball or glm}
-case "$arm" in qwen|snowball|glm) ;; *) exit 2 ;; esac
+arm=${1:?qwen, snowball, glm or glm-think}
+case "$arm" in qwen|snowball|glm|glm-think) ;; *) exit 2 ;; esac
 export PATH=/root/.local/bin:$PATH
 export HF_HOME=/work/cache/huggingface
 export UV_CACHE_DIR=/work/cache/uv
@@ -18,29 +18,53 @@ controller=/work/T-REX/.venv-serving/bin/python
 case "$arm" in
   qwen) model=Qwen/Qwen3.6-27B-FP8 ;;
   snowball) model=open-athena/Snowball-67B-A2B-5.7T-Mixed-RLVR-Step38 ;;
-  glm) model=glm-5.3 ;;
+  glm|glm-think) model=glm-5.3 ;;
 esac
-# GLM-5.3 is served off-pod by a shared endpoint, so this arm starts no local
-# server and holds no GPU for inference. The recorder carries the bearer token
-# and the one server control the pinned controller does not emit: GLM reasons by
-# default and, unlike the other two checkpoints, has no off switch, so an
-# unset budget spends the whole 3072-token limit on hidden reasoning and returns
-# empty content. `low` is the nearest setting to the other arms' disabled
-# thinking. See docs/experiment.md.
-if [ "$arm" = glm ]; then
-  : "${GLM_BASE_URL:?Set GLM_BASE_URL to the resolved GLM-5.3 endpoint (no /v1 suffix)}"
-  : "${GLM_TOKEN_FILE:?Set GLM_TOKEN_FILE to a file holding the bearer token}"
-  test -r "$GLM_TOKEN_FILE"
-  proxy_upstream=$GLM_BASE_URL
-  proxy_extra=(--auth-token-file "$GLM_TOKEN_FILE"
-               --inject-extra-body '{"chat_template_kwargs": {"reasoning_effort": "low"}}')
-else
-  proxy_upstream=http://127.0.0.1:12001
-  proxy_extra=()
-fi
+# Both GLM arms are served off-pod by a shared endpoint, so they start no local
+# server and hold no GPU for inference. The recorder carries the bearer token and
+# the reasoning budget, which the pinned controller cannot express: GLM reasons by
+# default and, unlike the other two checkpoints, has no off switch.
+#
+#   glm        reasoning_effort=low at the controller's own 3072-token limit. The
+#              nearest setting to the other arms' disabled thinking, so this arm is
+#              the one that belongs in the matched comparison. An unset budget
+#              spends the whole limit on hidden reasoning and returns no content.
+#   glm-think  the same model allowed to reason, with upstream's own thinking-model
+#              floor of 8192 tokens applied (trex/llm/openai_client.py), which the
+#              controller cannot reach for a server whose reasoning it cannot see.
+#              Deliberately unmatched against the other arms; it ablates GLM
+#              against itself. Set GLM_REASONING_EFFORT to pick the level.
+#
+# See docs/experiment.md.
+case "$arm" in
+  glm|glm-think)
+    : "${GLM_BASE_URL:?Set GLM_BASE_URL to the resolved GLM-5.3 endpoint (no /v1 suffix)}"
+    : "${GLM_TOKEN_FILE:?Set GLM_TOKEN_FILE to a file holding the bearer token}"
+    test -r "$GLM_TOKEN_FILE"
+    proxy_upstream=$GLM_BASE_URL
+    proxy_extra=(--auth-token-file "$GLM_TOKEN_FILE")
+    if [ "$arm" = glm ]; then
+      effort=low
+      fixed_max_tokens=3072
+    else
+      effort=${GLM_REASONING_EFFORT:?Set GLM_REASONING_EFFORT for the thinking arm}
+      fixed_max_tokens=${GLM_THINK_MAX_TOKENS:-8192}
+      # The campaign YAML exposes no token knob, so the floor is applied here.
+      # The fixed-check runners take --max-tokens natively and use it below.
+      proxy_extra+=(--raise-max-completion-tokens "$fixed_max_tokens")
+    fi
+    proxy_extra+=(--inject-extra-body "{\"chat_template_kwargs\": {\"reasoning_effort\": \"$effort\"}}")
+    ;;
+  *)
+    proxy_upstream=http://127.0.0.1:12001
+    proxy_extra=()
+    fixed_max_tokens=3072
+    ;;
+esac
 # Process groups permit cleanup of vLLM's worker descendants.
 server_pid=
-if [ "$arm" != glm ]; then
+case "$arm" in glm|glm-think) skip_local_server=1 ;; *) skip_local_server=0 ;; esac
+if [ "$skip_local_server" = 0 ]; then
   if [ -n "${TREX_SERVER_PID:-}" ]; then
     # Adopt only the task's prestarted server, supplied explicitly by the operator.
     server_pid=$TREX_SERVER_PID
@@ -73,7 +97,7 @@ for _ in $(seq 1 180); do
   fi
   # Reach the model through the recorder, so a reachable arm is one whose
   # campaign path also works; the shared endpoint answers /v1/models, not /health.
-  if [ "$arm" = glm ]; then
+  if [ "$skip_local_server" = 1 ]; then
     probe=http://127.0.0.1:12000/v1/models
   else
     probe=http://127.0.0.1:12001/health
@@ -88,11 +112,11 @@ test "$ready" = 1
 if [ "${TREX_SKIP_FIXED_VALIDATION:-0}" != 1 ]; then
 "$controller" -m benchmarks.llm_validation.planner_validation \
   --model "vllm/$model" --base-url http://127.0.0.1:12000/v1 \
-  --repeats 3 --max-tokens 3072 --temperature 0.2 \
+  --repeats 3 --max-tokens "$fixed_max_tokens" --temperature 0.2 \
   --out "/work/results/$arm/planner-validation.json"
 "$controller" -m benchmarks.llm_validation.supervisor_validation \
   --model "vllm/$model" --base-url http://127.0.0.1:12000/v1 \
-  --repeats 3 --max-tokens 3072 \
+  --repeats 3 --max-tokens "$fixed_max_tokens" \
   --out "/work/results/$arm/supervisor-validation.json"
 fi
 # Fixed-call diagnostics retain late responses. Finish them before starting the

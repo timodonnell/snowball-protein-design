@@ -17,7 +17,8 @@ import html
 import json
 from pathlib import Path
 
-TITLES = {"qwen": "Qwen3.6-27B-FP8", "snowball": "Snowball-67B-A2B", "glm": "GLM-5.3"}
+TITLES = {"qwen": "Qwen3.6-27B-FP8", "snowball": "Snowball-67B-A2B", "glm": "GLM-5.3",
+          "glm-think": "GLM-5.3 (reasoning high)"}
 
 CSS = """
 :root{--bg:#fbfbfa;--fg:#1c1b1a;--mut:#6b6864;--line:#e3e0db;--card:#fff;

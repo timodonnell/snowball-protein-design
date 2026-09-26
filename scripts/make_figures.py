@@ -29,7 +29,8 @@ def main():
     args.output.mkdir(parents=True, exist_ok=True)
     plt.rcParams.update({"font.size": 11, "axes.spines.top": False, "axes.spines.right": False,
                          "svg.fonttype": "none", "figure.dpi": 140})
-    titles = {"qwen": "Qwen3.6-27B-FP8", "snowball": "Snowball-67B-A2B", "glm": "GLM-5.3"}
+    titles = {"qwen": "Qwen3.6-27B-FP8", "snowball": "Snowball-67B-A2B", "glm": "GLM-5.3",
+              "glm-think": "GLM-5.3 reasoning=high"}
     arms = [(arm, titles.get(arm, arm)) for arm in args.arms]
     data = {}
     for arm, _ in arms:

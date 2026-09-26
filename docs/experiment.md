@@ -176,6 +176,54 @@ And the recorder's readiness probe for this arm is a `GET /v1/models` through
 the recorder itself, which verifies the whole authenticated path; it appears in
 the wire archive and is excluded from every chat-call summary.
 
+## Fourth arm: GLM-5.3 with reasoning enabled (2026-09-26)
+
+The matched GLM arm runs at `reasoning_effort: low` so that it sits in the same
+"thinking disabled, 3072-token output" condition as the other two checkpoints.
+That deliberately suppresses the thing GLM does by default, so this arm ablates
+GLM against itself with reasoning allowed. It is **not** matched to Qwen or
+Snowball and must not be read as a fourth entry in the head-to-head.
+
+The token budget is the point. Upstream already grants a thinking model a larger
+allowance — `effective_max = max(max_tokens, 8192) if enable_thinking` in
+`trex/llm/openai_client.py` — but only when the client knows thinking is on.
+`PlannerCallConfig` and `SupervisorCallConfig` both pin `max_tokens: 3072` with
+`enable_thinking: False`, and the campaign YAML exposes no token knob, so a
+server that reasons invisibly receives the non-thinking budget. This arm applies
+upstream's own 8192 floor to that server: natively through the fixed-check
+runners' `--max-tokens`, and through the recorder's
+`--raise-max-completion-tokens` for the campaign, which has no other route. The
+floor only ever raises the value and every altered record keeps both bodies.
+
+### Reasoning effort is not monotonic on this deployment
+
+`artifacts/glm-reasoning-budget-probe.json` replays two archived fixed-case
+prompts, one Planner and one Supervisor, at every effort level and both budgets,
+twice each. Usable means the call stopped normally with non-empty content.
+
+| Setting | Planner @3072 | Planner @8192 | Supervisor @3072 | Supervisor @8192 |
+|---|---|---|---|---|
+| unset (server default) | 0/2 | 0/2 | 0/2 | 2/2 |
+| `low` | 2/2 | 2/2 | 2/2 | 2/2 |
+| `medium` | 0/2 | 0/2 | 0/2 | 2/2 |
+| `high` | 0/2 | **2/2** | 2/2 | 2/2 |
+| `max` | 0/2 | 0/2 | 0/2 | 1/2 |
+
+The ordering does not behave like a budget dial. `high` spends *fewer* reasoning
+tokens than `medium` in both roles — 1,236–1,913 against a truncating 8,192 for
+the Planner, and 189–195 against 4,180–6,855 for the Supervisor. `unset`,
+`medium` and `max` all behave alike and all exhaust the Planner's budget at
+8,192; only `low` and `high` return Planner content reliably. We did not
+investigate the cause, which lies in the served chat template or the router, and
+we do not claim the labels are meaningless — only that on this endpoint, at these
+budgets, they are not ordered and two of the four are unusable for the Planner.
+
+`high` is therefore the only setting that both increases reasoning over `low` and
+completes reliably at upstream's own floor, so the arm runs at
+`reasoning_effort: high`, `max_completion_tokens` ≥ 8192. Raising the floor
+further to rescue `medium` would have put the arm outside any budget upstream
+itself would grant, so we did not.
+
 ## Completion
 
 Both original campaigns, paired fixed checks and the five-state teacher replay
