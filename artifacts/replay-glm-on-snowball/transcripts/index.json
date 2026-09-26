@@ -1,0 +1,44 @@
+{
+  "wire_archive": "artifacts/replay-glm-on-snowball/wire",
+  "n_transcripts": 5,
+  "counts": {
+    "all": 5
+  },
+  "transcripts": [
+    {
+      "phase": "all",
+      "transcript": "all/001-planner.txt",
+      "wire_record": "1790384520952834022_842b5327-b349-4bce-85d0-84ff844fde57.json",
+      "call_id": "842b5327-b349-4bce-85d0-84ff844fde57",
+      "state": "completed"
+    },
+    {
+      "phase": "all",
+      "transcript": "all/002-planner.txt",
+      "wire_record": "1790384524738017792_c3ebc90c-bce3-49b6-90a0-b7de976e5477.json",
+      "call_id": "c3ebc90c-bce3-49b6-90a0-b7de976e5477",
+      "state": "completed"
+    },
+    {
+      "phase": "all",
+      "transcript": "all/003-planner.txt",
+      "wire_record": "1790384530674276517_8850a62f-df0b-4a77-94da-b3ba130bb94c.json",
+      "call_id": "8850a62f-df0b-4a77-94da-b3ba130bb94c",
+      "state": "completed"
+    },
+    {
+      "phase": "all",
+      "transcript": "all/004-planner.txt",
+      "wire_record": "1790384536618739286_92e8f687-5c4a-4448-aae1-9e9ef7b73505.json",
+      "call_id": "92e8f687-5c4a-4448-aae1-9e9ef7b73505",
+      "state": "completed"
+    },
+    {
+      "phase": "all",
+      "transcript": "all/005-planner.txt",
+      "wire_record": "1790384542420067883_9d8f51fe-8bd3-443a-9b7c-66fde7237c1d.json",
+      "call_id": "9d8f51fe-8bd3-443a-9b7c-66fde7237c1d",
+      "state": "completed"
+    }
+  ]
+}

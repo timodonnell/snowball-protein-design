@@ -1,0 +1,866 @@
+[
+  {
+    "result_id": "5c31cce1ed1a3a73",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r001_warmstart_v7r001_00_complexa_beam_a42e8fc6f9a25/job_0_n_232_id_64_beam_orig0_bm0-s0to100br1-s100to200br3-s200to300br0-s300to400br3/job_0_n_232_id_64_beam_orig0_bm0-s0to100br1-s100to200br3-s200to300br0-s300to400br3.pdb",
+    "file": "all-structures/5c31cce1ed1a3a73.pdb",
+    "sha256": "ef2d844c5352257e71315f4c0270bc06ea7464ce2dd4ae2f72bb3ce8a2635565"
+  },
+  {
+    "result_id": "f436b7f8360e66a7",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r001_warmstart_v7r001_00_complexa_beam_a42e8fc6f9a25/job_0_n_232_id_65_beam_orig0_bm0-s0to100br1-s100to200br3-s200to300br0-s300to400br0/job_0_n_232_id_65_beam_orig0_bm0-s0to100br1-s100to200br3-s200to300br0-s300to400br0.pdb",
+    "file": "all-structures/f436b7f8360e66a7.pdb",
+    "sha256": "98e552984d68626013b988bd6d58311dfcf007d51836c72ba89e854a93734c48"
+  },
+  {
+    "result_id": "407dbd1e1db07e8c",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r001_warmstart_v7r001_00_complexa_beam_a42e8fc6f9a25/job_0_n_232_id_66_beam_orig0_bm0-s0to100br1-s100to200br3-s200to300br1-s300to400br2/job_0_n_232_id_66_beam_orig0_bm0-s0to100br1-s100to200br3-s200to300br1-s300to400br2.pdb",
+    "file": "all-structures/407dbd1e1db07e8c.pdb",
+    "sha256": "65a3768404ea1c35130e71e6b1e2b0f1cc82b612ca3fccf88d4046890b07b912"
+  },
+  {
+    "result_id": "328097a8cb73f5a8",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r001_warmstart_v7r001_00_complexa_beam_a42e8fc6f9a25/job_0_n_232_id_67_beam_orig0_bm0-s0to100br1-s100to200br3-s200to300br0-s300to400br1/job_0_n_232_id_67_beam_orig0_bm0-s0to100br1-s100to200br3-s200to300br0-s300to400br1.pdb",
+    "file": "all-structures/328097a8cb73f5a8.pdb",
+    "sha256": "b08ff2e62809de32f3fb88554a2ff9ec9e417c2cc8551b9746a21dabad39f4fa"
+  },
+  {
+    "result_id": "180d2710ab94c98e",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r001_warmstart_v7r001_00_complexa_beam_a42e8fc6f9a25/job_0_n_229_id_64_beam_orig1_bm2-s0to100br3-s100to200br2-s200to300br3-s300to400br1/job_0_n_229_id_64_beam_orig1_bm2-s0to100br3-s100to200br2-s200to300br3-s300to400br1.pdb",
+    "file": "all-structures/180d2710ab94c98e.pdb",
+    "sha256": "068d94045398db9bedd2eda10da134d3cb70e60918f2e4f6acca539a8a509003"
+  },
+  {
+    "result_id": "885c8a5696dbb6d9",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r001_warmstart_v7r001_00_complexa_beam_a42e8fc6f9a25/job_0_n_229_id_65_beam_orig1_bm2-s0to100br3-s100to200br2-s200to300br3-s300to400br3/job_0_n_229_id_65_beam_orig1_bm2-s0to100br3-s100to200br2-s200to300br3-s300to400br3.pdb",
+    "file": "all-structures/885c8a5696dbb6d9.pdb",
+    "sha256": "e84ed5192c2ba0fae97334da501cb8929ab2eb8632cd8d65091e3da43c9df799"
+  },
+  {
+    "result_id": "5ea9caed23d074a2",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r001_warmstart_v7r001_00_complexa_beam_a42e8fc6f9a25/job_0_n_229_id_66_beam_orig1_bm2-s0to100br1-s100to200br0-s200to300br1-s300to400br3/job_0_n_229_id_66_beam_orig1_bm2-s0to100br1-s100to200br0-s200to300br1-s300to400br3.pdb",
+    "file": "all-structures/5ea9caed23d074a2.pdb",
+    "sha256": "44a3ac9abb32f828ba7ee2df7fe8bfd2f2738f0a4ea40a8d3c2964b1b23bec35"
+  },
+  {
+    "result_id": "f1efc967d8e15b99",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r001_warmstart_v7r001_00_complexa_beam_a42e8fc6f9a25/job_0_n_229_id_67_beam_orig1_bm2-s0to100br1-s100to200br3-s200to300br2-s300to400br3/job_0_n_229_id_67_beam_orig1_bm2-s0to100br1-s100to200br3-s200to300br2-s300to400br3.pdb",
+    "file": "all-structures/f1efc967d8e15b99.pdb",
+    "sha256": "28625743c533633053eaecf62cfc73a4190f57f99a83e4f66db08248162011e2"
+  },
+  {
+    "result_id": "4971c7b50349b40b",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r001_warmstart_v7r001_00_complexa_beam_a42e8fc6f9a25/job_0_n_167_id_64_beam_orig2_bm3-s0to100br1-s100to200br0-s200to300br0-s300to400br3/job_0_n_167_id_64_beam_orig2_bm3-s0to100br1-s100to200br0-s200to300br0-s300to400br3.pdb",
+    "file": "all-structures/4971c7b50349b40b.pdb",
+    "sha256": "8f41a776e606e97701a127ae373e6c9d8ba1885d52306a5a66fb845e6f68d06b"
+  },
+  {
+    "result_id": "5b7293cf08d50b43",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r001_warmstart_v7r001_00_complexa_beam_a42e8fc6f9a25/job_0_n_167_id_65_beam_orig2_bm3-s0to100br1-s100to200br0-s200to300br0-s300to400br0/job_0_n_167_id_65_beam_orig2_bm3-s0to100br1-s100to200br0-s200to300br0-s300to400br0.pdb",
+    "file": "all-structures/5b7293cf08d50b43.pdb",
+    "sha256": "65eddbe1ba0be11f8ebb31e7f3b57e4bb8c40bdb148432947122effb182ead91"
+  },
+  {
+    "result_id": "e28ff4ff8c17f7ca",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r001_warmstart_v7r001_00_complexa_beam_a42e8fc6f9a25/job_0_n_167_id_66_beam_orig2_bm3-s0to100br1-s100to200br0-s200to300br0-s300to400br2/job_0_n_167_id_66_beam_orig2_bm3-s0to100br1-s100to200br0-s200to300br0-s300to400br2.pdb",
+    "file": "all-structures/e28ff4ff8c17f7ca.pdb",
+    "sha256": "b319721b0272baae5a8ab7f6f7e2f46e7b27044d8fc7820559f8bc6bf509c178"
+  },
+  {
+    "result_id": "3b53b8035691abb3",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r001_warmstart_v7r001_00_complexa_beam_a42e8fc6f9a25/job_0_n_167_id_67_beam_orig2_bm3-s0to100br1-s100to200br0-s200to300br0-s300to400br1/job_0_n_167_id_67_beam_orig2_bm3-s0to100br1-s100to200br0-s200to300br0-s300to400br1.pdb",
+    "file": "all-structures/3b53b8035691abb3.pdb",
+    "sha256": "aea344b75e2b54bea3d07e110b21bb85936c0ae56ec83ff3da6cdf4036cf4ef9"
+  },
+  {
+    "result_id": "3c3e7eb90d453aa3",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r001_warmstart_v7r001_00_complexa_beam_a42e8fc6f9a25/job_0_n_175_id_64_beam_orig3_bm2-s0to100br1-s100to200br2-s200to300br1-s300to400br1/job_0_n_175_id_64_beam_orig3_bm2-s0to100br1-s100to200br2-s200to300br1-s300to400br1.pdb",
+    "file": "all-structures/3c3e7eb90d453aa3.pdb",
+    "sha256": "1ad86215f3c11f68c12a8eaadced15e4fcabd52f1e52925a6d7912ae80d1b1e8"
+  },
+  {
+    "result_id": "333d6bf184afe575",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r001_warmstart_v7r001_00_complexa_beam_a42e8fc6f9a25/job_0_n_175_id_65_beam_orig3_bm2-s0to100br1-s100to200br2-s200to300br1-s300to400br3/job_0_n_175_id_65_beam_orig3_bm2-s0to100br1-s100to200br2-s200to300br1-s300to400br3.pdb",
+    "file": "all-structures/333d6bf184afe575.pdb",
+    "sha256": "b9a473f5641157cae5ab45daa78caf673d2f88e37d1438d0cadd0234e377a64a"
+  },
+  {
+    "result_id": "52b26a6968e9dad2",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r001_warmstart_v7r001_00_complexa_beam_a42e8fc6f9a25/job_0_n_175_id_66_beam_orig3_bm2-s0to100br1-s100to200br2-s200to300br1-s300to400br0/job_0_n_175_id_66_beam_orig3_bm2-s0to100br1-s100to200br2-s200to300br1-s300to400br0.pdb",
+    "file": "all-structures/52b26a6968e9dad2.pdb",
+    "sha256": "00f505057f3692c7e0b1dd1f2af7a97a0bbc92020454256e4a5af6f4d6a9c2ee"
+  },
+  {
+    "result_id": "ea8b38d70c78d417",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r001_warmstart_v7r001_00_complexa_beam_a42e8fc6f9a25/job_0_n_175_id_67_beam_orig3_bm2-s0to100br1-s100to200br2-s200to300br1-s300to400br2/job_0_n_175_id_67_beam_orig3_bm2-s0to100br1-s100to200br2-s200to300br1-s300to400br2.pdb",
+    "file": "all-structures/ea8b38d70c78d417.pdb",
+    "sha256": "c5e06a8930eee1aabeab25ddf0a02043cd1531abd1335f8526a35e4e23df649e"
+  },
+  {
+    "result_id": "e24963c3b320318e",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r002_cand_v7r002_hyp_0002_00_001_a4e39e5241648/job_0_n_184_id_64_fk_orig0_bm1-s0to100br1-s100to200br1-s200to300br0-s300to400br3/job_0_n_184_id_64_fk_orig0_bm1-s0to100br1-s100to200br1-s200to300br0-s300to400br3.pdb",
+    "file": "all-structures/e24963c3b320318e.pdb",
+    "sha256": "62822ecf670518c37cfc0cde32b5b48999374d6fc296f6bed73e2efc36d2faca"
+  },
+  {
+    "result_id": "01955ff4543dc1ee",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r002_cand_v7r002_hyp_0002_00_001_a4e39e5241648/job_0_n_184_id_65_fk_orig0_bm1-s0to100br1-s100to200br0-s200to300br2-s300to400br1/job_0_n_184_id_65_fk_orig0_bm1-s0to100br1-s100to200br0-s200to300br2-s300to400br1.pdb",
+    "file": "all-structures/01955ff4543dc1ee.pdb",
+    "sha256": "49c815c1757281f45c06351126cef8eae6b699066241230a3045ff12201da886"
+  },
+  {
+    "result_id": "0dc65cf57db15d4a",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r002_cand_v7r002_hyp_0002_00_001_a4e39e5241648/job_0_n_184_id_66_fk_orig0_bm1-s0to100br1-s100to200br1-s200to300br0-s300to400br0/job_0_n_184_id_66_fk_orig0_bm1-s0to100br1-s100to200br1-s200to300br0-s300to400br0.pdb",
+    "file": "all-structures/0dc65cf57db15d4a.pdb",
+    "sha256": "e3d50a99e6560fb431f681ee29c4fccf5a7b71dc15a477a26256ad7d9b0eb33b"
+  },
+  {
+    "result_id": "c81e5663fb0c9d44",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r002_cand_v7r002_hyp_0002_00_001_a4e39e5241648/job_0_n_184_id_67_fk_orig0_bm1-s0to100br1-s100to200br1-s200to300br0-s300to400br3/job_0_n_184_id_67_fk_orig0_bm1-s0to100br1-s100to200br1-s200to300br0-s300to400br3.pdb",
+    "file": "all-structures/c81e5663fb0c9d44.pdb",
+    "sha256": "50c4a8e7de1c4dcd3af1198cd490b08897d580aa3b4b8c77034fbf01ec1cb8f1"
+  },
+  {
+    "result_id": "611d7267b47c414a",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r002_cand_v7r002_hyp_0002_00_001_a4e39e5241648/job_0_n_236_id_64_fk_orig1_bm0-s0to100br1-s100to200br1-s200to300br3-s300to400br0/job_0_n_236_id_64_fk_orig1_bm0-s0to100br1-s100to200br1-s200to300br3-s300to400br0.pdb",
+    "file": "all-structures/611d7267b47c414a.pdb",
+    "sha256": "c03b975dc4717104595541981135a54580cd38b1e994109aee0d2f50ffa2f38f"
+  },
+  {
+    "result_id": "85641894cfc1d227",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r002_cand_v7r002_hyp_0002_00_001_a4e39e5241648/job_0_n_236_id_65_fk_orig1_bm0-s0to100br1-s100to200br1-s200to300br3-s300to400br0/job_0_n_236_id_65_fk_orig1_bm0-s0to100br1-s100to200br1-s200to300br3-s300to400br0.pdb",
+    "file": "all-structures/85641894cfc1d227.pdb",
+    "sha256": "c03b975dc4717104595541981135a54580cd38b1e994109aee0d2f50ffa2f38f"
+  },
+  {
+    "result_id": "418dd612dbb1667e",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r002_cand_v7r002_hyp_0002_00_001_a4e39e5241648/job_0_n_236_id_66_fk_orig1_bm0-s0to100br1-s100to200br1-s200to300br0-s300to400br1/job_0_n_236_id_66_fk_orig1_bm0-s0to100br1-s100to200br1-s200to300br0-s300to400br1.pdb",
+    "file": "all-structures/418dd612dbb1667e.pdb",
+    "sha256": "1dbff534bf9930ea135e8714045bc2e8deb129f8fa156199010dbbbd93021b54"
+  },
+  {
+    "result_id": "17e41789514b61a6",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r002_cand_v7r002_hyp_0002_00_001_a4e39e5241648/job_0_n_236_id_67_fk_orig1_bm0-s0to100br1-s100to200br1-s200to300br0-s300to400br3/job_0_n_236_id_67_fk_orig1_bm0-s0to100br1-s100to200br1-s200to300br0-s300to400br3.pdb",
+    "file": "all-structures/17e41789514b61a6.pdb",
+    "sha256": "2243c7e686c63f36ad17da7acb3032f380e46f957c8a79f71b447079cfec1fcb"
+  },
+  {
+    "result_id": "eebf9b154401a406",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r002_cand_v7r002_hyp_0002_00_001_a4e39e5241648/job_0_n_230_id_64_fk_orig2_bm0-s0to100br2-s100to200br3-s200to300br1-s300to400br3/job_0_n_230_id_64_fk_orig2_bm0-s0to100br2-s100to200br3-s200to300br1-s300to400br3.pdb",
+    "file": "all-structures/eebf9b154401a406.pdb",
+    "sha256": "d1aad40519e5e8e1bfdc82f3867306a698304f7f6fdac8ea7b6f6134bde6e4d3"
+  },
+  {
+    "result_id": "162f2a111ce0a8f2",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r002_cand_v7r002_hyp_0002_00_001_a4e39e5241648/job_0_n_230_id_65_fk_orig2_bm0-s0to100br2-s100to200br3-s200to300br1-s300to400br3/job_0_n_230_id_65_fk_orig2_bm0-s0to100br2-s100to200br3-s200to300br1-s300to400br3.pdb",
+    "file": "all-structures/162f2a111ce0a8f2.pdb",
+    "sha256": "d1aad40519e5e8e1bfdc82f3867306a698304f7f6fdac8ea7b6f6134bde6e4d3"
+  },
+  {
+    "result_id": "095f7c7849295418",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r002_cand_v7r002_hyp_0002_00_001_a4e39e5241648/job_0_n_230_id_66_fk_orig2_bm0-s0to100br2-s100to200br2-s200to300br2-s300to400br0/job_0_n_230_id_66_fk_orig2_bm0-s0to100br2-s100to200br2-s200to300br2-s300to400br0.pdb",
+    "file": "all-structures/095f7c7849295418.pdb",
+    "sha256": "60e08fba04c24054b942cb2598aed46a5c5ec0768eb9a8bdfc4e93ec0355c5f1"
+  },
+  {
+    "result_id": "a6e520ca0ab2491e",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r002_cand_v7r002_hyp_0002_00_001_a4e39e5241648/job_0_n_230_id_67_fk_orig2_bm0-s0to100br2-s100to200br1-s200to300br3-s300to400br1/job_0_n_230_id_67_fk_orig2_bm0-s0to100br2-s100to200br1-s200to300br3-s300to400br1.pdb",
+    "file": "all-structures/a6e520ca0ab2491e.pdb",
+    "sha256": "d5b8713c3a4efc42dc9e7c674b70e64ec55ea913e883d62c296d7b958e2dac27"
+  },
+  {
+    "result_id": "b4ef776f0655c0f1",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r002_cand_v7r002_hyp_0002_00_001_a4e39e5241648/job_0_n_214_id_64_fk_orig3_bm0-s0to100br1-s100to200br3-s200to300br2-s300to400br2/job_0_n_214_id_64_fk_orig3_bm0-s0to100br1-s100to200br3-s200to300br2-s300to400br2.pdb",
+    "file": "all-structures/b4ef776f0655c0f1.pdb",
+    "sha256": "8256cf0db233f25b6b26175979339c0372e7b3a7dbf9c0f5b8ab874b837e13d0"
+  },
+  {
+    "result_id": "f68ccfe018a1611e",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r002_cand_v7r002_hyp_0002_00_001_a4e39e5241648/job_0_n_214_id_65_fk_orig3_bm0-s0to100br1-s100to200br3-s200to300br0-s300to400br2/job_0_n_214_id_65_fk_orig3_bm0-s0to100br1-s100to200br3-s200to300br0-s300to400br2.pdb",
+    "file": "all-structures/f68ccfe018a1611e.pdb",
+    "sha256": "dfca41d4726295b70f87f5eb1e9ebcf321abacb09f7886b1ccd2c347e536a345"
+  },
+  {
+    "result_id": "72c6dd8e9e10af42",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r002_cand_v7r002_hyp_0002_00_001_a4e39e5241648/job_0_n_214_id_66_fk_orig3_bm0-s0to100br1-s100to200br3-s200to300br0-s300to400br0/job_0_n_214_id_66_fk_orig3_bm0-s0to100br1-s100to200br3-s200to300br0-s300to400br0.pdb",
+    "file": "all-structures/72c6dd8e9e10af42.pdb",
+    "sha256": "f3e7fc13b9c0d64d32ac498135fc176dc460aace9faa8dfeb7569230b02a7e25"
+  },
+  {
+    "result_id": "105bf702a0f8f52d",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r002_cand_v7r002_hyp_0002_00_001_a4e39e5241648/job_0_n_214_id_67_fk_orig3_bm0-s0to100br1-s100to200br3-s200to300br0-s300to400br2/job_0_n_214_id_67_fk_orig3_bm0-s0to100br1-s100to200br3-s200to300br0-s300to400br2.pdb",
+    "file": "all-structures/105bf702a0f8f52d.pdb",
+    "sha256": "dfca41d4726295b70f87f5eb1e9ebcf321abacb09f7886b1ccd2c347e536a345"
+  },
+  {
+    "result_id": "dbf39277dfcf3d82",
+    "source": "/work/results/glm/campaign/worker_outputs/r003_proteinmpnn_redesign_cand_v7r003_hyp_0003_00_001/threaded_pdbs/job_0_n_167_id_66_beam_orig2_bm3-s0to100br1-s100to200br0-s200to300br0-s300to400br2_seq001.pdb",
+    "file": "all-structures/dbf39277dfcf3d82.pdb",
+    "sha256": "95f2d9e7d4882b93137bf5298c40ab104472a87da0fb506142117483217b6644"
+  },
+  {
+    "result_id": "3f24f039ad6d5efe",
+    "source": "/work/results/glm/campaign/worker_outputs/r003_proteinmpnn_redesign_cand_v7r003_hyp_0003_00_001/threaded_pdbs/job_0_n_167_id_66_beam_orig2_bm3-s0to100br1-s100to200br0-s200to300br0-s300to400br2_seq002.pdb",
+    "file": "all-structures/3f24f039ad6d5efe.pdb",
+    "sha256": "7e31ca65a8ddc19f6d112f5077000eb249fa1f94e3ae3a246bef41c962066154"
+  },
+  {
+    "result_id": "87ab36c3bf67b77d",
+    "source": "/work/results/glm/campaign/worker_outputs/r003_proteinmpnn_redesign_cand_v7r003_hyp_0003_00_001/threaded_pdbs/job_0_n_167_id_66_beam_orig2_bm3-s0to100br1-s100to200br0-s200to300br0-s300to400br2_seq003.pdb",
+    "file": "all-structures/87ab36c3bf67b77d.pdb",
+    "sha256": "84fdecba2c380ca897c74cbd7176251ef18ba41676700eda85adc87feb33b53f"
+  },
+  {
+    "result_id": "cc08e429ec25b458",
+    "source": "/work/results/glm/campaign/worker_outputs/r003_proteinmpnn_redesign_cand_v7r003_hyp_0003_00_001/threaded_pdbs/job_0_n_167_id_66_beam_orig2_bm3-s0to100br1-s100to200br0-s200to300br0-s300to400br2_seq004.pdb",
+    "file": "all-structures/cc08e429ec25b458.pdb",
+    "sha256": "c19245f8aa099b2c30c0282bb339c65b68cac4060e0d2b86508030a13201b445"
+  },
+  {
+    "result_id": "1be0a191f2f51066",
+    "source": "/work/results/glm/campaign/worker_outputs/r003_proteinmpnn_redesign_cand_v7r003_hyp_0003_00_001/threaded_pdbs/job_0_n_167_id_66_beam_orig2_bm3-s0to100br1-s100to200br0-s200to300br0-s300to400br2_seq005.pdb",
+    "file": "all-structures/1be0a191f2f51066.pdb",
+    "sha256": "9127adb616089a4eb626d132c17482e4167d32f7cfd16e255f81a7a5fc4b0717"
+  },
+  {
+    "result_id": "a1215f7c030b5c34",
+    "source": "/work/results/glm/campaign/worker_outputs/r003_proteinmpnn_redesign_cand_v7r003_hyp_0003_00_001/threaded_pdbs/job_0_n_167_id_66_beam_orig2_bm3-s0to100br1-s100to200br0-s200to300br0-s300to400br2_seq006.pdb",
+    "file": "all-structures/a1215f7c030b5c34.pdb",
+    "sha256": "7cc7dbc0b9db99e57a650608f92ed8106667fedad89d3f016da6db953c345fd2"
+  },
+  {
+    "result_id": "8e6c6113e1bed93e",
+    "source": "/work/results/glm/campaign/worker_outputs/r003_proteinmpnn_redesign_cand_v7r003_hyp_0003_00_001/threaded_pdbs/job_0_n_167_id_66_beam_orig2_bm3-s0to100br1-s100to200br0-s200to300br0-s300to400br2_seq007.pdb",
+    "file": "all-structures/8e6c6113e1bed93e.pdb",
+    "sha256": "e7bd82fbea3933715061375e1b777d20cb7ddc2baa613901d39a73a2257343f8"
+  },
+  {
+    "result_id": "703c98a922e602ca",
+    "source": "/work/results/glm/campaign/worker_outputs/r003_proteinmpnn_redesign_cand_v7r003_hyp_0003_00_001/threaded_pdbs/job_0_n_167_id_66_beam_orig2_bm3-s0to100br1-s100to200br0-s200to300br0-s300to400br2_seq008.pdb",
+    "file": "all-structures/703c98a922e602ca.pdb",
+    "sha256": "421b3547019d6fc3d78e9e75bc236ff10320551aa039adaff775b12540065840"
+  },
+  {
+    "result_id": "e92469ba23821df0",
+    "source": "/work/results/glm/campaign/worker_outputs/r003_proteinmpnn_redesign_cand_v7r003_hyp_0003_00_001/threaded_pdbs/job_0_n_167_id_66_beam_orig2_bm3-s0to100br1-s100to200br0-s200to300br0-s300to400br2_seq009.pdb",
+    "file": "all-structures/e92469ba23821df0.pdb",
+    "sha256": "be5561bbc52c13885eae12b7b9ae82da8e30f4162d3be2cec93f7494d8ae6efa"
+  },
+  {
+    "result_id": "253ffd095b0ca4b7",
+    "source": "/work/results/glm/campaign/worker_outputs/r003_proteinmpnn_redesign_cand_v7r003_hyp_0003_00_001/threaded_pdbs/job_0_n_167_id_66_beam_orig2_bm3-s0to100br1-s100to200br0-s200to300br0-s300to400br2_seq010.pdb",
+    "file": "all-structures/253ffd095b0ca4b7.pdb",
+    "sha256": "9906891211783fc8391cc0598d4a750aaf7e224f841e671c0b31d36ccc87b9d6"
+  },
+  {
+    "result_id": "7118dfd52ad05070",
+    "source": "/work/results/glm/campaign/worker_outputs/r003_proteinmpnn_redesign_cand_v7r003_hyp_0003_00_001/threaded_pdbs/job_0_n_167_id_66_beam_orig2_bm3-s0to100br1-s100to200br0-s200to300br0-s300to400br2_seq011.pdb",
+    "file": "all-structures/7118dfd52ad05070.pdb",
+    "sha256": "6e302c39f29d1a51a0a4ba14d99c80b331c1726a147fc06d02ed8239ab002c8d"
+  },
+  {
+    "result_id": "8159b344163a3824",
+    "source": "/work/results/glm/campaign/worker_outputs/r003_proteinmpnn_redesign_cand_v7r003_hyp_0003_00_001/threaded_pdbs/job_0_n_167_id_66_beam_orig2_bm3-s0to100br1-s100to200br0-s200to300br0-s300to400br2_seq012.pdb",
+    "file": "all-structures/8159b344163a3824.pdb",
+    "sha256": "6b34250b511e88b762533852f73b035bed4241b76ea4984bb98cba107534f293"
+  },
+  {
+    "result_id": "ca88d910017e23f7",
+    "source": "/work/results/glm/campaign/worker_outputs/r003_proteinmpnn_redesign_cand_v7r003_hyp_0003_00_001/threaded_pdbs/job_0_n_167_id_66_beam_orig2_bm3-s0to100br1-s100to200br0-s200to300br0-s300to400br2_seq013.pdb",
+    "file": "all-structures/ca88d910017e23f7.pdb",
+    "sha256": "c1145d1932bf1579e27802f9b5674fed10e0902380bcbab81274b66249d821f7"
+  },
+  {
+    "result_id": "6fc26e68d1e10255",
+    "source": "/work/results/glm/campaign/worker_outputs/r003_proteinmpnn_redesign_cand_v7r003_hyp_0003_00_001/threaded_pdbs/job_0_n_167_id_66_beam_orig2_bm3-s0to100br1-s100to200br0-s200to300br0-s300to400br2_seq014.pdb",
+    "file": "all-structures/6fc26e68d1e10255.pdb",
+    "sha256": "bc47705264087dbb46012cd0ea25851086f888836e786627fcf150b8c15430ca"
+  },
+  {
+    "result_id": "96d8692731a80cb4",
+    "source": "/work/results/glm/campaign/worker_outputs/r003_proteinmpnn_redesign_cand_v7r003_hyp_0003_00_001/threaded_pdbs/job_0_n_167_id_66_beam_orig2_bm3-s0to100br1-s100to200br0-s200to300br0-s300to400br2_seq015.pdb",
+    "file": "all-structures/96d8692731a80cb4.pdb",
+    "sha256": "8f590eb1d42cf46b8df2164ff14a617a076caf775181ec70b0771bdf293ca4df"
+  },
+  {
+    "result_id": "b3c150e695511d19",
+    "source": "/work/results/glm/campaign/worker_outputs/r003_proteinmpnn_redesign_cand_v7r003_hyp_0003_00_001/threaded_pdbs/job_0_n_167_id_66_beam_orig2_bm3-s0to100br1-s100to200br0-s200to300br0-s300to400br2_seq016.pdb",
+    "file": "all-structures/b3c150e695511d19.pdb",
+    "sha256": "10f939db50e010f0da096726fea9985ba94a73d07fe3782e1e757c222017b539"
+  },
+  {
+    "result_id": "f58f60078adc6c15",
+    "source": "/work/results/glm/campaign/worker_outputs/r004_structure_refilter_chain_v7r003_proteinmpnn_redesign_to_structure_refilter_001/af2_refilter_prediction.pdb",
+    "file": "all-structures/f58f60078adc6c15.pdb",
+    "sha256": "41d4694567b4f97c68ae07f9a69f699f259665f0e41000b9b87e9f6998efbad7"
+  },
+  {
+    "result_id": "acae72a90fcdca75",
+    "source": "/work/results/glm/campaign/worker_outputs/r004_structure_refilter_chain_v7r003_proteinmpnn_redesign_to_structure_refilter_002/af2_refilter_prediction.pdb",
+    "file": "all-structures/acae72a90fcdca75.pdb",
+    "sha256": "e0c0366caad82b17565e43a799deb6e24542fbba8bfdb2e1235af87feb08e128"
+  },
+  {
+    "result_id": "ce95d6a003234ba2",
+    "source": "/work/results/glm/campaign/worker_outputs/r004_structure_refilter_chain_v7r003_proteinmpnn_redesign_to_structure_refilter_003/af2_refilter_prediction.pdb",
+    "file": "all-structures/ce95d6a003234ba2.pdb",
+    "sha256": "a0a86bda360197dc5dcdf5e7313b4a58161f42250737731efc3f51d5a02f6b38"
+  },
+  {
+    "result_id": "c9f614314aafcab4",
+    "source": "/work/results/glm/campaign/worker_outputs/r004_structure_refilter_chain_v7r003_proteinmpnn_redesign_to_structure_refilter_004/af2_refilter_prediction.pdb",
+    "file": "all-structures/c9f614314aafcab4.pdb",
+    "sha256": "aef4a0fe60c24620aa753ee3f8cff50df5830b04e7cd86eaad4ac51df8849ec0"
+  },
+  {
+    "result_id": "8eba5909f819679f",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r003_cand_v7r003_hyp_0003_01_002_a33ac9851a300/job_0_n_176_id_64_beam_orig0_bm2-s0to100br3-s100to200br0-s200to300br0-s300to400br1/job_0_n_176_id_64_beam_orig0_bm2-s0to100br3-s100to200br0-s200to300br0-s300to400br1.pdb",
+    "file": "all-structures/8eba5909f819679f.pdb",
+    "sha256": "87c71e314d46a664ed39e88fe1235607faeb3536d0d20b8b53e201dbddcbb002"
+  },
+  {
+    "result_id": "f7b82e6f4f583ced",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r003_cand_v7r003_hyp_0003_01_002_a33ac9851a300/job_0_n_176_id_65_beam_orig0_bm2-s0to100br3-s100to200br0-s200to300br0-s300to400br3/job_0_n_176_id_65_beam_orig0_bm2-s0to100br3-s100to200br0-s200to300br0-s300to400br3.pdb",
+    "file": "all-structures/f7b82e6f4f583ced.pdb",
+    "sha256": "6c799499242097c9de06d5a08652a370cda0261e65a40aca6fdd7a2bf840152c"
+  },
+  {
+    "result_id": "1e6377660f16acda",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r003_cand_v7r003_hyp_0003_01_002_a33ac9851a300/job_0_n_176_id_66_beam_orig0_bm2-s0to100br3-s100to200br0-s200to300br0-s300to400br0/job_0_n_176_id_66_beam_orig0_bm2-s0to100br3-s100to200br0-s200to300br0-s300to400br0.pdb",
+    "file": "all-structures/1e6377660f16acda.pdb",
+    "sha256": "a53519dcff39c3eac880d311e3066db0806452d0c29738fb69c2b2be6fdfcacc"
+  },
+  {
+    "result_id": "e1249c22294b5add",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r003_cand_v7r003_hyp_0003_01_002_a33ac9851a300/job_0_n_176_id_67_beam_orig0_bm2-s0to100br3-s100to200br0-s200to300br0-s300to400br2/job_0_n_176_id_67_beam_orig0_bm2-s0to100br3-s100to200br0-s200to300br0-s300to400br2.pdb",
+    "file": "all-structures/e1249c22294b5add.pdb",
+    "sha256": "64c1659c0df66b622512eb3ce0c369d6f1ffc9dcbf91cd30fe6edc6d51576a7b"
+  },
+  {
+    "result_id": "d93bfab3c2612193",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r003_cand_v7r003_hyp_0003_01_002_a33ac9851a300/job_0_n_229_id_64_beam_orig1_bm2-s0to100br1-s100to200br0-s200to300br2-s300to400br3/job_0_n_229_id_64_beam_orig1_bm2-s0to100br1-s100to200br0-s200to300br2-s300to400br3.pdb",
+    "file": "all-structures/d93bfab3c2612193.pdb",
+    "sha256": "f3442ceaa505c6889de94c74e7ffdf07d5d663eb415ed7b3399e83d0afeb93ad"
+  },
+  {
+    "result_id": "0e6e3ca0603c27e4",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r003_cand_v7r003_hyp_0003_01_002_a33ac9851a300/job_0_n_229_id_65_beam_orig1_bm2-s0to100br1-s100to200br0-s200to300br1-s300to400br1/job_0_n_229_id_65_beam_orig1_bm2-s0to100br1-s100to200br0-s200to300br1-s300to400br1.pdb",
+    "file": "all-structures/0e6e3ca0603c27e4.pdb",
+    "sha256": "c9f859c9eb46aa7e4ab738cc92280186b43b476f5c8d816149d2a86d84d0666a"
+  },
+  {
+    "result_id": "fda03e4bd6c9bff0",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r003_cand_v7r003_hyp_0003_01_002_a33ac9851a300/job_0_n_229_id_66_beam_orig1_bm2-s0to100br1-s100to200br0-s200to300br1-s300to400br2/job_0_n_229_id_66_beam_orig1_bm2-s0to100br1-s100to200br0-s200to300br1-s300to400br2.pdb",
+    "file": "all-structures/fda03e4bd6c9bff0.pdb",
+    "sha256": "22060c520434c7214bdb09037963db39e898b2d11c615a1360d1136236f56d58"
+  },
+  {
+    "result_id": "a8b5d17ff6866ee5",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r003_cand_v7r003_hyp_0003_01_002_a33ac9851a300/job_0_n_229_id_67_beam_orig1_bm2-s0to100br1-s100to200br0-s200to300br2-s300to400br1/job_0_n_229_id_67_beam_orig1_bm2-s0to100br1-s100to200br0-s200to300br2-s300to400br1.pdb",
+    "file": "all-structures/a8b5d17ff6866ee5.pdb",
+    "sha256": "f84d285bfbbb84555793c59db11bb699418877e4f66286b361e8f073c2854b0d"
+  },
+  {
+    "result_id": "5f806d292e800d97",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r003_cand_v7r003_hyp_0003_01_002_a33ac9851a300/job_0_n_233_id_64_beam_orig2_bm1-s0to100br2-s100to200br1-s200to300br1-s300to400br3/job_0_n_233_id_64_beam_orig2_bm1-s0to100br2-s100to200br1-s200to300br1-s300to400br3.pdb",
+    "file": "all-structures/5f806d292e800d97.pdb",
+    "sha256": "ce5aaa34c0363a7bb293849eb4e5672b32e23cfa3d3f3273a7e0ec69f0fd561b"
+  },
+  {
+    "result_id": "9a8833a5ad2fc0bc",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r003_cand_v7r003_hyp_0003_01_002_a33ac9851a300/job_0_n_233_id_65_beam_orig2_bm2-s0to100br1-s100to200br2-s200to300br3-s300to400br1/job_0_n_233_id_65_beam_orig2_bm2-s0to100br1-s100to200br2-s200to300br3-s300to400br1.pdb",
+    "file": "all-structures/9a8833a5ad2fc0bc.pdb",
+    "sha256": "18bd595a1c20ad4ec27f7132b19d896fb2c8e8da625cd1902a0d4d2372448da3"
+  },
+  {
+    "result_id": "fa66aed4f2553c00",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r003_cand_v7r003_hyp_0003_01_002_a33ac9851a300/job_0_n_233_id_66_beam_orig2_bm1-s0to100br2-s100to200br1-s200to300br1-s300to400br1/job_0_n_233_id_66_beam_orig2_bm1-s0to100br2-s100to200br1-s200to300br1-s300to400br1.pdb",
+    "file": "all-structures/fa66aed4f2553c00.pdb",
+    "sha256": "2925cdc6b5916edaa01606c1e01be90090341eb0ff124eedb769065c738c8f71"
+  },
+  {
+    "result_id": "545c1c6c10433134",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r003_cand_v7r003_hyp_0003_01_002_a33ac9851a300/job_0_n_233_id_67_beam_orig2_bm2-s0to100br1-s100to200br2-s200to300br3-s300to400br0/job_0_n_233_id_67_beam_orig2_bm2-s0to100br1-s100to200br2-s200to300br3-s300to400br0.pdb",
+    "file": "all-structures/545c1c6c10433134.pdb",
+    "sha256": "677e79dd500fe795c636d82447ca0c9040748563273849fffe1b8a67b9104c60"
+  },
+  {
+    "result_id": "cceff3d1ed3ea8ec",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r003_cand_v7r003_hyp_0003_01_002_a33ac9851a300/job_0_n_180_id_64_beam_orig3_bm3-s0to100br1-s100to200br0-s200to300br0-s300to400br0/job_0_n_180_id_64_beam_orig3_bm3-s0to100br1-s100to200br0-s200to300br0-s300to400br0.pdb",
+    "file": "all-structures/cceff3d1ed3ea8ec.pdb",
+    "sha256": "d130a858febc9e6d3b9ce7509c0f40bb1ebdc9d311bbe897f5f04405bd1facfc"
+  },
+  {
+    "result_id": "13fe5418b5569f5b",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r003_cand_v7r003_hyp_0003_01_002_a33ac9851a300/job_0_n_180_id_65_beam_orig3_bm3-s0to100br1-s100to200br0-s200to300br0-s300to400br3/job_0_n_180_id_65_beam_orig3_bm3-s0to100br1-s100to200br0-s200to300br0-s300to400br3.pdb",
+    "file": "all-structures/13fe5418b5569f5b.pdb",
+    "sha256": "1cda49a16886483a653a249821d1c7119fabd554f41cb623cf5db647bdbe27a5"
+  },
+  {
+    "result_id": "0d4e0f160d566eba",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r003_cand_v7r003_hyp_0003_01_002_a33ac9851a300/job_0_n_180_id_66_beam_orig3_bm3-s0to100br1-s100to200br0-s200to300br3-s300to400br2/job_0_n_180_id_66_beam_orig3_bm3-s0to100br1-s100to200br0-s200to300br3-s300to400br2.pdb",
+    "file": "all-structures/0d4e0f160d566eba.pdb",
+    "sha256": "8aec656b5fc8bc1a4b54b0744ba81df6669e6ce36efd895e4f8aea1dc14beef2"
+  },
+  {
+    "result_id": "551d33050a5dd51e",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r003_cand_v7r003_hyp_0003_01_002_a33ac9851a300/job_0_n_180_id_67_beam_orig3_bm3-s0to100br1-s100to200br0-s200to300br3-s300to400br1/job_0_n_180_id_67_beam_orig3_bm3-s0to100br1-s100to200br0-s200to300br3-s300to400br1.pdb",
+    "file": "all-structures/551d33050a5dd51e.pdb",
+    "sha256": "bf3ae561c4b9a6c81ec84fd26b3d2aa5bb5b23ecce118b4ee775788ccb73b097"
+  },
+  {
+    "result_id": "11ea94af41f14811",
+    "source": "/work/results/glm/campaign/worker_outputs/r005_structure_refilter_chain_v7r003_proteinmpnn_redesign_to_structure_refilter_005/af2_refilter_prediction.pdb",
+    "file": "all-structures/11ea94af41f14811.pdb",
+    "sha256": "798ac840ae09d173d56b034902a3ec0ad4ec07055aa40b90c3900867ac8c30a4"
+  },
+  {
+    "result_id": "f12c09cb551e2d6e",
+    "source": "/work/results/glm/campaign/worker_outputs/r005_structure_refilter_chain_v7r003_proteinmpnn_redesign_to_structure_refilter_006/af2_refilter_prediction.pdb",
+    "file": "all-structures/f12c09cb551e2d6e.pdb",
+    "sha256": "fc91c3b55b88ddabfe50c29820ed79d36d91183528778ba6f401d394709394a5"
+  },
+  {
+    "result_id": "a422f952efb909d2",
+    "source": "/work/results/glm/campaign/worker_outputs/r005_structure_refilter_chain_v7r003_proteinmpnn_redesign_to_structure_refilter_007/af2_refilter_prediction.pdb",
+    "file": "all-structures/a422f952efb909d2.pdb",
+    "sha256": "4a88163d2928a206f33e0ca5c1724f8173be8c8b248e3b3d09818dfc94b6438f"
+  },
+  {
+    "result_id": "8b6c4e5384557019",
+    "source": "/work/results/glm/campaign/worker_outputs/r005_structure_refilter_chain_v7r003_proteinmpnn_redesign_to_structure_refilter_008/af2_refilter_prediction.pdb",
+    "file": "all-structures/8b6c4e5384557019.pdb",
+    "sha256": "5e7edc986b727f36afb2330ddce6357d5508bc823a3df81fadf7af024d2a5c7b"
+  },
+  {
+    "result_id": "4990e245913645ee",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r004_cand_v7r004_hyp_0004_00_001_af7f7c76a908b/job_0_n_211_id_64_fk_orig0_bm1-s0to100br3-s100to200br1-s200to300br0-s300to400br1/job_0_n_211_id_64_fk_orig0_bm1-s0to100br3-s100to200br1-s200to300br0-s300to400br1.pdb",
+    "file": "all-structures/4990e245913645ee.pdb",
+    "sha256": "71f90499a1a6afb67622baf3165d30b98ba182bc532fccb3660d3efea81d23a4"
+  },
+  {
+    "result_id": "bfc1680974ae1b0d",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r004_cand_v7r004_hyp_0004_00_001_af7f7c76a908b/job_0_n_211_id_65_fk_orig0_bm1-s0to100br3-s100to200br1-s200to300br0-s300to400br3/job_0_n_211_id_65_fk_orig0_bm1-s0to100br3-s100to200br1-s200to300br0-s300to400br3.pdb",
+    "file": "all-structures/bfc1680974ae1b0d.pdb",
+    "sha256": "ba87e527c960841adfa246eadb95ef2f5f9027f66671a96f342047eb643fe642"
+  },
+  {
+    "result_id": "70c0561bc88bb6e5",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r004_cand_v7r004_hyp_0004_00_001_af7f7c76a908b/job_0_n_211_id_66_fk_orig0_bm1-s0to100br3-s100to200br2-s200to300br2-s300to400br0/job_0_n_211_id_66_fk_orig0_bm1-s0to100br3-s100to200br2-s200to300br2-s300to400br0.pdb",
+    "file": "all-structures/70c0561bc88bb6e5.pdb",
+    "sha256": "9360b2c865e2bd229badd9b8805888e97e93ba06b63954eb8eadc6d019f124a3"
+  },
+  {
+    "result_id": "3494ff1b8c3841b8",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r004_cand_v7r004_hyp_0004_00_001_af7f7c76a908b/job_0_n_211_id_67_fk_orig0_bm1-s0to100br3-s100to200br1-s200to300br2-s300to400br1/job_0_n_211_id_67_fk_orig0_bm1-s0to100br3-s100to200br1-s200to300br2-s300to400br1.pdb",
+    "file": "all-structures/3494ff1b8c3841b8.pdb",
+    "sha256": "c4c6cd6b6fb3b34f37fda5cf5bfa8b101c285b01afe9977f8b27528e18faa532"
+  },
+  {
+    "result_id": "0df69368a798e23d",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r004_cand_v7r004_hyp_0004_00_001_af7f7c76a908b/job_0_n_235_id_64_fk_orig1_bm0-s0to100br2-s100to200br2-s200to300br3-s300to400br1/job_0_n_235_id_64_fk_orig1_bm0-s0to100br2-s100to200br2-s200to300br3-s300to400br1.pdb",
+    "file": "all-structures/0df69368a798e23d.pdb",
+    "sha256": "03ebfcf91685eccd0e25a6a408016e55ddeb03151e547adaff6269cdf1abaa72"
+  },
+  {
+    "result_id": "69b156f3e73dce89",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r004_cand_v7r004_hyp_0004_00_001_af7f7c76a908b/job_0_n_235_id_65_fk_orig1_bm0-s0to100br0-s100to200br3-s200to300br0-s300to400br1/job_0_n_235_id_65_fk_orig1_bm0-s0to100br0-s100to200br3-s200to300br0-s300to400br1.pdb",
+    "file": "all-structures/69b156f3e73dce89.pdb",
+    "sha256": "958ef439c4d8e298262d154aaf734e6af4d0f405611fa2af0bf98678722202d4"
+  },
+  {
+    "result_id": "2e0f0c4a1b56bd6a",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r004_cand_v7r004_hyp_0004_00_001_af7f7c76a908b/job_0_n_235_id_66_fk_orig1_bm0-s0to100br0-s100to200br0-s200to300br3-s300to400br0/job_0_n_235_id_66_fk_orig1_bm0-s0to100br0-s100to200br0-s200to300br3-s300to400br0.pdb",
+    "file": "all-structures/2e0f0c4a1b56bd6a.pdb",
+    "sha256": "76b3b99d11dedad2d7fa3f4e0c0f40357c1b286ed94d0ed2ec50b5b23900fbd8"
+  },
+  {
+    "result_id": "b6440d644ca2d390",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r004_cand_v7r004_hyp_0004_00_001_af7f7c76a908b/job_0_n_235_id_67_fk_orig1_bm0-s0to100br2-s100to200br2-s200to300br2-s300to400br3/job_0_n_235_id_67_fk_orig1_bm0-s0to100br2-s100to200br2-s200to300br2-s300to400br3.pdb",
+    "file": "all-structures/b6440d644ca2d390.pdb",
+    "sha256": "b55f4f6c33354237a273f942c1b0cc2cba079b7a9667b8cee4578cc042e0b08c"
+  },
+  {
+    "result_id": "e331896941d06196",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r004_cand_v7r004_hyp_0004_00_001_af7f7c76a908b/job_0_n_184_id_64_fk_orig2_bm0-s0to100br3-s100to200br1-s200to300br1-s300to400br0/job_0_n_184_id_64_fk_orig2_bm0-s0to100br3-s100to200br1-s200to300br1-s300to400br0.pdb",
+    "file": "all-structures/e331896941d06196.pdb",
+    "sha256": "57d1ae68d1834956fe18319020248ab97dda8016d645c45da9ef63696ec7a664"
+  },
+  {
+    "result_id": "7cb8719439638328",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r004_cand_v7r004_hyp_0004_00_001_af7f7c76a908b/job_0_n_184_id_65_fk_orig2_bm0-s0to100br3-s100to200br1-s200to300br3-s300to400br1/job_0_n_184_id_65_fk_orig2_bm0-s0to100br3-s100to200br1-s200to300br3-s300to400br1.pdb",
+    "file": "all-structures/7cb8719439638328.pdb",
+    "sha256": "2fb680eeba316b6b5e1a0ca92a3b202afc0a551adae0d0ad920c18f8fb9795fd"
+  },
+  {
+    "result_id": "bf72c98de0a6c51e",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r004_cand_v7r004_hyp_0004_00_001_af7f7c76a908b/job_0_n_184_id_66_fk_orig2_bm0-s0to100br3-s100to200br1-s200to300br3-s300to400br2/job_0_n_184_id_66_fk_orig2_bm0-s0to100br3-s100to200br1-s200to300br3-s300to400br2.pdb",
+    "file": "all-structures/bf72c98de0a6c51e.pdb",
+    "sha256": "39e274d2eb0c759696215f3f5d33a0c5fb2c31a3f1f80dce431c8bf67cbd9d31"
+  },
+  {
+    "result_id": "c0f77f5dd243ff4b",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r004_cand_v7r004_hyp_0004_00_001_af7f7c76a908b/job_0_n_184_id_67_fk_orig2_bm0-s0to100br3-s100to200br1-s200to300br3-s300to400br0/job_0_n_184_id_67_fk_orig2_bm0-s0to100br3-s100to200br1-s200to300br3-s300to400br0.pdb",
+    "file": "all-structures/c0f77f5dd243ff4b.pdb",
+    "sha256": "6938bb6e06cbb863348c286c49253f3e1d193eef58c24028c898f095f7c45f3f"
+  },
+  {
+    "result_id": "33a2e561f7bff901",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r004_cand_v7r004_hyp_0004_00_001_af7f7c76a908b/job_0_n_222_id_64_fk_orig3_bm1-s0to100br1-s100to200br3-s200to300br2-s300to400br0/job_0_n_222_id_64_fk_orig3_bm1-s0to100br1-s100to200br3-s200to300br2-s300to400br0.pdb",
+    "file": "all-structures/33a2e561f7bff901.pdb",
+    "sha256": "83e515e7fb0ef31398206b88934a3f5eec8cd9c5769a3606e1f8474b155f4479"
+  },
+  {
+    "result_id": "bcd1b0c6e8f29110",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r004_cand_v7r004_hyp_0004_00_001_af7f7c76a908b/job_0_n_222_id_65_fk_orig3_bm1-s0to100br1-s100to200br2-s200to300br3-s300to400br3/job_0_n_222_id_65_fk_orig3_bm1-s0to100br1-s100to200br2-s200to300br3-s300to400br3.pdb",
+    "file": "all-structures/bcd1b0c6e8f29110.pdb",
+    "sha256": "7ee346a56a830865087536daa8d9da8d1f4c313da41d3e229ad6b85ad752e4f6"
+  },
+  {
+    "result_id": "4fcf93e6b50160a3",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r004_cand_v7r004_hyp_0004_00_001_af7f7c76a908b/job_0_n_222_id_66_fk_orig3_bm1-s0to100br1-s100to200br2-s200to300br3-s300to400br0/job_0_n_222_id_66_fk_orig3_bm1-s0to100br1-s100to200br2-s200to300br3-s300to400br0.pdb",
+    "file": "all-structures/4fcf93e6b50160a3.pdb",
+    "sha256": "c7a83b55e24bbb1ee3d86668fbb222b348ed4104414cfebde85ca6d460d4d734"
+  },
+  {
+    "result_id": "73fb8a32f3f988c8",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r004_cand_v7r004_hyp_0004_00_001_af7f7c76a908b/job_0_n_222_id_67_fk_orig3_bm1-s0to100br1-s100to200br0-s200to300br2-s300to400br2/job_0_n_222_id_67_fk_orig3_bm1-s0to100br1-s100to200br0-s200to300br2-s300to400br2.pdb",
+    "file": "all-structures/73fb8a32f3f988c8.pdb",
+    "sha256": "3ebd481d6448ded921a30806fa81c4b8123b0307753033a648677ad18501df8e"
+  },
+  {
+    "result_id": "68a7b168d34eac5f",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r005_cand_v7r005_hyp_0005_00_001_a5f4e8f8f5c73/job_0_n_214_id_64_fk_orig0_bm3-s0to100br1-s100to200br2-s200to300br2-s300to400br2/job_0_n_214_id_64_fk_orig0_bm3-s0to100br1-s100to200br2-s200to300br2-s300to400br2.pdb",
+    "file": "all-structures/68a7b168d34eac5f.pdb",
+    "sha256": "66a0b934ceb7eebd89b813867d4e2aa075ef2b54b155b52efc8bca57a34a2f14"
+  },
+  {
+    "result_id": "a9b5e06b8a0c4905",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r005_cand_v7r005_hyp_0005_00_001_a5f4e8f8f5c73/job_0_n_214_id_65_fk_orig0_bm1-s0to100br3-s100to200br0-s200to300br0-s300to400br2/job_0_n_214_id_65_fk_orig0_bm1-s0to100br3-s100to200br0-s200to300br0-s300to400br2.pdb",
+    "file": "all-structures/a9b5e06b8a0c4905.pdb",
+    "sha256": "859e16d85d753139d2a4d92f4a3ae85dfb1eb6d4d01d96ed3ea898157180e150"
+  },
+  {
+    "result_id": "095494dd8fe5499b",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r005_cand_v7r005_hyp_0005_00_001_a5f4e8f8f5c73/job_0_n_214_id_66_fk_orig0_bm3-s0to100br1-s100to200br2-s200to300br2-s300to400br2/job_0_n_214_id_66_fk_orig0_bm3-s0to100br1-s100to200br2-s200to300br2-s300to400br2.pdb",
+    "file": "all-structures/095494dd8fe5499b.pdb",
+    "sha256": "4cf50d0dbaca9f2430e42fd68efecb449acbdeddacbacb2e92cb1b5049ab284c"
+  },
+  {
+    "result_id": "0b765cf6dcf7e061",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r005_cand_v7r005_hyp_0005_00_001_a5f4e8f8f5c73/job_0_n_214_id_67_fk_orig0_bm1-s0to100br0-s100to200br1-s200to300br2-s300to400br3/job_0_n_214_id_67_fk_orig0_bm1-s0to100br0-s100to200br1-s200to300br2-s300to400br3.pdb",
+    "file": "all-structures/0b765cf6dcf7e061.pdb",
+    "sha256": "a9fb37aa29d003b1fdcea0c62b80a5b519f82d233fafbdd008ed197c6b772461"
+  },
+  {
+    "result_id": "056d53ceb776ebc1",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r005_cand_v7r005_hyp_0005_00_001_a5f4e8f8f5c73/job_0_n_232_id_64_fk_orig1_bm1-s0to100br1-s100to200br1-s200to300br0-s300to400br0/job_0_n_232_id_64_fk_orig1_bm1-s0to100br1-s100to200br1-s200to300br0-s300to400br0.pdb",
+    "file": "all-structures/056d53ceb776ebc1.pdb",
+    "sha256": "4e9efd9140788dc5b7bf8384eaa9ce63fb316d756b7ceb0181e23aab6fcb4bfd"
+  },
+  {
+    "result_id": "2521cff97326802e",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r005_cand_v7r005_hyp_0005_00_001_a5f4e8f8f5c73/job_0_n_232_id_65_fk_orig1_bm0-s0to100br1-s100to200br1-s200to300br1-s300to400br2/job_0_n_232_id_65_fk_orig1_bm0-s0to100br1-s100to200br1-s200to300br1-s300to400br2.pdb",
+    "file": "all-structures/2521cff97326802e.pdb",
+    "sha256": "812529274587b514de000a93b746140bf313a4db31eb01cbea695257a9d4bd54"
+  },
+  {
+    "result_id": "d1121bfd5711316c",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r005_cand_v7r005_hyp_0005_00_001_a5f4e8f8f5c73/job_0_n_232_id_66_fk_orig1_bm1-s0to100br1-s100to200br1-s200to300br0-s300to400br1/job_0_n_232_id_66_fk_orig1_bm1-s0to100br1-s100to200br1-s200to300br0-s300to400br1.pdb",
+    "file": "all-structures/d1121bfd5711316c.pdb",
+    "sha256": "a038718cffddc582aa66037e61c5b1489d82466c724037ba598d5dcdcb149e91"
+  },
+  {
+    "result_id": "55af9f06ca47ff87",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r005_cand_v7r005_hyp_0005_00_001_a5f4e8f8f5c73/job_0_n_232_id_67_fk_orig1_bm2-s0to100br1-s100to200br3-s200to300br2-s300to400br2/job_0_n_232_id_67_fk_orig1_bm2-s0to100br1-s100to200br3-s200to300br2-s300to400br2.pdb",
+    "file": "all-structures/55af9f06ca47ff87.pdb",
+    "sha256": "ad59d51c1e3d9ed2efd270f1054da6853aa13ecd9e8bf4e990e088a84168fa31"
+  },
+  {
+    "result_id": "25651256b9b5479c",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r005_cand_v7r005_hyp_0005_00_001_a5f4e8f8f5c73/job_0_n_196_id_64_fk_orig2_bm0-s0to100br3-s100to200br2-s200to300br2-s300to400br3/job_0_n_196_id_64_fk_orig2_bm0-s0to100br3-s100to200br2-s200to300br2-s300to400br3.pdb",
+    "file": "all-structures/25651256b9b5479c.pdb",
+    "sha256": "8a1916e0af56d41e6a2d102266143752b25daa2a24c0c045994287ac074d4d61"
+  },
+  {
+    "result_id": "05d701956e5bb404",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r005_cand_v7r005_hyp_0005_00_001_a5f4e8f8f5c73/job_0_n_196_id_65_fk_orig2_bm0-s0to100br3-s100to200br2-s200to300br2-s300to400br0/job_0_n_196_id_65_fk_orig2_bm0-s0to100br3-s100to200br2-s200to300br2-s300to400br0.pdb",
+    "file": "all-structures/05d701956e5bb404.pdb",
+    "sha256": "8ff54dec8a547c0c43bc0faa99d64ca0e6539fa8d037ee464ea9b7eea6314a5b"
+  },
+  {
+    "result_id": "a409ae62bff71c59",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r005_cand_v7r005_hyp_0005_00_001_a5f4e8f8f5c73/job_0_n_196_id_66_fk_orig2_bm0-s0to100br3-s100to200br2-s200to300br1-s300to400br3/job_0_n_196_id_66_fk_orig2_bm0-s0to100br3-s100to200br2-s200to300br1-s300to400br3.pdb",
+    "file": "all-structures/a409ae62bff71c59.pdb",
+    "sha256": "cc599eb8b38460b3152430ec0ae4f86ca4f02d96e8705b51d99a854060cecb5c"
+  },
+  {
+    "result_id": "3d290f6ae83b7092",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r005_cand_v7r005_hyp_0005_00_001_a5f4e8f8f5c73/job_0_n_196_id_67_fk_orig2_bm0-s0to100br3-s100to200br2-s200to300br1-s300to400br2/job_0_n_196_id_67_fk_orig2_bm0-s0to100br3-s100to200br2-s200to300br1-s300to400br2.pdb",
+    "file": "all-structures/3d290f6ae83b7092.pdb",
+    "sha256": "36ac51d5e55db350b14cbec1433e81a57fd98dd9d2cab0bf75ca12585e626961"
+  },
+  {
+    "result_id": "f5aae55fc6fe5f5e",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r005_cand_v7r005_hyp_0005_00_001_a5f4e8f8f5c73/job_0_n_177_id_64_fk_orig3_bm1-s0to100br0-s100to200br0-s200to300br3-s300to400br3/job_0_n_177_id_64_fk_orig3_bm1-s0to100br0-s100to200br0-s200to300br3-s300to400br3.pdb",
+    "file": "all-structures/f5aae55fc6fe5f5e.pdb",
+    "sha256": "b6816c4768600826a3555a483766cd4bd1dd543fcfe72efd9bdf818552832eeb"
+  },
+  {
+    "result_id": "e67821b6b4059e57",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r005_cand_v7r005_hyp_0005_00_001_a5f4e8f8f5c73/job_0_n_177_id_65_fk_orig3_bm1-s0to100br0-s100to200br1-s200to300br1-s300to400br0/job_0_n_177_id_65_fk_orig3_bm1-s0to100br0-s100to200br1-s200to300br1-s300to400br0.pdb",
+    "file": "all-structures/e67821b6b4059e57.pdb",
+    "sha256": "cc71d7ba8f479b9cf7a17323352481431e86ee7c83962d8df1b0412370c6fa09"
+  },
+  {
+    "result_id": "b17a7fd6bac5daf2",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r005_cand_v7r005_hyp_0005_00_001_a5f4e8f8f5c73/job_0_n_177_id_66_fk_orig3_bm1-s0to100br0-s100to200br1-s200to300br1-s300to400br0/job_0_n_177_id_66_fk_orig3_bm1-s0to100br0-s100to200br1-s200to300br1-s300to400br0.pdb",
+    "file": "all-structures/b17a7fd6bac5daf2.pdb",
+    "sha256": "5efe9c37bc4ef4c1f7f019691e82dc77abb0d0512315c72aceccb29fbd2f91ea"
+  },
+  {
+    "result_id": "1e0775e8939c7e22",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r005_cand_v7r005_hyp_0005_00_001_a5f4e8f8f5c73/job_0_n_177_id_67_fk_orig3_bm1-s0to100br0-s100to200br1-s200to300br1-s300to400br2/job_0_n_177_id_67_fk_orig3_bm1-s0to100br0-s100to200br1-s200to300br1-s300to400br2.pdb",
+    "file": "all-structures/1e0775e8939c7e22.pdb",
+    "sha256": "9b6ef07562fc8a78c83050c48d6441539b28c452979030e1ef00ac5fae27f309"
+  },
+  {
+    "result_id": "8c9c2ca5cd60fed4",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r006_route_replay_v7r006_00_complexa_beam_a00a11cbd0dcb/job_0_n_206_id_64_beam_orig0_bm0-s0to100br1-s100to200br2-s200to300br3-s300to400br1/job_0_n_206_id_64_beam_orig0_bm0-s0to100br1-s100to200br2-s200to300br3-s300to400br1.pdb",
+    "file": "all-structures/8c9c2ca5cd60fed4.pdb",
+    "sha256": "894e97eb24cdb921e37e261e85fdf2486838f96621ecc5352e04a8eef4eb0951"
+  },
+  {
+    "result_id": "cb8d3e6ee062cb2d",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r006_route_replay_v7r006_00_complexa_beam_a00a11cbd0dcb/job_0_n_206_id_65_beam_orig0_bm0-s0to100br1-s100to200br2-s200to300br3-s300to400br0/job_0_n_206_id_65_beam_orig0_bm0-s0to100br1-s100to200br2-s200to300br3-s300to400br0.pdb",
+    "file": "all-structures/cb8d3e6ee062cb2d.pdb",
+    "sha256": "9d120b7fb05224fc3f9f7172e10e5e37ba3fbf378766186f4bb39e37a0133b55"
+  },
+  {
+    "result_id": "d8503b41bad546de",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r006_route_replay_v7r006_00_complexa_beam_a00a11cbd0dcb/job_0_n_206_id_66_beam_orig0_bm0-s0to100br1-s100to200br2-s200to300br3-s300to400br3/job_0_n_206_id_66_beam_orig0_bm0-s0to100br1-s100to200br2-s200to300br3-s300to400br3.pdb",
+    "file": "all-structures/d8503b41bad546de.pdb",
+    "sha256": "e50de1ec5eebadab59432f8edb270d860fd543885963c01b1b2d38a798c3ffe4"
+  },
+  {
+    "result_id": "e414c50adb130b5f",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r006_route_replay_v7r006_00_complexa_beam_a00a11cbd0dcb/job_0_n_206_id_67_beam_orig0_bm0-s0to100br1-s100to200br2-s200to300br3-s300to400br2/job_0_n_206_id_67_beam_orig0_bm0-s0to100br1-s100to200br2-s200to300br3-s300to400br2.pdb",
+    "file": "all-structures/e414c50adb130b5f.pdb",
+    "sha256": "c2571b7a6deb09145eea29d3e123fe3352e46783c70f9e792892eab5c16f680c"
+  },
+  {
+    "result_id": "eddf1318dbf241fd",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r006_route_replay_v7r006_00_complexa_beam_a00a11cbd0dcb/job_0_n_174_id_64_beam_orig1_bm2-s0to100br1-s100to200br3-s200to300br0-s300to400br2/job_0_n_174_id_64_beam_orig1_bm2-s0to100br1-s100to200br3-s200to300br0-s300to400br2.pdb",
+    "file": "all-structures/eddf1318dbf241fd.pdb",
+    "sha256": "7e3579f4b521f04924a8b2c2c2f568e197ec7ad6c88cf4a177d9eb86d80cc1ef"
+  },
+  {
+    "result_id": "b20142fd715285b7",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r006_route_replay_v7r006_00_complexa_beam_a00a11cbd0dcb/job_0_n_174_id_65_beam_orig1_bm2-s0to100br1-s100to200br3-s200to300br0-s300to400br3/job_0_n_174_id_65_beam_orig1_bm2-s0to100br1-s100to200br3-s200to300br0-s300to400br3.pdb",
+    "file": "all-structures/b20142fd715285b7.pdb",
+    "sha256": "8ac59de2f74b3ba45ead4492e952c1d887d24b2fe4290adc80ba9caaac5feb2b"
+  },
+  {
+    "result_id": "1464f601442a9d89",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r006_route_replay_v7r006_00_complexa_beam_a00a11cbd0dcb/job_0_n_174_id_66_beam_orig1_bm2-s0to100br1-s100to200br3-s200to300br0-s300to400br1/job_0_n_174_id_66_beam_orig1_bm2-s0to100br1-s100to200br3-s200to300br0-s300to400br1.pdb",
+    "file": "all-structures/1464f601442a9d89.pdb",
+    "sha256": "ea0e0ded7ac63f593f37b3c59f06dc815854c047d4fe36ea0cba139f1e1c09f5"
+  },
+  {
+    "result_id": "938572024b8e621c",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r006_route_replay_v7r006_00_complexa_beam_a00a11cbd0dcb/job_0_n_174_id_67_beam_orig1_bm2-s0to100br1-s100to200br3-s200to300br0-s300to400br0/job_0_n_174_id_67_beam_orig1_bm2-s0to100br1-s100to200br3-s200to300br0-s300to400br0.pdb",
+    "file": "all-structures/938572024b8e621c.pdb",
+    "sha256": "20c886e8dd6f891f5af32c20466a372af85aa447e4e1b9ae5624cf42b3979559"
+  },
+  {
+    "result_id": "507a35a274fc9100",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r006_route_replay_v7r006_00_complexa_beam_a00a11cbd0dcb/job_0_n_177_id_64_beam_orig2_bm3-s0to100br1-s100to200br2-s200to300br3-s300to400br0/job_0_n_177_id_64_beam_orig2_bm3-s0to100br1-s100to200br2-s200to300br3-s300to400br0.pdb",
+    "file": "all-structures/507a35a274fc9100.pdb",
+    "sha256": "5a639e9746a36afde9061cd93b6e3129defe94094c61759ba24b5ff5f5aa1242"
+  },
+  {
+    "result_id": "a65b03e53cc5a782",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r006_route_replay_v7r006_00_complexa_beam_a00a11cbd0dcb/job_0_n_177_id_65_beam_orig2_bm3-s0to100br1-s100to200br2-s200to300br3-s300to400br2/job_0_n_177_id_65_beam_orig2_bm3-s0to100br1-s100to200br2-s200to300br3-s300to400br2.pdb",
+    "file": "all-structures/a65b03e53cc5a782.pdb",
+    "sha256": "3c5595c013710f3552ea8867e65697bfb64a248de0e2599a4874247b66742292"
+  },
+  {
+    "result_id": "3948b9aad51888ad",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r006_route_replay_v7r006_00_complexa_beam_a00a11cbd0dcb/job_0_n_177_id_66_beam_orig2_bm3-s0to100br1-s100to200br2-s200to300br3-s300to400br1/job_0_n_177_id_66_beam_orig2_bm3-s0to100br1-s100to200br2-s200to300br3-s300to400br1.pdb",
+    "file": "all-structures/3948b9aad51888ad.pdb",
+    "sha256": "b818507b88fd52e018e82a975c808e6808906ceef684a818b65fa60499604371"
+  },
+  {
+    "result_id": "8f3d7394b8a9d62e",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r006_route_replay_v7r006_00_complexa_beam_a00a11cbd0dcb/job_0_n_177_id_67_beam_orig2_bm3-s0to100br1-s100to200br2-s200to300br3-s300to400br3/job_0_n_177_id_67_beam_orig2_bm3-s0to100br1-s100to200br2-s200to300br3-s300to400br3.pdb",
+    "file": "all-structures/8f3d7394b8a9d62e.pdb",
+    "sha256": "681fbc31f045f22909ed061be2d538d5ed91b1be11f2500976589a0602960e54"
+  },
+  {
+    "result_id": "4f711d9685bcfd8b",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r006_route_replay_v7r006_00_complexa_beam_a00a11cbd0dcb/job_0_n_181_id_64_beam_orig3_bm2-s0to100br1-s100to200br3-s200to300br3-s300to400br3/job_0_n_181_id_64_beam_orig3_bm2-s0to100br1-s100to200br3-s200to300br3-s300to400br3.pdb",
+    "file": "all-structures/4f711d9685bcfd8b.pdb",
+    "sha256": "74f44942c046c91a050fc81952d8610b033ca659a55e4ed79dcb568a4d80312f"
+  },
+  {
+    "result_id": "fc83893218cbbb20",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r006_route_replay_v7r006_00_complexa_beam_a00a11cbd0dcb/job_0_n_181_id_65_beam_orig3_bm2-s0to100br1-s100to200br2-s200to300br2-s300to400br1/job_0_n_181_id_65_beam_orig3_bm2-s0to100br1-s100to200br2-s200to300br2-s300to400br1.pdb",
+    "file": "all-structures/fc83893218cbbb20.pdb",
+    "sha256": "8648710cebd38499b2e3482bba514431e7ebe84d945ddb608417ab3b459bf94e"
+  },
+  {
+    "result_id": "8071c7b598f6fbc6",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r006_route_replay_v7r006_00_complexa_beam_a00a11cbd0dcb/job_0_n_181_id_66_beam_orig3_bm2-s0to100br1-s100to200br2-s200to300br2-s300to400br3/job_0_n_181_id_66_beam_orig3_bm2-s0to100br1-s100to200br2-s200to300br2-s300to400br3.pdb",
+    "file": "all-structures/8071c7b598f6fbc6.pdb",
+    "sha256": "360ae302779f3d72f5752dfd759b8be463383989fa2e3ae2651832d4cdd54083"
+  },
+  {
+    "result_id": "56bed3aecdf1b827",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r006_route_replay_v7r006_00_complexa_beam_a00a11cbd0dcb/job_0_n_181_id_67_beam_orig3_bm2-s0to100br1-s100to200br2-s200to300br2-s300to400br0/job_0_n_181_id_67_beam_orig3_bm2-s0to100br1-s100to200br2-s200to300br2-s300to400br0.pdb",
+    "file": "all-structures/56bed3aecdf1b827.pdb",
+    "sha256": "26256d2b3d2e737fe9d4c0e85f515038ae9b63d2d2f00bd44f29531396ac1032"
+  },
+  {
+    "result_id": "5f6c17ddcc33785a",
+    "source": "/work/results/glm/campaign/worker_outputs/r007_structure_refilter_chain_v7r003_proteinmpnn_redesign_to_structure_refilter_009/af2_refilter_prediction.pdb",
+    "file": "all-structures/5f6c17ddcc33785a.pdb",
+    "sha256": "709afeb274c9d74d789005387a254a4dae0b278369d53d5e601dbb8a65b9ec2a"
+  },
+  {
+    "result_id": "b834688dc979d6ab",
+    "source": "/work/results/glm/campaign/worker_outputs/r010_structure_refilter_chain_v7r003_proteinmpnn_redesign_to_structure_refilter_010/af2_refilter_prediction.pdb",
+    "file": "all-structures/b834688dc979d6ab.pdb",
+    "sha256": "5ce50b56ad7a9ee6540067b450b2e2e2d2e22745e263bc74d762c9d4ec7c60ab"
+  },
+  {
+    "result_id": "90b9a43d73db5cf8",
+    "source": "/work/results/glm/campaign/worker_outputs/r012_structure_refilter_chain_v7r003_proteinmpnn_redesign_to_structure_refilter_011/af2_refilter_prediction.pdb",
+    "file": "all-structures/90b9a43d73db5cf8.pdb",
+    "sha256": "3712d7a2d04336719c366348a2a23e5b2c320b2faf704dddbf7cebc6b912590a"
+  },
+  {
+    "result_id": "83416188ad0823a0",
+    "source": "/work/results/glm/campaign/worker_outputs/r014_structure_refilter_chain_v7r003_proteinmpnn_redesign_to_structure_refilter_012/af2_refilter_prediction.pdb",
+    "file": "all-structures/83416188ad0823a0.pdb",
+    "sha256": "a4a3e26097190a5cf6e0b50fb5c36604945286742066d4cb8dde6ae0f028a369"
+  },
+  {
+    "result_id": "61f3bc236fb78694",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r008_cand_v7r004_hyp_0004_01_002_ab1dd93723c83/job_0_n_204_id_0_bon_orig0_r0/job_0_n_204_id_0_bon_orig0_r0.pdb",
+    "file": "all-structures/61f3bc236fb78694.pdb",
+    "sha256": "67669001396447ebdd6a2ea6ac42386a8392602694b80b685ab0901c5345d194"
+  },
+  {
+    "result_id": "913354b8362743b3",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r008_cand_v7r004_hyp_0004_01_002_ab1dd93723c83/job_0_n_204_id_1_bon_orig0_r1/job_0_n_204_id_1_bon_orig0_r1.pdb",
+    "file": "all-structures/913354b8362743b3.pdb",
+    "sha256": "5fc1fb4c5a8d54c91539dba54cf6251c80f8933ee62a556e4fdda29c076f5ac0"
+  },
+  {
+    "result_id": "029600b3c57669b4",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r008_cand_v7r004_hyp_0004_01_002_ab1dd93723c83/job_0_n_204_id_2_bon_orig0_r2/job_0_n_204_id_2_bon_orig0_r2.pdb",
+    "file": "all-structures/029600b3c57669b4.pdb",
+    "sha256": "006ff71d11d1a9e40dff822d49882ee677711467a3df3afc7e498ee28fba5a4d"
+  },
+  {
+    "result_id": "e6cf32bf5e2b4d31",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r008_cand_v7r004_hyp_0004_01_002_ab1dd93723c83/job_0_n_204_id_3_bon_orig0_r3/job_0_n_204_id_3_bon_orig0_r3.pdb",
+    "file": "all-structures/e6cf32bf5e2b4d31.pdb",
+    "sha256": "06dfa21284457b6b9f4add80e70ce0e878d58c7230628d1c7a3f888a2cf7bb02"
+  },
+  {
+    "result_id": "0921b836a8b03b06",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r008_cand_v7r004_hyp_0004_01_002_ab1dd93723c83/job_0_n_202_id_0_bon_orig1_r0/job_0_n_202_id_0_bon_orig1_r0.pdb",
+    "file": "all-structures/0921b836a8b03b06.pdb",
+    "sha256": "cdd6ac5eeb19e257c0a2e0800393ce2d89a683985bae6241bf5d3e6875b7ace8"
+  },
+  {
+    "result_id": "27fc78c91daf8ef4",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r008_cand_v7r004_hyp_0004_01_002_ab1dd93723c83/job_0_n_202_id_1_bon_orig1_r1/job_0_n_202_id_1_bon_orig1_r1.pdb",
+    "file": "all-structures/27fc78c91daf8ef4.pdb",
+    "sha256": "1d178ca71e0c1a864164de47ba45a07685456a2c34b840c0eb5749eb692383ab"
+  },
+  {
+    "result_id": "ae54543de2c219b6",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r008_cand_v7r004_hyp_0004_01_002_ab1dd93723c83/job_0_n_202_id_2_bon_orig1_r2/job_0_n_202_id_2_bon_orig1_r2.pdb",
+    "file": "all-structures/ae54543de2c219b6.pdb",
+    "sha256": "8386f6bcec2e9af3cfd3fd97cc23d45936d89e411594454ebf816226b395b519"
+  },
+  {
+    "result_id": "49e924d2bbf4d8d0",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r008_cand_v7r004_hyp_0004_01_002_ab1dd93723c83/job_0_n_202_id_3_bon_orig1_r3/job_0_n_202_id_3_bon_orig1_r3.pdb",
+    "file": "all-structures/49e924d2bbf4d8d0.pdb",
+    "sha256": "0401ce6ef34889b1c7e2fd52c0b29415353a02327cf581464a3cc6ae1c9cd73b"
+  },
+  {
+    "result_id": "b082248a9f7d84d4",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r008_cand_v7r004_hyp_0004_01_002_ab1dd93723c83/job_0_n_180_id_0_bon_orig2_r0/job_0_n_180_id_0_bon_orig2_r0.pdb",
+    "file": "all-structures/b082248a9f7d84d4.pdb",
+    "sha256": "80e4d5b38d03ce950eb97ab7bb8608c7700a9acec9e151e16e829c7a72d4c98b"
+  },
+  {
+    "result_id": "c7b749943631531e",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r008_cand_v7r004_hyp_0004_01_002_ab1dd93723c83/job_0_n_180_id_1_bon_orig2_r1/job_0_n_180_id_1_bon_orig2_r1.pdb",
+    "file": "all-structures/c7b749943631531e.pdb",
+    "sha256": "132db843ce96a5a7194c5c672e1222ac68b14a9f91c46fe895b0783f99748219"
+  },
+  {
+    "result_id": "71e3f3dc81e7be13",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r008_cand_v7r004_hyp_0004_01_002_ab1dd93723c83/job_0_n_180_id_2_bon_orig2_r2/job_0_n_180_id_2_bon_orig2_r2.pdb",
+    "file": "all-structures/71e3f3dc81e7be13.pdb",
+    "sha256": "6f540ebe3c464983674bc3f74e657e7f88c219645e9b0622371ba23e50327c59"
+  },
+  {
+    "result_id": "fa085dc6f569240f",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r008_cand_v7r004_hyp_0004_01_002_ab1dd93723c83/job_0_n_180_id_3_bon_orig2_r3/job_0_n_180_id_3_bon_orig2_r3.pdb",
+    "file": "all-structures/fa085dc6f569240f.pdb",
+    "sha256": "6aeaf20924b3c14836d72d6a6cd1b909c411fa13625f0546c263aab1723fcfc8"
+  },
+  {
+    "result_id": "98c673c8aa0f1126",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r008_cand_v7r004_hyp_0004_01_002_ab1dd93723c83/job_0_n_210_id_0_bon_orig3_r0/job_0_n_210_id_0_bon_orig3_r0.pdb",
+    "file": "all-structures/98c673c8aa0f1126.pdb",
+    "sha256": "369bfead588662b6c636b4b6ff83e6790c9c08d17f9cbb66710edf4dfb6bdc61"
+  },
+  {
+    "result_id": "9411972ecd775745",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r008_cand_v7r004_hyp_0004_01_002_ab1dd93723c83/job_0_n_210_id_1_bon_orig3_r1/job_0_n_210_id_1_bon_orig3_r1.pdb",
+    "file": "all-structures/9411972ecd775745.pdb",
+    "sha256": "3b39051932eec34faa2f8f3914054cf15a2b9130804558d65bdee0899cb06f7e"
+  },
+  {
+    "result_id": "7e7a150ef4f34f38",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r008_cand_v7r004_hyp_0004_01_002_ab1dd93723c83/job_0_n_210_id_2_bon_orig3_r2/job_0_n_210_id_2_bon_orig3_r2.pdb",
+    "file": "all-structures/7e7a150ef4f34f38.pdb",
+    "sha256": "bdd42340d254a86ca4861a322e665899e577c6c07f596769e5c21802f32bfd84"
+  },
+  {
+    "result_id": "98ab29acc85ac333",
+    "source": "/work/T-REX/external/Proteina-Complexa/inference/search_binder_local_pipeline_32_PDL1_ALPHA_REPACK_v7_r008_cand_v7r004_hyp_0004_01_002_ab1dd93723c83/job_0_n_210_id_3_bon_orig3_r3/job_0_n_210_id_3_bon_orig3_r3.pdb",
+    "file": "all-structures/98ab29acc85ac333.pdb",
+    "sha256": "0f82d0cf8d728d235708237d621807731042b0bdb400344ac3f684c115cb8d1d"
+  },
+  {
+    "result_id": "8d020046506e3e69",
+    "source": "/work/results/glm/campaign/worker_outputs/r016_structure_refilter_chain_v7r003_proteinmpnn_redesign_to_structure_refilter_013/af2_refilter_prediction.pdb",
+    "file": "all-structures/8d020046506e3e69.pdb",
+    "sha256": "e5239469daeeb8d8b1af5b5fe49592730676392bc76225444ac8f929d20dfe12"
+  },
+  {
+    "result_id": "33aa95770e86cdaf",
+    "source": "/work/results/glm/campaign/worker_outputs/r018_structure_refilter_chain_v7r003_proteinmpnn_redesign_to_structure_refilter_014/af2_refilter_prediction.pdb",
+    "file": "all-structures/33aa95770e86cdaf.pdb",
+    "sha256": "34f4a3b4f1e38499cf16290c8331de399107ce7046afd9b651ed89251045147b"
+  },
+  {
+    "result_id": "e55b4cbbbcfd7f51",
+    "source": "/work/results/glm/campaign/worker_outputs/r020_structure_refilter_chain_v7r003_proteinmpnn_redesign_to_structure_refilter_015/af2_refilter_prediction.pdb",
+    "file": "all-structures/e55b4cbbbcfd7f51.pdb",
+    "sha256": "69acf3e92d6f73266d81468e0a428f14a431114191493b2e80a4552bf83dc0d1"
+  },
+  {
+    "result_id": "b19a08737f266651",
+    "source": "/work/results/glm/campaign/worker_outputs/r022_structure_refilter_chain_v7r003_proteinmpnn_redesign_to_structure_refilter_016/af2_refilter_prediction.pdb",
+    "file": "all-structures/b19a08737f266651.pdb",
+    "sha256": "cdc4c8aa6e2c43d3ed23e26f235b01e303639155517afabdca13adc712762361"
+  }
+]

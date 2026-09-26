@@ -1,5 +1,10 @@
 {
   "ok": true,
+  "verified_arms": [
+    "qwen",
+    "snowball",
+    "glm"
+  ],
   "arms": {
     "qwen": {
       "native_archive_valid": true,
@@ -19,6 +24,15 @@
       "structure_hashes_verified": 16,
       "qualified_pdb_hashes_verified": 0,
       "qualified_fasta_ids_verified": 0,
+      "pending_wire_requests": 0
+    },
+    "glm": {
+      "native_archive_valid": true,
+      "result_ids_verified": 144,
+      "native_archive_warnings": [],
+      "structure_hashes_verified": 144,
+      "qualified_pdb_hashes_verified": 18,
+      "qualified_fasta_ids_verified": 18,
       "pending_wire_requests": 0
     }
   },

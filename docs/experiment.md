@@ -178,7 +178,13 @@ the wire archive and is excluded from every chat-call summary.
 
 ## Completion
 
-Both campaigns, paired fixed checks and the five-state teacher replay completed.
-The pod was deleted at 21:59 UTC after exports, hash checks and a GitHub backup.
-The 600GiB PVC remains for recovery and future work. See [results](results.md)
-for endpoints and the full allocation accounting.
+Both original campaigns, paired fixed checks and the five-state teacher replay
+completed. The pod was deleted at 21:59 UTC on 25 September after exports, hash
+checks and a GitHub backup.
+
+The GLM-5.3 arm ran on 26 September on a second four-H100 pod against the retained
+PVC: fixed checks 23:56–23:59 UTC, campaign 23:59:53–01:00:46 UTC (1.011h including
+drain), then collection, the three-way comparison and the GLM replay of the same
+five live Snowball states. Its archive validates with no errors or warnings. The
+pod was deleted at 01:08 UTC. The 600GiB PVC remains for recovery and future work.
+See [results](results.md) for endpoints and the full allocation accounting.

@@ -1,0 +1,464 @@
+{
+  "n_results": 144,
+  "n_unique_started_candidates": 24,
+  "dispatch_status": {
+    "started": 24,
+    "dispatch_failed": 1
+  },
+  "launch_status": {
+    "launched": 25,
+    "rejected": 8
+  },
+  "selected_not_started": [
+    "cand_v7r002_hyp_0002_01_002"
+  ],
+  "started_by_family": {
+    "complexa_fk_steering": 3,
+    "proteinmpnn_redesign": 1,
+    "complexa_beam": 3,
+    "complexa_best_of_n": 1,
+    "structure_refilter": 16
+  },
+  "started_jobs": [
+    {
+      "candidate_id": "cand_v7r002_hyp_0002_00_001",
+      "family": "complexa_fk_steering",
+      "hypothesis_ids": [
+        "hyp_0002_00"
+      ],
+      "config": {
+        "beam_width": 4,
+        "n_branch": 4,
+        "nsamples": 4,
+        "nsteps": 400,
+        "temperature": 0.2
+      },
+      "n_result_records": 16,
+      "result_statuses": {
+        "ok": 16
+      },
+      "recorded_gpu_h": 0.1767590183019638
+    },
+    {
+      "candidate_id": "cand_v7r003_hyp_0003_00_001",
+      "family": "proteinmpnn_redesign",
+      "hypothesis_ids": [
+        "hyp_0003_00"
+      ],
+      "config": {
+        "model_name": "v_48_020",
+        "num_seq_per_target": 16,
+        "sampling_temp": 0.1
+      },
+      "n_result_records": 16,
+      "result_statuses": {
+        "ok": 16
+      },
+      "recorded_gpu_h": 0.009961887531810336
+    },
+    {
+      "candidate_id": "cand_v7r003_hyp_0003_01_002",
+      "family": "complexa_beam",
+      "hypothesis_ids": [
+        "hyp_0003_01"
+      ],
+      "config": {
+        "beam_width": 4,
+        "n_branch": 4,
+        "nsamples": 4,
+        "nsteps": 400,
+        "sc_scale_noise": 0.15
+      },
+      "n_result_records": 16,
+      "result_statuses": {
+        "ok": 16
+      },
+      "recorded_gpu_h": 0.1672348970837063
+    },
+    {
+      "candidate_id": "cand_v7r004_hyp_0004_00_001",
+      "family": "complexa_fk_steering",
+      "hypothesis_ids": [
+        "hyp_0004_00"
+      ],
+      "config": {
+        "beam_width": 4,
+        "n_branch": 4,
+        "nsamples": 4,
+        "nsteps": 400,
+        "refinement_algorithm": "sequence_hallucination",
+        "temperature": 0.1
+      },
+      "n_result_records": 16,
+      "result_statuses": {
+        "ok": 16
+      },
+      "recorded_gpu_h": 0.30716366324159833
+    },
+    {
+      "candidate_id": "cand_v7r004_hyp_0004_01_002",
+      "family": "complexa_best_of_n",
+      "hypothesis_ids": [
+        "hyp_0004_01"
+      ],
+      "config": {
+        "nsamples": 4,
+        "nsteps": 400,
+        "replicas": 4,
+        "reward_avg_ipsae_weight": 1.0,
+        "reward_max_ipsae_weight": 1.0,
+        "sc_scale_noise": 0.4325
+      },
+      "n_result_records": 16,
+      "result_statuses": {
+        "ok": 16
+      },
+      "recorded_gpu_h": 0.04191323300202687
+    },
+    {
+      "candidate_id": "cand_v7r005_hyp_0005_00_001",
+      "family": "complexa_fk_steering",
+      "hypothesis_ids": [
+        "hyp_0005_00"
+      ],
+      "config": {
+        "beam_width": 4,
+        "n_branch": 4,
+        "nsamples": 4,
+        "nsteps": 400,
+        "refinement_algorithm": "sequence_hallucination",
+        "sc_scale_noise": 0.15,
+        "temperature": 0.1
+      },
+      "n_result_records": 16,
+      "result_statuses": {
+        "ok": 16
+      },
+      "recorded_gpu_h": 0.2807412724362479
+    },
+    {
+      "candidate_id": "chain_v7r003_proteinmpnn_redesign_to_structure_refilter_001",
+      "family": "structure_refilter",
+      "hypothesis_ids": [
+        "hyp_0003_00"
+      ],
+      "config": {},
+      "n_result_records": 1,
+      "result_statuses": {
+        "ok": 1
+      },
+      "recorded_gpu_h": 0.006954566571447584
+    },
+    {
+      "candidate_id": "chain_v7r003_proteinmpnn_redesign_to_structure_refilter_002",
+      "family": "structure_refilter",
+      "hypothesis_ids": [
+        "hyp_0003_00"
+      ],
+      "config": {},
+      "n_result_records": 1,
+      "result_statuses": {
+        "ok": 1
+      },
+      "recorded_gpu_h": 0.006955538524521722
+    },
+    {
+      "candidate_id": "chain_v7r003_proteinmpnn_redesign_to_structure_refilter_003",
+      "family": "structure_refilter",
+      "hypothesis_ids": [
+        "hyp_0003_00"
+      ],
+      "config": {},
+      "n_result_records": 1,
+      "result_statuses": {
+        "ok": 1
+      },
+      "recorded_gpu_h": 0.006961042881011963
+    },
+    {
+      "candidate_id": "chain_v7r003_proteinmpnn_redesign_to_structure_refilter_004",
+      "family": "structure_refilter",
+      "hypothesis_ids": [
+        "hyp_0003_00"
+      ],
+      "config": {},
+      "n_result_records": 1,
+      "result_statuses": {
+        "ok": 1
+      },
+      "recorded_gpu_h": 0.006957739856508043
+    },
+    {
+      "candidate_id": "chain_v7r003_proteinmpnn_redesign_to_structure_refilter_005",
+      "family": "structure_refilter",
+      "hypothesis_ids": [
+        "hyp_0003_00"
+      ],
+      "config": {},
+      "n_result_records": 1,
+      "result_statuses": {
+        "ok": 1
+      },
+      "recorded_gpu_h": 0.006960707373089261
+    },
+    {
+      "candidate_id": "chain_v7r003_proteinmpnn_redesign_to_structure_refilter_006",
+      "family": "structure_refilter",
+      "hypothesis_ids": [
+        "hyp_0003_00"
+      ],
+      "config": {},
+      "n_result_records": 1,
+      "result_statuses": {
+        "ok": 1
+      },
+      "recorded_gpu_h": 0.006969275540775723
+    },
+    {
+      "candidate_id": "chain_v7r003_proteinmpnn_redesign_to_structure_refilter_007",
+      "family": "structure_refilter",
+      "hypothesis_ids": [
+        "hyp_0003_00"
+      ],
+      "config": {},
+      "n_result_records": 1,
+      "result_statuses": {
+        "ok": 1
+      },
+      "recorded_gpu_h": 0.006958892345428467
+    },
+    {
+      "candidate_id": "chain_v7r003_proteinmpnn_redesign_to_structure_refilter_008",
+      "family": "structure_refilter",
+      "hypothesis_ids": [
+        "hyp_0003_00"
+      ],
+      "config": {},
+      "n_result_records": 1,
+      "result_statuses": {
+        "ok": 1
+      },
+      "recorded_gpu_h": 0.006966874202092488
+    },
+    {
+      "candidate_id": "chain_v7r003_proteinmpnn_redesign_to_structure_refilter_009",
+      "family": "structure_refilter",
+      "hypothesis_ids": [
+        "hyp_0003_00"
+      ],
+      "config": {},
+      "n_result_records": 1,
+      "result_statuses": {
+        "ok": 1
+      },
+      "recorded_gpu_h": 0.011037316123644511
+    },
+    {
+      "candidate_id": "chain_v7r003_proteinmpnn_redesign_to_structure_refilter_010",
+      "family": "structure_refilter",
+      "hypothesis_ids": [
+        "hyp_0003_00"
+      ],
+      "config": {},
+      "n_result_records": 1,
+      "result_statuses": {
+        "ok": 1
+      },
+      "recorded_gpu_h": 0.007785638040966458
+    },
+    {
+      "candidate_id": "chain_v7r003_proteinmpnn_redesign_to_structure_refilter_011",
+      "family": "structure_refilter",
+      "hypothesis_ids": [
+        "hyp_0003_00"
+      ],
+      "config": {},
+      "n_result_records": 1,
+      "result_statuses": {
+        "ok": 1
+      },
+      "recorded_gpu_h": 0.006390213105413649
+    },
+    {
+      "candidate_id": "chain_v7r003_proteinmpnn_redesign_to_structure_refilter_012",
+      "family": "structure_refilter",
+      "hypothesis_ids": [
+        "hyp_0003_00"
+      ],
+      "config": {},
+      "n_result_records": 1,
+      "result_statuses": {
+        "ok": 1
+      },
+      "recorded_gpu_h": 0.006604765057563782
+    },
+    {
+      "candidate_id": "chain_v7r003_proteinmpnn_redesign_to_structure_refilter_013",
+      "family": "structure_refilter",
+      "hypothesis_ids": [
+        "hyp_0003_00"
+      ],
+      "config": {},
+      "n_result_records": 1,
+      "result_statuses": {
+        "ok": 1
+      },
+      "recorded_gpu_h": 0.006455371181170145
+    },
+    {
+      "candidate_id": "chain_v7r003_proteinmpnn_redesign_to_structure_refilter_014",
+      "family": "structure_refilter",
+      "hypothesis_ids": [
+        "hyp_0003_00"
+      ],
+      "config": {},
+      "n_result_records": 1,
+      "result_statuses": {
+        "ok": 1
+      },
+      "recorded_gpu_h": 0.006459313498602973
+    },
+    {
+      "candidate_id": "chain_v7r003_proteinmpnn_redesign_to_structure_refilter_015",
+      "family": "structure_refilter",
+      "hypothesis_ids": [
+        "hyp_0003_00"
+      ],
+      "config": {},
+      "n_result_records": 1,
+      "result_statuses": {
+        "ok": 1
+      },
+      "recorded_gpu_h": 0.0066724666621949934
+    },
+    {
+      "candidate_id": "chain_v7r003_proteinmpnn_redesign_to_structure_refilter_016",
+      "family": "structure_refilter",
+      "hypothesis_ids": [
+        "hyp_0003_00"
+      ],
+      "config": {},
+      "n_result_records": 1,
+      "result_statuses": {
+        "ok": 1
+      },
+      "recorded_gpu_h": 0.006507017148865594
+    },
+    {
+      "candidate_id": "route_replay_v7r006_00_complexa_beam",
+      "family": "complexa_beam",
+      "hypothesis_ids": [
+        "route_value_replay"
+      ],
+      "config": {
+        "beam_width": 4,
+        "n_branch": 4,
+        "nsamples": 4,
+        "nsteps": 400,
+        "sc_scale_noise": 0.15
+      },
+      "n_result_records": 16,
+      "result_statuses": {
+        "ok": 16
+      },
+      "recorded_gpu_h": 0.14405482371648154
+    },
+    {
+      "candidate_id": "warmstart_v7r001_00_complexa_beam",
+      "family": "complexa_beam",
+      "hypothesis_ids": [
+        "warmstart"
+      ],
+      "config": {
+        "beam_width": 4,
+        "n_branch": 4,
+        "nsamples": 4
+      },
+      "n_result_records": 16,
+      "result_statuses": {
+        "ok": 16
+      },
+      "recorded_gpu_h": 0.1730502137872908
+    }
+  ],
+  "candidate_feasibility_reasons": {
+    "config_delta_adjusted:reward_deferred:evidence_sparse_axis_n=16<32:material_search_first": 2,
+    "config_delta_adjusted:auto_pair:refinement_algorithm=sequence_hallucination_for_complexa_rescue": 4,
+    "config_delta_adjusted:auto_pair:axis_matched_material_search_for_reward_retry": 4,
+    "insufficient_wall_for_complexa_fk_steering(~0.5h+0.1h_drain_margin>0.5h_remaining)": 3,
+    "insufficient_wall_for_complexa_beam(~0.5h+0.1h_drain_margin>0.5h_remaining)": 2,
+    "insufficient_wall_for_complexa_fk_steering(~0.5h+0.1h_drain_margin>0.3h_remaining)": 38,
+    "insufficient_wall_for_complexa_beam(~0.5h+0.1h_drain_margin>0.3h_remaining)": 28,
+    "insufficient_wall_for_complexa_best_of_n(~0.5h+0.1h_drain_margin>0.3h_remaining)": 16,
+    "insufficient_wall_for_complexa_fk_steering(~0.5h+0.1h_drain_margin>0.2h_remaining)": 12,
+    "insufficient_wall_for_complexa_beam(~0.5h+0.1h_drain_margin>0.2h_remaining)": 12,
+    "insufficient_wall_for_complexa_best_of_n(~0.5h+0.1h_drain_margin>0.2h_remaining)": 11,
+    "insufficient_wall_for_complexa_fk_steering(~0.5h+0.1h_drain_margin>0.1h_remaining)": 6,
+    "insufficient_wall_for_complexa_beam(~0.5h+0.1h_drain_margin>0.1h_remaining)": 6,
+    "insufficient_wall_for_complexa_best_of_n(~0.5h+0.1h_drain_margin>0.1h_remaining)": 3,
+    "insufficient_wall_for_complexa_fk_steering(~0.5h+0.1h_drain_margin>0.0h_remaining)": 2,
+    "insufficient_wall_for_complexa_beam(~0.5h+0.1h_drain_margin>0.0h_remaining)": 1,
+    "insufficient_wall_for_complexa_best_of_n(~0.5h+0.1h_drain_margin>0.0h_remaining)": 1
+  },
+  "llm": {
+    "planner": {
+      "n_records": 31,
+      "parse_status": {
+        "ok": 31
+      },
+      "fail_reasons": {},
+      "fallback_records": 0,
+      "zero_token_records": 0,
+      "input_tokens": 841751,
+      "output_tokens": 46848
+    },
+    "supervisor": {
+      "n_records": 31,
+      "parse_status": {
+        "ok": 5,
+        "schema_fail": 1,
+        "no_hypotheses_or_candidates": 25
+      },
+      "fail_reasons": {
+        "low_confidence(0.50<0.55)": 1,
+        "schema_fail:dec[0]:missing:evidence_refs": 1,
+        "no_hypotheses_or_candidates": 25
+      },
+      "fallback_records": 26,
+      "zero_token_records": 25,
+      "input_tokens": 76002,
+      "output_tokens": 6651
+    },
+    "critic": {
+      "n_records": 31,
+      "parse_status": {
+        "ok": 31
+      },
+      "fail_reasons": {},
+      "fallback_records": 0,
+      "zero_token_records": 31,
+      "input_tokens": 0,
+      "output_tokens": 0
+    }
+  },
+  "controller_start": "2026-09-26T00:00:07Z",
+  "controller_end": "2026-09-26T01:00:46Z",
+  "controller_wall_h_including_drain": 1.0108333333333333,
+  "worker_slots": 2.0,
+  "worker_wall_gpu_h_including_drain": 2.0216666666666665,
+  "sum_recorded_worker_gpu_h": 1.4144757472144232,
+  "last_evidence": {
+    "tick_id": "v7r031",
+    "elapsed_wall_h": 0.9759106065552785,
+    "completed_children": 144,
+    "strict_count": 18,
+    "run_su_count": 6,
+    "worker_wall_gpu_h_total": 1.951821213110557
+  },
+  "notes": [
+    "Critic records are deterministic guard evaluations, not extra LLM requests.",
+    "No-candidate Supervisor records skip inference; keep them separate from invalid model replies.",
+    "Started jobs, result records, selected candidates and independent molecular samples are different denominators.",
+    "Worker-wall includes idle slots and drain. Native job charges measure launch-to-reap wall time and can include observation delay; they are not hardware-active GPU time. LLM GPUs are excluded."
+  ]
+}

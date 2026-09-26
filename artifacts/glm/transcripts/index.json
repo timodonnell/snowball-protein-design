@@ -1,9 +1,9 @@
 {
   "wire_archive": "artifacts/glm/wire",
-  "n_transcripts": 59,
+  "n_transcripts": 64,
   "counts": {
     "fixed": 27,
-    "campaign": 32
+    "campaign": 37
   },
   "transcripts": [
     {
@@ -417,6 +417,41 @@
       "transcript": "campaign/032-planner.txt",
       "wire_record": "1790383690609755406_222dc3ea-fb15-4853-9ea2-c224998276a7.json",
       "call_id": "222dc3ea-fb15-4853-9ea2-c224998276a7",
+      "state": "completed"
+    },
+    {
+      "phase": "campaign",
+      "transcript": "campaign/033-planner.txt",
+      "wire_record": "1790383818132124105_dce33b23-23a5-4bcb-985a-66181edeb33c.json",
+      "call_id": "dce33b23-23a5-4bcb-985a-66181edeb33c",
+      "state": "completed"
+    },
+    {
+      "phase": "campaign",
+      "transcript": "campaign/034-planner.txt",
+      "wire_record": "1790383943800436397_fcb16cb0-6489-4745-ae39-664d348cf6ae.json",
+      "call_id": "fcb16cb0-6489-4745-ae39-664d348cf6ae",
+      "state": "completed"
+    },
+    {
+      "phase": "campaign",
+      "transcript": "campaign/035-planner.txt",
+      "wire_record": "1790384069568046074_236c3a7f-c169-4f24-8f44-cc03ba0c12f8.json",
+      "call_id": "236c3a7f-c169-4f24-8f44-cc03ba0c12f8",
+      "state": "completed"
+    },
+    {
+      "phase": "campaign",
+      "transcript": "campaign/036-planner.txt",
+      "wire_record": "1790384195271376246_081f7b77-1775-4ec1-93bb-b6dcc15a0f81.json",
+      "call_id": "081f7b77-1775-4ec1-93bb-b6dcc15a0f81",
+      "state": "completed"
+    },
+    {
+      "phase": "campaign",
+      "transcript": "campaign/037-planner.txt",
+      "wire_record": "1790384321616681909_4448cf03-0f10-4b68-8d6a-313e0f594cfb.json",
+      "call_id": "4448cf03-0f10-4b68-8d6a-313e0f594cfb",
       "state": "completed"
     }
   ]

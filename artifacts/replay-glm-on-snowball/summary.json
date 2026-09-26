@@ -1,0 +1,320 @@
+{
+  "n_cases": 5,
+  "exact_live_prompts_reconstructed": 5,
+  "teacher_http_200": 5,
+  "teacher_json_only": 1,
+  "teacher_schema_valid": 4,
+  "teacher_schema_and_configs_valid": 4,
+  "teacher_native_valid_after_repair": 5,
+  "teacher_with_feasible_candidate_and_live_gate": 4,
+  "cases": [
+    {
+      "tick": "v7r001",
+      "source_parse_status": "schema_fail",
+      "source_fallback": true,
+      "teacher_http_status": 200,
+      "replay_error": null,
+      "teacher_json_only": false,
+      "teacher_schema_valid": true,
+      "teacher_schema_and_configs_valid": true,
+      "teacher_native_valid_after_repair": true,
+      "teacher_passes_confidence_and_abstention_gate": true,
+      "teacher_static_feasible_candidates": 2,
+      "teacher_static_candidates": [
+        {
+          "family": "complexa_beam",
+          "parent_result_id": null,
+          "config": {
+            "beam_width": 4,
+            "n_branch": 4,
+            "nsamples": 4,
+            "nsteps": 400
+          },
+          "feasibility": {
+            "backend_healthy": true,
+            "runtime_bucket_id": "rb_default",
+            "compiler_ok": true,
+            "verifier_ok": true,
+            "route_cap_ok": true,
+            "cost_ok": true,
+            "reasons": []
+          }
+        },
+        {
+          "family": "complexa_best_of_n",
+          "parent_result_id": null,
+          "config": {
+            "nsamples": 4,
+            "replicas": 4,
+            "nsteps": 400
+          },
+          "feasibility": {
+            "backend_healthy": true,
+            "runtime_bucket_id": "rb_default",
+            "compiler_ok": true,
+            "verifier_ok": true,
+            "route_cap_ok": true,
+            "cost_ok": true,
+            "reasons": []
+          }
+        }
+      ],
+      "latency_s": 3.781443106010556
+    },
+    {
+      "tick": "v7r006",
+      "source_parse_status": "ok",
+      "source_fallback": false,
+      "teacher_http_status": 200,
+      "replay_error": null,
+      "teacher_json_only": true,
+      "teacher_schema_valid": false,
+      "teacher_schema_and_configs_valid": false,
+      "teacher_native_valid_after_repair": true,
+      "teacher_passes_confidence_and_abstention_gate": true,
+      "teacher_static_feasible_candidates": 2,
+      "teacher_static_candidates": [
+        {
+          "family": "complexa_beam",
+          "parent_result_id": null,
+          "config": {
+            "beam_width": 8,
+            "n_branch": 4,
+            "nsamples": 4,
+            "nsteps": 400
+          },
+          "feasibility": {
+            "backend_healthy": true,
+            "runtime_bucket_id": "rb_default",
+            "compiler_ok": true,
+            "verifier_ok": true,
+            "route_cap_ok": true,
+            "cost_ok": false,
+            "reasons": [
+              "insufficient_wall_for_complexa_beam_heavy_config(~1.0h[x2.0]>0.9h_remaining)"
+            ]
+          }
+        },
+        {
+          "family": "complexa_best_of_n",
+          "parent_result_id": null,
+          "config": {
+            "nsamples": 4,
+            "replicas": 4,
+            "nsteps": 300
+          },
+          "feasibility": {
+            "backend_healthy": true,
+            "runtime_bucket_id": "rb_default",
+            "compiler_ok": true,
+            "verifier_ok": true,
+            "route_cap_ok": true,
+            "cost_ok": true,
+            "reasons": []
+          }
+        },
+        {
+          "family": "complexa_fk_steering",
+          "parent_result_id": null,
+          "config": {
+            "beam_width": 4,
+            "n_branch": 4,
+            "nsamples": 4,
+            "nsteps": 300,
+            "temperature": 0.1
+          },
+          "feasibility": {
+            "backend_healthy": true,
+            "runtime_bucket_id": "rb_default",
+            "compiler_ok": true,
+            "verifier_ok": true,
+            "route_cap_ok": true,
+            "cost_ok": true,
+            "reasons": []
+          }
+        }
+      ],
+      "latency_s": 5.93191871792078
+    },
+    {
+      "tick": "v7r011",
+      "source_parse_status": "call_error",
+      "source_fallback": true,
+      "teacher_http_status": 200,
+      "replay_error": null,
+      "teacher_json_only": false,
+      "teacher_schema_valid": true,
+      "teacher_schema_and_configs_valid": true,
+      "teacher_native_valid_after_repair": true,
+      "teacher_passes_confidence_and_abstention_gate": true,
+      "teacher_static_feasible_candidates": 2,
+      "teacher_static_candidates": [
+        {
+          "family": "proteinmpnn_redesign",
+          "parent_result_id": "fdb91406e3df06b5",
+          "config": {
+            "num_seq_per_target": 16,
+            "sampling_temp": 0.2,
+            "backbone_noise": 0.1
+          },
+          "feasibility": {
+            "backend_healthy": true,
+            "runtime_bucket_id": "rb_default",
+            "compiler_ok": true,
+            "verifier_ok": true,
+            "route_cap_ok": true,
+            "cost_ok": true,
+            "reasons": []
+          }
+        },
+        {
+          "family": "complexa_beam",
+          "parent_result_id": null,
+          "config": {
+            "sc_scale_noise": 0.2,
+            "beam_width": 4,
+            "n_branch": 4,
+            "nsamples": 4,
+            "nsteps": 400
+          },
+          "feasibility": {
+            "backend_healthy": true,
+            "runtime_bucket_id": "rb_default",
+            "compiler_ok": true,
+            "verifier_ok": true,
+            "route_cap_ok": true,
+            "cost_ok": true,
+            "reasons": [
+              "config_delta_adjusted:reward_deferred:evidence_sparse_axis_n=16<32:material_search_first"
+            ]
+          }
+        }
+      ],
+      "latency_s": 5.9399368789745495
+    },
+    {
+      "tick": "v7r016",
+      "source_parse_status": "call_error",
+      "source_fallback": true,
+      "teacher_http_status": 200,
+      "replay_error": null,
+      "teacher_json_only": false,
+      "teacher_schema_valid": true,
+      "teacher_schema_and_configs_valid": true,
+      "teacher_native_valid_after_repair": true,
+      "teacher_passes_confidence_and_abstention_gate": true,
+      "teacher_static_feasible_candidates": 1,
+      "teacher_static_candidates": [
+        {
+          "family": "proteinmpnn_redesign",
+          "parent_result_id": "fdb91406e3df06b5",
+          "config": {
+            "backbone_noise": 0.1,
+            "model_name": "v_48_002",
+            "num_seq_per_target": 8,
+            "sampling_temp": 0.1
+          },
+          "feasibility": {
+            "backend_healthy": true,
+            "runtime_bucket_id": "rb_default",
+            "compiler_ok": true,
+            "verifier_ok": true,
+            "route_cap_ok": true,
+            "cost_ok": true,
+            "reasons": []
+          }
+        },
+        {
+          "family": "complexa_beam",
+          "parent_result_id": null,
+          "config": {
+            "beam_width": 4,
+            "n_branch": 4,
+            "nsamples": 4,
+            "nsteps": 400,
+            "sc_scale_noise": 0.2
+          },
+          "feasibility": {
+            "backend_healthy": true,
+            "runtime_bucket_id": "rb_default",
+            "compiler_ok": true,
+            "verifier_ok": true,
+            "route_cap_ok": true,
+            "cost_ok": false,
+            "reasons": [
+              "insufficient_wall_for_complexa_beam(~0.5h+0.1h_drain_margin>0.4h_remaining)",
+              "config_delta_adjusted:reward_deferred:evidence_sparse_axis_n=16<32:material_search_first"
+            ]
+          }
+        }
+      ],
+      "latency_s": 5.795839690952562
+    },
+    {
+      "tick": "v7r021",
+      "source_parse_status": "schema_fail",
+      "source_fallback": true,
+      "teacher_http_status": 200,
+      "replay_error": null,
+      "teacher_json_only": false,
+      "teacher_schema_valid": true,
+      "teacher_schema_and_configs_valid": true,
+      "teacher_native_valid_after_repair": true,
+      "teacher_passes_confidence_and_abstention_gate": false,
+      "teacher_static_feasible_candidates": 0,
+      "teacher_static_candidates": [
+        {
+          "family": "proteinmpnn_redesign",
+          "parent_result_id": "fdb91406e3df06b5",
+          "config": {
+            "backbone_noise": 0.1,
+            "model_name": "v_48_002",
+            "num_seq_per_target": 8,
+            "sampling_temp": 0.1
+          },
+          "feasibility": {
+            "backend_healthy": true,
+            "runtime_bucket_id": "rb_default",
+            "compiler_ok": true,
+            "verifier_ok": true,
+            "route_cap_ok": true,
+            "cost_ok": false,
+            "reasons": [
+              "insufficient_wall_for_proteinmpnn_redesign(~0.1h+0.1h_drain_margin>0.0h_remaining)"
+            ]
+          }
+        },
+        {
+          "family": "complexa_beam",
+          "parent_result_id": null,
+          "config": {
+            "beam_width": 4,
+            "n_branch": 4,
+            "nsamples": 4,
+            "nsteps": 400,
+            "sc_scale_noise": 0.2
+          },
+          "feasibility": {
+            "backend_healthy": true,
+            "runtime_bucket_id": "rb_default",
+            "compiler_ok": true,
+            "verifier_ok": true,
+            "route_cap_ok": true,
+            "cost_ok": false,
+            "reasons": [
+              "insufficient_wall_for_complexa_beam(~0.5h+0.1h_drain_margin>0.0h_remaining)",
+              "config_delta_adjusted:reward_deferred:evidence_sparse_axis_n=16<32:material_search_first"
+            ]
+          }
+        }
+      ],
+      "latency_s": 5.610326592926867
+    }
+  ],
+  "notes": [
+    "Five call-index quartiles selected before observing teacher outcomes; all retained.",
+    "The candidate preview assumes backend and parent-artifact availability, and does not dispatch molecular jobs.",
+    "Late states may correctly have no feasible candidate; abstention is not automatically an error.",
+    "Teacher outputs require factual and policy review; these are not optimal-action SFT labels or molecular rewards."
+  ]
+}

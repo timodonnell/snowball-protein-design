@@ -1,0 +1,732 @@
+{"case": "productive_cd45_like", "valid": true, "confidence": 0.65, "n_cards": 3, "fail_reason": null, "elapsed_s": 8.98}
+{"case": "rescue_rich_betv1_like", "valid": true, "confidence": 0.65, "n_cards": 3, "fail_reason": null, "elapsed_s": 6.58}
+{"case": "stalled_sc2rbd_like", "valid": true, "confidence": 0.55, "n_cards": 3, "fail_reason": null, "elapsed_s": 6.51}
+{"case": "ambiguous_cbago_like", "valid": true, "confidence": 0.55, "n_cards": 4, "fail_reason": null, "elapsed_s": 7.69}
+{"case": "stalled_redundant_pdl1", "valid": true, "confidence": 0.55, "n_cards": 4, "fail_reason": null, "elapsed_s": 7.16}
+{"case": "productive_cd45_like", "valid": true, "confidence": 0.65, "n_cards": 3, "fail_reason": null, "elapsed_s": 5.67}
+{"case": "rescue_rich_betv1_like", "valid": true, "confidence": 0.6, "n_cards": 3, "fail_reason": null, "elapsed_s": 5.36}
+{"case": "stalled_sc2rbd_like", "valid": true, "confidence": 0.55, "n_cards": 3, "fail_reason": null, "elapsed_s": 6.22}
+{"case": "ambiguous_cbago_like", "valid": true, "confidence": 0.55, "n_cards": 3, "fail_reason": null, "elapsed_s": 4.91}
+{"case": "stalled_redundant_pdl1", "valid": true, "confidence": 0.55, "n_cards": 3, "fail_reason": null, "elapsed_s": 6.29}
+{"case": "productive_cd45_like", "valid": true, "confidence": 0.65, "n_cards": 3, "fail_reason": null, "elapsed_s": 5.48}
+{"case": "rescue_rich_betv1_like", "valid": true, "confidence": 0.55, "n_cards": 4, "fail_reason": null, "elapsed_s": 7.04}
+{"case": "stalled_sc2rbd_like", "valid": true, "confidence": 0.55, "n_cards": 4, "fail_reason": null, "elapsed_s": 6.96}
+{"case": "ambiguous_cbago_like", "valid": true, "confidence": 0.55, "n_cards": 4, "fail_reason": null, "elapsed_s": 6.14}
+{"case": "stalled_redundant_pdl1", "valid": true, "confidence": 0.55, "n_cards": 4, "fail_reason": null, "elapsed_s": 6.85}
+{
+  "base_url": "http://127.0.0.1:12000/v1",
+  "confidence_max": 0.65,
+  "confidence_median": 0.55,
+  "confidence_min": 0.55,
+  "confidence_stdev": 0.043969686527576386,
+  "median_latency_s": 6.51,
+  "model": "vllm/glm-5.3",
+  "prompt_variant": "default",
+  "schema_version": "v7.3.3-reward-guard",
+  "total_calls": 15,
+  "valid_calls": 15,
+  "valid_rate": 1.0,
+  "wall_clock_s": 97.8
+}
+{"case": "productive_cd45_like", "valid": true, "confidence": 0.7, "n_decisions": 3, "mode_mixture": {"rescue": 0.2, "explore": 0.15, "exploit": 0.65}, "fail_reason": null, "elapsed_s": 6.23}
+{"case": "rescue_rich_betv1_like", "valid": true, "confidence": 0.6, "n_decisions": 1, "mode_mixture": {"rescue": 0.5, "explore": 0.35, "exploit": 0.15}, "fail_reason": null, "elapsed_s": 3.32}
+{"case": "stalled_sc2rbd_like", "valid": true, "confidence": 0.5, "n_decisions": 2, "mode_mixture": {"rescue": 0.3, "explore": 0.55, "exploit": 0.15}, "fail_reason": null, "elapsed_s": 4.59}
+{"case": "stalled_redundant_pdl1", "valid": true, "confidence": 0.5, "n_decisions": 1, "mode_mixture": {"rescue": 0.25, "explore": 0.55, "exploit": 0.2}, "fail_reason": null, "elapsed_s": 2.19}
+{"case": "productive_cd45_like", "valid": true, "confidence": 0.7, "n_decisions": 3, "mode_mixture": {"rescue": 0.2, "explore": 0.15, "exploit": 0.65}, "fail_reason": null, "elapsed_s": 4.81}
+{"case": "rescue_rich_betv1_like", "valid": true, "confidence": 0.55, "n_decisions": 1, "mode_mixture": {"rescue": 0.5, "explore": 0.3, "exploit": 0.2}, "fail_reason": null, "elapsed_s": 2.79}
+{"case": "stalled_sc2rbd_like", "valid": true, "confidence": 0.5, "n_decisions": 2, "mode_mixture": {"rescue": 0.25, "explore": 0.55, "exploit": 0.2}, "fail_reason": null, "elapsed_s": 4.81}
+{"case": "stalled_redundant_pdl1", "valid": true, "confidence": 0.55, "n_decisions": 1, "mode_mixture": {"rescue": 0.3, "explore": 0.5, "exploit": 0.2}, "fail_reason": null, "elapsed_s": 1.92}
+{"case": "productive_cd45_like", "valid": true, "confidence": 0.7, "n_decisions": 3, "mode_mixture": {"rescue": 0.2, "explore": 0.15, "exploit": 0.65}, "fail_reason": null, "elapsed_s": 5.22}
+{"case": "rescue_rich_betv1_like", "valid": true, "confidence": 0.55, "n_decisions": 1, "mode_mixture": {"rescue": 0.45, "explore": 0.35, "exploit": 0.2}, "fail_reason": null, "elapsed_s": 2.56}
+{"case": "stalled_sc2rbd_like", "valid": true, "confidence": 0.55, "n_decisions": 2, "mode_mixture": {"rescue": 0.3, "explore": 0.5, "exploit": 0.2}, "fail_reason": null, "elapsed_s": 4.22}
+{"case": "stalled_redundant_pdl1", "valid": true, "confidence": 0.55, "n_decisions": 1, "mode_mixture": {"rescue": 0.25, "explore": 0.5, "exploit": 0.25}, "fail_reason": null, "elapsed_s": 2.2}
+{
+  "base_url": "http://127.0.0.1:12000/v1",
+  "confidence_max": 0.7,
+  "confidence_median": 0.55,
+  "confidence_min": 0.5,
+  "median_latency_s": 3.7699999999999996,
+  "mixture_aligned_with_state_rate": 1.0,
+  "model": "vllm/glm-5.3",
+  "schema_version": "v7.3.3-reward-guard",
+  "total_calls": 12,
+  "valid_calls": 12,
+  "valid_rate": 1.0,
+  "wall_clock_s": 44.8
+}
+Campaign
+  name           pdl1-glm-s0
+  source         /work/configs/glm.yaml
+  source SHA256  3a59e631bc2c21b2a0f3396ea127e9d47d1e105f21efb380d520edec9d283627
+
+Target input
+  name        pdl1
+  target ID   32_PDL1_ALPHA_REPACK
+  constraint  /work/T-REX/config/targets/pdl1.json
+  PDB         /work/T-REX-assets/targets/alpha_proteo_targets/5o45_repacked.pdb
+
+Execution
+  archive                /work/results/glm/campaign
+  controller time limit  1 h (cumulative)
+  seed                   0
+  worker GPUs            2, 3
+  families               complexa_beam, complexa_best_of_n, complexa_fk_steering, proteinmpnn_redesign, structure_refilter
+
+Decision policy
+  LLM endpoint           http://127.0.0.1:12002/v1
+  LLM model              vllm/glm-5.3
+  critic                 on
+  evidence skip          off
+  exemplars              on
+  Foldseek SU TM         0.6
+  collapse TM            0.6
+  quota realization      fractional_carry
+  cross-campaign memory  disabled
+
+Backend runtime
+  T-REX repository            /work/T-REX
+  external root               /work/T-REX/external
+  Complexa repository         /work/T-REX/external/Proteina-Complexa
+  Complexa Python             /work/T-REX/external/Proteina-Complexa/.venv/bin/python
+  legacy Complexa repository  /work/T-REX/external/Proteina-Complexa
+  AF2 parameters              /work/T-REX/external/Proteina-Complexa/community_models/ckpts/AF2
+  ProteinMPNN weights         /work/T-REX/external/Proteina-Complexa/community_models/ProteinMPNN/vanilla_model_weights/v_48_020.pt
+  BindCraft repository        /work/T-REX/external/BindCraft
+  BindCraft environment       /work/T-REX/external/BindCraft/.venv
+  BoltzGen repository         /work/T-REX/external/BoltzGen
+  BoltzGen binary             /work/T-REX/external/BoltzGen/.venv/bin/boltzgen
+  BoltzGen cache              /work/T-REX-assets/checkpoints/boltzgen
+  Foldseek binary             /work/T-REX/external/Proteina-Complexa/.venv/bin/foldseek
+  MMseqs binary               /work/T-REX/external/Proteina-Complexa/.venv/bin/mmseqs
+  Qwen model path             /work/T-REX-assets/checkpoints/Qwen3.6-27B-FP8
+  Qwen model manifest         /work/T-REX/config/trex/qwen3_6_27b_fp8_model_manifest.json
+
+Resolution notes
+  1   backends.complexa_repo inherited from TREX_COMPLEXA_REPO
+  2   backends.legacy_complexa_repo inherited from TREX_LEGACY_COMPLEXA_REPO
+  3   backends.bindcraft_repo inherited from TREX_BINDCRAFT_REPO
+  4   backends.boltzgen_repo inherited from TREX_BOLTZGEN_REPO
+  5   backends.complexa_python inherited from TREX_COMPLEXA_PYTHON
+  6   backends.bindcraft_env inherited from TREX_BINDCRAFT_ENV
+  7   backends.boltzgen_binary inherited from TREX_BOLTZGEN_BIN
+  8   backends.boltzgen_cache inherited from TREX_BOLTZGEN_CACHE
+  9   backends.foldseek_binary inherited from TREX_FOLDSEEK_BIN
+  10  backends.mmseqs_binary inherited from TREX_MMSEQS_BIN
+  11  backends.qwen_model_path inherited from TREX_QWEN_MODEL_PATH
+  12  backends.qwen_model_manifest inherited from TREX_MODEL_MANIFEST
+
+Preflight checks
+OK    campaign source SHA256                                           3a59e631bc2c21b2a0f3396ea127e9d47d1e105f21efb380d520edec9d283627
+OK    executed T-REX source                                            /work/T-REX
+OK    archive output                                                   /work/results/glm/campaign (will be created; nearest parent: /work/results/glm)
+OK    worker GPU mapping                                               2,3
+OK    LLM endpoint                                                     http://127.0.0.1:12002/v1
+OK    cross-campaign memory                                            disabled
+OK    target config                                                    /work/T-REX/config/targets/pdl1.json
+OK    target id                                                        expected=32_PDL1_ALPHA_REPACK observed=32_PDL1_ALPHA_REPACK
+OK    target chains                                                    A
+OK    target PDB                                                       /work/T-REX-assets/targets/alpha_proteo_targets/5o45_repacked.pdb
+OK    configured chains in PDB                                         A
+OK    hotspots in PDB                                                  A56,A115,A123
+OK    target PDB SHA256                                                expected=dcd82d0a0258524ad6b036c39a3743cd8e16fb455178531781f81f5735a6a397 observed=dcd82d0a0258524ad6b036c39a3743cd8e16fb455178531781f81f5735a6a397
+OK    enabled family registry                                          complexa_beam,complexa_best_of_n,complexa_fk_steering,proteinmpnn_redesign,structure_refilter
+OK    Foldseek executable                                              /work/T-REX/external/Proteina-Complexa/.venv/bin/foldseek
+OK    MMseqs2 executable                                               /work/T-REX/external/Proteina-Complexa/.venv/bin/mmseqs
+OK    Foldseek version                                                 expected=8dc75c74ad0eddab73cfd905963d13bf74dc012b observed=8dc75c74ad0eddab73cfd905963d13bf74dc012b
+OK    MMseqs2 version                                                  expected=76da68ad7577378410c075049e18666fcc94f8d1 observed=76da68ad7577378410c075049e18666fcc94f8d1
+OK    Proteina-Complexa checkout                                       /work/T-REX/external/Proteina-Complexa
+OK    Proteina-Complexa env.sh                                         /work/T-REX/external/Proteina-Complexa/env.sh
+OK    Complexa/AF2 Python                                              /work/T-REX/external/Proteina-Complexa/.venv/bin/python
+OK    Complexa checkpoint                                              /work/T-REX/external/Proteina-Complexa/ckpts/complexa.ckpt
+OK    Complexa AE checkpoint                                           /work/T-REX/external/Proteina-Complexa/ckpts/complexa_ae.ckpt
+OK    AF2 parameters                                                   /work/T-REX/external/Proteina-Complexa/community_models/ckpts/AF2
+OK    AF2 multimer-v3 model 1                                          /work/T-REX/external/Proteina-Complexa/community_models/ckpts/AF2/params_model_1_multimer_v3.npz
+OK    AF2 multimer-v3 model 2                                          /work/T-REX/external/Proteina-Complexa/community_models/ckpts/AF2/params_model_2_multimer_v3.npz
+OK    AF2 multimer-v3 model 3                                          /work/T-REX/external/Proteina-Complexa/community_models/ckpts/AF2/params_model_3_multimer_v3.npz
+OK    AF2 multimer-v3 model 4                                          /work/T-REX/external/Proteina-Complexa/community_models/ckpts/AF2/params_model_4_multimer_v3.npz
+OK    AF2 multimer-v3 model 5                                          /work/T-REX/external/Proteina-Complexa/community_models/ckpts/AF2/params_model_5_multimer_v3.npz
+OK    ProteinMPNN weight v_48_002                                      /work/T-REX/external/Proteina-Complexa/community_models/ProteinMPNN/vanilla_model_weights/v_48_002.pt
+OK    ProteinMPNN weight v_48_010                                      /work/T-REX/external/Proteina-Complexa/community_models/ProteinMPNN/vanilla_model_weights/v_48_010.pt
+OK    ProteinMPNN weight v_48_020                                      /work/T-REX/external/Proteina-Complexa/community_models/ProteinMPNN/vanilla_model_weights/v_48_020.pt
+OK    ProteinMPNN weight v_48_030                                      /work/T-REX/external/Proteina-Complexa/community_models/ProteinMPNN/vanilla_model_weights/v_48_030.pt
+OK    AF2 parameters manifest                                          /work/T-REX/config/reproducibility/af2_parameters_manifest.json
+OK    AF2 parameters verification                                      2ce0664041f82ce7fdbbaa523696327e0895465210d066c8bdfd4ed19e4732b0 (manifest + sizes)
+OK    ProteinMPNN weights manifest                                     /work/T-REX/config/reproducibility/proteinmpnn_weights_manifest.json
+OK    ProteinMPNN weights verification                                 3022126a2617a96ded10604eba039b6fcd1ad094512291c2eab9429f463dc160 (manifest + sizes)
+OK    BindCraft checkout                                               /work/T-REX/external/BindCraft/bindcraft.py
+OK    BindCraft Python                                                 /work/T-REX/external/BindCraft/.venv/bin/python
+OK    BoltzGen checkout                                                /work/T-REX/external/BoltzGen
+OK    BoltzGen executable                                              /work/T-REX/external/BoltzGen/.venv/bin/boltzgen
+OK    campaign serving/controller Python                               /work/T-REX/.venv-serving/bin/python
+OK    Qwen model directory                                             /work/T-REX-assets/checkpoints/Qwen3.6-27B-FP8
+OK    Qwen model manifest                                              /work/T-REX/config/trex/qwen3_6_27b_fp8_model_manifest.json
+OK    Qwen model manifest verification                                 77409ac00f81e48d29b9f079ab448044a5ec1cdd91dfdb50b3035c197f065722
+OK    proteina_complexa revision                                       expected=5ae24b055d828918296f2aad63616b1f4cc0e491 observed=5ae24b055d828918296f2aad63616b1f4cc0e491
+OK    proteina_complexa_community revision                             expected=d323517efbffe3ea280e4e3d0442b0257a37b5a8 observed=5ae24b055d828918296f2aad63616b1f4cc0e491; identical declared source trees
+OK    proteina_complexa_community source community_models/ProteinMPNN  tree=6825955f4c3dec0ada2dd0f1a969f61515bd24d2 expected=6825955f4c3dec0ada2dd0f1a969f61515bd24d2 tracked_source_unchanged=True
+OK    proteina_complexa_community source community_models/colabdesign  tree=844c76c09355e094a29a34c16fead3f63dea3819 expected=844c76c09355e094a29a34c16fead3f63dea3819 tracked_source_unchanged=True
+
+Preflight passed.
+
+Recorded campaign input
+  input     /work/results/glm/campaign/campaign_input.yaml
+  resolved  /work/results/glm/campaign/campaign_resolved.json
+
+Recorded run provenance
+  provenance  /work/results/glm/campaign/run_provenance.json
+  source SHA  408e8df0708a1c4453bf457663fe92239c233fbe3178814c6b2f0843732d6beb
+  model SHA   77409ac00f81e48d29b9f079ab448044a5ec1cdd91dfdb50b3035c197f065722
+[v7_controller] run_seed=0
+[v7_controller] runtime_paths={"af2_data_dir": "/work/T-REX/external/Proteina-Complexa/community_models/ckpts/AF2", "bindcraft_env": "/work/T-REX/external/BindCraft/.venv", "bindcraft_repo": "/work/T-REX/external/BindCraft", "boltzgen_binary": "/work/T-REX/external/BoltzGen/.venv/bin/boltzgen", "boltzgen_cache": "/work/T-REX-assets/checkpoints/boltzgen", "boltzgen_repo": "/work/T-REX/external/BoltzGen", "community_models_root": "/work/T-REX/external/Proteina-Complexa/community_models", "complexa_python": "/work/T-REX/external/Proteina-Complexa/.venv/bin/python", "complexa_repo": "/work/T-REX/external/Proteina-Complexa", "external_root": "/work/T-REX/external", "foldseek_binary": "/work/T-REX/external/Proteina-Complexa/.venv/bin/foldseek", "legacy_complexa_repo": "/work/T-REX/external/Proteina-Complexa", "mmseqs_binary": "/work/T-REX/external/Proteina-Complexa/.venv/bin/mmseqs", "proteinmpnn_dir": "/work/T-REX/external/Proteina-Complexa/community_models/ProteinMPNN", "proteinmpnn_weights": "/work/T-REX/external/Proteina-Complexa/community_models/ProteinMPNN/vanilla_model_weights/v_48_020.pt", "qwen_model_manifest": "/work/T-REX/config/trex/qwen3_6_27b_fp8_model_manifest.json", "qwen_model_path": "/work/T-REX-assets/checkpoints/Qwen3.6-27B-FP8", "repo_root": "/work/T-REX"}
+[v7_controller] target_res_count=116 target_chains=A (pdb_chains={'A': 116})
+[v7_controller] enabled families: ['complexa_beam', 'complexa_best_of_n', 'complexa_fk_steering', 'proteinmpnn_redesign', 'structure_refilter']
+[v7_controller] disabled by --enabled-families: ['bindcraft', 'boltzgen', 'complexa_mcts']
+[v7_controller] AF2/ProteinMPNN runtime preflight=ok executable=/work/T-REX/external/Proteina-Complexa/.venv/bin/python | prefix=/work/T-REX/external/Proteina-Complexa/.venv | modules=jax,community_models.colabdesign,torch
+[v7_controller] foldseek_binary=/work/T-REX/external/Proteina-Complexa/.venv/bin/foldseek
+[v7_controller] exemplars=on
+[v7_controller] evidence_skip=off
+[v7_controller] selector_quota_realization=fractional_carry mode_window_k=1 adaptive_mode_window_k=0
+[v7_controller] foldseek_su_tm=0.60 foldseek_collapse_tm=0.60 structure_scope=binder_chain alignment_type=1 min_seq_id=0.0 cov_mode=0 threads=1
+[v7_controller] target=32_PDL1_ALPHA_REPACK start=2026-09-26T00:00:07Z
+[v7_controller] archive=/work/results/glm/campaign
+[v7_controller] vLLM=http://127.0.0.1:12002/v1
+[v7_controller] worker_gpus=['2', '3'] worker_wall_gpu_count=2
+  [controller_checkpoint] elapsed=0.000h SU=0 state=None
+
+[v7_controller] ===== round 1 (elapsed 0.00 h, busy=0/2, queued=0, refill=2) =====
+  state=low_evidence  planned=1  chain_reserved=0  queued_now=1
+  [worker:complexa_beam][gpu=2] launching → v7_r001_warmstart_v7r001_00_complexa_beam_a42e8fc6f9a25
+  [chain_refilter_predispatch] left single free slot for fresh LLM-planned action before chain reserve
+
+[v7_controller] ===== round 2 (elapsed 0.00 h, busy=1/2, queued=0, refill=2) =====
+  state=low_evidence  planned=2  chain_reserved=0  queued_now=2
+  [worker:complexa_fk_steering][gpu=3] launching → v7_r002_cand_v7r002_hyp_0002_00_001_a4e39e5241648
+  [controller_checkpoint] elapsed=0.017h SU=0 state=low_evidence
+  [controller_checkpoint] elapsed=0.033h SU=0 state=low_evidence
+  [controller_checkpoint] elapsed=0.050h SU=0 state=low_evidence
+  [controller_checkpoint] elapsed=0.067h SU=0 state=low_evidence
+  [controller_checkpoint] elapsed=0.083h SU=0 state=low_evidence
+  [controller_checkpoint] elapsed=0.100h SU=0 state=low_evidence
+  [controller_checkpoint] elapsed=0.117h SU=0 state=low_evidence
+  [controller_checkpoint] elapsed=0.134h SU=0 state=low_evidence
+  [controller_checkpoint] elapsed=0.150h SU=0 state=low_evidence
+  [controller_checkpoint] elapsed=0.167h SU=0 state=low_evidence
+  [gpu=2] complexa_beam → 16 records (parsed=16; elapsed_gpu_h=0.17; delta_gpu_h=0.17; per-record=0.011)
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=16 n_clusters=3 n_updated=12 struct_scope=binder_chain scope_fallback=4
+  [stale_prefetch] dropped 1 stale scientific pending candidate(s); will replan from current evidence
+  [chain_refilter_predispatch] left single free slot for fresh LLM-planned action before chain reserve
+
+[v7_controller] ===== round 3 (elapsed 0.18 h, busy=1/2, queued=0, refill=2) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=16 n_clusters=3 n_updated=12 struct_scope=binder_chain scope_fallback=4
+  state=low_evidence  planned=2  chain_reserved=0  queued_now=2
+  [worker:proteinmpnn][gpu=2] parent=job_0_n_167_id_66_beam_orig2_bm3-s0to100br1-s100to200br0-s200to300br0-s300to400br2.pdb num_seq=16
+  [gpu=3] complexa_fk_steering → 16 records (parsed=16; elapsed_gpu_h=0.18; delta_gpu_h=0.18; per-record=0.011)
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=32 n_clusters=4 n_updated=28 struct_scope=binder_chain scope_fallback=4
+  [foldseek:near_miss] near_structures=6 near_clusters=2 status=ok n_updated=6 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] left single free slot for fresh LLM-planned action before chain reserve
+  [worker:complexa_beam][gpu=3] launching → v7_r003_cand_v7r003_hyp_0003_01_002_a33ac9851a300
+
+[v7_controller] ===== round 4 (elapsed 0.18 h, busy=2/2, queued=0, refill=2) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=32 n_clusters=4 n_updated=28 struct_scope=binder_chain scope_fallback=4
+  [foldseek:near_miss] near_structures=6 near_clusters=2 status=ok n_updated=6 coverage=1.00 scope=binder_chain scope_fallback=0
+  state=low_evidence  planned=2  chain_reserved=0  queued_now=2
+  [proteinmpnn] dropped 1 native + 0 threading-failed sequence(s); 16 redesign record(s) kept
+  [gpu=2] proteinmpnn_redesign → 16 records (parsed=16; elapsed_gpu_h=0.01; delta_gpu_h=0.01; per-record=0.001)
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=cc08e429ec25b458 candidate=chain_v7r003_proteinmpnn_redesign_to_structure_refilter_001
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=7118dfd52ad05070 candidate=chain_v7r003_proteinmpnn_redesign_to_structure_refilter_002
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=96d8692731a80cb4 candidate=chain_v7r003_proteinmpnn_redesign_to_structure_refilter_003
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=87ab36c3bf67b77d candidate=chain_v7r003_proteinmpnn_redesign_to_structure_refilter_004
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=8e6c6113e1bed93e candidate=chain_v7r003_proteinmpnn_redesign_to_structure_refilter_005
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=1be0a191f2f51066 candidate=chain_v7r003_proteinmpnn_redesign_to_structure_refilter_006
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=253ffd095b0ca4b7 candidate=chain_v7r003_proteinmpnn_redesign_to_structure_refilter_007
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=b3c150e695511d19 candidate=chain_v7r003_proteinmpnn_redesign_to_structure_refilter_008
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=a1215f7c030b5c34 candidate=chain_v7r003_proteinmpnn_redesign_to_structure_refilter_009
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=e92469ba23821df0 candidate=chain_v7r003_proteinmpnn_redesign_to_structure_refilter_010
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=ca88d910017e23f7 candidate=chain_v7r003_proteinmpnn_redesign_to_structure_refilter_011
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=3f24f039ad6d5efe candidate=chain_v7r003_proteinmpnn_redesign_to_structure_refilter_012
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=dbf39277dfcf3d82 candidate=chain_v7r003_proteinmpnn_redesign_to_structure_refilter_013
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=703c98a922e602ca candidate=chain_v7r003_proteinmpnn_redesign_to_structure_refilter_014
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=6fc26e68d1e10255 candidate=chain_v7r003_proteinmpnn_redesign_to_structure_refilter_015
+  [auto_chain] proteinmpnn_redesign → structure_refilter parent=8159b344163a3824 candidate=chain_v7r003_proteinmpnn_redesign_to_structure_refilter_016
+  [controller_checkpoint] elapsed=0.191h SU=0 state=low_evidence
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=32 n_clusters=4 n_updated=28 struct_scope=binder_chain scope_fallback=4
+  [foldseek:near_miss] near_structures=6 near_clusters=2 status=ok n_updated=6 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] single free slot allowed for pending diagnostic score conversion
+  [chain_refilter_predispatch] prioritized 1 chain refilter(s) ahead of stale pending work
+  [worker:af2_refilter][gpu=2] pdb=job_0_n_167_id_66_beam_orig2_bm3-s0to100br1-s100to200br0-s200to300br0-s300to400br2_seq004.pdb
+  [gpu=2] structure_refilter → 1 records (parsed=1; elapsed_gpu_h=0.01; delta_gpu_h=0.01; per-record=0.007)
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=33 n_clusters=4 n_updated=29 struct_scope=binder_chain scope_fallback=4
+  [foldseek:near_miss] near_structures=6 near_clusters=2 status=ok n_updated=6 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] single free slot allowed for pending diagnostic score conversion
+  [chain_refilter_predispatch] prioritized 1 chain refilter(s) ahead of stale pending work
+  [worker:af2_refilter][gpu=2] pdb=job_0_n_167_id_66_beam_orig2_bm3-s0to100br1-s100to200br0-s200to300br0-s300to400br2_seq011.pdb
+  [gpu=2] structure_refilter → 1 records (parsed=1; elapsed_gpu_h=0.01; delta_gpu_h=0.01; per-record=0.007)
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=34 n_clusters=4 n_updated=30 struct_scope=binder_chain scope_fallback=4
+  [foldseek:near_miss] near_structures=6 near_clusters=2 status=ok n_updated=6 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] single free slot allowed for pending diagnostic score conversion
+  [chain_refilter_predispatch] prioritized 1 chain refilter(s) ahead of stale pending work
+  [worker:af2_refilter][gpu=2] pdb=job_0_n_167_id_66_beam_orig2_bm3-s0to100br1-s100to200br0-s200to300br0-s300to400br2_seq015.pdb
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=34 n_clusters=4 n_updated=30 struct_scope=binder_chain scope_fallback=4
+  [foldseek:near_miss] near_structures=6 near_clusters=2 status=ok n_updated=6 coverage=1.00 scope=binder_chain scope_fallback=0
+  [controller_checkpoint] elapsed=0.211h SU=0 state=low_evidence
+  [gpu=2] structure_refilter → 1 records (parsed=1; elapsed_gpu_h=0.01; delta_gpu_h=0.01; per-record=0.007)
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=35 n_clusters=4 n_updated=31 struct_scope=binder_chain scope_fallback=4
+  [foldseek:near_miss] near_structures=6 near_clusters=2 status=ok n_updated=6 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] single free slot allowed for pending diagnostic score conversion
+  [chain_refilter_predispatch] prioritized 1 chain refilter(s) ahead of stale pending work
+  [worker:af2_refilter][gpu=2] pdb=job_0_n_167_id_66_beam_orig2_bm3-s0to100br1-s100to200br0-s200to300br0-s300to400br2_seq003.pdb
+  [gpu=2] structure_refilter → 1 records (parsed=1; elapsed_gpu_h=0.01; delta_gpu_h=0.01; per-record=0.007)
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=36 n_clusters=4 n_updated=32 struct_scope=binder_chain scope_fallback=4
+  [foldseek:near_miss] near_structures=7 near_clusters=3 status=ok n_updated=7 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] single free slot allowed for pending diagnostic score conversion
+  [worker:complexa_fk_steering][gpu=2] launching → v7_r004_cand_v7r004_hyp_0004_00_001_af7f7c76a908b
+  [chain_refilter_reserve] single refill slot allowed for pending diagnostic score conversion
+
+[v7_controller] ===== round 5 (elapsed 0.23 h, busy=2/2, queued=1, refill=1) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=36 n_clusters=4 n_updated=32 struct_scope=binder_chain scope_fallback=4
+  [foldseek:near_miss] near_structures=7 near_clusters=3 status=ok n_updated=7 coverage=1.00 scope=binder_chain scope_fallback=0
+  [auto_chain] 12 pending chain candidate(s) handled by bounded reserve/backfill lane
+  state=low_evidence  planned=1  chain_reserved=0  queued_now=2
+  [controller_checkpoint] elapsed=0.234h SU=0 state=low_evidence
+  [controller_checkpoint] elapsed=0.251h SU=0 state=low_evidence
+  [controller_checkpoint] elapsed=0.268h SU=0 state=low_evidence
+  [controller_checkpoint] elapsed=0.284h SU=0 state=low_evidence
+  [controller_checkpoint] elapsed=0.301h SU=0 state=low_evidence
+  [controller_checkpoint] elapsed=0.318h SU=0 state=low_evidence
+  [controller_checkpoint] elapsed=0.335h SU=0 state=low_evidence
+  [controller_checkpoint] elapsed=0.351h SU=0 state=low_evidence
+  [gpu=3] complexa_beam → 16 records (parsed=16; elapsed_gpu_h=0.17; delta_gpu_h=0.17; per-record=0.010)
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=52 n_clusters=6 n_updated=48 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=2 strict_clusters=1 status=ok n_updated=2 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=13 near_clusters=5 status=ok n_updated=13 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] single free slot allowed for pending diagnostic score conversion
+  [chain_refilter_predispatch] prioritized 1 chain refilter(s) ahead of stale pending work
+  [worker:af2_refilter][gpu=3] pdb=job_0_n_167_id_66_beam_orig2_bm3-s0to100br1-s100to200br0-s200to300br0-s300to400br2_seq007.pdb
+  [gpu=3] structure_refilter → 1 records (parsed=1; elapsed_gpu_h=0.01; delta_gpu_h=0.01; per-record=0.007)
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=53 n_clusters=6 n_updated=49 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=2 strict_clusters=1 status=ok n_updated=2 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=13 near_clusters=5 status=ok n_updated=13 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] single free slot allowed for pending diagnostic score conversion
+  [chain_refilter_predispatch] prioritized 1 chain refilter(s) ahead of stale pending work
+  [worker:af2_refilter][gpu=3] pdb=job_0_n_167_id_66_beam_orig2_bm3-s0to100br1-s100to200br0-s200to300br0-s300to400br2_seq005.pdb
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=53 n_clusters=6 n_updated=49 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=2 strict_clusters=1 status=ok n_updated=2 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=13 near_clusters=5 status=ok n_updated=13 coverage=1.00 scope=binder_chain scope_fallback=0
+  [controller_checkpoint] elapsed=0.371h SU=1 state=low_evidence
+  [gpu=3] structure_refilter → 1 records (parsed=1; elapsed_gpu_h=0.01; delta_gpu_h=0.01; per-record=0.007)
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=54 n_clusters=6 n_updated=50 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=2 strict_clusters=1 status=ok n_updated=2 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=13 near_clusters=5 status=ok n_updated=13 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] single free slot allowed for pending diagnostic score conversion
+  [chain_refilter_predispatch] prioritized 1 chain refilter(s) ahead of stale pending work
+  [worker:af2_refilter][gpu=3] pdb=job_0_n_167_id_66_beam_orig2_bm3-s0to100br1-s100to200br0-s200to300br0-s300to400br2_seq010.pdb
+  [gpu=3] structure_refilter → 1 records (parsed=1; elapsed_gpu_h=0.01; delta_gpu_h=0.01; per-record=0.007)
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=55 n_clusters=6 n_updated=51 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=2 strict_clusters=1 status=ok n_updated=2 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=13 near_clusters=5 status=ok n_updated=13 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] single free slot allowed for pending diagnostic score conversion
+  [chain_refilter_predispatch] prioritized 1 chain refilter(s) ahead of stale pending work
+  [worker:af2_refilter][gpu=3] pdb=job_0_n_167_id_66_beam_orig2_bm3-s0to100br1-s100to200br0-s200to300br0-s300to400br2_seq016.pdb
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=55 n_clusters=6 n_updated=51 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=2 strict_clusters=1 status=ok n_updated=2 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=13 near_clusters=5 status=ok n_updated=13 coverage=1.00 scope=binder_chain scope_fallback=0
+  [controller_checkpoint] elapsed=0.390h SU=1 state=low_evidence
+  [gpu=3] structure_refilter → 1 records (parsed=1; elapsed_gpu_h=0.01; delta_gpu_h=0.01; per-record=0.007)
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=56 n_clusters=6 n_updated=52 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=2 strict_clusters=1 status=ok n_updated=2 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=13 near_clusters=5 status=ok n_updated=13 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] single free slot allowed for pending diagnostic score conversion
+  [worker:complexa_fk_steering][gpu=3] launching → v7_r005_cand_v7r005_hyp_0005_00_001_a5f4e8f8f5c73
+  [chain_refilter_reserve] single refill slot allowed for pending diagnostic score conversion
+
+[v7_controller] ===== round 6 (elapsed 0.40 h, busy=2/2, queued=1, refill=1) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=56 n_clusters=6 n_updated=52 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=2 strict_clusters=1 status=ok n_updated=2 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=13 near_clusters=5 status=ok n_updated=13 coverage=1.00 scope=binder_chain scope_fallback=0
+  [auto_chain] 8 pending chain candidate(s) handled by bounded reserve/backfill lane
+  state=low_evidence  planned=1  chain_reserved=0  queued_now=2
+  [controller_checkpoint] elapsed=0.408h SU=1 state=low_evidence
+  [controller_checkpoint] elapsed=0.424h SU=1 state=low_evidence
+  [controller_checkpoint] elapsed=0.441h SU=1 state=low_evidence
+  [controller_checkpoint] elapsed=0.458h SU=1 state=low_evidence
+  [controller_checkpoint] elapsed=0.474h SU=1 state=low_evidence
+  [controller_checkpoint] elapsed=0.491h SU=1 state=low_evidence
+  [controller_checkpoint] elapsed=0.508h SU=1 state=low_evidence
+  [controller_checkpoint] elapsed=0.525h SU=1 state=low_evidence
+  [gpu=2] complexa_fk_steering → 16 records (parsed=16; elapsed_gpu_h=0.31; delta_gpu_h=0.31; per-record=0.019)
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=72 n_clusters=7 n_updated=68 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=11 strict_clusters=4 status=ok n_updated=11 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=18 near_clusters=5 status=ok n_updated=18 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] single free slot allowed for pending diagnostic score conversion
+  [worker:complexa_beam][gpu=2] launching → v7_r006_route_replay_v7r006_00_complexa_beam_a00a11cbd0dcb
+  [chain_refilter_reserve] single refill slot allowed for pending diagnostic score conversion
+
+[v7_controller] ===== round 7 (elapsed 0.54 h, busy=2/2, queued=1, refill=1) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=72 n_clusters=7 n_updated=68 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=11 strict_clusters=4 status=ok n_updated=11 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=18 near_clusters=5 status=ok n_updated=18 coverage=1.00 scope=binder_chain scope_fallback=0
+  [candidate_filter] 5 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  [auto_chain] 8 pending chain candidate(s) handled by bounded reserve/backfill lane
+  [chain_backfill] queued 1 chain refilter(s) for idle slots
+  state=low_evidence  planned=0  chain_reserved=0  queued_now=2
+  [controller_checkpoint] elapsed=0.547h SU=4 state=low_evidence
+  [controller_checkpoint] elapsed=0.564h SU=4 state=low_evidence
+  [controller_checkpoint] elapsed=0.581h SU=4 state=low_evidence
+  [controller_checkpoint] elapsed=0.597h SU=4 state=low_evidence
+  [controller_checkpoint] elapsed=0.614h SU=4 state=low_evidence
+  [controller_checkpoint] elapsed=0.631h SU=4 state=low_evidence
+  [controller_checkpoint] elapsed=0.647h SU=4 state=low_evidence
+  [controller_checkpoint] elapsed=0.664h SU=4 state=low_evidence
+  [gpu=3] complexa_fk_steering → 16 records (parsed=16; elapsed_gpu_h=0.28; delta_gpu_h=0.28; per-record=0.018)
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=88 n_clusters=9 n_updated=84 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=18 strict_clusters=6 status=ok n_updated=18 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=24 near_clusters=6 status=ok n_updated=24 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] single free slot allowed for pending diagnostic score conversion
+  [worker:af2_refilter][gpu=3] pdb=job_0_n_167_id_66_beam_orig2_bm3-s0to100br1-s100to200br0-s200to300br0-s300to400br2_seq006.pdb
+  [chain_refilter_reserve] single refill slot allowed for pending diagnostic score conversion
+
+[v7_controller] ===== round 8 (elapsed 0.68 h, busy=2/2, queued=1, refill=1) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=88 n_clusters=9 n_updated=84 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=18 strict_clusters=6 status=ok n_updated=18 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=24 near_clusters=6 status=ok n_updated=24 coverage=1.00 scope=binder_chain scope_fallback=0
+  [planner] last-tick critic flags surfaced: ['(b) complexa_fk_steering expected ~0.5h runtime but only 0.5h remain', '(b) complexa_beam expected ~0.5h runtime but only 0.5h remain']
+  [candidate_filter] 4 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  [auto_chain] 7 pending chain candidate(s) handled by bounded reserve/backfill lane
+  state=productive_duplicate  planned=0  chain_reserved=0  queued_now=1
+  [gpu=2] complexa_beam → 16 records (parsed=16; elapsed_gpu_h=0.14; delta_gpu_h=0.14; per-record=0.009)
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=104 n_clusters=12 n_updated=100 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=18 strict_clusters=6 status=ok n_updated=18 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=40 near_clusters=10 status=ok n_updated=40 coverage=1.00 scope=binder_chain scope_fallback=0
+  [controller_checkpoint] elapsed=0.692h SU=6 state=productive_duplicate
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=104 n_clusters=12 n_updated=100 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=18 strict_clusters=6 status=ok n_updated=18 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=40 near_clusters=10 status=ok n_updated=40 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] single free slot allowed for pending diagnostic score conversion
+  [worker:complexa_best_of_n][gpu=2] launching → v7_r008_cand_v7r004_hyp_0004_01_002_ab1dd93723c83
+
+[v7_controller] ===== round 9 (elapsed 0.69 h, busy=2/2, queued=0, refill=2) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=104 n_clusters=12 n_updated=100 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=18 strict_clusters=6 status=ok n_updated=18 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=40 near_clusters=10 status=ok n_updated=40 coverage=1.00 scope=binder_chain scope_fallback=0
+  [planner] last-tick critic flags surfaced: ['(b) complexa_fk_steering expected ~0.5h runtime but only 0.3h remain', '(b) complexa_beam expected ~0.5h runtime but only 0.3h remain']
+  [candidate_filter] 6 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  [auto_chain] 7 pending chain candidate(s) handled by bounded reserve/backfill lane
+  state=productive_duplicate  planned=0  chain_reserved=0  queued_now=0
+  [gpu=3] structure_refilter → 1 records (parsed=1; elapsed_gpu_h=0.01; delta_gpu_h=0.01; per-record=0.011)
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=105 n_clusters=12 n_updated=101 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=18 strict_clusters=6 status=ok n_updated=18 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=40 near_clusters=10 status=ok n_updated=40 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] single free slot allowed for pending diagnostic score conversion
+
+[v7_controller] ===== round 10 (elapsed 0.70 h, busy=1/2, queued=0, refill=2) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=105 n_clusters=12 n_updated=101 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=18 strict_clusters=6 status=ok n_updated=18 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=40 near_clusters=10 status=ok n_updated=40 coverage=1.00 scope=binder_chain scope_fallback=0
+  [planner] last-tick critic flags surfaced: ['(b) complexa_fk_steering expected ~0.5h runtime but only 0.3h remain', '(b) complexa_beam expected ~0.5h runtime but only 0.3h remain', '(b) complexa_best_of_n expected ~0.5h runtime but only 0.3h remain']
+  [candidate_filter] 6 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  [auto_chain] 7 pending chain candidate(s) handled by bounded reserve/backfill lane
+  [chain_backfill] queued 1 chain refilter(s) for idle slots
+  state=productive_duplicate  planned=0  chain_reserved=0  queued_now=1
+  [worker:af2_refilter][gpu=3] pdb=job_0_n_167_id_66_beam_orig2_bm3-s0to100br1-s100to200br0-s200to300br0-s300to400br2_seq009.pdb
+
+[v7_controller] ===== round 11 (elapsed 0.70 h, busy=2/2, queued=0, refill=2) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=105 n_clusters=12 n_updated=101 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=18 strict_clusters=6 status=ok n_updated=18 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=40 near_clusters=10 status=ok n_updated=40 coverage=1.00 scope=binder_chain scope_fallback=0
+  [lifecycle] retired 2 TTL-expired descendant-free hypothesis card(s) before Planner
+  [planner] last-tick critic flags surfaced: ['(b) complexa_fk_steering expected ~0.5h runtime but only 0.3h remain', '(b) complexa_beam expected ~0.5h runtime but only 0.3h remain', '(b) complexa_best_of_n expected ~0.5h runtime but only 0.3h remain']
+  [candidate_filter] 6 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  [auto_chain] 6 pending chain candidate(s) handled by bounded reserve/backfill lane
+  state=productive_duplicate  planned=0  chain_reserved=0  queued_now=0
+
+[v7_controller] ===== round 12 (elapsed 0.70 h, busy=2/2, queued=0, refill=2) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=105 n_clusters=12 n_updated=101 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=18 strict_clusters=6 status=ok n_updated=18 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=40 near_clusters=10 status=ok n_updated=40 coverage=1.00 scope=binder_chain scope_fallback=0
+  [lifecycle] retired 1 TTL-expired descendant-free hypothesis card(s) before Planner
+  [planner] last-tick critic flags surfaced: ['(b) complexa_fk_steering expected ~0.5h runtime but only 0.3h remain', '(b) complexa_beam expected ~0.5h runtime but only 0.3h remain', '(b) complexa_best_of_n expected ~0.5h runtime but only 0.3h remain']
+  [candidate_filter] 6 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  [auto_chain] 6 pending chain candidate(s) handled by bounded reserve/backfill lane
+  state=productive_duplicate  planned=0  chain_reserved=0  queued_now=0
+  [gpu=3] structure_refilter → 1 records (parsed=1; elapsed_gpu_h=0.01; delta_gpu_h=0.01; per-record=0.008)
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=106 n_clusters=12 n_updated=102 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=18 strict_clusters=6 status=ok n_updated=18 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=40 near_clusters=10 status=ok n_updated=40 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] single free slot allowed for pending diagnostic score conversion
+  [chain_refilter_predispatch] prioritized 1 chain refilter(s) ahead of stale pending work
+  [worker:af2_refilter][gpu=3] pdb=job_0_n_167_id_66_beam_orig2_bm3-s0to100br1-s100to200br0-s200to300br0-s300to400br2_seq013.pdb
+
+[v7_controller] ===== round 13 (elapsed 0.71 h, busy=2/2, queued=0, refill=2) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=106 n_clusters=12 n_updated=102 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=18 strict_clusters=6 status=ok n_updated=18 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=40 near_clusters=10 status=ok n_updated=40 coverage=1.00 scope=binder_chain scope_fallback=0
+  [lifecycle] retired 1 TTL-expired descendant-free hypothesis card(s) before Planner
+  [planner] last-tick critic flags surfaced: ['(b) complexa_fk_steering expected ~0.5h runtime but only 0.3h remain', '(b) complexa_beam expected ~0.5h runtime but only 0.3h remain', '(b) complexa_best_of_n expected ~0.5h runtime but only 0.3h remain']
+  [candidate_filter] 6 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  [auto_chain] 5 pending chain candidate(s) handled by bounded reserve/backfill lane
+  state=productive_duplicate  planned=0  chain_reserved=0  queued_now=0
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=106 n_clusters=12 n_updated=102 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=18 strict_clusters=6 status=ok n_updated=18 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=40 near_clusters=10 status=ok n_updated=40 coverage=1.00 scope=binder_chain scope_fallback=0
+  [controller_checkpoint] elapsed=0.713h SU=6 state=productive_duplicate
+
+[v7_controller] ===== round 14 (elapsed 0.71 h, busy=2/2, queued=0, refill=2) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=106 n_clusters=12 n_updated=102 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=18 strict_clusters=6 status=ok n_updated=18 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=40 near_clusters=10 status=ok n_updated=40 coverage=1.00 scope=binder_chain scope_fallback=0
+  [lifecycle] retired 1 TTL-expired descendant-free hypothesis card(s) before Planner
+  [planner] last-tick critic flags surfaced: ['(b) complexa_fk_steering expected ~0.5h runtime but only 0.3h remain', '(b) complexa_beam expected ~0.5h runtime but only 0.3h remain', '(b) complexa_best_of_n expected ~0.5h runtime but only 0.3h remain']
+  [candidate_filter] 6 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  [auto_chain] 5 pending chain candidate(s) handled by bounded reserve/backfill lane
+  state=productive_duplicate  planned=0  chain_reserved=0  queued_now=0
+  [gpu=3] structure_refilter → 1 records (parsed=1; elapsed_gpu_h=0.01; delta_gpu_h=0.01; per-record=0.006)
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=107 n_clusters=12 n_updated=103 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=18 strict_clusters=6 status=ok n_updated=18 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=40 near_clusters=10 status=ok n_updated=40 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] single free slot allowed for pending diagnostic score conversion
+  [chain_refilter_predispatch] prioritized 1 chain refilter(s) ahead of stale pending work
+  [worker:af2_refilter][gpu=3] pdb=job_0_n_167_id_66_beam_orig2_bm3-s0to100br1-s100to200br0-s200to300br0-s300to400br2_seq002.pdb
+
+[v7_controller] ===== round 15 (elapsed 0.72 h, busy=2/2, queued=0, refill=2) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=107 n_clusters=12 n_updated=103 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=18 strict_clusters=6 status=ok n_updated=18 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=40 near_clusters=10 status=ok n_updated=40 coverage=1.00 scope=binder_chain scope_fallback=0
+  [lifecycle] retired 1 TTL-expired descendant-free hypothesis card(s) before Planner
+  [planner] last-tick critic flags surfaced: ['(b) complexa_fk_steering expected ~0.5h runtime but only 0.3h remain', '(b) complexa_beam expected ~0.5h runtime but only 0.3h remain', '(b) complexa_best_of_n expected ~0.5h runtime but only 0.3h remain']
+  [candidate_filter] 6 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  [auto_chain] 4 pending chain candidate(s) handled by bounded reserve/backfill lane
+  state=productive_duplicate  planned=0  chain_reserved=0  queued_now=0
+
+[v7_controller] ===== round 16 (elapsed 0.72 h, busy=2/2, queued=0, refill=2) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=107 n_clusters=12 n_updated=103 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=18 strict_clusters=6 status=ok n_updated=18 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=40 near_clusters=10 status=ok n_updated=40 coverage=1.00 scope=binder_chain scope_fallback=0
+  [lifecycle] retired 3 TTL-expired descendant-free hypothesis card(s) before Planner
+  [planner] last-tick critic flags surfaced: ['(b) complexa_fk_steering expected ~0.5h runtime but only 0.3h remain', '(b) complexa_best_of_n expected ~0.5h runtime but only 0.3h remain', '(b) complexa_beam expected ~0.5h runtime but only 0.3h remain']
+  [candidate_filter] 6 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  [auto_chain] 4 pending chain candidate(s) handled by bounded reserve/backfill lane
+  state=productive_duplicate  planned=0  chain_reserved=0  queued_now=0
+  [gpu=3] structure_refilter → 1 records (parsed=1; elapsed_gpu_h=0.01; delta_gpu_h=0.01; per-record=0.007)
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=108 n_clusters=12 n_updated=104 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=18 strict_clusters=6 status=ok n_updated=18 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=40 near_clusters=10 status=ok n_updated=40 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] single free slot allowed for pending diagnostic score conversion
+  [chain_refilter_predispatch] prioritized 1 chain refilter(s) ahead of stale pending work
+  [worker:af2_refilter][gpu=3] pdb=job_0_n_167_id_66_beam_orig2_bm3-s0to100br1-s100to200br0-s200to300br0-s300to400br2_seq001.pdb
+
+[v7_controller] ===== round 17 (elapsed 0.73 h, busy=2/2, queued=0, refill=2) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=108 n_clusters=12 n_updated=104 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=18 strict_clusters=6 status=ok n_updated=18 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=40 near_clusters=10 status=ok n_updated=40 coverage=1.00 scope=binder_chain scope_fallback=0
+  [lifecycle] retired 3 TTL-expired descendant-free hypothesis card(s) before Planner
+  [planner] last-tick critic flags surfaced: ['(b) complexa_fk_steering expected ~0.5h runtime but only 0.3h remain', '(b) complexa_beam expected ~0.5h runtime but only 0.3h remain', '(b) complexa_best_of_n expected ~0.5h runtime but only 0.3h remain']
+  [candidate_filter] 6 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  [auto_chain] 3 pending chain candidate(s) handled by bounded reserve/backfill lane
+  state=productive_duplicate  planned=0  chain_reserved=0  queued_now=0
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=108 n_clusters=12 n_updated=104 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=18 strict_clusters=6 status=ok n_updated=18 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=40 near_clusters=10 status=ok n_updated=40 coverage=1.00 scope=binder_chain scope_fallback=0
+  [controller_checkpoint] elapsed=0.731h SU=6 state=productive_duplicate
+
+[v7_controller] ===== round 18 (elapsed 0.73 h, busy=2/2, queued=0, refill=2) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=108 n_clusters=12 n_updated=104 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=18 strict_clusters=6 status=ok n_updated=18 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=40 near_clusters=10 status=ok n_updated=40 coverage=1.00 scope=binder_chain scope_fallback=0
+  [lifecycle] retired 2 TTL-expired descendant-free hypothesis card(s) before Planner
+  [planner] last-tick critic flags surfaced: ['(b) complexa_fk_steering expected ~0.5h runtime but only 0.3h remain', '(b) complexa_beam expected ~0.5h runtime but only 0.3h remain', '(b) complexa_best_of_n expected ~0.5h runtime but only 0.3h remain']
+  [candidate_filter] 6 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  [auto_chain] 3 pending chain candidate(s) handled by bounded reserve/backfill lane
+  state=productive_duplicate  planned=0  chain_reserved=0  queued_now=0
+  [gpu=2] complexa_best_of_n → 16 records (parsed=16; elapsed_gpu_h=0.04; delta_gpu_h=0.04; per-record=0.003)
+  [gpu=3] structure_refilter → 1 records (parsed=1; elapsed_gpu_h=0.01; delta_gpu_h=0.01; per-record=0.006)
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=125 n_clusters=23 n_updated=121 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=18 strict_clusters=6 status=ok n_updated=18 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=43 near_clusters=12 status=ok n_updated=43 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] prioritized 1 chain refilter(s) ahead of stale pending work
+  [worker:af2_refilter][gpu=2] pdb=job_0_n_167_id_66_beam_orig2_bm3-s0to100br1-s100to200br0-s200to300br0-s300to400br2_seq008.pdb
+
+[v7_controller] ===== round 19 (elapsed 0.73 h, busy=1/2, queued=0, refill=2) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=125 n_clusters=23 n_updated=121 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=18 strict_clusters=6 status=ok n_updated=18 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=43 near_clusters=12 status=ok n_updated=43 coverage=1.00 scope=binder_chain scope_fallback=0
+  [lifecycle] retired 3 TTL-expired descendant-free hypothesis card(s) before Planner
+  [planner] last-tick critic flags surfaced: ['(b) complexa_fk_steering expected ~0.5h runtime but only 0.3h remain', '(b) complexa_beam expected ~0.5h runtime but only 0.3h remain', '(b) complexa_best_of_n expected ~0.5h runtime but only 0.3h remain']
+  [candidate_filter] 6 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  [auto_chain] 2 pending chain candidate(s) handled by bounded reserve/backfill lane
+  state=productive_duplicate  planned=0  chain_reserved=0  queued_now=0
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=125 n_clusters=23 n_updated=121 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=18 strict_clusters=6 status=ok n_updated=18 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=43 near_clusters=12 status=ok n_updated=43 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] single free slot allowed for pending diagnostic score conversion
+
+[v7_controller] ===== round 20 (elapsed 0.74 h, busy=1/2, queued=0, refill=2) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=125 n_clusters=23 n_updated=121 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=18 strict_clusters=6 status=ok n_updated=18 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=43 near_clusters=12 status=ok n_updated=43 coverage=1.00 scope=binder_chain scope_fallback=0
+  [lifecycle] retired 3 TTL-expired descendant-free hypothesis card(s) before Planner
+  [planner] last-tick critic flags surfaced: ['(b) complexa_fk_steering expected ~0.5h runtime but only 0.3h remain', '(b) complexa_beam expected ~0.5h runtime but only 0.3h remain', '(b) complexa_best_of_n expected ~0.5h runtime but only 0.3h remain']
+  [candidate_filter] 6 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  [auto_chain] 2 pending chain candidate(s) handled by bounded reserve/backfill lane
+  state=productive_duplicate  planned=0  chain_reserved=0  queued_now=0
+  [gpu=2] structure_refilter → 1 records (parsed=1; elapsed_gpu_h=0.01; delta_gpu_h=0.01; per-record=0.006)
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=126 n_clusters=23 n_updated=122 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=18 strict_clusters=6 status=ok n_updated=18 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=43 near_clusters=12 status=ok n_updated=43 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] prioritized 1 chain refilter(s) ahead of stale pending work
+  [worker:af2_refilter][gpu=2] pdb=job_0_n_167_id_66_beam_orig2_bm3-s0to100br1-s100to200br0-s200to300br0-s300to400br2_seq014.pdb
+
+[v7_controller] ===== round 21 (elapsed 0.75 h, busy=1/2, queued=0, refill=2) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=126 n_clusters=23 n_updated=122 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=18 strict_clusters=6 status=ok n_updated=18 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=43 near_clusters=12 status=ok n_updated=43 coverage=1.00 scope=binder_chain scope_fallback=0
+  [lifecycle] retired 3 TTL-expired descendant-free hypothesis card(s) before Planner
+  [planner] last-tick critic flags surfaced: ['(b) complexa_fk_steering expected ~0.5h runtime but only 0.3h remain', '(b) complexa_beam expected ~0.5h runtime but only 0.3h remain', '(b) complexa_best_of_n expected ~0.5h runtime but only 0.3h remain']
+  [candidate_filter] 6 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  [auto_chain] 1 pending chain candidate(s) handled by bounded reserve/backfill lane
+  state=productive_duplicate  planned=0  chain_reserved=0  queued_now=0
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=126 n_clusters=23 n_updated=122 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=18 strict_clusters=6 status=ok n_updated=18 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=43 near_clusters=12 status=ok n_updated=43 coverage=1.00 scope=binder_chain scope_fallback=0
+  [controller_checkpoint] elapsed=0.751h SU=6 state=productive_duplicate
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=126 n_clusters=23 n_updated=122 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=18 strict_clusters=6 status=ok n_updated=18 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=43 near_clusters=12 status=ok n_updated=43 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] single free slot allowed for pending diagnostic score conversion
+
+[v7_controller] ===== round 22 (elapsed 0.75 h, busy=1/2, queued=0, refill=2) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=126 n_clusters=23 n_updated=122 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=18 strict_clusters=6 status=ok n_updated=18 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=43 near_clusters=12 status=ok n_updated=43 coverage=1.00 scope=binder_chain scope_fallback=0
+  [lifecycle] retired 3 TTL-expired descendant-free hypothesis card(s) before Planner
+  [planner] last-tick critic flags surfaced: ['(b) complexa_fk_steering expected ~0.5h runtime but only 0.3h remain', '(b) complexa_beam expected ~0.5h runtime but only 0.3h remain', '(b) complexa_best_of_n expected ~0.5h runtime but only 0.3h remain']
+  [candidate_filter] 6 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  [auto_chain] 1 pending chain candidate(s) handled by bounded reserve/backfill lane
+  state=productive_duplicate  planned=0  chain_reserved=0  queued_now=0
+  [gpu=2] structure_refilter → 1 records (parsed=1; elapsed_gpu_h=0.01; delta_gpu_h=0.01; per-record=0.007)
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=127 n_clusters=23 n_updated=123 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=18 strict_clusters=6 status=ok n_updated=18 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=43 near_clusters=12 status=ok n_updated=43 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] prioritized 1 chain refilter(s) ahead of stale pending work
+  [worker:af2_refilter][gpu=2] pdb=job_0_n_167_id_66_beam_orig2_bm3-s0to100br1-s100to200br0-s200to300br0-s300to400br2_seq012.pdb
+
+[v7_controller] ===== round 23 (elapsed 0.75 h, busy=1/2, queued=0, refill=2) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=127 n_clusters=23 n_updated=123 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=18 strict_clusters=6 status=ok n_updated=18 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=43 near_clusters=12 status=ok n_updated=43 coverage=1.00 scope=binder_chain scope_fallback=0
+  [lifecycle] retired 3 TTL-expired descendant-free hypothesis card(s) before Planner
+  [planner] last-tick critic flags surfaced: ['(b) complexa_fk_steering expected ~0.5h runtime but only 0.2h remain', '(b) complexa_beam expected ~0.5h runtime but only 0.2h remain', '(b) complexa_best_of_n expected ~0.5h runtime but only 0.2h remain']
+  [candidate_filter] 6 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  state=productive_duplicate  planned=0  chain_reserved=0  queued_now=0
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=127 n_clusters=23 n_updated=123 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=18 strict_clusters=6 status=ok n_updated=18 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=43 near_clusters=12 status=ok n_updated=43 coverage=1.00 scope=binder_chain scope_fallback=0
+  [chain_refilter_predispatch] single free slot allowed for pending diagnostic score conversion
+
+[v7_controller] ===== round 24 (elapsed 0.76 h, busy=1/2, queued=0, refill=2) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=127 n_clusters=23 n_updated=123 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=18 strict_clusters=6 status=ok n_updated=18 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=43 near_clusters=12 status=ok n_updated=43 coverage=1.00 scope=binder_chain scope_fallback=0
+  [lifecycle] retired 3 TTL-expired descendant-free hypothesis card(s) before Planner
+  [planner] last-tick critic flags surfaced: ['(b) complexa_fk_steering expected ~0.5h runtime but only 0.2h remain', '(b) complexa_beam expected ~0.5h runtime but only 0.2h remain', '(b) complexa_best_of_n expected ~0.5h runtime but only 0.2h remain']
+  [candidate_filter] 6 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  state=productive_duplicate  planned=0  chain_reserved=0  queued_now=0
+  [gpu=2] structure_refilter → 1 records (parsed=1; elapsed_gpu_h=0.01; delta_gpu_h=0.01; per-record=0.007)
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=128 n_clusters=23 n_updated=124 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=18 strict_clusters=6 status=ok n_updated=18 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=43 near_clusters=12 status=ok n_updated=43 coverage=1.00 scope=binder_chain scope_fallback=0
+
+[v7_controller] ===== round 25 (elapsed 0.76 h, busy=0/2, queued=0, refill=2) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=128 n_clusters=23 n_updated=124 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=18 strict_clusters=6 status=ok n_updated=18 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=43 near_clusters=12 status=ok n_updated=43 coverage=1.00 scope=binder_chain scope_fallback=0
+  [lifecycle] retired 3 TTL-expired descendant-free hypothesis card(s) before Planner
+  [planner] last-tick critic flags surfaced: ['(b) complexa_fk_steering expected ~0.5h runtime but only 0.2h remain', '(b) complexa_beam expected ~0.5h runtime but only 0.2h remain', '(b) complexa_best_of_n expected ~0.5h runtime but only 0.2h remain']
+  [candidate_filter] 6 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  state=productive_duplicate  planned=0  chain_reserved=0  queued_now=0
+  [no_progress] sleeping 120s
+  [controller_checkpoint] elapsed=0.801h SU=6 state=productive_duplicate
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=128 n_clusters=23 n_updated=124 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=18 strict_clusters=6 status=ok n_updated=18 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=43 near_clusters=12 status=ok n_updated=43 coverage=1.00 scope=binder_chain scope_fallback=0
+
+[v7_controller] ===== round 26 (elapsed 0.80 h, busy=0/2, queued=0, refill=2) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=128 n_clusters=23 n_updated=124 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=18 strict_clusters=6 status=ok n_updated=18 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=43 near_clusters=12 status=ok n_updated=43 coverage=1.00 scope=binder_chain scope_fallback=0
+  [lifecycle] retired 3 TTL-expired descendant-free hypothesis card(s) before Planner
+  [planner] last-tick critic flags surfaced: ['(b) complexa_fk_steering expected ~0.5h runtime but only 0.2h remain', '(b) complexa_beam expected ~0.5h runtime but only 0.2h remain', '(b) complexa_best_of_n expected ~0.5h runtime but only 0.2h remain']
+  [candidate_filter] 6 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  state=productive_duplicate  planned=0  chain_reserved=0  queued_now=0
+  [no_progress] sleeping 120s
+  [controller_checkpoint] elapsed=0.836h SU=6 state=productive_duplicate
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=128 n_clusters=23 n_updated=124 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=18 strict_clusters=6 status=ok n_updated=18 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=43 near_clusters=12 status=ok n_updated=43 coverage=1.00 scope=binder_chain scope_fallback=0
+
+[v7_controller] ===== round 27 (elapsed 0.84 h, busy=0/2, queued=0, refill=2) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=128 n_clusters=23 n_updated=124 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=18 strict_clusters=6 status=ok n_updated=18 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=43 near_clusters=12 status=ok n_updated=43 coverage=1.00 scope=binder_chain scope_fallback=0
+  [lifecycle] retired 3 TTL-expired descendant-free hypothesis card(s) before Planner
+  [planner] last-tick critic flags surfaced: ['(b) complexa_fk_steering expected ~0.5h runtime but only 0.2h remain', '(b) complexa_beam expected ~0.5h runtime but only 0.2h remain', '(b) complexa_best_of_n expected ~0.5h runtime but only 0.2h remain']
+  [candidate_filter] 5 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  state=productive_duplicate  planned=0  chain_reserved=0  queued_now=0
+  [no_progress] sleeping 120s
+  [controller_checkpoint] elapsed=0.871h SU=6 state=productive_duplicate
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=128 n_clusters=23 n_updated=124 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=18 strict_clusters=6 status=ok n_updated=18 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=43 near_clusters=12 status=ok n_updated=43 coverage=1.00 scope=binder_chain scope_fallback=0
+
+[v7_controller] ===== round 28 (elapsed 0.87 h, busy=0/2, queued=0, refill=2) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=128 n_clusters=23 n_updated=124 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=18 strict_clusters=6 status=ok n_updated=18 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=43 near_clusters=12 status=ok n_updated=43 coverage=1.00 scope=binder_chain scope_fallback=0
+  [lifecycle] retired 3 TTL-expired descendant-free hypothesis card(s) before Planner
+  [planner] last-tick critic flags surfaced: ['(b) complexa_fk_steering expected ~0.5h runtime but only 0.2h remain', '(b) complexa_beam expected ~0.5h runtime but only 0.2h remain']
+  [candidate_filter] 5 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  state=productive_duplicate  planned=0  chain_reserved=0  queued_now=0
+  [no_progress] sleeping 120s
+  [controller_checkpoint] elapsed=0.906h SU=6 state=productive_duplicate
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=128 n_clusters=23 n_updated=124 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=18 strict_clusters=6 status=ok n_updated=18 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=43 near_clusters=12 status=ok n_updated=43 coverage=1.00 scope=binder_chain scope_fallback=0
+
+[v7_controller] ===== round 29 (elapsed 0.91 h, busy=0/2, queued=0, refill=2) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=128 n_clusters=23 n_updated=124 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=18 strict_clusters=6 status=ok n_updated=18 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=43 near_clusters=12 status=ok n_updated=43 coverage=1.00 scope=binder_chain scope_fallback=0
+  [lifecycle] retired 3 TTL-expired descendant-free hypothesis card(s) before Planner
+  [planner] last-tick critic flags surfaced: ['(b) complexa_fk_steering expected ~0.5h runtime but only 0.1h remain', '(b) complexa_beam expected ~0.5h runtime but only 0.1h remain']
+  [candidate_filter] 5 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  state=productive_duplicate  planned=0  chain_reserved=0  queued_now=0
+  [no_progress] sleeping 120s
+  [controller_checkpoint] elapsed=0.941h SU=6 state=productive_duplicate
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=128 n_clusters=23 n_updated=124 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=18 strict_clusters=6 status=ok n_updated=18 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=43 near_clusters=12 status=ok n_updated=43 coverage=1.00 scope=binder_chain scope_fallback=0
+
+[v7_controller] ===== round 30 (elapsed 0.94 h, busy=0/2, queued=0, refill=2) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=128 n_clusters=23 n_updated=124 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=18 strict_clusters=6 status=ok n_updated=18 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=43 near_clusters=12 status=ok n_updated=43 coverage=1.00 scope=binder_chain scope_fallback=0
+  [lifecycle] retired 3 TTL-expired descendant-free hypothesis card(s) before Planner
+  [planner] last-tick critic flags surfaced: ['(b) complexa_fk_steering expected ~0.5h runtime but only 0.1h remain', '(b) complexa_beam expected ~0.5h runtime but only 0.1h remain']
+  [candidate_filter] 5 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  state=productive_duplicate  planned=0  chain_reserved=0  queued_now=0
+  [no_progress] sleeping 120s
+  [controller_checkpoint] elapsed=0.976h SU=6 state=productive_duplicate
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=128 n_clusters=23 n_updated=124 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=18 strict_clusters=6 status=ok n_updated=18 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=43 near_clusters=12 status=ok n_updated=43 coverage=1.00 scope=binder_chain scope_fallback=0
+
+[v7_controller] ===== round 31 (elapsed 0.98 h, busy=0/2, queued=0, refill=2) =====
+  [foldseek] status=ok scope=recent_scored_window_400 n_structures=128 n_clusters=23 n_updated=124 struct_scope=binder_chain scope_fallback=4
+  [foldseek:SU] strict_structures=18 strict_clusters=6 status=ok n_updated=18 coverage=1.00 scope=binder_chain scope_fallback=0
+  [foldseek:near_miss] near_structures=43 near_clusters=12 status=ok n_updated=43 coverage=1.00 scope=binder_chain scope_fallback=0
+  [lifecycle] retired 3 TTL-expired descendant-free hypothesis card(s) before Planner
+  [planner] last-tick critic flags surfaced: ['(b) complexa_fk_steering expected ~0.5h runtime but only 0.1h remain', '(b) complexa_beam expected ~0.5h runtime but only 0.1h remain']
+  [candidate_filter] 4 infeasible candidate(s) archived but hidden from Supervisor/Selector
+  state=productive_duplicate  planned=0  chain_reserved=0  queued_now=0
+  [no_progress] sleeping 120s
+[v7_controller] max wall reached (1.01 h); draining remaining workers and exit
+[v7_controller] done at 2026-09-26T01:00:46Z

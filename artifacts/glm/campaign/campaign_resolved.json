@@ -1,0 +1,170 @@
+{
+  "backends": {
+    "bindcraft_env": "/work/T-REX/external/BindCraft/.venv",
+    "bindcraft_repo": "/work/T-REX/external/BindCraft",
+    "boltzgen_binary": "/work/T-REX/external/BoltzGen/.venv/bin/boltzgen",
+    "boltzgen_cache": "/work/T-REX-assets/checkpoints/boltzgen",
+    "boltzgen_repo": "/work/T-REX/external/BoltzGen",
+    "complexa_python": "/work/T-REX/external/Proteina-Complexa/.venv/bin/python",
+    "complexa_repo": "/work/T-REX/external/Proteina-Complexa",
+    "external_root": "/work/T-REX/external",
+    "foldseek_binary": "/work/T-REX/external/Proteina-Complexa/.venv/bin/foldseek",
+    "legacy_complexa_repo": "/work/T-REX/external/Proteina-Complexa",
+    "mmseqs_binary": "/work/T-REX/external/Proteina-Complexa/.venv/bin/mmseqs",
+    "qwen_model_manifest": "/work/T-REX/config/trex/qwen3_6_27b_fp8_model_manifest.json",
+    "qwen_model_path": "/work/T-REX-assets/checkpoints/Qwen3.6-27B-FP8",
+    "repo_root": "/work/T-REX"
+  },
+  "campaign": {
+    "name": "pdl1-glm-s0",
+    "resolution_notes": [
+      "backends.complexa_repo inherited from TREX_COMPLEXA_REPO",
+      "backends.legacy_complexa_repo inherited from TREX_LEGACY_COMPLEXA_REPO",
+      "backends.bindcraft_repo inherited from TREX_BINDCRAFT_REPO",
+      "backends.boltzgen_repo inherited from TREX_BOLTZGEN_REPO",
+      "backends.complexa_python inherited from TREX_COMPLEXA_PYTHON",
+      "backends.bindcraft_env inherited from TREX_BINDCRAFT_ENV",
+      "backends.boltzgen_binary inherited from TREX_BOLTZGEN_BIN",
+      "backends.boltzgen_cache inherited from TREX_BOLTZGEN_CACHE",
+      "backends.foldseek_binary inherited from TREX_FOLDSEEK_BIN",
+      "backends.mmseqs_binary inherited from TREX_MMSEQS_BIN",
+      "backends.qwen_model_path inherited from TREX_QWEN_MODEL_PATH",
+      "backends.qwen_model_manifest inherited from TREX_MODEL_MANIFEST"
+    ],
+    "source_path": "/work/configs/glm.yaml",
+    "source_sha256": "3a59e631bc2c21b2a0f3396ea127e9d47d1e105f21efb380d520edec9d283627"
+  },
+  "controller_interface": {
+    "argv": [
+      "--archive-root",
+      "/work/results/glm/campaign",
+      "--target-constraint",
+      "/work/T-REX/config/targets/pdl1.json",
+      "--target-pdb",
+      "/work/T-REX-assets/targets/alpha_proteo_targets/5o45_repacked.pdb",
+      "--vllm-base-url",
+      "http://127.0.0.1:12002/v1",
+      "--llm-model",
+      "vllm/glm-5.3",
+      "--max-wall-h",
+      "1.0",
+      "--worker-gpus",
+      "2,3",
+      "--enabled-families",
+      "complexa_beam,complexa_best_of_n,complexa_fk_steering,proteinmpnn_redesign,structure_refilter",
+      "--enable-critic",
+      "1",
+      "--enable-evidence-skip",
+      "0",
+      "--enable-exemplars",
+      "1",
+      "--foldseek-su-tm-score",
+      "0.6",
+      "--foldseek-collapse-tm-score",
+      "0.6",
+      "--seed",
+      "0",
+      "--selector-quota-realization",
+      "fractional_carry",
+      "--selector-mode-window-k",
+      "1",
+      "--selector-adaptive-mode-window-k",
+      "0"
+    ],
+    "configured_environment": {
+      "TREX_BINDCRAFT_ENV": "/work/T-REX/external/BindCraft/.venv",
+      "TREX_BINDCRAFT_REPO": "/work/T-REX/external/BindCraft",
+      "TREX_BOLTZGEN_BIN": "/work/T-REX/external/BoltzGen/.venv/bin/boltzgen",
+      "TREX_BOLTZGEN_CACHE": "/work/T-REX-assets/checkpoints/boltzgen",
+      "TREX_BOLTZGEN_REPO": "/work/T-REX/external/BoltzGen",
+      "TREX_COMPLEXA_PYTHON": "/work/T-REX/external/Proteina-Complexa/.venv/bin/python",
+      "TREX_COMPLEXA_REPO": "/work/T-REX/external/Proteina-Complexa",
+      "TREX_ENABLED_FAMILIES": "complexa_beam,complexa_best_of_n,complexa_fk_steering,proteinmpnn_redesign,structure_refilter",
+      "TREX_EXTERNAL_ROOT": "/work/T-REX/external",
+      "TREX_FOLDSEEK_BIN": "/work/T-REX/external/Proteina-Complexa/.venv/bin/foldseek",
+      "TREX_LEGACY_COMPLEXA_REPO": "/work/T-REX/external/Proteina-Complexa",
+      "TREX_MMSEQS_BIN": "/work/T-REX/external/Proteina-Complexa/.venv/bin/mmseqs",
+      "TREX_MODEL_MANIFEST": "/work/T-REX/config/trex/qwen3_6_27b_fp8_model_manifest.json",
+      "TREX_QWEN_MODEL_PATH": "/work/T-REX-assets/checkpoints/Qwen3.6-27B-FP8",
+      "TREX_REPO_ROOT": "/work/T-REX",
+      "TREX_WORKER_GPUS": "2,3"
+    },
+    "inherited_trex_environment": {
+      "TREX_ARCHIVE_BASE": "/work/T-REX/runs",
+      "TREX_ASSET_ROOT": "/work/T-REX-assets",
+      "TREX_CONTROLLER_PYTHON": "/work/T-REX/.venv-serving/bin/python",
+      "TREX_FOLDSEEK_COLLAPSE_TM_SCORE": "0.60",
+      "TREX_FOLDSEEK_SU_TM_SCORE": "0.60",
+      "TREX_GPU_TYPE": "h100",
+      "TREX_MAX_WALL_H": "48.0",
+      "TREX_NUM_GPUS": "4",
+      "TREX_SEED": "0",
+      "TREX_SERVED_MODEL_NAME": "Qwen/Qwen3.6-27B-FP8",
+      "TREX_TARGET_ASSET_ROOT": "/work/T-REX-assets/targets",
+      "TREX_VERIFY_BACKEND_REVISIONS": "1",
+      "TREX_VLLM_VENV": "/work/T-REX/.venv-serving"
+    },
+    "runtime_paths": {
+      "af2_data_dir": "/work/T-REX/external/Proteina-Complexa/community_models/ckpts/AF2",
+      "bindcraft_env": "/work/T-REX/external/BindCraft/.venv",
+      "bindcraft_repo": "/work/T-REX/external/BindCraft",
+      "boltzgen_binary": "/work/T-REX/external/BoltzGen/.venv/bin/boltzgen",
+      "boltzgen_cache": "/work/T-REX-assets/checkpoints/boltzgen",
+      "boltzgen_repo": "/work/T-REX/external/BoltzGen",
+      "community_models_root": "/work/T-REX/external/Proteina-Complexa/community_models",
+      "complexa_python": "/work/T-REX/external/Proteina-Complexa/.venv/bin/python",
+      "complexa_repo": "/work/T-REX/external/Proteina-Complexa",
+      "external_root": "/work/T-REX/external",
+      "foldseek_binary": "/work/T-REX/external/Proteina-Complexa/.venv/bin/foldseek",
+      "legacy_complexa_repo": "/work/T-REX/external/Proteina-Complexa",
+      "mmseqs_binary": "/work/T-REX/external/Proteina-Complexa/.venv/bin/mmseqs",
+      "proteinmpnn_dir": "/work/T-REX/external/Proteina-Complexa/community_models/ProteinMPNN",
+      "proteinmpnn_weights": "/work/T-REX/external/Proteina-Complexa/community_models/ProteinMPNN/vanilla_model_weights/v_48_020.pt",
+      "qwen_model_manifest": "/work/T-REX/config/trex/qwen3_6_27b_fp8_model_manifest.json",
+      "qwen_model_path": "/work/T-REX-assets/checkpoints/Qwen3.6-27B-FP8",
+      "repo_root": "/work/T-REX"
+    }
+  },
+  "llm": {
+    "base_url": "http://127.0.0.1:12002/v1",
+    "model": "vllm/glm-5.3"
+  },
+  "memory": {
+    "cross_campaign_path": null
+  },
+  "policy": {
+    "critic": true,
+    "evidence_skip": false,
+    "exemplars": true,
+    "foldseek_collapse_tm_score": 0.6,
+    "foldseek_su_tm_score": 0.6,
+    "selector_adaptive_mode_window_k": false,
+    "selector_mode_window_k": 1,
+    "selector_quota_realization": "fractional_carry"
+  },
+  "run": {
+    "archive_root": "/work/results/glm/campaign",
+    "enabled_families": [
+      "complexa_beam",
+      "complexa_best_of_n",
+      "complexa_fk_steering",
+      "proteinmpnn_redesign",
+      "structure_refilter"
+    ],
+    "max_wall_hours": 1.0,
+    "seed": 0,
+    "worker_gpus": [
+      "2",
+      "3"
+    ]
+  },
+  "schema_version": "trex.resolved-campaign.v1",
+  "target": {
+    "config_path": "/work/T-REX/config/targets/pdl1.json",
+    "name": "pdl1",
+    "pdb_path": "/work/T-REX-assets/targets/alpha_proteo_targets/5o45_repacked.pdb",
+    "registered": true,
+    "schema_version": "trex.resolved-target.v1",
+    "target_id": "32_PDL1_ALPHA_REPACK"
+  }
+}
