@@ -22,7 +22,8 @@ acceptance includes deterministic recovery and is not a molecular-success score.
 Raw prompts/responses, failures, candidate decisions, sequences, PDBs and scores
 are in `artifacts/`. CPU graders and small evidence-reading SFT/RL examples are
 included. Start with [results and figures](docs/results.md),
-[observed issues](docs/issues.md), and [training tasks](docs/training.md).
+[observed issues](docs/issues.md), [capability gaps](docs/capability-gaps.md),
+and [training tasks](docs/training.md).
 [Reproduction](docs/reproduce.md) covers setup, execution and artifact checks;
 [protocol](docs/experiment.md) records deviations and serving differences.
 
