@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
 # Run on the provisioned pod after T-REX setup and campaign YAML creation.
 set -euo pipefail
-arm=${1:?qwen, snowball, glm or glm-think}
-case "$arm" in qwen|snowball|glm|glm-think) ;; *) exit 2 ;; esac
+arm=${1:?a base arm (qwen, snowball, glm) or its -think variant}
+case "$arm" in
+  qwen|snowball|glm|qwen-think|snowball-think|glm-think) ;;
+  *) exit 2 ;;
+esac
 export PATH=/root/.local/bin:$PATH
 export HF_HOME=/work/cache/huggingface
 export UV_CACHE_DIR=/work/cache/uv
@@ -15,11 +18,14 @@ if [ -e "/work/results/$arm/campaign" ]; then
 fi
 cd /work/T-REX
 controller=/work/T-REX/.venv-serving/bin/python
+# A -think arm keeps its base arm's served model name, so the fixed-evidence
+# prompts hash identically and stay comparable across every run.
 case "$arm" in
-  qwen) model=Qwen/Qwen3.6-27B-FP8 ;;
-  snowball) model=open-athena/Snowball-67B-A2B-5.7T-Mixed-RLVR-Step38 ;;
+  qwen|qwen-think) model=Qwen/Qwen3.6-27B-FP8 ;;
+  snowball|snowball-think) model=open-athena/Snowball-67B-A2B-5.7T-Mixed-RLVR-Step38 ;;
   glm|glm-think) model=glm-5.3 ;;
 esac
+case "$arm" in *-think) thinking_arm=1 ;; *) thinking_arm=0 ;; esac
 # Both GLM arms are served off-pod by a shared endpoint, so they start no local
 # server and hold no GPU for inference. The recorder carries the bearer token and
 # the reasoning budget, which the pinned controller cannot express: GLM reasons by
@@ -36,6 +42,15 @@ esac
 #              against itself. Set GLM_REASONING_EFFORT to pick the level.
 #
 # See docs/experiment.md.
+# Every thinking arm needs the same two things, differing only in the dialect its
+# server speaks. The campaign YAML exposes no token knob, so upstream's own
+# thinking-model floor of 8192 is applied by the recorder; the fixed-check
+# runners take --max-tokens natively and receive it below, which makes the
+# recorder's floor a no-op there. Locally served arms also get
+# chat_template_kwargs natively from --enable-thinking on the fixed checks, so
+# the injection below only ever fires for the campaign.
+think_max_tokens=${THINK_MAX_TOKENS:-8192}
+fixed_max_tokens=3072
 case "$arm" in
   glm|glm-think)
     : "${GLM_BASE_URL:?Set GLM_BASE_URL to the resolved GLM-5.3 endpoint (no /v1 suffix)}"
@@ -43,27 +58,39 @@ case "$arm" in
     test -r "$GLM_TOKEN_FILE"
     proxy_upstream=$GLM_BASE_URL
     proxy_extra=(--auth-token-file "$GLM_TOKEN_FILE")
-    if [ "$arm" = glm ]; then
-      effort=low
-      fixed_max_tokens=3072
-    else
+    # GLM has no off switch for reasoning, only a budget, so both GLM arms must
+    # name a level; `low` is the nearest thing to the other arms' disabled
+    # thinking. See docs/experiment.md.
+    if [ "$thinking_arm" = 1 ]; then
       effort=${GLM_REASONING_EFFORT:?Set GLM_REASONING_EFFORT for the thinking arm}
-      fixed_max_tokens=${GLM_THINK_MAX_TOKENS:-8192}
-      # The campaign YAML exposes no token knob, so the floor is applied here.
-      # The fixed-check runners take --max-tokens natively and use it below.
-      proxy_extra+=(--raise-max-completion-tokens "$fixed_max_tokens")
+    else
+      effort=low
     fi
-    proxy_extra+=(--inject-extra-body "{\"chat_template_kwargs\": {\"reasoning_effort\": \"$effort\"}}")
+    think_kwargs="{\"reasoning_effort\": \"$effort\"}"
     ;;
   *)
     proxy_upstream=http://127.0.0.1:12001
     proxy_extra=()
-    fixed_max_tokens=3072
+    # Qwen and Snowball both take upstream's native flag.
+    think_kwargs="{\"enable_thinking\": true}"
+    ;;
+esac
+if [ "$thinking_arm" = 1 ]; then
+  fixed_max_tokens=$think_max_tokens
+  proxy_extra+=(--raise-max-completion-tokens "$think_max_tokens")
+fi
+case "$arm" in
+  glm|glm-think|*-think)
+    proxy_extra+=(--inject-extra-body "{\"chat_template_kwargs\": $think_kwargs}")
     ;;
 esac
 # Process groups permit cleanup of vLLM's worker descendants.
 server_pid=
 case "$arm" in glm|glm-think) skip_local_server=1 ;; *) skip_local_server=0 ;; esac
+# Locally served thinking arms use the -think server variant, whose only
+# difference is the default chat-template setting.
+fixed_thinking_flag=()
+[ "$thinking_arm" = 1 ] && [ "$skip_local_server" = 0 ] && fixed_thinking_flag=(--enable-thinking)
 if [ "$skip_local_server" = 0 ]; then
   if [ -n "${TREX_SERVER_PID:-}" ]; then
     # Adopt only the task's prestarted server, supplied explicitly by the operator.
@@ -113,10 +140,12 @@ if [ "${TREX_SKIP_FIXED_VALIDATION:-0}" != 1 ]; then
 "$controller" -m benchmarks.llm_validation.planner_validation \
   --model "vllm/$model" --base-url http://127.0.0.1:12000/v1 \
   --repeats 3 --max-tokens "$fixed_max_tokens" --temperature 0.2 \
+  "${fixed_thinking_flag[@]}" \
   --out "/work/results/$arm/planner-validation.json"
 "$controller" -m benchmarks.llm_validation.supervisor_validation \
   --model "vllm/$model" --base-url http://127.0.0.1:12000/v1 \
   --repeats 3 --max-tokens "$fixed_max_tokens" \
+  "${fixed_thinking_flag[@]}" \
   --out "/work/results/$arm/supervisor-validation.json"
 fi
 # Fixed-call diagnostics retain late responses. Finish them before starting the
