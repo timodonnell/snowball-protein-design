@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PD-L1 pilot transcripts</title>
+<meta name="description" content="Exact prompts and responses for every model call in the PD-L1 design pilot.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='14' font-size='14'>%F0%9F%A7%AC</text></svg>">
+<style>
+:root{--bg:#fbfbfa;--fg:#1c1b1a;--mut:#6b6864;--line:#e3e0db;--card:#fff;
+--accent:#315b8a;--ok:#2f7d5d;--warn:#b4571f;--bad:#b23b2e;--code:#f4f2ee}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){
+--bg:#16161a;--fg:#e8e6e3;--mut:#9b9793;--line:#2e2e34;--card:#1d1d22;
+--accent:#8ab4e8;--ok:#6fc79b;--warn:#e0a065;--bad:#e08a7e;--code:#232329}}
+:root[data-theme=dark]{--bg:#16161a;--fg:#e8e6e3;--mut:#9b9793;--line:#2e2e34;
+--card:#1d1d22;--accent:#8ab4e8;--ok:#6fc79b;--warn:#e0a065;--bad:#e08a7e;--code:#232329}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+font:15px/1.6 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:1040px;margin:0 auto;padding:32px 16px 96px}
+h1{font-size:1.7rem;line-height:1.25;margin:0 0 4px}
+h2{font-size:1.2rem;margin:36px 0 10px;padding-top:14px;border-top:1px solid var(--line)}
+h3{font-size:1rem;margin:22px 0 6px}
+a{color:var(--accent)}
+.sub{color:var(--mut);margin:0 0 20px}
+.note{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--accent);
+padding:12px 14px;border-radius:6px;margin:16px 0}
+table{border-collapse:collapse;width:100%;margin:14px 0;font-size:.9rem;display:block;overflow-x:auto}
+th,td{border-bottom:1px solid var(--line);padding:7px 10px;text-align:left;white-space:nowrap}
+th{color:var(--mut);font-weight:600}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+pre{background:var(--code);border:1px solid var(--line);border-radius:6px;padding:12px;
+overflow-x:auto;font:12.5px/1.55 ui-monospace,SFMono-Regular,Menlo,monospace;
+white-space:pre-wrap;word-break:break-word;max-height:30em;margin:8px 0}
+pre.tall{max-height:60em}
+code{background:var(--code);padding:1px 5px;border-radius:4px;
+font:12.5px ui-monospace,SFMono-Regular,Menlo,monospace}
+details{background:var(--card);border:1px solid var(--line);border-radius:8px;
+margin:8px 0;padding:0 12px}
+details[open]{padding-bottom:10px}
+summary{cursor:pointer;padding:9px 0;font-weight:600;font-size:.92rem;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary:before{content:"▸ ";color:var(--mut)}
+details[open]>summary:before{content:"▾ "}
+.call{border:1px solid var(--line);border-radius:10px;background:var(--card);
+margin:16px 0;padding:14px}
+.call>h3{margin-top:0;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.meta{display:flex;flex-wrap:wrap;gap:6px 14px;color:var(--mut);font-size:.82rem;
+margin:2px 0 10px;font-variant-numeric:tabular-nums}
+.tag{display:inline-block;border:1px solid var(--line);border-radius:999px;
+padding:1px 9px;font-size:.75rem;font-weight:600;color:var(--mut);white-space:nowrap}
+.tag.ok{color:var(--ok);border-color:var(--ok)}
+.tag.warn{color:var(--warn);border-color:var(--warn)}
+.tag.bad{color:var(--bad);border-color:var(--bad)}
+.lbl{color:var(--mut);font-size:.78rem;text-transform:uppercase;letter-spacing:.05em;
+margin:12px 0 2px;font-weight:600}
+.nav{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0}
+.nav a{border:1px solid var(--line);background:var(--card);border-radius:8px;
+padding:8px 12px;text-decoration:none;font-size:.9rem}
+.toolbar{position:sticky;top:0;background:var(--bg);padding:10px 0;z-index:5;
+border-bottom:1px solid var(--line);margin-bottom:10px;display:flex;gap:8px;flex-wrap:wrap}
+.toolbar input,.toolbar select,.toolbar button{font:inherit;font-size:.88rem;padding:6px 9px;
+border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--fg)}
+.toolbar input{flex:1;min-width:150px}
+.hidden{display:none}
+footer{color:var(--mut);font-size:.82rem;margin-top:40px;border-top:1px solid var(--line);
+padding-top:14px}
+@media (max-width:640px){.wrap{padding:20px 16px 72px}h1{font-size:1.4rem}}
+</style></head>
+<body><div class="wrap"><h1>What the model actually saw and said</h1>
+<p class="sub">Every Planner and Supervisor call in the PD-L1 pilot, copied verbatim from the recording proxy: the exact prompt bytes the pinned T-REX controller sent, and the exact bytes the model returned.</p>
+<div class="note"><strong>Note.</strong> The GLM-5.3 campaign was still draining when this build was generated, so its campaign pages are partial. Its fixed-evidence checks are complete. Qwen and Snowball are complete.</div>
+<div class="note">Each arm runs the same controller against the same target, seed and action families. A conversation here is always a <strong>single stateless turn</strong>: one large system prompt defining the role and output schema, one user message carrying the current evidence as JSON, and one response that must itself be JSON. There is no multi-turn chat — the controller re-sends the whole state every tick.</div>
+<h2>Pages</h2>
+<div class="nav"><a href="qwen-fixed.html">Qwen3.6-27B-FP8 — fixed-evidence checks (1 of 2)</a><a href="qwen-fixed-2.html">Qwen3.6-27B-FP8 — fixed-evidence checks (2 of 2)</a><a href="qwen-campaign.html">Qwen3.6-27B-FP8 — live campaign (1 of 4)</a><a href="qwen-campaign-2.html">Qwen3.6-27B-FP8 — live campaign (2 of 4)</a><a href="qwen-campaign-3.html">Qwen3.6-27B-FP8 — live campaign (3 of 4)</a><a href="qwen-campaign-4.html">Qwen3.6-27B-FP8 — live campaign (4 of 4)</a><a href="snowball-fixed.html">Snowball-67B-A2B — fixed-evidence checks (1 of 2)</a><a href="snowball-fixed-2.html">Snowball-67B-A2B — fixed-evidence checks (2 of 2)</a><a href="snowball-campaign.html">Snowball-67B-A2B — live campaign (1 of 2)</a><a href="snowball-campaign-2.html">Snowball-67B-A2B — live campaign (2 of 2)</a><a href="glm-fixed.html">GLM-5.3 — fixed-evidence checks (1 of 2)</a><a href="glm-fixed-2.html">GLM-5.3 — fixed-evidence checks (2 of 2)</a><a href="glm-campaign.html">GLM-5.3 — live campaign (1 of 2)</a><a href="glm-campaign-2.html">GLM-5.3 — live campaign (2 of 2)</a><a href="replay-qwen-on-snowball.html">replay-qwen-on-snowball</a></div>
+<h2>Response shape, by arm</h2>
+<table><tr><th>Arm</th><th class="num">Calls</th><th class="num">Cancelled</th><th class="num">Bare JSON</th><th class="num">Fenced</th><th class="num">Prose</th><th class="num">Empty</th><th class="num">Truncated</th></tr>
+<tr><td>Qwen3.6-27B-FP8</td><td class="num">107</td><td class="num">0</td><td class="num">107</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td></tr>
+<tr><td>Snowball-67B-A2B</td><td class="num">69</td><td class="num">20</td><td class="num">0</td><td class="num">0</td><td class="num">49</td><td class="num">0</td><td class="num">8</td></tr>
+<tr><td>GLM-5.3</td><td class="num">59</td><td class="num">0</td><td class="num">44</td><td class="num">15</td><td class="num">0</td><td class="num">0</td><td class="num">0</td></tr>
+</table>
+<p class="sub">Counts cover completed HTTP responses; cancelled calls returned no body at all. "Fenced" means a valid object wrapped in a Markdown code fence, which the controller's extractor recovers. "Prose" means the object had to be found inside surrounding text.</p>
+<h2>How to read a call</h2>
+<p>Every call shows its sampling settings, transport outcome, token usage and the SHA-256 of its system prompt. Identical hashes mean identical prompt bytes, which is how the fixed-evidence checks are matched across arms. Expand a section to see the full text; nothing is abridged.</p>
+<footer>Generated 2026-09-25 20:49 EDT from the wire archives under <code>artifacts/</code> by <code>scripts/make_transcript_report.py</code>. The archives remain authoritative; regenerating reproduces these pages.</footer></div><script>window.SYS={};</script><script>
+function fillSys(el){
+  if(el.dataset.filled) return;
+  var h=el.dataset.sys, pre=el.querySelector('pre');
+  pre.textContent = (window.SYS && window.SYS[h]) || '[system prompt unavailable]';
+  el.dataset.filled='1';
+}
+document.addEventListener('toggle', function(e){
+  var t=e.target;
+  if(t.tagName==='DETAILS' && t.open && t.dataset.sys) fillSys(t);
+}, true);
+function applyFilter(){
+  var q=(document.getElementById('q').value||'').toLowerCase();
+  var role=document.getElementById('role').value;
+  var n=0;
+  document.querySelectorAll('.call').forEach(function(c){
+    var okRole = (role==='all' || c.dataset.role===role);
+    var okQ = (!q || c.dataset.search.indexOf(q)>=0);
+    var show = okRole && okQ;
+    c.classList.toggle('hidden', !show);
+    if(show) n++;
+  });
+  document.getElementById('count').textContent = n+' shown';
+}
+function expandAll(v){document.querySelectorAll('.call details').forEach(function(d){
+  d.open=v; if(v&&d.dataset.sys) fillSys(d);});}
+</script></body></html>

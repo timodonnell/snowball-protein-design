@@ -1,0 +1,513 @@
+{
+  "records": [
+    {
+      "abstain": false,
+      "case": "productive_cd45_like",
+      "confidence": 0.7,
+      "decisions_per_mode": {
+        "exploit": 1,
+        "explore": 1,
+        "rescue": 1
+      },
+      "elapsed_s": 6.23,
+      "fail_reason": null,
+      "mixture_assessment": {
+        "all_ok": true,
+        "checks": {
+          "exploit_min": true,
+          "explore_max": true
+        },
+        "normalized_mixture": {
+          "exploit": 0.65,
+          "explore": 0.15,
+          "rescue": 0.2
+        }
+      },
+      "mode_mixture": {
+        "exploit": 0.65,
+        "explore": 0.15,
+        "rescue": 0.2
+      },
+      "n_candidates_in": 3,
+      "n_decisions": 3,
+      "repeat": 0,
+      "resources_used": [
+        "standard",
+        "low",
+        "low"
+      ],
+      "state": "productive",
+      "usage": {
+        "input_tokens": 4688,
+        "output_tokens": 992
+      },
+      "valid": true
+    },
+    {
+      "abstain": false,
+      "case": "rescue_rich_betv1_like",
+      "confidence": 0.6,
+      "decisions_per_mode": {
+        "exploit": 0,
+        "explore": 0,
+        "rescue": 1
+      },
+      "elapsed_s": 3.32,
+      "fail_reason": null,
+      "mixture_assessment": {
+        "all_ok": true,
+        "checks": {
+          "rescue_min": true
+        },
+        "normalized_mixture": {
+          "exploit": 0.15,
+          "explore": 0.35,
+          "rescue": 0.5
+        }
+      },
+      "mode_mixture": {
+        "exploit": 0.15,
+        "explore": 0.35,
+        "rescue": 0.5
+      },
+      "n_candidates_in": 1,
+      "n_decisions": 1,
+      "repeat": 0,
+      "resources_used": [
+        "standard"
+      ],
+      "state": "rescue_rich",
+      "usage": {
+        "input_tokens": 3953,
+        "output_tokens": 571
+      },
+      "valid": true
+    },
+    {
+      "abstain": false,
+      "case": "stalled_sc2rbd_like",
+      "confidence": 0.5,
+      "decisions_per_mode": {
+        "exploit": 0,
+        "explore": 2,
+        "rescue": 0
+      },
+      "elapsed_s": 4.59,
+      "fail_reason": null,
+      "mixture_assessment": {
+        "all_ok": true,
+        "checks": {
+          "exploit_max": true,
+          "explore_min": true
+        },
+        "normalized_mixture": {
+          "exploit": 0.15,
+          "explore": 0.55,
+          "rescue": 0.3
+        }
+      },
+      "mode_mixture": {
+        "exploit": 0.15,
+        "explore": 0.55,
+        "rescue": 0.3
+      },
+      "n_candidates_in": 2,
+      "n_decisions": 2,
+      "repeat": 0,
+      "resources_used": [
+        "standard",
+        "standard"
+      ],
+      "state": "stalled",
+      "usage": {
+        "input_tokens": 4576,
+        "output_tokens": 850
+      },
+      "valid": true
+    },
+    {
+      "abstain": false,
+      "case": "stalled_redundant_pdl1",
+      "confidence": 0.5,
+      "decisions_per_mode": {
+        "exploit": 0,
+        "explore": 1,
+        "rescue": 0
+      },
+      "elapsed_s": 2.19,
+      "fail_reason": null,
+      "mixture_assessment": {
+        "all_ok": true,
+        "checks": {
+          "explore_min": true
+        },
+        "normalized_mixture": {
+          "exploit": 0.2,
+          "explore": 0.55,
+          "rescue": 0.25
+        }
+      },
+      "mode_mixture": {
+        "exploit": 0.2,
+        "explore": 0.55,
+        "rescue": 0.25
+      },
+      "n_candidates_in": 1,
+      "n_decisions": 1,
+      "repeat": 0,
+      "resources_used": [
+        "standard"
+      ],
+      "state": "stalled",
+      "usage": {
+        "input_tokens": 3963,
+        "output_tokens": 419
+      },
+      "valid": true
+    },
+    {
+      "abstain": false,
+      "case": "productive_cd45_like",
+      "confidence": 0.7,
+      "decisions_per_mode": {
+        "exploit": 1,
+        "explore": 1,
+        "rescue": 1
+      },
+      "elapsed_s": 4.81,
+      "fail_reason": null,
+      "mixture_assessment": {
+        "all_ok": true,
+        "checks": {
+          "exploit_min": true,
+          "explore_max": true
+        },
+        "normalized_mixture": {
+          "exploit": 0.65,
+          "explore": 0.15,
+          "rescue": 0.2
+        }
+      },
+      "mode_mixture": {
+        "exploit": 0.65,
+        "explore": 0.15,
+        "rescue": 0.2
+      },
+      "n_candidates_in": 3,
+      "n_decisions": 3,
+      "repeat": 1,
+      "resources_used": [
+        "standard",
+        "low",
+        "low"
+      ],
+      "state": "productive",
+      "usage": {
+        "input_tokens": 4688,
+        "output_tokens": 986
+      },
+      "valid": true
+    },
+    {
+      "abstain": false,
+      "case": "rescue_rich_betv1_like",
+      "confidence": 0.55,
+      "decisions_per_mode": {
+        "exploit": 0,
+        "explore": 0,
+        "rescue": 1
+      },
+      "elapsed_s": 2.79,
+      "fail_reason": null,
+      "mixture_assessment": {
+        "all_ok": true,
+        "checks": {
+          "rescue_min": true
+        },
+        "normalized_mixture": {
+          "exploit": 0.2,
+          "explore": 0.3,
+          "rescue": 0.5
+        }
+      },
+      "mode_mixture": {
+        "exploit": 0.2,
+        "explore": 0.3,
+        "rescue": 0.5
+      },
+      "n_candidates_in": 1,
+      "n_decisions": 1,
+      "repeat": 1,
+      "resources_used": [
+        "standard"
+      ],
+      "state": "rescue_rich",
+      "usage": {
+        "input_tokens": 3953,
+        "output_tokens": 507
+      },
+      "valid": true
+    },
+    {
+      "abstain": false,
+      "case": "stalled_sc2rbd_like",
+      "confidence": 0.5,
+      "decisions_per_mode": {
+        "exploit": 0,
+        "explore": 2,
+        "rescue": 0
+      },
+      "elapsed_s": 4.81,
+      "fail_reason": null,
+      "mixture_assessment": {
+        "all_ok": true,
+        "checks": {
+          "exploit_max": true,
+          "explore_min": true
+        },
+        "normalized_mixture": {
+          "exploit": 0.2,
+          "explore": 0.55,
+          "rescue": 0.25
+        }
+      },
+      "mode_mixture": {
+        "exploit": 0.2,
+        "explore": 0.55,
+        "rescue": 0.25
+      },
+      "n_candidates_in": 2,
+      "n_decisions": 2,
+      "repeat": 1,
+      "resources_used": [
+        "standard",
+        "standard"
+      ],
+      "state": "stalled",
+      "usage": {
+        "input_tokens": 4576,
+        "output_tokens": 857
+      },
+      "valid": true
+    },
+    {
+      "abstain": false,
+      "case": "stalled_redundant_pdl1",
+      "confidence": 0.55,
+      "decisions_per_mode": {
+        "exploit": 0,
+        "explore": 1,
+        "rescue": 0
+      },
+      "elapsed_s": 1.92,
+      "fail_reason": null,
+      "mixture_assessment": {
+        "all_ok": true,
+        "checks": {
+          "explore_min": true
+        },
+        "normalized_mixture": {
+          "exploit": 0.2,
+          "explore": 0.5,
+          "rescue": 0.3
+        }
+      },
+      "mode_mixture": {
+        "exploit": 0.2,
+        "explore": 0.5,
+        "rescue": 0.3
+      },
+      "n_candidates_in": 1,
+      "n_decisions": 1,
+      "repeat": 1,
+      "resources_used": [
+        "standard"
+      ],
+      "state": "stalled",
+      "usage": {
+        "input_tokens": 3963,
+        "output_tokens": 377
+      },
+      "valid": true
+    },
+    {
+      "abstain": false,
+      "case": "productive_cd45_like",
+      "confidence": 0.7,
+      "decisions_per_mode": {
+        "exploit": 1,
+        "explore": 1,
+        "rescue": 1
+      },
+      "elapsed_s": 5.22,
+      "fail_reason": null,
+      "mixture_assessment": {
+        "all_ok": true,
+        "checks": {
+          "exploit_min": true,
+          "explore_max": true
+        },
+        "normalized_mixture": {
+          "exploit": 0.65,
+          "explore": 0.15,
+          "rescue": 0.2
+        }
+      },
+      "mode_mixture": {
+        "exploit": 0.65,
+        "explore": 0.15,
+        "rescue": 0.2
+      },
+      "n_candidates_in": 3,
+      "n_decisions": 3,
+      "repeat": 2,
+      "resources_used": [
+        "standard",
+        "low",
+        "low"
+      ],
+      "state": "productive",
+      "usage": {
+        "input_tokens": 4688,
+        "output_tokens": 1029
+      },
+      "valid": true
+    },
+    {
+      "abstain": false,
+      "case": "rescue_rich_betv1_like",
+      "confidence": 0.55,
+      "decisions_per_mode": {
+        "exploit": 0,
+        "explore": 0,
+        "rescue": 1
+      },
+      "elapsed_s": 2.56,
+      "fail_reason": null,
+      "mixture_assessment": {
+        "all_ok": true,
+        "checks": {
+          "rescue_min": true
+        },
+        "normalized_mixture": {
+          "exploit": 0.2,
+          "explore": 0.35,
+          "rescue": 0.45
+        }
+      },
+      "mode_mixture": {
+        "exploit": 0.2,
+        "explore": 0.35,
+        "rescue": 0.45
+      },
+      "n_candidates_in": 1,
+      "n_decisions": 1,
+      "repeat": 2,
+      "resources_used": [
+        "standard"
+      ],
+      "state": "rescue_rich",
+      "usage": {
+        "input_tokens": 3953,
+        "output_tokens": 504
+      },
+      "valid": true
+    },
+    {
+      "abstain": false,
+      "case": "stalled_sc2rbd_like",
+      "confidence": 0.55,
+      "decisions_per_mode": {
+        "exploit": 0,
+        "explore": 2,
+        "rescue": 0
+      },
+      "elapsed_s": 4.22,
+      "fail_reason": null,
+      "mixture_assessment": {
+        "all_ok": true,
+        "checks": {
+          "exploit_max": true,
+          "explore_min": true
+        },
+        "normalized_mixture": {
+          "exploit": 0.2,
+          "explore": 0.5,
+          "rescue": 0.3
+        }
+      },
+      "mode_mixture": {
+        "exploit": 0.2,
+        "explore": 0.5,
+        "rescue": 0.3
+      },
+      "n_candidates_in": 2,
+      "n_decisions": 2,
+      "repeat": 2,
+      "resources_used": [
+        "standard",
+        "standard"
+      ],
+      "state": "stalled",
+      "usage": {
+        "input_tokens": 4576,
+        "output_tokens": 866
+      },
+      "valid": true
+    },
+    {
+      "abstain": false,
+      "case": "stalled_redundant_pdl1",
+      "confidence": 0.55,
+      "decisions_per_mode": {
+        "exploit": 0,
+        "explore": 1,
+        "rescue": 0
+      },
+      "elapsed_s": 2.2,
+      "fail_reason": null,
+      "mixture_assessment": {
+        "all_ok": true,
+        "checks": {
+          "explore_min": true
+        },
+        "normalized_mixture": {
+          "exploit": 0.25,
+          "explore": 0.5,
+          "rescue": 0.25
+        }
+      },
+      "mode_mixture": {
+        "exploit": 0.25,
+        "explore": 0.5,
+        "rescue": 0.25
+      },
+      "n_candidates_in": 1,
+      "n_decisions": 1,
+      "repeat": 2,
+      "resources_used": [
+        "standard"
+      ],
+      "state": "stalled",
+      "usage": {
+        "input_tokens": 3963,
+        "output_tokens": 477
+      },
+      "valid": true
+    }
+  ],
+  "summary": {
+    "base_url": "http://127.0.0.1:12000/v1",
+    "confidence_max": 0.7,
+    "confidence_median": 0.55,
+    "confidence_min": 0.5,
+    "median_latency_s": 3.7699999999999996,
+    "mixture_aligned_with_state_rate": 1.0,
+    "model": "vllm/glm-5.3",
+    "schema_version": "v7.3.3-reward-guard",
+    "total_calls": 12,
+    "valid_calls": 12,
+    "valid_rate": 1.0,
+    "wall_clock_s": 44.8
+  }
+}

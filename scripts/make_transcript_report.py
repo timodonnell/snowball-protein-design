@@ -317,6 +317,7 @@ def main():
     parser.add_argument("--replays", nargs="+", default=[])
     parser.add_argument("--per-page", type=int, default=20,
                         help="Calls per page; large prompts make single-file pages slow to load.")
+    parser.add_argument("--note", help="Caveat shown on the index, e.g. an arm still running.")
     args = parser.parse_args()
     args.output.mkdir(parents=True, exist_ok=True)
     index_rows, pages = [], []
@@ -350,10 +351,12 @@ def main():
         pages += chunked_pages(replay, replay, read_calls(wire), args.output,
                                replay, args.per_page)
 
+    stamp = datetime.now().astimezone().strftime("%Y-%m-%d %H:%M %Z")
     head = ["<h1>What the model actually saw and said</h1>",
             '<p class="sub">Every Planner and Supervisor call in the PD-L1 pilot, copied verbatim '
             'from the recording proxy: the exact prompt bytes the pinned T-REX controller sent, and '
             'the exact bytes the model returned.</p>',
+            (f'<div class="note"><strong>Note.</strong> {esc(args.note)}</div>' if args.note else ""),
             '<div class="note">Each arm runs the same controller against the same target, seed and '
             'action families. A conversation here is always a <strong>single stateless turn</strong>: '
             'one large system prompt defining the role and output schema, one user message carrying '
@@ -380,8 +383,9 @@ def main():
              'SHA-256 of its system prompt. Identical hashes mean identical prompt bytes, which is '
              'how the fixed-evidence checks are matched across arms. Expand a section to see the '
              'full text; nothing is abridged.</p>',
-             '<footer>Generated from the wire archives under <code>artifacts/</code> by '
-             '<code>scripts/make_transcript_report.py</code>. The archives remain authoritative.</footer>']
+             f'<footer>Generated {esc(stamp)} from the wire archives under '
+             '<code>artifacts/</code> by <code>scripts/make_transcript_report.py</code>. '
+             'The archives remain authoritative; regenerating reproduces these pages.</footer>']
     (args.output / "index.html").write_text(
         page("PD-L1 pilot transcripts", "Exact prompts and responses for every model call in the "
              "PD-L1 design pilot.", "\n".join(head)))
