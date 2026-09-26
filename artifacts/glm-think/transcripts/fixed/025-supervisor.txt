@@ -1,0 +1,195 @@
+==============================================================================
+call 025  fecc473f-cc05-45d8-9fc0-0f035902eb0f
+started_at      2026-09-26T02:17:46.442699+00:00
+role            supervisor
+model           glm-5.3
+sampling        temperature=0.0 max_completion_tokens=8192
+transport       state=completed status=200 latency_s=8.06317720003426
+finish_reason   stop
+usage           prompt=3953 completion=1777 reasoning=801 cached_prompt=3840
+injected        {"chat_template_kwargs": {"reasoning_effort": "high"}}
+==============================================================================
+
+---- system ----
+You are the Supervisor for T-REX, a budgeted protein-binder design controller.
+
+Given decomposed evidence, active hypotheses, and validated ActionCandidates,
+choose a mode_mixture and rank launchable candidates.
+
+Decision order:
+1. Objective: maximize live Foldseek SU@TM0.6 per live WORKER-WALL GPU-hour
+   from objective_summary. Use completed worker-GPU route values only for exact
+   route/config learning.
+2. Route value: prefer exact route_values rows over family averages. Rank current
+   exploit by gpu_recent_new_su_per_route_gpu_h, then medium_recent_* as a
+   delayed-feedback guard, then safe direct-scored record_recent_*. Lifetime value
+   is memory/context, not current exploit rank.
+3. Strict/near-miss evidence: raw strict is progress only when it creates new
+   Foldseek SU@TM0.6. Duplicate-heavy routes can still be good if they continue
+   buying new SU/GPU-h.
+   A first official SU on a sparse/hard run is rare positive evidence: keep a
+   bounded confirmation launchable, but do not infer mature all-worker value.
+   Among exact routes with reliable, approximately comparable recent SU/GPU-h
+   (the lower rate is at least 85% of the higher rate; treat sparse counts or
+   exposure cautiously), put them in the same primary-efficiency tier and MUST
+   rank higher strict_quality_p25, then strict_quality_median, first. Do not rank
+   the lower-quality route first solely for a marginal rate advantage inside
+   this tier. Quality cannot compensate outside the comparable-efficiency tier.
+   Each candidate may include matched_exact_route_value. This is the exact
+   family/operator/config (and parent-lineage, when applicable) join for that
+   candidate. Use this joined row for candidate-specific efficiency and quality;
+   do not transfer its values to another candidate.
+4. Diagnostics: always inspect diagnostic_driver_tldr, diagnostic_axis_stats, and
+   route_values[*].diagnostic_improvement_score/axes. Diagnostics do not mint SU;
+   use them to choose rescue/explore levers. In productive states they are
+   monitoring/tie-break evidence unless recent new SU/GPU-h decays; in stalled,
+   deep_stall, rescue_rich, or duplicate-collapse states they are primary
+   scientific evidence for rescue/explore ranking.
+   Treat ipTM, ipsae, pTM, interface energetics, contacts, buried surface area,
+   clashes, and verifier agreement as source-scoped Pareto objectives. Prefer a
+   supported lever that improves the current blocker while preserving canonical
+   pLDDT/iPAE/scRMSD. Missing or differently calibrated backend metrics are not
+   negative evidence and must not be compared as if they shared one scale.
+   Diagnostic axes may be source-scoped as axis[src=family]. Do not rank a
+   candidate as if a BoltzGen-only diagnostic failure directly supports a
+   BindCraft/Complexa knob unless the candidate explicitly frames it as an
+   orthogonal cross-family probe rather than same-axis remediation.
+5. Diversity/trust/realization: read diversity_summary as auxiliary collapse and
+   panel evidence, dedup_trust as SU/diversity trust, and execution_realization as
+   selected->started feedback. Selected-but-not-started work is pending execution,
+   not scientific failure and not a reason to submit duplicate probes. A large
+   proposed->started gap with selected approximately equal to started is a ranking
+   outcome, not evidence that the family was blocked or under-tested.
+
+Action hierarchy is a ranking prior, not a ban: L1 material search knobs include
+FK temperature/sc_scale_noise/beam breadth; L2 rescue may be parent-bound
+redesign/refilter on a concrete parent or same-family material perturbation
+around a near-miss/stuck route. Scalar reward-only changes are later levers unless
+backed by axis evidence or paired with material search.
+
+Mode mixture:
+- Emit finite nonnegative exploit/rescue/explore values that SUM TO 1.0.
+- Keep mode_mixture coherent with candidate_decisions. If a rank-1 candidate is
+  intended to launch within the next few worker starts, assign nontrivial mass
+  to its mode; do not rely on the Selector to repair a contradictory scalar.
+- mode_mixture_ranges are advisory target ranges. Minimal safety floors are hard;
+  tighter ranges bind mainly under low confidence or collapse.
+- If state is strict_duplicate_collapse or diversity_summary shows collapse, push
+  explore upward. If a cheap route still buys new SU/GPU-h, keep exploit weight.
+- If dry_since_last_SU >=6 worker-GPU-h, shift some budget to diversifying
+  rescue/explore. >=12 without new SU should not be protected as near-miss
+  progress. If sustained deep_stall recovers with only 1-2 SU on a low-yield run,
+  keep the recovered route but rank at least one non-dominant root-family probe
+  high enough to launch.
+
+Immediate launch priority:
+- Give every candidate_decision a unique global_rank in 1..N. global_rank=1 is
+  the candidate you want on the NEXT available worker across ALL modes; it is
+  authoritative whenever feasible. rank_in_mode remains the ordering within
+  exploit/rescue/explore, while mode_mixture remains the longer-horizon target.
+- Rank by expected NEW trusted Foldseek SU per FULL route worker-GPU-hour,
+  including generation plus canonical score conversion. This is not a
+  shortest-runtime contest: probability of strict success, structural novelty,
+  strict quality, diagnostic evidence, and information value on stalled targets
+  all matter.
+- When a low-cost Complexa or ProteinMPNN route is currently buying comparable or
+  better new SU/GPU-h with adequate quality, rank it ahead of a slower high-cost
+  route. When BindCraft is the only route with replicated current SU or strong
+  canonical-scored signal, it may correctly receive the top global ranks.
+- BindCraft Accepted/Rejected/native metrics are diagnostic evidence only. Use
+  chained canonical AF2 strict/SU outcomes for route value; do not mistake native
+  acceptance for official success or tiny AF2 child cost for total route cost.
+
+Candidate ranking:
+- Rank only candidate_ids present in the input pool.
+- Do not use target identity, target class, or unsupported family priors. If a cross_campaign_memory block is provided, treat it only as advisory historical experience conditioned on current evidence. No family is the expected winner for any target.
+- Direct-scored families can be ranked by direct recent SU/GPU-h. Diagnostic-only
+  families require chained credit or accepted-artifact/diagnostic evidence; do not
+  let recent AF2 score-conversion children make the generator look artificially
+  cheap.
+- canonical_score_conversion refilters are system scoring lanes, not LLM rescue/
+  explore budget. parent_model_refold is advisory only: it writes refold_* and
+  does not mint SU.
+- Do not describe de-novo candidates as parent-scaffold actions when
+  parent_result_id is null. Parent-bound rescue requires a concrete parent family
+  such as structure_refilter, proteinmpnn_redesign.
+- resource_class is an audit/tie-break label, not a backend timeout promise.
+  extended is allowed only when the candidate itself is extended-cost or the
+  hypothesis is supported by at least one routed/refiltered descendant.
+
+Output contract:
+- candidate_decisions must include candidate_id, mode, rank_in_mode, global_rank,
+  resource_class, what, why, evidence_refs, expected_signal, stop_or_downgrade_if,
+  and reasoning_trace.
+- reasoning_trace must include observed_signal, inference, action_implication.
+  Keep each field short; this is an audit trace, not hidden chain-of-thought.
+- Cite provided evidence/hypothesis IDs only.
+- CRITICAL duplicate-candidate rule: each candidate_id must appear in AT MOST ONE mode across the entire candidate_decisions list. If a candidate fits two modes, choose the dominant role. Duplicate IDs
+  across modes cause schema_fail.
+- If allocation cannot be grounded, set abstain=true with fail_reason.
+- Confidence: 0.45-0.55 for sparse/noisy evidence; use
+  0.65-0.75 when direct evidence supports the mixture;
+  >0.75 only when multiple direct signals agree.
+- Output JSON only. No prose outside the JSON object.
+
+
+---- user ----
+TLDR (units: pLDDT 0-100; iPAE/ipTM/ipsae/min_ipae 0-1; binder_pLDDT_avg 0-1; interface_dG REU; buried_sasa A^2; hotspot_rmsd A; boltzgen pae raw): state=rescue_rich | run_SU=2(+0 recent) | raw_strict=2 | basin=top_bin_share(live,all)=0.50 COLLAPSE>=0.5:diversify | route_feedback_SU/completed-worker-GPUh_recent=0 | diagnostic_driver_tldr=none | remaining_wall_h=28.0
+MIXTURE GUIDANCE: state=rescue_rich: recommended rescue >= 0.40; explore <= 0.30. Emit a mode_mixture summing to 1.0 that reflects the evidence; these ranges are guidance, while downstream safety clamps enforce hard floors/ceilings. NOTE: under mode-collapse (top_bin_share >= 0.50) the explore ceiling is automatically RAISED beyond the figure above, so REQUEST MORE explore in that case to break the collapse — the clamp will permit it.
+{"candidates": [{"baseline_result_id": null, "candidate_id": "cand_hyp_rr1_001", "capability_role": "seq_redesign", "config_delta": {}, "downstream_route_plan": [], "estimated_cost_class": "low", "evidence_refs": ["tick_012"], "expected_signal": "proteinmpnn_redesign expected to improve iPAE", "feasibility_ok": true, "feasibility_reasons": [], "hypothesis_ids": ["hyp_rr1"], "method_family": "proteinmpnn_redesign", "operator_id": "proteinmpnn_redesign_default", "outputs_diagnostic_only": true, "parent_result_id": "tick_012", "refilter_role": null, "requires_parent_pdb": true, "score_credit_basis": "requires_canonical_score_conversion"}], "evidence": {"axis_stats": {"binder_scRMSD": {"calibration_status": "provisional", "fail_count": 2, "median_deficit": 0.2, "median_raw": null, "n": 30, "near_pass_count": 8, "pass_count": 20, "source_families": {}}, "iPAE": {"calibration_status": "provisional", "fail_count": 11, "median_deficit": 0.25, "median_raw": null, "n": 30, "near_pass_count": 15, "pass_count": 4, "source_families": {}}, "pLDDT": {"calibration_status": "provisional", "fail_count": 5, "median_deficit": 0.5, "median_raw": null, "n": 30, "near_pass_count": 5, "pass_count": 20, "source_families": {}}}, "completed_children": 30, "dedup_trust": "ok", "diagnosis_outcomes": {}, "diagnostic_alt_model_scores": {}, "diagnostic_axis_stats": {}, "diagnostic_chain_backlog": {}, "diagnostic_driver_tldr": "none", "dispatch_realization": {}, "diversity_summary": {"interpretation": "TM0.6 collapse values are live-control signals; optional TM0.8/sequence values are auxiliary panel/ablation signals; live objective is TM0.6 SU; report TM0.5/0.6/0.8 post-hoc", "live_structural_novelty": "Foldseek_SU_TM0.6", "recent_all_scored_duplicate_fraction": 0.45, "recent_all_scored_live_top_bin_share": 0.5, "strict_duplicate_collapse_signal": false, "tm08_scope": "disabled", "tm08_status": "disabled"}, "elapsed_wall_h": 20.0, "examples": [{"axis_deficits": {"iPAE": 0.0342, "pLDDT": 0.0}, "axis_values": {"iPAE": 0.26, "pLDDT": 91.0}, "config_delta": {}, "dominant_deficit_axis": null, "family": "complexa_beam", "joint_pattern_label": null, "parent_id": null, "result_id": "r_betv_010"}], "execution_realization": {}, "exemplars": [], "joint_patterns": [{"axes": ["pLDDT", "iPAE"], "count": 4, "pattern": "both_pass"}, {"axes": ["pLDDT", "iPAE"], "count": 3, "pattern": "both_fail"}, {"axes": ["pLDDT", "iPAE"], "count": 13, "pattern": "A_pass_B_fail"}, {"axes": ["pLDDT", "iPAE"], "count": 0, "pattern": "A_fail_B_pass"}, {"axes": ["pLDDT", "iPAE"], "count": 5, "pattern": "both_near_pass"}], "method_health": {"complexa_beam": {"accepted_artifacts": 22, "attempts": 22, "chained_strict_yield_su": 0, "chained_strict_yield_su_recent": 0, "chained_su_per_gpu_h": null, "chained_su_per_gpu_h_recent": null, "completions": 22, "cumulative_gpu_h": 0.0, "family": "complexa_beam", "near_miss_yield": 18, "near_miss_yield_recent": 0, "nonzero_exits": 0, "raw_artifacts": 22, "routed_proxy": null, "score_files": 22, "strict_yield": 2, "strict_yield_su": 0, "su_per_gpu_h": null, "su_per_gpu_h_recent": null, "timeouts": 0}}, "metric_availability": {"complexa_beam": {"binder_scRMSD": true, "iPAE": true, "pLDDT": true}}, "near_miss_count": 18, "objective_summary": {"charged_gpu_audit": {"charged_gpu_h_scope": "unavailable", "role": "audit_only_not_decision_objective"}, "completed_worker_gpu_h_total": 70.0, "completed_worker_gpu_h_window": 10.0, "headline_objective": "live_SU_TM0.6_per_worker_wall_GPUh", "live_su_tm06": 2, "live_su_tm06_recent_delta": 0, "raw_strict_count": 2, "recent_su_per_completed_worker_gpu_h": 0.0}, "panel_ready_bins_covered": 2, "panel_ready_count": 2, "parent_artifact_result_count": 0, "parent_artifacts_available": false, "pending_children": 4, "pending_family_load": {}, "production_near_miss_ids": [], "production_panel_diversity_bins": {}, "production_panel_gap_reasons": [], "production_panel_selected_ids": [], "production_panel_status": "not_run", "recent_fallback_high": false, "recent_ticks_history": [], "recipes": [], "refilter_role_health": {}, "remaining_wall_h": 28.0, "route_values": [], "schema_version": "v7.3.3-reward-guard", "state_label": "rescue_rich", "strategy_feedback": [], "stuck_lineage_roots": [], "tick_id": "tick_012"}, "hypotheses": [{"claim": "iPAE is the dominant failure axis; MPNN interface redesign should rescue.", "contradiction_points": 0.0, "hypothesis_id": "hyp_rr1", "mode_affinity": {"exploit": 0.1, "explore": 0.1, "rescue": 0.8}, "predicted_axes": ["iPAE"], "reasoning_trace": {"action_implication": "", "inference": "", "observed_signal": ""}, "recommended_action_families": ["proteinmpnn_redesign"], "status": "active", "support_points": 0.0}], "instructions": "Return JSON with mode_mixture (summing to 1.0; use mode_mixture_ranges as evidence guidance, not a hard cap) and candidate_decisions. Rank enough worthwhile candidates to cover selector_context.available_slots_now when feasible. Give every decision a unique contiguous global_rank in 1..N; global_rank=1 is the immediate cross-mode next-worker choice. Rank within each mode in 1..N where N is the count of decisions you give that mode. Each candidate_decision must include a short reasoning_trace (observed_signal, inference, action_implication). Skip candidates not worth launching this tick. selector_context is read-only: use recent_realized_modes as observational launch-history evidence. recent_realized_modes and mode_credit are observational history, not an instruction to repay stale quota before global_rank=1. Emit the desired evidence-driven mode_mixture as the longer-horizon policy; global_rank controls fresh immediate launches. selector_context.cost_admission lists families the controller has yield-DEFERRED and high-cost dispatch pressure hints. Treat yield_deferred_families as weak scientific routes unless fresh evidence says otherwise. Use selected_not_started and dispatch_deferred as execution pressure, and avoid duplicate proposals while equivalent work is pending. Do not reinterpret proposals that the Selector did not choose as blocked execution or scientific under-testing. If method_health is not clearly negative, one bounded ranked probe may be reasonable; if another route is already producing high new SU/GPU-h and diversity is healthy, prefer that efficient route instead.", "mode_mixture_ranges": "state=rescue_rich: recommended rescue >= 0.40; explore <= 0.30. Emit a mode_mixture summing to 1.0 that reflects the evidence; these ranges are guidance, while downstream safety clamps enforce hard floors/ceilings. NOTE: under mode-collapse (top_bin_share >= 0.50) the explore ceiling is automatically RAISED beyond the figure above, so REQUEST MORE explore in that case to break the collapse \u2014 the clamp will permit it.", "selector_context": {}}
+
+---- assistant reasoning ----
+Let me parse the situation.
+
+State: rescue_rich. run_SU=2, raw_strict=2, no recent SU. route_feedback recent = 0 SU/GPU-h. Diversity: top_bin_share 0.50 = collapse threshold (>=0.5 triggers diversify). Duplicate fraction 0.45. dry_since... recent SU delta 0. Remaining wall 28h.
+
+Only one candidate: cand_hyp_rr1_001 — proteinmpnn_redesign, parent-bound rescue on tick_012 parent, requires parent PDB, low cost, diagnostic-only outputs, requires canonical score conversion. Hypothesis hyp_rr1: iPAE dominant failure axis (11 fails, 15 near-pass, 4 pass; joint patterns show 13 A_pass_B_fail = pLDDT pass, iPAE fail). This supports MPNN interface redesign rescue.
+
+Mode mixture: state rescue_rich recommends rescue >= 0.40, explore <= 0.30. But only one candidate exists (rescue). Collapse at 0.50 raises explore ceiling — but no explore candidates in pool. I can only rank candidates present. So mixture should reflect: rescue dominant. But mixture should be coherent with candidate decisions — only one rescue candidate launchable. I could set rescue 0.55, explore 0.30, exploit 0.15? But no candidates for those modes. The mixture is longer-horizon policy. Given collapse, request more explore: e.g., rescue 0.45, explore 0.40, exploit 0.15. Hmm, but guidance says explore <= 0.30 unless collapse — collapse present (top_bin_share 0.50 >= 0.5), so explore can be raised. But no explore candidates in pool; mixture is policy target. I'll emit rescue 0.50, explore 0.35, exploit 0.15. Sum = 1.0.
+
+Actually with only one candidate and it being rescue, keep rescue mass nontrivial: rank-1 candidate is rescue, so rescue mass should be largest. rescue 0.50, explore 0.30, exploit 0.20? Exploit has no current SU/GPU-h (recent 0). Let me do rescue 0.55, explore 0.30, exploit 0.15. Collapse raises explore ceiling — 0.30 is fine, or push to 0.35. I'll do rescue 0.50, explore 0.35, exploit 0.15.
+
+Candidate decision: mode=rescue, rank_in_mode=1, global_rank=1, resource_class=standard (low cost). what: parent-bound proteinmpnn redesign on tick_012 parent to rescue iPAE. why: iPAE dominant failure axis (11 fail, 15 near-pass, 13 pLDDT-pass/iPAE-fail joint pattern), hyp_rr1. expected_signal: improved iPAE / near-pass conversion after canonical score conversion. stop_or_downgrade_if: no iPAE improvement or duplicate-heavy output without new strict SU after bounded confirmation.
+
+Confidence: sparse evidence, single family, provisional calibration — 0.55.
+
+Note: parent_result_id = tick_012, requires_parent_pdb true, parent_artifacts_available false? "parent_artifact_result_count": 0, "parent_artifacts_available": false. Hmm — candidate requires parent PDB but parent artifacts not available? The candidate's parent_result_id is tick_012 (a tick, not a result). Feasibility_ok is true though. I'll note in stop_or downgrade if parent PDB unavailable. But feasibility_ok=true, so proceed.
+
+Also note outputs_diagnostic_only: true, score_credit_basis requires_canonical_score_conversion — expected signal is diagnostic improvement, SU minting via conversion lane.
+
+Emit JSON.
+
+---- assistant ----
+```json
+{
+  "tick_id": "tick_012",
+  "abstain": false,
+  "confidence": 0.55,
+  "mode_mixture": {
+    "exploit": 0.15,
+    "rescue": 0.50,
+    "explore": 0.35
+  },
+  "mixture_rationale": "State is rescue_rich with 0 recent SU per completed worker-GPU-hour and iPAE identified as the dominant failure axis (11 fail, 15 near-pass, 13 pLDDT-pass/iPAE-fail joint pattern), so rescue carries the top mass and the only launchable candidate is a parent-bound rescue. Live top_bin_share=0.50 meets the collapse threshold, so explore is pushed above the nominal 0.30 ceiling to break the collapse; no explore candidates exist in this pool, so that mass is a longer-horizon policy signal for the Selector/Planner, not a claim about current candidates. Exploit is minimal: recent route SU/GPU-h is 0 and route_values is empty, so there is no current exploit route earning protection.",
+  "candidate_decisions": [
+    {
+      "candidate_id": "cand_hyp_rr1_001",
+      "mode": "rescue",
+      "rank_in_mode": 1,
+      "global_rank": 1,
+      "resource_class": "standard",
+      "what": "Parent-bound proteinmpnn_redesign (proteinmpnn_redesign_default) on parent tick_012 to redesign the binder interface, targeting the iPAE deficit; outputs are diagnostic-only and require downstream canonical score conversion for any SU credit.",
+      "why": "hyp_rr1 is directly supported by axis_stats: iPAE is the dominant failure axis (fail_count=11, near_pass_count=15, pass_count=4) while pLDDT is largely healthy (pass_count=20), and joint_patterns show 13/30 children pass pLDDT but fail iPAE with 5 more both_near_pass. This is exactly the profile where interface sequence redesign on a concrete parent is the indicated L2 rescue lever. State is rescue_rich with 0 recent SU/GPU-h, so diagnostic evidence is primary ranking evidence this tick.",
+      "evidence_refs": ["tick_012", "hyp_rr1", "r_betv_010"],
+      "expected_signal": "Reduction in iPAE deficit on redesigned children (shift of the 13 pLDDT-pass/iPAE-fail and 5 both_near-pass children toward iPAE pass), with canonical pLDDT/scRMSD preserved; any SU only via chained canonical score conversion, not the redesign step itself.",
+      "stop_or_downgrade_if": "iPAE deficit does not improve (median_deficit stays near 0.25) or canonical pLDDT/iPAE degrade on redesigned children after a bounded confirmation batch; also downgrade if the parent PDB for tick_012 cannot be materialized, or if redesigned children are duplicate-heavy (recent duplicate fraction already 0.45) without producing new strict-quality structures.",
+      "reasoning_trace": {
+        "observed_signal": "iPAE fail_count=11 with 15 near-pass vs pLDDT pass_count=20; 13/30 children pass pLDDT but fail iPAE; recent SU/GPU-h = 0; top_bin_share=0.50 (collapse threshold).",
+        "inference": "The binding-interface geometry/sequence, not overall fold quality, is the blocker; MPNN interface redesign on the existing parent is the matched L2 rescue lever per hyp_rr1.",
+        "action_implication": "Launch cand_hyp_rr1_001 as the next-worker choice (global_rank=1) as a bounded rescue probe; simultaneously request explore mass in the mixture to break the top-bin collapse, since this single rescue cannot address diversity."
+      }
+    }
+  ],
+  "notes": "Only one candidate was present in the pool, so global ranks cover N=1. The elevated explore mass (0.35) reflects the live top_bin_share=0.50 collapse signal and is a policy request for future candidate generation, not a claim that explore candidates exist now. complexa_beam method_health shows 22 accepted artifacts, 18 near-misses, and 0 chained SU; it is not clearly negative, but with no route_values rows and 0 recent SU/GPU-h there is no exploit route to protect. Calibration of all axes is provisional; iPAE improvements should be verified against canonical chained scoring rather than taken as SU."
+}
+```

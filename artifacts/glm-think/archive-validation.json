@@ -1,0 +1,51 @@
+{
+  "errors": [],
+  "lineage_references": {
+    "ambiguous": 0,
+    "candidate_only": 260,
+    "external_or_unknown": 0,
+    "external_or_unknown_examples": [],
+    "result_only": 164,
+    "total": 424
+  },
+  "ok": true,
+  "provenance_files": [
+    "run_provenance.json"
+  ],
+  "record_counts": {
+    "action_candidates.jsonl": 411,
+    "dispatch_records.jsonl": 62,
+    "evidence_summaries.jsonl": 55,
+    "hypothesis_cards.jsonl": 272,
+    "launch_decisions.jsonl": 68,
+    "llm_call_records.jsonl": 158,
+    "metric_calibrations.jsonl": 0,
+    "panel_selections.jsonl": 55,
+    "result_records.jsonl": 260,
+    "route_records.jsonl": 0,
+    "runtime_buckets.jsonl": 0,
+    "supervisor_decisions.jsonl": 55,
+    "target_constraints.jsonl": 0
+  },
+  "schema_version": "trex.archive-validation.v1",
+  "skipped_records": {},
+  "target_ids": [
+    "32_PDL1_ALPHA_REPACK"
+  ],
+  "typed_record_counts": {
+    "action_candidates.jsonl": 411,
+    "dispatch_records.jsonl": 62,
+    "evidence_summaries.jsonl": 55,
+    "hypothesis_cards.jsonl": 272,
+    "launch_decisions.jsonl": 68,
+    "llm_call_records.jsonl": 158,
+    "metric_calibrations.jsonl": 0,
+    "panel_selections.jsonl": 55,
+    "result_records.jsonl": 260,
+    "route_records.jsonl": 0,
+    "runtime_buckets.jsonl": 0,
+    "supervisor_decisions.jsonl": 55,
+    "target_constraints.jsonl": 0
+  },
+  "warnings": []
+}

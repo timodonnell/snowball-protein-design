@@ -1,0 +1,45 @@
+{
+  "binder_chain": "B",
+  "input_pdb": "/work/results/glm-think/campaign/worker_outputs/r008_proteinmpnn_redesign_cand_v7r008_hyp_0008_00_001/threaded_pdbs/job_0_n_186_id_64_beam_orig1_bm3-s0to50br1-s50to100br2-s100to150br2-s150to200br1_seq026.pdb",
+  "metrics": {
+    "binder_scrmsd_ca": 0.9953196048736572,
+    "i_pae": 0.24506120383739471,
+    "iptm": null,
+    "model_names": [
+      "model_1_multimer_v3"
+    ],
+    "plddt": 0.9228092357516289,
+    "predicted_pdb": "/work/results/glm-think/campaign/worker_outputs/r011_structure_refilter_chain_v7r008_proteinmpnn_redesign_to_structure_refilter_083/af2_refilter_prediction.pdb",
+    "raw_losses": {
+      "avg_ipsae": 0.2727315425872803,
+      "avg_ipsae_10": 0.27248701453208923,
+      "con": 1.3046239614486694,
+      "dgram_cce": 137.2234649658203,
+      "exp_res": 0.0007175709470175207,
+      "fape": 24.259517669677734,
+      "i_con": 2.566555976867676,
+      "i_pae": 0.24506120383739471,
+      "max_ipsae": 0.3198401629924774,
+      "max_ipsae_10": 0.31935110688209534,
+      "min_ipae": 0.09672557562589645,
+      "min_ipsae": 0.22562290728092194,
+      "min_ipsae_10": 0.22562290728092194,
+      "pae": 0.17725910246372223,
+      "plddt": 0.07719076424837112,
+      "rmsd": 0.9953196048736572,
+      "seq_ent": 2.7129404544830322
+    }
+  },
+  "prediction_chains": {
+    "binder_chain": "B",
+    "sequence_sha256": {
+      "A": "724daac675f1800706ad01ee6494b9cf91a87f2ef6de7911b26ecf2758dd1ae9",
+      "B": "7f7b8e2aae96ed0ba6ab820cab29ec9ee89b8854ab3e4508063dc4a629538f64"
+    },
+    "target_chains": [
+      "A"
+    ]
+  },
+  "schema_version": "v5_af2_refilter_result.v1",
+  "target_chain": "A"
+}

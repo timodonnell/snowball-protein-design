@@ -1,0 +1,640 @@
+{
+  "wire_archive": "artifacts/glm-think/wire",
+  "n_transcripts": 90,
+  "counts": {
+    "fixed": 27,
+    "campaign": 63
+  },
+  "transcripts": [
+    {
+      "phase": "fixed",
+      "transcript": "fixed/001-planner.txt",
+      "wire_record": "1790388789625481033_09e116e8-24a6-4768-88d1-1677825ecffe.json",
+      "call_id": "09e116e8-24a6-4768-88d1-1677825ecffe",
+      "state": "completed"
+    },
+    {
+      "phase": "fixed",
+      "transcript": "fixed/002-planner.txt",
+      "wire_record": "1790388802834829045_0829a711-29dd-46f2-b6d2-1e5e7440875c.json",
+      "call_id": "0829a711-29dd-46f2-b6d2-1e5e7440875c",
+      "state": "completed"
+    },
+    {
+      "phase": "fixed",
+      "transcript": "fixed/003-planner.txt",
+      "wire_record": "1790388816590371233_e28e7afe-2c7f-486b-863a-f5ea6c8a6545.json",
+      "call_id": "e28e7afe-2c7f-486b-863a-f5ea6c8a6545",
+      "state": "completed"
+    },
+    {
+      "phase": "fixed",
+      "transcript": "fixed/004-planner.txt",
+      "wire_record": "1790388831943295042_24313b02-dfc4-4f73-a365-41a553a47f70.json",
+      "call_id": "24313b02-dfc4-4f73-a365-41a553a47f70",
+      "state": "completed"
+    },
+    {
+      "phase": "fixed",
+      "transcript": "fixed/005-planner.txt",
+      "wire_record": "1790388843555521498_10de3d4a-0bcd-480d-90e5-4f38fb13f04e.json",
+      "call_id": "10de3d4a-0bcd-480d-90e5-4f38fb13f04e",
+      "state": "completed"
+    },
+    {
+      "phase": "fixed",
+      "transcript": "fixed/006-planner.txt",
+      "wire_record": "1790388860455656072_58590a96-721d-4a1a-b59d-d2fdb2003a63.json",
+      "call_id": "58590a96-721d-4a1a-b59d-d2fdb2003a63",
+      "state": "completed"
+    },
+    {
+      "phase": "fixed",
+      "transcript": "fixed/007-planner.txt",
+      "wire_record": "1790388872833149576_4f308a39-8096-44a2-b677-7d71bcde4733.json",
+      "call_id": "4f308a39-8096-44a2-b677-7d71bcde4733",
+      "state": "completed"
+    },
+    {
+      "phase": "fixed",
+      "transcript": "fixed/008-planner.txt",
+      "wire_record": "1790388886761506360_7853f8eb-27db-4768-875f-ca61646b4c59.json",
+      "call_id": "7853f8eb-27db-4768-875f-ca61646b4c59",
+      "state": "completed"
+    },
+    {
+      "phase": "fixed",
+      "transcript": "fixed/009-planner.txt",
+      "wire_record": "1790388902433474652_aa4926d2-d51c-46f0-a4c5-9f5f8a92fda2.json",
+      "call_id": "aa4926d2-d51c-46f0-a4c5-9f5f8a92fda2",
+      "state": "completed"
+    },
+    {
+      "phase": "fixed",
+      "transcript": "fixed/010-planner.txt",
+      "wire_record": "1790388914185401102_d981b63d-d336-42bb-961a-f53c50a78bcd.json",
+      "call_id": "d981b63d-d336-42bb-961a-f53c50a78bcd",
+      "state": "completed"
+    },
+    {
+      "phase": "fixed",
+      "transcript": "fixed/011-planner.txt",
+      "wire_record": "1790388929024012897_8b5f6d95-b3e8-4371-a976-05ec23712573.json",
+      "call_id": "8b5f6d95-b3e8-4371-a976-05ec23712573",
+      "state": "completed"
+    },
+    {
+      "phase": "fixed",
+      "transcript": "fixed/012-planner.txt",
+      "wire_record": "1790388945361493242_ac0920ca-db29-4b0b-bdb6-bc0587ef3c93.json",
+      "call_id": "ac0920ca-db29-4b0b-bdb6-bc0587ef3c93",
+      "state": "completed"
+    },
+    {
+      "phase": "fixed",
+      "transcript": "fixed/013-planner.txt",
+      "wire_record": "1790388962638217737_333f62e8-84a3-46d0-be91-e81582072063.json",
+      "call_id": "333f62e8-84a3-46d0-be91-e81582072063",
+      "state": "completed"
+    },
+    {
+      "phase": "fixed",
+      "transcript": "fixed/014-planner.txt",
+      "wire_record": "1790388976643343116_69b4a174-3879-4c93-b2a2-e73f1045ebde.json",
+      "call_id": "69b4a174-3879-4c93-b2a2-e73f1045ebde",
+      "state": "completed"
+    },
+    {
+      "phase": "fixed",
+      "transcript": "fixed/015-planner.txt",
+      "wire_record": "1790388987571999783_8ca3ae82-fc19-40f3-b4f1-6a2c611a2b1b.json",
+      "call_id": "8ca3ae82-fc19-40f3-b4f1-6a2c611a2b1b",
+      "state": "completed"
+    },
+    {
+      "phase": "fixed",
+      "transcript": "fixed/016-supervisor.txt",
+      "wire_record": "1790389007934860339_54625437-75fe-4f35-ad98-6cf9b7be87e5.json",
+      "call_id": "54625437-75fe-4f35-ad98-6cf9b7be87e5",
+      "state": "completed"
+    },
+    {
+      "phase": "fixed",
+      "transcript": "fixed/017-supervisor.txt",
+      "wire_record": "1790389015008846318_972dc135-1b4b-4fa5-bebe-357fa461e21e.json",
+      "call_id": "972dc135-1b4b-4fa5-bebe-357fa461e21e",
+      "state": "completed"
+    },
+    {
+      "phase": "fixed",
+      "transcript": "fixed/018-supervisor.txt",
+      "wire_record": "1790389022507655233_b5dce43c-5b09-41b2-9f08-0f585a2ae0c8.json",
+      "call_id": "b5dce43c-5b09-41b2-9f08-0f585a2ae0c8",
+      "state": "completed"
+    },
+    {
+      "phase": "fixed",
+      "transcript": "fixed/019-supervisor.txt",
+      "wire_record": "1790389031065826573_8fd7f75e-2cd0-4edc-92be-1a9460e8e462.json",
+      "call_id": "8fd7f75e-2cd0-4edc-92be-1a9460e8e462",
+      "state": "completed"
+    },
+    {
+      "phase": "fixed",
+      "transcript": "fixed/020-supervisor.txt",
+      "wire_record": "1790389035932588661_e897bdc5-22b7-4982-a095-9986d969688e.json",
+      "call_id": "e897bdc5-22b7-4982-a095-9986d969688e",
+      "state": "completed"
+    },
+    {
+      "phase": "fixed",
+      "transcript": "fixed/021-supervisor.txt",
+      "wire_record": "1790389042601448477_05d4fcdd-8759-4481-ab07-845038f0b747.json",
+      "call_id": "05d4fcdd-8759-4481-ab07-845038f0b747",
+      "state": "completed"
+    },
+    {
+      "phase": "fixed",
+      "transcript": "fixed/022-supervisor.txt",
+      "wire_record": "1790389047864963142_17f517ee-deca-42fa-bd40-c2cbdb452325.json",
+      "call_id": "17f517ee-deca-42fa-bd40-c2cbdb452325",
+      "state": "completed"
+    },
+    {
+      "phase": "fixed",
+      "transcript": "fixed/023-supervisor.txt",
+      "wire_record": "1790389055063190674_d0e910b4-93c2-4cd9-afaf-3c6ffba29ac7.json",
+      "call_id": "d0e910b4-93c2-4cd9-afaf-3c6ffba29ac7",
+      "state": "completed"
+    },
+    {
+      "phase": "fixed",
+      "transcript": "fixed/024-supervisor.txt",
+      "wire_record": "1790389059158695552_3730ed22-9930-467a-87f0-c039bbc8ca96.json",
+      "call_id": "3730ed22-9930-467a-87f0-c039bbc8ca96",
+      "state": "completed"
+    },
+    {
+      "phase": "fixed",
+      "transcript": "fixed/025-supervisor.txt",
+      "wire_record": "1790389066442556898_fecc473f-cc05-45d8-9fc0-0f035902eb0f.json",
+      "call_id": "fecc473f-cc05-45d8-9fc0-0f035902eb0f",
+      "state": "completed"
+    },
+    {
+      "phase": "fixed",
+      "transcript": "fixed/026-supervisor.txt",
+      "wire_record": "1790389074530962682_fa8133b6-172c-4de0-b966-3ec310799377.json",
+      "call_id": "fa8133b6-172c-4de0-b966-3ec310799377",
+      "state": "completed"
+    },
+    {
+      "phase": "fixed",
+      "transcript": "fixed/027-supervisor.txt",
+      "wire_record": "1790389081605260863_61fe4e26-6233-4d45-bd7d-0c1303583e1d.json",
+      "call_id": "61fe4e26-6233-4d45-bd7d-0c1303583e1d",
+      "state": "completed"
+    },
+    {
+      "phase": "campaign",
+      "transcript": "campaign/001-planner.txt",
+      "wire_record": "1790389117123284597_b3764957-0dc5-4b20-9de3-0f86b623c274.json",
+      "call_id": "b3764957-0dc5-4b20-9de3-0f86b623c274",
+      "state": "completed"
+    },
+    {
+      "phase": "campaign",
+      "transcript": "campaign/002-supervisor.txt",
+      "wire_record": "1790389125047416300_ebf6a752-f245-42d3-81fd-329258ec7e90.json",
+      "call_id": "ebf6a752-f245-42d3-81fd-329258ec7e90",
+      "state": "completed"
+    },
+    {
+      "phase": "campaign",
+      "transcript": "campaign/003-planner.txt",
+      "wire_record": "1790389133929142196_690f49a3-694f-47ee-b4f6-5f5f8ad91273.json",
+      "call_id": "690f49a3-694f-47ee-b4f6-5f5f8ad91273",
+      "state": "completed"
+    },
+    {
+      "phase": "campaign",
+      "transcript": "campaign/004-supervisor.txt",
+      "wire_record": "1790389141664950332_573d479e-4d88-4a0e-94ad-713e4235e15c.json",
+      "call_id": "573d479e-4d88-4a0e-94ad-713e4235e15c",
+      "state": "completed"
+    },
+    {
+      "phase": "campaign",
+      "transcript": "campaign/005-planner.txt",
+      "wire_record": "1790389769261303133_08e831b1-3c82-4090-b261-0d3c6670bb6e.json",
+      "call_id": "08e831b1-3c82-4090-b261-0d3c6670bb6e",
+      "state": "completed"
+    },
+    {
+      "phase": "campaign",
+      "transcript": "campaign/006-supervisor.txt",
+      "wire_record": "1790389782725407216_504374db-db3b-4415-a91d-fd14c93891d1.json",
+      "call_id": "504374db-db3b-4415-a91d-fd14c93891d1",
+      "state": "completed"
+    },
+    {
+      "phase": "campaign",
+      "transcript": "campaign/007-planner.txt",
+      "wire_record": "1790389817715292049_6e93c839-e871-436d-8400-576cbaa0db93.json",
+      "call_id": "6e93c839-e871-436d-8400-576cbaa0db93",
+      "state": "completed"
+    },
+    {
+      "phase": "campaign",
+      "transcript": "campaign/008-supervisor.txt",
+      "wire_record": "1790389841537062191_2ff8cb27-409c-400f-ae81-e44bed1d157d.json",
+      "call_id": "2ff8cb27-409c-400f-ae81-e44bed1d157d",
+      "state": "completed"
+    },
+    {
+      "phase": "campaign",
+      "transcript": "campaign/009-planner.txt",
+      "wire_record": "1790389998021160483_0af5f3b5-c9c6-46c5-841b-fac8fb92f41d.json",
+      "call_id": "0af5f3b5-c9c6-46c5-841b-fac8fb92f41d",
+      "state": "completed"
+    },
+    {
+      "phase": "campaign",
+      "transcript": "campaign/010-supervisor.txt",
+      "wire_record": "1790390020327682458_f45b90ef-7405-420c-b519-f95a27c16bae.json",
+      "call_id": "f45b90ef-7405-420c-b519-f95a27c16bae",
+      "state": "completed"
+    },
+    {
+      "phase": "campaign",
+      "transcript": "campaign/011-planner.txt",
+      "wire_record": "1790390272428409899_1f322e8c-2877-4f80-a1f5-6fe99908ff5e.json",
+      "call_id": "1f322e8c-2877-4f80-a1f5-6fe99908ff5e",
+      "state": "completed"
+    },
+    {
+      "phase": "campaign",
+      "transcript": "campaign/012-supervisor.txt",
+      "wire_record": "1790390288897371069_71a95a16-04b5-4c59-a71a-ef65da583944.json",
+      "call_id": "71a95a16-04b5-4c59-a71a-ef65da583944",
+      "state": "completed"
+    },
+    {
+      "phase": "campaign",
+      "transcript": "campaign/013-planner.txt",
+      "wire_record": "1790390360609560376_04c62b95-74ec-4588-98ac-1eca0d0cf00c.json",
+      "call_id": "04c62b95-74ec-4588-98ac-1eca0d0cf00c",
+      "state": "completed"
+    },
+    {
+      "phase": "campaign",
+      "transcript": "campaign/014-supervisor.txt",
+      "wire_record": "1790390386484765985_328cd034-e42e-4305-ac4e-586860ec3f1a.json",
+      "call_id": "328cd034-e42e-4305-ac4e-586860ec3f1a",
+      "state": "completed"
+    },
+    {
+      "phase": "campaign",
+      "transcript": "campaign/015-planner.txt",
+      "wire_record": "1790390994627745073_650aa5b8-dda7-4401-8f0f-4ad6815c0416.json",
+      "call_id": "650aa5b8-dda7-4401-8f0f-4ad6815c0416",
+      "state": "completed"
+    },
+    {
+      "phase": "campaign",
+      "transcript": "campaign/016-supervisor.txt",
+      "wire_record": "1790391013747408576_491310b3-6983-4b49-9a42-e1c8d1fdf27d.json",
+      "call_id": "491310b3-6983-4b49-9a42-e1c8d1fdf27d",
+      "state": "completed"
+    },
+    {
+      "phase": "campaign",
+      "transcript": "campaign/017-planner.txt",
+      "wire_record": "1790391238436323028_9572df14-5fa0-4b2a-ae6a-e4ca1987512c.json",
+      "call_id": "9572df14-5fa0-4b2a-ae6a-e4ca1987512c",
+      "state": "completed"
+    },
+    {
+      "phase": "campaign",
+      "transcript": "campaign/018-planner.txt",
+      "wire_record": "1790391282941757326_d15c3715-2442-4db0-b7f7-243a684ccf9a.json",
+      "call_id": "d15c3715-2442-4db0-b7f7-243a684ccf9a",
+      "state": "completed"
+    },
+    {
+      "phase": "campaign",
+      "transcript": "campaign/019-planner.txt",
+      "wire_record": "1790391329149299255_000fee24-9f93-4cc4-a596-0b18a8ec9fb5.json",
+      "call_id": "000fee24-9f93-4cc4-a596-0b18a8ec9fb5",
+      "state": "completed"
+    },
+    {
+      "phase": "campaign",
+      "transcript": "campaign/020-planner.txt",
+      "wire_record": "1790391369229743296_e1cd0390-10c0-45c4-b4eb-83d244f20f49.json",
+      "call_id": "e1cd0390-10c0-45c4-b4eb-83d244f20f49",
+      "state": "completed"
+    },
+    {
+      "phase": "campaign",
+      "transcript": "campaign/021-planner.txt",
+      "wire_record": "1790391412215912064_e732d7b8-78bc-431c-a2f5-053e8b42c6f4.json",
+      "call_id": "e732d7b8-78bc-431c-a2f5-053e8b42c6f4",
+      "state": "completed"
+    },
+    {
+      "phase": "campaign",
+      "transcript": "campaign/022-planner.txt",
+      "wire_record": "1790391432422008560_463323d0-c949-4e05-aa5d-59a14c58e6c3.json",
+      "call_id": "463323d0-c949-4e05-aa5d-59a14c58e6c3",
+      "state": "completed"
+    },
+    {
+      "phase": "campaign",
+      "transcript": "campaign/023-planner.txt",
+      "wire_record": "1790391479413277071_9a412194-e90f-4d7c-9f7a-d639aeb66f94.json",
+      "call_id": "9a412194-e90f-4d7c-9f7a-d639aeb66f94",
+      "state": "completed"
+    },
+    {
+      "phase": "campaign",
+      "transcript": "campaign/024-planner.txt",
+      "wire_record": "1790391518936013140_79cd8901-bfaf-4b79-89c6-784dbfcff3bd.json",
+      "call_id": "79cd8901-bfaf-4b79-89c6-784dbfcff3bd",
+      "state": "completed"
+    },
+    {
+      "phase": "campaign",
+      "transcript": "campaign/025-planner.txt",
+      "wire_record": "1790391539221981015_ed504418-c511-4376-baf5-efb550a6e4d2.json",
+      "call_id": "ed504418-c511-4376-baf5-efb550a6e4d2",
+      "state": "completed"
+    },
+    {
+      "phase": "campaign",
+      "transcript": "campaign/026-planner.txt",
+      "wire_record": "1790391581827314850_53e246db-5dc4-4f38-9e60-a1321a3dbaf1.json",
+      "call_id": "53e246db-5dc4-4f38-9e60-a1321a3dbaf1",
+      "state": "completed"
+    },
+    {
+      "phase": "campaign",
+      "transcript": "campaign/027-planner.txt",
+      "wire_record": "1790391602753155560_d62885ff-2a04-499d-aa81-de7b15b77806.json",
+      "call_id": "d62885ff-2a04-499d-aa81-de7b15b77806",
+      "state": "completed"
+    },
+    {
+      "phase": "campaign",
+      "transcript": "campaign/028-planner.txt",
+      "wire_record": "1790391648672967695_75c19767-b869-4db3-8009-0c34eca4b399.json",
+      "call_id": "75c19767-b869-4db3-8009-0c34eca4b399",
+      "state": "completed"
+    },
+    {
+      "phase": "campaign",
+      "transcript": "campaign/029-planner.txt",
+      "wire_record": "1790391689418716245_f1db6ea1-a66d-4342-bbfa-1db51d0ea53e.json",
+      "call_id": "f1db6ea1-a66d-4342-bbfa-1db51d0ea53e",
+      "state": "completed"
+    },
+    {
+      "phase": "campaign",
+      "transcript": "campaign/030-planner.txt",
+      "wire_record": "1790391734481070374_62b68e4b-9b3a-4318-bde5-0ed65d0e5cb8.json",
+      "call_id": "62b68e4b-9b3a-4318-bde5-0ed65d0e5cb8",
+      "state": "completed"
+    },
+    {
+      "phase": "campaign",
+      "transcript": "campaign/031-planner.txt",
+      "wire_record": "1790391775832547371_85407b62-0cc9-473d-ac15-7d7f2a72f2da.json",
+      "call_id": "85407b62-0cc9-473d-ac15-7d7f2a72f2da",
+      "state": "completed"
+    },
+    {
+      "phase": "campaign",
+      "transcript": "campaign/032-planner.txt",
+      "wire_record": "1790391822038943108_9a31e283-b9a3-4855-8e06-cda5c21d3cf5.json",
+      "call_id": "9a31e283-b9a3-4855-8e06-cda5c21d3cf5",
+      "state": "completed"
+    },
+    {
+      "phase": "campaign",
+      "transcript": "campaign/033-planner.txt",
+      "wire_record": "1790391861284540315_7df24afd-683c-4a91-92f6-ecd0a94f2504.json",
+      "call_id": "7df24afd-683c-4a91-92f6-ecd0a94f2504",
+      "state": "completed"
+    },
+    {
+      "phase": "campaign",
+      "transcript": "campaign/034-planner.txt",
+      "wire_record": "1790391882312935265_ace58490-2505-4c4a-b360-645ca2f06d5e.json",
+      "call_id": "ace58490-2505-4c4a-b360-645ca2f06d5e",
+      "state": "completed"
+    },
+    {
+      "phase": "campaign",
+      "transcript": "campaign/035-planner.txt",
+      "wire_record": "1790391922012922489_7c501330-5513-4b08-b9b2-94410136d305.json",
+      "call_id": "7c501330-5513-4b08-b9b2-94410136d305",
+      "state": "completed"
+    },
+    {
+      "phase": "campaign",
+      "transcript": "campaign/036-planner.txt",
+      "wire_record": "1790391961761014763_c4f3192d-cacd-45d4-ab62-5526fd665e4e.json",
+      "call_id": "c4f3192d-cacd-45d4-ab62-5526fd665e4e",
+      "state": "completed"
+    },
+    {
+      "phase": "campaign",
+      "transcript": "campaign/037-planner.txt",
+      "wire_record": "1790392001030749784_6967dfa7-7f3a-4fef-add2-b0c617776055.json",
+      "call_id": "6967dfa7-7f3a-4fef-add2-b0c617776055",
+      "state": "completed"
+    },
+    {
+      "phase": "campaign",
+      "transcript": "campaign/038-planner.txt",
+      "wire_record": "1790392044770659565_0c2161a2-38ba-42f2-b974-bc91fc5e7b90.json",
+      "call_id": "0c2161a2-38ba-42f2-b974-bc91fc5e7b90",
+      "state": "completed"
+    },
+    {
+      "phase": "campaign",
+      "transcript": "campaign/039-planner.txt",
+      "wire_record": "1790392064124304923_2f90881b-a854-4c20-ab40-62fcd97e8586.json",
+      "call_id": "2f90881b-a854-4c20-ab40-62fcd97e8586",
+      "state": "completed"
+    },
+    {
+      "phase": "campaign",
+      "transcript": "campaign/040-planner.txt",
+      "wire_record": "1790392111837870897_14f01abe-ccd9-4886-aafc-1407426ed838.json",
+      "call_id": "14f01abe-ccd9-4886-aafc-1407426ed838",
+      "state": "completed"
+    },
+    {
+      "phase": "campaign",
+      "transcript": "campaign/041-planner.txt",
+      "wire_record": "1790392127094100362_ece4ed77-c965-445d-b587-ecb72aff2ede.json",
+      "call_id": "ece4ed77-c965-445d-b587-ecb72aff2ede",
+      "state": "completed"
+    },
+    {
+      "phase": "campaign",
+      "transcript": "campaign/042-planner.txt",
+      "wire_record": "1790392164085516248_0bcc38f9-94b2-4c28-8523-9e1759f12773.json",
+      "call_id": "0bcc38f9-94b2-4c28-8523-9e1759f12773",
+      "state": "completed"
+    },
+    {
+      "phase": "campaign",
+      "transcript": "campaign/043-planner.txt",
+      "wire_record": "1790392181507315317_5b53caf7-56f8-4169-a479-8c5499dc375b.json",
+      "call_id": "5b53caf7-56f8-4169-a479-8c5499dc375b",
+      "state": "completed"
+    },
+    {
+      "phase": "campaign",
+      "transcript": "campaign/044-planner.txt",
+      "wire_record": "1790392213989801645_3a507060-a7cf-4ce4-bc33-9a53dddeaf9c.json",
+      "call_id": "3a507060-a7cf-4ce4-bc33-9a53dddeaf9c",
+      "state": "completed"
+    },
+    {
+      "phase": "campaign",
+      "transcript": "campaign/045-planner.txt",
+      "wire_record": "1790392233366942019_87acbc12-6024-463b-9851-d2e993e9fac3.json",
+      "call_id": "87acbc12-6024-463b-9851-d2e993e9fac3",
+      "state": "completed"
+    },
+    {
+      "phase": "campaign",
+      "transcript": "campaign/046-planner.txt",
+      "wire_record": "1790392266129782888_714298f1-bf42-4af7-b682-45e04946e67b.json",
+      "call_id": "714298f1-bf42-4af7-b682-45e04946e67b",
+      "state": "completed"
+    },
+    {
+      "phase": "campaign",
+      "transcript": "campaign/047-planner.txt",
+      "wire_record": "1790392286125590517_7f9f742e-4ac8-404f-802e-339020c1b13a.json",
+      "call_id": "7f9f742e-4ac8-404f-802e-339020c1b13a",
+      "state": "completed"
+    },
+    {
+      "phase": "campaign",
+      "transcript": "campaign/048-planner.txt",
+      "wire_record": "1790392321949764960_1f94d794-214e-47f5-85b1-9fe289007edf.json",
+      "call_id": "1f94d794-214e-47f5-85b1-9fe289007edf",
+      "state": "completed"
+    },
+    {
+      "phase": "campaign",
+      "transcript": "campaign/049-planner.txt",
+      "wire_record": "1790392341854527647_8a38638b-dc93-4ffb-a205-f7d46f6d7224.json",
+      "call_id": "8a38638b-dc93-4ffb-a205-f7d46f6d7224",
+      "state": "completed"
+    },
+    {
+      "phase": "campaign",
+      "transcript": "campaign/050-planner.txt",
+      "wire_record": "1790392388883005586_a4f76e13-acbc-4c6d-a248-d5666a9e9d68.json",
+      "call_id": "a4f76e13-acbc-4c6d-a248-d5666a9e9d68",
+      "state": "completed"
+    },
+    {
+      "phase": "campaign",
+      "transcript": "campaign/051-planner.txt",
+      "wire_record": "1790392411954560730_bad10b3f-5e62-42ff-bda7-5ba30470ac3d.json",
+      "call_id": "bad10b3f-5e62-42ff-bda7-5ba30470ac3d",
+      "state": "completed"
+    },
+    {
+      "phase": "campaign",
+      "transcript": "campaign/052-planner.txt",
+      "wire_record": "1790392446210510071_b14f779d-e1fb-4726-94ae-d6e300dc2151.json",
+      "call_id": "b14f779d-e1fb-4726-94ae-d6e300dc2151",
+      "state": "completed"
+    },
+    {
+      "phase": "campaign",
+      "transcript": "campaign/053-planner.txt",
+      "wire_record": "1790392484905133617_a4abcf88-f733-4085-8fcd-fbdb5fd8d537.json",
+      "call_id": "a4abcf88-f733-4085-8fcd-fbdb5fd8d537",
+      "state": "completed"
+    },
+    {
+      "phase": "campaign",
+      "transcript": "campaign/054-planner.txt",
+      "wire_record": "1790392504907494047_a76db2a1-a730-4839-836a-99eacd6de8c0.json",
+      "call_id": "a76db2a1-a730-4839-836a-99eacd6de8c0",
+      "state": "completed"
+    },
+    {
+      "phase": "campaign",
+      "transcript": "campaign/055-planner.txt",
+      "wire_record": "1790392543476199472_7c8f65d7-eaa1-45c8-bd4d-520e37a907e1.json",
+      "call_id": "7c8f65d7-eaa1-45c8-bd4d-520e37a907e1",
+      "state": "completed"
+    },
+    {
+      "phase": "campaign",
+      "transcript": "campaign/056-planner.txt",
+      "wire_record": "1790392561602922987_a56247ff-1ed7-4160-8675-0c0bc9b40557.json",
+      "call_id": "a56247ff-1ed7-4160-8675-0c0bc9b40557",
+      "state": "completed"
+    },
+    {
+      "phase": "campaign",
+      "transcript": "campaign/057-planner.txt",
+      "wire_record": "1790392601467987988_1e5b8bea-d8cd-4411-a456-3c31f12ed734.json",
+      "call_id": "1e5b8bea-d8cd-4411-a456-3c31f12ed734",
+      "state": "completed"
+    },
+    {
+      "phase": "campaign",
+      "transcript": "campaign/058-planner.txt",
+      "wire_record": "1790392614707471790_0b73fc7e-e727-4652-b70f-82f09ea89d60.json",
+      "call_id": "0b73fc7e-e727-4652-b70f-82f09ea89d60",
+      "state": "completed"
+    },
+    {
+      "phase": "campaign",
+      "transcript": "campaign/059-planner.txt",
+      "wire_record": "1790392644012361936_90b4ed60-9a9f-4de4-a849-88a167948ba3.json",
+      "call_id": "90b4ed60-9a9f-4de4-a849-88a167948ba3",
+      "state": "completed"
+    },
+    {
+      "phase": "campaign",
+      "transcript": "campaign/060-planner.txt",
+      "wire_record": "1790392655096126335_5b557567-96fc-4f6d-8b71-73c65b5884b6.json",
+      "call_id": "5b557567-96fc-4f6d-8b71-73c65b5884b6",
+      "state": "completed"
+    },
+    {
+      "phase": "campaign",
+      "transcript": "campaign/061-planner.txt",
+      "wire_record": "1790392683256740109_2c95ba6f-77b4-463d-b373-581538415f22.json",
+      "call_id": "2c95ba6f-77b4-463d-b373-581538415f22",
+      "state": "completed"
+    },
+    {
+      "phase": "campaign",
+      "transcript": "campaign/062-planner.txt",
+      "wire_record": "1790392701441023363_dfe38ae8-42b4-4b82-a773-aa2c29011c57.json",
+      "call_id": "dfe38ae8-42b4-4b82-a773-aa2c29011c57",
+      "state": "completed"
+    },
+    {
+      "phase": "campaign",
+      "transcript": "campaign/063-planner.txt",
+      "wire_record": "1790392736718662285_1a3008c0-c762-4e13-800c-fa58604fc3bb.json",
+      "call_id": "1a3008c0-c762-4e13-800c-fa58604fc3bb",
+      "state": "completed"
+    }
+  ]
+}

@@ -3,7 +3,8 @@
   "verified_arms": [
     "qwen",
     "snowball",
-    "glm"
+    "glm",
+    "glm-think"
   ],
   "arms": {
     "qwen": {
@@ -33,6 +34,15 @@
       "structure_hashes_verified": 144,
       "qualified_pdb_hashes_verified": 18,
       "qualified_fasta_ids_verified": 18,
+      "pending_wire_requests": 0
+    },
+    "glm-think": {
+      "native_archive_valid": true,
+      "result_ids_verified": 260,
+      "native_archive_warnings": [],
+      "structure_hashes_verified": 260,
+      "qualified_pdb_hashes_verified": 51,
+      "qualified_fasta_ids_verified": 51,
       "pending_wire_requests": 0
     }
   },

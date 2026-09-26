@@ -57,6 +57,22 @@ This arm holds no inference GPU; it keeps the four-GPU pod shape only so that
 `worker_gpus` stays identical across arms. See [protocol](experiment.md) for the
 reasoning-budget control the recorder adds and why it is required.
 
+The reasoning-enabled ablation uses the same command with `glm-think` and one
+more variable. It is not part of the matched comparison:
+
+```bash
+kubectl exec snowball-trex-pilot -- env \
+  GLM_BASE_URL="http://$GLM_RELAY_HOST:8010" GLM_TOKEN_FILE=/dev/shm/glm-token \
+  GLM_REASONING_EFFORT=high \
+  bash /work/pilot-scripts/run_arm.sh glm-think
+```
+
+`GLM_REASONING_EFFORT` must be chosen from measurement, not from the name: on
+this deployment `medium` and `max` exhaust the Planner budget even at 8,192
+tokens while `high` does not. `scripts/glm_reasoning_probe.py` reproduces that
+check against archived prompts, and [protocol](experiment.md) records the
+result.
+
 Each arm performs 15 Planner and 12 Supervisor fixed-evidence checks, followed by
 a one-hour PD-L1 campaign with two molecular workers. The original controller
 can drain outstanding work beyond that hour. The scripts reject an existing
@@ -101,7 +117,7 @@ exist. Use the controller environment from the upstream working directory:
 
 ```bash
 cd /work/T-REX
-for arm in qwen snowball glm; do
+for arm in qwen snowball glm glm-think; do
   .venv-serving/bin/python /work/pilot-scripts/collect_designs.py \
     "/work/results/$arm/campaign" "/work/results/$arm/designs" \
     --foldseek external/Proteina-Complexa/.venv/bin/foldseek \
@@ -110,7 +126,7 @@ done
 ```
 
 After every export exists, run `scripts/compare_designs.py /work/results
-/work/results/design-comparison.json --arms qwen snowball glm --foldseek
+/work/results/design-comparison.json --arms qwen snowball glm glm-think --foldseek
 external/Proteina-Complexa/.venv/bin/foldseek` from the same pinned controller
 environment. `--arms` also sets which unordered pairs are reported. This jointly
 clusters the qualified binder chains across arms, using collected structure
@@ -138,7 +154,7 @@ uv pip install -e './vendor/T-REX[dev]'
 export PYTHONPATH=.:vendor/T-REX
 export PYTHONHASHSEED=0
 .venv/bin/pytest -q tests
-for arm in qwen snowball glm; do
+for arm in qwen snowball glm glm-think; do
   .venv/bin/python scripts/audit_fixed.py "artifacts/$arm/wire" \
     "artifacts/$arm/fixed-audit" --arm "$arm"
   .venv/bin/python scripts/summarize_wire.py "artifacts/$arm/wire" \
@@ -154,7 +170,8 @@ for arm in qwen snowball glm; do
   .venv/bin/python scripts/index_decisions.py "artifacts/$arm" \
     "artifacts/$arm/decision-index.jsonl"
 done
-for replay in replay-qwen-on-snowball replay-glm-on-snowball; do
+for replay in replay-qwen-on-snowball replay-glm-on-snowball \
+              replay-glm-think-on-snowball; do
   .venv/bin/python scripts/summarize_replay.py "artifacts/$replay" \
     "artifacts/$replay/summary.json"
 done
@@ -165,7 +182,7 @@ transcripts, splitting fixed checks from the campaign. It adds nothing to the
 archive and is always reproducible from it:
 
 ```bash
-for arm in qwen snowball glm; do
+for arm in qwen snowball glm glm-think; do
   .venv/bin/python scripts/export_transcripts.py "artifacts/$arm/wire" \
     "artifacts/$arm/transcripts" \
     --split-time-file "artifacts/$arm/campaign-start-time.txt"
@@ -183,9 +200,16 @@ Static figures use Matplotlib 3.10.8:
 uv pip install matplotlib==3.10.8
 .venv/bin/python scripts/make_figures.py artifacts artifacts/figures \
   --arms qwen snowball glm
+.venv/bin/python scripts/make_figures.py artifacts artifacts/figures-glm-ablation \
+  --arms glm glm-think
 .venv/bin/python scripts/verify_artifacts.py artifacts artifacts/integrity-check.json \
-  --arms qwen snowball glm
+  --arms qwen snowball glm glm-think
 ```
+
+The matched figures cover the three comparable arms; the ablation figures cover
+the two GLM runs. `scripts/make_transcript_report.py artifacts report --arms
+qwen snowball glm glm-think --replays ...` regenerates the browsable HTML report
+of every recorded call.
 
 The integrity check verifies every collected structure hash, the qualified PDB
 copies and FASTA IDs, complete archive counts, finished HTTP records, and the

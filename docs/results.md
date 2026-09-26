@@ -13,6 +13,12 @@ pod's GPUs. Its molecular half is matched to the other two; its serving half is
 not, and it is the only arm that cannot disable reasoning. Both caveats are
 detailed in the protocol and they bound every latency claim below.
 
+A fourth run, `glm-think`, is the same model **allowed to reason**, and it is not
+part of the head-to-head — it ablates GLM against itself. It gets its own
+[section](#ablation-the-same-glm-allowed-to-reason) and its own figures under
+`artifacts/figures-glm-ablation/`; the matched figures and tables below cover
+Qwen, Snowball and GLM only.
+
 ## Molecular endpoints
 
 Qualification means AF2 pLDDT ≥90, normalized iPAE ≤7/31 and binder scRMSD <1.5Å;
@@ -122,6 +128,55 @@ ProteinMPNN child `6b17cf747d379437` had no canonical metrics until refiltering.
 Its scored descendant `b365f28499eb5425` passed at pLDDT 95.000, iPAE 0.14757 and
 scRMSD 1.222Å. This is a candidate for reviewing an evidence-to-action training
 example, not proof that the LLM caused the improvement.
+
+## Ablation: the same GLM allowed to reason
+
+The matched GLM arm runs at `reasoning_effort: low` inside the controller's
+3,072-token output limit, which is the closest available match to the other two
+checkpoints' disabled thinking. That suppresses GLM's default behaviour, so we
+reran it at `reasoning_effort: high` with upstream's own thinking-model floor of
+8,192 tokens applied. Everything else — target, seed, families, budget, workers —
+is unchanged. **This arm is deliberately unmatched against Qwen and Snowball and
+should not be read as a fourth competitor.**
+
+| Measurement | GLM (low, matched) | GLM (high, reasoning) |
+|---|---:|---:|
+| Started molecular jobs | 24 | 62 |
+| All result records | 144 | 260 |
+| Strict qualified records | 18 | 51 |
+| Qualified structural clusters | 6 | 8 |
+| Exact qualified sequences | 18 | 51 |
+| Qualified clusters / worker-wall H100-hour | 2.968 | 3.953 |
+| Median qualified binder scRMSD (Å) | 0.258 | 0.745 |
+
+![GLM reasoning ablation](../artifacts/figures-glm-ablation/campaign-progress.png)
+
+Reasoning nearly tripled qualified yield and more than doubled started jobs
+within the same hour and the same two worker GPUs. The mechanism is visible in
+the family breakdown: the matched arm's qualified records came from FK steering
+(16) and beam (2) and it never completed a refilter chain, while the reasoning
+arm added 25 from `structure_refilter` — the ProteinMPNN-redesign-then-refilter
+lineage that produced 18 of Qwen's 29. Allowing the model to reason is what got
+it to exploit that chain. The two GLM runs share three joint clusters, with three
+unique to the matched arm and five unique to the reasoning arm, so this is not a
+strict superset either.
+
+Two things got **worse**. Bare-JSON output collapsed: 19 of 90 responses against
+49 of 64, because reasoning made fence-wrapping the norm rather than the
+exception. And one fixed Supervisor response failed schema where the matched arm
+passed 12/12. The upstream extractor absorbed all of it, so nothing failed in
+practice, but a stricter client would have suffered.
+
+The 8,192 floor was not a formality. **Fifty-four of this arm's 90 calls produced
+more than 3,072 output tokens**, eleven of them spending more than that on
+reasoning alone, and the largest response reached 6,449. At the controller's own
+limit most of this arm would have truncated. That is the clearest evidence for
+I030: upstream's `max(max_tokens, 8192)` rule exists for exactly this case and
+simply cannot fire for a server whose reasoning the client cannot see.
+
+Cost: median call latency rose from 6.51s to 14.84s for the Planner, and the arm
+spent 148,391 reasoning tokens across fixed checks and campaign against the
+matched arm's 5,705.
 
 ## Same-prompt interface comparison
 
@@ -234,7 +289,7 @@ failed, so a clean parse rate is not the same as a clean action rate. GLM's
 advantage over Snowball is that its proposals were executable often enough to
 keep both workers fed for the full hour.
 
-## Replaying Snowball's actual states through both other models
+## Replaying Snowball's actual states through the other models
 
 After both campaigns, replayed five exact live Snowball Planner prompts at
 call-index quartiles: rounds 1, 6, 11, 16 and 21. All prompts were reconstructed
@@ -257,13 +312,13 @@ GLM was replayed through the **same five states, selected the same way**, after
 its own campaign ([cases](../artifacts/replay-glm-on-snowball/cases.jsonl),
 [scores](../artifacts/replay-glm-on-snowball/summary.json)).
 
-| On five identical live Snowball Planner states | Qwen | GLM |
-|---|---:|---:|
-| Exact prompt reconstruction | 5/5 | 5/5 |
-| Reply is JSON only | 5/5 | 1/5 |
-| Extracted schema valid before repair | 5/5 | 4/5 |
-| Valid after deterministic repair | 5/5 | 5/5 |
-| Feasible candidate **and** passes the live confidence/abstention gate | **0/5** | **4/5** |
+| On five identical live Snowball Planner states | Qwen | GLM | GLM (reasoning) |
+|---|---:|---:|---:|
+| Exact prompt reconstruction | 5/5 | 5/5 | 5/5 |
+| Reply is JSON only | 5/5 | 1/5 | 1/5 |
+| Extracted schema valid before repair | 5/5 | 4/5 | 5/5 |
+| Valid after deterministic repair | 5/5 | 5/5 | 5/5 |
+| Feasible candidate **and** passes the live confidence/abstention gate | **0/5** | **4/5** | **2/5** |
 
 This is the sharpest decision-quality contrast in the pilot, and it runs opposite
 to the format ranking. Qwen was cleaner on the wire — five bare JSON objects,
@@ -273,11 +328,19 @@ against a 0.55 gate and two abstained as the budget closed. GLM was messier on t
 wire (four of five fenced, one needing repair) but four of five yielded a feasible
 candidate that also cleared the gate.
 
-Two cautions. Five states is a tiny sample chosen before any outcome was seen, and
+The reasoning arm lands between the two on this diagnostic, which cuts against
+its campaign result: it cleared the gate on 2 of 5 where the matched GLM arm
+cleared 4 of 5, yet it produced nearly three times the qualified designs in its
+own campaign. We do not have an explanation, and with five states we should not
+invent one.
+
+Three cautions. Five states is a tiny sample chosen before any outcome was seen;
 passing the gate is not evidence the proposed job would have produced a qualified
-design — no counterfactual molecular work was run. What it does show is that
-"returns valid JSON" and "returns a usable decision" are separate properties, and
-the fixed-check table measures only the first.
+design, since no counterfactual molecular work was run; and these are Snowball's
+states, which none of these models would have reached on its own trajectory. What
+the diagnostic does show is that "returns valid JSON" and "returns a usable
+decision" are separate properties, and the fixed-check table measures only the
+first.
 
 ## Artifacts and interpretation
 
@@ -297,9 +360,10 @@ This single short campaign per model cannot establish model superiority. It is
 an operability and training-task pilot. Longer paired runs, additional seeds and
 targets, and a deterministic-controller baseline are needed for policy claims.
 
-Two four-H100 pods were used and both released: the first at 21:59 UTC on
-25 September (15.303 H100 reservation-hours) and the GLM pod at 01:08 UTC on
-26 September (5.036), for **20.339 H100 reservation-hours** in total. That covers
+Three four-H100 pods were used and all released: the first at 21:59 UTC on
+25 September (15.303 H100 reservation-hours), the GLM pod at 01:08 UTC on
+26 September (5.036) and the reasoning-ablation pod at 03:24 UTC (4.811), for
+**25.150 H100 reservation-hours** in total. That covers
 installation, failed diagnostics, fixed checks, idle time, all three campaigns and
 both replays. It is not hardware-active compute or a billing invoice. Qwen serving
 used one GPU and Snowball two; GLM used none on-pod, and two of its four GPUs sat
@@ -316,9 +380,9 @@ would run; see [I027](issues.md). No package was reinstalled into any venv and n
 asset was re-downloaded, so the backends are the same builds the first two arms
 used.
 
-Verification: 16 tests passed, Python compilation and shell syntax checks passed,
-all three decision indexes have no missing wire matches, the three arms share the
-same nine fixed-prompt hashes, all 566 collected structure hashes and the 47
+Verification: 18 tests passed, Python compilation and shell syntax checks passed,
+all four decision indexes have no missing wire matches, the four runs share the
+same nine fixed-prompt hashes, all 826 collected structure hashes and the 98
 qualified PDB copies and FASTA IDs check out, and every wire record is in a
 terminal state. Figures are available as PNG, SVG and PDF under
-`artifacts/figures/`.
+`artifacts/figures/` (matched arms) and `artifacts/figures-glm-ablation/`.

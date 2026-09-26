@@ -1,0 +1,109 @@
+{
+  "archive_root": "/work/results/glm-think/campaign",
+  "budget": {
+    "completed_result_gpu_h": 1.7379983558257421,
+    "elapsed_wall_h": 0.9990187300211336,
+    "remaining_wall_h": 0.0009812699788663837,
+    "worker_wall_gpu_count": 2.0,
+    "worker_wall_gpu_h": 1.9980374600422672
+  },
+  "dispatch_outcome": {
+    "started": 62
+  },
+  "dispatch_status": {
+    "started": 62
+  },
+  "endpoint": {
+    "foldseek_su_coverage": 1.0,
+    "foldseek_su_status": "ok",
+    "sequence_dedup_coverage": null,
+    "sequence_dedup_status": "disabled",
+    "sequence_unique_strict_count": null,
+    "strict_count": 50,
+    "structure_dedup_scope": "binder_chain",
+    "structure_unique_successes_tm_live": 8,
+    "su_per_worker_wall_gpu_h": 4.003928935261687
+  },
+  "latest_tick": "v7r055",
+  "launch_status": {
+    "launched": 62,
+    "rejected": 6
+  },
+  "llm_usage": {
+    "by_role": {
+      "critic": {
+        "calls": 48,
+        "fallback_calls": 0,
+        "latency_s": 0.0,
+        "parse_status": {
+          "ok": 48
+        },
+        "tokens_in": 0,
+        "tokens_out": 0
+      },
+      "planner": {
+        "calls": 55,
+        "fallback_calls": 7,
+        "latency_s": 887.503,
+        "parse_status": {
+          "ok": 54,
+          "schema_fail": 1
+        },
+        "tokens_in": 1682388,
+        "tokens_out": 211028
+      },
+      "supervisor": {
+        "calls": 55,
+        "fallback_calls": 48,
+        "latency_s": 77.318,
+        "parse_status": {
+          "no_hypotheses_or_candidates": 47,
+          "ok": 7,
+          "schema_fail": 1
+        },
+        "tokens_in": 116415,
+        "tokens_out": 17159
+      }
+    },
+    "calls": 158,
+    "tokens_in": 1798803,
+    "tokens_out": 228187
+  },
+  "provenance_files": [
+    "run_provenance.json"
+  ],
+  "records": {
+    "action_candidates": 411,
+    "dispatch_records": 62,
+    "evidence_summaries": 55,
+    "launch_decisions": 68,
+    "panel_selections": 55,
+    "results": 260
+  },
+  "result_exit_status": {
+    "ok": 260
+  },
+  "results_by_family": {
+    "complexa_beam": 48,
+    "complexa_fk_steering": 48,
+    "proteinmpnn_redesign": 112,
+    "structure_refilter": 52
+  },
+  "schema_version": "trex.analysis-summary.v1",
+  "started_by_family": {
+    "complexa_beam": 3,
+    "complexa_fk_steering": 3,
+    "proteinmpnn_redesign": 4,
+    "structure_refilter": 52
+  },
+  "started_by_mode": {
+    "chain_refilter": 52,
+    "exploit": 1,
+    "explore": 1,
+    "rescue": 8
+  },
+  "state_label": "productive_duplicate",
+  "target_ids": [
+    "32_PDL1_ALPHA_REPACK"
+  ]
+}

@@ -29,6 +29,15 @@ GLM is served by a shared multi-tenant endpoint rather than this pod's GPUs, and
 unlike the other two it cannot disable reasoning — only budget it. Both facts
 change what its numbers mean; see [protocol](docs/experiment.md).
 
+**Letting GLM reason changes the result more than the choice of model does.** The
+matched arm suppresses reasoning to sit in the same condition as the other two
+checkpoints. Rerunning it at `reasoning_effort: high`, with upstream's own
+8,192-token thinking floor applied, took the same model from 24 started jobs and
+18 qualified records to **62 jobs and 51 qualified records in 8 clusters** — the
+best molecular yield of any run here. It is an ablation of GLM against itself,
+not a fourth competitor, and it is reported
+[separately](docs/results.md#ablation-the-same-glm-allowed-to-reason).
+
 Raw prompts/responses, failures, candidate decisions, sequences, PDBs and scores
 are in `artifacts/`. CPU graders and small evidence-reading SFT/RL examples are
 included. Start with [results and figures](docs/results.md), the
@@ -44,5 +53,5 @@ This single short pilot establishes operability and training leads. It does not
 reproduce the paper's 48-hour benchmark, isolate model quality, or establish
 experimental binding.
 
-Both four-H100 pods have been deleted. The 600GiB CoreWeave PVC remains for
+All three four-H100 pods have been deleted. The 600GiB CoreWeave PVC remains for
 recovery and follow-up work; model weights are not stored in Git.

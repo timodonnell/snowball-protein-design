@@ -1,0 +1,44 @@
+{
+  "wire_archive": "artifacts/replay-glm-think-on-snowball/wire",
+  "n_transcripts": 5,
+  "counts": {
+    "all": 5
+  },
+  "transcripts": [
+    {
+      "phase": "all",
+      "transcript": "all/001-planner.txt",
+      "wire_record": "1790392880449096196_ba1f3315-8542-4d90-ad2a-b1ef92e8ac51.json",
+      "call_id": "ba1f3315-8542-4d90-ad2a-b1ef92e8ac51",
+      "state": "completed"
+    },
+    {
+      "phase": "all",
+      "transcript": "all/002-planner.txt",
+      "wire_record": "1790392887384665774_5242ca96-c610-4031-9b4b-7698a6ba1e3b.json",
+      "call_id": "5242ca96-c610-4031-9b4b-7698a6ba1e3b",
+      "state": "completed"
+    },
+    {
+      "phase": "all",
+      "transcript": "all/003-planner.txt",
+      "wire_record": "1790392895708157168_4982631c-7d5a-4d4c-899d-d04f8d08763a.json",
+      "call_id": "4982631c-7d5a-4d4c-899d-d04f8d08763a",
+      "state": "completed"
+    },
+    {
+      "phase": "all",
+      "transcript": "all/004-planner.txt",
+      "wire_record": "1790392905944833724_74c560bf-4025-4797-b95e-daaaa862ac64.json",
+      "call_id": "74c560bf-4025-4797-b95e-daaaa862ac64",
+      "state": "completed"
+    },
+    {
+      "phase": "all",
+      "transcript": "all/005-planner.txt",
+      "wire_record": "1790392918491969524_1cc11909-fb3f-425d-b98f-92f50e5b5895.json",
+      "call_id": "1cc11909-fb3f-425d-b98f-92f50e5b5895",
+      "state": "completed"
+    }
+  ]
+}

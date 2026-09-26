@@ -1,0 +1,30 @@
+{
+  "schema": "trex.llm-wire.v1",
+  "call_id": "7381c44d-0feb-49bc-b27c-6972faaa3a11",
+  "started_at": "2026-09-26T02:13:05.468564+00:00",
+  "method": "GET",
+  "path": "/v1/models",
+  "upstream": "http://10.168.192.79:8010",
+  "request": {
+    "body_base64": "",
+    "text": ""
+  },
+  "state": "completed",
+  "cancel_on_disconnect": false,
+  "status": 200,
+  "latency_s": 0.06349960807710886,
+  "response": {
+    "body_base64": "eyJvYmplY3QiOiJsaXN0IiwiZGF0YSI6W3siaWQiOiJnbG0tNS4zIiwib2JqZWN0IjoibW9kZWwiLCJjcmVhdGVkIjowLCJvd25lZF9ieSI6InNlbGZfaG9zdGVkIn1dfQ==",
+    "json": {
+      "object": "list",
+      "data": [
+        {
+          "id": "glm-5.3",
+          "object": "model",
+          "created": 0,
+          "owned_by": "self_hosted"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,498 @@
+{
+  "records": [
+    {
+      "abstain": false,
+      "case": "productive_cd45_like",
+      "confidence": 0.65,
+      "decisions_per_mode": {
+        "exploit": 1,
+        "explore": 0,
+        "rescue": 2
+      },
+      "elapsed_s": 9.04,
+      "fail_reason": null,
+      "mixture_assessment": {
+        "all_ok": true,
+        "checks": {
+          "exploit_min": true,
+          "explore_max": true
+        },
+        "normalized_mixture": {
+          "exploit": 0.65,
+          "explore": 0.1,
+          "rescue": 0.25
+        }
+      },
+      "mode_mixture": {
+        "exploit": 0.65,
+        "explore": 0.1,
+        "rescue": 0.25
+      },
+      "n_candidates_in": 3,
+      "n_decisions": 3,
+      "repeat": 0,
+      "resources_used": [
+        "standard",
+        "standard",
+        "standard"
+      ],
+      "state": "productive",
+      "usage": {
+        "input_tokens": 4688,
+        "output_tokens": 1694
+      },
+      "valid": true
+    },
+    {
+      "abstain": false,
+      "case": "rescue_rich_betv1_like",
+      "confidence": 0.6,
+      "decisions_per_mode": {
+        "exploit": 0,
+        "explore": 0,
+        "rescue": 1
+      },
+      "elapsed_s": 7.5,
+      "fail_reason": null,
+      "mixture_assessment": {
+        "all_ok": true,
+        "checks": {
+          "rescue_min": true
+        },
+        "normalized_mixture": {
+          "exploit": 0.15,
+          "explore": 0.35,
+          "rescue": 0.5
+        }
+      },
+      "mode_mixture": {
+        "exploit": 0.15,
+        "explore": 0.35,
+        "rescue": 0.5
+      },
+      "n_candidates_in": 1,
+      "n_decisions": 1,
+      "repeat": 0,
+      "resources_used": [
+        "standard"
+      ],
+      "state": "rescue_rich",
+      "usage": {
+        "input_tokens": 3953,
+        "output_tokens": 1646
+      },
+      "valid": true
+    },
+    {
+      "abstain": false,
+      "case": "stalled_sc2rbd_like",
+      "confidence": 0.5,
+      "decisions_per_mode": {
+        "exploit": 0,
+        "explore": 2,
+        "rescue": 0
+      },
+      "elapsed_s": 8.56,
+      "fail_reason": null,
+      "mixture_assessment": {
+        "all_ok": true,
+        "checks": {
+          "exploit_max": true,
+          "explore_min": true
+        },
+        "normalized_mixture": {
+          "exploit": 0.1,
+          "explore": 0.65,
+          "rescue": 0.25
+        }
+      },
+      "mode_mixture": {
+        "exploit": 0.1,
+        "explore": 0.65,
+        "rescue": 0.25
+      },
+      "n_candidates_in": 2,
+      "n_decisions": 2,
+      "repeat": 0,
+      "resources_used": [
+        "standard",
+        "standard"
+      ],
+      "state": "stalled",
+      "usage": {
+        "input_tokens": 4576,
+        "output_tokens": 1763
+      },
+      "valid": true
+    },
+    {
+      "abstain": false,
+      "case": "stalled_redundant_pdl1",
+      "confidence": 0.5,
+      "decisions_per_mode": {
+        "exploit": 0,
+        "explore": 1,
+        "rescue": 0
+      },
+      "elapsed_s": 4.87,
+      "fail_reason": null,
+      "mixture_assessment": {
+        "all_ok": true,
+        "checks": {
+          "explore_min": true
+        },
+        "normalized_mixture": {
+          "exploit": 0.15,
+          "explore": 0.55,
+          "rescue": 0.3
+        }
+      },
+      "mode_mixture": {
+        "exploit": 0.15,
+        "explore": 0.55,
+        "rescue": 0.3
+      },
+      "n_candidates_in": 1,
+      "n_decisions": 1,
+      "repeat": 0,
+      "resources_used": [
+        "standard"
+      ],
+      "state": "stalled",
+      "usage": {
+        "input_tokens": 3963,
+        "output_tokens": 1031
+      },
+      "valid": true
+    },
+    {
+      "abstain": false,
+      "case": "productive_cd45_like",
+      "confidence": 0.65,
+      "decisions_per_mode": {
+        "exploit": 1,
+        "explore": 0,
+        "rescue": 2
+      },
+      "elapsed_s": 6.67,
+      "fail_reason": null,
+      "mixture_assessment": {
+        "all_ok": true,
+        "checks": {
+          "exploit_min": true,
+          "explore_max": true
+        },
+        "normalized_mixture": {
+          "exploit": 0.6,
+          "explore": 0.1,
+          "rescue": 0.3
+        }
+      },
+      "mode_mixture": {
+        "exploit": 0.6,
+        "explore": 0.1,
+        "rescue": 0.3
+      },
+      "n_candidates_in": 3,
+      "n_decisions": 3,
+      "repeat": 1,
+      "resources_used": [
+        "standard",
+        "low",
+        "low"
+      ],
+      "state": "productive",
+      "usage": {
+        "input_tokens": 4688,
+        "output_tokens": 1583
+      },
+      "valid": true
+    },
+    {
+      "abstain": false,
+      "case": "rescue_rich_betv1_like",
+      "confidence": 0.5,
+      "decisions_per_mode": {
+        "exploit": 0,
+        "explore": 0,
+        "rescue": 1
+      },
+      "elapsed_s": 5.26,
+      "fail_reason": null,
+      "mixture_assessment": {
+        "all_ok": true,
+        "checks": {
+          "rescue_min": true
+        },
+        "normalized_mixture": {
+          "exploit": 0.1,
+          "explore": 0.35,
+          "rescue": 0.55
+        }
+      },
+      "mode_mixture": {
+        "exploit": 0.1,
+        "explore": 0.35,
+        "rescue": 0.55
+      },
+      "n_candidates_in": 1,
+      "n_decisions": 1,
+      "repeat": 1,
+      "resources_used": [
+        "standard"
+      ],
+      "state": "rescue_rich",
+      "usage": {
+        "input_tokens": 3953,
+        "output_tokens": 1130
+      },
+      "valid": true
+    },
+    {
+      "abstain": false,
+      "case": "stalled_sc2rbd_like",
+      "confidence": 0.5,
+      "decisions_per_mode": {
+        "exploit": 0,
+        "explore": 2,
+        "rescue": 0
+      },
+      "elapsed_s": 7.2,
+      "fail_reason": null,
+      "mixture_assessment": {
+        "all_ok": true,
+        "checks": {
+          "exploit_max": true,
+          "explore_min": true
+        },
+        "normalized_mixture": {
+          "exploit": 0.15,
+          "explore": 0.55,
+          "rescue": 0.3
+        }
+      },
+      "mode_mixture": {
+        "exploit": 0.15,
+        "explore": 0.55,
+        "rescue": 0.3
+      },
+      "n_candidates_in": 2,
+      "n_decisions": 2,
+      "repeat": 1,
+      "resources_used": [
+        "standard",
+        "standard"
+      ],
+      "state": "stalled",
+      "usage": {
+        "input_tokens": 4576,
+        "output_tokens": 1538
+      },
+      "valid": true
+    },
+    {
+      "abstain": false,
+      "case": "stalled_redundant_pdl1",
+      "confidence": 0.5,
+      "decisions_per_mode": {
+        "exploit": 0,
+        "explore": 1,
+        "rescue": 0
+      },
+      "elapsed_s": 4.1,
+      "fail_reason": null,
+      "mixture_assessment": {
+        "all_ok": true,
+        "checks": {
+          "explore_min": true
+        },
+        "normalized_mixture": {
+          "exploit": 0.15,
+          "explore": 0.55,
+          "rescue": 0.3
+        }
+      },
+      "mode_mixture": {
+        "exploit": 0.15,
+        "explore": 0.55,
+        "rescue": 0.3
+      },
+      "n_candidates_in": 1,
+      "n_decisions": 1,
+      "repeat": 1,
+      "resources_used": [
+        "standard"
+      ],
+      "state": "stalled",
+      "usage": {
+        "input_tokens": 3963,
+        "output_tokens": 859
+      },
+      "valid": true
+    },
+    {
+      "abstain": false,
+      "case": "productive_cd45_like",
+      "confidence": 0.7,
+      "decisions_per_mode": {
+        "exploit": 0,
+        "explore": 0,
+        "rescue": 0
+      },
+      "elapsed_s": 7.28,
+      "fail_reason": "schema_fail:dec[1]:missing:resource_class",
+      "mixture_assessment": {
+        "all_ok": false,
+        "reason": "no_valid_mixture"
+      },
+      "mode_mixture": {},
+      "n_candidates_in": 3,
+      "n_decisions": 0,
+      "raw_excerpt": "```json\n{\n  \"mode_mixture\": {\n    \"exploit\": 0.65,\n    \"rescue\": 0.25,\n    \"explore\": 0.10\n  },\n  \"confidence\": 0.7,\n  \"abstain\": false,\n  \"candidate_decisions\": [\n    {\n      \"candidate_id\": \"cand_hyp_p1_001\",\n      \"mode\": \"exploit\",\n      \"rank_in_mode\": 1,\n      \"global_rank\": 1,\n      \"resource_class\": \"standard\",\n      \"what\": \"Continue Complexa beam generation with the proven default config (beam_width 4, n_branch 4, sampling_temp 0.2) on the next available worker.\",\n      \"why\": \"Complexa beam is the only route with direct official strict metrics and is currently minting SU: 6 total SU with +2 recent, recent SU per completed worker-GPU-h of 0.17, and 18/26 children pass both pLDDT and iPAE. State is productive with no duplicate collapse (top_bin_share 0.40, duplicate fraction 0.3), so the efficient route should be protected as rank-1.\",\n      \"evidence_refs\": [\"tick_010\", \"hyp_p1\", \"rcp_proven_a1\"],\n      \"expected_signal\": \"Continued new Foldseek SU@TM0.6 at or near the recent 0.17 SU/worker-GPU-h rate; iPAE/pLDDT medians holding near 0.21/91.\",\n      \"stop_or_downgrade_if\": \"New SU/GPU-h decays toward zero over the next several worker-GPU-h, or live top_bin_share rises to",
+      "repeat": 2,
+      "resources_used": [],
+      "state": "productive",
+      "usage": {
+        "input_tokens": 4688,
+        "output_tokens": 1686
+      },
+      "valid": false
+    },
+    {
+      "abstain": false,
+      "case": "rescue_rich_betv1_like",
+      "confidence": 0.55,
+      "decisions_per_mode": {
+        "exploit": 0,
+        "explore": 0,
+        "rescue": 1
+      },
+      "elapsed_s": 8.09,
+      "fail_reason": null,
+      "mixture_assessment": {
+        "all_ok": true,
+        "checks": {
+          "rescue_min": true
+        },
+        "normalized_mixture": {
+          "exploit": 0.15,
+          "explore": 0.35,
+          "rescue": 0.5
+        }
+      },
+      "mode_mixture": {
+        "exploit": 0.15,
+        "explore": 0.35,
+        "rescue": 0.5
+      },
+      "n_candidates_in": 1,
+      "n_decisions": 1,
+      "repeat": 2,
+      "resources_used": [
+        "standard"
+      ],
+      "state": "rescue_rich",
+      "usage": {
+        "input_tokens": 3953,
+        "output_tokens": 1777
+      },
+      "valid": true
+    },
+    {
+      "abstain": false,
+      "case": "stalled_sc2rbd_like",
+      "confidence": 0.5,
+      "decisions_per_mode": {
+        "exploit": 0,
+        "explore": 2,
+        "rescue": 0
+      },
+      "elapsed_s": 7.07,
+      "fail_reason": null,
+      "mixture_assessment": {
+        "all_ok": true,
+        "checks": {
+          "exploit_max": true,
+          "explore_min": true
+        },
+        "normalized_mixture": {
+          "exploit": 0.1,
+          "explore": 0.65,
+          "rescue": 0.25
+        }
+      },
+      "mode_mixture": {
+        "exploit": 0.1,
+        "explore": 0.65,
+        "rescue": 0.25
+      },
+      "n_candidates_in": 2,
+      "n_decisions": 2,
+      "repeat": 2,
+      "resources_used": [
+        "standard",
+        "standard"
+      ],
+      "state": "stalled",
+      "usage": {
+        "input_tokens": 4576,
+        "output_tokens": 1528
+      },
+      "valid": true
+    },
+    {
+      "abstain": false,
+      "case": "stalled_redundant_pdl1",
+      "confidence": 0.5,
+      "decisions_per_mode": {
+        "exploit": 0,
+        "explore": 1,
+        "rescue": 0
+      },
+      "elapsed_s": 5.19,
+      "fail_reason": null,
+      "mixture_assessment": {
+        "all_ok": true,
+        "checks": {
+          "explore_min": true
+        },
+        "normalized_mixture": {
+          "exploit": 0.2,
+          "explore": 0.5,
+          "rescue": 0.3
+        }
+      },
+      "mode_mixture": {
+        "exploit": 0.2,
+        "explore": 0.5,
+        "rescue": 0.3
+      },
+      "n_candidates_in": 1,
+      "n_decisions": 1,
+      "repeat": 2,
+      "resources_used": [
+        "standard"
+      ],
+      "state": "stalled",
+      "usage": {
+        "input_tokens": 3963,
+        "output_tokens": 1173
+      },
+      "valid": true
+    }
+  ],
+  "summary": {
+    "base_url": "http://127.0.0.1:12000/v1",
+    "confidence_max": 0.65,
+    "confidence_median": 0.5,
+    "confidence_min": 0.5,
+    "median_latency_s": 7.135,
+    "mixture_aligned_with_state_rate": 1.0,
+    "model": "vllm/glm-5.3",
+    "schema_version": "v7.3.3-reward-guard",
+    "total_calls": 12,
+    "valid_calls": 11,
+    "valid_rate": 0.9166666666666666,
+    "wall_clock_s": 80.8
+  }
+}

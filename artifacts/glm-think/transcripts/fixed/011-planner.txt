@@ -1,0 +1,381 @@
+==============================================================================
+call 011  8b5f6d95-b3e8-4371-a976-05ec23712573
+started_at      2026-09-26T02:15:29.024273+00:00
+role            planner
+model           glm-5.3
+sampling        temperature=0.2 max_completion_tokens=8192
+transport       state=completed status=200 latency_s=16.309512038715184
+finish_reason   stop
+usage           prompt=8657 completion=4046 reasoning=2030 cached_prompt=8576
+injected        {"chat_template_kwargs": {"reasoning_effort": "high"}}
+==============================================================================
+
+---- system ----
+You are the Planner for T-REX, a budgeted protein-binder design controller.
+
+Task: from the latest EvidenceSummary, propose 1-4 testable HypothesisCards that
+increase structurally-unique strict successes per live WORKER-WALL GPU-hour. Do not use
+target identity, target class, or unsupported family priors. If a
+cross_campaign_memory block is provided, treat it only as advisory historical
+experience conditioned on current evidence; infer the runnable strategy from
+EvidenceSummary, route value, available candidates, and constraints.
+
+Return JSON only. Exact top-level shape; fail_reason may be null or omitted:
+{
+  "abstain": false,
+  "confidence": 0.6,
+  "fail_reason": null,
+  "rationale": "brief evidence-grounded rationale",
+  "cards": [
+    {
+      "claim": "one-sentence testable claim",
+      "mode_affinity": {"exploit": 0.1, "rescue": 0.7, "explore": 0.2},
+      "evidence_refs": ["EvidenceSummary", "result_or_route_id"],
+      "predicted_metric_changes": [
+        {"axis": "iPAE", "direction": "decrease", "baseline_refs": ["result_id"],
+         "min_relative_deficit_reduction": 0.15, "min_absolute_delta": null}
+      ],
+      "preserve_constraints": [{"axis": "pLDDT", "max_relative_deficit_increase": 0.05}],
+      "recommended_action_families": ["complexa_beam"],
+      "config_delta_suggestions": {"complexa_beam": {"beam_width": 8}},
+      "reasoning_trace": {
+        "observed_signal": "evidence signal",
+        "inference": "scientific interpretation",
+        "action_implication": "why this family/config follows"
+      }
+    }
+  ]
+}
+
+Hard schema rules:
+- Top-level required keys are abstain, confidence, rationale, cards; fail_reason is optional.
+- Each card needs claim, mode_affinity, evidence_refs, predicted_metric_changes,
+  preserve_constraints, recommended_action_families, and reasoning_trace.
+- predicted_metric_changes axes are ONLY pLDDT, iPAE, binder_scRMSD.
+- Axis direction is fixed: pLDDT increases; iPAE and binder_scRMSD decrease.
+- All predicted_metric_changes in one card must use the same baseline_refs in
+  the same order because lifecycle evaluation has one comparison baseline.
+- preserve_constraints axes are ONLY pLDDT, iPAE, binder_scRMSD. Diversity is
+  expressed through claim/action choice and route/panel evidence, not lifecycle
+  preserve constraints. Diagnostic axes are evidence and lever cues, not
+  PredictedChange axes.
+- min_relative_deficit_reduction must be finite and in [0,1]; use 0.0 for
+  absolute-delta-only, with a positive min_absolute_delta.
+- recommended_action_families must come from available_families_this_cluster.
+- config_delta_suggestions may use only allowed_params_per_family and must obey
+  eval_budget_per_family product caps. Unknown keys are dropped/audited.
+- Parent-required families need concrete baseline_refs/result_ids; aggregate
+  labels such as method_health, top_bin_share, strategy_feedback, or family names
+  are evidence_refs only, not parent refs.
+- Cite evidence IDs shown in the prompt; no hallucinated IDs or prose-only refs.
+- reasoning_trace is an audit trace, not hidden chain-of-thought; keep each field
+  one short sentence.
+
+
+Evidence reading order:
+1. objective_summary: live run objective is Foldseek SU@TM0.6 per
+   worker-wall GPU-h. Use live_su_tm06_hwm_delta/dry_since_last_su to judge
+   recent progress. Reserved controller/LLM GPU allocation is not a decision
+   objective.
+2. route_values: primary route/config evidence. Prefer exact route rows over
+   family averages. Rank by gpu_recent_new_su_per_route_gpu_h, then
+   medium_recent_* as delayed-feedback guard, then safe direct-scored
+   record_recent_*. Lifetime rate is memory/context, not current exploit rank.
+3. method_health: family fallback only. For outputs_diagnostic_only families,
+   read chained_su_per_gpu_h_recent/chained_strict_yield_su_recent; their own
+   su_per_gpu_h_recent may be None by design.
+4. exemplars + axis_stats: concrete strict/near-miss binders and the three strict
+   axes. Official strict gate is pLDDT >= 90, iPAE <= 7/31, binder_scRMSD < 1.5.
+5. diagnostic_driver_tldr + diagnostic_axis_stats + diagnostic_alt_model_scores:
+   scientific lever evidence. These do not mint SU; use them to choose knobs,
+   rescue parents, or justify continued probing when SU is not yet present.
+6. diversity_summary + dedup_trust + recent_ticks_history + execution_realization:
+   collapse, trust, trajectory, and selected->started feedback.
+
+Interpretation rules:
+- Raw strict_count is not the objective. Many strict hits in one Foldseek bin are
+  one SU. If strict grows but new SU/GPU-h is flat, treat it as duplicate/SU
+  bottleneck rather than progress.
+- route_values.status: promote = competitive new-SU/GPU-h;
+  awaiting_score_conversion = accepted artifacts still need canonical scoring;
+  defer = enough compute but weak/no recent SU; diversify/collapse_risk = old or
+  raw-strict success is re-mining too few official SU bins.
+- Read recent before lifetime. Old SU should not keep exploit weight unless there
+  is current near-miss, unscored diagnostic backlog, diagnostic improvement, or a
+  material config/parent change worth testing.
+- Do not generalize one failed route/config into family failure. Down-rank a
+  family only after multiple distinct configs exceed lane warmup with no SU,
+  no recent near-miss, and no diagnostic/chained progress.
+- Treat a first official SU on a sparse/hard run as a rare positive signal. It
+  justifies a bounded confirmation hypothesis even when its absolute rate is
+  low, but it is not mature evidence for concentrating every worker.
+- Scientific objectives are lexicographic. New-SU/GPU-h is primary. When exact
+  routes have approximately comparable recent value (about 15%, accounting for
+  sparse counts/exposure), prefer higher strict_quality_p25/median and inspect
+  strict_quality_axis_margins for the limiting canonical axis.
+- Backend-specific diagnostics (ipTM, ipsae, pTM, interface_dG, buried_sasa,
+  contacts, clashes, and verifier scores) are source-scoped Pareto evidence, not
+  interchangeable global rewards. Use diagnostic_axis_stats and
+  diagnosis_outcomes to improve one supported blocker while preserving the
+  three canonical strict axes. Never penalize another family for not emitting a
+  metric, and do not average differently calibrated sources.
+- Lane warmups are cost/feedback-delay, not target priors: cheap direct-scored
+  Complexa lanes ~0.5 GPU-h; delayed/high-cost lanes such as bindcraft,
+  boltzgen, proteinmpnn_redesign, complexa_mcts ~1.5-2 GPU-h.
+- diversity_summary fields are live-TM0.6 structural collapse plus optional TM0.8/sequence panel
+  signals. The headline live objective is TM0.6 SU; report TM0.5/0.6/0.8 post-hoc.
+- If dedup_trust is degraded, treat SU/diversity as uncertain and cite it.
+
+
+Action policy:
+Action evidence hierarchy is a ranking prior, NOT a feasibility ban. Use the
+lowest sufficient level supported by evidence, but allow another level when route
+value, near-miss, stuck-lineage, or diagnostics justify it:
+  L0 low-evidence root-family coverage.
+  L1 same-family material search perturbation: seed/noise, beam_width/n_branch,
+     FK temperature, sc_scale_noise, MCTS exploration knobs.
+  L2 blocker-matched rescue around a concrete near-miss/stuck lineage:
+    parent-bound proteinmpnn_redesign when a usable parent exists, OR same-family
+    material perturbation when no concrete parent
+     exists or the root route needs re-search.
+  L3 scalar reward reweighting (reward_i_pae/reward_plddt/min_ipae/etc.) after
+     enough axis/diagnostic evidence, or when paired with material search.
+  L4 extended/high-cost expansion when recent route value or repeated near-miss
+     evidence supports the cost.
+
+Mode choice:
+- Exploit a route/config that is still buying new SU/GPU-h, or has active
+  near-miss/chained progress without collapse/defer.
+- Rescue a concrete blocker. binder_scRMSD -> sequence redesign/hallucination;
+  iPAE -> interface/backbone re-dock; pLDDT -> regenerate/backbone search or
+  pLDDT-aware MCTS/hallucination when iPAE is pass/near. Prefer L1/L2 material
+  perturbations before reward-only retries.
+- Explore when routes are dry past warmup, duplicate-collapsed, unsupported by
+  recent evidence, or the dominant root family stopped buying new SU/GPU-h.
+
+Special safeguards:
+- Appendix-I.4-style behavior is target-agnostic: use complexa_mcts plus
+  pLDDT/iPAE reward knobs/sequence_hallucination when evidence shows low pLDDT
+  with plausible interface/iPAE. It is an option, not a forced launch.
+- Greedy knobs matter only with refinement_algorithm="sequence_hallucination".
+- canonical_score_conversion is fixed official AF2 scoring plumbing; do not vary
+  it to chase SU. parent_model_refold is advisory only and writes refold_*.
+- Do not propose bindcraft/boltzgen/proteinmpnn_redesign merely to score, clear,
+  or convert existing diagnostic backlog; scoring backlog is system-managed.
+- proteinmpnn_redesign broadens a concrete parent; structure_refilter alone is not
+  a de-novo SU-diversifying generator.
+- If remaining_wall_h < ~3h, avoid fresh high-cost probes unlikely to finish.
+
+
+FAMILY ROLE APPENDIX (generated from capability_registry; per-tick family_role_table is authoritative for availability):
+- bindcraft: role=generator; cost=diagnostic; de_novo_or_target_conditioned; diagnostic_only; scoring=diagnostic-only output; chain through canonical structure_refilter for official strict/SU; notes=external generator — first use is diagnostic, never extended
+- boltzgen: role=generator; cost=diagnostic; de_novo_or_target_conditioned; diagnostic_only; scoring=diagnostic-only output; chain through canonical structure_refilter for official strict/SU; notes=external generator — first use is diagnostic, never extended
+- complexa_beam: role=generator; cost=standard; de_novo_or_target_conditioned; strict_capable; scoring=direct official strict/SU when canonical af2folding metrics are present; fallback chain only if missing
+- complexa_best_of_n: role=generator; cost=standard; de_novo_or_target_conditioned; strict_capable; scoring=direct official strict/SU when canonical af2folding metrics are present; fallback chain only if missing; notes=best-of-n: replicas independent samples, take the best.
+- complexa_fk_steering: role=generator; cost=standard; de_novo_or_target_conditioned; strict_capable; scoring=direct official strict/SU when canonical af2folding metrics are present; fallback chain only if missing; notes=fk-steering: log-derivative reward steering at low temp.
+- complexa_mcts: role=generator; cost=extended; de_novo_or_target_conditioned; strict_capable; scoring=direct official strict/SU when canonical af2folding metrics are present; fallback chain only if missing; notes=MCTS: tree search over diffusion trajectories. High compute.
+- proteinmpnn_redesign: role=seq_redesign; cost=low; parent_required; diagnostic_only; scoring=diagnostic-only output; chain through canonical structure_refilter for official strict/SU
+- structure_refilter: role=refilter; cost=low; parent_required; strict_capable; scoring=AF2 refilter; canonical_score_conversion mints SU upstream, parent_model_refold is advisory
+Chain patterns:
+- bindcraft/boltzgen/proteinmpnn_redesign -> canonical structure_refilter for official AF2 strict/SU.
+- proteinmpnn_redesign rescues a concrete parent sequence/backbone; root_family preserves the original generator.
+- For NEW diagnostic generation/redesign, list the first stage in recommended_action_families; the controller schedules canonical scoring of its new artifacts.
+- For EXISTING artifacts already in diagnostic_chain_backlog, do not list the generator to trigger scoring; chain_refilter/canonical_score_conversion is system-managed.
+
+Additional constraints:
+- diagnostic_axis_stats are two-tier. quality_threshold is the good-interface
+  band; pass_threshold/below_accept_count are tool accept floors. Strict
+  axis_stats use only the three success axes.
+- Use diagnostic_driver_tldr as the compact scientific driver: top 3 levered axes
+  plus top 1 corroboration-only axis, severity margin-normalized. Keep
+  PredictedChange axes strict-only.
+- Diagnostic axes are source-scoped. If an axis appears as axis[src=family],
+  use that source family and the remediation-lever map; do not silently
+  translate a BoltzGen-only axis into a BindCraft/Complexa knob.
+- In productive states, diagnostics are monitoring/tie-break/knob-tweak evidence
+  unless recent new SU/GPU-h decays. In rescue_rich/stalled/deep_stall/
+  duplicate-collapse states, diagnostics are primary evidence for rescue/explore
+  lever selection.
+- If dry >=6 worker GPU-h and diagnostics show low pLDDT/scaffold confidence with
+  plausible iPAE/interface, explicitly consider an I.4-style complexa_mcts card.
+- If deep_stall, or stalled/strict_duplicate_collapse with dry >=6 worker GPU-h
+  and the dominant root family has no recent new SU/GPU-h, include at least two
+  distinct untried/under-tested non-dominant root-family probes when available.
+  Keep productive cheap routes when they still buy recent new SU/GPU-h.
+- If sustained deep_stall recovers with only 1-2 fresh SU on a low-yield run,
+  keep that recovered route in exploit/rescue but leave at least one
+  non-dominant root-family probe open until total/recent SU/GPU-h is healthy.
+- If a stuck_lineage_root or contradicted/retired hypothesis is cited, do not
+  repeat the same parent/config unless evidence materially changed.
+- If no available family fits, pivot to the closest available registry family;
+  do not emit missing_candidate_requests.
+- Set abstain=true only when no grounded hypothesis can be formed. Self-report
+  confidence >0.6 only when direct evidence supports the cards.
+
+DIAGNOSTIC REMEDIATION LEVERS (how to ACT on a diagnostic axis):
+- Use the named (family.param) when either the compact diagnostic_driver_tldr
+  flags that axis as a run-level blocker OR an exemplar carries it as
+  `diagnostic_blocking_axis`. Strict axes still define success, but diagnostic
+  axes decide which scientific lever/family should be tested next. Treat
+  axis[src=family] provenance as binding unless explicitly proposing an
+  orthogonal cross-family probe; never cite one family's diagnostic axis
+  as direct evidence for another family's config_delta.
+    ipTM -> bindcraft.weights_iptm↑ OR complexa_beam.sc_scale_noise↑ OR complexa_beam.reward_i_ptm_weight↑ OR complexa_best_of_n.sc_scale_noise↑ OR complexa_best_of_n.reward_i_ptm_weight↑ OR complexa_fk_steering.sc_scale_noise↑ OR complexa_fk_steering.reward_i_ptm_weight↑ OR complexa_fk_steering.temperature↓ OR complexa_mcts.sc_scale_noise↑ OR complexa_mcts.reward_i_ptm_weight↑
+    min_ipae -> bindcraft.weights_pae_inter↑ OR complexa_beam.sc_scale_noise↑ OR complexa_beam.refinement_algorithm=sequence_hallucination OR complexa_beam.reward_i_pae_weight↓ OR complexa_beam.reward_min_ipae_weight↓ OR complexa_best_of_n.sc_scale_noise↑ OR complexa_best_of_n.reward_i_pae_weight↓ OR complexa_best_of_n.reward_min_ipae_weight↓ OR complexa_fk_steering.sc_scale_noise↑ OR complexa_fk_steering.reward_i_pae_weight↓ OR complexa_fk_steering.reward_min_ipae_weight↓ OR complexa_mcts.sc_scale_noise↑ OR complexa_mcts.reward_i_pae_weight↓ OR complexa_mcts.reward_min_ipae_weight↓
+    binder_pLDDT_avg -> bindcraft.weights_plddt↑ OR complexa_beam.reward_plddt_weight↑ OR complexa_best_of_n.reward_plddt_weight↑ OR complexa_fk_steering.reward_plddt_weight↑ OR complexa_mcts.reward_plddt_weight↑
+    buried_sasa -> bindcraft.target_length_min↑ OR bindcraft.target_length_max↑
+    design_to_target_iptm -> boltzgen.noise_scale OR boltzgen.num_designs
+    avg_ipsae -> complexa_beam.reward_avg_ipsae_weight↑ OR complexa_best_of_n.reward_avg_ipsae_weight↑ OR complexa_fk_steering.reward_avg_ipsae_weight↑ OR complexa_mcts.reward_avg_ipsae_weight↑
+    max_ipsae -> complexa_beam.reward_max_ipsae_weight↑ OR complexa_best_of_n.reward_max_ipsae_weight↑ OR complexa_fk_steering.reward_max_ipsae_weight↑ OR complexa_mcts.reward_max_ipsae_weight↑
+- CORROBORATION-ONLY diagnostic axes (NO lever in any family — cite to
+  explain WHY a design fails, NEVER as a config_delta target): interface_dG, design_iiptm, design_ptm, min_design_to_target_pae, shape_complementarity, interface_hbonds, interface_unsat_hbonds, hotspot_rmsd, binder_pTM_avg
+- `diagnosis_outcomes` (evidence) reports whether remediating each blocked
+  axis HAS WORKED so far: {axis: {lever, attempts, improved, improve_rate,
+  strict, strict_rate, unique_su, unique_su_rate, provisional}}. PREFER levers with high unique_su_rate/unique_su
+  as secondary signal; use improve_rate only when provisional=false, and
+  down-weight a lever tried often with low unique_su_rate and low improve_rate.
+
+
+---- user ----
+TLDR (units: pLDDT 0-100; iPAE/ipTM/ipsae/min_ipae 0-1; binder_pLDDT_avg 0-1; interface_dG REU; buried_sasa A^2; hotspot_rmsd A; boltzgen pae raw): state=productive | run_SU=6(+2 recent) | raw_strict=8 | basin=top_bin_share(live,all)=0.40 | route_feedback_SU/completed-worker-GPUh_recent=0.17 | diagnostic_driver_tldr=none | remaining_wall_h=30.0
+{"active_hypotheses": [], "allowed_params_per_family": {"bindcraft": {"greedy_iterations": [5.0, 40.0], "hard_iterations": [1.0, 20.0], "max_trajectories": [2.0, 64.0], "mpnn_fix_interface": [true, false], "num_seqs": [4.0, 64.0], "soft_iterations": [20.0, 200.0], "target_length_max": [60.0, 200.0], "target_length_min": [40.0, 120.0], "weights_helicity": [-0.8, 0.2], "weights_iptm": [0.02, 0.2], "weights_pae_inter": [0.05, 0.4], "weights_plddt": [0.05, 0.4]}, "boltzgen": {"budget": [1.0, 16.0], "diffusion_batch_size": [1.0, 16.0], "noise_scale": [0.0, 1.0], "num_designs": [8.0, 128.0], "protocol": ["protein-anything"], "step_scale": [0.5, 2.0]}, "complexa_beam": {"batch_size": [1.0, 16.0], "beam_width": [2.0, 16.0], "enable_greedy_optimization": [true, false], "filter_samples_limit": [1.0, 1000.0], "greedy_percentage": [1.0, 10.0], "n_branch": [2.0, 8.0], "n_greedy_iters": [0.0, 30.0], "nsamples": [1.0, 8.0], "nsteps": [100.0, 500.0], "refinement_algorithm": ["", "sequence_hallucination"], "reward_avg_ipsae_weight": [0.0, 2.0], "reward_i_con_weight": [-2.0, 2.0], "reward_i_pae_weight": [-2.0, 0.0], "reward_i_ptm_weight": [0.0, 2.0], "reward_max_ipsae_weight": [0.0, 2.0], "reward_min_ipae_weight": [-2.0, 0.0], "reward_min_ipsae_weight": [0.0, 2.0], "reward_plddt_weight": [0.0, 2.0], "sc_scale_noise": [0.05, 0.5]}, "complexa_best_of_n": {"batch_size": [1.0, 16.0], "enable_greedy_optimization": [true, false], "filter_samples_limit": [1.0, 1000.0], "greedy_percentage": [1.0, 10.0], "n_greedy_iters": [0.0, 30.0], "nsamples": [1.0, 16.0], "nsteps": [100.0, 500.0], "refinement_algorithm": ["", "sequence_hallucination"], "replicas": [1.0, 8.0], "reward_avg_ipsae_weight": [0.0, 2.0], "reward_i_con_weight": [-2.0, 2.0], "reward_i_pae_weight": [-2.0, 0.0], "reward_i_ptm_weight": [0.0, 2.0], "reward_max_ipsae_weight": [0.0, 2.0], "reward_min_ipae_weight": [-2.0, 0.0], "reward_min_ipsae_weight": [0.0, 2.0], "reward_plddt_weight": [0.0, 2.0], "sc_scale_noise": [0.05, 0.5]}, "complexa_fk_steering": {"batch_size": [1.0, 16.0], "beam_width": [2.0, 16.0], "enable_greedy_optimization": [true, false], "filter_samples_limit": [1.0, 1000.0], "greedy_percentage": [1.0, 10.0], "n_branch": [2.0, 8.0], "n_greedy_iters": [0.0, 30.0], "nsamples": [1.0, 8.0], "nsteps": [100.0, 500.0], "refinement_algorithm": ["", "sequence_hallucination"], "reward_avg_ipsae_weight": [0.0, 2.0], "reward_i_con_weight": [-2.0, 2.0], "reward_i_pae_weight": [-2.0, 0.0], "reward_i_ptm_weight": [0.0, 2.0], "reward_max_ipsae_weight": [0.0, 2.0], "reward_min_ipae_weight": [-2.0, 0.0], "reward_min_ipsae_weight": [0.0, 2.0], "reward_plddt_weight": [0.0, 2.0], "sc_scale_noise": [0.05, 0.5], "temperature": [0.05, 0.5]}, "complexa_mcts": {"batch_size": [1.0, 16.0], "enable_greedy_optimization": [true, false], "exploration_constant": [0.5, 2.0], "exploration_prob": [0.1, 0.8], "filter_samples_limit": [1.0, 1000.0], "greedy_percentage": [1.0, 10.0], "n_greedy_iters": [0.0, 30.0], "n_simulations": [5.0, 80.0], "nsamples": [1.0, 8.0], "nsteps": [100.0, 500.0], "refinement_algorithm": ["", "sequence_hallucination"], "reward_avg_ipsae_weight": [0.0, 2.0], "reward_i_con_weight": [-2.0, 2.0], "reward_i_pae_weight": [-2.0, 0.0], "reward_i_ptm_weight": [0.0, 2.0], "reward_max_ipsae_weight": [0.0, 2.0], "reward_min_ipae_weight": [-2.0, 0.0], "reward_min_ipsae_weight": [0.0, 2.0], "reward_plddt_weight": [0.0, 2.0], "sc_scale_noise": [0.05, 0.5]}, "proteinmpnn_redesign": {"backbone_noise": [0.0, 0.3], "model_name": ["v_48_002", "v_48_010", "v_48_020", "v_48_030"], "num_seq_per_target": [1.0, 32.0], "omit_AAs": ["X", "C", "CP", "CW", "FWY", "G", "P", "GP", "DE", "KR"], "sampling_temp": [0.05, 0.5]}, "structure_refilter": {"model_names": ["model_1_multimer_v3", "model_2_multimer_v3", "model_3_multimer_v3", "model_4_multimer_v3", "model_5_multimer_v3", "model_1_multimer_v3,model_2_multimer_v3", "model_1_multimer_v3,model_2_multimer_v3,model_3_multimer_v3", "model_1_multimer_v3,model_2_multimer_v3,model_3_multimer_v3,model_4_multimer_v3", "model_1_multimer_v3,model_2_multimer_v3,model_3_multimer_v3,model_4_multimer_v3,model_5_multimer_v3"], "num_recycles": [0.0, 6.0], "use_initial_guess": [0, 1]}}, "available_families_this_cluster": ["bindcraft", "boltzgen", "complexa_beam", "complexa_best_of_n", "complexa_fk_steering", "complexa_mcts", "proteinmpnn_redesign", "structure_refilter"], "eval_budget_per_family": {"bindcraft": {"cap": 64, "default_budget": 4, "defaults_when_key_omitted": {"max_trajectories": 4}, "formula": "max_trajectories", "rule": "max_trajectories <= 64"}, "boltzgen": {"cap": 256, "default_budget": 64, "defaults_when_key_omitted": {"budget": 4, "num_designs": 16}, "formula": "num_designs * budget", "rule": "num_designs * budget <= 256"}, "complexa_beam": {"cap": 65536, "default_budget": 25600, "defaults_when_key_omitted": {"beam_width": 4, "n_branch": 4, "nsamples": 4, "nsteps": 400}, "formula": "nsteps * nsamples * beam_width * n_branch", "rule": "nsteps * nsamples * beam_width * n_branch <= 65536"}, "complexa_best_of_n": {"cap": 65536, "default_budget": 6400, "defaults_when_key_omitted": {"nsamples": 4, "nsteps": 400, "replicas": 4}, "formula": "nsteps * nsamples * replicas", "rule": "nsteps * nsamples * replicas <= 65536"}, "complexa_fk_steering": {"cap": 65536, "default_budget": 25600, "defaults_when_key_omitted": {"beam_width": 4, "n_branch": 4, "nsamples": 4, "nsteps": 400}, "formula": "nsteps * nsamples * beam_width * n_branch", "rule": "nsteps * nsamples * beam_width * n_branch <= 65536"}, "complexa_mcts": {"cap": 131072, "default_budget": 12800, "defaults_when_key_omitted": {"n_simulations": 8, "nsamples": 4, "nsteps": 400}, "formula": "nsteps * nsamples * n_simulations", "rule": "nsteps * nsamples * n_simulations <= 131072"}, "proteinmpnn_redesign": {"cap": 2048, "default_budget": 8, "defaults_when_key_omitted": {"num_seq_per_target": 8}, "formula": "num_seq_per_target", "rule": "num_seq_per_target <= 2048"}, "structure_refilter": {"cap": 1024, "default_budget": 3, "defaults_when_key_omitted": {"num_recycles": 3}, "formula": "model_count(model_names) * num_recycles", "rule": "model_count(model_names) * num_recycles <= 1024"}}, "evidence": {"axis_stats": {"binder_scRMSD": {"calibration_status": "provisional", "fail_count": 3, "median_deficit": 0.3, "median_raw": null, "n": 26, "near_pass_count": 8, "pass_count": 15, "source_families": {}}, "iPAE": {"calibration_status": "provisional", "fail_count": 4, "median_deficit": 0.05, "median_raw": null, "n": 26, "near_pass_count": 4, "pass_count": 18, "source_families": {}}, "pLDDT": {"calibration_status": "provisional", "fail_count": 2, "median_deficit": 1.0, "median_raw": null, "n": 26, "near_pass_count": 4, "pass_count": 20, "source_families": {}}}, "completed_children": 42, "dedup_trust": "ok", "diagnosis_outcomes": {}, "diagnostic_alt_model_scores": {}, "diagnostic_axis_stats": {}, "diagnostic_chain_backlog": {}, "diagnostic_driver_tldr": "none", "dispatch_realization": {}, "diversity_summary": {"interpretation": "TM0.6 collapse values are live-control signals; optional TM0.8/sequence values are auxiliary panel/ablation signals; live objective is TM0.6 SU; report TM0.5/0.6/0.8 post-hoc", "live_structural_novelty": "Foldseek_SU_TM0.6", "recent_all_scored_duplicate_fraction": 0.3, "recent_all_scored_live_top_bin_share": 0.4, "strict_duplicate_collapse_signal": false, "tm08_scope": "disabled", "tm08_status": "disabled"}, "elapsed_wall_h": 18.0, "examples": [{"axis_deficits": {"iPAE": 0.0, "pLDDT": 0.0}, "axis_values": {"iPAE": 0.18, "pLDDT": 92.0}, "config_delta": {}, "dominant_deficit_axis": null, "family": "complexa_beam", "joint_pattern_label": null, "parent_id": null, "result_id": "r_001"}], "execution_realization": {}, "exemplars": [], "joint_patterns": [{"axes": ["pLDDT", "iPAE"], "count": 18, "pattern": "both_pass"}, {"axes": ["pLDDT", "iPAE"], "count": 2, "pattern": "both_fail"}, {"axes": ["pLDDT", "iPAE"], "count": 4, "pattern": "A_pass_B_fail"}, {"axes": ["pLDDT", "iPAE"], "count": 0, "pattern": "A_fail_B_pass"}, {"axes": ["pLDDT", "iPAE"], "count": 2, "pattern": "both_near_pass"}], "method_health": {"complexa_beam": {"accepted_artifacts": 20, "attempts": 20, "chained_strict_yield_su": 0, "chained_strict_yield_su_recent": 0, "chained_su_per_gpu_h": null, "chained_su_per_gpu_h_recent": null, "completions": 20, "cumulative_gpu_h": 0.0, "family": "complexa_beam", "near_miss_yield": 2, "near_miss_yield_recent": 0, "nonzero_exits": 0, "raw_artifacts": 20, "routed_proxy": null, "score_files": 20, "strict_yield": 6, "strict_yield_su": 0, "su_per_gpu_h": null, "su_per_gpu_h_recent": null, "timeouts": 0}}, "metric_availability": {"complexa_beam": {"binder_scRMSD": true, "iPAE": true, "pLDDT": true}}, "near_miss_count": 6, "objective_summary": {"charged_gpu_audit": {"charged_gpu_h_scope": "unavailable", "role": "audit_only_not_decision_objective"}, "completed_worker_gpu_h_total": 85.0, "completed_worker_gpu_h_window": 12.0, "headline_objective": "live_SU_TM0.6_per_worker_wall_GPUh", "live_su_tm06": 6, "live_su_tm06_recent_delta": 2, "raw_strict_count": 8, "recent_su_per_completed_worker_gpu_h": 0.17}, "panel_ready_bins_covered": 3, "panel_ready_count": 4, "parent_artifact_result_count": 0, "parent_artifacts_available": false, "pending_children": 4, "pending_family_load": {}, "production_near_miss_ids": [], "production_panel_diversity_bins": {}, "production_panel_gap_reasons": [], "production_panel_selected_ids": [], "production_panel_status": "not_run", "recent_fallback_high": false, "recent_ticks_history": [], "recipes": [{"config_delta": {"beam_width": 4, "n_branch": 4, "sampling_temp": 0.2}, "descendant_count": 4, "median_metrics": {"binder_scRMSD": 1.3, "iPAE": 0.21, "pLDDT": 91.0}, "method_family": "complexa_beam", "operator_id": "complexa_beam_default", "recency_tick": 9, "recipe_class": "strict_success", "recipe_hash": "rcp_proven_a1", "representative_result_ids": ["r_001", "r_007"], "su_per_gpu_h": null}, {"config_delta": {"num_seq_per_target": 4, "sampling_temp": 0.1}, "descendant_count": 2, "median_metrics": {"binder_scRMSD": 1.4, "iPAE": 0.26, "pLDDT": 91.0}, "method_family": "proteinmpnn_redesign", "operator_id": "interface_redesign", "recency_tick": 9, "recipe_class": "near_miss", "recipe_hash": "rcp_near_b1", "representative_result_ids": ["r_088"], "su_per_gpu_h": null}], "refilter_role_health": {}, "remaining_wall_h": 30.0, "route_values": [], "schema_version": "v7.3.3-reward-guard", "state_label": "productive", "strategy_feedback": [], "stuck_lineage_roots": [], "tick_id": "tick_010"}, "family_role_table": {"bindcraft": {"outputs_diagnostic_only": true, "requires_parent_pdb": false, "role": "generator"}, "boltzgen": {"outputs_diagnostic_only": true, "requires_parent_pdb": false, "role": "generator"}, "complexa_beam": {"outputs_diagnostic_only": false, "requires_parent_pdb": false, "role": "generator"}, "complexa_best_of_n": {"outputs_diagnostic_only": false, "requires_parent_pdb": false, "role": "generator"}, "complexa_fk_steering": {"outputs_diagnostic_only": false, "requires_parent_pdb": false, "role": "generator"}, "complexa_mcts": {"outputs_diagnostic_only": false, "requires_parent_pdb": false, "role": "generator"}, "proteinmpnn_redesign": {"outputs_diagnostic_only": true, "requires_parent_pdb": true, "role": "seq_redesign"}, "structure_refilter": {"outputs_diagnostic_only": false, "requires_parent_pdb": true, "role": "refilter"}}, "instructions": "Propose 1-4 HypothesisCards JSON. Each card must cite evidence from the EvidenceSummary axes/joint_patterns/method_health, with concrete predicted_metric_changes. Each card must include a short reasoning_trace: observed_signal (what evidence matters), inference (what that implies), and action_implication (why the proposed family/config follows). When the evidence carries `recent_ticks_history`, examine how the state has evolved across recent ticks \u2014 did a particular family produce strict successes or near-misses, did a rescue attempt improve a specific axis, did exploration keep cycling through the same configurations? Use that trajectory to choose between exploit (refine what's working), rescue (raise the dominant blocker axis), or explore (pivot family/paradigm) for the new hypotheses. `recommended_action_families` MUST be chosen from `available_families_this_cluster` only \u2014 other capabilities are not staged on this cluster and proposing them wastes a hypothesis slot. When proposing config_delta_suggestions, ONLY use parameter names that appear in `allowed_params_per_family` for that family \u2014 keys not in the schema will be dropped and audited. Values must fall in the listed [lo, hi] range (or enum). Also obey `eval_budget_per_family`: each config's formula must be <= cap. The individual ranges are deliberately broad; use the product cap to trade off width/depth/samples instead of assuming all maxima can be combined. Return JSON matching the schema. `seed_action_families` are deterministic bootstrap seeds injected by the controller to avoid an empty first tick. Treat them as a transparent scheduling prior, not as evidence that any family should win this target.", "seed_action_families": ["bindcraft", "complexa_best_of_n", "structure_refilter", "proteinmpnn_redesign", "complexa_mcts", "complexa_beam", "complexa_fk_steering", "boltzgen"]}
+
+---- assistant reasoning ----
+Let me analyze the evidence.
+
+State: productive. Run SU=6, +2 recent. Raw strict=8. top_bin_share=0.40 (moderate collapse — 40% of recent scored hits in top bin). Recent SU per GPU-h = 0.17. Duplicate fraction 0.3. dry_since_last_su not given explicitly but recent delta +2 means recent SU.
+
+Axis stats: pLDDT pass 20/26, iPAE pass 18/26, binder_scRMSD pass 15/26, near_pass 8. binder_scRMSD is the limiting axis (lowest pass count, median deficit 0.3, 8 near-pass). So rescue lever: binder_scRMSD → sequence redesign (proteinmpnn_redesign) — but parent_artifacts_available=false, parent_artifact_result_count=0. Hmm, proteinmpnn_redesign is parent_required. But recipes show a proteinmpnn_redesign near-miss recipe (rcp_near_b1, r_088) with num_seq_per_target=4, sampling_temp=0.1. So there are parent results? parent_artifacts_available=false though. The recipe exists with representative_result_ids r_088. Parent-required families need concrete baseline_refs/result_ids — r_088 exists as a result id in recipes. So we can cite r_088 as parent ref.
+
+Actually "Parent-required families need concrete baseline_refs/result_ids" — r_088 is a concrete result id. So a proteinmpnn_redesign card rescuing r_088's binder_scRMSD is feasible.
+
+Dominant family: complexa_beam (all method_health). It's productive: strict_yield 6, near_miss 2. Route_values empty. Recent SU +2, still buying SU. So exploit complexa_beam with material perturbation (L1) — e.g., beam_width increase or sc_scale_noise to diversify (top_bin_share 0.40 suggests some collapse; duplicate fraction 0.3).
+
+Cards:
+
+1. Exploit complexa_beam: material perturbation to increase structural diversity while keeping strict quality. Config: beam_width 8, n_branch 4, nsamples 4, nsteps 400 → 8*4*4*400 = 51200 ≤ 65536. OK. Maybe add sc_scale_noise 0.15 to diversify. Predicted: iPAE decrease, pLDDT increase? Predicted changes must use same baseline_refs. Baseline refs: r_001, r_007 (strict exemplars from rcp_proven_a1). Predict iPAE decrease with min_relative_deficit_reduction... r_001 has iPAE 0.18 (pass, deficit 0). Hmm, deficit reduction on passing exemplars is odd. Better to predict on near-miss baseline r_088? r_088 is proteinmpnn near miss with median iPAE 0.26, binder_scRMSD 1.4, pLDDT 91. Actually recipe medians. r_088 near-miss: binder_scRMSD 1.4 vs <1.5 threshold — near pass. iPAE 0.26... wait iPAE threshold is ≤7/31 ≈ 0.226? "iPAE <= 7/31" — so 0.226. iPAE 0.26 fails. pLDDT 91 passes.
+
+So r_088: pLDDT pass, iPAE fail (0.26 vs 0.226), binder_scRMSD near (1.4 vs 1.5). Rescue via proteinmpnn_redesign with higher num_seq_per_target and sampling_temp to broaden sequences → improve binder_scRMSD and iPAE. Config: num_seq_per_target 16, sampling_temp 0.3, backbone_noise 0.1. Budget: num_seq_per_target=16 ≤ 2048. OK.
+
+2. Rescue card: proteinmpnn_redesign on r_088 parent, predicted binder_scRMSD decrease and iPAE decrease, preserve pLDDT.
+
+3. Explore/diversify card: complexa_best_of_n or complexa_fk_steering as non-dominant root family probe to diversify SU bins (top_bin_share 0.40, duplicate fraction 0.3). complexa_best_of_n with sc_scale_noise 0.2, replicas 6, nsamples 4, nsteps 400 → 400*4*6=9600 ≤ 65536. Predicted iPAE decrease relative to... baseline refs must be same across changes in a card. Use r_001/r_007? For an explore card, predicted changes vs the beam exemplars. Could predict iPAE decrease with modest min_relative_deficit_reduction 0.1.
+
+Actually for explore cards, predictions are speculative; keep min_relative_deficit_reduction small (0.05-0.1).
+
+4. Maybe a complexa_fk_steering card with temperature low + reward_i_pae_weight to target iPAE (4 fails, 4 near-pass on iPAE). iPAE fails: 4, near 4. Could do fk_steering with temperature 0.1, reward_min_ipae_weight -0.5. But maybe 3 cards is enough. Let me do 4: exploit beam, rescue proteinmpnn, explore best_of_n, and fk_steering iPAE-targeted. Actually the iPAE axis: 18/26 pass, 4 fail — moderate. binder_scRMSD is the bigger blocker (15/26 pass, 8 near). Keep 3-4 cards.
+
+Let me write 4 cards:
+
+Card 1 (exploit, complexa_beam): widen beam for diversity while keeping quality. baseline_refs ["r_001","r_007"]. Predicted: iPAE decrease, min_rel 0.10; pLDDT increase? pLDDT direction is increase; predicted changes can include pLDDT increase with min_relative_deficit_reduction 0.0 and min_absolute_delta 0.5? Actually for passing exemplars, deficits are 0. Simpler: predict only iPAE decrease. Preserve constraints: pLDDT max_relative_deficit_increase 0.05, binder_scRMSD max_relative_deficit_increase 0.10.
+
+Config: beam_width 8, n_branch 4, nsamples 4, nsteps 400, sc_scale_noise 0.15. Product: 400*4*8*4=51200 ≤ 65536. OK.
+
+Card 2 (rescue, proteinmpnn_redesign on r_088): broaden sequence sampling. Config: num_seq_per_target 16, sampling_temp 0.3, backbone_noise 0.1, model_name v_48_010. Predicted: binder_scRMSD decrease min_rel 0.15, min_absolute_delta 0.1; iPAE decrease min_rel 0.15. Same baseline_refs ["r_088"]. Preserve pLDDT max_rel_deficit_increase 0.05.
+
+Card 3 (explore, complexa_best_of_n): independent replicas with sc_scale_noise for structural diversity to escape top-bin share 0.40. baseline_refs ["r_001","r_007"]. Predicted iPAE decrease min_rel 0.05. Config: replicas 6, nsamples 4, nsteps 400, sc_scale_noise 0.2. Product 9600. OK.
+
+Card 4 (rescue/explore, complexa_fk_steering targeting iPAE near-passes): temperature 0.1, reward_min_ipae_weight -0.5, sc_scale_noise 0.15. baseline_refs ["r_088"]. Predicted iPAE decrease min_rel 0.20. Config budget: beam_width 4, n_branch 4, nsamples 4, nsteps 400 → 25600. OK.
+
+Hmm, card 4 baseline r_088 is a proteinmpnn result; using it as baseline for fk_steering prediction is a bit cross-family but allowed (baseline comparison). Maybe use r_001/r_007 instead? Those pass iPAE. The iPAE near-misses: axis_stats iPAE near_pass_count 4, fail 4. No concrete result ids for those except r_088. Use r_088.
+
+Actually maybe 3 cards is cleaner. I'll do 4 — allowed 1-4. Keep 4 but make each distinct.
+
+Mode affinities:
+- Card 1: exploit 0.7, rescue 0.1, explore 0.2
+- Card 2: rescue 0.7, exploit 0.2, explore 0.1
+- Card 3: explore 0.6, exploit 0.2, rescue 0.2
+- Card 4: rescue 0.5, explore 0.4, exploit 0.1
+
+Evidence refs: cite "EvidenceSummary", "rcp_proven_a1", "r_001", "r_007", "r_088", "axis_stats", "diversity_summary", "method_health.complexa_beam". IDs shown in prompt: r_001, r_007, r_088, recipe hashes. Cite those.
+
+Confidence: 0.65? Direct evidence supports cards (productive state, concrete exemplars). But route_values empty, calibration provisional. Say 0.6.
+
+Write JSON.
+
+---- assistant ----
+```json
+{
+  "abstain": false,
+  "confidence": 0.6,
+  "rationale": "Run is productive (6 SU, +2 recent, 0.17 SU/worker-GPU-h) with complexa_beam as the sole strict-producing family, so primary weight goes to a material exploit perturbation of the proven beam recipe. binder_scRMSD is the limiting strict axis (15/26 pass, 8 near-pass, median deficit 0.3) and iPAE second (18/26 pass), with a concrete near-miss parent (r_088) available for sequence-redesign rescue. top_bin_share 0.40 and duplicate fraction 0.3 warrant a diversity-oriented probe in a second Complexa root family rather than more raw strict re-mining.",
+  "cards": [
+    {
+      "claim": "Widening the proven complexa_beam recipe (beam_width 4->8 with mild sc_scale_noise) increases structurally unique strict successes per GPU-hour by sampling more diverse trajectories while preserving the strict-passing median quality of rcp_proven_a1.",
+      "mode_affinity": {"exploit": 0.7, "rescue": 0.1, "explore": 0.2},
+      "evidence_refs": ["EvidenceSummary", "rcp_proven_a1", "r_001", "r_007", "method_health.complexa_beam", "diversity_summary"],
+      "predicted_metric_changes": [
+        {"axis": "iPAE", "direction": "decrease", "baseline_refs": ["r_001", "r_007"], "min_relative_deficit_reduction": 0.10, "min_absolute_delta": null}
+      ],
+      "preserve_constraints": [
+        {"axis": "pLDDT", "max_relative_deficit_increase": 0.05},
+        {"axis": "binder_scRMSD", "max_relative_deficit_increase": 0.10}
+      ],
+      "recommended_action_families": ["complexa_beam"],
+      "config_delta_suggestions": {"complexa_beam": {"beam_width": 8, "n_branch": 4, "nsamples": 4, "nsteps": 400, "sc_scale_noise": 0.15}},
+      "reasoning_trace": {
+        "observed_signal": "complexa_beam holds strict_yield 6 with 2 near-misses and the run added 2 recent SU, but recent_all_scored_live_top_bin_share is 0.40 with duplicate fraction 0.3.",
+        "inference": "The family still buys new SU but a growing share of scored output lands in one Foldseek bin, so wider beam sampling with mild noise should convert compute into structurally distinct strict hits.",
+        "action_implication": "Keep the proven beam recipe and perturb search breadth (beam_width 8, sc_scale_noise 0.15) within the 65536 product cap (400*4*8*4=51200)."
+      }
+    },
+    {
+      "claim": "Broadening sequence sampling around the near-miss parent r_088 via proteinmpnn_redesign (more sequences, higher temperature, mild backbone noise) reduces binder_scRMSD and iPAE deficits enough to convert the near-miss lineage into strict successes.",
+      "mode_affinity": {"exploit": 0.2, "rescue": 0.7, "explore": 0.1},
+      "evidence_refs": ["EvidenceSummary", "r_088", "rcp_near_b1", "axis_stats"],
+      "predicted_metric_changes": [
+        {"axis": "binder_scRMSD", "direction": "decrease", "baseline_refs": ["r_088"], "min_relative_deficit_reduction": 0.15, "min_absolute_delta": 0.1},
+        {"axis": "iPAE", "direction": "decrease", "baseline_refs": ["r_088"], "min_relative_deficit_reduction": 0.15, "min_absolute_delta": null}
+      ],
+      "preserve_constraints": [
+        {"axis": "pLDDT", "max_relative_deficit_increase": 0.05}
+      ],
+      "recommended_action_families": ["proteinmpnn_redesign"],
+      "config_delta_suggestions": {"proteinmpnn_redesign": {"num_seq_per_target": 16, "sampling_temp": 0.3, "backbone_noise": 0.1, "model_name": "v_48_010"}},
+      "reasoning_trace": {
+        "observed_signal": "binder_scRMSD is the limiting strict axis (15/26 pass, 8 near-pass, median deficit 0.3) and r_088 is a concrete near-miss with binder_scRMSD 1.4, iPAE 0.26, pLDDT 91.",
+        "inference": "The blocker is sequence/backbone fit rather than fold confidence, so broader sequence redesign around the parent backbone is the matched rescue lever.",
+        "action_implication": "proteinmpnn_redesign on parent r_088 with num_seq_per_target 16 and sampling_temp 0.3 (well under the 2048 cap) explores more sequences while the controller chains canonical scoring."
+      }
+    },
+    {
+      "claim": "Independent-replica sampling in complexa_best_of_n with elevated sc_scale_noise produces strict hits in Foldseek bins outside the current top bin, lowering the live top-bin share below 0.40 while holding strict-axis quality.",
+      "mode_affinity": {"exploit": 0.2, "rescue": 0.2, "explore": 0.6},
+      "evidence_refs": ["EvidenceSummary", "diversity_summary", "r_001", "r_007", "axis_stats"],
+      "predicted_metric_changes": [
+        {"axis": "iPAE", "direction": "decrease", "baseline_refs": ["r_001", "r_007"], "min_relative_deficit_reduction": 0.05, "min_absolute_delta": null}
+      ],
+      "preserve_constraints": [
+        {"axis": "pLDDT", "max_relative_deficit_increase": 0.05},
+        {"axis": "binder_scRMSD", "max_relative_deficit_increase": 0.10}
+      ],
+      "recommended_action_families": ["complexa_best_of_n"],
+      "config_delta_suggestions": {"complexa_best_of_n": {"replicas": 6, "nsamples": 4, "nsteps": 400, "sc_scale_noise": 0.2}},
+      "reasoning_trace": {
+        "observed_signal": "top_bin_share(live,all)=0.40 and recent_all_scored_duplicate_fraction=0.3 indicate raw strict growth is concentrating in few SU bins.",
+        "inference": "A different Complexa sampling paradigm with independent replicas and higher noise should reach structurally novel strict hits rather than re-mining the dominant bin.",
+        "action_implication": "complexa_best_of_n with replicas 6 and sc_scale_noise 0.2 (400*4*6=9600, under cap) is a cheap diversity probe in a non-dominant root family."
+      }
+    },
+    {
+      "claim": "Low-temperature fk-steering with an increased min_ipae reward weight converts the 4 iPAE near-pass designs into strict passes by sharpening interface alignment without sacrificing pLDDT.",
+      "mode_affinity": {"exploit": 0.1, "rescue": 0.5, "explore": 0.4},
+      "evidence_refs": ["EvidenceSummary", "r_088", "axis_stats", "joint_patterns"],
+      "predicted_metric_changes": [
+        {"axis": "iPAE", "direction": "decrease", "baseline_refs": ["r_088"], "min_relative_deficit_reduction": 0.20, "min_absolute_delta": null}
+      ],
+      "preserve_constraints": [
+        {"axis": "pLDDT", "max_relative_deficit_increase": 0.05},
+        {"axis": "binder_scRMSD", "max_relative_deficit_increase": 0.10}
+      ],
+      "recommended_action_families": ["complexa_fk_steering"],
+      "config_delta_suggestions": {"complexa_fk_steering": {"temperature": 0.1, "reward_min_ipae_weight": -0.5, "sc_scale_noise": 0.15, "beam_width": 4, "n_branch": 4, "nsamples": 4, "nsteps": 400}},
+      "reasoning_trace": {
+        "observed_signal": "iPAE has 4 fails and 4 near-passes out of 26 while pLDDT passes 20/26, and r_088 shows pLDDT 91 with iPAE 0.26 above threshold.",
+        "inference": "Interface positioning, not fold confidence, is the second blocker, so reward steering that penalizes min inter-chain PAE at low temperature is the matched lever.",
+        "action_implication": "complexa_fk_steering with temperature 0.1 and reward_min_ipae_weight -0.5 (product 400*4*4*4=25600, under cap) directly targets the iPAE deficit."
+      }
+    }
+  ]
+}
+```

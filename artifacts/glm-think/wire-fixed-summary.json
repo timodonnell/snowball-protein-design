@@ -1,0 +1,654 @@
+{
+  "summary": {
+    "http_calls": 27,
+    "statuses": {
+      "200": 27
+    },
+    "transport_states": {
+      "completed": 27
+    },
+    "roles": {
+      "planner": 15,
+      "supervisor": 12
+    },
+    "repair_calls": 0,
+    "json_only_calls": 4,
+    "length_terminated_calls": 0,
+    "median_latency_s": 11.587537351995707,
+    "prompt_tokens": 178071,
+    "completion_tokens": 70206,
+    "max_prompt_tokens": 8835,
+    "max_completion_tokens": 4256,
+    "calls_missing_usage": 0,
+    "calls_with_injected_extra_body": 27,
+    "calls_reporting_reasoning_tokens": 27,
+    "reasoning_tokens": 30030,
+    "max_reasoning_tokens": 2379,
+    "calls_reporting_cached_prompt_tokens": 27,
+    "cached_prompt_tokens": 147392
+  },
+  "calls": [
+    {
+      "file": "1790388789625481033_09e116e8-24a6-4768-88d1-1677825ecffe.json",
+      "call_id": "09e116e8-24a6-4768-88d1-1677825ecffe",
+      "role": "planner",
+      "started_at": "2026-09-26T02:13:09.625811+00:00",
+      "model": "glm-5.3",
+      "state": "completed",
+      "status": 200,
+      "injected_extra_body": {
+        "chat_template_kwargs": {
+          "reasoning_effort": "high"
+        }
+      },
+      "is_repair_call": false,
+      "finish_reason": "stop",
+      "json_only": false,
+      "latency_s": 13.178184353746474,
+      "prompt_tokens": 8657,
+      "completion_tokens": 3235,
+      "reasoning_tokens": 1702,
+      "cached_prompt_tokens": 8576,
+      "error": null
+    },
+    {
+      "file": "1790388802834829045_0829a711-29dd-46f2-b6d2-1e5e7440875c.json",
+      "call_id": "0829a711-29dd-46f2-b6d2-1e5e7440875c",
+      "role": "planner",
+      "started_at": "2026-09-26T02:13:22.835107+00:00",
+      "model": "glm-5.3",
+      "state": "completed",
+      "status": 200,
+      "injected_extra_body": {
+        "chat_template_kwargs": {
+          "reasoning_effort": "high"
+        }
+      },
+      "is_repair_call": false,
+      "finish_reason": "stop",
+      "json_only": false,
+      "latency_s": 13.708135056309402,
+      "prompt_tokens": 8398,
+      "completion_tokens": 3324,
+      "reasoning_tokens": 1397,
+      "cached_prompt_tokens": 0,
+      "error": null
+    },
+    {
+      "file": "1790388816590371233_e28e7afe-2c7f-486b-863a-f5ea6c8a6545.json",
+      "call_id": "e28e7afe-2c7f-486b-863a-f5ea6c8a6545",
+      "role": "planner",
+      "started_at": "2026-09-26T02:13:36.590633+00:00",
+      "model": "glm-5.3",
+      "state": "completed",
+      "status": 200,
+      "injected_extra_body": {
+        "chat_template_kwargs": {
+          "reasoning_effort": "high"
+        }
+      },
+      "is_repair_call": false,
+      "finish_reason": "stop",
+      "json_only": true,
+      "latency_s": 15.324455389752984,
+      "prompt_tokens": 8835,
+      "completion_tokens": 3932,
+      "reasoning_tokens": 1748,
+      "cached_prompt_tokens": 3968,
+      "error": null
+    },
+    {
+      "file": "1790388831943295042_24313b02-dfc4-4f73-a365-41a553a47f70.json",
+      "call_id": "24313b02-dfc4-4f73-a365-41a553a47f70",
+      "role": "planner",
+      "started_at": "2026-09-26T02:13:51.943527+00:00",
+      "model": "glm-5.3",
+      "state": "completed",
+      "status": 200,
+      "injected_extra_body": {
+        "chat_template_kwargs": {
+          "reasoning_effort": "high"
+        }
+      },
+      "is_repair_call": false,
+      "finish_reason": "stop",
+      "json_only": false,
+      "latency_s": 11.587537351995707,
+      "prompt_tokens": 7891,
+      "completion_tokens": 2783,
+      "reasoning_tokens": 781,
+      "cached_prompt_tokens": 3968,
+      "error": null
+    },
+    {
+      "file": "1790388843555521498_10de3d4a-0bcd-480d-90e5-4f38fb13f04e.json",
+      "call_id": "10de3d4a-0bcd-480d-90e5-4f38fb13f04e",
+      "role": "planner",
+      "started_at": "2026-09-26T02:14:03.555769+00:00",
+      "model": "glm-5.3",
+      "state": "completed",
+      "status": 200,
+      "injected_extra_body": {
+        "chat_template_kwargs": {
+          "reasoning_effort": "high"
+        }
+      },
+      "is_repair_call": false,
+      "finish_reason": "stop",
+      "json_only": false,
+      "latency_s": 16.872500599361956,
+      "prompt_tokens": 8396,
+      "completion_tokens": 4256,
+      "reasoning_tokens": 2235,
+      "cached_prompt_tokens": 3968,
+      "error": null
+    },
+    {
+      "file": "1790388860455656072_58590a96-721d-4a1a-b59d-d2fdb2003a63.json",
+      "call_id": "58590a96-721d-4a1a-b59d-d2fdb2003a63",
+      "role": "planner",
+      "started_at": "2026-09-26T02:14:20.455912+00:00",
+      "model": "glm-5.3",
+      "state": "completed",
+      "status": 200,
+      "injected_extra_body": {
+        "chat_template_kwargs": {
+          "reasoning_effort": "high"
+        }
+      },
+      "is_repair_call": false,
+      "finish_reason": "stop",
+      "json_only": false,
+      "latency_s": 12.351275480352342,
+      "prompt_tokens": 8657,
+      "completion_tokens": 3082,
+      "reasoning_tokens": 1445,
+      "cached_prompt_tokens": 8576,
+      "error": null
+    },
+    {
+      "file": "1790388872833149576_4f308a39-8096-44a2-b677-7d71bcde4733.json",
+      "call_id": "4f308a39-8096-44a2-b677-7d71bcde4733",
+      "role": "planner",
+      "started_at": "2026-09-26T02:14:32.833402+00:00",
+      "model": "glm-5.3",
+      "state": "completed",
+      "status": 200,
+      "injected_extra_body": {
+        "chat_template_kwargs": {
+          "reasoning_effort": "high"
+        }
+      },
+      "is_repair_call": false,
+      "finish_reason": "stop",
+      "json_only": false,
+      "latency_s": 13.899302501231432,
+      "prompt_tokens": 8398,
+      "completion_tokens": 3381,
+      "reasoning_tokens": 1538,
+      "cached_prompt_tokens": 8320,
+      "error": null
+    },
+    {
+      "file": "1790388886761506360_7853f8eb-27db-4768-875f-ca61646b4c59.json",
+      "call_id": "7853f8eb-27db-4768-875f-ca61646b4c59",
+      "role": "planner",
+      "started_at": "2026-09-26T02:14:46.761788+00:00",
+      "model": "glm-5.3",
+      "state": "completed",
+      "status": 200,
+      "injected_extra_body": {
+        "chat_template_kwargs": {
+          "reasoning_effort": "high"
+        }
+      },
+      "is_repair_call": false,
+      "finish_reason": "stop",
+      "json_only": false,
+      "latency_s": 15.638553411699831,
+      "prompt_tokens": 8835,
+      "completion_tokens": 3990,
+      "reasoning_tokens": 1768,
+      "cached_prompt_tokens": 8768,
+      "error": null
+    },
+    {
+      "file": "1790388902433474652_aa4926d2-d51c-46f0-a4c5-9f5f8a92fda2.json",
+      "call_id": "aa4926d2-d51c-46f0-a4c5-9f5f8a92fda2",
+      "role": "planner",
+      "started_at": "2026-09-26T02:15:02.433715+00:00",
+      "model": "glm-5.3",
+      "state": "completed",
+      "status": 200,
+      "injected_extra_body": {
+        "chat_template_kwargs": {
+          "reasoning_effort": "high"
+        }
+      },
+      "is_repair_call": false,
+      "finish_reason": "stop",
+      "json_only": false,
+      "latency_s": 11.724702706560493,
+      "prompt_tokens": 7891,
+      "completion_tokens": 2840,
+      "reasoning_tokens": 785,
+      "cached_prompt_tokens": 7808,
+      "error": null
+    },
+    {
+      "file": "1790388914185401102_d981b63d-d336-42bb-961a-f53c50a78bcd.json",
+      "call_id": "d981b63d-d336-42bb-961a-f53c50a78bcd",
+      "role": "planner",
+      "started_at": "2026-09-26T02:15:14.185651+00:00",
+      "model": "glm-5.3",
+      "state": "completed",
+      "status": 200,
+      "injected_extra_body": {
+        "chat_template_kwargs": {
+          "reasoning_effort": "high"
+        }
+      },
+      "is_repair_call": false,
+      "finish_reason": "stop",
+      "json_only": false,
+      "latency_s": 14.808949190191925,
+      "prompt_tokens": 8396,
+      "completion_tokens": 3447,
+      "reasoning_tokens": 1514,
+      "cached_prompt_tokens": 8320,
+      "error": null
+    },
+    {
+      "file": "1790388929024012897_8b5f6d95-b3e8-4371-a976-05ec23712573.json",
+      "call_id": "8b5f6d95-b3e8-4371-a976-05ec23712573",
+      "role": "planner",
+      "started_at": "2026-09-26T02:15:29.024273+00:00",
+      "model": "glm-5.3",
+      "state": "completed",
+      "status": 200,
+      "injected_extra_body": {
+        "chat_template_kwargs": {
+          "reasoning_effort": "high"
+        }
+      },
+      "is_repair_call": false,
+      "finish_reason": "stop",
+      "json_only": false,
+      "latency_s": 16.309512038715184,
+      "prompt_tokens": 8657,
+      "completion_tokens": 4046,
+      "reasoning_tokens": 2030,
+      "cached_prompt_tokens": 8576,
+      "error": null
+    },
+    {
+      "file": "1790388945361493242_ac0920ca-db29-4b0b-bdb6-bc0587ef3c93.json",
+      "call_id": "ac0920ca-db29-4b0b-bdb6-bc0587ef3c93",
+      "role": "planner",
+      "started_at": "2026-09-26T02:15:45.361741+00:00",
+      "model": "glm-5.3",
+      "state": "completed",
+      "status": 200,
+      "injected_extra_body": {
+        "chat_template_kwargs": {
+          "reasoning_effort": "high"
+        }
+      },
+      "is_repair_call": false,
+      "finish_reason": "stop",
+      "json_only": false,
+      "latency_s": 17.248023408465087,
+      "prompt_tokens": 8398,
+      "completion_tokens": 4044,
+      "reasoning_tokens": 2379,
+      "cached_prompt_tokens": 8320,
+      "error": null
+    },
+    {
+      "file": "1790388962638217737_333f62e8-84a3-46d0-be91-e81582072063.json",
+      "call_id": "333f62e8-84a3-46d0-be91-e81582072063",
+      "role": "planner",
+      "started_at": "2026-09-26T02:16:02.638481+00:00",
+      "model": "glm-5.3",
+      "state": "completed",
+      "status": 200,
+      "injected_extra_body": {
+        "chat_template_kwargs": {
+          "reasoning_effort": "high"
+        }
+      },
+      "is_repair_call": false,
+      "finish_reason": "stop",
+      "json_only": false,
+      "latency_s": 13.9730382906273,
+      "prompt_tokens": 8835,
+      "completion_tokens": 3619,
+      "reasoning_tokens": 1478,
+      "cached_prompt_tokens": 8768,
+      "error": null
+    },
+    {
+      "file": "1790388976643343116_69b4a174-3879-4c93-b2a2-e73f1045ebde.json",
+      "call_id": "69b4a174-3879-4c93-b2a2-e73f1045ebde",
+      "role": "planner",
+      "started_at": "2026-09-26T02:16:16.643578+00:00",
+      "model": "glm-5.3",
+      "state": "completed",
+      "status": 200,
+      "injected_extra_body": {
+        "chat_template_kwargs": {
+          "reasoning_effort": "high"
+        }
+      },
+      "is_repair_call": false,
+      "finish_reason": "stop",
+      "json_only": false,
+      "latency_s": 10.902505493722856,
+      "prompt_tokens": 7891,
+      "completion_tokens": 2578,
+      "reasoning_tokens": 822,
+      "cached_prompt_tokens": 7808,
+      "error": null
+    },
+    {
+      "file": "1790388987571999783_8ca3ae82-fc19-40f3-b4f1-6a2c611a2b1b.json",
+      "call_id": "8ca3ae82-fc19-40f3-b4f1-6a2c611a2b1b",
+      "role": "planner",
+      "started_at": "2026-09-26T02:16:27.572247+00:00",
+      "model": "glm-5.3",
+      "state": "completed",
+      "status": 200,
+      "injected_extra_body": {
+        "chat_template_kwargs": {
+          "reasoning_effort": "high"
+        }
+      },
+      "is_repair_call": false,
+      "finish_reason": "stop",
+      "json_only": false,
+      "latency_s": 17.904575990512967,
+      "prompt_tokens": 8396,
+      "completion_tokens": 4241,
+      "reasoning_tokens": 2365,
+      "cached_prompt_tokens": 8320,
+      "error": null
+    },
+    {
+      "file": "1790389007934860339_54625437-75fe-4f35-ad98-6cf9b7be87e5.json",
+      "call_id": "54625437-75fe-4f35-ad98-6cf9b7be87e5",
+      "role": "supervisor",
+      "started_at": "2026-09-26T02:16:47.935126+00:00",
+      "model": "glm-5.3",
+      "state": "completed",
+      "status": 200,
+      "injected_extra_body": {
+        "chat_template_kwargs": {
+          "reasoning_effort": "high"
+        }
+      },
+      "is_repair_call": false,
+      "finish_reason": "stop",
+      "json_only": false,
+      "latency_s": 7.0446471609175205,
+      "prompt_tokens": 4688,
+      "completion_tokens": 1694,
+      "reasoning_tokens": 400,
+      "cached_prompt_tokens": 4608,
+      "error": null
+    },
+    {
+      "file": "1790389015008846318_972dc135-1b4b-4fa5-bebe-357fa461e21e.json",
+      "call_id": "972dc135-1b4b-4fa5-bebe-357fa461e21e",
+      "role": "supervisor",
+      "started_at": "2026-09-26T02:16:55.008991+00:00",
+      "model": "glm-5.3",
+      "state": "completed",
+      "status": 200,
+      "injected_extra_body": {
+        "chat_template_kwargs": {
+          "reasoning_effort": "high"
+        }
+      },
+      "is_repair_call": false,
+      "finish_reason": "stop",
+      "json_only": true,
+      "latency_s": 7.47234882414341,
+      "prompt_tokens": 3953,
+      "completion_tokens": 1646,
+      "reasoning_tokens": 767,
+      "cached_prompt_tokens": 1728,
+      "error": null
+    },
+    {
+      "file": "1790389022507655233_b5dce43c-5b09-41b2-9f08-0f585a2ae0c8.json",
+      "call_id": "b5dce43c-5b09-41b2-9f08-0f585a2ae0c8",
+      "role": "supervisor",
+      "started_at": "2026-09-26T02:17:02.507814+00:00",
+      "model": "glm-5.3",
+      "state": "completed",
+      "status": 200,
+      "injected_extra_body": {
+        "chat_template_kwargs": {
+          "reasoning_effort": "high"
+        }
+      },
+      "is_repair_call": false,
+      "finish_reason": "stop",
+      "json_only": false,
+      "latency_s": 8.531928282231092,
+      "prompt_tokens": 4576,
+      "completion_tokens": 1763,
+      "reasoning_tokens": 682,
+      "cached_prompt_tokens": 1728,
+      "error": null
+    },
+    {
+      "file": "1790389031065826573_8fd7f75e-2cd0-4edc-92be-1a9460e8e462.json",
+      "call_id": "8fd7f75e-2cd0-4edc-92be-1a9460e8e462",
+      "role": "supervisor",
+      "started_at": "2026-09-26T02:17:11.065971+00:00",
+      "model": "glm-5.3",
+      "state": "completed",
+      "status": 200,
+      "injected_extra_body": {
+        "chat_template_kwargs": {
+          "reasoning_effort": "high"
+        }
+      },
+      "is_repair_call": false,
+      "finish_reason": "stop",
+      "json_only": true,
+      "latency_s": 4.84024762455374,
+      "prompt_tokens": 3963,
+      "completion_tokens": 1031,
+      "reasoning_tokens": 485,
+      "cached_prompt_tokens": 1728,
+      "error": null
+    },
+    {
+      "file": "1790389035932588661_e897bdc5-22b7-4982-a095-9986d969688e.json",
+      "call_id": "e897bdc5-22b7-4982-a095-9986d969688e",
+      "role": "supervisor",
+      "started_at": "2026-09-26T02:17:15.932774+00:00",
+      "model": "glm-5.3",
+      "state": "completed",
+      "status": 200,
+      "injected_extra_body": {
+        "chat_template_kwargs": {
+          "reasoning_effort": "high"
+        }
+      },
+      "is_repair_call": false,
+      "finish_reason": "stop",
+      "json_only": false,
+      "latency_s": 6.641295425593853,
+      "prompt_tokens": 4688,
+      "completion_tokens": 1583,
+      "reasoning_tokens": 299,
+      "cached_prompt_tokens": 4608,
+      "error": null
+    },
+    {
+      "file": "1790389042601448477_05d4fcdd-8759-4481-ab07-845038f0b747.json",
+      "call_id": "05d4fcdd-8759-4481-ab07-845038f0b747",
+      "role": "supervisor",
+      "started_at": "2026-09-26T02:17:22.601612+00:00",
+      "model": "glm-5.3",
+      "state": "completed",
+      "status": 200,
+      "injected_extra_body": {
+        "chat_template_kwargs": {
+          "reasoning_effort": "high"
+        }
+      },
+      "is_repair_call": false,
+      "finish_reason": "stop",
+      "json_only": false,
+      "latency_s": 5.237893897108734,
+      "prompt_tokens": 3953,
+      "completion_tokens": 1130,
+      "reasoning_tokens": 386,
+      "cached_prompt_tokens": 3840,
+      "error": null
+    },
+    {
+      "file": "1790389047864963142_17f517ee-deca-42fa-bd40-c2cbdb452325.json",
+      "call_id": "17f517ee-deca-42fa-bd40-c2cbdb452325",
+      "role": "supervisor",
+      "started_at": "2026-09-26T02:17:27.865124+00:00",
+      "model": "glm-5.3",
+      "state": "completed",
+      "status": 200,
+      "injected_extra_body": {
+        "chat_template_kwargs": {
+          "reasoning_effort": "high"
+        }
+      },
+      "is_repair_call": false,
+      "finish_reason": "stop",
+      "json_only": false,
+      "latency_s": 7.166875324212015,
+      "prompt_tokens": 4576,
+      "completion_tokens": 1538,
+      "reasoning_tokens": 521,
+      "cached_prompt_tokens": 4480,
+      "error": null
+    },
+    {
+      "file": "1790389055063190674_d0e910b4-93c2-4cd9-afaf-3c6ffba29ac7.json",
+      "call_id": "d0e910b4-93c2-4cd9-afaf-3c6ffba29ac7",
+      "role": "supervisor",
+      "started_at": "2026-09-26T02:17:35.063336+00:00",
+      "model": "glm-5.3",
+      "state": "completed",
+      "status": 200,
+      "injected_extra_body": {
+        "chat_template_kwargs": {
+          "reasoning_effort": "high"
+        }
+      },
+      "is_repair_call": false,
+      "finish_reason": "stop",
+      "json_only": false,
+      "latency_s": 4.067953930236399,
+      "prompt_tokens": 3963,
+      "completion_tokens": 859,
+      "reasoning_tokens": 286,
+      "cached_prompt_tokens": 3840,
+      "error": null
+    },
+    {
+      "file": "1790389059158695552_3730ed22-9930-467a-87f0-c039bbc8ca96.json",
+      "call_id": "3730ed22-9930-467a-87f0-c039bbc8ca96",
+      "role": "supervisor",
+      "started_at": "2026-09-26T02:17:39.158855+00:00",
+      "model": "glm-5.3",
+      "state": "completed",
+      "status": 200,
+      "injected_extra_body": {
+        "chat_template_kwargs": {
+          "reasoning_effort": "high"
+        }
+      },
+      "is_repair_call": false,
+      "finish_reason": "stop",
+      "json_only": false,
+      "latency_s": 7.260542235337198,
+      "prompt_tokens": 4688,
+      "completion_tokens": 1686,
+      "reasoning_tokens": 394,
+      "cached_prompt_tokens": 4608,
+      "error": null
+    },
+    {
+      "file": "1790389066442556898_fecc473f-cc05-45d8-9fc0-0f035902eb0f.json",
+      "call_id": "fecc473f-cc05-45d8-9fc0-0f035902eb0f",
+      "role": "supervisor",
+      "started_at": "2026-09-26T02:17:46.442699+00:00",
+      "model": "glm-5.3",
+      "state": "completed",
+      "status": 200,
+      "injected_extra_body": {
+        "chat_template_kwargs": {
+          "reasoning_effort": "high"
+        }
+      },
+      "is_repair_call": false,
+      "finish_reason": "stop",
+      "json_only": false,
+      "latency_s": 8.06317720003426,
+      "prompt_tokens": 3953,
+      "completion_tokens": 1777,
+      "reasoning_tokens": 801,
+      "cached_prompt_tokens": 3840,
+      "error": null
+    },
+    {
+      "file": "1790389074530962682_fa8133b6-172c-4de0-b966-3ec310799377.json",
+      "call_id": "fa8133b6-172c-4de0-b966-3ec310799377",
+      "role": "supervisor",
+      "started_at": "2026-09-26T02:17:54.531119+00:00",
+      "model": "glm-5.3",
+      "state": "completed",
+      "status": 200,
+      "injected_extra_body": {
+        "chat_template_kwargs": {
+          "reasoning_effort": "high"
+        }
+      },
+      "is_repair_call": false,
+      "finish_reason": "stop",
+      "json_only": false,
+      "latency_s": 7.044165408238769,
+      "prompt_tokens": 4576,
+      "completion_tokens": 1528,
+      "reasoning_tokens": 487,
+      "cached_prompt_tokens": 4480,
+      "error": null
+    },
+    {
+      "file": "1790389081605260863_61fe4e26-6233-4d45-bd7d-0c1303583e1d.json",
+      "call_id": "61fe4e26-6233-4d45-bd7d-0c1303583e1d",
+      "role": "supervisor",
+      "started_at": "2026-09-26T02:18:01.605427+00:00",
+      "model": "glm-5.3",
+      "state": "completed",
+      "status": 200,
+      "injected_extra_body": {
+        "chat_template_kwargs": {
+          "reasoning_effort": "high"
+        }
+      },
+      "is_repair_call": false,
+      "finish_reason": "stop",
+      "json_only": true,
+      "latency_s": 5.159533276222646,
+      "prompt_tokens": 3963,
+      "completion_tokens": 1173,
+      "reasoning_tokens": 535,
+      "cached_prompt_tokens": 3840,
+      "error": null
+    }
+  ],
+  "note": "JSON-only measures syntax only. Use T-REX reports for schema, repair, reference, candidate and fallback outcomes. Token sums exclude calls with missing usage. Reasoning and cached-prompt tokens are reported only by servers that return them, and reasoning tokens are already counted inside completion tokens."
+}

@@ -1,0 +1,220 @@
+{
+  "backend_extensions": [],
+  "campaign": {
+    "input_artifact": "/work/results/glm-think/campaign/campaign_input.yaml",
+    "input_artifact_sha256": "66265395039bee806908fecfa2ad753188f64dca9652b481157224469ff94df5",
+    "name": "pdl1-glm-think-s0",
+    "resolved_artifact": "/work/results/glm-think/campaign/campaign_resolved.json",
+    "resolved_artifact_sha256": "3758c3947203dfdf9e440d40409eecb47511623655839b72884f2d86a1a04982",
+    "source_path": "/work/configs/glm-think.yaml",
+    "source_sha256": "66265395039bee806908fecfa2ad753188f64dca9652b481157224469ff94df5"
+  },
+  "controller": {
+    "charged_gpus": null,
+    "critic_enabled": true,
+    "enabled_families": [
+      "complexa_beam",
+      "complexa_best_of_n",
+      "complexa_fk_steering",
+      "proteinmpnn_redesign",
+      "structure_refilter"
+    ],
+    "evidence_skip_enabled": false,
+    "foldseek_collapse_tm_score": 0.6,
+    "foldseek_su_tm_score": 0.6,
+    "max_wall_h": 1.0,
+    "seed": 0,
+    "worker_gpus": [
+      "2",
+      "3"
+    ]
+  },
+  "model": {
+    "client_model": "vllm/glm-5.3",
+    "content_sha256": "77409ac00f81e48d29b9f079ab448044a5ec1cdd91dfdb50b3035c197f065722",
+    "manifest_path": "/work/T-REX/config/trex/qwen3_6_27b_fp8_model_manifest.json",
+    "n_files": 80,
+    "path": "/work/T-REX-assets/checkpoints/Qwen3.6-27B-FP8",
+    "served_name": "glm-5.3",
+    "total_bytes": 30890040890
+  },
+  "prompts": {
+    "cross_campaign_memory": null,
+    "deterministic_guard": {
+      "enabled": true,
+      "record_model": "deterministic_guard",
+      "record_role": "critic"
+    },
+    "roles": {
+      "critic": {
+        "call_configuration": {
+          "base_url": "http://127.0.0.1:12002/v1",
+          "enable_thinking": false,
+          "enabled": false,
+          "max_tokens": 256,
+          "model": "vllm/glm-5.3",
+          "temperature": 0.3,
+          "timeout_s": 30.0
+        },
+        "runtime_source": {
+          "path": "trex/critic.py",
+          "sha256": "597b78cb2950b0ef7b677f554126c8d897eb28192455188726ebf31bbea04cae"
+        },
+        "system_prompt_sha256": "25a22d747e7d82c916cd73a39e0be6bcd2782d02aca7214e8a803114841d62f0",
+        "usage_scope": "standalone_optional_llm"
+      },
+      "planner": {
+        "call_configuration": {
+          "base_url": "http://127.0.0.1:12002/v1",
+          "confidence_threshold": 0.55,
+          "enable_thinking": false,
+          "max_tokens": 3072,
+          "model": "vllm/glm-5.3",
+          "prompt_variant": "default",
+          "temperature": 0.2,
+          "timeout_s": 90.0
+        },
+        "runtime_source": {
+          "path": "trex/planner.py",
+          "sha256": "dd3d84f27d496a22e4bbb6582d39d8b003bdf4c27f466aca663d73744a54350e"
+        },
+        "system_prompt_sha256": "f904090f9bb6775175a64f030759d9f5e7f367f5179b0e4656974431e363b4ef",
+        "usage_scope": "campaign_llm"
+      },
+      "supervisor": {
+        "call_configuration": {
+          "base_url": "http://127.0.0.1:12002/v1",
+          "confidence_threshold": 0.55,
+          "enable_thinking": false,
+          "max_tokens": 3072,
+          "model": "vllm/glm-5.3",
+          "temperature": 0.0,
+          "timeout_s": 90.0
+        },
+        "runtime_source": {
+          "path": "trex/supervisor.py",
+          "sha256": "78cbbd6e6a4e42e08d5e2da983b75e9d730412a09b212782d138b9f882c8d794"
+        },
+        "system_prompt_sha256": "95de79e4730f2f2572ea28ad6aa6e44178de6fef5e5c6240b4f6d2d5fb4989eb",
+        "usage_scope": "campaign_llm"
+      }
+    },
+    "schema_version": "trex.prompt-catalog.v2"
+  },
+  "repositories": {
+    "bindcraft": {
+      "capture_error": null,
+      "capture_mode": "normal",
+      "dirty": true,
+      "git_head": "b971db42ba6e091afab63ccb30ae02215150a990",
+      "path": "/work/T-REX/external/BindCraft",
+      "status_sha256": "78b9033b48a608317094913419b42b4807b35671c6989f7cce2a489e85dd30e3",
+      "tracked_diff_artifact": "/work/results/glm-think/campaign/repository_patches/bindcraft.patch",
+      "tracked_diff_lfs_excludes": [],
+      "tracked_diff_sha256": "81b8e5394f5cd68a6c7f8b5355e1d62593cb92cfad6ba612c50019104dc21a28",
+      "untracked_path_count": 16,
+      "untracked_paths": [
+        "params/LICENSE",
+        "params/params_model_1.npz",
+        "params/params_model_1_multimer_v3.npz",
+        "params/params_model_1_ptm.npz",
+        "params/params_model_2.npz",
+        "params/params_model_2_multimer_v3.npz",
+        "params/params_model_2_ptm.npz",
+        "params/params_model_3.npz",
+        "params/params_model_3_multimer_v3.npz",
+        "params/params_model_3_ptm.npz",
+        "params/params_model_4.npz",
+        "params/params_model_4_multimer_v3.npz",
+        "params/params_model_4_ptm.npz",
+        "params/params_model_5.npz",
+        "params/params_model_5_multimer_v3.npz",
+        "params/params_model_5_ptm.npz"
+      ]
+    },
+    "boltzgen": {
+      "capture_error": null,
+      "capture_mode": "normal",
+      "dirty": false,
+      "git_head": "31d9d9b9c72245b4ed6fe8742d6fbf4e1a3552a0",
+      "path": "/work/T-REX/external/BoltzGen",
+      "status_sha256": null,
+      "tracked_diff_artifact": null,
+      "tracked_diff_lfs_excludes": [],
+      "tracked_diff_sha256": null,
+      "untracked_path_count": 0,
+      "untracked_paths": []
+    },
+    "complexa": {
+      "capture_error": null,
+      "capture_mode": "normal",
+      "dirty": true,
+      "git_head": "5ae24b055d828918296f2aad63616b1f4cc0e491",
+      "path": "/work/T-REX/external/Proteina-Complexa",
+      "status_sha256": "93efd843737408441cff744acf4397dea50b0f8f778d38032164f10dadae2b74",
+      "tracked_diff_artifact": "/work/results/glm-think/campaign/repository_patches/complexa.patch",
+      "tracked_diff_lfs_excludes": [],
+      "tracked_diff_sha256": "13315e04965dbaaa10a21106d73a9ac2061410336ca882a2795799a6bd0d1614",
+      "untracked_path_count": 0,
+      "untracked_paths": []
+    },
+    "legacy_complexa": {
+      "capture_error": null,
+      "capture_mode": "normal",
+      "dirty": true,
+      "git_head": "5ae24b055d828918296f2aad63616b1f4cc0e491",
+      "path": "/work/T-REX/external/Proteina-Complexa",
+      "status_sha256": "93efd843737408441cff744acf4397dea50b0f8f778d38032164f10dadae2b74",
+      "tracked_diff_artifact": "/work/results/glm-think/campaign/repository_patches/legacy_complexa.patch",
+      "tracked_diff_lfs_excludes": [],
+      "tracked_diff_sha256": "13315e04965dbaaa10a21106d73a9ac2061410336ca882a2795799a6bd0d1614",
+      "untracked_path_count": 0,
+      "untracked_paths": []
+    },
+    "trex": {
+      "capture_error": null,
+      "capture_mode": "normal",
+      "dirty": false,
+      "git_head": "8b5103cc357a0c9df8c2eae6feaf1fb85f0d5e09",
+      "path": "/work/T-REX",
+      "status_sha256": null,
+      "tracked_diff_artifact": null,
+      "tracked_diff_lfs_excludes": [],
+      "tracked_diff_sha256": null,
+      "untracked_path_count": 0,
+      "untracked_paths": []
+    }
+  },
+  "runtime": {
+    "af2_proteinmpnn_python": "/work/T-REX/external/Proteina-Complexa/.venv/bin/python",
+    "af2_proteinmpnn_python_resolved": "/root/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/bin/python3.12",
+    "cuda_visible_devices": null,
+    "hostname": "glm-think-pilot",
+    "packages": {
+      "numpy": "2.2.6",
+      "openai": "2.32.0",
+      "pydantic": "2.13.2",
+      "scipy": null,
+      "torch": "2.10.0",
+      "vllm": "0.19.0"
+    },
+    "platform": "Linux-6.8.12-680-6063-coreweave-amd64-f81899c8-x86_64-with-glibc2.35",
+    "python": "3.12.13 (main, Mar 20 2026, 00:33:26) [Clang 22.1.1 ]",
+    "slurm_job_id": null,
+    "slurm_job_name": null
+  },
+  "schema_version": "v7.3.3_run_provenance_v2",
+  "source": {
+    "n_files": 283,
+    "release_archive_sha256": null,
+    "tree_sha256": "408e8df0708a1c4453bf457663fe92239c233fbe3178814c6b2f0843732d6beb"
+  },
+  "target": {
+    "config_path": "/work/T-REX/config/targets/pdl1.json",
+    "config_sha256": "4e31d1d7152ea3a2aac3c234feb7ab7ae8692f6e767de9c83ec2f3cc0248b274",
+    "name": "pdl1",
+    "pdb_path": "/work/T-REX-assets/targets/alpha_proteo_targets/5o45_repacked.pdb",
+    "pdb_sha256": "dcd82d0a0258524ad6b036c39a3743cd8e16fb455178531781f81f5735a6a397",
+    "target_id": "32_PDL1_ALPHA_REPACK"
+  }
+}

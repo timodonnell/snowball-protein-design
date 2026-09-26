@@ -1,0 +1,1567 @@
+{
+  "records": [
+    {
+      "abstain": false,
+      "card_action_families": [
+        [
+          "complexa_beam"
+        ],
+        [
+          "complexa_best_of_n"
+        ],
+        [
+          "complexa_fk_steering"
+        ]
+      ],
+      "card_axes": [
+        [
+          "binder_scRMSD",
+          "iPAE"
+        ],
+        [
+          "binder_scRMSD"
+        ],
+        [
+          "iPAE"
+        ]
+      ],
+      "card_config_delta_suggestions": [
+        {
+          "complexa_beam": {
+            "beam_width": 8,
+            "n_branch": 4,
+            "nsamples": 4,
+            "nsteps": 400
+          }
+        },
+        {
+          "complexa_best_of_n": {
+            "enable_greedy_optimization": true,
+            "greedy_percentage": 5,
+            "n_greedy_iters": 10,
+            "nsamples": 4,
+            "nsteps": 400,
+            "refinement_algorithm": "sequence_hallucination",
+            "replicas": 8
+          }
+        },
+        {
+          "complexa_fk_steering": {
+            "beam_width": 4,
+            "n_branch": 4,
+            "nsamples": 4,
+            "nsteps": 400,
+            "sc_scale_noise": 0.2,
+            "temperature": 0.1
+          }
+        }
+      ],
+      "card_mode_affinities": [
+        {
+          "exploit": 0.7,
+          "explore": 0.1,
+          "rescue": 0.2
+        },
+        {
+          "exploit": 0.2,
+          "explore": 0.1,
+          "rescue": 0.7
+        },
+        {
+          "exploit": 0.1,
+          "explore": 0.7,
+          "rescue": 0.2
+        }
+      ],
+      "case": "productive_cd45_like",
+      "confidence": 0.6,
+      "elapsed_s": 16.77,
+      "fail_reason": null,
+      "n_cards": 3,
+      "prompt_variant": "default",
+      "repeat": 0,
+      "temperature": 0.2,
+      "tick_id_int": 0,
+      "usage": {
+        "input_tokens": 8657,
+        "output_tokens": 3235
+      },
+      "valid": true
+    },
+    {
+      "abstain": false,
+      "card_action_families": [
+        [
+          "complexa_beam"
+        ],
+        [
+          "complexa_fk_steering"
+        ],
+        [
+          "bindcraft"
+        ],
+        [
+          "boltzgen"
+        ]
+      ],
+      "card_axes": [
+        [
+          "iPAE"
+        ],
+        [
+          "iPAE"
+        ],
+        [
+          "iPAE"
+        ],
+        [
+          "iPAE"
+        ]
+      ],
+      "card_config_delta_suggestions": [
+        {
+          "complexa_beam": {
+            "beam_width": 8,
+            "n_branch": 4,
+            "nsamples": 4,
+            "nsteps": 400,
+            "reward_i_pae_weight": -1.0,
+            "reward_min_ipae_weight": -1.0,
+            "sc_scale_noise": 0.25
+          }
+        },
+        {
+          "complexa_fk_steering": {
+            "beam_width": 4,
+            "n_branch": 4,
+            "nsamples": 4,
+            "nsteps": 400,
+            "reward_i_pae_weight": -1.0,
+            "reward_min_ipae_weight": -1.0,
+            "sc_scale_noise": 0.3,
+            "temperature": 0.1
+          }
+        },
+        {
+          "bindcraft": {
+            "max_trajectories": 8,
+            "num_seqs": 16,
+            "weights_iptm": 0.1,
+            "weights_pae_inter": 0.25
+          }
+        },
+        {
+          "boltzgen": {
+            "budget": 4,
+            "noise_scale": 0.5,
+            "num_designs": 32,
+            "step_scale": 1.0
+          }
+        }
+      ],
+      "card_mode_affinities": [
+        {
+          "exploit": 0.3,
+          "explore": 0.1,
+          "rescue": 0.6
+        },
+        {
+          "exploit": 0.2,
+          "explore": 0.4,
+          "rescue": 0.4
+        },
+        {
+          "exploit": 0.1,
+          "explore": 0.7,
+          "rescue": 0.2
+        },
+        {
+          "exploit": 0.1,
+          "explore": 0.8,
+          "rescue": 0.1
+        }
+      ],
+      "case": "rescue_rich_betv1_like",
+      "confidence": 0.6,
+      "elapsed_s": 13.75,
+      "fail_reason": null,
+      "n_cards": 4,
+      "prompt_variant": "default",
+      "repeat": 0,
+      "temperature": 0.2,
+      "tick_id_int": 1,
+      "usage": {
+        "input_tokens": 8398,
+        "output_tokens": 3324
+      },
+      "valid": true
+    },
+    {
+      "abstain": false,
+      "card_action_families": [
+        [
+          "complexa_mcts"
+        ],
+        [
+          "complexa_fk_steering"
+        ],
+        [
+          "complexa_best_of_n"
+        ],
+        [
+          "boltzgen"
+        ]
+      ],
+      "card_axes": [
+        [
+          "pLDDT"
+        ],
+        [
+          "iPAE",
+          "pLDDT"
+        ],
+        [
+          "pLDDT",
+          "iPAE"
+        ],
+        [
+          "iPAE",
+          "pLDDT"
+        ]
+      ],
+      "card_config_delta_suggestions": [
+        {
+          "complexa_mcts": {
+            "n_simulations": 16,
+            "nsamples": 4,
+            "nsteps": 400,
+            "refinement_algorithm": "sequence_hallucination",
+            "reward_plddt_weight": 1.5
+          }
+        },
+        {
+          "complexa_fk_steering": {
+            "beam_width": 4,
+            "n_branch": 4,
+            "nsamples": 4,
+            "nsteps": 400,
+            "reward_i_pae_weight": -1.0,
+            "sc_scale_noise": 0.3,
+            "temperature": 0.1
+          }
+        },
+        {
+          "complexa_best_of_n": {
+            "nsamples": 4,
+            "nsteps": 400,
+            "replicas": 4,
+            "reward_plddt_weight": 1.2,
+            "sc_scale_noise": 0.3
+          }
+        },
+        {
+          "boltzgen": {
+            "budget": 4,
+            "noise_scale": 0.5,
+            "num_designs": 32,
+            "protocol": "protein-anything"
+          }
+        }
+      ],
+      "card_mode_affinities": [
+        {
+          "exploit": 0.1,
+          "explore": 0.2,
+          "rescue": 0.7
+        },
+        {
+          "exploit": 0.1,
+          "explore": 0.6,
+          "rescue": 0.3
+        },
+        {
+          "exploit": 0.2,
+          "explore": 0.4,
+          "rescue": 0.4
+        },
+        {
+          "exploit": 0.0,
+          "explore": 0.8,
+          "rescue": 0.2
+        }
+      ],
+      "case": "stalled_sc2rbd_like",
+      "confidence": 0.55,
+      "elapsed_s": 15.36,
+      "fail_reason": null,
+      "n_cards": 4,
+      "prompt_variant": "default",
+      "repeat": 0,
+      "temperature": 0.2,
+      "tick_id_int": 2,
+      "usage": {
+        "input_tokens": 8835,
+        "output_tokens": 3932
+      },
+      "valid": true
+    },
+    {
+      "abstain": false,
+      "card_action_families": [
+        [
+          "complexa_best_of_n"
+        ],
+        [
+          "complexa_beam"
+        ],
+        [
+          "bindcraft"
+        ],
+        [
+          "boltzgen"
+        ]
+      ],
+      "card_axes": [
+        [
+          "pLDDT",
+          "iPAE",
+          "binder_scRMSD"
+        ],
+        [
+          "pLDDT",
+          "iPAE",
+          "binder_scRMSD"
+        ],
+        [
+          "pLDDT",
+          "iPAE",
+          "binder_scRMSD"
+        ],
+        [
+          "pLDDT",
+          "iPAE",
+          "binder_scRMSD"
+        ]
+      ],
+      "card_config_delta_suggestions": [
+        {
+          "complexa_best_of_n": {
+            "nsamples": 8,
+            "nsteps": 400,
+            "replicas": 4
+          }
+        },
+        {
+          "complexa_beam": {
+            "beam_width": 8,
+            "n_branch": 4,
+            "nsamples": 4,
+            "nsteps": 400
+          }
+        },
+        {
+          "bindcraft": {
+            "max_trajectories": 8,
+            "num_seqs": 16,
+            "weights_iptm": 0.1,
+            "weights_pae_inter": 0.2,
+            "weights_plddt": 0.2
+          }
+        },
+        {
+          "boltzgen": {
+            "budget": 4,
+            "num_designs": 16,
+            "protocol": "protein-anything"
+          }
+        }
+      ],
+      "card_mode_affinities": [
+        {
+          "exploit": 0.0,
+          "explore": 0.9,
+          "rescue": 0.1
+        },
+        {
+          "exploit": 0.0,
+          "explore": 0.9,
+          "rescue": 0.1
+        },
+        {
+          "exploit": 0.0,
+          "explore": 1.0,
+          "rescue": 0.0
+        },
+        {
+          "exploit": 0.0,
+          "explore": 1.0,
+          "rescue": 0.0
+        }
+      ],
+      "case": "ambiguous_cbago_like",
+      "confidence": 0.35,
+      "elapsed_s": 11.61,
+      "fail_reason": null,
+      "n_cards": 4,
+      "prompt_variant": "default",
+      "repeat": 0,
+      "temperature": 0.2,
+      "tick_id_int": 3,
+      "usage": {
+        "input_tokens": 7891,
+        "output_tokens": 2783
+      },
+      "valid": true
+    },
+    {
+      "abstain": false,
+      "card_action_families": [
+        [
+          "complexa_fk_steering"
+        ],
+        [
+          "complexa_best_of_n"
+        ],
+        [
+          "boltzgen"
+        ],
+        [
+          "complexa_mcts"
+        ]
+      ],
+      "card_axes": [
+        [
+          "iPAE",
+          "pLDDT"
+        ],
+        [
+          "iPAE",
+          "pLDDT"
+        ],
+        [
+          "iPAE",
+          "binder_scRMSD"
+        ],
+        [
+          "iPAE",
+          "pLDDT"
+        ]
+      ],
+      "card_config_delta_suggestions": [
+        {
+          "complexa_fk_steering": {
+            "beam_width": 4,
+            "n_branch": 4,
+            "nsamples": 4,
+            "nsteps": 400,
+            "reward_i_pae_weight": -1.0,
+            "reward_min_ipae_weight": -0.5,
+            "temperature": 0.1
+          }
+        },
+        {
+          "complexa_best_of_n": {
+            "nsamples": 8,
+            "nsteps": 400,
+            "replicas": 4,
+            "sc_scale_noise": 0.25
+          }
+        },
+        {
+          "boltzgen": {
+            "budget": 4,
+            "noise_scale": 0.6,
+            "num_designs": 32
+          }
+        },
+        {
+          "complexa_mcts": {
+            "exploration_constant": 1.5,
+            "exploration_prob": 0.5,
+            "n_simulations": 16,
+            "nsamples": 4,
+            "nsteps": 400,
+            "reward_i_pae_weight": -1.0
+          }
+        }
+      ],
+      "card_mode_affinities": [
+        {
+          "exploit": 0.1,
+          "explore": 0.3,
+          "rescue": 0.6
+        },
+        {
+          "exploit": 0.2,
+          "explore": 0.6,
+          "rescue": 0.2
+        },
+        {
+          "exploit": 0.1,
+          "explore": 0.8,
+          "rescue": 0.1
+        },
+        {
+          "exploit": 0.1,
+          "explore": 0.5,
+          "rescue": 0.4
+        }
+      ],
+      "case": "stalled_redundant_pdl1",
+      "confidence": 0.55,
+      "elapsed_s": 16.9,
+      "fail_reason": null,
+      "n_cards": 4,
+      "prompt_variant": "default",
+      "repeat": 0,
+      "temperature": 0.2,
+      "tick_id_int": 4,
+      "usage": {
+        "input_tokens": 8396,
+        "output_tokens": 4256
+      },
+      "valid": true
+    },
+    {
+      "abstain": false,
+      "card_action_families": [
+        [
+          "complexa_beam"
+        ],
+        [
+          "complexa_best_of_n"
+        ],
+        [
+          "complexa_fk_steering"
+        ]
+      ],
+      "card_axes": [
+        [
+          "iPAE",
+          "binder_scRMSD"
+        ],
+        [
+          "binder_scRMSD",
+          "iPAE"
+        ],
+        [
+          "iPAE",
+          "binder_scRMSD"
+        ]
+      ],
+      "card_config_delta_suggestions": [
+        {
+          "complexa_beam": {
+            "beam_width": 8,
+            "n_branch": 4,
+            "nsamples": 4,
+            "nsteps": 400
+          }
+        },
+        {
+          "complexa_best_of_n": {
+            "enable_greedy_optimization": true,
+            "greedy_percentage": 5,
+            "n_greedy_iters": 10,
+            "nsamples": 4,
+            "nsteps": 400,
+            "refinement_algorithm": "sequence_hallucination",
+            "replicas": 4,
+            "sc_scale_noise": 0.2
+          }
+        },
+        {
+          "complexa_fk_steering": {
+            "beam_width": 4,
+            "n_branch": 4,
+            "nsamples": 4,
+            "nsteps": 400,
+            "sc_scale_noise": 0.25,
+            "temperature": 0.15
+          }
+        }
+      ],
+      "card_mode_affinities": [
+        {
+          "exploit": 0.7,
+          "explore": 0.2,
+          "rescue": 0.1
+        },
+        {
+          "exploit": 0.2,
+          "explore": 0.1,
+          "rescue": 0.7
+        },
+        {
+          "exploit": 0.2,
+          "explore": 0.6,
+          "rescue": 0.2
+        }
+      ],
+      "case": "productive_cd45_like",
+      "confidence": 0.65,
+      "elapsed_s": 12.38,
+      "fail_reason": null,
+      "n_cards": 3,
+      "prompt_variant": "default",
+      "repeat": 1,
+      "temperature": 0.2,
+      "tick_id_int": 100,
+      "usage": {
+        "input_tokens": 8657,
+        "output_tokens": 3082
+      },
+      "valid": true
+    },
+    {
+      "abstain": false,
+      "card_action_families": [
+        [
+          "complexa_beam"
+        ],
+        [
+          "complexa_fk_steering"
+        ],
+        [
+          "bindcraft"
+        ],
+        [
+          "boltzgen"
+        ]
+      ],
+      "card_axes": [
+        [
+          "iPAE"
+        ],
+        [
+          "iPAE"
+        ],
+        [
+          "iPAE"
+        ],
+        [
+          "iPAE"
+        ]
+      ],
+      "card_config_delta_suggestions": [
+        {
+          "complexa_beam": {
+            "beam_width": 4,
+            "n_branch": 4,
+            "nsamples": 4,
+            "nsteps": 400,
+            "refinement_algorithm": "sequence_hallucination",
+            "reward_i_pae_weight": -1.5,
+            "sc_scale_noise": 0.2
+          }
+        },
+        {
+          "complexa_fk_steering": {
+            "beam_width": 4,
+            "n_branch": 4,
+            "nsamples": 4,
+            "nsteps": 400,
+            "reward_min_ipae_weight": -1.0,
+            "sc_scale_noise": 0.2,
+            "temperature": 0.1
+          }
+        },
+        {
+          "bindcraft": {
+            "max_trajectories": 8,
+            "num_seqs": 16,
+            "weights_iptm": 0.1,
+            "weights_pae_inter": 0.2
+          }
+        },
+        {
+          "boltzgen": {
+            "budget": 4,
+            "noise_scale": 0.5,
+            "num_designs": 32,
+            "protocol": "protein-anything"
+          }
+        }
+      ],
+      "card_mode_affinities": [
+        {
+          "exploit": 0.2,
+          "explore": 0.2,
+          "rescue": 0.6
+        },
+        {
+          "exploit": 0.1,
+          "explore": 0.6,
+          "rescue": 0.3
+        },
+        {
+          "exploit": 0.05,
+          "explore": 0.7,
+          "rescue": 0.25
+        },
+        {
+          "exploit": 0.05,
+          "explore": 0.8,
+          "rescue": 0.15
+        }
+      ],
+      "case": "rescue_rich_betv1_like",
+      "confidence": 0.6,
+      "elapsed_s": 13.93,
+      "fail_reason": null,
+      "n_cards": 4,
+      "prompt_variant": "default",
+      "repeat": 1,
+      "temperature": 0.2,
+      "tick_id_int": 101,
+      "usage": {
+        "input_tokens": 8398,
+        "output_tokens": 3381
+      },
+      "valid": true
+    },
+    {
+      "abstain": false,
+      "card_action_families": [
+        [
+          "complexa_mcts"
+        ],
+        [
+          "complexa_best_of_n"
+        ],
+        [
+          "boltzgen"
+        ],
+        [
+          "proteinmpnn_redesign"
+        ]
+      ],
+      "card_axes": [
+        [
+          "pLDDT",
+          "iPAE"
+        ],
+        [
+          "pLDDT",
+          "iPAE"
+        ],
+        [
+          "pLDDT",
+          "iPAE"
+        ],
+        [
+          "pLDDT",
+          "binder_scRMSD"
+        ]
+      ],
+      "card_config_delta_suggestions": [
+        {
+          "complexa_mcts": {
+            "exploration_constant": 1.0,
+            "n_simulations": 16,
+            "nsamples": 4,
+            "nsteps": 400,
+            "reward_plddt_weight": 1.5,
+            "sc_scale_noise": 0.2
+          }
+        },
+        {
+          "complexa_best_of_n": {
+            "nsamples": 4,
+            "nsteps": 400,
+            "replicas": 4,
+            "reward_plddt_weight": 1.2,
+            "sc_scale_noise": 0.25
+          }
+        },
+        {
+          "boltzgen": {
+            "budget": 4,
+            "noise_scale": 0.5,
+            "num_designs": 32,
+            "protocol": "protein-anything"
+          }
+        },
+        {
+          "proteinmpnn_redesign": {
+            "backbone_noise": 0.1,
+            "model_name": "v_48_020",
+            "num_seq_per_target": 16,
+            "sampling_temp": 0.2
+          }
+        }
+      ],
+      "card_mode_affinities": [
+        {
+          "exploit": 0.2,
+          "explore": 0.2,
+          "rescue": 0.6
+        },
+        {
+          "exploit": 0.3,
+          "explore": 0.4,
+          "rescue": 0.3
+        },
+        {
+          "exploit": 0.1,
+          "explore": 0.8,
+          "rescue": 0.1
+        },
+        {
+          "exploit": 0.2,
+          "explore": 0.1,
+          "rescue": 0.7
+        }
+      ],
+      "case": "stalled_sc2rbd_like",
+      "confidence": 0.55,
+      "elapsed_s": 15.67,
+      "fail_reason": null,
+      "n_cards": 4,
+      "prompt_variant": "default",
+      "repeat": 1,
+      "temperature": 0.2,
+      "tick_id_int": 102,
+      "usage": {
+        "input_tokens": 8835,
+        "output_tokens": 3990
+      },
+      "valid": true
+    },
+    {
+      "abstain": false,
+      "card_action_families": [
+        [
+          "complexa_best_of_n"
+        ],
+        [
+          "complexa_beam"
+        ],
+        [
+          "complexa_fk_steering"
+        ],
+        [
+          "bindcraft"
+        ]
+      ],
+      "card_axes": [
+        [
+          "pLDDT",
+          "iPAE",
+          "binder_scRMSD"
+        ],
+        [
+          "iPAE",
+          "pLDDT",
+          "binder_scRMSD"
+        ],
+        [
+          "pLDDT",
+          "iPAE",
+          "binder_scRMSD"
+        ],
+        [
+          "iPAE",
+          "pLDDT",
+          "binder_scRMSD"
+        ]
+      ],
+      "card_config_delta_suggestions": [
+        {
+          "complexa_best_of_n": {
+            "nsamples": 4,
+            "nsteps": 400,
+            "replicas": 4
+          }
+        },
+        {
+          "complexa_beam": {
+            "beam_width": 8,
+            "n_branch": 4,
+            "nsamples": 4,
+            "nsteps": 400
+          }
+        },
+        {
+          "complexa_fk_steering": {
+            "beam_width": 4,
+            "n_branch": 4,
+            "nsamples": 4,
+            "nsteps": 400,
+            "temperature": 0.1
+          }
+        },
+        {
+          "bindcraft": {
+            "max_trajectories": 4,
+            "num_seqs": 8,
+            "weights_iptm": 0.1,
+            "weights_pae_inter": 0.2,
+            "weights_plddt": 0.1
+          }
+        }
+      ],
+      "card_mode_affinities": [
+        {
+          "exploit": 0.1,
+          "explore": 0.8,
+          "rescue": 0.1
+        },
+        {
+          "exploit": 0.1,
+          "explore": 0.8,
+          "rescue": 0.1
+        },
+        {
+          "exploit": 0.1,
+          "explore": 0.8,
+          "rescue": 0.1
+        },
+        {
+          "exploit": 0.05,
+          "explore": 0.9,
+          "rescue": 0.05
+        }
+      ],
+      "case": "ambiguous_cbago_like",
+      "confidence": 0.45,
+      "elapsed_s": 11.75,
+      "fail_reason": null,
+      "n_cards": 4,
+      "prompt_variant": "default",
+      "repeat": 1,
+      "temperature": 0.2,
+      "tick_id_int": 103,
+      "usage": {
+        "input_tokens": 7891,
+        "output_tokens": 2840
+      },
+      "valid": true
+    },
+    {
+      "abstain": false,
+      "card_action_families": [
+        [
+          "complexa_best_of_n"
+        ],
+        [
+          "complexa_fk_steering"
+        ],
+        [
+          "boltzgen"
+        ],
+        [
+          "complexa_mcts"
+        ]
+      ],
+      "card_axes": [
+        [
+          "iPAE"
+        ],
+        [
+          "iPAE"
+        ],
+        [
+          "iPAE"
+        ],
+        [
+          "iPAE"
+        ]
+      ],
+      "card_config_delta_suggestions": [
+        {
+          "complexa_best_of_n": {
+            "nsamples": 4,
+            "nsteps": 400,
+            "replicas": 6,
+            "sc_scale_noise": 0.3
+          }
+        },
+        {
+          "complexa_fk_steering": {
+            "beam_width": 4,
+            "n_branch": 4,
+            "nsamples": 4,
+            "nsteps": 400,
+            "sc_scale_noise": 0.3,
+            "temperature": 0.1
+          }
+        },
+        {
+          "boltzgen": {
+            "budget": 4,
+            "noise_scale": 0.8,
+            "num_designs": 32,
+            "protocol": "protein-anything"
+          }
+        },
+        {
+          "complexa_mcts": {
+            "exploration_constant": 1.2,
+            "exploration_prob": 0.5,
+            "n_simulations": 16,
+            "nsamples": 4,
+            "nsteps": 400
+          }
+        }
+      ],
+      "card_mode_affinities": [
+        {
+          "exploit": 0.2,
+          "explore": 0.6,
+          "rescue": 0.2
+        },
+        {
+          "exploit": 0.1,
+          "explore": 0.7,
+          "rescue": 0.2
+        },
+        {
+          "exploit": 0.0,
+          "explore": 0.8,
+          "rescue": 0.2
+        },
+        {
+          "exploit": 0.1,
+          "explore": 0.7,
+          "rescue": 0.2
+        }
+      ],
+      "case": "stalled_redundant_pdl1",
+      "confidence": 0.55,
+      "elapsed_s": 14.84,
+      "fail_reason": null,
+      "n_cards": 4,
+      "prompt_variant": "default",
+      "repeat": 1,
+      "temperature": 0.2,
+      "tick_id_int": 104,
+      "usage": {
+        "input_tokens": 8396,
+        "output_tokens": 3447
+      },
+      "valid": true
+    },
+    {
+      "abstain": false,
+      "card_action_families": [
+        [
+          "complexa_beam"
+        ],
+        [
+          "proteinmpnn_redesign"
+        ],
+        [
+          "complexa_best_of_n"
+        ],
+        [
+          "complexa_fk_steering"
+        ]
+      ],
+      "card_axes": [
+        [
+          "iPAE"
+        ],
+        [
+          "binder_scRMSD",
+          "iPAE"
+        ],
+        [
+          "iPAE"
+        ],
+        [
+          "iPAE"
+        ]
+      ],
+      "card_config_delta_suggestions": [
+        {
+          "complexa_beam": {
+            "beam_width": 8,
+            "n_branch": 4,
+            "nsamples": 4,
+            "nsteps": 400,
+            "sc_scale_noise": 0.15
+          }
+        },
+        {
+          "proteinmpnn_redesign": {
+            "backbone_noise": 0.1,
+            "model_name": "v_48_010",
+            "num_seq_per_target": 16,
+            "sampling_temp": 0.3
+          }
+        },
+        {
+          "complexa_best_of_n": {
+            "nsamples": 4,
+            "nsteps": 400,
+            "replicas": 6,
+            "sc_scale_noise": 0.2
+          }
+        },
+        {
+          "complexa_fk_steering": {
+            "beam_width": 4,
+            "n_branch": 4,
+            "nsamples": 4,
+            "nsteps": 400,
+            "reward_min_ipae_weight": -0.5,
+            "sc_scale_noise": 0.15,
+            "temperature": 0.1
+          }
+        }
+      ],
+      "card_mode_affinities": [
+        {
+          "exploit": 0.7,
+          "explore": 0.2,
+          "rescue": 0.1
+        },
+        {
+          "exploit": 0.2,
+          "explore": 0.1,
+          "rescue": 0.7
+        },
+        {
+          "exploit": 0.2,
+          "explore": 0.6,
+          "rescue": 0.2
+        },
+        {
+          "exploit": 0.1,
+          "explore": 0.4,
+          "rescue": 0.5
+        }
+      ],
+      "case": "productive_cd45_like",
+      "confidence": 0.6,
+      "elapsed_s": 16.34,
+      "fail_reason": null,
+      "n_cards": 4,
+      "prompt_variant": "default",
+      "repeat": 2,
+      "temperature": 0.2,
+      "tick_id_int": 200,
+      "usage": {
+        "input_tokens": 8657,
+        "output_tokens": 4046
+      },
+      "valid": true
+    },
+    {
+      "abstain": false,
+      "card_action_families": [
+        [
+          "complexa_beam"
+        ],
+        [
+          "complexa_fk_steering"
+        ],
+        [
+          "boltzgen"
+        ]
+      ],
+      "card_axes": [
+        [
+          "iPAE"
+        ],
+        [
+          "iPAE"
+        ],
+        [
+          "iPAE"
+        ]
+      ],
+      "card_config_delta_suggestions": [
+        {
+          "complexa_beam": {
+            "beam_width": 8,
+            "refinement_algorithm": "sequence_hallucination",
+            "reward_i_pae_weight": -1.0,
+            "reward_min_ipae_weight": -1.0,
+            "sc_scale_noise": 0.3
+          }
+        },
+        {
+          "complexa_fk_steering": {
+            "reward_i_pae_weight": -1.0,
+            "reward_min_ipae_weight": -1.0,
+            "sc_scale_noise": 0.3,
+            "temperature": 0.1
+          }
+        },
+        {
+          "boltzgen": {
+            "budget": 4,
+            "noise_scale": 0.8,
+            "num_designs": 32,
+            "protocol": "protein-anything"
+          }
+        }
+      ],
+      "card_mode_affinities": [
+        {
+          "exploit": 0.2,
+          "explore": 0.1,
+          "rescue": 0.7
+        },
+        {
+          "exploit": 0.1,
+          "explore": 0.5,
+          "rescue": 0.4
+        },
+        {
+          "exploit": 0.1,
+          "explore": 0.8,
+          "rescue": 0.1
+        }
+      ],
+      "case": "rescue_rich_betv1_like",
+      "confidence": 0.6,
+      "elapsed_s": 17.28,
+      "fail_reason": null,
+      "n_cards": 3,
+      "prompt_variant": "default",
+      "repeat": 2,
+      "temperature": 0.2,
+      "tick_id_int": 201,
+      "usage": {
+        "input_tokens": 8398,
+        "output_tokens": 4044
+      },
+      "valid": true
+    },
+    {
+      "abstain": false,
+      "card_action_families": [
+        [
+          "complexa_mcts"
+        ],
+        [
+          "complexa_fk_steering"
+        ],
+        [
+          "complexa_best_of_n"
+        ],
+        [
+          "boltzgen"
+        ]
+      ],
+      "card_axes": [
+        [
+          "pLDDT"
+        ],
+        [
+          "pLDDT"
+        ],
+        [
+          "pLDDT",
+          "iPAE"
+        ],
+        [
+          "pLDDT"
+        ]
+      ],
+      "card_config_delta_suggestions": [
+        {
+          "complexa_mcts": {
+            "n_simulations": 16,
+            "nsamples": 4,
+            "nsteps": 400,
+            "refinement_algorithm": "sequence_hallucination",
+            "reward_plddt_weight": 1.2,
+            "sc_scale_noise": 0.2
+          }
+        },
+        {
+          "complexa_fk_steering": {
+            "beam_width": 4,
+            "n_branch": 4,
+            "nsamples": 4,
+            "nsteps": 400,
+            "reward_plddt_weight": 1.0,
+            "temperature": 0.1
+          }
+        },
+        {
+          "complexa_best_of_n": {
+            "nsamples": 4,
+            "nsteps": 400,
+            "replicas": 6,
+            "reward_plddt_weight": 0.8,
+            "sc_scale_noise": 0.3
+          }
+        },
+        {
+          "boltzgen": {
+            "budget": 4,
+            "noise_scale": 0.5,
+            "num_designs": 32,
+            "protocol": "protein-anything"
+          }
+        }
+      ],
+      "card_mode_affinities": [
+        {
+          "exploit": 0.1,
+          "explore": 0.3,
+          "rescue": 0.6
+        },
+        {
+          "exploit": 0.1,
+          "explore": 0.5,
+          "rescue": 0.4
+        },
+        {
+          "exploit": 0.1,
+          "explore": 0.7,
+          "rescue": 0.2
+        },
+        {
+          "exploit": 0.0,
+          "explore": 0.9,
+          "rescue": 0.1
+        }
+      ],
+      "case": "stalled_sc2rbd_like",
+      "confidence": 0.55,
+      "elapsed_s": 14.01,
+      "fail_reason": null,
+      "n_cards": 4,
+      "prompt_variant": "default",
+      "repeat": 2,
+      "temperature": 0.2,
+      "tick_id_int": 202,
+      "usage": {
+        "input_tokens": 8835,
+        "output_tokens": 3619
+      },
+      "valid": true
+    },
+    {
+      "abstain": false,
+      "card_action_families": [
+        [
+          "complexa_best_of_n"
+        ],
+        [
+          "complexa_beam"
+        ],
+        [
+          "complexa_fk_steering"
+        ],
+        [
+          "bindcraft"
+        ]
+      ],
+      "card_axes": [
+        [
+          "pLDDT",
+          "iPAE"
+        ],
+        [
+          "iPAE",
+          "binder_scRMSD"
+        ],
+        [
+          "pLDDT",
+          "iPAE"
+        ],
+        [
+          "iPAE"
+        ]
+      ],
+      "card_config_delta_suggestions": [
+        {
+          "complexa_best_of_n": {
+            "nsamples": 4,
+            "nsteps": 400,
+            "replicas": 4
+          }
+        },
+        {
+          "complexa_beam": {
+            "beam_width": 8,
+            "n_branch": 4,
+            "nsamples": 4,
+            "nsteps": 400
+          }
+        },
+        {
+          "complexa_fk_steering": {
+            "beam_width": 4,
+            "n_branch": 4,
+            "nsamples": 4,
+            "nsteps": 400,
+            "temperature": 0.1
+          }
+        },
+        {
+          "bindcraft": {
+            "max_trajectories": 8,
+            "num_seqs": 16,
+            "weights_iptm": 0.1,
+            "weights_pae_inter": 0.2,
+            "weights_plddt": 0.2
+          }
+        }
+      ],
+      "card_mode_affinities": [
+        {
+          "exploit": 0.05,
+          "explore": 0.9,
+          "rescue": 0.05
+        },
+        {
+          "exploit": 0.05,
+          "explore": 0.9,
+          "rescue": 0.05
+        },
+        {
+          "exploit": 0.05,
+          "explore": 0.85,
+          "rescue": 0.1
+        },
+        {
+          "exploit": 0.0,
+          "explore": 0.9,
+          "rescue": 0.1
+        }
+      ],
+      "case": "ambiguous_cbago_like",
+      "confidence": 0.45,
+      "elapsed_s": 10.93,
+      "fail_reason": null,
+      "n_cards": 4,
+      "prompt_variant": "default",
+      "repeat": 2,
+      "temperature": 0.2,
+      "tick_id_int": 203,
+      "usage": {
+        "input_tokens": 7891,
+        "output_tokens": 2578
+      },
+      "valid": true
+    },
+    {
+      "abstain": false,
+      "card_action_families": [
+        [
+          "complexa_best_of_n"
+        ],
+        [
+          "complexa_fk_steering"
+        ],
+        [
+          "complexa_beam"
+        ],
+        [
+          "boltzgen"
+        ]
+      ],
+      "card_axes": [
+        [
+          "iPAE"
+        ],
+        [
+          "iPAE"
+        ],
+        [
+          "iPAE",
+          "pLDDT"
+        ],
+        [
+          "iPAE"
+        ]
+      ],
+      "card_config_delta_suggestions": [
+        {
+          "complexa_best_of_n": {
+            "nsamples": 8,
+            "nsteps": 400,
+            "replicas": 4,
+            "sc_scale_noise": 0.2
+          }
+        },
+        {
+          "complexa_fk_steering": {
+            "beam_width": 4,
+            "n_branch": 4,
+            "nsamples": 4,
+            "nsteps": 400,
+            "reward_i_pae_weight": -0.5,
+            "temperature": 0.15
+          }
+        },
+        {
+          "complexa_beam": {
+            "beam_width": 8,
+            "n_branch": 4,
+            "nsamples": 4,
+            "nsteps": 400,
+            "reward_min_ipae_weight": -0.5,
+            "sc_scale_noise": 0.25
+          }
+        },
+        {
+          "boltzgen": {
+            "budget": 4,
+            "noise_scale": 0.6,
+            "num_designs": 32
+          }
+        }
+      ],
+      "card_mode_affinities": [
+        {
+          "exploit": 0.2,
+          "explore": 0.7,
+          "rescue": 0.1
+        },
+        {
+          "exploit": 0.1,
+          "explore": 0.6,
+          "rescue": 0.3
+        },
+        {
+          "exploit": 0.2,
+          "explore": 0.3,
+          "rescue": 0.5
+        },
+        {
+          "exploit": 0.05,
+          "explore": 0.9,
+          "rescue": 0.05
+        }
+      ],
+      "case": "stalled_redundant_pdl1",
+      "confidence": 0.55,
+      "elapsed_s": 17.93,
+      "fail_reason": null,
+      "n_cards": 4,
+      "prompt_variant": "default",
+      "repeat": 2,
+      "temperature": 0.2,
+      "tick_id_int": 204,
+      "usage": {
+        "input_tokens": 8396,
+        "output_tokens": 4241
+      },
+      "valid": true
+    }
+  ],
+  "summary": {
+    "base_url": "http://127.0.0.1:12000/v1",
+    "confidence_max": 0.65,
+    "confidence_median": 0.55,
+    "confidence_min": 0.35,
+    "confidence_stdev": 0.07408703590297623,
+    "median_latency_s": 14.84,
+    "model": "vllm/glm-5.3",
+    "prompt_variant": "default",
+    "schema_version": "v7.3.3-reward-guard",
+    "total_calls": 15,
+    "valid_calls": 15,
+    "valid_rate": 1.0,
+    "wall_clock_s": 219.4
+  }
+}
