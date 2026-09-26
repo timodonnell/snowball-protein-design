@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # Run on the provisioned pod after T-REX setup and campaign YAML creation.
 set -euo pipefail
-arm=${1:?qwen or snowball}
-case "$arm" in qwen|snowball) ;; *) exit 2 ;; esac
+arm=${1:?qwen, snowball or glm}
+case "$arm" in qwen|snowball|glm) ;; *) exit 2 ;; esac
 export PATH=/root/.local/bin:$PATH
 export HF_HOME=/work/cache/huggingface
 export UV_CACHE_DIR=/work/cache/uv
@@ -15,39 +15,70 @@ if [ -e "/work/results/$arm/campaign" ]; then
 fi
 cd /work/T-REX
 controller=/work/T-REX/.venv-serving/bin/python
-if [ "$arm" = qwen ]; then
-  model=Qwen/Qwen3.6-27B-FP8
+case "$arm" in
+  qwen) model=Qwen/Qwen3.6-27B-FP8 ;;
+  snowball) model=open-athena/Snowball-67B-A2B-5.7T-Mixed-RLVR-Step38 ;;
+  glm) model=glm-5.3 ;;
+esac
+# GLM-5.3 is served off-pod by a shared endpoint, so this arm starts no local
+# server and holds no GPU for inference. The recorder carries the bearer token
+# and the one server control the pinned controller does not emit: GLM reasons by
+# default and, unlike the other two checkpoints, has no off switch, so an
+# unset budget spends the whole 3072-token limit on hidden reasoning and returns
+# empty content. `low` is the nearest setting to the other arms' disabled
+# thinking. See docs/experiment.md.
+if [ "$arm" = glm ]; then
+  : "${GLM_BASE_URL:?Set GLM_BASE_URL to the resolved GLM-5.3 endpoint (no /v1 suffix)}"
+  : "${GLM_TOKEN_FILE:?Set GLM_TOKEN_FILE to a file holding the bearer token}"
+  test -r "$GLM_TOKEN_FILE"
+  proxy_upstream=$GLM_BASE_URL
+  proxy_extra=(--auth-token-file "$GLM_TOKEN_FILE"
+               --inject-extra-body '{"chat_template_kwargs": {"reasoning_effort": "low"}}')
 else
-  model=open-athena/Snowball-67B-A2B-5.7T-Mixed-RLVR-Step38
+  proxy_upstream=http://127.0.0.1:12001
+  proxy_extra=()
 fi
 # Process groups permit cleanup of vLLM's worker descendants.
-if [ -n "${TREX_SERVER_PID:-}" ]; then
-  # Adopt only the task's prestarted server, supplied explicitly by the operator.
-  server_pid=$TREX_SERVER_PID
-else
-  setsid bash /work/pilot-scripts/serve_model.sh "$arm" 12001 \
-    > "/work/logs/$arm-vllm.log" 2>&1 &
-  server_pid=$!
+server_pid=
+if [ "$arm" != glm ]; then
+  if [ -n "${TREX_SERVER_PID:-}" ]; then
+    # Adopt only the task's prestarted server, supplied explicitly by the operator.
+    server_pid=$TREX_SERVER_PID
+  else
+    setsid bash /work/pilot-scripts/serve_model.sh "$arm" 12001 \
+      > "/work/logs/$arm-vllm.log" 2>&1 &
+    server_pid=$!
+  fi
 fi
 setsid "$controller" /work/pilot-scripts/recording_proxy.py \
+  --upstream "$proxy_upstream" "${proxy_extra[@]}" \
   --output "/work/results/$arm/wire" \
   > "/work/logs/$arm-proxy.log" 2>&1 &
 proxy_pid=$!
 setsid "$controller" /work/pilot-scripts/recording_proxy.py \
-  --port 12002 --cancel-on-disconnect --output "/work/results/$arm/wire" \
+  --port 12002 --cancel-on-disconnect \
+  --upstream "$proxy_upstream" "${proxy_extra[@]}" \
+  --output "/work/results/$arm/wire" \
   > "/work/logs/$arm-campaign-proxy.log" 2>&1 &
 campaign_proxy_pid=$!
 cleanup() {
-  kill -TERM -- "-$server_pid" "-$proxy_pid" "-$campaign_proxy_pid" 2>/dev/null || true
+  kill -TERM -- ${server_pid:+"-$server_pid"} "-$proxy_pid" "-$campaign_proxy_pid" 2>/dev/null || true
 }
 trap cleanup EXIT
 ready=0
 for _ in $(seq 1 180); do
-  if ! kill -0 "$server_pid" 2>/dev/null; then
+  if [ -n "$server_pid" ] && ! kill -0 "$server_pid" 2>/dev/null; then
     echo 'LLM server exited; inspect preserved server log.' >&2
     exit 1
   fi
-  if curl -fsS --max-time 2 http://127.0.0.1:12001/health >/dev/null 2>&1; then
+  # Reach the model through the recorder, so a reachable arm is one whose
+  # campaign path also works; the shared endpoint answers /v1/models, not /health.
+  if [ "$arm" = glm ]; then
+    probe=http://127.0.0.1:12000/v1/models
+  else
+    probe=http://127.0.0.1:12001/health
+  fi
+  if curl -fsS --max-time 5 "$probe" >/dev/null 2>&1; then
     ready=1
     break
   fi

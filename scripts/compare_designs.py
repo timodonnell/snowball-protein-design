@@ -6,6 +6,7 @@ paths are resolved from collected copies, so original backend paths are unused.
 """
 import argparse
 from collections import Counter, defaultdict
+from itertools import combinations
 from dataclasses import asdict, replace
 import csv
 import hashlib
@@ -27,9 +28,11 @@ def main():
     parser.add_argument("results", type=Path)
     parser.add_argument("output", type=Path)
     parser.add_argument("--foldseek", required=True)
+    parser.add_argument("--arms", nargs="+", default=["qwen", "snowball"],
+                        help="Arms to compare; every unordered pair is reported.")
     args = parser.parse_args()
     combined, arms, sequences, warm = [], {}, {}, {}
-    for arm in ["qwen", "snowball"]:
+    for arm in args.arms:
         root = args.results / arm / "designs"
         rows = read_csv(root / "designs.csv")
         manifest = read_csv(root / "strict-export/manifest.csv")
@@ -74,23 +77,32 @@ def main():
     bins_by_arm = {arm: {cluster for cluster, members in memberships.items()
                         if any(member.startswith(arm+"_") for member in members)} for arm in arms}
     valid = clustering.status == "ok"
-    common_warm = warm["qwen"].keys() & warm["snowball"].keys()
-    warm_comparison = dict(n_qwen=len(warm["qwen"]), n_snowball=len(warm["snowball"]),
-        shared_output_names=len(common_warm),
-        exact_canonical_metric_matches=sum(warm["qwen"][name]["canonical_metrics"] == warm["snowball"][name]["canonical_metrics"] for name in common_warm),
-        exact_structure_file_matches=sum(warm["qwen"][name]["structure_sha256"] == warm["snowball"][name]["structure_sha256"] for name in common_warm),
-        records=warm)
-    report = dict(arms=arms, shared_warmstart=warm_comparison, joint_qualified_clustering=asdict(clustering),
-        joint_clusters_with_both_arms=len(bins_by_arm["qwen"] & bins_by_arm["snowball"]) if valid else None,
-        joint_clusters_with_only_qwen=len(bins_by_arm["qwen"]-bins_by_arm["snowball"]) if valid else None,
-        joint_clusters_with_only_snowball=len(bins_by_arm["snowball"]-bins_by_arm["qwen"]) if valid else None,
+    pairs = {}
+    for left, right in combinations(args.arms, 2):
+        common_warm = warm[left].keys() & warm[right].keys()
+        pairs[left+"_vs_"+right] = dict(
+            n_warmstart={left: len(warm[left]), right: len(warm[right])},
+            shared_warmstart_output_names=len(common_warm),
+            exact_canonical_metric_matches=sum(warm[left][name]["canonical_metrics"] == warm[right][name]["canonical_metrics"] for name in common_warm),
+            exact_structure_file_matches=sum(warm[left][name]["structure_sha256"] == warm[right][name]["structure_sha256"] for name in common_warm),
+            joint_clusters_with_both_arms=len(bins_by_arm[left] & bins_by_arm[right]) if valid else None,
+            joint_clusters_with_only_left=len(bins_by_arm[left]-bins_by_arm[right]) if valid else None,
+            joint_clusters_with_only_right=len(bins_by_arm[right]-bins_by_arm[left]) if valid else None,
+            exact_qualified_sequence_overlap=len(sequences[left] & sequences[right]))
+    shared_all = set.intersection(*(set(warm[arm]) for arm in args.arms)) if args.arms else set()
+    report = dict(compared_arms=list(args.arms), arms=arms, pairs=pairs,
+        shared_warmstart=dict(shared_output_names_across_all_arms=len(shared_all), records=warm),
+        joint_qualified_clustering=asdict(clustering),
+        joint_clusters_by_arm={arm: len(bins) for arm, bins in bins_by_arm.items()} if valid else None,
+        joint_clusters_unique_to_one_arm=len([c for c, members in memberships.items()
+            if len({m.split("_", 1)[0] for m in members}) == 1]) if valid else None,
         joint_cluster_members=dict(memberships),
-        exact_qualified_sequence_overlap=len(sequences["qwen"] & sequences["snowball"]),
         notes=["Only qualified, verified binder chains enter joint clustering.",
                "Joint clustering can change representatives/membership versus clustering each arm independently.",
                "These are single asynchronous campaigns; differences are descriptive, not causal or statistically powered."])
     args.output.write_text(json.dumps(report, indent=2)+"\n")
-    print(json.dumps({k:v for k,v in report.items() if k not in ["joint_qualified_clustering", "joint_cluster_members", "shared_warmstart"]}, indent=2))
+    print(json.dumps({k: v for k, v in report.items()
+                      if k not in ["joint_qualified_clustering", "joint_cluster_members", "shared_warmstart"]}, indent=2))
 
 
 if __name__ == "__main__":

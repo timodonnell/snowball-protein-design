@@ -40,6 +40,23 @@ kubectl exec snowball-trex-pilot -- bash /work/pilot-scripts/run_arm.sh qwen
 kubectl exec snowball-trex-pilot -- bash /work/pilot-scripts/run_arm.sh snowball
 ```
 
+The GLM-5.3 arm uses a shared off-pod endpoint, so it starts no local server and
+needs two extra variables. Resolve the endpoint immediately before launching:
+the Iris relay registers a cluster-local address that moves when it restarts.
+Keep the token off the shared PVC.
+
+```bash
+kubectl exec snowball-trex-pilot -- bash -c \
+  "umask 077; printf %s \"$GLM_API_TOKEN\" > /dev/shm/glm-token"
+kubectl exec snowball-trex-pilot -- env \
+  GLM_BASE_URL="http://$GLM_RELAY_HOST:8010" GLM_TOKEN_FILE=/dev/shm/glm-token \
+  bash /work/pilot-scripts/run_arm.sh glm
+```
+
+This arm holds no inference GPU; it keeps the four-GPU pod shape only so that
+`worker_gpus` stays identical across arms. See [protocol](experiment.md) for the
+reasoning-budget control the recorder adds and why it is required.
+
 Each arm performs 15 Planner and 12 Supervisor fixed-evidence checks, followed by
 a one-hour PD-L1 campaign with two molecular workers. The original controller
 can drain outstanding work beyond that hour. The scripts reject an existing
@@ -67,20 +84,24 @@ After Snowball and its server finish, run the bounded teacher replay:
 kubectl exec snowball-trex-pilot -- bash /work/pilot-scripts/run_replay.sh
 ```
 
-It replays five live Snowball Planner prompts at call-index quartiles through
-Qwen, preserving the original messages and sampling settings. Every prompt is
+Its GLM counterpart, `run_replay_glm.sh`, replays the same five states through
+GLM-5.3 with the same variables as the arm above, writing
+`/work/results/replay-glm-on-snowball/`. Together the two replays put all three
+models on identical live evidence.
+
+Each replays five live Snowball Planner prompts at call-index quartiles,
+preserving the original messages and sampling settings. Every prompt is
 reconstructed exactly from its archived evidence before inference. The resulting
 schema/configuration labels and candidate-construction previews are prospective
-SFT review material; no counterfactual molecular jobs are executed. Outputs go
-to `/work/results/replay-qwen-on-snowball/`. This diagnostic is separate from the
-timed campaigns and public fixed fixtures.
+SFT review material; no counterfactual molecular jobs are executed. These
+diagnostics are separate from the timed campaigns and public fixed fixtures.
 
 Run the collector **after campaign drain**, while external structure paths still
 exist. Use the controller environment from the upstream working directory:
 
 ```bash
 cd /work/T-REX
-for arm in qwen snowball; do
+for arm in qwen snowball glm; do
   .venv-serving/bin/python /work/pilot-scripts/collect_designs.py \
     "/work/results/$arm/campaign" "/work/results/$arm/designs" \
     --foldseek external/Proteina-Complexa/.venv/bin/foldseek \
@@ -88,11 +109,12 @@ for arm in qwen snowball; do
 done
 ```
 
-After both exports exist, run `scripts/compare_designs.py /work/results
-/work/results/design-comparison.json --foldseek
+After every export exists, run `scripts/compare_designs.py /work/results
+/work/results/design-comparison.json --arms qwen snowball glm --foldseek
 external/Proteina-Complexa/.venv/bin/foldseek` from the same pinned controller
-environment. This jointly clusters the qualified binder chains across arms,
-using collected structure copies rather than original backend paths.
+environment. `--arms` also sets which unordered pairs are reported. This jointly
+clusters the qualified binder chains across arms, using collected structure
+copies rather than original backend paths.
 
 Copy `/work/results/` and relevant `/work/logs/` files locally with `kubectl cp`.
 Use `.txt` for retained logs because the repository ignores `.log` files. Keep
@@ -116,7 +138,7 @@ uv pip install -e './vendor/T-REX[dev]'
 export PYTHONPATH=.:vendor/T-REX
 export PYTHONHASHSEED=0
 .venv/bin/pytest -q tests
-for arm in qwen snowball; do
+for arm in qwen snowball glm; do
   .venv/bin/python scripts/audit_fixed.py "artifacts/$arm/wire" \
     "artifacts/$arm/fixed-audit" --arm "$arm"
   .venv/bin/python scripts/summarize_wire.py "artifacts/$arm/wire" \
@@ -132,8 +154,22 @@ for arm in qwen snowball; do
   .venv/bin/python scripts/index_decisions.py "artifacts/$arm" \
     "artifacts/$arm/decision-index.jsonl"
 done
-.venv/bin/python scripts/summarize_replay.py artifacts/replay-qwen-on-snowball \
-  artifacts/replay-qwen-on-snowball/summary.json
+for replay in replay-qwen-on-snowball replay-glm-on-snowball; do
+  .venv/bin/python scripts/summarize_replay.py "artifacts/$replay" \
+    "artifacts/$replay/summary.json"
+done
+```
+
+`export_transcripts.py` renders any wire archive as readable per-call
+transcripts, splitting fixed checks from the campaign. It adds nothing to the
+archive and is always reproducible from it:
+
+```bash
+for arm in qwen snowball glm; do
+  .venv/bin/python scripts/export_transcripts.py "artifacts/$arm/wire" \
+    "artifacts/$arm/transcripts" \
+    --split-time-file "artifacts/$arm/campaign-start-time.txt"
+done
 ```
 
 The audit requires nine exact prompt hashes, three primary calls per prompt,
@@ -145,8 +181,10 @@ Static figures use Matplotlib 3.10.8:
 
 ```bash
 uv pip install matplotlib==3.10.8
-.venv/bin/python scripts/make_figures.py artifacts artifacts/figures
-.venv/bin/python scripts/verify_artifacts.py artifacts artifacts/integrity-check.json
+.venv/bin/python scripts/make_figures.py artifacts artifacts/figures \
+  --arms qwen snowball glm
+.venv/bin/python scripts/verify_artifacts.py artifacts artifacts/integrity-check.json \
+  --arms qwen snowball glm
 ```
 
 The integrity check verifies every collected structure hash, the qualified PDB

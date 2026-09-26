@@ -23,11 +23,14 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("artifacts", type=Path)
     parser.add_argument("output", type=Path)
+    parser.add_argument("--arms", nargs="+", default=["qwen", "snowball"],
+                        help="Arm directories to plot, in panel order.")
     args = parser.parse_args()
     args.output.mkdir(parents=True, exist_ok=True)
     plt.rcParams.update({"font.size": 11, "axes.spines.top": False, "axes.spines.right": False,
                          "svg.fonttype": "none", "figure.dpi": 140})
-    arms = [("qwen", "Qwen3.6-27B-FP8"), ("snowball", "Snowball-67B-A2B")]
+    titles = {"qwen": "Qwen3.6-27B-FP8", "snowball": "Snowball-67B-A2B", "glm": "GLM-5.3"}
+    arms = [(arm, titles.get(arm, arm)) for arm in args.arms]
     data = {}
     for arm, _ in arms:
         with (args.artifacts / arm / "designs/designs.csv").open() as stream:
@@ -37,7 +40,9 @@ def main():
                    and all(number(r, k) is not None for k in ["pLDDT", "iPAE", "binder_scRMSD"])]
               for arm, rows in data.items()}
     ymax = max([2.0] + [number(r, "binder_scRMSD") * 1.08 for rows in usable.values() for r in rows])
-    fig, axes = plt.subplots(1, 2, figsize=(10, 4.6), sharex=True, sharey=True, layout="constrained")
+    fig, axes = plt.subplots(1, len(arms), figsize=(5 * len(arms), 4.6), sharex=True, sharey=True,
+                             layout="constrained", squeeze=False)
+    axes = axes[0]
     artist = None
     for ax, (arm, title) in zip(axes, arms):
         rows = usable[arm]
@@ -90,7 +95,7 @@ def main():
         fig.savefig(args.output / f"campaign-progress.{extension}")
     plt.close(fig)
 
-    fig, ax = plt.subplots(figsize=(9, 4.8), layout="constrained")
+    fig, ax = plt.subplots(figsize=(4.5 * len(arms), 4.8), layout="constrained")
     values = []
     for arm, title in arms:
         audit = json.loads((args.artifacts / arm / "fixed-audit/summary.json").read_text())
@@ -104,7 +109,7 @@ def main():
         ax.bar(i+0.18, final/n*100, 0.34, color="#54a688", label="After T-REX recovery" if i == 0 else None)
         for x, count in [(i-0.18, raw), (i+0.18, final)]:
             ax.text(x, count/n*100+2, f"{count}/{n}", ha="center", fontsize=10)
-    ax.set_xticks(range(len(values)), [v[0] for v in values])
+    ax.set_xticks(range(len(values)), [v[0] for v in values], fontsize=10)
     ax.set(ylim=(0, 116), ylabel="Valid structured responses (%)",
            title="Same nine fixed-evidence prompts, three calls each")
     ax.legend(frameon=False, loc="upper center", bbox_to_anchor=(0.5, -0.22), ncol=2, fontsize=10)

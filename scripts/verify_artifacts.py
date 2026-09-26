@@ -20,11 +20,11 @@ def sha256(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def verify(root):
+def verify(root, arms=("qwen", "snowball")):
     results = {}
     prompts = []
     target_sha = sha256(root / "target/5o45_repacked.pdb")
-    for arm in ["qwen", "snowball"]:
+    for arm in arms:
         directory = root / arm
         designs = directory / "designs"
         native = json.loads((directory / "archive-validation.json").read_text())
@@ -67,8 +67,10 @@ def verify(root):
             native_archive_warnings=native["warnings"],
             structure_hashes_verified=len(hashes), qualified_pdb_hashes_verified=len(strict),
             qualified_fasta_ids_verified=len(fasta_ids), pending_wire_requests=0)
-    assert prompts[0] == prompts[1] and len(prompts[0]) == 9, "Fixed prompts differ"
-    return dict(ok=True, arms=results, target_pdb_sha256=target_sha, matched_fixed_prompt_hashes=9,
+    assert all(other == prompts[0] for other in prompts[1:]), "Fixed prompts differ between arms"
+    assert len(prompts[0]) == 9, "Expected nine shared fixed prompts"
+    return dict(ok=True, verified_arms=list(arms), arms=results, target_pdb_sha256=target_sha,
+                matched_fixed_prompt_hashes=9,
                 note="Local copy integrity and endpoint consistency; not a biological validation.")
 
 
@@ -76,7 +78,8 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("artifacts", type=Path)
     parser.add_argument("output", type=Path)
+    parser.add_argument("--arms", nargs="+", default=["qwen", "snowball"])
     args = parser.parse_args()
-    result = verify(args.artifacts)
+    result = verify(args.artifacts, args.arms)
     args.output.write_text(json.dumps(result, indent=2)+"\n")
     print(json.dumps(result, indent=2))

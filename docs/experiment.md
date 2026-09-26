@@ -118,6 +118,64 @@ warm-start jobs therefore share a seed across arms; subsequent asynchronous
 choices generally do not form paired molecular experiments. The archive
 namespace prevents one arm's structures from overwriting the other's.
 
+## Third arm: GLM-5.3 (2026-09-26)
+
+- Model: `zai-org/GLM-5.3`, FP8 weights, served as `glm-5.3` by a shared
+  multi-tenant endpoint (vLLM 0.28.0, MTP speculative decoding, fp8 KV cache,
+  256K served context). We operate the client, not the server.
+- Same target, crop, seed 0, one-hour budget, two H100 molecular workers and the
+  same five families. `configs/glm.yaml` differs from `configs/qwen.yaml` in
+  exactly three lines: campaign name, archive root and model.
+- Reached through the cluster-local Iris relay for the campaign's cluster
+  (`RELAY_PORT` 8010 on the relay's host). The registered address moves when a
+  relay restarts, so it is resolved at launch and passed as `GLM_BASE_URL`.
+- Interactive tier (the default token, no priority header), matching an
+  ordinary agentic session rather than the batch or bulk lanes.
+
+### Serving differences, which are larger than between the first two arms
+
+The first two arms ran on this pod's own GPUs under our own vLLM settings. GLM
+does not, and three consequences follow.
+
+**Reasoning cannot be turned off.** Qwen and Snowball both took a native
+`enable_thinking=false`. GLM reasons by default and exposes only a budget:
+`chat_template_kwargs.reasoning_effort` of `low`, `medium`, `high` or `max`.
+Upstream T-REX sends a thinking flag only when thinking is on, so an unmodified
+client leaves the budget unset. Measured on an archived Planner fixture, that
+default spends all 3072 permitted tokens on reasoning and returns
+`finish_reason: length` with empty content — every fixed check would fail on a
+configuration artifact rather than on anything about the model. `low` is the
+nearest available setting to the other arms' disabled thinking, and on the same
+fixture costs 54 reasoning tokens. Every GLM call therefore carries
+`reasoning_effort: low`.
+
+That control is added by the recorder, not by the controller: upstream T-REX
+stays pinned and unmodified. `recording_proxy.py --inject-extra-body` merges
+only top-level keys the client did not set, and any record it changes keeps both
+the received `request` and the transmitted `forwarded_request`, so the archive
+shows what the controller produced and what the server saw. Prompts, sampling
+parameters and responses are untouched. `--auth-token-file` supplies the bearer
+token on the forwarded request alone; no record contains a credential.
+
+**Latency is not comparable across arms.** Both earlier arms ran with prefix
+caching disabled. GLM's endpoint caches prompts server-side and we cannot turn
+that off: an archived Planner prompt reports 8576 of 8657 prompt tokens served
+from cache. GLM's measured latency reflects a shared, cached, speculative-decoding
+deployment on other people's hardware. Treat it as an operational observation
+about using the endpoint, not as a model-speed result. The same endpoint is
+shared with other tenants, so queueing is outside our control.
+
+**The arm holds no inference GPU.** GLM ran on the same four-H100 pod shape so
+that `worker_gpus` stays `['2','3']` byte-identical to the other arms, but GPUs
+0 and 1 sit idle. Molecular worker GPU-hours remain comparable across all three
+arms; model inference cost does not, and is not ours to measure.
+
+Two smaller notes. T-REX reads reasoning from `choices[].message.reasoning`,
+which is the field this endpoint returns, so thinking is captured natively.
+And the recorder's readiness probe for this arm is a `GET /v1/models` through
+the recorder itself, which verifies the whole authenticated path; it appears in
+the wire archive and is excluded from every chat-call summary.
+
 ## Completion
 
 Both campaigns, paired fixed checks and the five-state teacher replay completed.

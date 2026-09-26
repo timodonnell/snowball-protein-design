@@ -1,0 +1,44 @@
+{
+  "wire_archive": "artifacts/replay-qwen-on-snowball/wire",
+  "n_transcripts": 5,
+  "counts": {
+    "all": 5
+  },
+  "transcripts": [
+    {
+      "phase": "all",
+      "transcript": "all/001-planner.txt",
+      "wire_record": "1790373240047748746_80f246bf-b62f-41c7-9003-09806b70fd35.json",
+      "call_id": "80f246bf-b62f-41c7-9003-09806b70fd35",
+      "state": "completed"
+    },
+    {
+      "phase": "all",
+      "transcript": "all/002-planner.txt",
+      "wire_record": "1790373256106720208_3b36063d-6174-4550-96ae-c7717accf64c.json",
+      "call_id": "3b36063d-6174-4550-96ae-c7717accf64c",
+      "state": "completed"
+    },
+    {
+      "phase": "all",
+      "transcript": "all/003-planner.txt",
+      "wire_record": "1790373266513087160_f8a9ae6a-eb31-49f7-992c-d2f1d5cb5b00.json",
+      "call_id": "f8a9ae6a-eb31-49f7-992c-d2f1d5cb5b00",
+      "state": "completed"
+    },
+    {
+      "phase": "all",
+      "transcript": "all/004-planner.txt",
+      "wire_record": "1790373278169780006_79ee1c80-39c1-4fc5-ab05-8279259486f2.json",
+      "call_id": "79ee1c80-39c1-4fc5-ab05-8279259486f2",
+      "state": "completed"
+    },
+    {
+      "phase": "all",
+      "transcript": "all/005-planner.txt",
+      "wire_record": "1790373283334891484_3f0854d2-bf09-4b12-b0c1-339766ec7bde.json",
+      "call_id": "3f0854d2-bf09-4b12-b0c1-339766ec7bde",
+      "state": "completed"
+    }
+  ]
+}

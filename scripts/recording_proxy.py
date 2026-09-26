@@ -4,6 +4,20 @@
 One JSON artifact per call avoids interleaving concurrent Planner/Supervisor calls.
 Write the request before forwarding so interrupted calls are still auditable.
 No prompt, sampling, JSON-repair or response changes are made by this proxy.
+
+Two opt-in flags exist for a remote, authenticated upstream that the pinned
+controller cannot configure itself (the GLM-5.3 arm; see docs/experiment.md):
+
+``--auth-token-file`` adds a bearer header on the forwarded request only. The
+token is never written to an artifact; records keep bodies, not credentials.
+
+``--inject-extra-body`` merges fixed top-level keys into the forwarded JSON
+body. It exists solely to carry a server control the upstream client does not
+emit, and it refuses to overwrite a key the client already set. When it changes
+the body the record keeps both the received ``request`` and the transmitted
+``forwarded_request``, so the wire archive still shows exactly what the pinned
+controller produced and exactly what the server saw. Prompts, sampling
+parameters and responses are never rewritten.
 """
 from __future__ import annotations
 
@@ -69,7 +83,25 @@ async def cancellable_forward(handler, url, body, headers, timeout):
             await asyncio.gather(request, monitor, return_exceptions=True)
 
 
-def make_handler(upstream: str, output: Path, timeout: float, cancel_on_disconnect=False):
+def inject_extra_body(request_body: bytes, extra: dict) -> tuple[bytes, dict | None]:
+    """Merge fixed top-level keys into a JSON body; keep client-set keys intact."""
+    if not extra:
+        return request_body, None
+    try:
+        parsed = json.loads(request_body)
+    except (ValueError, UnicodeDecodeError):
+        return request_body, None  # non-JSON bodies (e.g. GET) pass through
+    if not isinstance(parsed, dict):
+        return request_body, None
+    added = {key: value for key, value in extra.items() if key not in parsed}
+    if not added:
+        return request_body, None
+    parsed.update(added)
+    return json.dumps(parsed).encode(), added
+
+
+def make_handler(upstream: str, output: Path, timeout: float, cancel_on_disconnect=False,
+                 auth_token: str | None = None, extra_body: dict | None = None):
     class Handler(BaseHTTPRequestHandler):
         def do_GET(self):
             self.forward()
@@ -80,7 +112,8 @@ def make_handler(upstream: str, output: Path, timeout: float, cancel_on_disconne
         def forward(self):
             call_id = str(uuid.uuid4())
             path = output / f"{time.time_ns()}_{call_id}.json"
-            request_body = self.rfile.read(int(self.headers.get("Content-Length", 0)))
+            received_body = self.rfile.read(int(self.headers.get("Content-Length", 0)))
+            request_body, injected = inject_extra_body(received_body, extra_body)
             record = {
                 "schema": "trex.llm-wire.v1",
                 "call_id": call_id,
@@ -88,14 +121,21 @@ def make_handler(upstream: str, output: Path, timeout: float, cancel_on_disconne
                 "method": self.command,
                 "path": self.path,
                 "upstream": upstream,
-                "request": body_record(request_body),
+                "request": body_record(received_body),
                 "state": "pending",
                 "cancel_on_disconnect": cancel_on_disconnect,
             }
+            if injected:
+                # Record what the server actually saw alongside the client's own body.
+                record["injected_extra_body"] = injected
+                record["forwarded_request"] = body_record(request_body)
             write_record(path, record)
             started = time.monotonic()
             headers = {"Content-Type": self.headers.get("Content-Type", "application/json")}
-            # Private localhost upstream requires no forwarded credentials.
+            if auth_token:
+                # Remote upstream credential; added here, never written to a record.
+                headers["Authorization"] = "Bearer " + auth_token
+            # A private localhost upstream requires no forwarded credentials.
             request = urllib.request.Request(
                 upstream.rstrip("/") + self.path,
                 data=request_body if self.command == "POST" else None,
@@ -146,10 +186,20 @@ def main():
     parser.add_argument("--timeout", type=float, default=600)
     parser.add_argument("--cancel-on-disconnect", action="store_true",
                         help="Propagate controller disconnect/timeout to upstream generation.")
+    parser.add_argument("--auth-token-file", type=Path,
+                        help="File holding a bearer token for a remote upstream; never recorded.")
+    parser.add_argument("--inject-extra-body", type=str,
+                        help="JSON object of top-level keys to add to the forwarded body "
+                             "when the client did not set them. Both bodies are recorded.")
     args = parser.parse_args()
     args.output.mkdir(parents=True, exist_ok=True)
+    auth_token = args.auth_token_file.read_text().strip() if args.auth_token_file else None
+    extra_body = json.loads(args.inject_extra_body) if args.inject_extra_body else None
+    if extra_body is not None and not isinstance(extra_body, dict):
+        parser.error("--inject-extra-body must be a JSON object")
     server = ThreadingHTTPServer(("127.0.0.1", args.port),
-                                make_handler(args.upstream, args.output, args.timeout, args.cancel_on_disconnect))
+                                make_handler(args.upstream, args.output, args.timeout,
+                                             args.cancel_on_disconnect, auth_token, extra_body))
     server.serve_forever()
 
 

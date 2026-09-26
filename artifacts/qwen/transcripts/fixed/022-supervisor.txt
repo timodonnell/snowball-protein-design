@@ -1,0 +1,189 @@
+==============================================================================
+call 022  9919770b-0d7b-44e2-a51f-610fa39ed87f
+started_at      2026-09-25T18:44:38.338247+00:00
+role            supervisor
+model           Qwen/Qwen3.6-27B-FP8
+sampling        temperature=0.0 max_completion_tokens=3072
+transport       state=completed status=200 latency_s=12.08926918823272
+finish_reason   stop
+usage           prompt=4703 completion=737 reasoning=None cached_prompt=None
+==============================================================================
+
+---- system ----
+You are the Supervisor for T-REX, a budgeted protein-binder design controller.
+
+Given decomposed evidence, active hypotheses, and validated ActionCandidates,
+choose a mode_mixture and rank launchable candidates.
+
+Decision order:
+1. Objective: maximize live Foldseek SU@TM0.6 per live WORKER-WALL GPU-hour
+   from objective_summary. Use completed worker-GPU route values only for exact
+   route/config learning.
+2. Route value: prefer exact route_values rows over family averages. Rank current
+   exploit by gpu_recent_new_su_per_route_gpu_h, then medium_recent_* as a
+   delayed-feedback guard, then safe direct-scored record_recent_*. Lifetime value
+   is memory/context, not current exploit rank.
+3. Strict/near-miss evidence: raw strict is progress only when it creates new
+   Foldseek SU@TM0.6. Duplicate-heavy routes can still be good if they continue
+   buying new SU/GPU-h.
+   A first official SU on a sparse/hard run is rare positive evidence: keep a
+   bounded confirmation launchable, but do not infer mature all-worker value.
+   Among exact routes with reliable, approximately comparable recent SU/GPU-h
+   (the lower rate is at least 85% of the higher rate; treat sparse counts or
+   exposure cautiously), put them in the same primary-efficiency tier and MUST
+   rank higher strict_quality_p25, then strict_quality_median, first. Do not rank
+   the lower-quality route first solely for a marginal rate advantage inside
+   this tier. Quality cannot compensate outside the comparable-efficiency tier.
+   Each candidate may include matched_exact_route_value. This is the exact
+   family/operator/config (and parent-lineage, when applicable) join for that
+   candidate. Use this joined row for candidate-specific efficiency and quality;
+   do not transfer its values to another candidate.
+4. Diagnostics: always inspect diagnostic_driver_tldr, diagnostic_axis_stats, and
+   route_values[*].diagnostic_improvement_score/axes. Diagnostics do not mint SU;
+   use them to choose rescue/explore levers. In productive states they are
+   monitoring/tie-break evidence unless recent new SU/GPU-h decays; in stalled,
+   deep_stall, rescue_rich, or duplicate-collapse states they are primary
+   scientific evidence for rescue/explore ranking.
+   Treat ipTM, ipsae, pTM, interface energetics, contacts, buried surface area,
+   clashes, and verifier agreement as source-scoped Pareto objectives. Prefer a
+   supported lever that improves the current blocker while preserving canonical
+   pLDDT/iPAE/scRMSD. Missing or differently calibrated backend metrics are not
+   negative evidence and must not be compared as if they shared one scale.
+   Diagnostic axes may be source-scoped as axis[src=family]. Do not rank a
+   candidate as if a BoltzGen-only diagnostic failure directly supports a
+   BindCraft/Complexa knob unless the candidate explicitly frames it as an
+   orthogonal cross-family probe rather than same-axis remediation.
+5. Diversity/trust/realization: read diversity_summary as auxiliary collapse and
+   panel evidence, dedup_trust as SU/diversity trust, and execution_realization as
+   selected->started feedback. Selected-but-not-started work is pending execution,
+   not scientific failure and not a reason to submit duplicate probes. A large
+   proposed->started gap with selected approximately equal to started is a ranking
+   outcome, not evidence that the family was blocked or under-tested.
+
+Action hierarchy is a ranking prior, not a ban: L1 material search knobs include
+FK temperature/sc_scale_noise/beam breadth; L2 rescue may be parent-bound
+redesign/refilter on a concrete parent or same-family material perturbation
+around a near-miss/stuck route. Scalar reward-only changes are later levers unless
+backed by axis evidence or paired with material search.
+
+Mode mixture:
+- Emit finite nonnegative exploit/rescue/explore values that SUM TO 1.0.
+- Keep mode_mixture coherent with candidate_decisions. If a rank-1 candidate is
+  intended to launch within the next few worker starts, assign nontrivial mass
+  to its mode; do not rely on the Selector to repair a contradictory scalar.
+- mode_mixture_ranges are advisory target ranges. Minimal safety floors are hard;
+  tighter ranges bind mainly under low confidence or collapse.
+- If state is strict_duplicate_collapse or diversity_summary shows collapse, push
+  explore upward. If a cheap route still buys new SU/GPU-h, keep exploit weight.
+- If dry_since_last_SU >=6 worker-GPU-h, shift some budget to diversifying
+  rescue/explore. >=12 without new SU should not be protected as near-miss
+  progress. If sustained deep_stall recovers with only 1-2 SU on a low-yield run,
+  keep the recovered route but rank at least one non-dominant root-family probe
+  high enough to launch.
+
+Immediate launch priority:
+- Give every candidate_decision a unique global_rank in 1..N. global_rank=1 is
+  the candidate you want on the NEXT available worker across ALL modes; it is
+  authoritative whenever feasible. rank_in_mode remains the ordering within
+  exploit/rescue/explore, while mode_mixture remains the longer-horizon target.
+- Rank by expected NEW trusted Foldseek SU per FULL route worker-GPU-hour,
+  including generation plus canonical score conversion. This is not a
+  shortest-runtime contest: probability of strict success, structural novelty,
+  strict quality, diagnostic evidence, and information value on stalled targets
+  all matter.
+- When a low-cost Complexa or ProteinMPNN route is currently buying comparable or
+  better new SU/GPU-h with adequate quality, rank it ahead of a slower high-cost
+  route. When BindCraft is the only route with replicated current SU or strong
+  canonical-scored signal, it may correctly receive the top global ranks.
+- BindCraft Accepted/Rejected/native metrics are diagnostic evidence only. Use
+  chained canonical AF2 strict/SU outcomes for route value; do not mistake native
+  acceptance for official success or tiny AF2 child cost for total route cost.
+
+Candidate ranking:
+- Rank only candidate_ids present in the input pool.
+- Do not use target identity, target class, or unsupported family priors. If a cross_campaign_memory block is provided, treat it only as advisory historical experience conditioned on current evidence. No family is the expected winner for any target.
+- Direct-scored families can be ranked by direct recent SU/GPU-h. Diagnostic-only
+  families require chained credit or accepted-artifact/diagnostic evidence; do not
+  let recent AF2 score-conversion children make the generator look artificially
+  cheap.
+- canonical_score_conversion refilters are system scoring lanes, not LLM rescue/
+  explore budget. parent_model_refold is advisory only: it writes refold_* and
+  does not mint SU.
+- Do not describe de-novo candidates as parent-scaffold actions when
+  parent_result_id is null. Parent-bound rescue requires a concrete parent family
+  such as structure_refilter, proteinmpnn_redesign.
+- resource_class is an audit/tie-break label, not a backend timeout promise.
+  extended is allowed only when the candidate itself is extended-cost or the
+  hypothesis is supported by at least one routed/refiltered descendant.
+
+Output contract:
+- candidate_decisions must include candidate_id, mode, rank_in_mode, global_rank,
+  resource_class, what, why, evidence_refs, expected_signal, stop_or_downgrade_if,
+  and reasoning_trace.
+- reasoning_trace must include observed_signal, inference, action_implication.
+  Keep each field short; this is an audit trace, not hidden chain-of-thought.
+- Cite provided evidence/hypothesis IDs only.
+- CRITICAL duplicate-candidate rule: each candidate_id must appear in AT MOST ONE mode across the entire candidate_decisions list. If a candidate fits two modes, choose the dominant role. Duplicate IDs
+  across modes cause schema_fail.
+- If allocation cannot be grounded, set abstain=true with fail_reason.
+- Confidence: 0.45-0.55 for sparse/noisy evidence; use
+  0.65-0.75 when direct evidence supports the mixture;
+  >0.75 only when multiple direct signals agree.
+- Output JSON only. No prose outside the JSON object.
+
+
+---- user ----
+TLDR (units: pLDDT 0-100; iPAE/ipTM/ipsae/min_ipae 0-1; binder_pLDDT_avg 0-1; interface_dG REU; buried_sasa A^2; hotspot_rmsd A; boltzgen pae raw): state=stalled | run_SU=0(+0 recent) | raw_strict=0 | basin=top_bin_share(live,all)=0.80 COLLAPSE>=0.5:diversify | route_feedback_SU/completed-worker-GPUh_recent=0 | diagnostic_driver_tldr=none | hard_target_signal=pLDDT_fail/iPAE_pass(x2) | remaining_wall_h=24.0
+MIXTURE GUIDANCE: state=stalled: recommended exploit <= 0.35; rescue >= 0.25; explore >= 0.25. Emit a mode_mixture summing to 1.0 that reflects the evidence; these ranges are guidance, while downstream safety clamps enforce hard floors/ceilings. NOTE: under mode-collapse (top_bin_share >= 0.50) the explore ceiling is automatically RAISED beyond the figure above, so REQUEST MORE explore in that case to break the collapse — the clamp will permit it.
+{"candidates": [{"baseline_result_id": null, "candidate_id": "cand_hyp_s1_001", "capability_role": "generator", "config_delta": {}, "downstream_route_plan": ["structure_refilter"], "estimated_cost_class": "diagnostic", "evidence_refs": ["tick_015"], "expected_signal": "boltzgen expected to improve pLDDT", "feasibility_ok": true, "feasibility_reasons": [], "hypothesis_ids": ["hyp_s1"], "method_family": "boltzgen", "operator_id": "boltzgen_default", "outputs_diagnostic_only": true, "parent_result_id": "tick_015", "refilter_role": null, "requires_parent_pdb": false, "score_credit_basis": "requires_canonical_score_conversion"}, {"baseline_result_id": null, "candidate_id": "cand_hyp_s1_002", "capability_role": "generator", "config_delta": {}, "downstream_route_plan": ["structure_refilter"], "estimated_cost_class": "diagnostic", "evidence_refs": ["tick_015"], "expected_signal": "bindcraft expected to improve pLDDT", "feasibility_ok": true, "feasibility_reasons": [], "hypothesis_ids": ["hyp_s1"], "method_family": "bindcraft", "operator_id": "bindcraft_default", "outputs_diagnostic_only": true, "parent_result_id": "tick_015", "refilter_role": null, "requires_parent_pdb": false, "score_credit_basis": "requires_canonical_score_conversion"}], "evidence": {"axis_stats": {"binder_scRMSD": {"calibration_status": "provisional", "fail_count": 6, "median_deficit": 0.5, "median_raw": null, "n": 22, "near_pass_count": 6, "pass_count": 10, "source_families": {}}, "iPAE": {"calibration_status": "provisional", "fail_count": 14, "median_deficit": 0.3, "median_raw": null, "n": 22, "near_pass_count": 4, "pass_count": 4, "source_families": {}}, "pLDDT": {"calibration_status": "provisional", "fail_count": 14, "median_deficit": 8.0, "median_raw": null, "n": 22, "near_pass_count": 4, "pass_count": 4, "source_families": {}}}, "completed_children": 22, "dedup_trust": "ok", "diagnosis_outcomes": {}, "diagnostic_alt_model_scores": {}, "diagnostic_axis_stats": {}, "diagnostic_chain_backlog": {}, "diagnostic_driver_tldr": "none", "dispatch_realization": {}, "diversity_summary": {"interpretation": "TM0.6 collapse values are live-control signals; optional TM0.8/sequence values are auxiliary panel/ablation signals; live objective is TM0.6 SU; report TM0.5/0.6/0.8 post-hoc", "live_structural_novelty": "Foldseek_SU_TM0.6", "recent_all_scored_duplicate_fraction": 0.65, "recent_all_scored_live_top_bin_share": 0.8, "strict_duplicate_collapse_signal": false, "tm08_scope": "disabled", "tm08_status": "disabled"}, "elapsed_wall_h": 24.0, "examples": [{"axis_deficits": {"iPAE": 0.4242, "pLDDT": 20.0}, "axis_values": {"iPAE": 0.65, "pLDDT": 70.0}, "config_delta": {}, "dominant_deficit_axis": null, "family": "complexa_beam", "joint_pattern_label": null, "parent_id": null, "result_id": "r_sc2_021"}, {"axis_deficits": {"iPAE": 0.3942, "pLDDT": 18.0}, "axis_values": {"iPAE": 0.62, "pLDDT": 72.0}, "config_delta": {}, "dominant_deficit_axis": null, "family": "complexa_beam", "joint_pattern_label": null, "parent_id": null, "result_id": "r_sc2_022"}], "execution_realization": {}, "exemplars": [], "joint_patterns": [{"axes": ["pLDDT", "iPAE"], "count": 2, "pattern": "both_pass"}, {"axes": ["pLDDT", "iPAE"], "count": 12, "pattern": "both_fail"}, {"axes": ["pLDDT", "iPAE"], "count": 2, "pattern": "A_pass_B_fail"}, {"axes": ["pLDDT", "iPAE"], "count": 2, "pattern": "A_fail_B_pass"}, {"axes": ["pLDDT", "iPAE"], "count": 4, "pattern": "both_near_pass"}], "method_health": {"bindcraft": {"accepted_artifacts": 1, "attempts": 2, "chained_strict_yield_su": 0, "chained_strict_yield_su_recent": 0, "chained_su_per_gpu_h": null, "chained_su_per_gpu_h_recent": null, "completions": 1, "cumulative_gpu_h": 0.0, "family": "bindcraft", "near_miss_yield": 0, "near_miss_yield_recent": 0, "nonzero_exits": 0, "raw_artifacts": 1, "routed_proxy": null, "score_files": 0, "strict_yield": 0, "strict_yield_su": 0, "su_per_gpu_h": null, "su_per_gpu_h_recent": null, "timeouts": 1}, "complexa_beam": {"accepted_artifacts": 18, "attempts": 18, "chained_strict_yield_su": 0, "chained_strict_yield_su_recent": 0, "chained_su_per_gpu_h": null, "chained_su_per_gpu_h_recent": null, "completions": 18, "cumulative_gpu_h": 0.0, "family": "complexa_beam", "near_miss_yield": 1, "near_miss_yield_recent": 0, "nonzero_exits": 0, "raw_artifacts": 18, "routed_proxy": null, "score_files": 18, "strict_yield": 0, "strict_yield_su": 0, "su_per_gpu_h": null, "su_per_gpu_h_recent": null, "timeouts": 0}}, "metric_availability": {"bindcraft": {"binder_scRMSD": false, "iPAE": false, "pLDDT": false}, "complexa_beam": {"binder_scRMSD": true, "iPAE": true, "pLDDT": true}}, "near_miss_count": 1, "objective_summary": {"charged_gpu_audit": {"charged_gpu_h_scope": "unavailable", "role": "audit_only_not_decision_objective"}, "completed_worker_gpu_h_total": 60.0, "completed_worker_gpu_h_window": 14.0, "headline_objective": "live_SU_TM0.6_per_worker_wall_GPUh", "live_su_tm06": 0, "live_su_tm06_recent_delta": 0, "raw_strict_count": 0, "recent_su_per_completed_worker_gpu_h": 0.0}, "panel_ready_bins_covered": 0, "panel_ready_count": 0, "parent_artifact_result_count": 0, "parent_artifacts_available": false, "pending_children": 3, "pending_family_load": {}, "production_near_miss_ids": [], "production_panel_diversity_bins": {}, "production_panel_gap_reasons": [], "production_panel_selected_ids": [], "production_panel_status": "not_run", "recent_fallback_high": false, "recent_ticks_history": [], "recipes": [{"config_delta": {"beam_width": 4, "n_branch": 4}, "descendant_count": 12, "median_metrics": {"iPAE": 0.65, "pLDDT": 70.0}, "method_family": "complexa_beam", "operator_id": "complexa_beam_default", "recency_tick": 14, "recipe_class": "joint_fail", "recipe_hash": "rcp_fail_x1", "representative_result_ids": ["r_sc2_021"], "su_per_gpu_h": null}], "refilter_role_health": {}, "remaining_wall_h": 24.0, "route_values": [], "schema_version": "v7.3.3-reward-guard", "state_label": "stalled", "strategy_feedback": [], "stuck_lineage_roots": [], "tick_id": "tick_015"}, "hypotheses": [{"claim": "Local search exhausted; BoltzGen/BindCraft escape may unlock new scaffolds.", "contradiction_points": 0.0, "hypothesis_id": "hyp_s1", "mode_affinity": {"exploit": 0.1, "explore": 0.7, "rescue": 0.2}, "predicted_axes": ["pLDDT", "iPAE"], "reasoning_trace": {"action_implication": "", "inference": "", "observed_signal": ""}, "recommended_action_families": ["boltzgen", "bindcraft"], "status": "active", "support_points": 0.0}], "instructions": "Return JSON with mode_mixture (summing to 1.0; use mode_mixture_ranges as evidence guidance, not a hard cap) and candidate_decisions. Rank enough worthwhile candidates to cover selector_context.available_slots_now when feasible. Give every decision a unique contiguous global_rank in 1..N; global_rank=1 is the immediate cross-mode next-worker choice. Rank within each mode in 1..N where N is the count of decisions you give that mode. Each candidate_decision must include a short reasoning_trace (observed_signal, inference, action_implication). Skip candidates not worth launching this tick. selector_context is read-only: use recent_realized_modes as observational launch-history evidence. recent_realized_modes and mode_credit are observational history, not an instruction to repay stale quota before global_rank=1. Emit the desired evidence-driven mode_mixture as the longer-horizon policy; global_rank controls fresh immediate launches. selector_context.cost_admission lists families the controller has yield-DEFERRED and high-cost dispatch pressure hints. Treat yield_deferred_families as weak scientific routes unless fresh evidence says otherwise. Use selected_not_started and dispatch_deferred as execution pressure, and avoid duplicate proposals while equivalent work is pending. Do not reinterpret proposals that the Selector did not choose as blocked execution or scientific under-testing. If method_health is not clearly negative, one bounded ranked probe may be reasonable; if another route is already producing high new SU/GPU-h and diversity is healthy, prefer that efficient route instead.", "mode_mixture_ranges": "state=stalled: recommended exploit <= 0.35; rescue >= 0.25; explore >= 0.25. Emit a mode_mixture summing to 1.0 that reflects the evidence; these ranges are guidance, while downstream safety clamps enforce hard floors/ceilings. NOTE: under mode-collapse (top_bin_share >= 0.50) the explore ceiling is automatically RAISED beyond the figure above, so REQUEST MORE explore in that case to break the collapse \u2014 the clamp will permit it.", "selector_context": {}}
+
+---- assistant ----
+{
+  "mode_mixture": {
+    "exploit": 0.10,
+    "rescue": 0.20,
+    "explore": 0.70
+  },
+  "candidate_decisions": [
+    {
+      "candidate_id": "cand_hyp_s1_001",
+      "mode": "explore",
+      "rank_in_mode": 1,
+      "global_rank": 1,
+      "resource_class": "diagnostic",
+      "what": "Launch BoltzGen generator probe to escape structural collapse.",
+      "why": "State is stalled with 0 SU and 80% top-bin share (collapse). Complexa beam is exhausted (0 SU, high duplicate fraction). Hypothesis hyp_s1 suggests BoltzGen/BindCraft can unlock new scaffolds. BoltzGen is a distinct generative prior from Complexa, offering higher information value for breaking collapse than re-tuning the failed family.",
+      "evidence_refs": [
+        "tick_015",
+        "hyp_s1"
+      ],
+      "expected_signal": "Novel structural scaffolds (new Foldseek SU) or diagnostic pLDDT/iPAE improvement leading to canonical success.",
+      "stop_or_downgrade_if": "If BoltzGen outputs show similar pLDDT/iPAE deficits as Complexa without structural novelty, or if cost exceeds budget without SU.",
+      "reasoning_trace": {
+        "observed_signal": "Stalled state, 0 SU, 80% top-bin share, Complexa beam exhausted.",
+        "inference": "Current generation strategy is trapped in a local optimum. Need orthogonal generative prior to escape collapse.",
+        "action_implication": "Prioritize BoltzGen (cand_hyp_s1_001) as primary explore lever to break collapse."
+      }
+    },
+    {
+      "candidate_id": "cand_hyp_s1_002",
+      "mode": "explore",
+      "rank_in_mode": 2,
+      "global_rank": 2,
+      "resource_class": "diagnostic",
+      "what": "Launch BindCraft generator probe as secondary escape route.",
+      "why": "BindCraft is the second family recommended by hyp_s1. While BoltzGen is ranked first due to potentially broader scaffold diversity, BindCraft provides a complementary probe. Given the collapse, we need multiple orthogonal attempts. BindCraft's native metrics are diagnostic, but chained canonical scoring will validate any structural novelty.",
+      "evidence_refs": [
+        "tick_015",
+        "hyp_s1"
+      ],
+      "expected_signal": "Novel structural scaffolds or improved interface metrics (iPAE/pLDDT) leading to canonical success.",
+      "stop_or_downgrade_if": "If BindCraft fails to produce artifacts with acceptable pLDDT/iPAE or if BoltzGen yields immediate SU.",
+      "reasoning_trace": {
+        "observed_signal": "Stalled state, need diverse escape routes.",
+        "inference": "BindCraft offers a different inductive bias than BoltzGen/Complexa.",
+        "action_implication": "Rank second to BoltzGen but still launch to maximize probability of finding a new basin."
+      }
+    }
+  ]
+}

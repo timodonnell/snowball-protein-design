@@ -1,0 +1,398 @@
+==============================================================================
+call 011  fb86607e-876f-41da-997a-1ceae9581fdf
+started_at      2026-09-25T19:19:54.137564+00:00
+role            planner
+model           Qwen/Qwen3.6-27B-FP8
+sampling        temperature=0.2 max_completion_tokens=3072
+transport       state=completed status=200 latency_s=29.873328774236143
+finish_reason   stop
+usage           prompt=22369 completion=1690 reasoning=None cached_prompt=None
+==============================================================================
+
+---- system ----
+You are the Planner for T-REX, a budgeted protein-binder design controller.
+
+Task: from the latest EvidenceSummary, propose 1-4 testable HypothesisCards that
+increase structurally-unique strict successes per live WORKER-WALL GPU-hour. Do not use
+target identity, target class, or unsupported family priors. If a
+cross_campaign_memory block is provided, treat it only as advisory historical
+experience conditioned on current evidence; infer the runnable strategy from
+EvidenceSummary, route value, available candidates, and constraints.
+
+Return JSON only. Exact top-level shape; fail_reason may be null or omitted:
+{
+  "abstain": false,
+  "confidence": 0.6,
+  "fail_reason": null,
+  "rationale": "brief evidence-grounded rationale",
+  "cards": [
+    {
+      "claim": "one-sentence testable claim",
+      "mode_affinity": {"exploit": 0.1, "rescue": 0.7, "explore": 0.2},
+      "evidence_refs": ["EvidenceSummary", "result_or_route_id"],
+      "predicted_metric_changes": [
+        {"axis": "iPAE", "direction": "decrease", "baseline_refs": ["result_id"],
+         "min_relative_deficit_reduction": 0.15, "min_absolute_delta": null}
+      ],
+      "preserve_constraints": [{"axis": "pLDDT", "max_relative_deficit_increase": 0.05}],
+      "recommended_action_families": ["complexa_beam"],
+      "config_delta_suggestions": {"complexa_beam": {"beam_width": 8}},
+      "reasoning_trace": {
+        "observed_signal": "evidence signal",
+        "inference": "scientific interpretation",
+        "action_implication": "why this family/config follows"
+      }
+    }
+  ]
+}
+
+Hard schema rules:
+- Top-level required keys are abstain, confidence, rationale, cards; fail_reason is optional.
+- Each card needs claim, mode_affinity, evidence_refs, predicted_metric_changes,
+  preserve_constraints, recommended_action_families, and reasoning_trace.
+- predicted_metric_changes axes are ONLY pLDDT, iPAE, binder_scRMSD.
+- Axis direction is fixed: pLDDT increases; iPAE and binder_scRMSD decrease.
+- All predicted_metric_changes in one card must use the same baseline_refs in
+  the same order because lifecycle evaluation has one comparison baseline.
+- preserve_constraints axes are ONLY pLDDT, iPAE, binder_scRMSD. Diversity is
+  expressed through claim/action choice and route/panel evidence, not lifecycle
+  preserve constraints. Diagnostic axes are evidence and lever cues, not
+  PredictedChange axes.
+- min_relative_deficit_reduction must be finite and in [0,1]; use 0.0 for
+  absolute-delta-only, with a positive min_absolute_delta.
+- recommended_action_families must come from available_families_this_cluster.
+- config_delta_suggestions may use only allowed_params_per_family and must obey
+  eval_budget_per_family product caps. Unknown keys are dropped/audited.
+- Parent-required families need concrete baseline_refs/result_ids; aggregate
+  labels such as method_health, top_bin_share, strategy_feedback, or family names
+  are evidence_refs only, not parent refs.
+- Cite evidence IDs shown in the prompt; no hallucinated IDs or prose-only refs.
+- reasoning_trace is an audit trace, not hidden chain-of-thought; keep each field
+  one short sentence.
+
+
+Evidence reading order:
+1. objective_summary: live run objective is Foldseek SU@TM0.6 per
+   worker-wall GPU-h. Use live_su_tm06_hwm_delta/dry_since_last_su to judge
+   recent progress. Reserved controller/LLM GPU allocation is not a decision
+   objective.
+2. route_values: primary route/config evidence. Prefer exact route rows over
+   family averages. Rank by gpu_recent_new_su_per_route_gpu_h, then
+   medium_recent_* as delayed-feedback guard, then safe direct-scored
+   record_recent_*. Lifetime rate is memory/context, not current exploit rank.
+3. method_health: family fallback only. For outputs_diagnostic_only families,
+   read chained_su_per_gpu_h_recent/chained_strict_yield_su_recent; their own
+   su_per_gpu_h_recent may be None by design.
+4. exemplars + axis_stats: concrete strict/near-miss binders and the three strict
+   axes. Official strict gate is pLDDT >= 90, iPAE <= 7/31, binder_scRMSD < 1.5.
+5. diagnostic_driver_tldr + diagnostic_axis_stats + diagnostic_alt_model_scores:
+   scientific lever evidence. These do not mint SU; use them to choose knobs,
+   rescue parents, or justify continued probing when SU is not yet present.
+6. diversity_summary + dedup_trust + recent_ticks_history + execution_realization:
+   collapse, trust, trajectory, and selected->started feedback.
+
+Interpretation rules:
+- Raw strict_count is not the objective. Many strict hits in one Foldseek bin are
+  one SU. If strict grows but new SU/GPU-h is flat, treat it as duplicate/SU
+  bottleneck rather than progress.
+- route_values.status: promote = competitive new-SU/GPU-h;
+  awaiting_score_conversion = accepted artifacts still need canonical scoring;
+  defer = enough compute but weak/no recent SU; diversify/collapse_risk = old or
+  raw-strict success is re-mining too few official SU bins.
+- Read recent before lifetime. Old SU should not keep exploit weight unless there
+  is current near-miss, unscored diagnostic backlog, diagnostic improvement, or a
+  material config/parent change worth testing.
+- Do not generalize one failed route/config into family failure. Down-rank a
+  family only after multiple distinct configs exceed lane warmup with no SU,
+  no recent near-miss, and no diagnostic/chained progress.
+- Treat a first official SU on a sparse/hard run as a rare positive signal. It
+  justifies a bounded confirmation hypothesis even when its absolute rate is
+  low, but it is not mature evidence for concentrating every worker.
+- Scientific objectives are lexicographic. New-SU/GPU-h is primary. When exact
+  routes have approximately comparable recent value (about 15%, accounting for
+  sparse counts/exposure), prefer higher strict_quality_p25/median and inspect
+  strict_quality_axis_margins for the limiting canonical axis.
+- Backend-specific diagnostics (ipTM, ipsae, pTM, interface_dG, buried_sasa,
+  contacts, clashes, and verifier scores) are source-scoped Pareto evidence, not
+  interchangeable global rewards. Use diagnostic_axis_stats and
+  diagnosis_outcomes to improve one supported blocker while preserving the
+  three canonical strict axes. Never penalize another family for not emitting a
+  metric, and do not average differently calibrated sources.
+- Lane warmups are cost/feedback-delay, not target priors: cheap direct-scored
+  Complexa lanes ~0.5 GPU-h; delayed/high-cost lanes such as bindcraft,
+  boltzgen, proteinmpnn_redesign, complexa_mcts ~1.5-2 GPU-h.
+- diversity_summary fields are live-TM0.6 structural collapse plus optional TM0.8/sequence panel
+  signals. The headline live objective is TM0.6 SU; report TM0.5/0.6/0.8 post-hoc.
+- If dedup_trust is degraded, treat SU/diversity as uncertain and cite it.
+
+
+Action policy:
+Action evidence hierarchy is a ranking prior, NOT a feasibility ban. Use the
+lowest sufficient level supported by evidence, but allow another level when route
+value, near-miss, stuck-lineage, or diagnostics justify it:
+  L0 low-evidence root-family coverage.
+  L1 same-family material search perturbation: seed/noise, beam_width/n_branch,
+     FK temperature, sc_scale_noise, MCTS exploration knobs.
+  L2 blocker-matched rescue around a concrete near-miss/stuck lineage:
+    parent-bound proteinmpnn_redesign when a usable parent exists, OR same-family
+    material perturbation when no concrete parent
+     exists or the root route needs re-search.
+  L3 scalar reward reweighting (reward_i_pae/reward_plddt/min_ipae/etc.) after
+     enough axis/diagnostic evidence, or when paired with material search.
+  L4 extended/high-cost expansion when recent route value or repeated near-miss
+     evidence supports the cost.
+
+Mode choice:
+- Exploit a route/config that is still buying new SU/GPU-h, or has active
+  near-miss/chained progress without collapse/defer.
+- Rescue a concrete blocker. binder_scRMSD -> sequence redesign/hallucination;
+  iPAE -> interface/backbone re-dock; pLDDT -> regenerate/backbone search or
+  pLDDT-aware MCTS/hallucination when iPAE is pass/near. Prefer L1/L2 material
+  perturbations before reward-only retries.
+- Explore when routes are dry past warmup, duplicate-collapsed, unsupported by
+  recent evidence, or the dominant root family stopped buying new SU/GPU-h.
+
+Special safeguards:
+- Appendix-I.4-style behavior is target-agnostic: use complexa_mcts plus
+  pLDDT/iPAE reward knobs/sequence_hallucination when evidence shows low pLDDT
+  with plausible interface/iPAE. It is an option, not a forced launch.
+- Greedy knobs matter only with refinement_algorithm="sequence_hallucination".
+- canonical_score_conversion is fixed official AF2 scoring plumbing; do not vary
+  it to chase SU. parent_model_refold is advisory only and writes refold_*.
+- Do not propose bindcraft/boltzgen/proteinmpnn_redesign merely to score, clear,
+  or convert existing diagnostic backlog; scoring backlog is system-managed.
+- proteinmpnn_redesign broadens a concrete parent; structure_refilter alone is not
+  a de-novo SU-diversifying generator.
+- If remaining_wall_h < ~3h, avoid fresh high-cost probes unlikely to finish.
+
+
+FAMILY ROLE APPENDIX (generated from capability_registry; per-tick family_role_table is authoritative for availability):
+- bindcraft: role=generator; cost=diagnostic; de_novo_or_target_conditioned; diagnostic_only; scoring=diagnostic-only output; chain through canonical structure_refilter for official strict/SU; notes=external generator — first use is diagnostic, never extended
+- boltzgen: role=generator; cost=diagnostic; de_novo_or_target_conditioned; diagnostic_only; scoring=diagnostic-only output; chain through canonical structure_refilter for official strict/SU; notes=external generator — first use is diagnostic, never extended
+- complexa_beam: role=generator; cost=standard; de_novo_or_target_conditioned; strict_capable; scoring=direct official strict/SU when canonical af2folding metrics are present; fallback chain only if missing
+- complexa_best_of_n: role=generator; cost=standard; de_novo_or_target_conditioned; strict_capable; scoring=direct official strict/SU when canonical af2folding metrics are present; fallback chain only if missing; notes=best-of-n: replicas independent samples, take the best.
+- complexa_fk_steering: role=generator; cost=standard; de_novo_or_target_conditioned; strict_capable; scoring=direct official strict/SU when canonical af2folding metrics are present; fallback chain only if missing; notes=fk-steering: log-derivative reward steering at low temp.
+- complexa_mcts: role=generator; cost=extended; de_novo_or_target_conditioned; strict_capable; scoring=direct official strict/SU when canonical af2folding metrics are present; fallback chain only if missing; notes=MCTS: tree search over diffusion trajectories. High compute.
+- proteinmpnn_redesign: role=seq_redesign; cost=low; parent_required; diagnostic_only; scoring=diagnostic-only output; chain through canonical structure_refilter for official strict/SU
+- structure_refilter: role=refilter; cost=low; parent_required; strict_capable; scoring=AF2 refilter; canonical_score_conversion mints SU upstream, parent_model_refold is advisory
+Chain patterns:
+- bindcraft/boltzgen/proteinmpnn_redesign -> canonical structure_refilter for official AF2 strict/SU.
+- proteinmpnn_redesign rescues a concrete parent sequence/backbone; root_family preserves the original generator.
+- For NEW diagnostic generation/redesign, list the first stage in recommended_action_families; the controller schedules canonical scoring of its new artifacts.
+- For EXISTING artifacts already in diagnostic_chain_backlog, do not list the generator to trigger scoring; chain_refilter/canonical_score_conversion is system-managed.
+
+Additional constraints:
+- diagnostic_axis_stats are two-tier. quality_threshold is the good-interface
+  band; pass_threshold/below_accept_count are tool accept floors. Strict
+  axis_stats use only the three success axes.
+- Use diagnostic_driver_tldr as the compact scientific driver: top 3 levered axes
+  plus top 1 corroboration-only axis, severity margin-normalized. Keep
+  PredictedChange axes strict-only.
+- Diagnostic axes are source-scoped. If an axis appears as axis[src=family],
+  use that source family and the remediation-lever map; do not silently
+  translate a BoltzGen-only axis into a BindCraft/Complexa knob.
+- In productive states, diagnostics are monitoring/tie-break/knob-tweak evidence
+  unless recent new SU/GPU-h decays. In rescue_rich/stalled/deep_stall/
+  duplicate-collapse states, diagnostics are primary evidence for rescue/explore
+  lever selection.
+- If dry >=6 worker GPU-h and diagnostics show low pLDDT/scaffold confidence with
+  plausible iPAE/interface, explicitly consider an I.4-style complexa_mcts card.
+- If deep_stall, or stalled/strict_duplicate_collapse with dry >=6 worker GPU-h
+  and the dominant root family has no recent new SU/GPU-h, include at least two
+  distinct untried/under-tested non-dominant root-family probes when available.
+  Keep productive cheap routes when they still buy recent new SU/GPU-h.
+- If sustained deep_stall recovers with only 1-2 fresh SU on a low-yield run,
+  keep that recovered route in exploit/rescue but leave at least one
+  non-dominant root-family probe open until total/recent SU/GPU-h is healthy.
+- If a stuck_lineage_root or contradicted/retired hypothesis is cited, do not
+  repeat the same parent/config unless evidence materially changed.
+- If no available family fits, pivot to the closest available registry family;
+  do not emit missing_candidate_requests.
+- Set abstain=true only when no grounded hypothesis can be formed. Self-report
+  confidence >0.6 only when direct evidence supports the cards.
+
+DIAGNOSTIC REMEDIATION LEVERS (how to ACT on a diagnostic axis):
+- Use the named (family.param) when either the compact diagnostic_driver_tldr
+  flags that axis as a run-level blocker OR an exemplar carries it as
+  `diagnostic_blocking_axis`. Strict axes still define success, but diagnostic
+  axes decide which scientific lever/family should be tested next. Treat
+  axis[src=family] provenance as binding unless explicitly proposing an
+  orthogonal cross-family probe; never cite one family's diagnostic axis
+  as direct evidence for another family's config_delta.
+    ipTM -> bindcraft.weights_iptm↑ OR complexa_beam.sc_scale_noise↑ OR complexa_beam.reward_i_ptm_weight↑ OR complexa_best_of_n.sc_scale_noise↑ OR complexa_best_of_n.reward_i_ptm_weight↑ OR complexa_fk_steering.sc_scale_noise↑ OR complexa_fk_steering.reward_i_ptm_weight↑ OR complexa_fk_steering.temperature↓ OR complexa_mcts.sc_scale_noise↑ OR complexa_mcts.reward_i_ptm_weight↑
+    min_ipae -> bindcraft.weights_pae_inter↑ OR complexa_beam.sc_scale_noise↑ OR complexa_beam.refinement_algorithm=sequence_hallucination OR complexa_beam.reward_i_pae_weight↓ OR complexa_beam.reward_min_ipae_weight↓ OR complexa_best_of_n.sc_scale_noise↑ OR complexa_best_of_n.reward_i_pae_weight↓ OR complexa_best_of_n.reward_min_ipae_weight↓ OR complexa_fk_steering.sc_scale_noise↑ OR complexa_fk_steering.reward_i_pae_weight↓ OR complexa_fk_steering.reward_min_ipae_weight↓ OR complexa_mcts.sc_scale_noise↑ OR complexa_mcts.reward_i_pae_weight↓ OR complexa_mcts.reward_min_ipae_weight↓
+    binder_pLDDT_avg -> bindcraft.weights_plddt↑ OR complexa_beam.reward_plddt_weight↑ OR complexa_best_of_n.reward_plddt_weight↑ OR complexa_fk_steering.reward_plddt_weight↑ OR complexa_mcts.reward_plddt_weight↑
+    buried_sasa -> bindcraft.target_length_min↑ OR bindcraft.target_length_max↑
+    design_to_target_iptm -> boltzgen.noise_scale OR boltzgen.num_designs
+    avg_ipsae -> complexa_beam.reward_avg_ipsae_weight↑ OR complexa_best_of_n.reward_avg_ipsae_weight↑ OR complexa_fk_steering.reward_avg_ipsae_weight↑ OR complexa_mcts.reward_avg_ipsae_weight↑
+    max_ipsae -> complexa_beam.reward_max_ipsae_weight↑ OR complexa_best_of_n.reward_max_ipsae_weight↑ OR complexa_fk_steering.reward_max_ipsae_weight↑ OR complexa_mcts.reward_max_ipsae_weight↑
+- CORROBORATION-ONLY diagnostic axes (NO lever in any family — cite to
+  explain WHY a design fails, NEVER as a config_delta target): interface_dG, design_iiptm, design_ptm, min_design_to_target_pae, shape_complementarity, interface_hbonds, interface_unsat_hbonds, hotspot_rmsd, binder_pTM_avg
+- `diagnosis_outcomes` (evidence) reports whether remediating each blocked
+  axis HAS WORKED so far: {axis: {lever, attempts, improved, improve_rate,
+  strict, strict_rate, unique_su, unique_su_rate, provisional}}. PREFER levers with high unique_su_rate/unique_su
+  as secondary signal; use improve_rate only when provisional=false, and
+  down-weight a lever tried often with low unique_su_rate and low improve_rate.
+
+
+---- user ----
+TLDR (units: pLDDT 0-100; iPAE/ipTM/ipsae/min_ipae 0-1; binder_pLDDT_avg 0-1; interface_dG REU; buried_sasa A^2; hotspot_rmsd A; boltzgen pae raw): state=low_evidence | run_SU=1(+1 recent) | raw_strict=4 | strict_per_SU_total=4 | basin=top_bin_share(live,all)=0.55 strict_su_top_bin_share(live,strict_records)=1.00 COLLAPSE>=0.5:diversify | SU/worker-wall-GPUh_total=2.13 | SU_HWM/worker-wall-GPUh_total=2.13(+1 HWM recent) | route_feedback_SU/completed-worker-GPUh_recent=2.67 | route_feedback_SU/completed-worker-GPUh_total=2.67 | top_diagnostic_blocker=avg_ipsae(x1 exemplars) | diagnostic_driver_tldr=max_ipsae[src=complexa:48]:increase,fail=31/48,near=5,median=0.0544,def=0.546,norm_def=2.1,levered;avg_ipsae[src=complexa:48]:increase,fail=31/48,near=5,median=0.0516,def=0.498,norm_def=1.99,levered;ipTM[src=complexa:48]:increase,fail=31/48,near=1,median=0.272,def=0.478,norm_def=1.77,levered;min_ipae[src=complexa:48]:decrease,fail=30/48,near=2,median=0.284,def=0.214,norm_def=1.02,levered | best_exemplar=a02a9e59990ca80b | nearest_miss=2ed2cfe55eaf8220/blocked_on:binder_scRMSD | remaining_wall_h=0.8
+remediation outcomes: avg_ipsae→complexa_beam.reward_avg_ipsae_weight↑ OR complexa_best_of_n.reward_avg_ipsae_weight↑ OR complexa_fk_steering.reward_avg_ipsae_weight↑ OR complexa_mcts.reward_avg_ipsae_weight↑: unique_su_rate=0.062; strict_rate=0.25; improved 8/16 (1 SU, 4 strict)
+ROUTE VALUE / COST-NORMALIZED FEEDBACK: diversify/productive:route::complexa_beam:complexa_beam_default:beam_width=4,n_branch=4,nsamples=4,nsteps=400,sc_scale_noise=0.2#df104ffc36 role=generator SU=1(+1) rate=5.95 gpu=0.17 pending_score=0 strict/SU=4.0 | healthy/under_tested:route::complexa_best_of_n:complexa_best_of_n_default:nsamples=4,nsteps=400,replicas=4#469f47505c role=generator SU=0(+0) rate=0 gpu=0.04 pending_score=0 strict/SU=None
+{"active_hypotheses": [{"claim": "Tuning complexa_beam rewards to prioritize ipTM and ipsae will generate binders with better interface packing, escaping the current structural collapse and improving strict success rate.", "config_delta_suggestions": {"complexa_beam": {"beam_width": 4, "n_branch": 4, "nsamples": 4, "nsteps": 400, "reward_avg_ipsae_weight": 1.0, "reward_i_ptm_weight": 1.5, "sc_scale_noise": 0.25}}, "contradiction_points": 0.0, "descendants_evaluated": 0, "evidence_refs": ["EvidenceSummary", "diagnostic_driver_tldr", "route::a0ed4d5d84"], "hypothesis_id": "hyp_0005_02", "last_evaluated_tick": null, "mode_affinity": {"exploit": 0.1, "explore": 0.5, "rescue": 0.4}, "predicted_metric_changes": [{"axis": "iPAE", "baseline_refs": ["2ed2cfe55eaf8220"], "direction": "decrease", "min_absolute_delta": null, "min_relative_deficit_reduction": 0.15}], "preserve_constraints": [{"axis": "pLDDT", "max_relative_deficit_increase": 0.05}], "reasoning_trace": {"action_implication": "complexa_beam is a standard-cost generator available on this cluster; tuning its rewards is a direct L1/L2 intervention for the observed packing deficits.", "inference": "Increasing reward weights for ipTM and ipsae should steer the beam search towards better-packed interfaces, addressing the primary diagnostic failure mode.", "observed_signal": "Diagnostic driver shows max_ipsae and avg_ipsae as top blockers (norm_def > 2.0); ipTM is also low (norm_def 1.82). Current complexa_best_of_n route is collapsed."}, "recommended_action_families": ["complexa_beam"], "status": "active", "support_points": 0.0, "tick_created": 5, "ttl_ticks": 10}, {"claim": "Using complexa_fk_steering with low temperature and high ipTM/ipsae rewards will generate structurally diverse binders with improved interface packing, breaking the current collapse.", "config_delta_suggestions": {"complexa_fk_steering": {"beam_width": 4, "n_branch": 4, "nsamples": 4, "nsteps": 400, "reward_avg_ipsae_weight": 1.0, "reward_i_ptm_weight": 1.5, "temperature": 0.1}}, "contradiction_points": 0.0, "descendants_evaluated": 0, "evidence_refs": ["EvidenceSummary", "diversity_summary", "diagnostic_driver_tldr"], "hypothesis_id": "hyp_0005_01", "last_evaluated_tick": null, "mode_affinity": {"exploit": 0.0, "explore": 0.7, "rescue": 0.3}, "predicted_metric_changes": [{"axis": "iPAE", "baseline_refs": ["2ed2cfe55eaf8220"], "direction": "decrease", "min_absolute_delta": null, "min_relative_deficit_reduction": 0.1}], "preserve_constraints": [{"axis": "pLDDT", "max_relative_deficit_increase": 0.1}], "reasoning_trace": {"action_implication": "complexa_fk_steering is an available, standard-cost generator that offers a different search paradigm to escape collapse and address packing deficits.", "inference": "FK-steering with low temperature and high packing rewards can force the sampler into distinct, high-quality interface configurations that beam search might miss.", "observed_signal": "Top_bin_share is 0.57 indicating severe structural collapse; complexa_best_of_n has failed to diversify. Diagnostic drivers point to packing issues (max_ipsae, avg_ipsae)."}, "recommended_action_families": ["complexa_fk_steering"], "status": "active", "support_points": 0.0, "tick_created": 5, "ttl_ticks": 10}, {"claim": "Resequencing the near-miss backbone 2ed2cfe55eaf8220 with proteinmpnn_redesign will reduce binder_scRMSD and improve packing metrics to achieve strict success.", "config_delta_suggestions": {"proteinmpnn_redesign": {"backbone_noise": 0.0, "num_seq_per_target": 16, "sampling_temp": 0.1}}, "contradiction_points": 0.0, "descendants_evaluated": 0, "evidence_refs": ["EvidenceSummary", "2ed2cfe55eaf8220"], "hypothesis_id": "hyp_0005_00", "last_evaluated_tick": null, "mode_affinity": {"exploit": 0.1, "explore": 0.1, "rescue": 0.8}, "predicted_metric_changes": [{"axis": "binder_scRMSD", "baseline_refs": ["2ed2cfe55eaf8220"], "direction": "decrease", "min_absolute_delta": null, "min_relative_deficit_reduction": 0.3}], "preserve_constraints": [{"axis": "pLDDT", "max_relative_deficit_increase": 0.05}, {"axis": "iPAE", "max_relative_deficit_increase": 0.1}], "reasoning_trace": {"action_implication": "proteinmpnn_redesign is the specific lever for sequence optimization on a parent backbone; it is low-cost and directly targets the RMSD/packing deficit.", "inference": "The backbone structure is plausible but the sequence is suboptimal for the interface; redesigning the sequence on this fixed backbone can tighten the fit and improve packing.", "observed_signal": "Near-miss 2ed2cfe55eaf8220 has passing pLDDT (90.5) and iPAE (0.20) but fails binder_scRMSD (1.99) and has low ipTM/high ipsae."}, "recommended_action_families": ["proteinmpnn_redesign"], "status": "active", "support_points": 0.0, "tick_created": 5, "ttl_ticks": 10}, {"claim": "Using complexa_fk_steering with low temperature and high ipTM reward will generate structurally diverse binders with improved interface packing, breaking the current collapse.", "config_delta_suggestions": {"complexa_fk_steering": {"beam_width": 4, "n_branch": 4, "nsamples": 4, "nsteps": 400, "reward_avg_ipsae_weight": 1.0, "reward_i_ptm_weight": 1.5, "temperature": 0.1}}, "contradiction_points": 0.0, "descendants_evaluated": 0, "evidence_refs": ["EvidenceSummary", "diversity_summary", "diagnostic_driver_tldr"], "hypothesis_id": "hyp_0004_02", "last_evaluated_tick": null, "mode_affinity": {"exploit": 0.0, "explore": 0.7, "rescue": 0.3}, "predicted_metric_changes": [{"axis": "iPAE", "baseline_refs": ["2ed2cfe55eaf8220"], "direction": "decrease", "min_absolute_delta": null, "min_relative_deficit_reduction": 0.1}], "preserve_constraints": [{"axis": "pLDDT", "max_relative_deficit_increase": 0.1}], "reasoning_trace": {"action_implication": "complexa_fk_steering is an available, standard-cost generator that offers a different search paradigm to escape collapse and address packing deficits.", "inference": "FK-steering with low temperature and high packing rewards can force the sampler into distinct, high-quality interface configurations that beam search might miss.", "observed_signal": "Top_bin_share is 0.75 indicating severe structural collapse; complexa_best_of_n has failed to diversify. Diagnostic drivers point to packing issues."}, "recommended_action_families": ["complexa_fk_steering"], "status": "active", "support_points": 0.0, "tick_created": 4, "ttl_ticks": 10}, {"claim": "Resequencing the near-miss backbone 2ed2cfe55eaf8220 with proteinmpnn_redesign will reduce binder_scRMSD and improve packing metrics to achieve strict success.", "config_delta_suggestions": {"proteinmpnn_redesign": {"backbone_noise": 0.0, "num_seq_per_target": 16, "sampling_temp": 0.1}}, "contradiction_points": 0.0, "descendants_evaluated": 0, "evidence_refs": ["EvidenceSummary", "2ed2cfe55eaf8220"], "hypothesis_id": "hyp_0004_01", "last_evaluated_tick": null, "mode_affinity": {"exploit": 0.1, "explore": 0.1, "rescue": 0.8}, "predicted_metric_changes": [{"axis": "binder_scRMSD", "baseline_refs": ["2ed2cfe55eaf8220"], "direction": "decrease", "min_absolute_delta": null, "min_relative_deficit_reduction": 0.3}], "preserve_constraints": [{"axis": "pLDDT", "max_relative_deficit_increase": 0.05}, {"axis": "iPAE", "max_relative_deficit_increase": 0.1}], "reasoning_trace": {"action_implication": "proteinmpnn_redesign is the specific lever for sequence optimization on a parent backbone; it is low-cost and directly targets the RMSD/packing deficit.", "inference": "The backbone structure is plausible but the sequence is suboptimal for the interface; redesigning the sequence on this fixed backbone can tighten the fit and improve packing.", "observed_signal": "Near-miss 2ed2cfe55eaf8220 has passing pLDDT (90.5) and iPAE (0.20) but fails binder_scRMSD (1.99) and has low ipTM/high ipsae."}, "recommended_action_families": ["proteinmpnn_redesign"], "status": "active", "support_points": 0.0, "tick_created": 4, "ttl_ticks": 10}, {"claim": "Tuning complexa_beam rewards to prioritize ipTM and ipsae will generate binders with better interface packing, escaping the current structural collapse and improving strict success rate.", "config_delta_suggestions": {"complexa_beam": {"beam_width": 4, "n_branch": 4, "nsamples": 4, "nsteps": 400, "reward_avg_ipsae_weight": 1.0, "reward_i_ptm_weight": 1.5, "sc_scale_noise": 0.25}}, "contradiction_points": 0.0, "descendants_evaluated": 0, "evidence_refs": ["EvidenceSummary", "diagnostic_driver_tldr", "route::a0ed4d5d84"], "hypothesis_id": "hyp_0004_00", "last_evaluated_tick": null, "mode_affinity": {"exploit": 0.1, "explore": 0.5, "rescue": 0.4}, "predicted_metric_changes": [{"axis": "iPAE", "baseline_refs": ["2ed2cfe55eaf8220"], "direction": "decrease", "min_absolute_delta": null, "min_relative_deficit_reduction": 0.15}], "preserve_constraints": [{"axis": "pLDDT", "max_relative_deficit_increase": 0.05}], "reasoning_trace": {"action_implication": "complexa_beam is a standard-cost generator available on this cluster; tuning its rewards is a direct L1/L2 intervention for the observed packing deficits.", "inference": "Increasing reward weights for ipTM and ipsae should steer the beam search towards better-packed interfaces, addressing the primary diagnostic failure mode.", "observed_signal": "Diagnostic driver shows max_ipsae and avg_ipsae as top blockers (norm_def > 2.0); ipTM is also low (norm_def 1.82). Current complexa_best_of_n route is collapsed."}, "recommended_action_families": ["complexa_beam"], "status": "active", "support_points": 0.0, "tick_created": 4, "ttl_ticks": 10}, {"claim": "Launching complexa_beam with increased reward_i_ptm_weight and sc_scale_noise will generate structurally distinct binders with better interface packing than the collapsed complexa_best_of_n route.", "config_delta_suggestions": {"complexa_beam": {"beam_width": 4, "n_branch": 4, "nsamples": 4, "nsteps": 400, "reward_i_ptm_weight": 1.0, "sc_scale_noise": 0.2}}, "contradiction_points": 0.0, "descendants_evaluated": 0, "evidence_refs": ["EvidenceSummary", "route::a0ed4d5d84"], "hypothesis_id": "hyp_0003_01", "last_evaluated_tick": null, "mode_affinity": {"exploit": 0.1, "explore": 0.6, "rescue": 0.3}, "predicted_metric_changes": [{"axis": "iPAE", "baseline_refs": ["2ed2cfe55eaf8220"], "direction": "decrease", "min_absolute_delta": null, "min_relative_deficit_reduction": 0.1}], "preserve_constraints": [{"axis": "pLDDT", "max_relative_deficit_increase": 0.1}], "reasoning_trace": {"action_implication": "complexa_beam is a standard, cost-effective generator; tuning rewards towards ipTM addresses the primary diagnostic blocker for new SU discovery.", "inference": "Beam search with interface-aware rewards (ipTM) and moderate noise can escape the local minima found by best_of_n and produce diverse, well-packed binders.", "observed_signal": "complexa_best_of_n has collapsed (top_bin_share 0.75) and fails on ipTM/ipsae; complexa_beam is untried and available."}, "recommended_action_families": ["complexa_beam"], "status": "active", "support_points": 0.0, "tick_created": 3, "ttl_ticks": 10}, {"claim": "Resequencing the near-miss backbone (2ed2cfe55eaf8220) using proteinmpnn_redesign will reduce binder_scRMSD and improve interface packing (ipTM/ipsae) to achieve strict success.", "config_delta_suggestions": {"proteinmpnn_redesign": {"backbone_noise": 0.0, "num_seq_per_target": 16, "sampling_temp": 0.1}}, "contradiction_points": 0.0, "descendants_evaluated": 0, "evidence_refs": ["EvidenceSummary", "2ed2cfe55eaf8220"], "hypothesis_id": "hyp_0003_00", "last_evaluated_tick": null, "mode_affinity": {"exploit": 0.2, "explore": 0.1, "rescue": 0.7}, "predicted_metric_changes": [{"axis": "binder_scRMSD", "baseline_refs": ["2ed2cfe55eaf8220"], "direction": "decrease", "min_absolute_delta": null, "min_relative_deficit_reduction": 0.3}], "preserve_constraints": [{"axis": "pLDDT", "max_relative_deficit_increase": 0.05}, {"axis": "iPAE", "max_relative_deficit_increase": 0.1}], "reasoning_trace": {"action_implication": "proteinmpnn_redesign is the specific lever for sequence optimization on a parent backbone, preserving the good structure while fixing the RMSD/packing.", "inference": "The backbone is plausible but the sequence is suboptimal for the interface; redesigning the sequence on this fixed backbone can tighten the fit.", "observed_signal": "Near-miss 2ed2cfe55eaf8220 has passing pLDDT/iPAE but fails binder_scRMSD (1.99 vs 1.5) and has low ipTM/high ipsae."}, "recommended_action_families": ["proteinmpnn_redesign"], "status": "active", "support_points": 0.0, "tick_created": 3, "ttl_ticks": 10}], "allowed_params_per_family": {"complexa_beam": {"batch_size": [1.0, 16.0], "beam_width": [2.0, 16.0], "enable_greedy_optimization": [true, false], "filter_samples_limit": [1.0, 1000.0], "greedy_percentage": [1.0, 10.0], "n_branch": [2.0, 8.0], "n_greedy_iters": [0.0, 30.0], "nsamples": [1.0, 8.0], "nsteps": [100.0, 500.0], "refinement_algorithm": ["", "sequence_hallucination"], "reward_avg_ipsae_weight": [0.0, 2.0], "reward_i_con_weight": [-2.0, 2.0], "reward_i_pae_weight": [-2.0, 0.0], "reward_i_ptm_weight": [0.0, 2.0], "reward_max_ipsae_weight": [0.0, 2.0], "reward_min_ipae_weight": [-2.0, 0.0], "reward_min_ipsae_weight": [0.0, 2.0], "reward_plddt_weight": [0.0, 2.0], "sc_scale_noise": [0.05, 0.5]}, "complexa_best_of_n": {"batch_size": [1.0, 16.0], "enable_greedy_optimization": [true, false], "filter_samples_limit": [1.0, 1000.0], "greedy_percentage": [1.0, 10.0], "n_greedy_iters": [0.0, 30.0], "nsamples": [1.0, 16.0], "nsteps": [100.0, 500.0], "refinement_algorithm": ["", "sequence_hallucination"], "replicas": [1.0, 8.0], "reward_avg_ipsae_weight": [0.0, 2.0], "reward_i_con_weight": [-2.0, 2.0], "reward_i_pae_weight": [-2.0, 0.0], "reward_i_ptm_weight": [0.0, 2.0], "reward_max_ipsae_weight": [0.0, 2.0], "reward_min_ipae_weight": [-2.0, 0.0], "reward_min_ipsae_weight": [0.0, 2.0], "reward_plddt_weight": [0.0, 2.0], "sc_scale_noise": [0.05, 0.5]}, "complexa_fk_steering": {"batch_size": [1.0, 16.0], "beam_width": [2.0, 16.0], "enable_greedy_optimization": [true, false], "filter_samples_limit": [1.0, 1000.0], "greedy_percentage": [1.0, 10.0], "n_branch": [2.0, 8.0], "n_greedy_iters": [0.0, 30.0], "nsamples": [1.0, 8.0], "nsteps": [100.0, 500.0], "refinement_algorithm": ["", "sequence_hallucination"], "reward_avg_ipsae_weight": [0.0, 2.0], "reward_i_con_weight": [-2.0, 2.0], "reward_i_pae_weight": [-2.0, 0.0], "reward_i_ptm_weight": [0.0, 2.0], "reward_max_ipsae_weight": [0.0, 2.0], "reward_min_ipae_weight": [-2.0, 0.0], "reward_min_ipsae_weight": [0.0, 2.0], "reward_plddt_weight": [0.0, 2.0], "sc_scale_noise": [0.05, 0.5], "temperature": [0.05, 0.5]}, "proteinmpnn_redesign": {"backbone_noise": [0.0, 0.3], "model_name": ["v_48_002", "v_48_010", "v_48_020", "v_48_030"], "num_seq_per_target": [1.0, 32.0], "omit_AAs": ["X", "C", "CP", "CW", "FWY", "G", "P", "GP", "DE", "KR"], "sampling_temp": [0.05, 0.5]}, "structure_refilter": {"model_names": ["model_1_multimer_v3", "model_2_multimer_v3", "model_3_multimer_v3", "model_4_multimer_v3", "model_5_multimer_v3", "model_1_multimer_v3,model_2_multimer_v3", "model_1_multimer_v3,model_2_multimer_v3,model_3_multimer_v3", "model_1_multimer_v3,model_2_multimer_v3,model_3_multimer_v3,model_4_multimer_v3", "model_1_multimer_v3,model_2_multimer_v3,model_3_multimer_v3,model_4_multimer_v3,model_5_multimer_v3"], "num_recycles": [0.0, 6.0], "use_initial_guess": [0, 1]}}, "available_families_this_cluster": ["complexa_beam", "complexa_best_of_n", "complexa_fk_steering", "proteinmpnn_redesign", "structure_refilter"], "eval_budget_per_family": {"complexa_beam": {"cap": 65536, "default_budget": 25600, "defaults_when_key_omitted": {"beam_width": 4, "n_branch": 4, "nsamples": 4, "nsteps": 400}, "formula": "nsteps * nsamples * beam_width * n_branch", "rule": "nsteps * nsamples * beam_width * n_branch <= 65536"}, "complexa_best_of_n": {"cap": 65536, "default_budget": 6400, "defaults_when_key_omitted": {"nsamples": 4, "nsteps": 400, "replicas": 4}, "formula": "nsteps * nsamples * replicas", "rule": "nsteps * nsamples * replicas <= 65536"}, "complexa_fk_steering": {"cap": 65536, "default_budget": 25600, "defaults_when_key_omitted": {"beam_width": 4, "n_branch": 4, "nsamples": 4, "nsteps": 400}, "formula": "nsteps * nsamples * beam_width * n_branch", "rule": "nsteps * nsamples * beam_width * n_branch <= 65536"}, "proteinmpnn_redesign": {"cap": 2048, "default_budget": 8, "defaults_when_key_omitted": {"num_seq_per_target": 8}, "formula": "num_seq_per_target", "rule": "num_seq_per_target <= 2048"}, "structure_refilter": {"cap": 1024, "default_budget": 3, "defaults_when_key_omitted": {"num_recycles": 3}, "formula": "model_count(model_names) * num_recycles", "rule": "model_count(model_names) * num_recycles <= 1024"}}, "evidence": {"axis_stats": {"binder_scRMSD": {"calibration_status": "provisional", "fail_count": 43, "median_deficit": 2.9259, "median_raw": 4.4259, "n": 48, "near_pass_count": 1, "pass_count": 4, "source_families": {}}, "iPAE": {"calibration_status": "provisional", "fail_count": 31, "median_deficit": 0.2873, "median_raw": 0.5131, "n": 48, "near_pass_count": 0, "pass_count": 17, "source_families": {}}, "pLDDT": {"calibration_status": "provisional", "fail_count": 8, "median_deficit": 3.8741, "median_raw": 86.1259, "n": 48, "near_pass_count": 27, "pass_count": 13, "source_families": {}}}, "completed_children": 48, "dedup_trust": {"foldseek_archive_coverage": 0.9167, "foldseek_archive_result_scope": "recent_scored_window_400", "foldseek_archive_status": "ok", "foldseek_su_coverage": 1.0, "foldseek_su_status": "ok", "near_miss_dedup_coverage": 1.0, "near_miss_dedup_status": "ok", "sequence_dedup_status": "disabled", "structure_dedup_fallback_count": 0, "structure_dedup_scope": "binder_chain", "whole_archive_structure_dedup_fallback_count": 4, "whole_archive_structure_dedup_scope": "binder_chain"}, "diagnosis_outcomes": {"avg_ipsae": {"attempts": 16, "improve_rate": 0.5, "improved": 8, "lever": "complexa_beam.reward_avg_ipsae_weight\u2191 OR complexa_best_of_n.reward_avg_ipsae_weight\u2191 OR complexa_fk_steering.reward_avg_ipsae_weight\u2191 OR complexa_mcts.reward_avg_ipsae_weight\u2191", "min_n": 3, "prefer_key": "unique_su_rate", "provisional": false, "strict": 4, "strict_rate": 0.25, "unique_su": 1, "unique_su_rate": 0.062}}, "diagnostic_alt_model_scores": {}, "diagnostic_axis_stats": {"avg_ipsae": {"below_accept_count": 0, "calibration_status": "provisional", "fail_count": 31, "median_deficit": 0.4984, "median_raw": 0.0516, "n": 48, "near_pass_count": 5, "pass_count": 12, "pass_threshold": null, "quality_threshold": 0.55, "source_families": {"complexa_beam": 32, "complexa_best_of_n": 16}}, "ipTM": {"below_accept_count": 31, "calibration_status": "provisional", "fail_count": 31, "median_deficit": 0.478, "median_raw": 0.272, "n": 48, "near_pass_count": 1, "pass_count": 16, "pass_threshold": 0.5, "quality_threshold": 0.75, "source_families": {"complexa_beam": 32, "complexa_best_of_n": 16}}, "max_ipsae": {"below_accept_count": 0, "calibration_status": "provisional", "fail_count": 31, "median_deficit": 0.5456, "median_raw": 0.0544, "n": 48, "near_pass_count": 5, "pass_count": 12, "pass_threshold": null, "quality_threshold": 0.6, "source_families": {"complexa_beam": 32, "complexa_best_of_n": 16}}, "min_ipae": {"below_accept_count": 30, "calibration_status": "provisional", "fail_count": 30, "median_deficit": 0.214, "median_raw": 0.284, "n": 48, "near_pass_count": 2, "pass_count": 16, "pass_threshold": 0.2258, "quality_threshold": 0.07, "source_families": {"complexa_beam": 32, "complexa_best_of_n": 16}}}, "diagnostic_chain_backlog": {"by_family": {}, "diagnostic_families": [], "dispatch_failed_chain_candidates": 0, "dispatched_chain_candidates": 0, "launched_chain_candidates": 0, "native_or_proxy_pending_refilter": 0, "pending_chain_candidates": 0, "proxy_promising_pending_refilter": 0, "queued_chain_candidates": 0, "total_chain_candidates": 0, "total_diagnostic_artifacts": 0, "total_unscored_diagnostic_artifacts": 0}, "diagnostic_driver_tldr": "max_ipsae[src=complexa:48]:increase,fail=31/48,near=5,median=0.0544,def=0.546,norm_def=2.1,levered;avg_ipsae[src=complexa:48]:increase,fail=31/48,near=5,median=0.0516,def=0.498,norm_def=1.99,levered;ipTM[src=complexa:48]:increase,fail=31/48,near=1,median=0.272,def=0.478,norm_def=1.77,levered;min_ipae[src=complexa:48]:decrease,fail=30/48,near=2,median=0.284,def=0.214,norm_def=1.02,levered", "dispatch_realization": {"dispatch_defer_reason_counts": {}, "dispatch_deferred_by_family": {}, "dispatch_deferred_by_mode": {"exploit": 0, "explore": 0, "rescue": 0}, "recent_started_families": ["complexa_fk_steering"], "recent_started_modes": ["explore"], "recent_started_window_k": 1, "selected_by_family": {"complexa_beam": 2, "complexa_best_of_n": 1, "complexa_fk_steering": 2, "proteinmpnn_redesign": 1}, "selected_by_mode": {"exploit": 0, "explore": 5, "rescue": 1}, "selected_not_started_by_family": {"proteinmpnn_redesign": 1}, "selected_not_started_by_mode": {"exploit": 0, "explore": 0, "rescue": 1}, "stale_dropped_by_family": {}, "stale_dropped_by_mode": {"exploit": 0, "explore": 0, "rescue": 0}, "started_by_family": {"complexa_beam": 2, "complexa_best_of_n": 1, "complexa_fk_steering": 2}, "started_by_mode": {"exploit": 0, "explore": 5, "rescue": 0}}, "diversity_summary": {"interpretation": "TM0.6 collapse values are live-control signals; optional TM0.8/sequence values are auxiliary panel/ablation signals; live objective is TM0.6 SU; report TM0.5/0.6/0.8 post-hoc", "live_structural_novelty": "Foldseek_SU_TM0.6", "raw_strict_per_live_su": 4.0, "recent_all_scored_duplicate_fraction": 0.7955, "recent_all_scored_live_top_bin_share": 0.5455, "recent_strict_records_live_su_bin_share": 1.0, "strict_duplicate_collapse_signal": false, "tm08_scope": "disabled", "tm08_status": "disabled"}, "elapsed_wall_h": 0.2349, "examples": [{"axis_deficits": {"binder_scRMSD": 24.0856, "iPAE": 0.454, "pLDDT": 20.1615}, "axis_values": {"binder_scRMSD": 25.5856, "iPAE": 0.6798, "pLDDT": 69.8385}, "config_delta": {}, "dominant_deficit_axis": "binder_scRMSD", "family": "complexa_best_of_n", "joint_pattern_label": "pLDDT=fail/iPAE=fail", "parent_id": "cand_v7r002_hyp_0002_00_001", "result_id": "95fe5d00950d88c7"}, {"axis_deficits": {"binder_scRMSD": 3.4114, "iPAE": 0.294, "pLDDT": 4.1655}, "axis_values": {"binder_scRMSD": 4.9114, "iPAE": 0.5198, "pLDDT": 85.8345}, "config_delta": {}, "dominant_deficit_axis": "binder_scRMSD", "family": "complexa_beam", "joint_pattern_label": "pLDDT=near_pass/iPAE=fail", "parent_id": "cand_v7r003_hyp_0003_01_002", "result_id": "c3dd0163c2d65426"}, {"axis_deficits": {"binder_scRMSD": 3.7615, "iPAE": 0.0, "pLDDT": 2.7045}, "axis_values": {"binder_scRMSD": 5.2615, "iPAE": 0.1741, "pLDDT": 87.2955}, "config_delta": {}, "dominant_deficit_axis": "binder_scRMSD", "family": "complexa_beam", "joint_pattern_label": "pLDDT=near_pass/iPAE=pass", "parent_id": "warmstart_v7r001_00_complexa_beam", "result_id": "e3deb38f98c57ae4"}, {"axis_deficits": {"binder_scRMSD": 0.0, "iPAE": 0.0, "pLDDT": 0.0}, "axis_values": {"binder_scRMSD": 0.975, "iPAE": 0.1465, "pLDDT": 92.7297}, "config_delta": {}, "dominant_deficit_axis": null, "family": "complexa_beam", "joint_pattern_label": "pLDDT=pass/iPAE=pass", "parent_id": "cand_v7r003_hyp_0003_01_002", "result_id": "d75c99c2a1930d36"}], "execution_realization": {"by_family": {"complexa_beam": {"defer_reasons": {}, "dispatch_deferred": 0, "proposal_to_start_gap": 2, "proposed": 4, "selected": 2, "selected_not_started": 0, "selection_to_start_gap": 0, "started": 2, "started_fraction_of_proposals": 0.5, "started_fraction_of_selected": 1.0}, "complexa_best_of_n": {"defer_reasons": {}, "dispatch_deferred": 0, "proposal_to_start_gap": 0, "proposed": 1, "selected": 1, "selected_not_started": 0, "selection_to_start_gap": 0, "started": 1, "started_fraction_of_proposals": 1.0, "started_fraction_of_selected": 1.0}, "complexa_fk_steering": {"defer_reasons": {}, "dispatch_deferred": 0, "proposal_to_start_gap": 0, "proposed": 2, "selected": 2, "selected_not_started": 0, "selection_to_start_gap": 0, "started": 2, "started_fraction_of_proposals": 1.0, "started_fraction_of_selected": 1.0}, "proteinmpnn_redesign": {"defer_reasons": {}, "dispatch_deferred": 0, "proposal_to_start_gap": 3, "proposed": 3, "selected": 1, "selected_not_started": 1, "selection_to_start_gap": 1, "started": 0, "started_fraction_of_proposals": 0.0, "started_fraction_of_selected": 0.0}}, "under_started_families": []}, "exemplars": [{"axis_deficits": {"binder_scRMSD": 0.0, "iPAE": 0.0, "pLDDT": 0.0}, "config_delta": {"beam_width": 4, "n_branch": 4, "nsamples": 4, "nsteps": 400, "sc_scale_noise": 0.2}, "diagnostic_blocking_axis": null, "dominant_deficit_axis": null, "family": "complexa_beam", "kind": "best", "metrics": {"avg_ipsae": 0.5512, "binder_scRMSD": 0.68, "complexa_native_binder_scRMSD": 0.68, "complexa_native_iPAE": 0.1593, "complexa_native_pLDDT": 91.8294, "contact_density": 1.5331, "fape": 34.5241, "iPAE": 0.1593, "interface_contact_density": 2.0126, "ipTM": 0.7999, "max_ipsae": 0.6456, "min_ipae": 0.052, "pLDDT": 91.8294}, "operator_id": "complexa_beam_default", "parent_result_id": "cand_v7r003_hyp_0003_01_002", "result_id": "a02a9e59990ca80b", "su_bin": "foldseek:449058032b70e1b2"}, {"axis_deficits": {"binder_scRMSD": 0.4932, "iPAE": 0.0, "pLDDT": 0.0}, "config_delta": {"nsamples": 4, "nsteps": 400, "replicas": 4}, "diagnostic_blocking_axis": "avg_ipsae", "dominant_deficit_axis": "binder_scRMSD", "family": "complexa_best_of_n", "kind": "near_miss", "metrics": {"avg_ipsae": 0.3666, "binder_scRMSD": 1.9932, "complexa_native_binder_scRMSD": 1.9932, "complexa_native_iPAE": 0.201, "complexa_native_pLDDT": 90.4758, "contact_density": 1.4438, "fape": 26.3918, "iPAE": 0.201, "interface_contact_density": 2.3713, "ipTM": 0.7094, "max_ipsae": 0.4125, "min_ipae": 0.0894, "pLDDT": 90.4758}, "operator_id": "complexa_best_of_n_default", "parent_result_id": "cand_v7r002_hyp_0002_00_001", "result_id": "2ed2cfe55eaf8220", "su_bin": null}, {"axis_deficits": {"binder_scRMSD": 0.9382, "iPAE": 0.0, "pLDDT": 0.0}, "config_delta": {"beam_width": 4, "n_branch": 4, "nsamples": 4, "nsteps": 400, "sc_scale_noise": 0.2}, "diagnostic_blocking_axis": null, "dominant_deficit_axis": "binder_scRMSD", "family": "complexa_beam", "kind": "near_miss", "metrics": {"avg_ipsae": 0.6119, "binder_scRMSD": 2.4382, "complexa_native_binder_scRMSD": 2.4382, "complexa_native_iPAE": 0.1575, "complexa_native_pLDDT": 94.1408, "contact_density": 1.3248, "fape": 41.5731, "iPAE": 0.1575, "interface_contact_density": 1.8387, "ipTM": 0.8236, "max_ipsae": 0.7045, "min_ipae": 0.0443, "pLDDT": 94.1408}, "operator_id": "complexa_beam_default", "parent_result_id": "cand_v7r003_hyp_0003_01_002", "result_id": "92988d30a69a7c45", "su_bin": null}], "joint_patterns": [{"axes": ["pLDDT", "iPAE"], "count": 13, "pattern": "both_pass"}, {"axes": ["pLDDT", "iPAE"], "count": 8, "pattern": "both_fail"}, {"axes": ["pLDDT", "iPAE"], "count": 0, "pattern": "A_pass_B_fail"}, {"axes": ["pLDDT", "iPAE"], "count": 0, "pattern": "A_fail_B_pass"}, {"axes": ["pLDDT", "iPAE"], "count": 0, "pattern": "both_near_pass"}], "method_health": {"complexa_beam": {"accepted_artifacts": 32, "attempts": 32, "chained_strict_yield_su": 0, "chained_strict_yield_su_recent": 0, "chained_su_per_gpu_h": null, "chained_su_per_gpu_h_recent": null, "completions": 32, "cumulative_gpu_h": 0.3338, "family": "complexa_beam", "near_miss_yield": 1, "near_miss_yield_recent": 1, "nonzero_exits": 0, "raw_artifacts": 32, "routed_proxy": null, "score_files": 32, "strict_yield": 4, "strict_yield_su": 1, "su_per_gpu_h": 2.9955, "su_per_gpu_h_recent": 2.9955, "timeouts": 0}, "complexa_best_of_n": {"accepted_artifacts": 16, "attempts": 16, "chained_strict_yield_su": 0, "chained_strict_yield_su_recent": 0, "chained_su_per_gpu_h": null, "chained_su_per_gpu_h_recent": null, "completions": 16, "cumulative_gpu_h": 0.0403, "family": "complexa_best_of_n", "near_miss_yield": 2, "near_miss_yield_recent": 2, "nonzero_exits": 0, "raw_artifacts": 16, "routed_proxy": null, "score_files": 16, "strict_yield": 0, "strict_yield_su": 0, "su_per_gpu_h": 0.0, "su_per_gpu_h_recent": 0.0, "timeouts": 0}}, "metric_availability": {"complexa_beam": {"binder_scRMSD": true, "iPAE": true, "pLDDT": true}, "complexa_best_of_n": {"binder_scRMSD": true, "iPAE": true, "pLDDT": true}}, "near_miss_count": 3, "objective_summary": {"charged_gpu_audit": {"charged_gpu_h_scope": "unavailable", "role": "audit_only_not_decision_objective"}, "completed_worker_gpu_h_total": 0.3741, "completed_worker_gpu_h_window": 0.3741, "dry_since_last_su_worker_gpu_h": 0.0, "headline_objective": "live_SU_TM0.6_per_worker_wall_GPUh", "live_su_tm06": 1, "live_su_tm06_hwm": 1, "live_su_tm06_hwm_delta": 1, "live_su_tm06_recent_delta": 1, "raw_strict_count": 4, "recent_su_per_completed_worker_gpu_h": 2.6728, "route_learning_su_per_completed_worker_gpu_h_total": 2.6728, "su_hwm_per_worker_wall_gpu_h_total": 2.1286, "su_per_worker_wall_gpu_h_total": 2.1286, "ticks_since_last_su": 0, "worker_wall_gpu_count": 2.0, "worker_wall_gpu_h_total": 0.4698}, "panel_ready_bins_covered": 0, "panel_ready_count": 0, "parent_artifact_result_count": 48, "parent_artifacts_available": true, "pending_children": 2, "pending_family_load": {"by_family": {"complexa_fk_steering": {"inflight_gpu_h": 0.0683, "pending_total": 2, "queued": 0, "running": 2}, "proteinmpnn_redesign": {"inflight_gpu_h": 0.0, "pending_total": 1, "queued": 1, "running": 0}}, "high_cost_families": ["bindcraft"]}, "production_near_miss_ids": ["3ea8959f549a4108", "71151ec0027f80b7", "5c5dff8e61102eae", "92988d30a69a7c45"], "production_panel_diversity_bins": {"contact": 0, "epitope": 0, "family": 1, "sequence": 0, "structure": 1}, "production_panel_gap_reasons": ["not_strict_success:40", "unresolved_output_chain_identity:4"], "production_panel_selected_ids": ["a02a9e59990ca80b"], "production_panel_status": "ok", "production_panel_value": 0.4183, "recent_fallback_high": false, "recent_ticks_history": [{"dominant_family": "complexa_beam", "launches": [{"config_delta": {"beam_width": 4, "n_branch": 4, "nsamples": 4}, "family": "complexa_beam", "key_knobs": ["beam_width", "n_branch", "nsamples"]}], "n_launches": 1, "near_miss_count": 0, "run_su_count": 0, "run_su_count_delta": 0, "state_label": "low_evidence", "strict_count": 0, "tick_id": "v7r001"}, {"dominant_family": "complexa_best_of_n", "launches": [{"config_delta": {"nsamples": 4, "nsteps": 400, "replicas": 4}, "family": "complexa_best_of_n", "key_knobs": ["nsamples", "nsteps", "replicas"]}], "n_launches": 1, "near_miss_count": 0, "run_su_count": 0, "run_su_count_delta": 0, "state_label": "low_evidence", "strict_count": 0, "tick_id": "v7r002"}, {"dominant_family": "complexa_beam", "launches": [{"config_delta": {"beam_width": 4, "n_branch": 4, "nsamples": 4, "nsteps": 400, "sc_scale_noise": 0.2}, "family": "complexa_beam", "key_knobs": ["beam_width", "n_branch", "nsamples", "nsteps", "sc_scale_noise"]}], "n_launches": 1, "near_miss_count": 2, "run_su_count": 0, "run_su_count_delta": 0, "state_label": "low_evidence", "strict_count": 0, "tick_id": "v7r003"}, {"dominant_family": "complexa_fk_steering", "launches": [{"config_delta": {"beam_width": 4, "n_branch": 4, "nsamples": 4, "nsteps": 400, "temperature": 0.1}, "family": "complexa_fk_steering", "key_knobs": ["beam_width", "n_branch", "nsamples", "nsteps", "temperature"]}], "n_launches": 1, "near_miss_count": 2, "run_su_count": 0, "run_su_count_delta": 0, "state_label": "low_evidence", "strict_count": 0, "tick_id": "v7r004"}, {"dominant_family": "complexa_fk_steering", "launches": [{"config_delta": {"beam_width": 4, "n_branch": 4, "nsamples": 4, "nsteps": 400, "reward_avg_ipsae_weight": 1.0}, "family": "complexa_fk_steering", "key_knobs": ["beam_width", "n_branch", "nsamples", "nsteps", "reward_avg_ipsae_weight"]}], "n_launches": 1, "near_miss_count": 2, "run_su_count": 0, "run_su_count_delta": 0, "state_label": "low_evidence", "strict_count": 0, "tick_id": "v7r005"}], "recipes": [{"config_delta": {"beam_width": 4, "n_branch": 4, "nsamples": 4, "nsteps": 400, "sc_scale_noise": 0.2}, "descendant_count": 4, "median_metrics": {"binder_scRMSD": 0.8531, "iPAE": 0.1528, "pLDDT": 92.2902}, "method_family": "complexa_beam", "operator_id": "complexa_beam_default", "recency_tick": 3, "recipe_class": "strict_success", "recipe_hash": "65f8b18c3a9bc9ef", "representative_result_ids": ["449058032b70e1b2", "d75c99c2a1930d36"], "su_per_gpu_h": 5.9506}, {"config_delta": {"beam_width": 4, "n_branch": 4, "nsamples": 4, "nsteps": 400, "sc_scale_noise": 0.2}, "descendant_count": 4, "median_metrics": {"binder_scRMSD": 2.4893, "iPAE": 0.1562, "pLDDT": 94.3297}, "method_family": "complexa_beam", "operator_id": "complexa_beam_default", "recency_tick": 3, "recipe_class": "near_miss", "recipe_hash": "65f8b18c3a9bc9ef", "representative_result_ids": ["3ea8959f549a4108", "5c5dff8e61102eae"], "su_per_gpu_h": null}, {"config_delta": {"nsamples": 4, "nsteps": 400, "replicas": 4}, "descendant_count": 2, "median_metrics": {"binder_scRMSD": 1.8677, "iPAE": 0.3605, "pLDDT": 88.412}, "method_family": "complexa_best_of_n", "operator_id": "complexa_best_of_n_default", "recency_tick": 2, "recipe_class": "near_miss", "recipe_hash": "de16606968ee81d5", "representative_result_ids": ["2ed2cfe55eaf8220", "acf530a6a684ae59"], "su_per_gpu_h": null}, {"config_delta": {"nsamples": 4, "nsteps": 400, "replicas": 4}, "descendant_count": 8, "median_metrics": {"binder_scRMSD": 7.68, "iPAE": 0.549, "pLDDT": 81.8865}, "method_family": "complexa_best_of_n", "operator_id": "complexa_best_of_n_default", "recency_tick": 2, "recipe_class": "joint_fail", "recipe_hash": "de16606968ee81d5", "representative_result_ids": ["71a04c6042467185", "3eace9cef3f6e10b"], "su_per_gpu_h": null}], "refilter_role_health": {}, "remaining_wall_h": 0.7651, "route_health": {"backlog_cap": 4, "backlog_used": 0, "near_miss_conversion": null, "panel_ready_conversion": null, "raw_routed": 0, "score_files_completed": 0, "strict_conversion": null}, "route_values": [{"action_family": "complexa_beam", "attempts": 16, "completions": 16, "config_delta": {"beam_width": 4, "n_branch": 4, "nsamples": 4, "nsteps": 400, "sc_scale_noise": 0.2}, "diagnostic_improvement_axes": ["avg_ipsae:levered:score=0.50:quality=0.50:trend=0.00:n=16", "ipTM:levered:score=0.50:quality=0.50:trend=0.00:n=16", "max_ipsae:levered:score=0.50:quality=0.50:trend=0.00:n=16"], "diagnostic_improvement_n": 64, "diagnostic_improvement_score": 0.5, "duplicate_bin_fraction": 0.75, "family": "complexa_beam", "gpu_recent_new_su_per_route_gpu_h": 5.9506, "gpu_recent_route_gpu_h": 0.1681, "lifetime_su_per_route_gpu_h": 5.9506, "marginal_status": "productive", "medium_recent_new_su": 1, "medium_recent_new_su_per_route_gpu_h": 5.9506, "medium_recent_route_gpu_h": 0.1681, "near_miss_count": 4, "near_miss_recent": 4, "new_su": 1, "new_su_per_route_gpu_h": 5.9506, "new_su_recent_gpu": 1, "operator_id": "complexa_beam_default", "pending_score_conversion_count": 0, "record_recent_new_su": 1, "record_recent_new_su_per_route_gpu_h": 5.9506, "record_recent_route_gpu_h": 0.1681, "root_family": "complexa_beam", "route_gpu_h": 0.1681, "route_id": "route::46b5784d86", "route_role": "generator", "scope": "route", "status": "diversify", "strict_count": 4, "strict_per_su": 4.0, "strict_quality_axis_margins": {"binder_scRMSD": 2.7334, "iPAE": 1.3297, "pLDDT": 0.3659}, "strict_quality_median": 0.4921, "strict_quality_n_unique_bins": 1, "strict_quality_p25": 0.4921, "value_rate_for_ranking": 5.9506, "value_rate_source": "gpu_recent"}, {"action_family": "complexa_best_of_n", "attempts": 16, "completions": 16, "config_delta": {"nsamples": 4, "nsteps": 400, "replicas": 4}, "diagnostic_improvement_axes": ["min_ipae:levered:score=0.06:quality=0.06:trend=0.00:n=16", "avg_ipsae:levered:score=0.03:quality=0.03:trend=0.00:n=16", "ipTM:levered:score=0.03:quality=0.03:trend=0.00:n=16"], "diagnostic_improvement_n": 64, "diagnostic_improvement_score": 0.062, "family": "complexa_best_of_n", "gpu_recent_route_gpu_h": 0.0403, "marginal_status": "under_tested", "medium_recent_new_su": 0, "medium_recent_route_gpu_h": 0.0403, "near_miss_count": 2, "near_miss_recent": 2, "new_su": 0, "new_su_recent_gpu": 0, "operator_id": "complexa_best_of_n_default", "pending_score_conversion_count": 0, "record_recent_new_su": 0, "record_recent_route_gpu_h": 0.0403, "root_family": "complexa_best_of_n", "route_gpu_h": 0.0403, "route_id": "route::aa2718549b", "route_role": "generator", "scope": "route", "status": "healthy", "strict_count": 0, "strict_quality_n_unique_bins": 0, "value_rate_source": "lifetime_memory"}, {"action_family": "complexa_beam", "attempts": 16, "completions": 16, "config_delta": {"beam_width": 4, "n_branch": 4, "nsamples": 4}, "diagnostic_improvement_axes": ["ipTM:levered:score=0.50:quality=0.50:trend=0.00:n=16", "min_ipae:levered:score=0.50:quality=0.50:trend=0.00:n=16", "avg_ipsae:levered:score=0.38:quality=0.38:trend=0.00:n=16"], "diagnostic_improvement_n": 64, "diagnostic_improvement_score": 0.5, "family": "complexa_beam", "gpu_recent_route_gpu_h": 0.1658, "marginal_status": "under_tested", "medium_recent_new_su": 0, "medium_recent_route_gpu_h": 0.1658, "near_miss_count": 0, "near_miss_recent": 0, "new_su": 0, "new_su_recent_gpu": 0, "operator_id": "complexa_beam_default", "pending_score_conversion_count": 0, "record_recent_new_su": 0, "record_recent_route_gpu_h": 0.1658, "root_family": "complexa_beam", "route_gpu_h": 0.1658, "route_id": "route::43f08b180d", "route_role": "generator", "scope": "route", "status": "observed", "strict_count": 0, "strict_quality_n_unique_bins": 0, "value_rate_source": "lifetime_memory"}, {"action_family": "bindcraft", "attempts": 0, "completions": 0, "diagnostic_improvement_n": 0, "diagnostic_improvement_score": 0.0, "family": "bindcraft", "gpu_recent_route_gpu_h": 0, "marginal_status": "untried", "medium_recent_new_su": 0, "medium_recent_route_gpu_h": 0, "near_miss_count": 0, "near_miss_recent": 0, "new_su": 0, "new_su_recent_gpu": 0, "operator_id": "bindcraft_default", "pending_score_conversion_count": 0, "record_recent_new_su": 0, "record_recent_route_gpu_h": 0, "route_gpu_h": 0, "route_id": "route::89ae8b41b9", "route_role": "generator_family_rollup", "scope": "family", "status": "untried", "strict_count": 0, "strict_quality_n_unique_bins": 0, "value_rate_source": "lifetime_memory"}, {"action_family": "boltzgen", "attempts": 0, "completions": 0, "diagnostic_improvement_n": 0, "diagnostic_improvement_score": 0.0, "family": "boltzgen", "gpu_recent_route_gpu_h": 0, "marginal_status": "untried", "medium_recent_new_su": 0, "medium_recent_route_gpu_h": 0, "near_miss_count": 0, "near_miss_recent": 0, "new_su": 0, "new_su_recent_gpu": 0, "operator_id": "boltzgen_default", "pending_score_conversion_count": 0, "record_recent_new_su": 0, "record_recent_route_gpu_h": 0, "route_gpu_h": 0, "route_id": "route::5e4472b681", "route_role": "generator_family_rollup", "scope": "family", "status": "untried", "strict_count": 0, "strict_quality_n_unique_bins": 0, "value_rate_source": "lifetime_memory"}, {"action_family": "complexa_beam", "attempts": 32, "completions": 32, "diagnostic_improvement_axes": ["ipTM:levered:score=0.50:quality=0.50:trend=0.00:n=16", "min_ipae:levered:score=0.50:quality=0.50:trend=0.00:n=16", "avg_ipsae:levered:score=0.38:quality=0.38:trend=0.00:n=16"], "diagnostic_improvement_n": 128, "diagnostic_improvement_score": 0.5, "family": "complexa_beam", "gpu_recent_new_su_per_route_gpu_h": 2.9955, "gpu_recent_route_gpu_h": 0.3338, "lifetime_su_per_route_gpu_h": 2.9955, "marginal_status": "productive", "medium_recent_new_su": 1, "medium_recent_new_su_per_route_gpu_h": 2.9955, "medium_recent_route_gpu_h": 0.3338, "near_miss_count": 4, "near_miss_recent": 4, "new_su": 1, "new_su_per_route_gpu_h": 2.9955, "new_su_recent_gpu": 1, "operator_id": "complexa_beam_default", "pending_score_conversion_count": 0, "record_recent_new_su": 1, "record_recent_new_su_per_route_gpu_h": 2.9955, "record_recent_route_gpu_h": 0.3338, "route_gpu_h": 0.3338, "route_id": "route::a0ed4d5d84", "route_role": "generator_family_rollup", "scope": "family", "status": "diversify", "strict_count": 4, "strict_per_su": 4.0, "strict_quality_axis_margins": {"binder_scRMSD": 2.7334, "iPAE": 1.3297, "pLDDT": 0.3659}, "strict_quality_median": 0.4921, "strict_quality_n_unique_bins": 1, "strict_quality_p25": 0.4921, "value_rate_for_ranking": 2.9955, "value_rate_source": "gpu_recent"}, {"action_family": "complexa_best_of_n", "attempts": 16, "completions": 16, "diagnostic_improvement_axes": ["min_ipae:levered:score=0.06:quality=0.06:trend=0.00:n=16", "avg_ipsae:levered:score=0.03:quality=0.03:trend=0.00:n=16", "ipTM:levered:score=0.03:quality=0.03:trend=0.00:n=16"], "diagnostic_improvement_n": 64, "diagnostic_improvement_score": 0.062, "family": "complexa_best_of_n", "gpu_recent_route_gpu_h": 0.0403, "marginal_status": "under_tested", "medium_recent_new_su": 0, "medium_recent_route_gpu_h": 0.0403, "near_miss_count": 2, "near_miss_recent": 2, "new_su": 0, "new_su_recent_gpu": 0, "operator_id": "complexa_best_of_n_default", "pending_score_conversion_count": 0, "record_recent_new_su": 0, "record_recent_route_gpu_h": 0.0403, "route_gpu_h": 0.0403, "route_id": "route::6a1bfa0ddc", "route_role": "generator_family_rollup", "scope": "family", "status": "healthy", "strict_count": 0, "strict_quality_n_unique_bins": 0, "value_rate_source": "lifetime_memory"}, {"action_family": "complexa_fk_steering", "attempts": 0, "completions": 0, "diagnostic_improvement_n": 0, "diagnostic_improvement_score": 0.0, "family": "complexa_fk_steering", "gpu_recent_route_gpu_h": 0, "marginal_status": "untried", "medium_recent_new_su": 0, "medium_recent_route_gpu_h": 0, "near_miss_count": 0, "near_miss_recent": 0, "new_su": 0, "new_su_recent_gpu": 0, "operator_id": "complexa_fk_steering_default", "pending_score_conversion_count": 0, "record_recent_new_su": 0, "record_recent_route_gpu_h": 0, "route_gpu_h": 0, "route_id": "route::7af4f5da40", "route_role": "generator_family_rollup", "scope": "family", "status": "untried", "strict_count": 0, "strict_quality_n_unique_bins": 0, "value_rate_source": "lifetime_memory"}, {"action_family": "complexa_mcts", "attempts": 0, "completions": 0, "diagnostic_improvement_n": 0, "diagnostic_improvement_score": 0.0, "family": "complexa_mcts", "gpu_recent_route_gpu_h": 0, "marginal_status": "untried", "medium_recent_new_su": 0, "medium_recent_route_gpu_h": 0, "near_miss_count": 0, "near_miss_recent": 0, "new_su": 0, "new_su_recent_gpu": 0, "operator_id": "complexa_mcts_default", "pending_score_conversion_count": 0, "record_recent_new_su": 0, "record_recent_route_gpu_h": 0, "route_gpu_h": 0, "route_id": "route::9ea48611cd", "route_role": "generator_family_rollup", "scope": "family", "status": "untried", "strict_count": 0, "strict_quality_n_unique_bins": 0, "value_rate_source": "lifetime_memory"}, {"action_family": "proteinmpnn_redesign", "attempts": 0, "completions": 0, "diagnostic_improvement_n": 0, "diagnostic_improvement_score": 0.0, "family": "proteinmpnn_redesign", "gpu_recent_route_gpu_h": 0, "interpretation": "rollup only; exact route rows carry root_family->action_family provenance", "marginal_status": "untried", "medium_recent_new_su": 0, "medium_recent_route_gpu_h": 0, "near_miss_count": 0, "near_miss_recent": 0, "new_su": 0, "new_su_recent_gpu": 0, "operator_id": "interface_redesign", "parent_bound_rollup": true, "pending_score_conversion_count": 0, "record_recent_new_su": 0, "record_recent_route_gpu_h": 0, "route_gpu_h": 0, "route_id": "route::ce61da8a64", "route_role": "sequence_redesign_family_rollup", "scope": "family", "standalone_generator": false, "status": "untried", "strict_count": 0, "strict_quality_n_unique_bins": 0, "value_rate_source": "lifetime_memory"}, {"action_family": "structure_refilter", "attempts": 0, "completions": 0, "diagnostic_improvement_n": 0, "diagnostic_improvement_score": 0.0, "family": "structure_refilter", "gpu_recent_route_gpu_h": 0, "interpretation": "rollup only; exact route rows carry root_family->action_family provenance", "marginal_status": "plumbing", "medium_recent_new_su": 0, "medium_recent_route_gpu_h": 0, "near_miss_count": 0, "near_miss_recent": 0, "new_su": 0, "new_su_recent_gpu": 0, "operator_id": "af2_consensus", "parent_bound_rollup": true, "pending_score_conversion_count": 0, "record_recent_new_su": 0, "record_recent_route_gpu_h": 0, "route_gpu_h": 0, "route_id": "route::cd9404c55a", "route_role": "af2_refilter_family_rollup", "scope": "family", "standalone_generator": false, "status": "plumbing", "strict_count": 0, "strict_quality_n_unique_bins": 0, "value_rate_source": "lifetime_memory"}], "schema_version": "v7.3.3-reward-guard", "state_label": "low_evidence", "strategy_feedback": [{"attempts": 1, "config_delta": {"beam_width": 4, "n_branch": 4, "nsamples": 4, "nsteps": 400, "sc_scale_noise": 0.2}, "dominant_failure_axes": {"binder_scRMSD": 12}, "family": "complexa_beam", "feedback_scope": "exact_route_operator_config", "gpu_h": 0.1681, "last_tick": 3, "near_miss_count": 1, "operator_id": "complexa_beam_default", "panel_ready_count": 0, "repeat_policy": "not_a_ban_single_failure_is_insufficient", "representative_failure_ids": ["1a60ca36e6ea86f7", "273cc49ef70bb270"], "representative_near_miss_ids": ["92988d30a69a7c45"], "result_count": 16, "root_family": "complexa_beam", "strategy_id": "route::46b5784d86"}, {"attempts": 1, "config_delta": {"nsamples": 4, "nsteps": 400, "replicas": 4}, "dominant_failure_axes": {"binder_scRMSD": 11, "iPAE": 5}, "family": "complexa_best_of_n", "feedback_scope": "exact_route_operator_config", "gpu_h": 0.0403, "last_tick": 2, "near_miss_count": 2, "operator_id": "complexa_best_of_n_default", "panel_ready_count": 0, "repeat_policy": "not_a_ban_single_failure_is_insufficient", "representative_failure_ids": ["0f50112e1e3d6b72", "12cc7947e6a6c473"], "representative_near_miss_ids": ["2ed2cfe55eaf8220", "acf530a6a684ae59"], "result_count": 16, "root_family": "complexa_best_of_n", "strategy_id": "route::aa2718549b"}, {"attempts": 1, "config_delta": {"beam_width": 4, "n_branch": 4, "nsamples": 4}, "dominant_failure_axes": {"binder_scRMSD": 8, "iPAE": 8}, "family": "complexa_beam", "feedback_scope": "exact_route_operator_config", "gpu_h": 0.1658, "last_tick": 1, "near_miss_count": 0, "operator_id": "complexa_beam_default", "panel_ready_count": 0, "repeat_policy": "not_a_ban_single_failure_is_insufficient", "representative_failure_ids": ["14afbd2c89208b9d", "20e3dbe7968b11e5"], "result_count": 16, "root_family": "complexa_beam", "strategy_id": "route::43f08b180d"}], "stuck_lineage_roots": [], "tick_id": "v7r006"}, "family_role_table": {"complexa_beam": {"outputs_diagnostic_only": false, "requires_parent_pdb": false, "role": "generator"}, "complexa_best_of_n": {"outputs_diagnostic_only": false, "requires_parent_pdb": false, "role": "generator"}, "complexa_fk_steering": {"outputs_diagnostic_only": false, "requires_parent_pdb": false, "role": "generator"}, "proteinmpnn_redesign": {"outputs_diagnostic_only": true, "requires_parent_pdb": true, "role": "seq_redesign"}, "structure_refilter": {"outputs_diagnostic_only": false, "requires_parent_pdb": true, "role": "refilter"}}, "instructions": "Propose 1-4 HypothesisCards JSON. Each card must cite evidence from the EvidenceSummary axes/joint_patterns/method_health, with concrete predicted_metric_changes. Each card must include a short reasoning_trace: observed_signal (what evidence matters), inference (what that implies), and action_implication (why the proposed family/config follows). When the evidence carries `recent_ticks_history`, examine how the state has evolved across recent ticks \u2014 did a particular family produce strict successes or near-misses, did a rescue attempt improve a specific axis, did exploration keep cycling through the same configurations? Use that trajectory to choose between exploit (refine what's working), rescue (raise the dominant blocker axis), or explore (pivot family/paradigm) for the new hypotheses. `recommended_action_families` MUST be chosen from `available_families_this_cluster` only \u2014 other capabilities are not staged on this cluster and proposing them wastes a hypothesis slot. When proposing config_delta_suggestions, ONLY use parameter names that appear in `allowed_params_per_family` for that family \u2014 keys not in the schema will be dropped and audited. Values must fall in the listed [lo, hi] range (or enum). Also obey `eval_budget_per_family`: each config's formula must be <= cap. The individual ranges are deliberately broad; use the product cap to trade off width/depth/samples instead of assuming all maxima can be combined. Return JSON matching the schema.", "seed_action_families": []}
+
+---- assistant ----
+{
+  "abstain": false,
+  "confidence": 0.75,
+  "fail_reason": null,
+  "rationale": "The run is in a low_evidence state with severe structural collapse (top_bin_share=0.55) and a single SU. The dominant route (complexa_beam) is productive but collapsed. Diagnostics indicate poor interface packing (high ipsae, low ipTM). With only 0.8h remaining, we must prioritize low-cost, high-impact interventions: exploiting the productive beam route with packing-focused rewards to escape collapse, and rescuing the concrete near-miss backbone via sequence redesign.",
+  "cards": [
+    {
+      "claim": "Increasing reward weights for ipTM and avg_ipsae in complexa_beam will steer generation towards better-packed interfaces, reducing structural collapse and increasing new SU yield.",
+      "mode_affinity": {
+        "exploit": 0.6,
+        "rescue": 0.3,
+        "explore": 0.1
+      },
+      "evidence_refs": [
+        "EvidenceSummary",
+        "route::46b5784d86",
+        "diagnostic_driver_tldr"
+      ],
+      "predicted_metric_changes": [
+        {
+          "axis": "iPAE",
+          "direction": "decrease",
+          "baseline_refs": [
+            "a02a9e59990ca80b"
+          ],
+          "min_relative_deficit_reduction": 0.1,
+          "min_absolute_delta": null
+        }
+      ],
+      "preserve_constraints": [
+        {
+          "axis": "pLDDT",
+          "max_relative_deficit_increase": 0.05
+        }
+      ],
+      "recommended_action_families": [
+        "complexa_beam"
+      ],
+      "config_delta_suggestions": {
+        "complexa_beam": {
+          "beam_width": 4,
+          "n_branch": 4,
+          "nsamples": 4,
+          "nsteps": 400,
+          "reward_i_ptm_weight": 1.5,
+          "reward_avg_ipsae_weight": 1.0,
+          "sc_scale_noise": 0.25
+        }
+      },
+      "reasoning_trace": {
+        "observed_signal": "complexa_beam is the only productive route (SU/GPU-h=5.95) but suffers from high top_bin_share (0.55) and diagnostic failures in ipTM/ipsae.",
+        "inference": "The current default rewards are not sufficiently penalizing poor packing; increasing ipTM/ipsae weights should force the beam search to explore distinct, well-packed conformations.",
+        "action_implication": "Tuning complexa_beam rewards is a low-cost L1 perturbation that directly addresses the diagnostic blockers while maintaining the productive generation paradigm."
+      }
+    },
+    {
+      "claim": "Resequencing the near-miss backbone 2ed2cfe55eaf8220 with proteinmpnn_redesign will reduce binder_scRMSD and improve packing metrics to achieve strict success.",
+      "mode_affinity": {
+        "exploit": 0.1,
+        "rescue": 0.8,
+        "explore": 0.1
+      },
+      "evidence_refs": [
+        "EvidenceSummary",
+        "2ed2cfe55eaf8220"
+      ],
+      "predicted_metric_changes": [
+        {
+          "axis": "binder_scRMSD",
+          "direction": "decrease",
+          "baseline_refs": [
+            "2ed2cfe55eaf8220"
+          ],
+          "min_relative_deficit_reduction": 0.3,
+          "min_absolute_delta": null
+        }
+      ],
+      "preserve_constraints": [
+        {
+          "axis": "pLDDT",
+          "max_relative_deficit_increase": 0.05
+        },
+        {
+          "axis": "iPAE",
+          "max_relative_deficit_increase": 0.1
+        }
+      ],
+      "recommended_action_families": [
+        "proteinmpnn_redesign"
+      ],
+      "config_delta_suggestions": {
+        "proteinmpnn_redesign": {
+          "backbone_noise": 0.0,
+          "num_seq_per_target": 16,
+          "sampling_temp": 0.1
+        }
+      },
+      "reasoning_trace": {
+        "observed_signal": "Near-miss 2ed2cfe55eaf8220 has passing pLDDT (90.5) and iPAE (0.20) but fails binder_scRMSD (1.99) and has low ipTM/high ipsae.",
+        "inference": "The backbone structure is plausible but the sequence is suboptimal for the interface; redesigning the sequence on this fixed backbone can tighten the fit and improve packing.",
+        "action_implication": "proteinmpnn_redesign is the specific lever for sequence optimization on a parent backbone; it is low-cost and directly targets the RMSD/packing deficit."
+      }
+    },
+    {
+      "claim": "Using complexa_fk_steering with low temperature and high ipTM/ipsae rewards will generate structurally diverse binders with improved interface packing, breaking the current collapse.",
+      "mode_affinity": {
+        "exploit": 0.0,
+        "rescue": 0.3,
+        "explore": 0.7
+      },
+      "evidence_refs": [
+        "EvidenceSummary",
+        "diversity_summary",
+        "diagnostic_driver_tldr"
+      ],
+      "predicted_metric_changes": [
+        {
+          "axis": "iPAE",
+          "direction": "decrease",
+          "baseline_refs": [
+            "a02a9e59990ca80b"
+          ],
+          "min_relative_deficit_reduction": 0.1,
+          "min_absolute_delta": null
+        }
+      ],
+      "preserve_constraints": [
+        {
+          "axis": "pLDDT",
+          "max_relative_deficit_increase": 0.1
+        }
+      ],
+      "recommended_action_families": [
+        "complexa_fk_steering"
+      ],
+      "config_delta_suggestions": {
+        "complexa_fk_steering": {
+          "beam_width": 4,
+          "n_branch": 4,
+          "nsamples": 4,
+          "nsteps": 400,
+          "reward_i_ptm_weight": 1.5,
+          "reward_avg_ipsae_weight": 1.0,
+          "temperature": 0.1
+        }
+      },
+      "reasoning_trace": {
+        "observed_signal": "Top_bin_share is 0.55 indicating severe structural collapse; complexa_best_of_n has failed to diversify. Diagnostic drivers point to packing issues (max_ipsae, avg_ipsae).",
+        "inference": "FK-steering with low temperature and high packing rewards can force the sampler into distinct, high-quality interface configurations that beam search might miss.",
+        "action_implication": "complexa_fk_steering is an available, standard-cost generator that offers a different search paradigm to escape collapse and address packing deficits."
+      }
+    }
+  ]
+}

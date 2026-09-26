@@ -1,0 +1,172 @@
+==============================================================================
+call 004  ccc92af9-51b2-4466-8c7a-77b1f548a830
+started_at      2026-09-25T19:05:58.172447+00:00
+role            supervisor
+model           Qwen/Qwen3.6-27B-FP8
+sampling        temperature=0.0 max_completion_tokens=3072
+transport       state=completed status=200 latency_s=6.9841090170666575
+finish_reason   stop
+usage           prompt=7113 completion=388 reasoning=None cached_prompt=None
+==============================================================================
+
+---- system ----
+You are the Supervisor for T-REX, a budgeted protein-binder design controller.
+
+Given decomposed evidence, active hypotheses, and validated ActionCandidates,
+choose a mode_mixture and rank launchable candidates.
+
+Decision order:
+1. Objective: maximize live Foldseek SU@TM0.6 per live WORKER-WALL GPU-hour
+   from objective_summary. Use completed worker-GPU route values only for exact
+   route/config learning.
+2. Route value: prefer exact route_values rows over family averages. Rank current
+   exploit by gpu_recent_new_su_per_route_gpu_h, then medium_recent_* as a
+   delayed-feedback guard, then safe direct-scored record_recent_*. Lifetime value
+   is memory/context, not current exploit rank.
+3. Strict/near-miss evidence: raw strict is progress only when it creates new
+   Foldseek SU@TM0.6. Duplicate-heavy routes can still be good if they continue
+   buying new SU/GPU-h.
+   A first official SU on a sparse/hard run is rare positive evidence: keep a
+   bounded confirmation launchable, but do not infer mature all-worker value.
+   Among exact routes with reliable, approximately comparable recent SU/GPU-h
+   (the lower rate is at least 85% of the higher rate; treat sparse counts or
+   exposure cautiously), put them in the same primary-efficiency tier and MUST
+   rank higher strict_quality_p25, then strict_quality_median, first. Do not rank
+   the lower-quality route first solely for a marginal rate advantage inside
+   this tier. Quality cannot compensate outside the comparable-efficiency tier.
+   Each candidate may include matched_exact_route_value. This is the exact
+   family/operator/config (and parent-lineage, when applicable) join for that
+   candidate. Use this joined row for candidate-specific efficiency and quality;
+   do not transfer its values to another candidate.
+4. Diagnostics: always inspect diagnostic_driver_tldr, diagnostic_axis_stats, and
+   route_values[*].diagnostic_improvement_score/axes. Diagnostics do not mint SU;
+   use them to choose rescue/explore levers. In productive states they are
+   monitoring/tie-break evidence unless recent new SU/GPU-h decays; in stalled,
+   deep_stall, rescue_rich, or duplicate-collapse states they are primary
+   scientific evidence for rescue/explore ranking.
+   Treat ipTM, ipsae, pTM, interface energetics, contacts, buried surface area,
+   clashes, and verifier agreement as source-scoped Pareto objectives. Prefer a
+   supported lever that improves the current blocker while preserving canonical
+   pLDDT/iPAE/scRMSD. Missing or differently calibrated backend metrics are not
+   negative evidence and must not be compared as if they shared one scale.
+   Diagnostic axes may be source-scoped as axis[src=family]. Do not rank a
+   candidate as if a BoltzGen-only diagnostic failure directly supports a
+   BindCraft/Complexa knob unless the candidate explicitly frames it as an
+   orthogonal cross-family probe rather than same-axis remediation.
+5. Diversity/trust/realization: read diversity_summary as auxiliary collapse and
+   panel evidence, dedup_trust as SU/diversity trust, and execution_realization as
+   selected->started feedback. Selected-but-not-started work is pending execution,
+   not scientific failure and not a reason to submit duplicate probes. A large
+   proposed->started gap with selected approximately equal to started is a ranking
+   outcome, not evidence that the family was blocked or under-tested.
+
+Action hierarchy is a ranking prior, not a ban: L1 material search knobs include
+FK temperature/sc_scale_noise/beam breadth; L2 rescue may be parent-bound
+redesign/refilter on a concrete parent or same-family material perturbation
+around a near-miss/stuck route. Scalar reward-only changes are later levers unless
+backed by axis evidence or paired with material search.
+
+Mode mixture:
+- Emit finite nonnegative exploit/rescue/explore values that SUM TO 1.0.
+- Keep mode_mixture coherent with candidate_decisions. If a rank-1 candidate is
+  intended to launch within the next few worker starts, assign nontrivial mass
+  to its mode; do not rely on the Selector to repair a contradictory scalar.
+- mode_mixture_ranges are advisory target ranges. Minimal safety floors are hard;
+  tighter ranges bind mainly under low confidence or collapse.
+- If state is strict_duplicate_collapse or diversity_summary shows collapse, push
+  explore upward. If a cheap route still buys new SU/GPU-h, keep exploit weight.
+- If dry_since_last_SU >=6 worker-GPU-h, shift some budget to diversifying
+  rescue/explore. >=12 without new SU should not be protected as near-miss
+  progress. If sustained deep_stall recovers with only 1-2 SU on a low-yield run,
+  keep the recovered route but rank at least one non-dominant root-family probe
+  high enough to launch.
+
+Immediate launch priority:
+- Give every candidate_decision a unique global_rank in 1..N. global_rank=1 is
+  the candidate you want on the NEXT available worker across ALL modes; it is
+  authoritative whenever feasible. rank_in_mode remains the ordering within
+  exploit/rescue/explore, while mode_mixture remains the longer-horizon target.
+- Rank by expected NEW trusted Foldseek SU per FULL route worker-GPU-hour,
+  including generation plus canonical score conversion. This is not a
+  shortest-runtime contest: probability of strict success, structural novelty,
+  strict quality, diagnostic evidence, and information value on stalled targets
+  all matter.
+- When a low-cost Complexa or ProteinMPNN route is currently buying comparable or
+  better new SU/GPU-h with adequate quality, rank it ahead of a slower high-cost
+  route. When BindCraft is the only route with replicated current SU or strong
+  canonical-scored signal, it may correctly receive the top global ranks.
+- BindCraft Accepted/Rejected/native metrics are diagnostic evidence only. Use
+  chained canonical AF2 strict/SU outcomes for route value; do not mistake native
+  acceptance for official success or tiny AF2 child cost for total route cost.
+
+Candidate ranking:
+- Rank only candidate_ids present in the input pool.
+- Do not use target identity, target class, or unsupported family priors. If a cross_campaign_memory block is provided, treat it only as advisory historical experience conditioned on current evidence. No family is the expected winner for any target.
+- Direct-scored families can be ranked by direct recent SU/GPU-h. Diagnostic-only
+  families require chained credit or accepted-artifact/diagnostic evidence; do not
+  let recent AF2 score-conversion children make the generator look artificially
+  cheap.
+- canonical_score_conversion refilters are system scoring lanes, not LLM rescue/
+  explore budget. parent_model_refold is advisory only: it writes refold_* and
+  does not mint SU.
+- Do not describe de-novo candidates as parent-scaffold actions when
+  parent_result_id is null. Parent-bound rescue requires a concrete parent family
+  such as structure_refilter, proteinmpnn_redesign.
+- resource_class is an audit/tie-break label, not a backend timeout promise.
+  extended is allowed only when the candidate itself is extended-cost or the
+  hypothesis is supported by at least one routed/refiltered descendant.
+
+Output contract:
+- candidate_decisions must include candidate_id, mode, rank_in_mode, global_rank,
+  resource_class, what, why, evidence_refs, expected_signal, stop_or_downgrade_if,
+  and reasoning_trace.
+- reasoning_trace must include observed_signal, inference, action_implication.
+  Keep each field short; this is an audit trace, not hidden chain-of-thought.
+- Cite provided evidence/hypothesis IDs only.
+- CRITICAL duplicate-candidate rule: each candidate_id must appear in AT MOST ONE mode across the entire candidate_decisions list. If a candidate fits two modes, choose the dominant role. Duplicate IDs
+  across modes cause schema_fail.
+- If allocation cannot be grounded, set abstain=true with fail_reason.
+- Confidence: 0.45-0.55 for sparse/noisy evidence; use
+  0.65-0.75 when direct evidence supports the mixture;
+  >0.75 only when multiple direct signals agree.
+- Output JSON only. No prose outside the JSON object.
+
+
+---- user ----
+TLDR (units: pLDDT 0-100; iPAE/ipTM/ipsae/min_ipae 0-1; binder_pLDDT_avg 0-1; interface_dG REU; buried_sasa A^2; hotspot_rmsd A; boltzgen pae raw): state=low_evidence | run_SU=0(+0 recent) | raw_strict=0 | SU/worker-wall-GPUh_total=0 | SU_HWM/worker-wall-GPUh_total=0(+0 HWM recent) | dry_since_last_SU=0.00139worker-GPUh/2ticks | diagnostic_driver_tldr=none | remaining_wall_h=1.0
+MIXTURE GUIDANCE: state=low_evidence: recommended explore >= 0.05. Emit a mode_mixture summing to 1.0 that reflects the evidence; these ranges are guidance, while downstream safety clamps enforce hard floors/ceilings. NOTE: under mode-collapse (top_bin_share >= 0.50) the explore ceiling is automatically RAISED beyond the figure above, so REQUEST MORE explore in that case to break the collapse — the clamp will permit it.
+{"candidates": [{"baseline_result_id": null, "candidate_id": "cand_v7r002_hyp_0002_00_001", "capability_role": "generator", "config_delta": {"nsamples": 4, "nsteps": 400, "replicas": 4}, "downstream_route_plan": [], "estimated_cost_class": "standard", "evidence_refs": ["EvidenceSummary", "route::6a1bfa0ddc"], "expected_signal": "complexa_best_of_n expected to improve pLDDT", "feasibility_ok": true, "feasibility_reasons": [], "hypothesis_ids": ["hyp_0002_00"], "method_family": "complexa_best_of_n", "operator_id": "complexa_best_of_n_default", "outputs_diagnostic_only": false, "parent_result_id": null, "refilter_role": null, "requires_parent_pdb": false, "score_credit_basis": "direct_official_strict_metrics"}], "evidence": {"axis_stats": {"binder_scRMSD": {"calibration_status": "uncalibrated", "fail_count": 0, "median_deficit": null, "median_raw": null, "n": 0, "near_pass_count": 0, "pass_count": 0, "source_families": {}}, "iPAE": {"calibration_status": "uncalibrated", "fail_count": 0, "median_deficit": null, "median_raw": null, "n": 0, "near_pass_count": 0, "pass_count": 0, "source_families": {}}, "pLDDT": {"calibration_status": "uncalibrated", "fail_count": 0, "median_deficit": null, "median_raw": null, "n": 0, "near_pass_count": 0, "pass_count": 0, "source_families": {}}}, "completed_children": 0, "dedup_trust": "ok", "diagnosis_outcomes": {}, "diagnostic_alt_model_scores": {}, "diagnostic_axis_stats": {}, "diagnostic_chain_backlog": {"by_family": {}, "diagnostic_families": [], "dispatch_failed_chain_candidates": 0, "dispatched_chain_candidates": 0, "launched_chain_candidates": 0, "native_or_proxy_pending_refilter": 0, "pending_chain_candidates": 0, "proxy_promising_pending_refilter": 0, "queued_chain_candidates": 0, "total_chain_candidates": 0, "total_diagnostic_artifacts": 0, "total_unscored_diagnostic_artifacts": 0}, "diagnostic_driver_tldr": "none", "dispatch_realization": {"dispatch_defer_reason_counts": {}, "dispatch_deferred_by_family": {}, "dispatch_deferred_by_mode": {"exploit": 0, "explore": 0, "rescue": 0}, "recent_started_families": ["complexa_beam"], "recent_started_modes": ["explore"], "recent_started_window_k": 1, "selected_by_family": {"complexa_beam": 1}, "selected_by_mode": {"exploit": 0, "explore": 1, "rescue": 0}, "selected_not_started_by_family": {}, "selected_not_started_by_mode": {"exploit": 0, "explore": 0, "rescue": 0}, "stale_dropped_by_family": {}, "stale_dropped_by_mode": {"exploit": 0, "explore": 0, "rescue": 0}, "started_by_family": {"complexa_beam": 1}, "started_by_mode": {"exploit": 0, "explore": 1, "rescue": 0}}, "diversity_summary": {"interpretation": "TM0.6 collapse values are live-control signals; optional TM0.8/sequence values are auxiliary panel/ablation signals; live objective is TM0.6 SU; report TM0.5/0.6/0.8 post-hoc", "live_structural_novelty": "Foldseek_SU_TM0.6", "strict_duplicate_collapse_signal": false, "tm08_scope": "disabled", "tm08_status": "disabled"}, "elapsed_wall_h": 0.0069, "examples": [], "execution_realization": {"by_family": {"complexa_beam": {"defer_reasons": {}, "dispatch_deferred": 0, "proposal_to_start_gap": 0, "proposed": 1, "selected": 1, "selected_not_started": 0, "selection_to_start_gap": 0, "started": 1, "started_fraction_of_proposals": 1.0, "started_fraction_of_selected": 1.0}}, "under_started_families": []}, "exemplars": [], "joint_patterns": [{"axes": ["pLDDT", "iPAE"], "count": 0, "pattern": "both_pass"}, {"axes": ["pLDDT", "iPAE"], "count": 0, "pattern": "both_fail"}, {"axes": ["pLDDT", "iPAE"], "count": 0, "pattern": "A_pass_B_fail"}, {"axes": ["pLDDT", "iPAE"], "count": 0, "pattern": "A_fail_B_pass"}, {"axes": ["pLDDT", "iPAE"], "count": 0, "pattern": "both_near_pass"}], "method_health": {}, "metric_availability": {}, "near_miss_count": 0, "objective_summary": {"charged_gpu_audit": {"charged_gpu_h_scope": "unavailable", "role": "audit_only_not_decision_objective"}, "completed_worker_gpu_h_total": 0, "completed_worker_gpu_h_window": 0, "dry_since_last_su_worker_gpu_h": 0.0014, "headline_objective": "live_SU_TM0.6_per_worker_wall_GPUh", "live_su_tm06": 0, "live_su_tm06_hwm": 0, "live_su_tm06_hwm_delta": 0, "live_su_tm06_recent_delta": 0, "raw_strict_count": 0, "su_hwm_per_worker_wall_gpu_h_total": 0.0, "su_per_worker_wall_gpu_h_total": 0.0, "ticks_since_last_su": 2, "worker_wall_gpu_count": 2.0, "worker_wall_gpu_h_total": 0.0137}, "panel_ready_bins_covered": 0, "panel_ready_count": 0, "parent_artifact_result_count": 0, "parent_artifacts_available": false, "pending_children": 1, "pending_family_load": {"by_family": {"complexa_beam": {"inflight_gpu_h": 0.0014, "pending_total": 1, "queued": 0, "running": 1}}, "high_cost_families": ["bindcraft"]}, "production_near_miss_ids": [], "production_panel_diversity_bins": {"contact": 0, "epitope": 0, "family": 0, "sequence": 0, "structure": 0}, "production_panel_gap_reasons": [], "production_panel_selected_ids": [], "production_panel_status": "no_eligible_strict", "production_panel_value": 0, "recent_fallback_high": false, "recent_ticks_history": [{"dominant_family": "complexa_beam", "launches": [{"config_delta": {"beam_width": 4, "n_branch": 4, "nsamples": 4}, "family": "complexa_beam", "key_knobs": ["beam_width", "n_branch", "nsamples"]}], "n_launches": 1, "near_miss_count": 0, "run_su_count": 0, "run_su_count_delta": 0, "state_label": "low_evidence", "strict_count": 0, "tick_id": "v7r001"}], "recipes": [], "refilter_role_health": {}, "remaining_wall_h": 0.9931, "route_health": {"backlog_cap": 8, "backlog_used": 0, "near_miss_conversion": null, "panel_ready_conversion": null, "raw_routed": 0, "score_files_completed": 0, "strict_conversion": null}, "route_values": [{"action_family": "bindcraft", "attempts": 0, "completions": 0, "diagnostic_improvement_n": 0, "diagnostic_improvement_score": 0.0, "family": "bindcraft", "gpu_recent_route_gpu_h": 0, "marginal_status": "untried", "medium_recent_new_su": 0, "medium_recent_route_gpu_h": 0, "near_miss_count": 0, "near_miss_recent": 0, "new_su": 0, "new_su_recent_gpu": 0, "operator_id": "bindcraft_default", "pending_score_conversion_count": 0, "record_recent_new_su": 0, "record_recent_route_gpu_h": 0, "route_gpu_h": 0, "route_id": "route::89ae8b41b9", "route_role": "generator_family_rollup", "scope": "family", "status": "untried", "strict_count": 0, "strict_quality_n_unique_bins": 0, "value_rate_source": "lifetime_memory"}, {"action_family": "boltzgen", "attempts": 0, "completions": 0, "diagnostic_improvement_n": 0, "diagnostic_improvement_score": 0.0, "family": "boltzgen", "gpu_recent_route_gpu_h": 0, "marginal_status": "untried", "medium_recent_new_su": 0, "medium_recent_route_gpu_h": 0, "near_miss_count": 0, "near_miss_recent": 0, "new_su": 0, "new_su_recent_gpu": 0, "operator_id": "boltzgen_default", "pending_score_conversion_count": 0, "record_recent_new_su": 0, "record_recent_route_gpu_h": 0, "route_gpu_h": 0, "route_id": "route::5e4472b681", "route_role": "generator_family_rollup", "scope": "family", "status": "untried", "strict_count": 0, "strict_quality_n_unique_bins": 0, "value_rate_source": "lifetime_memory"}, {"action_family": "complexa_beam", "attempts": 0, "completions": 0, "diagnostic_improvement_n": 0, "diagnostic_improvement_score": 0.0, "family": "complexa_beam", "gpu_recent_route_gpu_h": 0, "marginal_status": "untried", "medium_recent_new_su": 0, "medium_recent_route_gpu_h": 0, "near_miss_count": 0, "near_miss_recent": 0, "new_su": 0, "new_su_recent_gpu": 0, "operator_id": "complexa_beam_default", "pending_score_conversion_count": 0, "record_recent_new_su": 0, "record_recent_route_gpu_h": 0, "route_gpu_h": 0, "route_id": "route::a0ed4d5d84", "route_role": "generator_family_rollup", "scope": "family", "status": "untried", "strict_count": 0, "strict_quality_n_unique_bins": 0, "value_rate_source": "lifetime_memory"}, {"action_family": "complexa_best_of_n", "attempts": 0, "completions": 0, "diagnostic_improvement_n": 0, "diagnostic_improvement_score": 0.0, "family": "complexa_best_of_n", "gpu_recent_route_gpu_h": 0, "marginal_status": "untried", "medium_recent_new_su": 0, "medium_recent_route_gpu_h": 0, "near_miss_count": 0, "near_miss_recent": 0, "new_su": 0, "new_su_recent_gpu": 0, "operator_id": "complexa_best_of_n_default", "pending_score_conversion_count": 0, "record_recent_new_su": 0, "record_recent_route_gpu_h": 0, "route_gpu_h": 0, "route_id": "route::6a1bfa0ddc", "route_role": "generator_family_rollup", "scope": "family", "status": "untried", "strict_count": 0, "strict_quality_n_unique_bins": 0, "value_rate_source": "lifetime_memory"}, {"action_family": "complexa_fk_steering", "attempts": 0, "completions": 0, "diagnostic_improvement_n": 0, "diagnostic_improvement_score": 0.0, "family": "complexa_fk_steering", "gpu_recent_route_gpu_h": 0, "marginal_status": "untried", "medium_recent_new_su": 0, "medium_recent_route_gpu_h": 0, "near_miss_count": 0, "near_miss_recent": 0, "new_su": 0, "new_su_recent_gpu": 0, "operator_id": "complexa_fk_steering_default", "pending_score_conversion_count": 0, "record_recent_new_su": 0, "record_recent_route_gpu_h": 0, "route_gpu_h": 0, "route_id": "route::7af4f5da40", "route_role": "generator_family_rollup", "scope": "family", "status": "untried", "strict_count": 0, "strict_quality_n_unique_bins": 0, "value_rate_source": "lifetime_memory"}, {"action_family": "complexa_mcts", "attempts": 0, "completions": 0, "diagnostic_improvement_n": 0, "diagnostic_improvement_score": 0.0, "family": "complexa_mcts", "gpu_recent_route_gpu_h": 0, "marginal_status": "untried", "medium_recent_new_su": 0, "medium_recent_route_gpu_h": 0, "near_miss_count": 0, "near_miss_recent": 0, "new_su": 0, "new_su_recent_gpu": 0, "operator_id": "complexa_mcts_default", "pending_score_conversion_count": 0, "record_recent_new_su": 0, "record_recent_route_gpu_h": 0, "route_gpu_h": 0, "route_id": "route::9ea48611cd", "route_role": "generator_family_rollup", "scope": "family", "status": "untried", "strict_count": 0, "strict_quality_n_unique_bins": 0, "value_rate_source": "lifetime_memory"}, {"action_family": "proteinmpnn_redesign", "attempts": 0, "completions": 0, "diagnostic_improvement_n": 0, "diagnostic_improvement_score": 0.0, "family": "proteinmpnn_redesign", "gpu_recent_route_gpu_h": 0, "interpretation": "rollup only; exact route rows carry root_family->action_family provenance", "marginal_status": "untried", "medium_recent_new_su": 0, "medium_recent_route_gpu_h": 0, "near_miss_count": 0, "near_miss_recent": 0, "new_su": 0, "new_su_recent_gpu": 0, "operator_id": "interface_redesign", "parent_bound_rollup": true, "pending_score_conversion_count": 0, "record_recent_new_su": 0, "record_recent_route_gpu_h": 0, "route_gpu_h": 0, "route_id": "route::ce61da8a64", "route_role": "sequence_redesign_family_rollup", "scope": "family", "standalone_generator": false, "status": "untried", "strict_count": 0, "strict_quality_n_unique_bins": 0, "value_rate_source": "lifetime_memory"}, {"action_family": "structure_refilter", "attempts": 0, "completions": 0, "diagnostic_improvement_n": 0, "diagnostic_improvement_score": 0.0, "family": "structure_refilter", "gpu_recent_route_gpu_h": 0, "interpretation": "rollup only; exact route rows carry root_family->action_family provenance", "marginal_status": "plumbing", "medium_recent_new_su": 0, "medium_recent_route_gpu_h": 0, "near_miss_count": 0, "near_miss_recent": 0, "new_su": 0, "new_su_recent_gpu": 0, "operator_id": "af2_consensus", "parent_bound_rollup": true, "pending_score_conversion_count": 0, "record_recent_new_su": 0, "record_recent_route_gpu_h": 0, "route_gpu_h": 0, "route_id": "route::cd9404c55a", "route_role": "af2_refilter_family_rollup", "scope": "family", "standalone_generator": false, "status": "plumbing", "strict_count": 0, "strict_quality_n_unique_bins": 0, "value_rate_source": "lifetime_memory"}], "schema_version": "v7.3.3-reward-guard", "state_label": "low_evidence", "strategy_feedback": [], "stuck_lineage_roots": [], "tick_id": "v7r002"}, "hypotheses": [{"claim": "A standard complexa_best_of_n search will generate the first strict binders by providing independent structural samples complementary to the running beam search.", "contradiction_points": 0.0, "hypothesis_id": "hyp_0002_00", "mode_affinity": {"exploit": 0.1, "explore": 0.8, "rescue": 0.1}, "predicted_axes": ["pLDDT"], "reasoning_trace": {"action_implication": "Launch complexa_best_of_n with default budget (4*400*4=6400 <= 65536) to run in parallel or immediately after the current beam job.", "inference": "Diversifying the initial search with a different generator algorithm (best_of_n vs beam) increases the probability of finding a strict binder within the limited remaining time.", "observed_signal": "State is low_evidence with 0 SU; complexa_beam is already running; 1.0h wall time remains."}, "recommended_action_families": ["complexa_best_of_n"], "status": "active", "support_points": 0.0}], "instructions": "Return JSON with mode_mixture (summing to 1.0; use mode_mixture_ranges as evidence guidance, not a hard cap) and candidate_decisions. Rank enough worthwhile candidates to cover selector_context.available_slots_now when feasible. Give every decision a unique contiguous global_rank in 1..N; global_rank=1 is the immediate cross-mode next-worker choice. Rank within each mode in 1..N where N is the count of decisions you give that mode. Each candidate_decision must include a short reasoning_trace (observed_signal, inference, action_implication). Skip candidates not worth launching this tick. selector_context is read-only: use recent_realized_modes as observational launch-history evidence. recent_realized_modes and mode_credit are observational history, not an instruction to repay stale quota before global_rank=1. Emit the desired evidence-driven mode_mixture as the longer-horizon policy; global_rank controls fresh immediate launches. selector_context.cost_admission lists families the controller has yield-DEFERRED and high-cost dispatch pressure hints. Treat yield_deferred_families as weak scientific routes unless fresh evidence says otherwise. Use selected_not_started and dispatch_deferred as execution pressure, and avoid duplicate proposals while equivalent work is pending. Do not reinterpret proposals that the Selector did not choose as blocked execution or scientific under-testing. If method_health is not clearly negative, one bounded ranked probe may be reasonable; if another route is already producing high new SU/GPU-h and diversity is healthy, prefer that efficient route instead.", "mode_mixture_ranges": "state=low_evidence: recommended explore >= 0.05. Emit a mode_mixture summing to 1.0 that reflects the evidence; these ranges are guidance, while downstream safety clamps enforce hard floors/ceilings. NOTE: under mode-collapse (top_bin_share >= 0.50) the explore ceiling is automatically RAISED beyond the figure above, so REQUEST MORE explore in that case to break the collapse \u2014 the clamp will permit it.", "selector_context": {"available_slots_now": 2, "cost_admission": {"capacity_blocked_families": [], "capacity_pressure_families": [], "deferred_families": [], "demoted_families": [], "high_cost_caps": {"bindcraft": {"cap_running_workers": 1, "cap_source": "default", "pending_total": 0, "queued": 0, "running": 0}}, "yield_deferred_families": []}, "execution_realization": {"by_family": {"complexa_beam": {"defer_reasons": {}, "dispatch_deferred": 0, "proposal_to_start_gap": 0, "proposed": 1, "selected": 1, "selected_not_started": 0, "selection_to_start_gap": 0, "started": 1, "started_fraction_of_proposals": 1.0, "started_fraction_of_selected": 1.0}}, "under_started_families": []}, "pending_family_load": {"by_family": {"complexa_beam": {"inflight_gpu_h": 0.0014, "pending_total": 1, "queued": 0, "running": 1}}, "high_cost_families": ["bindcraft"]}, "quota_realization": "fractional_carry", "recent_realized_modes": {"actual_share": {"exploit": 0.0, "explore": 0.0, "rescue": 0.0}, "configured_window_k": 0, "counts": {"exploit": 0, "explore": 0, "rescue": 0}, "effective_window_k": 0, "last_modes": [], "mode_credit": {"exploit": 0.0, "explore": 0.0, "rescue": 0.0}, "realization_memory": "fractional_carry", "window_disabled": true}, "score_conversion_backlog": {"dispatched_chain_candidates": 0, "native_or_proxy_pending_refilter": 0, "pending_chain_candidates": 0, "queued_chain_candidates": 0, "total_unscored_diagnostic_artifacts": 0}}}
+
+---- assistant ----
+{
+  "mode_mixture": {
+    "exploit": 0.0,
+    "rescue": 0.0,
+    "explore": 1.0
+  },
+  "candidate_decisions": [
+    {
+      "candidate_id": "cand_v7r002_hyp_0002_00_001",
+      "mode": "explore",
+      "rank_in_mode": 1,
+      "global_rank": 1,
+      "resource_class": "standard",
+      "what": "Launch complexa_best_of_n to diversify initial search strategy.",
+      "why": "State is low_evidence with 0 SU. complexa_beam is running but unproven. best_of_n provides orthogonal structural sampling to increase probability of finding first strict binder.",
+      "evidence_refs": [
+        "EvidenceSummary",
+        "route::6a1bfa0ddc",
+        "hyp_0002_00"
+      ],
+      "expected_signal": "First strict SU or high-quality diagnostic candidates from alternative search trajectory.",
+      "stop_or_downgrade_if": "complexa_beam produces multiple strict SU with high quality in next tick, or budget exhausted.",
+      "reasoning_trace": {
+        "observed_signal": "low_evidence state, 0 SU, complexa_beam running, 1h remaining.",
+        "inference": "Need diverse exploration to find first binder; best_of_n is complementary to beam search.",
+        "action_implication": "Launch best_of_n as primary explore candidate to maximize chance of first SU."
+      }
+    }
+  ],
+  "abstain": false,
+  "confidence": 0.65
+}

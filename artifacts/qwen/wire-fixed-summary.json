@@ -4,6 +4,9 @@
     "statuses": {
       "200": 27
     },
+    "transport_states": {
+      "completed": 27
+    },
     "roles": {
       "planner": 15,
       "supervisor": 12
@@ -16,7 +19,13 @@
     "completion_tokens": 28298,
     "max_prompt_tokens": 9140,
     "max_completion_tokens": 1724,
-    "calls_missing_usage": 0
+    "calls_missing_usage": 0,
+    "calls_with_injected_extra_body": 0,
+    "calls_reporting_reasoning_tokens": 0,
+    "reasoning_tokens": 0,
+    "max_reasoning_tokens": 0,
+    "calls_reporting_cached_prompt_tokens": 0,
+    "cached_prompt_tokens": 0
   },
   "calls": [
     {
@@ -27,12 +36,15 @@
       "model": "Qwen/Qwen3.6-27B-FP8",
       "state": "completed",
       "status": 200,
+      "injected_extra_body": null,
       "is_repair_call": false,
       "finish_reason": "stop",
       "json_only": true,
       "latency_s": 22.475450492464006,
       "prompt_tokens": 8963,
       "completion_tokens": 1109,
+      "reasoning_tokens": null,
+      "cached_prompt_tokens": null,
       "error": null
     },
     {
@@ -43,12 +55,15 @@
       "model": "Qwen/Qwen3.6-27B-FP8",
       "state": "completed",
       "status": 200,
+      "injected_extra_body": null,
       "is_repair_call": false,
       "finish_reason": "stop",
       "json_only": true,
       "latency_s": 25.60159301571548,
       "prompt_tokens": 8697,
       "completion_tokens": 1453,
+      "reasoning_tokens": null,
+      "cached_prompt_tokens": null,
       "error": null
     },
     {
@@ -59,12 +74,15 @@
       "model": "Qwen/Qwen3.6-27B-FP8",
       "state": "completed",
       "status": 200,
+      "injected_extra_body": null,
       "is_repair_call": false,
       "finish_reason": "stop",
       "json_only": true,
       "latency_s": 23.83298815600574,
       "prompt_tokens": 9140,
       "completion_tokens": 1348,
+      "reasoning_tokens": null,
+      "cached_prompt_tokens": null,
       "error": null
     },
     {
@@ -75,12 +93,15 @@
       "model": "Qwen/Qwen3.6-27B-FP8",
       "state": "completed",
       "status": 200,
+      "injected_extra_body": null,
       "is_repair_call": false,
       "finish_reason": "stop",
       "json_only": true,
       "latency_s": 24.53278967179358,
       "prompt_tokens": 8167,
       "completion_tokens": 1394,
+      "reasoning_tokens": null,
+      "cached_prompt_tokens": null,
       "error": null
     },
     {
@@ -91,12 +112,15 @@
       "model": "Qwen/Qwen3.6-27B-FP8",
       "state": "completed",
       "status": 200,
+      "injected_extra_body": null,
       "is_repair_call": false,
       "finish_reason": "stop",
       "json_only": true,
       "latency_s": 24.16608428861946,
       "prompt_tokens": 8695,
       "completion_tokens": 1370,
+      "reasoning_tokens": null,
+      "cached_prompt_tokens": null,
       "error": null
     },
     {
@@ -107,12 +131,15 @@
       "model": "Qwen/Qwen3.6-27B-FP8",
       "state": "completed",
       "status": 200,
+      "injected_extra_body": null,
       "is_repair_call": false,
       "finish_reason": "stop",
       "json_only": true,
       "latency_s": 27.60021017305553,
       "prompt_tokens": 8963,
       "completion_tokens": 1567,
+      "reasoning_tokens": null,
+      "cached_prompt_tokens": null,
       "error": null
     },
     {
@@ -123,12 +150,15 @@
       "model": "Qwen/Qwen3.6-27B-FP8",
       "state": "completed",
       "status": 200,
+      "injected_extra_body": null,
       "is_repair_call": false,
       "finish_reason": "stop",
       "json_only": true,
       "latency_s": 27.113655345514417,
       "prompt_tokens": 8697,
       "completion_tokens": 1541,
+      "reasoning_tokens": null,
+      "cached_prompt_tokens": null,
       "error": null
     },
     {
@@ -139,12 +169,15 @@
       "model": "Qwen/Qwen3.6-27B-FP8",
       "state": "completed",
       "status": 200,
+      "injected_extra_body": null,
       "is_repair_call": false,
       "finish_reason": "stop",
       "json_only": true,
       "latency_s": 23.142401222139597,
       "prompt_tokens": 9140,
       "completion_tokens": 1308,
+      "reasoning_tokens": null,
+      "cached_prompt_tokens": null,
       "error": null
     },
     {
@@ -155,12 +188,15 @@
       "model": "Qwen/Qwen3.6-27B-FP8",
       "state": "completed",
       "status": 200,
+      "injected_extra_body": null,
       "is_repair_call": false,
       "finish_reason": "stop",
       "json_only": true,
       "latency_s": 19.81105880253017,
       "prompt_tokens": 8167,
       "completion_tokens": 1120,
+      "reasoning_tokens": null,
+      "cached_prompt_tokens": null,
       "error": null
     },
     {
@@ -171,12 +207,15 @@
       "model": "Qwen/Qwen3.6-27B-FP8",
       "state": "completed",
       "status": 200,
+      "injected_extra_body": null,
       "is_repair_call": false,
       "finish_reason": "stop",
       "json_only": true,
       "latency_s": 24.459880677983165,
       "prompt_tokens": 8695,
       "completion_tokens": 1387,
+      "reasoning_tokens": null,
+      "cached_prompt_tokens": null,
       "error": null
     },
     {
@@ -187,12 +226,15 @@
       "model": "Qwen/Qwen3.6-27B-FP8",
       "state": "completed",
       "status": 200,
+      "injected_extra_body": null,
       "is_repair_call": false,
       "finish_reason": "stop",
       "json_only": true,
       "latency_s": 24.773716368712485,
       "prompt_tokens": 8963,
       "completion_tokens": 1403,
+      "reasoning_tokens": null,
+      "cached_prompt_tokens": null,
       "error": null
     },
     {
@@ -203,12 +245,15 @@
       "model": "Qwen/Qwen3.6-27B-FP8",
       "state": "completed",
       "status": 200,
+      "injected_extra_body": null,
       "is_repair_call": false,
       "finish_reason": "stop",
       "json_only": true,
       "latency_s": 26.7231639130041,
       "prompt_tokens": 8697,
       "completion_tokens": 1518,
+      "reasoning_tokens": null,
+      "cached_prompt_tokens": null,
       "error": null
     },
     {
@@ -219,12 +264,15 @@
       "model": "Qwen/Qwen3.6-27B-FP8",
       "state": "completed",
       "status": 200,
+      "injected_extra_body": null,
       "is_repair_call": false,
       "finish_reason": "stop",
       "json_only": true,
       "latency_s": 16.94688252080232,
       "prompt_tokens": 9140,
       "completion_tokens": 949,
+      "reasoning_tokens": null,
+      "cached_prompt_tokens": null,
       "error": null
     },
     {
@@ -235,12 +283,15 @@
       "model": "Qwen/Qwen3.6-27B-FP8",
       "state": "completed",
       "status": 200,
+      "injected_extra_body": null,
       "is_repair_call": false,
       "finish_reason": "stop",
       "json_only": true,
       "latency_s": 23.665509429760277,
       "prompt_tokens": 8167,
       "completion_tokens": 1361,
+      "reasoning_tokens": null,
+      "cached_prompt_tokens": null,
       "error": null
     },
     {
@@ -251,12 +302,15 @@
       "model": "Qwen/Qwen3.6-27B-FP8",
       "state": "completed",
       "status": 200,
+      "injected_extra_body": null,
       "is_repair_call": false,
       "finish_reason": "stop",
       "json_only": true,
       "latency_s": 28.943006156012416,
       "prompt_tokens": 8695,
       "completion_tokens": 1724,
+      "reasoning_tokens": null,
+      "cached_prompt_tokens": null,
       "error": null
     },
     {
@@ -267,12 +321,15 @@
       "model": "Qwen/Qwen3.6-27B-FP8",
       "state": "completed",
       "status": 200,
+      "injected_extra_body": null,
       "is_repair_call": false,
       "finish_reason": "stop",
       "json_only": true,
       "latency_s": 14.963205822743475,
       "prompt_tokens": 4829,
       "completion_tokens": 916,
+      "reasoning_tokens": null,
+      "cached_prompt_tokens": null,
       "error": null
     },
     {
@@ -283,12 +340,15 @@
       "model": "Qwen/Qwen3.6-27B-FP8",
       "state": "completed",
       "status": 200,
+      "injected_extra_body": null,
       "is_repair_call": false,
       "finish_reason": "stop",
       "json_only": true,
       "latency_s": 7.6466497257351875,
       "prompt_tokens": 4068,
       "completion_tokens": 463,
+      "reasoning_tokens": null,
+      "cached_prompt_tokens": null,
       "error": null
     },
     {
@@ -299,12 +359,15 @@
       "model": "Qwen/Qwen3.6-27B-FP8",
       "state": "completed",
       "status": 200,
+      "injected_extra_body": null,
       "is_repair_call": false,
       "finish_reason": "stop",
       "json_only": true,
       "latency_s": 12.083670772612095,
       "prompt_tokens": 4703,
       "completion_tokens": 737,
+      "reasoning_tokens": null,
+      "cached_prompt_tokens": null,
       "error": null
     },
     {
@@ -315,12 +378,15 @@
       "model": "Qwen/Qwen3.6-27B-FP8",
       "state": "completed",
       "status": 200,
+      "injected_extra_body": null,
       "is_repair_call": false,
       "finish_reason": "stop",
       "json_only": true,
       "latency_s": 7.695794929750264,
       "prompt_tokens": 4080,
       "completion_tokens": 466,
+      "reasoning_tokens": null,
+      "cached_prompt_tokens": null,
       "error": null
     },
     {
@@ -331,12 +397,15 @@
       "model": "Qwen/Qwen3.6-27B-FP8",
       "state": "completed",
       "status": 200,
+      "injected_extra_body": null,
       "is_repair_call": false,
       "finish_reason": "stop",
       "json_only": true,
       "latency_s": 14.958716430701315,
       "prompt_tokens": 4829,
       "completion_tokens": 916,
+      "reasoning_tokens": null,
+      "cached_prompt_tokens": null,
       "error": null
     },
     {
@@ -347,12 +416,15 @@
       "model": "Qwen/Qwen3.6-27B-FP8",
       "state": "completed",
       "status": 200,
+      "injected_extra_body": null,
       "is_repair_call": false,
       "finish_reason": "stop",
       "json_only": true,
       "latency_s": 7.6477826703339815,
       "prompt_tokens": 4068,
       "completion_tokens": 463,
+      "reasoning_tokens": null,
+      "cached_prompt_tokens": null,
       "error": null
     },
     {
@@ -363,12 +435,15 @@
       "model": "Qwen/Qwen3.6-27B-FP8",
       "state": "completed",
       "status": 200,
+      "injected_extra_body": null,
       "is_repair_call": false,
       "finish_reason": "stop",
       "json_only": true,
       "latency_s": 12.08926918823272,
       "prompt_tokens": 4703,
       "completion_tokens": 737,
+      "reasoning_tokens": null,
+      "cached_prompt_tokens": null,
       "error": null
     },
     {
@@ -379,12 +454,15 @@
       "model": "Qwen/Qwen3.6-27B-FP8",
       "state": "completed",
       "status": 200,
+      "injected_extra_body": null,
       "is_repair_call": false,
       "finish_reason": "stop",
       "json_only": true,
       "latency_s": 7.6935236640274525,
       "prompt_tokens": 4080,
       "completion_tokens": 466,
+      "reasoning_tokens": null,
+      "cached_prompt_tokens": null,
       "error": null
     },
     {
@@ -395,12 +473,15 @@
       "model": "Qwen/Qwen3.6-27B-FP8",
       "state": "completed",
       "status": 200,
+      "injected_extra_body": null,
       "is_repair_call": false,
       "finish_reason": "stop",
       "json_only": true,
       "latency_s": 14.959476270712912,
       "prompt_tokens": 4829,
       "completion_tokens": 916,
+      "reasoning_tokens": null,
+      "cached_prompt_tokens": null,
       "error": null
     },
     {
@@ -411,12 +492,15 @@
       "model": "Qwen/Qwen3.6-27B-FP8",
       "state": "completed",
       "status": 200,
+      "injected_extra_body": null,
       "is_repair_call": false,
       "finish_reason": "stop",
       "json_only": true,
       "latency_s": 7.647446695715189,
       "prompt_tokens": 4068,
       "completion_tokens": 463,
+      "reasoning_tokens": null,
+      "cached_prompt_tokens": null,
       "error": null
     },
     {
@@ -427,12 +511,15 @@
       "model": "Qwen/Qwen3.6-27B-FP8",
       "state": "completed",
       "status": 200,
+      "injected_extra_body": null,
       "is_repair_call": false,
       "finish_reason": "stop",
       "json_only": true,
       "latency_s": 12.084702454507351,
       "prompt_tokens": 4703,
       "completion_tokens": 737,
+      "reasoning_tokens": null,
+      "cached_prompt_tokens": null,
       "error": null
     },
     {
@@ -443,14 +530,17 @@
       "model": "Qwen/Qwen3.6-27B-FP8",
       "state": "completed",
       "status": 200,
+      "injected_extra_body": null,
       "is_repair_call": false,
       "finish_reason": "stop",
       "json_only": true,
       "latency_s": 7.697918543592095,
       "prompt_tokens": 4080,
       "completion_tokens": 466,
+      "reasoning_tokens": null,
+      "cached_prompt_tokens": null,
       "error": null
     }
   ],
-  "note": "JSON-only measures syntax only. Use T-REX reports for schema, repair, reference, candidate and fallback outcomes. Token sums exclude calls with missing usage."
+  "note": "JSON-only measures syntax only. Use T-REX reports for schema, repair, reference, candidate and fallback outcomes. Token sums exclude calls with missing usage. Reasoning and cached-prompt tokens are reported only by servers that return them, and reasoning tokens are already counted inside completion tokens."
 }
